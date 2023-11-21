@@ -1,14 +1,13 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import a from '../../../public/data/arcanists.json';
 import c from '../../../public/data/calculations.json';
 
 const arcanists = ref(a);
 const calculations = ref(c);
 
-
-const selectedArcanist = ref([]);
 const props = defineProps(['selectedArcanists']);
+const emit = defineEmits(['closeOverlay']);
 
 // Stats variables
 const rarityOption = ref([]);
@@ -16,45 +15,63 @@ const insightOptions = ref([]);
 const levelOptions = ref([]);
 const resonanceOptions = ref([]);
 
+const selectedArcanist = ref([]);
 // Selected stat values
 const selectedRarity = ref(null);
 const selectedCurrentInsight = ref(null);
 const selectedCurrentLevel = ref(null);
-const selectedCurrentResonance = ref(null);
 const selectedGoalInsight = ref(null);
 const selectedGoalLevel = ref(null);
+const selectedCurrentResonance = ref(null);
 const selectedGoalResonance = ref(null);
 
+const newArcanist = computed(() => ({
+  info: selectedArcanist.value,
+  currentInsight: selectedCurrentInsight.value,
+  currentLevel: selectedCurrentLevel.value,
+  goalInsight: selectedGoalInsight.value,
+  goalLevel: selectedGoalLevel.value,
+  currentResonance: selectedCurrentResonance.value,
+  goalResonance: selectedGoalResonance.value
+}));
 
+const arc = computed(() => {
+  return arcanists.value.find((arcanist) => arcanist.Id === selectedArcanist.value.Id);
+});
 
-let arc = ref(null);
-let calc = ref(null);
+const calc = computed(() => {
+  const currentArc = arc.value;
+
+  if (currentArc) {
+    return calculations.value.find((calc) =>
+      calc.Rarity.includes(currentArc.Rarity) &&
+      currentArc.Insight.some(insight => insight.Id === calc.Insight)
+    );
+  } else {
+    return null;
+  }
+});
 
 const updateStatsBasedOnArcanist = () => {
-    if (selectedArcanist.value) {
-        arc = arcanists.value.find((arc) => arc.Id === selectedArcanist.value.Id);
-        calc = calculations.value.find((calc) =>
-            calc.Rarity.includes(arc.Rarity) &&
-            arc.Insight.some(insight => insight.Id === calc.Insight)
-        );
+  if (selectedArcanist.value && arc.value && calc.value) {
+    rarityOption.value = arc.value.Rarity;
 
-        rarityOption.value = arc.Rarity;
+    levelOptions.value = [1, ...Object.keys(calc.value.Levels).map(Number)];
 
-        levelOptions.value = [1, ...Object.keys(calc.Levels).map(Number)];
+    insightOptions.value = [0, ...arc.value.Insight.map(insight => insight.Id)];
 
-        insightOptions.value = [0, ...arc.Insight.map(insight => insight.Id)];
+    resonanceOptions.value = [1, ...arc.value.Resonate.map(resonate => resonate.Id)];
 
-        resonanceOptions.value = [1, ...arc.Resonate.map(resonate => resonate.Id)];
-
-        selectedRarity.value = rarityOption.value;
-        selectedCurrentInsight.value = insightOptions.value[0];
-        selectedCurrentLevel.value = levelOptions.value[0];
-        selectedCurrentResonance.value = resonanceOptions.value[0];
-        selectedGoalInsight.value = insightOptions.value[0];
-        selectedGoalLevel.value = levelOptions.value[0];
-        selectedGoalResonance.value = resonanceOptions.value[0];
-    }
+    selectedRarity.value = rarityOption.value;
+    selectedCurrentInsight.value = insightOptions.value[0];
+    selectedCurrentLevel.value = levelOptions.value[0];
+    selectedCurrentResonance.value = resonanceOptions.value[0];
+    selectedGoalInsight.value = insightOptions.value[0];
+    selectedGoalLevel.value = levelOptions.value[0];
+    selectedGoalResonance.value = resonanceOptions.value[0];
+  }
 };
+
 
 const compareLevels = (currentInsightSelect, currentLevelSelect, goalInsightSelect, goalLevelSelect) => {
     if (currentInsightSelect > goalInsightSelect) {
@@ -70,44 +87,51 @@ const compareLevels = (currentInsightSelect, currentLevelSelect, goalInsightSele
 };
 
 const updateBasedOnCurrent = () => {
-    if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
-        selectedGoalInsight.value = selectedCurrentInsight.value;
-        selectedGoalLevel.value = selectedCurrentLevel.value;
-    }
-    if (selectedCurrentResonance.value > selectedGoalResonance.value) {
-        selectedGoalResonance.value = selectedCurrentResonance.value;
-    }
+  const currentArc = arc.value;
+  const currentCalc = calc.value;
 
-    // Filter goal options based on current values
-    insightOptions.value = [0, ...arc.Insight.map(insight => insight.Id)].filter(insight => insight >= selectedCurrentInsight.value);
-    levelOptions.value = [1, ...Object.keys(calc.Levels).map(Number)].filter(level => level >= selectedCurrentLevel.value);
-    resonanceOptions.value = [1, ...arc.Resonate.map(resonate => resonate.Id)].filter(resonate => resonate >= selectedCurrentResonance.value);
+  if (!currentArc || !currentCalc) {
+    // Handle the case where arc or calc is not defined
+    return;
+  }
 
-    // Adjust selected goal values if they are now lower than the filtered options
-    if (!insightOptions.value.includes(selectedGoalInsight.value)) {
-        selectedGoalInsight.value = insightOptions.value[0];
-    }
-    if (!levelOptions.value.includes(selectedGoalLevel.value)) {
-        selectedGoalLevel.value = levelOptions.value[0];
-    }
-    if (!resonanceOptions.value.includes(selectedGoalResonance.value)) {
-        selectedGoalResonance.value = resonanceOptions.value[0];
-    }
+  if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
+    selectedGoalInsight.value = selectedCurrentInsight.value;
+    selectedGoalLevel.value = selectedCurrentLevel.value;
+  }
+
+  if (selectedCurrentResonance.value > selectedGoalResonance.value) {
+    selectedGoalResonance.value = selectedCurrentResonance.value;
+  }
+
+  // Filter goal options based on current values
+  insightOptions.value = [0, ...currentArc.Insight.map(insight => insight.Id)].filter(insight => insight >= selectedGoalInsight.value);
+  levelOptions.value = [1, ...Object.keys(currentCalc.Levels).map(Number)].filter(level => level >= selectedGoalLevel.value);
+  resonanceOptions.value = [1, ...currentArc.Resonate.map(resonate => resonate.Id)].filter(resonate => resonate >= selectedGoalResonance.value);
+
+  // Adjust selected goal values if they are now lower than the filtered options
+  if (!insightOptions.value.includes(selectedGoalInsight.value)) {
+    selectedGoalInsight.value = insightOptions.value[0];
+  }
+  if (!levelOptions.value.includes(selectedGoalLevel.value)) {
+    selectedGoalLevel.value = levelOptions.value[0];
+  }
+  if (!resonanceOptions.value.includes(selectedGoalResonance.value)) {
+    selectedGoalResonance.value = resonanceOptions.value[0];
+  }
+
+  // Filter current options based on current values
+  insightOptions.value = [0, ...currentArc.Insight.map(insight => insight.Id)].filter(insight => insight >= selectedCurrentInsight.value);
 };
 
-
-watch(selectedArcanist, updateStatsBasedOnArcanist);
-
-watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance], updateBasedOnCurrent);
-
-const emit = defineEmits(['closeOverlay']);
 
 const addArcanist = () => {
     if (selectedArcanist.value.length === 0) {
         emit('closeOverlay');
         return;
     }
-    props.selectedArcanists.push(selectedArcanist.value);
+    // console.log(newArcanist.value)
+    props.selectedArcanists.push(newArcanist.value);
     emit('closeOverlay');
 };
 
@@ -115,6 +139,10 @@ const cancelAddingArcanist = () => {
     // Close the overlay without adding
     emit('closeOverlay');
 };
+
+watch(selectedArcanist, updateStatsBasedOnArcanist);
+
+watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance], updateBasedOnCurrent);
 
 </script>
 

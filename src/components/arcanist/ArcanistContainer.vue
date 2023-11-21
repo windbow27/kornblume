@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import ArcanistOverlay from './ArcanistOverlay.vue';
-
+import ArcanistResult from './ArcanistResult.vue';
 const selectedArcanists = ref([]);
 
 const isAddingArcanist = ref(false);
@@ -24,13 +24,14 @@ const getArcanistImagePath = (id) => {
     <div class="arcanist-container">
         <h2>Planner</h2>
         <div class="arcanist-icon">
-            <div v-for="arc in selectedArcanists" :key="arc.Id">
-                <img :src="getArcanistImagePath(arc.Id)" alt="Arcanist Image" />
+            <div v-for="arc in selectedArcanists" :key="arc.info.Id">
+                <img :src="getArcanistImagePath(arc.info.Id)" alt="Arcanist Image" />
             </div>
         </div>
         <button class="add-arcanist" @click="startAddingArcanist">Add Arcanist</button>
         <button class="add-psychube">Add Psychube</button>
         <ArcanistOverlay v-if="isAddingArcanist" :selectedArcanists="selectedArcanists" @closeOverlay="closeOverlay" />
+        <ArcanistResult :selectedArcanists="selectedArcanists" />
     </div>
 </template>
 
