@@ -121,7 +121,13 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance], 
 });
 
 const addArcanist = () => {
-    if (selectedArcanist.value.length === 0) {
+    //find a better check
+    if (selectedArcanist.value.length === 0
+    || !selectedCurrentInsight.value
+    || !selectedCurrentLevel.value
+    || !selectedGoalInsight.value
+    || !selectedGoalLevel.value
+    ) {
         emit('closeOverlay');
         return;
     }
