@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, defineProps } from 'vue';
 import c from '../../../public/data/calculations.json';
-import MaterialCard from '../common/MaterialCard.vue';
+import ArcanistCards from './ArcanistCards.vue';
 
 const calculations = ref(c);
 
@@ -183,7 +183,7 @@ const sumExp = (startLevel, endlevel, arc, insight) => {
 
 <template>
     <div>
-        <MaterialCard :calcArcanists="calculateSelectedArcanists"/>
+        <ArcanistCards :calcArcanists="calculateSelectedArcanists"/>
     </div>
 </template>
 

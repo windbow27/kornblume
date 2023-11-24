@@ -2,161 +2,135 @@
     {
         "Name": "Mountain Echoes II",
         "Activity": 18,
-        "Drops": [
+        "Material": [
             "Page of Mineral Wealth"
         ],
-        "Amount": [2.0000]
+        "Quantity": [2.0000]
     },
     {
         "Name": "Mountain Echoes IV",
         "Activity": 24,
-        "Drops": ["Scroll of Mineral Wealth"],
-        "Amounts": [2.0000]
+        "Material": ["Scroll of Mineral Wealth"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Mountain Echoes VI",
         "Activity": 30,
-        "Drops": ["Tome of Mineral Wealth"],
-        "Amounts": [2.0000]
+        "Material": ["Tome of Mineral Wealth"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Starfall Locale II",
         "Activity": 18,
-        "Drops": ["Page of Starlit Ascent"],
-        "Amounts": [2.0000]
+        "Material": ["Page of Starlit Ascent"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Starfall Locale IV",
         "Activity": 24,
-        "Drops": ["Scroll of Starlit Ascent"],
-        "Amounts": [2.0000]
+        "Material": ["Scroll of Starlit Ascent"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Starfall Locale VI",
         "Activity": 30,
-        "Drops": ["Tome of Starlit Ascent"],
-        "Amounts": [2.0000]
+        "Material": ["Tome of Starlit Ascent"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Sylvanus Shape II",
         "Activity": 18,
-        "Drops": ["Page of Plantal Vimen"],
-        "Amounts": [2.0000]
+        "Material": ["Page of Plantal Vimen"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Sylvanus Shape IV",
         "Activity": 24,
-        "Drops": ["Scroll of Plantal Vimen"],
-        "Amounts": [2.0000]
+        "Material": ["Scroll of Plantal Vimen"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Sylvanus Shape VI",
         "Activity": 30,
-        "Drops": ["Tome of Plantal Vimen"],
-        "Amounts": [2.0000]
+        "Material": ["Tome of Plantal Vimen"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Brutes Wilds II",
         "Activity": 18,
-        "Drops": ["Page of Beastly Thirst"],
-        "Amounts": [2.0000]
+        "Material": ["Page of Beastly Thirst"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Brutes Wilds IV",
         "Activity": 24,
-        "Drops": ["Scroll of Beastly Thirst"],
-        "Amounts": [2.0000]
+        "Material": ["Scroll of Beastly Thirst"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "Brutes Wilds VI",
         "Activity": 30,
-        "Drops": ["Tome of Beastly Thirst"],
-        "Amounts": [2.0000]
+        "Material": ["Tome of Beastly Thirst"],
+        "Quantity": [2.0000]
       },
       {
         "Name": "The Poussiere VI",
         "Activity": 25,
-        "Drops": ["Dust"],
-        "Amounts": [25000.0000]
+        "Material": ["Dust"],
+        "Quantity": [12000.0000]
       },
       {
         "Name": "Mintage Aesthetics VI",
         "Activity": 25,
-        "Drops": ["Sharpodonty"],
-        "Amounts": [9000.0000]
+        "Material": ["Sharpodonty"],
+        "Quantity": [9000.0000]
       },
       {
         "Name": "2-3H Green Oranges",
         "Activity": 16,
-        "Drops": [
-          "Holy Silver",
-          "Liquefied Terror",
-          "Milled Magnesia",
-          "Esoteric Bones",
-          "Spell of Fortune",
-          "Rough Silver Ingot"
+        "Material": [
+          "Holy Silver"
         ],
-        "Amounts": [0.3519, 0.0260, 0.0340, 0.0455, 0.0565, 1.6711]
+        "Quantity": [0.3519]
       },
       {
         "Name": "2-6H The End of Immortal",
         "Activity": 16,
-        "Drops": [
-          "Prophetic Bird",
-          "Liquefied Terror",
-          "Milled Magnesia",
-          "Esoteric Bones",
-          "Silver Ore",
-          "Spell of Fortune",
-          "Spell of Banishing"
+        "Material": [
+          "Prophetic Bird"
         ],
-        "Amounts": [0.4512, 0.0257, 0.0288, 0.0348, 0.0477, 0.0659, 1.9425]
+        "Quantity": [0.4512]
       },
       {
         "Name": "3-11H Freedom of the Dumb",
         "Activity": 18,
-        "Drops": [
-          "Clawed Pendulum",
-          "Milled Magnesia",
-          "Spell of Banishing",
-          "Magnesia Crystal"
+        "Material": [
+          "Clawed Pendulum"
         ],
-        "Amounts": [0.3160, 0.1316, 0.6707, 0.3641]
+        "Quantity": [0.3160]
       },
       {
         "Name": "3-13H A Yard",
         "Activity": 18,
-        "Drops": [
-          "Salted Mandrake",
-          "Milled Magnesia",
-          "Magnesia Crystal",
-          "Murmur of Insanity"
+        "Material": [
+          "Salted Mandrake"
         ],
-        "Amounts": [0.3417, 0.1292, 0.6856, 0.0208]
+        "Quantity": [0.3417]
       },
       {
         "Name": "4-10H Sailing at Night",
         "Activity": 18,
-        "Drops": [
-          "Biting Box",
-          "Silver Ore",
-          "Rough Silver Ingot",
-          "Liquefied Terror",
-          "Spell of Fortune",
-          "Milled Magnesia",
-          "Esoteric Bones"
+        "Material": [
+          "Biting Box"
         ],
-        "Amounts": [0.2815, 0.5437, 0.7022, 0.0305, 0.0572, 0.0364, 0.0374]
+        "Quantity": [0.2815]
       },
       {
         "Name": "4-20H Picnic on the Lawn",
         "Activity": 18,
-        "Drops": [
-          "Bifurcated Skeleton",
-          "Spell of Fortune",
-          "Shattered Bones",
-          "Spell of Banishing"
+        "Material": [
+          "Bifurcated Skeleton"
         ],
-        "Amounts": [0.3357, 0.4391, 0.6658, 2.0179]
+        "Quantity": [0.3357]
       }
 ]
