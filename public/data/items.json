@@ -538,5 +538,86 @@
         "Description": "Snowflakes crushed by the wheels, pasture grass rustling in the wind, waves shattered against distant cliffs. Such sounds are insignificant but are recorded nonetheless. Again and again, till the very end.",
         "Source": "Artificial Somnambulism",
         "Usage": "Can be exchanged for items in the [Oneiric Shop] in the Bank."
+    },
+    {
+        "Id": 61,
+        "Category": "Build Material",
+        "Name": "(Double Serpent Scepter)",
+        "Rarity": 6,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 62,
+        "Category": "Build Material",
+        "Name": "(Moth Lamp)",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 63,
+        "Category": "Build Material",
+        "Name": "(Wheel Core)",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 64,
+        "Category": "Build Material",
+        "Name": "(Gold Compass)",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 65,
+        "Category": "Build Material",
+        "Name": "(Wing Door Key)",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 66,
+        "Category": "Build Material",
+        "Name": "(Curved Goose Neck)",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 67,
+        "Category": "Build Material",
+        "Name": "(Gold Beetle)",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 68,
+        "Category": "Build Material",
+        "Name": "(Dry Cicada Wings)",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 69,
+        "Category": "Build Material",
+        "Name": "(Wheel)",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
     }
 ]

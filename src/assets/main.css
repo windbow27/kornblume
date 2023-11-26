@@ -1,1 +1,49 @@
-@import './base.css';
+@import '../../node_modules/flowbite/dist/flowbite.css';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #1e3a8a;
+    border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #a3a3a3;
+    border-radius: 5px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+}
+
+/*Custom common*/
+.custom-line {
+    @apply bg-gray-600 opacity-25 w-full h-1 mt-4 mx-1 rounded-full;
+}
+
+.custom-gradient-gray-blue {
+    @apply bg-gradient-to-r from-gray-800 to-blue-950;
+}
+
+.custom-select {
+    @apply block py-2.5 px-0 w-1/5 text-sm
+    bg-transparent border-0 border-gray-600 border-b-2
+    focus:outline-none focus:ring-0 focus:border-gray-500
+    text-center appearance-none bg-gray-800 
+  text-white pl-3 pr-10 rounded leading-tight 
+}
+
+.custom-label {
+    @apply mt-4 text-center uppercase text-sm font-semibold py-1 px-2 rounded bg-gray-700
+}
+  

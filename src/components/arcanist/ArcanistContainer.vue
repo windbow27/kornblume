@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import ArcanistOverlay from './ArcanistOverlay.vue';
 import ArcanistResult from './ArcanistResult.vue';
 const selectedArcanists = ref([]);
@@ -17,6 +17,10 @@ const closeOverlay = () => {
 const getArcanistImagePath = (id) => {
     return `/images/arcanists/icon/${id}.png`;
 };
+
+watch(selectedArcanists => {
+    console.log(selectedArcanists.value);
+});
 
 </script>
 

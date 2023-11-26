@@ -4,6 +4,10 @@ const props = defineProps({
     arcanist: {
         type: Object,
         required: true
+    },
+    visible: {
+        type: Boolean,
+        required: true
     }
 });
 const getArcanistImagePath = (id) => {
@@ -18,6 +22,7 @@ const getArcanistImagePath = (id) => {
           :img="getArcanistImagePath(arcanist.Id)" 
           :alt="arcanist.Name" 
           :class="{
+            'filter-grayscale opacity-50': !visible,
             'bg-orange-300': arcanist.Rarity === 6,
             'bg-yellow-100': arcanist.Rarity === 5,
             'bg-purple-400': arcanist.Rarity === 4,
@@ -28,4 +33,8 @@ const getArcanistImagePath = (id) => {
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.filter-grayscale {
+    filter: grayscale(100%);
+}
+</style>

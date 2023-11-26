@@ -8,18 +8,13 @@ import Navbar from './components/navbar/Navbar.vue'
     <header>
       <Navbar />
     </header>
-    <main>
+    <main class="z-0 h-screen w-full bg-gradient-to-r from-gray-900 to-blue-950 
+    overflow-y-auto flex flex-col"
+    >
       <RouterView />
     </main>
   </div>
 </template>
 
 <style scoped>
-/* .content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 </style>
