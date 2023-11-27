@@ -5,7 +5,6 @@ import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
 import SelectList from '../common/SelectList.vue';
 import { FwbButton, FwbBadge, FwbToast } from 'flowbite-vue';
-import { getVNodeBlockHelper } from '@vue/compiler-core';
 
 const props = defineProps({
     selectedArcanist: {

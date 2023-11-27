@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import { useProcessMaterial } from '../../composables/item';
+import { useProcessMaterial } from '../../composables/ProcessItems';
 
 const props = defineProps({
     material: {

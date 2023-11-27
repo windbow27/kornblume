@@ -12,6 +12,7 @@
     "flowbite": "^2.2.0",
     "flowbite-vue": "^0.1.0",
     "pinia": "^2.1.7",
+    "tailwind": "^4.0.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },

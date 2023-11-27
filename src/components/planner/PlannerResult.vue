@@ -1,7 +1,8 @@
 <script setup>
 import { ref, computed, watchEffect } from 'vue';
-import { useCalculation, mergeResults } from '../../composables/calculation';
-import PlannerCardList from './PlannerCardList.vue';
+import { useCalculation, mergeResults } from '../../composables/CalculateMaterials';
+import { useProcessCards } from '../../composables/ProcessCards.js';
+import PlannerLayer from './PlannerLayer.vue';
 
 const props = defineProps({
     selectedArcanists: {
@@ -10,7 +11,7 @@ const props = defineProps({
     }
 });
 
-const calculateAll = ref([]);
+const calculateAllMaterials = ref([]);
 
 watchEffect(() => {
     const result = props.selectedArcanists.map(arc => {
@@ -19,17 +20,20 @@ watchEffect(() => {
     });
 
     const mergedResult = mergeResults(result);
-    calculateAll.value = mergedResult;
+    calculateAllMaterials.value = mergedResult;
+});
+
+const calculateCards = computed(() => {
+    console.log(useProcessCards(calculateAllMaterials.value))
+    return useProcessCards(calculateAllMaterials.value);
 });
 
 </script>
 
 <template>
-    <div>
-        {{ console.log(calculateAll) }}
-        <PlannerCardList :calcArcanists="calculateAll" />
+    <div class="flex flex-wrap">
+        <PlannerLayer v-for="(layer, index) in calculateCards" :key="index" :layer="layer" />
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
