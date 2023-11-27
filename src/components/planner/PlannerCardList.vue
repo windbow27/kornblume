@@ -1,9 +1,11 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { FwbBadge } from 'flowbite-vue';
 import i from '../../../public/data/items.json';
 import s from '../../../public/data/stages.json';
 import c from '../../../public/data/crafts.json';
 import Card from '../common/Card.vue';
+
 const items = ref(i);
 const stages = ref(s);
 const crafts = ref(c);
@@ -69,7 +71,7 @@ const calculateCards = computed(() => {
             const activity = Math.ceil(runs * currentStage.Activity);
             const days = (activity / 240).toFixed(1);
 
-            const material = processMaterial(matInfo);
+            const material = matInfo;
 
             const existingCardIndex = calculatedCards.findIndex(card => card.stage === currentStage.Name);
 
@@ -79,46 +81,48 @@ const calculateCards = computed(() => {
                 calculatedCards.push(createCard(currentStage.Name, runs, activity, days, [material]));
             }
         } else {
-            let tier3Card = calculatedCards.find(card => card.stage === 'Tier 3');
-            let tier2Card = calculatedCards.find(card => card.stage === 'Tier 2');
-            let oneiric = calculatedCards.find(card => card.stage === 'Oneiric Shop');
+            const findOrCreateCard = (stage) => {
+                let card = calculatedCards.find(c => c.stage === stage);
+                if (!card) {
+                    card = createCard(stage, null, stage === 'Oneiric Shop' ? 0 : null, null, []);
+                    calculatedCards.push(card);
+                }
+                return card;
+            };
 
-            if (!tier3Card) {
-                tier3Card = createCard('Tier 3', null, null, null, []);
-                calculatedCards.push(tier3Card);
-            }
-
-            if (!tier2Card) {
-                tier2Card = createCard('Tier 2', null, null, null, []);
-                calculatedCards.push(tier2Card);
-            }
-
-            if (!oneiric) {
-                oneiric = createCard('Oneiric Shop', null, 0, null, []);
-                calculatedCards.push(oneiric);
-            }
+            const tier3Card = findOrCreateCard('Tier 3');
+            const tier2Card = findOrCreateCard('Tier 2');
+            const oneiric = findOrCreateCard('Oneiric Shop');
+            const unreleased = findOrCreateCard('Unreleased');
 
             if (items.value.find(item => item.Name === matInfo.Material).Category === 'Resonate Material') {
                 oneiric.activity += calculateOneiric(matInfo);
-                oneiric.materials.push(processMaterial(matInfo));
-            } else if (items.value.find(item => item.Name === matInfo.Material).Rarity === 3) {
-                tier3Card.materials.push(processMaterial(matInfo));
+                oneiric.materials.push(matInfo);
             } else {
-                tier2Card.materials.push(processMaterial(matInfo));
+                const rarity = items.value.find(item => item.Name === matInfo.Material).Rarity;
+                const targetCard = rarity === 3 ? tier3Card : (rarity === 2 ? tier2Card : unreleased);
+                targetCard.materials.push(matInfo);
             }
         }
     });
 
     if (Array.isArray(calculatedCards) && calculatedCards.length > 0) {
-        splittedCards = [
-            calculatedCards.filter((card) => card.stage === 'The Poussiere VI' || card.stage === 'Mintage Aesthetics VI' || card.stage === 'Oneiric Shop'),
-            calculatedCards.filter((card) => (card.stage.endsWith('II') || card.stage.endsWith('IV') || card.stage.endsWith('VI'))
-                && card.stage !== 'The Poussiere VI' && card.stage !== 'Mintage Aesthetics VI'),
-            calculatedCards.filter((card) => !['The Poussiere VI', 'Mintage Aesthetics VI', 'Oneiric Shop', 'Tier 2', 'Tier 3'].includes(card.stage)
-                && !card.stage.endsWith('II') && !card.stage.endsWith('IV') && !card.stage.endsWith('VI')),
-            calculatedCards.filter((card) => card.stage === 'Tier 2' || card.stage === 'Tier 3')
-        ];
-        console.log(splittedCards);
+        /*
+        first layer has The Poussiere VI, Mintage Aesthetics VI, Oneiric Shop
+        second layer has every stage that ended with II, IV, VI that doens't included on first layer
+        third layer are all the stages that aren't Tier 2, Tier 3 or unreleased that doens't included on above layers
+        forth layer T2, T3 and unreleased*/
+
+        const stagesFirstLayer = calculatedCards
+            .filter(card => ['The Poussiere VI', 'Mintage Aesthetics VI', 'Oneiric Shop'].includes(card.stage) && card.materials.length > 0);
+        const stagesSecondLayer = calculatedCards
+            .filter(card => (card.stage.endsWith('II') || card.stage.endsWith('IV') || card.stage.endsWith('VI'))
+                && !stagesFirstLayer.some(firstLayerCard => firstLayerCard.stage === card.stage) && card.materials.length > 0);
+        const stagesThirdLayer = calculatedCards
+            .filter(card => !['Tier 2', 'Tier 3', 'Unreleased', ...stagesFirstLayer.map(card => card.stage), ...stagesSecondLayer.map(card => card.stage)].includes(card.stage) && card.materials.length > 0);
+        const stagesFourthLayer = calculatedCards
+            .filter(card => ['Tier 2', 'Tier 3', 'Unreleased'].includes(card.stage) && card.materials.length > 0);
+        splittedCards = [stagesFirstLayer, stagesSecondLayer, stagesThirdLayer, stagesFourthLayer];
     }
 
     return splittedCards;
@@ -135,44 +139,6 @@ const calculateOneiric = (matInfo) => {
     if (rarity === 6) return quantity * 1500;
     return 0;
 }
-const processMaterial = (matInfo) => {
-    return {
-        material: matInfo.Material,
-        quantity: matInfo.Quantity,
-        itemImagePath: getItemImagePath(matInfo.Material),
-        borderImagePath: getBorderImagePath(matInfo.Material),
-    };
-}
-
-const createCard = (stage, runs, activity, days, materials) => {
-    return {
-        stage,
-        runs: isNaN(runs) ? 0 : runs,
-        activity: isNaN(activity) ? 0 : activity,
-        days: isNaN(days) ? 0 : days,
-        materials,
-    };
-}
-
-const getId = (material) => {
-    const item = items.value.find(item => item.Name == material);
-    return item ? item.Id : null;
-};
-
-const getRarity = (material) => {
-    const item = items.value.find(item => item.Name == material);
-    return item ? item.Rarity : null;
-};
-
-const getItemImagePath = (material) => {
-    const id = getId(material);
-    return id ? `/images/items/icon/${id}.png` : null;
-};
-
-const getBorderImagePath = (material) => {
-    const rarity = getRarity(material);
-    return rarity ? `/images/items/border/${rarity}.png` : null;
-};
 
 const getActivityImagePath = (stage) => {
     if (stage === 'Oneiric Shop') {
@@ -181,30 +147,67 @@ const getActivityImagePath = (stage) => {
     return '/images/items/border/0.png';
 };
 
+const createCard = (stage, runs, activity, days, materials) => {
+    return {
+        stage,
+        runs: isNaN(runs) ? 0 : runs,
+        activity: isNaN(activity) ? 0 : activity,
+        days: isNaN(days) ? 0 : days,
+        materials,
+        activityImagePath: getActivityImagePath(stage)
+    };
+};
+
+const isCardListEmpty = (cardList) => {
+    console.log(cardList);
+    if (cardList === undefined || cardList === null) {
+        return true;
+    }
+    if (Array.isArray(cardList) && cardList.length === 0) {
+        return true;
+    }
+    return false;
+};
+
 </script>
 
 <template>
-    <div class="cards-container">
+    <div class="flex flex-wrap">
       <!-- Part 1: The Poussiere VI, Mintage Aesthetics VI, Oneiric Shop -->
-      <Card v-for="(card, index) in calculateCards[0]" :key="index" :card="card" :getActivityImagePath="getActivityImagePath" />
+      <div class="w-full mb-4">
+        <FwbBadge class="mt-2 mb-2 w-24" v-if="calculateCards[0].length > 0" size="sm" type="yellow"> Resources </FwbBadge>
+        <div class="flex flex-wrap space-x-3">
+          <Card v-for="(card, index) in calculateCards[0]" :key="index" :card="card"/>
+        </div>
+      </div>
   
       <!-- Part 2: Insight -->
-      <Card v-for="(card, index) in calculateCards[1]" :key="index" :card="card" :getActivityImagePath="getActivityImagePath" />
+      <div class="w-full mb-4">
+        <FwbBadge v-if="calculateCards[1].length > 0" size="sm" type="red"> Insight </FwbBadge>
+        <div class="flex flex-wrap">
+          <Card v-for="(card, index) in calculateCards[1]" :key="index" :card="card" class="mr-4 mb-4" />
+        </div>
+      </div>
   
       <!-- Part 3: Hard stages -->
-      <Card v-for="(card, index) in calculateCards[2]" :key="index" :card="card" :getActivityImagePath="getActivityImagePath" />
+      <div class="w-full mb-4">
+        <FwbBadge v-if="calculateCards[2].length > 0" size="sm" type="indigo"> Hard Stages </FwbBadge>
+        <div class="flex flex-wrap">
+          <Card v-for="(card, index) in calculateCards[2]" :key="index" :card="card" class="mr-4 mb-4" />
+        </div>
+      </div>
   
-      <!-- Part 4: Tier 2 and Tier 3 -->
-      <Card v-for="(card, index) in calculateCards[3]" :key="index" :card="card" :getActivityImagePath="getActivityImagePath" />
+      <!-- Part 4: Tier 2, Tier 3, unreleased -->
+      <div class="w-full mb-4">
+        <FwbBadge v-if="calculateCards[3].length > 0" size="sm" type="green"> Miscs </FwbBadge>
+        <div class="flex flex-wrap">
+          <Card v-for="(card, index) in calculateCards[3]" :key="index" :card="card" class="mr-4 mb-4" />
+        </div>
+      </div>
     </div>
   </template>
+  
+  
 
 <style scoped>
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-}
 </style>

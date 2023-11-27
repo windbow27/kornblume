@@ -18,7 +18,7 @@ const handleLeftClick = (arcanist) => {
 };
 
 const handleRightClick = (arcanist) => {
-    console.log('right clicked');
+    //console.log('right clicked');
     arcanist.isVisible = !arcanist.isVisible;
 };
 </script>

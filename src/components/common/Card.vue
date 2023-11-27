@@ -1,11 +1,8 @@
 <script setup>
+import ItemIcon from '../item/ItemIcon.vue';
 const props = defineProps({
     card: {
         type: Object,
-        required: true
-    },
-    getActivityImagePath: {
-        type: Function,
         required: true
     }
 });
@@ -13,6 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
+    {{ console.log(card) }}
     <div class="card">
         <div class="stage">
             <p>{{ card.stage }}</p>
@@ -21,16 +19,14 @@ const props = defineProps({
             <p> {{ card.runs > 0 ? 'x' : '' }}{{ card.runs }} </p>
             <p class="separator">{{ card.runs > 0 ? '|' : '' }}</p>
             <p>{{ card.activity }}</p>
-            <img :src="getActivityImagePath(card.stage)" alt="Activity Image" />
+            <img :src="card.activityImagePath" alt="Activity Image" />
             <p class="separator">{{ card.runs > 0 ? '|' : '' }}</p>
             <p>{{ card.days }} {{ card.days === null ? '' : card.days > 1 ? 'days' : 'day' }}</p>
         </div>
 
         <div class="materials">
             <div v-for="(material, materialIndex) in card.materials" :key="materialIndex" class="image-container">
-                <img :src="material.borderImagePath" alt="Border Image" class="border-image" />
-                <img :src="material.itemImagePath" alt="Material Image" class="material-image" />
-                <p class="quantity">{{ material.quantity }}</p>
+                <ItemIcon :material="material" />
             </div>
         </div>
     </div>

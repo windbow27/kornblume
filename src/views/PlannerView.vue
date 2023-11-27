@@ -8,7 +8,6 @@ import ArcanistList from '../components/arcanist/ArcanistList.vue';
 import PlannerEdit from '../components/planner/PlannerEdit.vue';
 import PlannerSelector from '../components/planner/PlannerSelector.vue';
 import PlannerResult from '../components/planner/PlannerResult.vue';
-import ArcanistResult from '../components/arcanist/ArcanistResult.vue';
 
 const selectedArcanist = ref([]);
 const selectedArcanists = ref([]);
@@ -110,6 +109,7 @@ onClickOutside(plannerEditRef, closeEditOverlay);
     </div>
 
     <!-- Result -->
+    <PlannerResult :selectedArcanists="selectedArcanists" />
   </div>
 </template>
 
