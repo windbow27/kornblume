@@ -17,9 +17,9 @@ const processMaterial = computed(() => {
 </script>
 
 <template>
-    <div class="image-container relative inline-block">
-        <img :src="processMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
-        <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+    <div class="relative inline-block">
+        <img :src="processMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute object-contain" />
+        <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 object-contain" />
         <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs">
             {{ processMaterial.quantity }}
         </div>

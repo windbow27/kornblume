@@ -1,7 +1,7 @@
 <script setup>
-import { ref, computed, watchEffect } from 'vue';
+import { ref, watchEffect } from 'vue';
 import { useCalculation, mergeResults } from '../../composables/CalculateMaterials';
-import { useProcessCards } from '../../composables/ProcessCards.js';
+import { useProcessCards, getTotalActivityAndDays } from '../../composables/ProcessCards.js';
 import PlannerLayer from './PlannerLayer.vue';
 
 const props = defineProps({
@@ -11,7 +11,12 @@ const props = defineProps({
     }
 });
 
+const emits = defineEmits([
+    'update:totalActivityAndDays'
+]);
+
 const calculateAllMaterials = ref([]);
+const calculateCards = ref([]);
 
 watchEffect(() => {
     const result = props.selectedArcanists.map(arc => {
@@ -21,13 +26,12 @@ watchEffect(() => {
 
     const mergedResult = mergeResults(result);
     calculateAllMaterials.value = mergedResult;
-});
 
-const calculateCards = computed(() => {
-    console.log(useProcessCards(calculateAllMaterials.value))
-    return useProcessCards(calculateAllMaterials.value);
-});
+    emits('update:totalActivityAndDays', getTotalActivityAndDays(useProcessCards(mergedResult)));
 
+    // Update the calculateCards ref
+    calculateCards.value = useProcessCards(mergedResult);
+});
 </script>
 
 <template>

@@ -161,9 +161,9 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance], 
 });
 
 const checkIfCurrentAndGoalAreTheSame = () => {
-    if (selectedCurrentInsight.value === selectedGoalInsight.value 
-    && selectedCurrentLevel.value === selectedGoalLevel.value
-    && selectedCurrentResonance.value === selectedGoalResonance.value) {
+    if (selectedCurrentInsight.value === selectedGoalInsight.value
+        && selectedCurrentLevel.value === selectedGoalLevel.value
+        && selectedCurrentResonance.value === selectedGoalResonance.value) {
         isTheSame.value = true;
         setTimeout(() => {
             isTheSame.value = false;
@@ -174,28 +174,28 @@ const checkIfCurrentAndGoalAreTheSame = () => {
 };
 
 const addArcanist = () => {
-  if (checkIfCurrentAndGoalAreTheSame()) return;
-  //console.log(selectedArcanists.value);
-  const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.info.Id) === Number(editingArcanist.value.info.Id));
-  //console.log(existingIndex);
+    if (checkIfCurrentAndGoalAreTheSame()) return;
+    //console.log(selectedArcanists.value);
+    const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.info.Id) === Number(editingArcanist.value.info.Id));
+    //console.log(existingIndex);
 
-  if (existingIndex !== -1) {
-    // If the arcanist with the same Id already exists, update it
-    selectedArcanists.value[existingIndex] = {
-      ...selectedArcanists.value[existingIndex],
-      ...editingArcanist.value,
-    };
-  } else {
-    // If the arcanist with the same Id doesn't exist, add it
-    selectedArcanists.value.push(editingArcanist.value);
-  }
+    if (existingIndex !== -1) {
+        // If the arcanist with the same Id already exists, update it
+        selectedArcanists.value[existingIndex] = {
+            ...selectedArcanists.value[existingIndex],
+            ...editingArcanist.value,
+        };
+    } else {
+        // If the arcanist with the same Id doesn't exist, add it
+        selectedArcanists.value.push(editingArcanist.value);
+    }
 
-  // Remove the arcanist from listArcanists
-  listArcanists.value = listArcanists.value.filter(arc => arc.Id !== editingArcanist.value.info.Id);
+    // Remove the arcanist from listArcanists
+    listArcanists.value = listArcanists.value.filter(arc => arc.Id !== editingArcanist.value.info.Id);
 
-  emit('updateSelectedArcanists', selectedArcanists.value);
-  emit('updateListArcanists', listArcanists.value);
-  emit('closeOverlay');
+    emit('updateSelectedArcanists', selectedArcanists.value);
+    emit('updateListArcanists', listArcanists.value);
+    emit('closeOverlay');
 };
 
 
@@ -241,21 +241,20 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
 <template>
     <div class="edit-overlay">
         <div
-            class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-4 border-2 border-black rounded-md w-11/12 sm:max-w-2xl h-auto">
+            class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-4 border-2 border-black rounded-md w-11/12 sm:max-w-2xl lg:h-auto">
             <!-- Header -->
             <div class="flex items-center p-2 mb-3 shadow-border-b">
                 <div class="flex items-center justify-center z-10 mr-2 space-x-3">
                     <ArcanistIcon class="ml-2" :arcanist="selectedArcanist" />
                     <h2 class="text-2xl text-white font-bold">{{ selectedArcanist.Name }}</h2>
-                    <label class="text-white" for="raritySelect">{{ rarity }} 
-                        <i class="fa-solid fa-star" 
-                        :class="{
+                    <label class="text-white" for="raritySelect">{{ rarity }}
+                        <i class="fa-solid fa-star" :class="{
                             'text-orange-300': rarity === 6,
                             'text-yellow-100': rarity === 5,
                             'text-purple-400': rarity === 4,
                             'text-sky-200': rarity === 3,
                             'text-green-200': rarity === 2
-                        }"></i> 
+                        }"></i>
                     </label>
                     <i class="fas fa-trash-alt text-gray-500 mt-1"></i>
                 </div>
@@ -298,10 +297,13 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <!-- Save -->
             <div class="flex justify-center m-2 space-x-4">
                 <FwbButton v-if="!isTheSame" class="w-32" color="green" size="lg" @click="addArcanist"> Save </FwbButton>
-                <FwbToast v-if="isTheSame" class="bg-red-300 text-red-900 font-bold h-11" closeable type="danger"> Current and Goal are the same! </FwbToast> 
+                <FwbToast v-if="isTheSame" class="bg-red-300 text-red-900 font-bold h-11" closeable type="danger"> Current
+                    and Goal are the same! </FwbToast>
             </div>
             <!-- Materials -->
-            <ArcanistCalculate :arcanist="editingArcanist" />
+            <div class="max-h-52 overflow-y-scroll">
+                <ArcanistCalculate :arcanist="editingArcanist" />
+            </div>
         </div>
     </div>
 </template>

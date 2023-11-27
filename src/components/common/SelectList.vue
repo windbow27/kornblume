@@ -4,15 +4,15 @@ import { onClickOutside } from '@vueuse/core';
 import { FwbButton } from 'flowbite-vue';
 
 const props = defineProps({
-    label: {
+    label: { // Label for the selected on the button
         type: String,
         required: true,
     },
-    options: {
+    options: { // List of options
         type: Array,
         required: true,
     },
-    selected: {
+    selected: { // Selected option
         type: Number,
     }
 });

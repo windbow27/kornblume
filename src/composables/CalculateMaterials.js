@@ -82,6 +82,7 @@ export function formatResults(result) {
 
 
 export function useCalculation(arc) {
+    if (!arc.isVisible) return [];
     const calculateExp = (arc) => {
         let total = { "Dust": 0, "Sharpodonty": 0 };
 

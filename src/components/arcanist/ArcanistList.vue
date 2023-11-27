@@ -40,10 +40,7 @@ const filteredArcanists = computed(() => {
 
 <template>
   <div class="list-overlay">
-    <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-      bg-gradient-to-r from-gray-800 to-blue-950
-      p-8 border-2 border-gray-500 rounded-md 
-      w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 h-1/2">
+    <div class="custom-modal-small">
 
       <!-- Search bar -->
       <div class="relative mb-4">
