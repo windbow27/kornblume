@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
+import { usePlannerStore } from '../stores/plannerStore';
 
 import a from '../../public/data/arcanists.json';
 import ArcanistList from '../components/arcanist/ArcanistList.vue';
@@ -11,8 +12,9 @@ import PlannerTotal from '../components/planner/PlannerTotal.vue';
 import PlannerWilderness from '../components/planner/PlannerWilderness.vue';
 import PlannerWarehouse from '../components/planner/PlannerWarehouse.vue';
 
+const plannerStore = usePlannerStore();
 const selectedArcanist = ref([]); // Current working arcanist
-const selectedArcanists = ref([]); // All arcanists chosen by user
+const selectedArcanists = ref(plannerStore.selectedArcanists); // All arcanists chosen by user
 const totalActivityAndDays = ref([]); // Total activity and days
 const inventory = ref([]); // Inventory
 const wildernessSettings = ref({
