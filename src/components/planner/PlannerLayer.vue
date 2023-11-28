@@ -1,7 +1,6 @@
 <script setup>
 import { computed } from 'vue'
 import Card from '../common/Card.vue';
-import { FwbBadge } from 'flowbite-vue';
 
 const props = defineProps({
     layer: {
@@ -17,15 +16,15 @@ const isBadge = computed(() => {
 const getBadgeType = computed(() => {
     switch (props.layer.id) {
         case 0:
-            return 'yellow';
+            return 'yellow-badge';
         case 1:
-            return 'indigo';
+            return 'indigo-badge';
         case 2:
-            return 'purple';
+            return 'purple-badge';
         case 3:
-            return 'green';
+            return 'green-badge';
         default:
-            return 'red';
+            return 'red-badge';
     }
 });
 
@@ -48,8 +47,8 @@ const getBadgeContent = computed(() => {
 
 <template>
     <div class="w-full mb-4 flex flex-col">
-        <FwbBadge v-if="isBadge" :class="`mt-2 mb-2 w-32`" :size="`sm`" :type="getBadgeType">{{ getBadgeContent }}</FwbBadge>
-        <div class="mb-4 gap-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+        <div v-if="isBadge" class="badge badge-lg badge-ghost mt-2 mb-2 w-32" :class="getBadgeType">{{ getBadgeContent }}</div>
+        <div class="mb-4 gap-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             <Card v-for="(card, index) in layer.cards" :key="index" :card="card" />
         </div>
     </div>

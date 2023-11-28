@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { onClickOutside } from '@vueuse/core';
-import { FwbButton } from 'flowbite-vue';
 
 const props = defineProps({
     label: { // Label for the selected on the button
@@ -53,17 +52,17 @@ onMounted(() => {
 <template>
     <div class="relative w-2/3 md:w-1/3 flex justify-center">
         <!-- Button to open the options box -->
-        <FwbButton gradient="blue" @click="openOptions" class="w-full m-4">
+        <button @click="openOptions" class="btn btn-sm btn-ghost gradient-blue w-1/2 m-2">
             <template v-if="selected !== null">
                 {{ selected }}
             </template>
             <template v-else >
                 {{  props.options[0]}}
             </template>
-        </FwbButton>
+        </button>
 
         <!-- Options box -->
-        <div v-if="isOptionsVisible" ref="containerRef" class="absolute mt-14 w-64 z-50">
+        <div v-if="isOptionsVisible" ref="containerRef" class="absolute mt-14 w-48 lg:w-64 z-50">
             <!-- Caret-up icon -->
             <div class="flex items-center justify-center">
                 <i class="fa-solid fa-caret-up text-blue-300"></i>

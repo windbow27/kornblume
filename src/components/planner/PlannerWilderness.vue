@@ -22,7 +22,6 @@ const closeOverlay = () => {
           <i class="fas fa-times"></i>
         </button>
         <div class="p-2 overflow-y-auto h-5/6">
-          <SelectList />
         </div>
       </div>
     </div>

@@ -4,7 +4,6 @@ import c from '../../../public/data/calculations.json';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
 import SelectList from '../common/SelectList.vue';
-import { FwbButton, FwbBadge, FwbToast } from 'flowbite-vue';
 
 const props = defineProps({
     selectedArcanist: {
@@ -244,10 +243,10 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-4 border-2 border-black rounded-md w-11/12 sm:max-w-2xl lg:h-auto">
             <!-- Header -->
             <div class="flex items-center p-2 mb-3 shadow-border-b">
-                <div class="flex items-center justify-center z-10 mr-2 space-x-3">
+                <div class="flex items-center justify-center mr-2 space-x-3">
                     <ArcanistIcon class="ml-2" :arcanist="selectedArcanist" />
-                    <h2 class="text-2xl text-white font-bold">{{ selectedArcanist.Name }}</h2>
-                    <label class="text-white" for="raritySelect">{{ rarity }}
+                    <h2 class="text-1xl md:text-2xl text-white font-bold">{{ selectedArcanist.Name }}</h2>
+                    <label class="text-sm text-white" for="raritySelect">{{ rarity }}
                         <i class="fa-solid fa-star" :class="{
                             'text-orange-300': rarity === 6,
                             'text-yellow-100': rarity === 5,
@@ -256,13 +255,14 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                             'text-green-200': rarity === 2
                         }"></i>
                     </label>
-                    <i class="fas fa-trash-alt text-gray-500 mt-1"></i>
+                    <i class="fas fa-trash-alt text-gray-500"></i>
                 </div>
-                <div class="ml-auto flex items-center z-10 space-x-3">
-                    <FwbBadge :type="selectedVisible ? 'green' : 'red'" @click="selectedVisible = !selectedVisible"
-                        size="sm">
-                        Visible
-                    </FwbBadge>
+                <div class="ml-auto flex items-center space-x-3">
+                    <div @click="selectedVisible = !selectedVisible" class="badge badge-ghost"
+                        :class="selectedVisible ? 'green-badge' : 'red-badge'">
+                        <i :class="selectedVisible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i>
+                    </div>
+
                     <button @click="closeOverlay" class="text-white">
                         <i class="fas fa-times"></i>
                     </button>
@@ -295,10 +295,13 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                     :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
             </div>
             <!-- Save -->
-            <div class="flex justify-center m-2 space-x-4">
-                <FwbButton v-if="!isTheSame" class="w-32" color="green" size="lg" @click="addArcanist"> Save </FwbButton>
-                <FwbToast v-if="isTheSame" class="bg-red-300 text-red-900 font-bold h-11" closeable type="danger"> Current
-                    and Goal are the same! </FwbToast>
+            <div class="flex justify-center space-x-4">
+                <button @click="addArcanist" class="btn btn-success">Save</button>
+                <div v-if="isTheSame" class="toast toast-middle toast-center">
+                    <div class="-translate-x-3 alert alert-info bg-red-300">
+                        <span>Current and Goal are the same!</span>
+                    </div>
+                </div>
             </div>
             <!-- Materials -->
             <div class="max-h-52 overflow-y-scroll">

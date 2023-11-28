@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
-import { FwbButton } from 'flowbite-vue';
 
 import a from '../../public/data/arcanists.json';
 import ArcanistList from '../components/arcanist/ArcanistList.vue';
@@ -124,32 +123,11 @@ onClickOutside(warehouseRef, closeWarehouse);
     <PlannerSelector :selectedArcanists="selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
     <div class="flex justify-between items-center mb-2 mt-2">
-      <FwbButton gradient="cyan-blue" class="mt-2" @click="openAddOverlay">
-        <template #prefix>
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-        </template>
-        Add Arcanist
-      </FwbButton>
+      <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-wand-magic-sparkles"></i> Add Arcanist</button>
       <div class="flex mt-2 sm:mt-0 space-x-2">
-        <FwbButton @click="openWilderness" gradient="cyan-blue" size="sm" class="setting-button">
-          <!-- <template #suffix>
-            <p class="">Wilderness</p>
-          </template> -->
-          <i class="fa-solid fa-tree"></i>
-        </FwbButton>
-        <FwbButton @click="openWarehouse" gradient="cyan-blue" size="sm" class="setting-button">
-          <!-- <template #suffix>
-            <p class="">Warehouse</p>
-          </template> -->
-          <i class="fa-solid fa-box-archive"></i>
-        </FwbButton>
-        <FwbButton gradient="cyan-blue" size="sm" class="setting-button">
-          <!-- <template #suffix>
-            <p class="">Settings</p>
-          </template> -->
-          <i class="fa-solid fa-gear"></i>
-        </FwbButton>
-
+        <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-tree"></i></button>
+        <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-box-archive"></i></button>
+        <button class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-gear"></i></button>
       </div>
     </div>
 
@@ -190,7 +168,4 @@ onClickOutside(warehouseRef, closeWarehouse);
 
 
 <style scoped>
-.setting-button {
-  @apply mx-1 flex items-center justify-center
-}
 </style>
