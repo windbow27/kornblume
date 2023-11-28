@@ -15,7 +15,17 @@ const selectedArcanist = ref([]); // Current working arcanist
 const selectedArcanists = ref([]); // All arcanists chosen by user
 const totalActivityAndDays = ref([]); // Total activity and days
 const inventory = ref([]); // Inventory
-const wildernessSettings = ref([]); // Wilderness settings
+const wildernessSettings = ref({
+  dust1: 0,
+  dust2: 0,
+  dust3: 0,
+  gold1: 0,
+  gold2: 0,
+  gold3: 0,
+  vigor: 0,
+  lazyModo: 0,
+  wildernessOutput: 0,
+}); // Wilderness settings
 const listArcanists = ref(a); // List of all arcanists available
 
 const isAddingArcanist = ref(false);
@@ -95,6 +105,11 @@ const handleUpdateTotalActivityAndDays = (result) => {
   totalActivityAndDays.value = result;
 };
 
+const handleSaveWildernessSettings = (result) => {
+  wildernessSettings.value = result;
+  //console.log(wildernessSettings.value);
+};
+
 onMounted(() => {
   listArcanists.value.sort((a, b) => {
     const rarityComparison = b.Rarity - a.Rarity;
@@ -117,23 +132,30 @@ onClickOutside(warehouseRef, closeWarehouse);
 
 <template>
   <div
-    class=" pt-2 pb-2 pr-4 pl-4 sm:pr-8 sm:pl-8 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 md:pr-16 md:pl-16 lg:pr-32 lg:pl-32 xl:pr-64 xl:pl-64">
+    class="pt-2 pb-2 pr-4 pl-4 sm:pr-8 sm:pl-8 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 md:pr-16 md:pl-16 lg:pr-32 lg:pl-32 xl:pr-64 xl:pl-64">
     <!-- Selector -->
     <h2 class="text-2xl text-white font-bold mb-6">Planner</h2>
     <PlannerSelector :selectedArcanists="selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
     <div class="flex justify-between items-center mb-2 mt-2">
-      <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-wand-magic-sparkles"></i> Add Arcanist</button>
-      <div class="flex mt-2 sm:mt-0 space-x-2">
-        <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-tree"></i></button>
-        <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-box-archive"></i></button>
+      <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
+          class="fa-solid fa-wand-magic-sparkles"></i> Add Arcanist</button>
+      <div class="flex space-x-2">
+       <div class="tooltip" data-tip="Wilderness Settings">
+          <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
+              class="fa-solid fa-tree"></i></button>
+       </div>
+        <div class="tooltip" data-tip="Manage Warehouse">
+          <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
+              class="fa-solid fa-box-archive"></i></button>
+        </div>
         <button class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-gear"></i></button>
       </div>
     </div>
 
     <div class="custom-line"></div>
 
-    <PlannerTotal :totalActivityAndDays="totalActivityAndDays" />
+    <PlannerTotal :totalActivityAndDays="totalActivityAndDays" :wildernessSettings="wildernessSettings" />
 
     <div class="custom-line"></div>
 
@@ -152,7 +174,8 @@ onClickOutside(warehouseRef, closeWarehouse);
 
     <!-- Wilderness Overlay -->
     <div v-if="isWilderness" class="overlay">
-      <PlannerWilderness ref="wildernessRef" @closeOverlay="closeWilderness" />
+      <PlannerWilderness ref="wildernessRef" @closeOverlay="closeWilderness"
+        @saveWildernessSettings="handleSaveWildernessSettings" />
     </div>
 
     <!-- Warehouse Overlay -->
@@ -167,5 +190,4 @@ onClickOutside(warehouseRef, closeWarehouse);
 </template>
 
 
-<style scoped>
-</style>
+<style scoped></style>

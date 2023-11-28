@@ -20,6 +20,7 @@ const calculateCards = ref([]);
 
 watchEffect(() => {
     const result = props.selectedArcanists.map(arc => {
+        if (!arc.isVisible) return [];
         const arcResult = useCalculation(arc);
         return arcResult;
     });

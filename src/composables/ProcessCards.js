@@ -86,6 +86,29 @@ function findOrCreateCard(stage, calculatedCards) {
     return card;
 }
 
+function sortLayer(layer) {
+    return layer.sort((a, b) => {
+        const stageA = stages.value.find((stage) => stage.Name === a.stage);
+        const stageB = stages.value.find((stage) => stage.Name === b.stage);
+
+        if (stageA && stageB) {
+            // If both stages have an id, sort based on id
+            return stageA.Id - stageB.Id;
+        }
+        if (stageA) {
+            // If only stageA has an id, place it before stageB
+            return -1;
+        }
+        if (stageB) {
+            // If only stageB has an id, place it before stageA
+            return 1;
+        }
+        // If neither stage has an id, maintain the original order
+        return 0;
+    });
+}
+
+
 export function useProcessCards(materials) {
     const calculatedCards = [];
 
@@ -151,11 +174,16 @@ export function useProcessCards(materials) {
             ['Tier 2', 'Tier 3', 'Unreleased'].includes(card.stage) && card.materials.length > 0
     );
 
+    const sortedFirstLayer = sortLayer(stagesFirstLayer);
+    const sortedSecondLayer = sortLayer(stagesSecondLayer);
+    const sortedThirdLayer = sortLayer(stagesThirdLayer);
+    const sortedFourthLayer = sortLayer(stagesFourthLayer);
+
     const cardLayers = [
-        { id: 0, cards: stagesFirstLayer },
-        { id: 1, cards: stagesSecondLayer },
-        { id: 2, cards: stagesThirdLayer },
-        { id: 3, cards: stagesFourthLayer },
+        { id: 0, cards: sortLayer(stagesFirstLayer) },
+        { id: 1, cards: sortLayer(stagesSecondLayer) },
+        { id: 2, cards: sortLayer(stagesThirdLayer) },
+        { id: 3, cards: sortLayer(stagesFourthLayer) },
     ];
 
     return cardLayers;
@@ -179,5 +207,5 @@ export function getTotalActivityAndDays(cardLayers) {
         });
     });
     //console.log(totalActivity, totalDays);
-    return [ totalActivity, totalDays.toFixed(0) ];
+    return [totalActivity, totalDays.toFixed(0)];
 }

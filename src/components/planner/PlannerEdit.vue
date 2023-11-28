@@ -147,18 +147,6 @@ const compareLevels = (currentInsightSelect, currentLevelSelect, goalInsightSele
     }
 };
 
-watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance], () => {
-    if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
-        // console.log('Current is higher than goal');
-        selectedGoalInsight.value = selectedCurrentInsight.value;
-        selectedGoalLevel.value = selectedCurrentLevel.value;
-        //console.log(selectedGoalInsight.value, selectedGoalLevel.value);
-    }
-    if (Number(selectedCurrentResonance.value) > Number(selectedGoalResonance.value)) {
-        selectedGoalResonance.value = selectedCurrentResonance.value;
-    }
-});
-
 const checkIfCurrentAndGoalAreTheSame = () => {
     if (selectedCurrentInsight.value === selectedGoalInsight.value
         && selectedCurrentLevel.value === selectedGoalLevel.value
@@ -195,6 +183,15 @@ const addArcanist = () => {
     emit('updateSelectedArcanists', selectedArcanists.value);
     emit('updateListArcanists', listArcanists.value);
     emit('closeOverlay');
+};
+
+const removeArcanist = () => {
+    const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.info.Id) === Number(editingArcanist.value.info.Id));
+    if (existingIndex !== -1) {
+        // If found, remove it
+        selectedArcanists.value.splice(existingIndex, 1);
+    }
+    closeOverlay();
 };
 
 
@@ -235,6 +232,19 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
     updateKey.value += 1;
 });
 
+watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance], () => {
+    if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
+        // console.log('Current is higher than goal');
+        selectedGoalInsight.value = selectedCurrentInsight.value;
+        selectedGoalLevel.value = selectedCurrentLevel.value;
+        //console.log(selectedGoalInsight.value, selectedGoalLevel.value);
+    }
+    if (Number(selectedCurrentResonance.value) > Number(selectedGoalResonance.value)) {
+        selectedGoalResonance.value = selectedCurrentResonance.value;
+    }
+});
+
+
 </script>
 
 <template>
@@ -255,14 +265,15 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                             'text-green-200': rarity === 2
                         }"></i>
                     </label>
-                    <i class="fas fa-trash-alt text-gray-500"></i>
+                    <div class="tooltip" data-tip="Remove Arcanist"><i @click="removeArcanist" class="fas fa-trash-alt text-gray-500"></i></div>
                 </div>
                 <div class="ml-auto flex items-center space-x-3">
-                    <div @click="selectedVisible = !selectedVisible" class="badge badge-ghost"
-                        :class="selectedVisible ? 'green-badge' : 'red-badge'">
-                        <i :class="selectedVisible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i>
+                    <div class="tooltip" data-tip="Hidden / Show">
+                        <div @click="selectedVisible = !selectedVisible" class="badge badge-ghost"
+                            :class="selectedVisible ? 'green-badge' : 'red-badge'">
+                            <i :class="selectedVisible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i>
+                        </div>
                     </div>
-
                     <button @click="closeOverlay" class="text-white">
                         <i class="fas fa-times"></i>
                     </button>
@@ -270,19 +281,19 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <div class="custom-line"></div>
             <!-- Selectors -->
-            <div class="custom-label text-blue-100">Current</div>
+            <div class="custom-label text-blue-100">Current Level</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedCurrentInsight" :selected="selectedCurrentInsight"
                     :label="'Current Insight'" :options="currentInsightOptions" v-on:update:selected="handleSelected" />
-                <i class="text-white fa-solid fa-angles-right text-center"></i>
+                    <i class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
                 <SelectList :key="updateKey" v-model="selectedCurrentLevel" :selected="selectedCurrentLevel"
                     :label="'Current Level'" :options="currentLevelOptions" v-on:update:selected="handleSelected" />
             </div>
-            <div class="custom-label text-blue-100">Goal</div>
+            <div class="custom-label text-blue-100">Goal Level</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedGoalInsight" :selected="selectedGoalInsight"
                     :label="'Goal Insight'" :options="goalInsightOptions" v-on:update:selected="handleSelected" />
-                <i class="text-white fa-solid fa-angles-right text-center"></i>
+                    <i class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
                 <SelectList :key="updateKey" v-model="selectedGoalLevel" :selected="selectedGoalLevel" :label="'Goal Level'"
                     :options="goalLevelOptions" v-on:update:selected="handleSelected" />
             </div>
@@ -304,9 +315,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 </div>
             </div>
             <!-- Materials -->
-            <div class="max-h-52 overflow-y-scroll">
-                <ArcanistCalculate :arcanist="editingArcanist" />
-            </div>
+            <ArcanistCalculate :arcanist="editingArcanist" />
         </div>
     </div>
 </template>

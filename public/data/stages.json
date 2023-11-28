@@ -1,5 +1,6 @@
 [
     {
+        "Id": 1,
         "Name": "Mountain Echoes II",
         "Activity": 18,
         "Material": [
@@ -8,84 +9,98 @@
         "Quantity": [2.0000]
     },
     {
+        "Id": 2,
         "Name": "Mountain Echoes IV",
         "Activity": 24,
         "Material": ["Scroll of Mineral Wealth"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 3,
         "Name": "Mountain Echoes VI",
         "Activity": 30,
         "Material": ["Tome of Mineral Wealth"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 4,
         "Name": "Starfall Locale II",
         "Activity": 18,
         "Material": ["Page of Starlit Ascent"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 5,
         "Name": "Starfall Locale IV",
         "Activity": 24,
         "Material": ["Scroll of Starlit Ascent"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 6,
         "Name": "Starfall Locale VI",
         "Activity": 30,
         "Material": ["Tome of Starlit Ascent"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 7,
         "Name": "Sylvanus Shape II",
         "Activity": 18,
         "Material": ["Page of Plantal Vimen"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 8,
         "Name": "Sylvanus Shape IV",
         "Activity": 24,
         "Material": ["Scroll of Plantal Vimen"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 9,
         "Name": "Sylvanus Shape VI",
         "Activity": 30,
         "Material": ["Tome of Plantal Vimen"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 10,
         "Name": "Brutes Wilds II",
         "Activity": 18,
         "Material": ["Page of Beastly Thirst"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 11,
         "Name": "Brutes Wilds IV",
         "Activity": 24,
         "Material": ["Scroll of Beastly Thirst"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 12,
         "Name": "Brutes Wilds VI",
         "Activity": 30,
         "Material": ["Tome of Beastly Thirst"],
         "Quantity": [2.0000]
       },
       {
+        "Id": 13,
         "Name": "The Poussiere VI",
         "Activity": 25,
         "Material": ["Dust"],
         "Quantity": [12000.0000]
       },
       {
+        "Id": 14,
         "Name": "Mintage Aesthetics VI",
         "Activity": 25,
         "Material": ["Sharpodonty"],
         "Quantity": [9000.0000]
       },
       {
+        "Id": 15,
         "Name": "2-3H Green Oranges",
         "Activity": 16,
         "Material": [
@@ -94,6 +109,7 @@
         "Quantity": [0.3519]
       },
       {
+        "Id": "16",
         "Name": "2-6H The End of Immortal",
         "Activity": 16,
         "Material": [
@@ -102,6 +118,7 @@
         "Quantity": [0.4512]
       },
       {
+        "Id": "17",
         "Name": "3-11H Freedom of the Dumb",
         "Activity": 18,
         "Material": [
@@ -110,6 +127,7 @@
         "Quantity": [0.3160]
       },
       {
+        "Id": "18",
         "Name": "3-13H A Yard",
         "Activity": 18,
         "Material": [
@@ -118,6 +136,7 @@
         "Quantity": [0.3417]
       },
       {
+        "Id": "19",
         "Name": "4-10H Sailing at Night",
         "Activity": 18,
         "Material": [
@@ -126,6 +145,7 @@
         "Quantity": [0.2815]
       },
       {
+        "Id": "20",
         "Name": "4-20H Picnic on the Lawn",
         "Activity": 18,
         "Material": [
