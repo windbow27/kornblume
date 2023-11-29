@@ -10,7 +10,7 @@ const props = defineProps({
     }
 });
 const getArcanistImagePath = (id) => {
-    return `/images/arcanists/icon/${id}.png`;
+    return `images/arcanists/icon/${id}.png`;
 };
 </script>
 

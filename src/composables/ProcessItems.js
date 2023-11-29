@@ -26,12 +26,12 @@ export function useProcessMaterial(unprocessedMaterial) {
     
     const getItemImagePath = (material) => {
         const id = getId(material);
-        return id ? `/images/items/icon/${id}.png` : null;
+        return id ? `images/items/icon/${id}.png` : null;
     };
     
     const getBorderImagePath = (material) => {
         const rarity = getRarity(material);
-        return rarity ? `/images/items/border/${rarity}.png` : null;
+        return rarity ? `images/items/border/${rarity}.png` : null;
     };
     
     const result = {

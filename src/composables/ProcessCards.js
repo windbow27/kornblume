@@ -59,9 +59,9 @@ function calculateOneiric(matInfo) {
 
 function getActivityImagePath(stage) {
     if (stage === 'Oneiric Shop') {
-        return '/images/items/common/1.png';
+        return `images/items/common/1.png`;
     }
-    return '/images/items/common/0.png';
+    return `images/items/common/0.png`;
 }
 
 function createCard(stage, runs, activity, days, materials) {

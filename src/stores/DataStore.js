@@ -31,7 +31,7 @@ export const useDataStore = defineStore('dataStore', {
         async fetchData(module) {
             if (this[module].loaded !== true) {
                 console.log('DataStore', `fetching ${module}...`);
-                return fetch(`/data/${module}.json`)
+                return fetch(`./data/${module}.json`)
                     .then((response) => response.json())
                     .then((json) => {
                         this[module].data = json;
