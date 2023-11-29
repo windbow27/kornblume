@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "deploy": "cd dist && copy index.html 404.html && cd .. && gh-pages -d dist"
+
   },
   "dependencies": {
     "@vueuse/core": "*",
@@ -19,6 +23,7 @@
     "@vitejs/plugin-vue": "*",
     "autoprefixer": "*",
     "daisyui": "*",
+    "gh-pages": "^6.1.0",
     "i": "*",
     "postcss": "*",
     "tailwindcss": "*",

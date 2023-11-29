@@ -78,7 +78,7 @@ onClickOutside(resourcesRef, closeResources);
                     <button @click="openResources" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-book"></i> Resources</button>
                 </div>
-                <a href="https://github.com/your-username" target="_blank" class="text-3xl text-gray-400 hover:text-white">
+                <a href="https://github.com/windbow27/Kornblume" target="_blank" class="text-3xl text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>
                 </a>
                 <p class="text-xs opacity-80 mb-2 text-center">All contributions are welcomed. If you enjoy the work, please
