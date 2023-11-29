@@ -1,7 +1,7 @@
 import {ref} from 'vue';
-import i from '../../public/data/items.json';
+import {useDataStore} from '../stores/DataStore';
 
-const items = ref(i);
+const items = useDataStore().items.data;
 
 export function formatQuantity(quantity) {
     if (quantity > 1000000) {
@@ -15,12 +15,12 @@ export function formatQuantity(quantity) {
 
 export function useProcessMaterial(unprocessedMaterial) {
     const getId = (material) => {
-        const item = items.value.find(item => item.Name == material);
+        const item = items.find(item => item.Name == material);
         return item ? item.Id : null;
     };
     
     const getRarity = (material) => {
-        const item = items.value.find(item => item.Name == material);
+        const item = items.find(item => item.Name == material);
         return item ? item.Rarity : null;
     };
     

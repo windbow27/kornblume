@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
-import PlannerView from '../views/PlannerView.vue'
+import { useDataStore } from '../stores/DataStore';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,19 +7,35 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component:() => import('../views/HomeView.vue'),
+      meta: {
+        requiredJson: ['arcanists', 'calculations', 'crafts', 'items', 'stages']
+      }
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView
+      component:() => import('../views/AboutView.vue'),
+      meta: {
+        requiredJson: ['arcanists', 'calculations', 'crafts', 'items', 'stages']
+      }
     },
     {
       path: '/planner',
       name: 'planner',
-      component: PlannerView
+      component:() => import('../views/PlannerView.vue'),
+      meta: {
+        requiredJson: ['arcanists', 'calculations', 'crafts', 'items', 'stages']
+      }
     }
   ]
+})
+
+router.beforeEach(async (to) => {
+  const dataStore = useDataStore();
+  if (to.meta.requiredJson) {
+      await useDataStore().ensureData(...to.meta.requiredJson);
+  }
 })
 
 export default router

@@ -1,11 +1,9 @@
 import { ref } from 'vue'
-import i from '../../public/data/items.json';
-import s from '../../public/data/stages.json';
-import c from '../../public/data/crafts.json';
+import { useDataStore } from '../stores/DataStore'
 
-const items = ref(i);
-const stages = ref(s);
-const crafts = ref(c);
+const items = useDataStore().items.data;
+const stages = useDataStore().stages.data;
+const crafts = useDataStore().crafts.data;
 
 function sortArcanists(materials) {
     let result = materials.map((matInfo) => ({ ...matInfo }));
@@ -14,7 +12,7 @@ function sortArcanists(materials) {
     // Iterate through materials
     result.forEach((matInfo) => {
         // Find the corresponding craft item in craftJson
-        const craftItem = crafts.value.find((item) => item.Name === matInfo.Material);
+        const craftItem = crafts.find((item) => item.Name === matInfo.Material);
         //console.log(craftItem);
         // If a matching item is found
         if (craftItem) {
@@ -39,8 +37,8 @@ function sortArcanists(materials) {
     result = result.filter((item) => !craftItems.some((craftItem) => craftItem.Name === item.Material));
     //sort result by material id from items
     result.sort((a, b) => {
-        const itemA = items.value.find((item) => item.Name === a.Material);
-        const itemB = items.value.find((item) => item.Name === b.Material);
+        const itemA = items.find((item) => item.Name === a.Material);
+        const itemB = items.find((item) => item.Name === b.Material);
         return itemB.Id - itemA.Id;
     });
 
@@ -48,7 +46,7 @@ function sortArcanists(materials) {
 }
 
 function calculateOneiric(matInfo) {
-    const item = items.value.find(item => item.Name === matInfo.Material);
+    const item = items.find(item => item.Name === matInfo.Material);
     const rarity = item.Rarity;
     const quantity = matInfo.Quantity;
 
@@ -88,8 +86,8 @@ function findOrCreateCard(stage, calculatedCards) {
 
 function sortLayer(layer) {
     return layer.sort((a, b) => {
-        const stageA = stages.value.find((stage) => stage.Name === a.stage);
-        const stageB = stages.value.find((stage) => stage.Name === b.stage);
+        const stageA = stages.find((stage) => stage.Name === a.stage);
+        const stageB = stages.find((stage) => stage.Name === b.stage);
 
         if (stageA && stageB) {
             // If both stages have an id, sort based on id
@@ -115,7 +113,7 @@ export function useProcessCards(materials) {
     const sortedMaterials = sortArcanists(materials);
 
     sortedMaterials.forEach((matInfo) => {
-        const currentStage = stages.value.find((stage) => stage.Material.includes(matInfo.Material));
+        const currentStage = stages.find((stage) => stage.Material.includes(matInfo.Material));
 
         if (currentStage) {
             // Farmable stages
@@ -138,11 +136,11 @@ export function useProcessCards(materials) {
             const oneiric = findOrCreateCard('Oneiric Shop', calculatedCards);
             const unreleased = findOrCreateCard('Unreleased', calculatedCards);
 
-            if (items.value.find((item) => item.Name === matInfo.Material).Category === 'Resonate Material') {
+            if (items.find((item) => item.Name === matInfo.Material).Category === 'Resonate Material') {
                 oneiric.activity += calculateOneiric(matInfo);
                 oneiric.materials.push(matInfo);
             } else {
-                const rarity = items.value.find((item) => item.Name === matInfo.Material).Rarity;
+                const rarity = items.find((item) => item.Name === matInfo.Material).Rarity;
                 const targetCard = rarity === 3 ? tier3Card : rarity === 2 ? tier2Card : unreleased;
                 targetCard.materials.push(matInfo);
             }

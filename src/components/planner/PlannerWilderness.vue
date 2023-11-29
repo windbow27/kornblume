@@ -2,6 +2,13 @@
 import { ref, computed } from 'vue';
 import SelectList from '../common/SelectList.vue';
 
+const props = defineProps({
+  settings: {
+    type: Object,
+    required: true,
+  },
+});
+
 const emit = defineEmits({
   closeOverlay: {
     type: Function,
@@ -17,14 +24,14 @@ const closeOverlay = () => {
   emit('closeOverlay');
 };
 
-const selectedDust1 = ref(6);
-const selectedDust2 = ref(6);
-const selectedDust3 = ref(6);
-const selectedGold1 = ref(6);
-const selectedGold2 = ref(6);
-const selectedGold3 = ref(6);
-const vigor = ref(null);
-const lazyModo = ref(false);
+const selectedDust1 = ref(props.settings.dust1);
+const selectedDust2 = ref(props.settings.dust2);
+const selectedDust3 = ref(props.settings.dust3);
+const selectedGold1 = ref(props.settings.gold1);
+const selectedGold2 = ref(props.settings.gold2);
+const selectedGold3 = ref(props.settings.gold3);
+const vigor = ref(props.settings.vigor);
+const lazyModo = ref(props.settings.lazyModo);
 
 const options = [0, 1, 2, 3, 4, 5, 6];
 const dustMultiplier = [0, 120, 150, 175, 210, 240, 270];
@@ -51,6 +58,7 @@ const handleSelected = (option, label) => {
       selectedGold3.value = option;
       break;
   }
+
 };
 
 const validateVigor = () => {
@@ -93,7 +101,7 @@ const wildernessOutput = computed(() => {
   const valueLazyModo = lazyModo.value ? 20 : 24;
   const resultDust = Math.ceil(valueDust * (1 + valueVigor) * valueLazyModo);
   const resultGold = Math.ceil(valueGold * (1 + valueVigor) * valueLazyModo);
-  console.log(resultDust, resultGold);
+  //console.log(resultDust, resultGold);
   return {
     dust: resultDust,
     gold: resultGold,
@@ -133,11 +141,13 @@ const wildernessOutput = computed(() => {
       <div class="grid grid-cols-2 p-2 items-center">
         <input @input="validateVigor" v-model="vigor" type="text" placeholder="Vigor"
           class="input input-bordered input-info input-sm mx-10 lg:mx-5 gradient-blue text-center" />
-        <div class="form-control">
-          <label class="cursor-pointer label justify-center">
-            <span class="label-text text-yellow-100 mr-3">Lazy Modo</span>
-            <input v-model="lazyModo" type="checkbox" :checked="lazyModo" class="checkbox checkbox-info" />
-          </label>
+        <div class="tooltip" data-tip="Collect once a day">
+          <div class="form-control">
+            <label class="cursor-pointer label justify-center">
+              <span class="label-text text-yellow-100 mr-3">Lazy Modo</span>
+              <input v-model="lazyModo" type="checkbox" :checked="lazyModo" class="checkbox checkbox-info" />
+            </label>
+          </div>
         </div>
       </div>
       <div class="custom-label text-yellow-100">Output</div>
@@ -160,4 +170,4 @@ const wildernessOutput = computed(() => {
 .select-list {
   @apply w-full
 }
-</style>
+</style>../../stores/wildernessStore

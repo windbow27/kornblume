@@ -1,15 +1,14 @@
 import { ref } from 'vue';
-import c from '../../public/data/calculations.json';
-import i from '../../public/data/items.json';
+import { useDataStore } from '../stores/DataStore';
 
-const calculations = ref(c);
-const items = ref(i);
+const calculations = useDataStore().calculations.data;
+const items = useDataStore().items.data;
 
 export function sortMaterials(array) {
     array.sort((a, b) => {
         // Find corresponding item based on material name
-        const itemA = items.value.find(item => item.Name === a.Material);
-        const itemB = items.value.find(item => item.Name === b.Material);
+        const itemA = items.find(item => item.Name === a.Material);
+        const itemB = items.find(item => item.Name === b.Material);
 
         // Sort by category
         const categoryOrder = ["Base Item", "Resonate Material", "Insight Material", "Build Material"];
@@ -150,7 +149,7 @@ export function useCalculation(arc) {
     };
 
     const getLevelsInfo = (arc, insight) => {
-        const currentCalc = calculations.value.find((calc) =>
+        const currentCalc = calculations.find((calc) =>
             calc.Rarity.includes(arc.info.Rarity) &&
             calc.Insight == insight
         );

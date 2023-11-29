@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
-import c from '../../../public/data/calculations.json';
+import { useDataStore } from '../../stores/DataStore';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
 import SelectList from '../common/SelectList.vue';
@@ -36,7 +36,7 @@ const emit = defineEmits({
 
 const isTheSame = ref(false);
 const updateKey = ref(0);
-const calculations = ref(c);
+const calculations = useDataStore().calculations.data;
 const selectedArcanist = ref(props.selectedArcanist.info);
 const selectedArcanists = ref(props.selectedArcanists);
 const listArcanists = ref(props.listArcanists);
@@ -73,7 +73,7 @@ const goalInsightOptions = computed(() => {
 
 const currentLevelOptions = computed(() => {
     //if (selectedCurrentInsight.value == null) return [];
-    const calc = calculations.value.find((calc) =>
+    const calc = calculations.find((calc) =>
         calc.Rarity.includes(selectedArcanist.value.Rarity) &&
         calc.Insight == selectedCurrentInsight.value
     );
@@ -85,7 +85,7 @@ const currentLevelOptions = computed(() => {
 
 const goalLevelOptions = computed(() => {
     if (selectedGoalInsight.value === null) return [];
-    const calc = calculations.value.find((calc) =>
+    const calc = calculations.find((calc) =>
         calc.Rarity.includes(selectedArcanist.value.Rarity) &&
         calc.Insight == selectedGoalInsight.value
     );
