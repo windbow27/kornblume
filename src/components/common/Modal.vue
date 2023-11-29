@@ -19,7 +19,6 @@ const closeOverlay = () => {
         <button @click="closeOverlay" class="absolute top-2 right-4 text-white">
           <i class="fas fa-times"></i>
         </button>
-        <p class="text-white">Work in progress</p>
       </div>
     </div>
   </template>

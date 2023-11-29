@@ -1,9 +1,11 @@
 <script setup>
-import { onMounted, ref, computed, watchEffect } from 'vue';
+import { ref, computed, watchEffect } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
 import { usePlannerStore } from '../stores/PlannerStore';
 import { useWildernessStore } from '../stores/WildernessStore';
+import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore';
+import { useWarehouseStore } from '../stores/WarehouseStore';
 import { useDataStore } from '../stores/DataStore';
 
 import ArcanistList from '../components/arcanist/ArcanistList.vue';
@@ -13,10 +15,12 @@ import PlannerResult from '../components/planner/PlannerResult.vue';
 import PlannerTotal from '../components/planner/PlannerTotal.vue';
 import PlannerWilderness from '../components/planner/PlannerWilderness.vue';
 import PlannerWarehouse from '../components/planner/PlannerWarehouse.vue';
+import PlannerSettings from '../components/planner/PlannerSettings.vue';
 
 const plannerStore = usePlannerStore();
 const wildernessStore = useWildernessStore();
 const arcanistStore = useDataStore().arcanists.data;
+const settingsStore = usePlannerSettingsStore();
 const listArcanists = ref([]);
 
 const selectedArcanistIds = computed(() =>
@@ -24,9 +28,9 @@ const selectedArcanistIds = computed(() =>
 );
 
 watchEffect(() => {
-  //&& arcanist.IsReleased add this later if needed
   listArcanists.value = arcanistStore.filter(
-    arcanist => !selectedArcanistIds.value.includes(arcanist.Id)
+    arcanist => !selectedArcanistIds.value.includes(arcanist.Id) 
+    && arcanist.IsReleased !== settingsStore.settings.showUnreleased
   );
   listArcanists.value.sort((a, b) => {
     const rarityComparison = b.Rarity - a.Rarity;
@@ -49,11 +53,13 @@ const isAddingArcanist = ref(false);
 const isEditingArcanist = ref(false);
 const isWilderness = ref(false);
 const isWarehouse = ref(false);
+const isSettings = ref(false);
 
 const arcanistListRef = ref(null); // Ref to close modal
 const plannerEditRef = ref(null);
 const wildernessRef = ref(null);
 const warehouseRef = ref(null);
+const settingsRef = ref(null);
 
 const openAddOverlay = () => {
   isAddingArcanist.value = true;
@@ -93,6 +99,14 @@ const closeWarehouse = () => {
   isWarehouse.value = false;
 };
 
+const openSettings = () => {
+  isSettings.value = true;
+};
+
+const closeSettings = () => {
+  isSettings.value = false;
+};
+
 const handleSelectArcanist = (arcanist) => {
   selectedArcanist.value = {
     info: arcanist,
@@ -127,33 +141,39 @@ const handleSaveWildernessSettings = (result) => {
   //console.log(wildernessSettings.value);
 };
 
+const handleSaveSettings = (result) => {
+  settingsStore.settings = result;
+  //console.log(result);
+};
+
 onClickOutside(arcanistListRef, closeAddOverlay);
 onClickOutside(plannerEditRef, closeEditOverlay);
 onClickOutside(wildernessRef, closeWilderness);
 onClickOutside(warehouseRef, closeWarehouse);
+onClickOutside(settingsRef, closeSettings);
 
 </script>
 
 <template>
-  <div
-    class="pt-2 pb-2 pr-4 pl-4 sm:pr-8 sm:pl-8 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 md:pr-16 md:pl-16 lg:pr-32 lg:pl-32 xl:pr-64 xl:pl-64">
+  <div class="responsive-spacer">
     <!-- Selector -->
-    <h2 class="text-2xl text-white font-bold mb-6">Planner</h2>
+    <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Planner</h2>
     <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
     <div class="flex justify-between items-center mb-2 mt-2">
       <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
           class="fa-solid fa-wand-magic-sparkles"></i> Add Arcanist</button>
       <div class="flex space-x-2">
-       <div class="tooltip" data-tip="Wilderness Settings">
+        <div class="tooltip" data-tip="Wilderness Settings">
           <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-tree"></i></button>
-       </div>
+        </div>
         <div class="tooltip" data-tip="Manage Warehouse">
           <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-box-archive"></i></button>
         </div>
-        <button class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-gear"></i></button>
+        <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
+            class="fa-solid fa-gear"></i></button>
       </div>
     </div>
 
@@ -171,9 +191,10 @@ onClickOutside(warehouseRef, closeWarehouse);
 
     <!-- Edit Arcanist Overlay -->
     <div v-if="isEditingArcanist" class="overlay">
-      <PlannerEdit ref="plannerEditRef" :selectedArcanist="selectedArcanist" :selectedArcanists="plannerStore.selectedArcanists"
-        :listArcanists="listArcanists" @closeOverlay="closeEditOverlay"
-        @updateSelectedArcanists="handleUpdateSelectedArcanists" @updateListArcanists="handleUpdateListArcanists" />
+      <PlannerEdit ref="plannerEditRef" :selectedArcanist="selectedArcanist"
+        :selectedArcanists="plannerStore.selectedArcanists" :listArcanists="listArcanists"
+        @closeOverlay="closeEditOverlay" @updateSelectedArcanists="handleUpdateSelectedArcanists"
+        @updateListArcanists="handleUpdateListArcanists" />
     </div>
 
     <!-- Wilderness Overlay -->
@@ -185,6 +206,11 @@ onClickOutside(warehouseRef, closeWarehouse);
     <!-- Warehouse Overlay -->
     <div v-if="isWarehouse" class="overlay">
       <PlannerWarehouse ref="warehouseRef" @closeOverlay="closeWarehouse" />
+    </div>
+
+    <!-- Settings Overlay -->
+    <div v-if="isSettings" class="overlay">
+      <PlannerSettings ref="settingsRef" :settings="settingsStore.settings" @closeOverlay="closeSettings" @saveSettings="handleSaveSettings"/>
     </div>
 
     <!-- Result -->

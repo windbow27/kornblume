@@ -152,12 +152,16 @@ const wildernessOutput = computed(() => {
       </div>
       <div class="custom-label text-yellow-100">Output</div>
       <div class="grid grid-cols-2 p-2">
-        <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
-          Dust: {{ wildernessOutput.dust }}
-        </label>
-        <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
-          Gold: {{ wildernessOutput.gold }}
-        </label>
+        <div class="tooltip" data-tip="Dust">
+          <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
+            {{ wildernessOutput.dust }}
+          </label>
+        </div>
+        <div class="tooltip" data-tip="Sharpodonty">
+          <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
+            {{ wildernessOutput.gold }}
+          </label>
+        </div>
       </div>
       <div class="flex justify-center">
         <button @click="saveWildernessSettings" class="btn btn-success">Save</button>

@@ -8,11 +8,15 @@ import Navbar from './components/navbar/Navbar.vue'
     <header>
       <Navbar />
     </header>
-    <main class="z-0 min-h-screen w-full bg-gradient-to-r from-gray-900 to-blue-950 flex flex-col mt-14">
+    <main class="z-0 min-h-screen bg-gradient-to-r from-gray-900 to-blue-950 flex flex-col pt-14">
       <RouterView />
     </main>
   </div>
 </template>
 
 <style scoped>
+body, html {
+    margin: 0;
+    padding: 0;
+  }
 </style>
