@@ -1,0 +1,671 @@
+[
+    {
+        "Id": 1,
+        "isReleased": true,
+        "Name": "Gluttony",
+        "Rarity": 6,
+        "Tag": "None",
+        "Impression": "The snake is hissing to find its way. It is now clear where to go and what to bite. It opens its mouth, it protrudes its fangs, it sinks them into the prey.",
+        "Amplification": null
+    },
+    {
+        "Id": 2,
+        "isReleased": true,
+        "Name": "Greed",
+        "Rarity": 5,
+        "Tag": "None",
+        "Impression": null,
+        "Amplification": null
+    },
+    {
+        "Id": 3,
+        "isReleased": true,
+        "Name": "Enlighten I",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "It cannot be accomplished in one night. Everything that you are about to experience will give you the strength to go forth.",
+        "Amplification": null
+    },
+    {
+        "Id": 4,
+        "isReleased": true,
+        "Name": "Enlighten II",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "It cannot be accomplished in one night. Everything that you are about to experience will give you the strength to go forth.",
+        "Amplification": null
+    },
+    {
+        "Id": 5,
+        "isReleased": true,
+        "Name": "Enlighten III",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "It cannot be accomplished in one night. Everything that you are about to experience will give you the strength to go forth.",
+        "Amplification": null
+    },
+    {
+        "Id": 6,
+        "isReleased": true,
+        "Name": "Enlighten IV",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "It cannot be accomplished in one night. Everything that you are about to experience will give you the strength to go forth.",
+        "Amplification": null
+    },
+    {
+        "Id": 7,
+        "isReleased": true,
+        "Name": "Slighted",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "Soft as breathing, itchy as allergy and hysteria. Rubbed, grinded, twisted, tangled, the long thread connects savage and contempt.",
+        "Amplification": null
+    },
+    {
+        "Id": 8,
+        "isReleased": true,
+        "Name": "Flourishing",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "The beating, thirsty hope of life. The itchy longing from the bottom of the heart, the immortal new life. It grows, and grows.",
+        "Amplification": null
+    },
+    {
+        "Id": 9,
+        "isReleased": true,
+        "Name": "Loss",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "An unknown fruit, both sweet and sour. It has never existed for real, yet people eat it to savor the taste of loss.",
+        "Amplification": null
+    },
+    {
+        "Id": 10,
+        "isReleased": true,
+        "Name": "Cheering",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "Memory wears out in the wandering life, gaining only obscure colors and shapes. What is the figure of the shadow in the shadow? The close friend of the close friend strolls over in the delightful music.",
+        "Amplification": null
+    },
+    {
+        "Id": 11,
+        "isReleased": true,
+        "Name": "Numb",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "The tortoise walks into the flame without hesitation. It is devoured, soothed and drowned. It doesn't know whether it is dead or alive, nor can it feel a thing.",
+        "Amplification": null
+    },
+    {
+        "Id": 12,
+        "isReleased": true,
+        "Name": "Fatuous",
+        "Rarity": 3,
+        "Tag": "None",
+        "Impression": "Unable to build its own nest, the common cuckoo is remorseful and tired. No one affirms or denies it is a fraud.",
+        "Amplification": null
+    },
+    {
+        "Id": 13,
+        "isReleased": true,
+        "Name": "Navigating",
+        "Rarity": 4,
+        "Tag": "Survival",
+        "Impression": "The sailor embeds the cracks into his eyes, savoring the bone-burning pain. With paeans and bleeding offered by the burning, the navigator floats high in the mist to burn down the wrong paths in the way.",
+        "Amplification": null
+    },
+    {
+        "Id": 14,
+        "isReleased": true,
+        "Name": "Bow",
+        "Rarity": 4,
+        "Tag": "ATK",
+        "Impression": "Resonant and vigorous, its sound can awaken and guide the lost. It will cleanse the people's chests when necessary.",
+        "Amplification": null
+    },
+    {
+        "Id": 15,
+        "isReleased": true,
+        "Name": "Covet",
+        "Rarity": 4,
+        "Tag": "Critical",
+        "Impression": "A flash destined to disappear into craze. The coin of greed has been tossed; it witnesses the beginning and the end of a moment.",
+        "Amplification": null
+    },
+    {
+        "Id": 16,
+        "isReleased": true,
+        "Name": "Venomous",
+        "Rarity": 4,
+        "Tag": "ATK",
+        "Impression": "The dark night peeks through itself, leading to a secret delight. Along with scream and whine, the familiar death arrives as it has foretold, bringing a swamp of corpses.",
+        "Amplification": null
+    },
+    {
+        "Id": 17,
+        "isReleased": true,
+        "Name": "Meek",
+        "Rarity": 4,
+        "Tag": "Heal",
+        "Impression": "The owner of those eyes which can see through everything keeps running towards the fireless night on and on. The silent guiding horse, the Quiet Ravenheart.",
+        "Amplification": null
+    },
+    {
+        "Id": 18,
+        "isReleased": true,
+        "Name": "Yearning Desire",
+        "Rarity": 5,
+        "Tag": "ATK",
+        "Impression": "On the sleepless nights,\nOn the painful mornings,\nOn the long afternoons with no one to talk to,\nShe opens one book after another.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier attacks, if the target has Stats Down or [Neg Status], DMG Dealt +8%."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier attacks, if the target has Stats Down or [Neg Status], DMG Dealt +10%."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier attacks, if the target has Stats Down or [Neg Status], DMG Dealt +12%."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier attacks, if the target has Stats Down or [Neg Status], DMG Dealt +14%."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier attacks, if the target has Stats Down or [Neg Status], DMG Dealt +16%."
+            }
+        ]
+    },
+    {
+        "Id": 19,
+        "isReleased": true,
+        "Name": "Tomorrow Also",
+        "Rarity": 5,
+        "Tag": "ATK, Critical",
+        "Impression": "When lifting the fog from the city, be careful. Don't disturb the people hurrying home. He travels through the city in alleys and arrives in time. His duty will catch up with him, just as always.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier casts an Ultimate, Critical Rate +10%."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier casts an Ultimate, Critical Rate +12.5%."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier casts an Ultimate, Critical Rate +15%."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier casts an Ultimate, Critical Rate +17.5%."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier casts an Ultimate, Critical Rate +20%."
+            }
+        ]
+    },
+    {
+        "Id": 20,
+        "isReleased": true,
+        "Name": "The Footloose",
+        "Rarity": 5,
+        "Tag": "ATK",
+        "Impression": "The golden wattle drops to the ground. She sharpens it, polishes it till it is matte. Half of it turns into the handy bow and arrows, the other half turns into the streamlined surfboard. 'The tree is free as long as you are free,' says the ocean.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier attacks, if the target's HP is above 50%, DMG Dealt +8%."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier attacks, if the target's HP is above 50%, DMG Dealt +10%."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier attacks, if the target's HP is above 50%, DMG Dealt +12%."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier attacks, if the target's HP is above 50%, DMG Dealt +14%."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier attacks, if the target's HP is above 50%, DMG Dealt +16%."
+            }
+        ]
+    },
+    {
+        "Id": 21,
+        "isReleased": true,
+        "Name": "Decode",
+        "Rarity": 5,
+        "Tag": "Heal, Survival",
+        "Impression": "Sitting in the small cubicle, she typed. 41, line break, 41. It was quiet, tranquil, and stable, and in the world of numbers, she was safely swaddled.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier is attacked by an Ultimate, DMG Taken -10%."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier is attacked by an Ultimate, DMG Taken -12.5%."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier is attacked by an Ultimate, DMG Taken -15%."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier is attacked by an Ultimate, DMG Taken -17.5%."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier is attacked by an Ultimate, DMG Taken -20%."
+            }
+        ]
+    },
+    {
+        "Id": 22,
+        "isReleased": true,
+        "Name": "An Afternoon Nap",
+        "Rarity": 5,
+        "Tag": "Heal, Survival",
+        "Impression": "Your child has never been your child. A smart guardian is good at finding quality time to spend alone in the afternoon. When the red fruit is fast asleep, will the gentleman fall from the tree?",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, the carrier gains Critical DMG +3% (stacks up to 4 times)."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, the carrier gains Critical DMG +3% (stacks up to 5 times)."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, the carrier gains Critical DMG +3% (stacks up to 6 times)."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, the carrier gains Critical DMG +3% (stacks up to 7 times)."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, the carrier gains Critical DMG +3% (stacks up to 8 times)."
+            }
+        ]
+    },
+    {
+        "Id": 23,
+        "isReleased": true,
+        "Name": "Her Bright Future",
+        "Rarity": 5,
+        "Tag": "ATK",
+        "Impression": "The light is shining ahead. It makes whatever white whiter, whatever shiny shinier. Expectation, curiosity, desire, they are what the world is made of. What I know about it is not the complete picture.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier casts the Ultimate, if the carrier is in [Stats Up] status, Ultimate Might +10%."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier casts the Ultimate, if the carrier is in [Stats Up] status, Ultimate Might +12.5%."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier casts the Ultimate, if the carrier is in [Stats Up] status, Ultimate Might +15%."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier casts the Ultimate, if the carrier is in [Stats Up] status, Ultimate Might +17.5%."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier casts the Ultimate, if the carrier is in [Stats Up] status, Ultimate Might +20%."
+            }
+        ]
+    },
+    {
+        "Id": 24,
+        "isReleased": true,
+        "Name": "A Free Heart",
+        "Rarity": 5,
+        "Tag": "Survival",
+        "Impression": "Does poem belong to parchment? Does poem belong to walnut shell and ink? Does poem belong to the noble and the king? No, said the snowy night, poem just belongs to poem itself.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier is attacked and is below 50% HP, DMG Taken -10%."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier is attacked and is below 50% HP, DMG Taken -12.5%."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier is attacked and is below 50% HP, DMG Taken -15%."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier is attacked and is below 50% HP, DMG Taken -17.5%."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier is attacked and is below 50% HP, DMG Taken -20%."
+            }
+        ]
+    },
+    {
+        "Id": 25,
+        "isReleased": true,
+        "Name": "Laughter and Laughter",
+        "Rarity": 5,
+        "Tag": "Heal, Survival",
+        "Impression": "Look around. The edge of the stage is so far, far away. It is beyond the islands, beyond the sea, beyond the ban and the fear. Laugh, laugh away! There is no ending to the play!",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When a round begins, Healing Done +3% for the carrier. Stacks up to 4 times."
+            },
+            {
+                "Id": 2,
+                "Effect": "When a round begins, Healing Done +3% for the carrier. Stacks up to 5 times."
+            },
+            {
+                "Id": 3,
+                "Effect": "When a round begins, Healing Done +3% for the carrier. Stacks up to 6 times."
+            },
+            {
+                "Id": 4,
+                "Effect": "When a round begins, Healing Done +3% for the carrier. Stacks up to 7 times."
+            },
+            {
+                "Id": 5,
+                "Effect": "When a round begins, Healing Done +3% for the carrier. Stacks up to 8 times."
+            }
+        ]
+    },
+    {
+        "Id": 28,
+        "isReleased": true,
+        "Name": "Brave New World",
+        "Rarity": 6,
+        "Tag": "ATK",
+        "Impression": "Adjusts the angle, tightens the ribbon, and smooths the wrinkles. Rolls the cuffs without drawing attention, unrolls them, and rolls them again. She looks at herself in the mirror, and the gentle good night. I am ready to offer everything I have, for the new world and its well-being.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "After the carrier casts an Ultimate, Incantation Might of the next incantation +20%."
+            },
+            {
+                "Id": 2,
+                "Effect": "After the carrier casts an Ultimate, Incantation Might of the next incantation +25%."
+            },
+            {
+                "Id": 3,
+                "Effect": "After the carrier casts an Ultimate, Incantation Might of the next incantation +30%."
+            },
+            {
+                "Id": 4,
+                "Effect": "After the carrier casts an Ultimate, Incantation Might of the next incantation +35%."
+            },
+            {
+                "Id": 5,
+                "Effect": "After the carrier casts an Ultimate, Incantation Might of the next incantation +40%."
+            }
+        ]
+    },
+    {
+        "Id": 29,
+        "isReleased": true,
+        "Name": "Hopscotch",
+        "Rarity": 6,
+        "Tag": "ATK",
+        "Impression": "\"I am the first place! I always am!\" The little winner jumped into the house of gray and white marble. The third place, the third place, and the third place. NO! NO! NO! Hopscotch. That brush of orange jumped out of the chalk box, and even out of the house. \"Where is she going this time?\" Murmured the little winner, \"Will I ever see her again?\"",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "For each enemy target defeated by the carrier, Ultimate Might +4% for the carrier. Stacks up to 4 times."
+            },
+            {
+                "Id": 2,
+                "Effect": "For each enemy target defeated by the carrier, Ultimate Might +5% for the carrier. Stacks up to 4 times."
+            },
+            {
+                "Id": 3,
+                "Effect": "For each enemy target defeated by the carrier, Ultimate Might +6% for the carrier. Stacks up to 4 times."
+            },
+            {
+                "Id": 4,
+                "Effect": "For each enemy target defeated by the carrier, Ultimate Might +7% for the carrier. Stacks up to 4 times."
+            },
+            {
+                "Id": 5,
+                "Effect": "For each enemy target defeated by the carrier, Ultimate Might +8% for the carrier. Stacks up to 4 times."
+            }
+        ]
+    },
+    {
+        "Id": 30,
+        "isReleased": true,
+        "Name": "Her Second Life",
+        "Rarity": 6,
+        "Tag": "Heal",
+        "Impression": "Carve and polish. Water, oil, honey, and sandpile. The moonlight witnesses the transformation of the old branch and the birth of the new wand. The branch is reborn by the craftsman. The craftsman is reborn by the future. Identity means nothing to the forest.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "After the carrier casts the mass Ultimate HP + (the carrier's ATK x32%) for all allies."
+            },
+            {
+                "Id": 2,
+                "Effect": "After the carrier casts the mass Ultimate HP + (the carrier's ATK x40%) for all allies."
+            },
+            {
+                "Id": 3,
+                "Effect": "After the carrier casts the mass Ultimate HP + (the carrier's ATK x48%) for all allies."
+            },
+            {
+                "Id": 4,
+                "Effect": "After the carrier casts the mass Ultimate HP + (the carrier's ATK x56%) for all allies."
+            },
+            {
+                "Id": 5,
+                "Effect": "After the carrier casts the mass Ultimate HP + (the carrier's ATK x64%) for all allies."
+            }
+        ]
+    },
+    {
+        "Id": 31,
+        "isReleased": true,
+        "Name": "Blasphemer of Night",
+        "Rarity": 6,
+        "Tag": "ATK",
+        "Impression": "The night will blaspheme against the light, as well as the beauty, the happiness, the peace, the slumber, and every lullaby in her heart. Since then, in the future of the future, there will be no more peace in the long night.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier attacks, if the target has 2 or more [Neg Status], DMG Dealt +12%."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier attacks, if the target has 2 or more [Neg Status], DMG Dealt +15%."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier attacks, if the target has 2 or more [Neg Status], DMG Dealt +18%."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier attacks, if the target has 2 or more [Neg Status], DMG Dealt +21%."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier attacks, if the target has 2 or more [Neg Status], DMG Dealt +24%."
+            }
+        ]
+    },
+    {
+        "Id": 32,
+        "isReleased": true,
+        "Name": "Thunderous Applause",
+        "Rarity": 6,
+        "Tag": "ATK, Critical",
+        "Impression": "Through the wind and the rain, her voice grows louder and louder, echoing within the limited space. Further, higher, it never ceases to spread, NEVER. Owning the audience and the theater, the king remains on the stage, still seeing herself as the lord of the infinite universe.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, Critical DMG +16%."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, Critical DMG +20%."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, Critical DMG +24%."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, Critical DMG +28%."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier's 1-target attack scores a critical hit, Critical DMG +32%."
+            }
+        ]
+    },
+    {
+        "Id": 33,
+        "isReleased": true,
+        "Name": "That Inquisitive Dear",
+        "Rarity": 6,
+        "Tag": "Heal",
+        "Impression": "Paths are made by walking. Wine and bread are achieved by working. The new sprout stretches its leaves, fighting sleepiness among the mountain of potions. More time, she needs more time, to read the next page of the book.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "When the carrier casts a basic Incantation debuff, HP + (the carrier's ATK x24%) for the ally with the lowest HP percentage (only triggers 1 time per round)."
+            },
+            {
+                "Id": 2,
+                "Effect": "When the carrier casts a basic Incantation debuff, HP + (the carrier's ATK x30%) for the ally with the lowest HP percentage (only triggers 1 time per round)."
+            },
+            {
+                "Id": 3,
+                "Effect": "When the carrier casts a basic Incantation debuff, HP + (the carrier's ATK x36%) for the ally with the lowest HP percentage (only triggers 1 time per round)."
+            },
+            {
+                "Id": 4,
+                "Effect": "When the carrier casts a basic Incantation debuff, HP + (the carrier's ATK x42%) for the ally with the lowest HP percentage (only triggers 1 time per round)."
+            },
+            {
+                "Id": 5,
+                "Effect": "When the carrier casts a basic Incantation debuff, HP + (the carrier's ATK x48%) for the ally with the lowest HP percentage (only triggers 1 time per round)."
+            }
+        ]
+    },
+    {
+        "Id": 34,
+        "isReleased": true,
+        "Name": "Luxurious Leisure",
+        "Rarity": 6,
+        "Tag": "ATK",
+        "Impression": "Under all the spotlights, she is like the blackhole of attention. The most beautiful dream in that beautiful nation. Her hair is more expensive than gold, and her lip print can be exchanged for a bundle of cash. Yet her heart, that very heart, Is not worth a gold coin, or a silver one, or even a glance.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "After the Carrier casts a single-target Ultimate, DMG Dealt increases by 5% (this effect stacks up to 3 times)."
+            },
+            {
+                "Id": 2,
+                "Effect": "After the Carrier casts a single-target Ultimate, DMG Dealt increases by 6% (this effect stacks up to 3 times)."
+            },
+            {
+                "Id": 3,
+                "Effect": "After the Carrier casts a single-target Ultimate, DMG Dealt increases by 7% (this effect stacks up to 3 times)."
+            },
+            {
+                "Id": 4,
+                "Effect": "After the Carrier casts a single-target Ultimate, DMG Dealt increases by 8% (this effect stacks up to 3 times)."
+            },
+            {
+                "Id": 5,
+                "Effect": "After the Carrier casts a single-target Ultimate, DMG Dealt increases by 9% (this effect stacks up to 3 times)."
+            }
+        ]
+    },
+    {
+        "Id": 35,
+        "isReleased": true,
+        "Name": "His Bounden Duty",
+        "Rarity": 6,
+        "Tag": "ATK, Heal",
+        "Impression": "Wait, dodge, escape? Sense of security, side of caution? No. Record, record, and record. Record this very, very moment. Yes.",
+        "Amplification": [
+            {
+                "Id": 1,
+                "Effect": "For each enemy target defeated by the carrier, HP + (the carrier's ATK x60%)."
+            },
+            {
+                "Id": 2,
+                "Effect": "For each enemy target defeated by the carrier, HP + (the carrier's ATK x75%)."
+            },
+            {
+                "Id": 3,
+                "Effect": "For each enemy target defeated by the carrier, HP + (the carrier's ATK x90%)."
+            },
+            {
+                "Id": 4,
+                "Effect": "For each enemy target defeated by the carrier, HP + (the carrier's ATK x105%)."
+            },
+            {
+                "Id": 5,
+                "Effect": "For each enemy target defeated by the carrier, HP + (the carrier's ATK x120%)."
+            }
+        ]
+    },
+    {
+        "Id": 36,
+        "isReleased": false,
+        "Rarity": 6,
+        "Name": null,
+        "Tag": null,
+        "Impression": null,
+        "Amplification": null
+    },
+    {
+        "Id": 37,
+        "isReleased": false,
+        "Rarity": 6,
+        "Name": null,
+        "Tag": null,
+        "Impression": null,
+        "Amplification": null
+    },
+    {
+        "Id": 38,
+        "isReleased": false,
+        "Rarity": 6,
+        "Name": null,
+        "Tag": null,
+        "Impression": null,
+        "Amplification": null
+    },
+    {
+        "Id": 39,
+        "isReleased": false,
+        "Rarity": 6,
+        "Name": null,
+        "Tag": null,
+        "Impression": null,
+        "Amplification": null
+    }
+]
