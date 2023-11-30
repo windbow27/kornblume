@@ -28,10 +28,11 @@ const selectedArcanistIds = computed(() =>
 );
 
 watchEffect(() => {
-  listArcanists.value = arcanistStore.filter(
-    arcanist => !selectedArcanistIds.value.includes(arcanist.Id) 
-    && arcanist.IsReleased !== settingsStore.settings.showUnreleased
+  listArcanists.value = arcanistStore.filter(arcanist =>
+    !selectedArcanistIds.value.includes(arcanist.Id) &&
+    (settingsStore.settings.showUnreleased ? !arcanist.IsReleased : arcanist.IsReleased)
   );
+
   listArcanists.value.sort((a, b) => {
     const rarityComparison = b.Rarity - a.Rarity;
 
@@ -210,7 +211,8 @@ onClickOutside(settingsRef, closeSettings);
 
     <!-- Settings Overlay -->
     <div v-if="isSettings" class="overlay">
-      <PlannerSettings ref="settingsRef" :settings="settingsStore.settings" @closeOverlay="closeSettings" @saveSettings="handleSaveSettings"/>
+      <PlannerSettings ref="settingsRef" :settings="settingsStore.settings" @closeOverlay="closeSettings"
+        @saveSettings="handleSaveSettings" />
     </div>
 
     <!-- Result -->
