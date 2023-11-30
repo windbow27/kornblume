@@ -1,9 +1,25 @@
-import { ref } from 'vue'
 import { useDataStore } from '../stores/DataStore'
+import { useWarehouseStore } from '../stores/WarehouseStore'
 
 const items = useDataStore().items.data;
 const stages = useDataStore().stages.data;
 const crafts = useDataStore().crafts.data;
+const warehouse = useWarehouseStore().data;
+
+function subtractMaterials(materials) {
+    const result = materials.map((matInfo) => ({ ...matInfo }));
+    result.forEach((matInfo) => {
+        // Find the corresponding craft item in craftJson
+        //console.log(matInfo.Material);
+        const subtractItem = warehouse.find((item) => item.Material === matInfo.Material);
+        //console.log(subtractItem);
+        //if subtractItem is found
+        if (subtractItem) {
+            matInfo.Quantity -= subtractItem.Quantity;
+        }
+    });
+    return result;
+}
 
 function sortArcanists(materials) {
     let result = materials.map((matInfo) => ({ ...matInfo }));
@@ -110,7 +126,8 @@ function sortLayer(layer) {
 export function useProcessCards(materials) {
     const calculatedCards = [];
 
-    const sortedMaterials = sortArcanists(materials);
+    const subtractedMaterials = subtractMaterials(materials);
+    const sortedMaterials = sortArcanists(subtractedMaterials);
 
     sortedMaterials.forEach((matInfo) => {
         const currentStage = stages.find((stage) => stage.Material.includes(matInfo.Material));
@@ -123,12 +140,14 @@ export function useProcessCards(materials) {
 
             const material = matInfo;
 
-            const existingCardIndex = calculatedCards.findIndex((card) => card.stage === currentStage.Name);
+            if (material.Quantity > 0) {
+                const existingCardIndex = calculatedCards.findIndex((card) => card.stage === currentStage.Name);
 
-            if (existingCardIndex !== -1) {
-                calculatedCards[existingCardIndex].materials.push(material);
-            } else {
-                calculatedCards.push(createCard(currentStage.Name, runs, activity, days, [material]));
+                if (existingCardIndex !== -1) {
+                    calculatedCards[existingCardIndex].materials.push(material);
+                } else {
+                    calculatedCards.push(createCard(currentStage.Name, runs, activity, days, [material]));
+                }
             }
         } else {
             const tier3Card = findOrCreateCard('Tier 3', calculatedCards);
@@ -171,11 +190,6 @@ export function useProcessCards(materials) {
         (card) =>
             ['Tier 2', 'Tier 3', 'Unreleased'].includes(card.stage) && card.materials.length > 0
     );
-
-    const sortedFirstLayer = sortLayer(stagesFirstLayer);
-    const sortedSecondLayer = sortLayer(stagesSecondLayer);
-    const sortedThirdLayer = sortLayer(stagesThirdLayer);
-    const sortedFourthLayer = sortLayer(stagesFourthLayer);
 
     const cardLayers = [
         { id: 0, cards: sortLayer(stagesFirstLayer) },

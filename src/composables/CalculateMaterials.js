@@ -1,4 +1,3 @@
-import { ref } from 'vue';
 import { useDataStore } from '../stores/DataStore';
 
 const calculations = useDataStore().calculations.data;

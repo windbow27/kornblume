@@ -34,7 +34,7 @@ const router = createRouter({
 router.beforeEach(async (to) => {
   const dataStore = useDataStore();
   if (to.meta.requiredJson) {
-      await useDataStore().ensureData(...to.meta.requiredJson);
+      await dataStore.ensureData(...to.meta.requiredJson);
   }
 })
 

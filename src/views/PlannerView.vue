@@ -1,11 +1,10 @@
 <script setup>
-import { ref, computed, watchEffect } from 'vue';
+import { ref, computed, watchEffect, onMounted } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
 import { usePlannerStore } from '../stores/PlannerStore';
 import { useWildernessStore } from '../stores/WildernessStore';
 import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore';
-import { useWarehouseStore } from '../stores/WarehouseStore';
 import { useDataStore } from '../stores/DataStore';
 
 import ArcanistList from '../components/arcanist/ArcanistList.vue';
@@ -30,7 +29,7 @@ const selectedArcanistIds = computed(() =>
 watchEffect(() => {
   listArcanists.value = arcanistStore.filter(arcanist =>
     !selectedArcanistIds.value.includes(arcanist.Id) &&
-    (settingsStore.settings.showUnreleased ? !arcanist.IsReleased : arcanist.IsReleased)
+    (settingsStore.settings.showUnreleased ? true : arcanist.IsReleased)
   );
 
   listArcanists.value.sort((a, b) => {
@@ -45,10 +44,8 @@ watchEffect(() => {
   });
 });
 
-
 const selectedArcanist = ref([]); // Current working arcanist
 const totalActivityAndDays = ref([]); // Total activity and days
-const inventory = ref([]); // Inventory
 
 const isAddingArcanist = ref(false);
 const isEditingArcanist = ref(false);

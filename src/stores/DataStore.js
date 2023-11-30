@@ -44,5 +44,5 @@ export const useDataStore = defineStore('dataStore', {
         async ensureData(...modules) {
             return Promise.all(modules.map((module) => this.fetchData(module)));
         }
-    }
+    },
 });
