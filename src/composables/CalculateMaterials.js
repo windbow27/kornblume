@@ -123,7 +123,7 @@ export function useCalculation(arc) {
         const materialsCount = {};
         if (currentType === goalType) return null;
         // Iterate over insights between currentInsight and goalInsight (inclusive)
-        for (let current = currentType; current <= goalType; current++) {
+        for (let current = Number(currentType+1); current <= goalType; current++) {
             const data = type.find(obj => obj.Id === current);
             if (data) {
                 //console.log(data);
