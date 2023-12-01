@@ -17,6 +17,7 @@ const resources = [
     { name: 'Reverse 1999 data shits', author:'windbow', comment:'My own data shits to make this tool.', link: 'https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=103925069' },
     { name: 'Seelie', author: 'Gabriel', comment: 'Ever wonder why this looks like seelie?', link: 'https://hsr.seelie.me/' },
     { name: 'Huji wiki', author:'Huji wiki team', comment:'I scraped data here.', link: 'https://res1999.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5' },
+    { name: '必要的记录', author:'Chinese community', comment:'Drop rates of items.', link: 'https://www.kdocs.cn/l/cd5MWeCl5bKw' },
     { name: 'Schale', author:'lonqie', comment:'cunny uwooghh', link: 'https://schale.gg/' }
     // Add more resources as needed
 ];

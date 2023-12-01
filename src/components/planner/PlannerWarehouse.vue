@@ -84,7 +84,8 @@ const closeOverlay = () => {
         <i class="fas fa-times"></i>
       </button>
       <p class="text-white text-center font-bold"> Warehouse </p>
-      <div>
+
+      <!-- <div>
         <div class="grid grid-cols-2 xl:grid-cols-4 justify-center items-center pb-5 text-center">
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
@@ -115,7 +116,7 @@ const closeOverlay = () => {
             </label>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden flex-grow">
         <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 ">

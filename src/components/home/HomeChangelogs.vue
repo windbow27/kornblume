@@ -12,6 +12,8 @@ const closeOverlay = () => {
 
 const changelogs = [
     //Add more from top
+    { date: '01/12/2023', description: '• Warehouse filter is broken, temporary disabled.'},
+    { date: '30/11/2023', description: '• Added Warehouse. Fixed wrong Insight levels and unreleased Arcanists'},
     { date: '29/11/2023', description: '• First release.' },
 ];
 
