@@ -51,7 +51,7 @@ onClickOutside(resourcesRef, closeResources);
 </script>
 
 <template>
-    <div class="responsive-spacer overflow-x-hidden items-center">
+    <div class="responsive-spacer overflow-x-hidden">
         <div class="text-center p-10">
             <h1 class="text-5xl lg:text-6xl font-bold text-white">Kornblume</h1>
             <p class="text-lg lg:text-xl text-gray-300">A toolsite and cornflower worship place for Reverse:1999</p>
@@ -60,9 +60,10 @@ onClickOutside(resourcesRef, closeResources);
         <div class="container mx-auto lg:w-2/3 p-4">
             <div class="carousel w-full rounded-md">
                 <!-- Loop through carousel items -->
-                <div v-for="(item, index) in carouselItems" :key="index" class="carousel-item w-full">
+                <div v-for="(item, index) in carouselItems" :key="index"
+                    class="carousel-item w-full flex items-center justify-center">
                     <a :href="item.link" target="_blank">
-                        <div class=" aspect-video overflow-hidden rounded-md">
+                        <div class="aspect-video overflow-hidden rounded-md">
                             <img :src="item.imageUrl" class="object-cover w-full h-full" />
                         </div>
                     </a>
@@ -78,7 +79,8 @@ onClickOutside(resourcesRef, closeResources);
                     <button @click="openResources" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-book"></i> Resources</button>
                 </div>
-                <a href="https://github.com/windbow27/Kornblume" target="_blank" class="text-3xl text-gray-400 hover:text-white">
+                <a href="https://github.com/windbow27/Kornblume" target="_blank"
+                    class="text-3xl text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>
                 </a>
                 <p class="text-xs opacity-80 mb-2 text-center">All contributions are welcomed. If you enjoy the work, please

@@ -12,7 +12,7 @@ const closeOverlay = () => {
 
 const changelogs = [
     //Add more from top
-    { date: '02/12/2023', description: '• Fixed warehouse, added Tooth Fairy and Changeling to released.' },
+    { date: '02/12/2023', description: '• Fixed warehouse, added Tooth Fairy and Changeling to released.\n • Fixed more warehouse bugs, added reset button.' },
     { date: '01/12/2023', description: '• Warehouse filter is broken, temporary disabled.'},
     { date: '30/11/2023', description: '• Added Warehouse. Fixed wrong Insight levels and unreleased Arcanists'},
     { date: '29/11/2023', description: '• First release.' },
@@ -32,7 +32,7 @@ const changelogs = [
             <li v-for="(log, index) in changelogs" :key="index">
                 <p class="text-sky-300">{{ log.date }}:</p>
                 <ul>
-                    <li class="text-sm">{{ log.description }}</li>
+                    <li v-for="(line, lineIndex) in log.description.split('\n')" :key="lineIndex" class="text-sm">{{ line }}</li>
                 </ul>
             </li>
         </ul>

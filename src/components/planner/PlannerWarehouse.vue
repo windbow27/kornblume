@@ -60,6 +60,15 @@ const filteredWarehouse = computed(() => {
   }
 });
 
+const resetCheckedCategories = () => {
+  Object.keys(checkedCategories.value).forEach((category) => {
+    if (checkedCategories.value[category]) {
+      useWarehouseStore().resetCategory(category);
+    }
+  });
+  emit('closeOverlay');
+};
+
 const closeOverlay = () => {
   emit('closeOverlay');
 };
@@ -80,40 +89,38 @@ const closeOverlay = () => {
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
               <span class="label-text text-error text-xs font-bold">Base Item</span>
-              <input type="checkbox" @change="filterWarehouse('Base Item')" 
-                class="checkbox checkbox-error" />
+              <input type="checkbox" @change="filterWarehouse('Base Item')" class="checkbox checkbox-error" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
               <span class="label-text text-info text-xs font-bold">Build Material</span>
-              <input type="checkbox" @change="filterWarehouse('Build Material')" 
-                class="checkbox checkbox-info" />
+              <input type="checkbox" @change="filterWarehouse('Build Material')" class="checkbox checkbox-info" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
               <span class="label-text text-success text-xs font-bold">Insight Material</span>
-              <input type="checkbox" @change="filterWarehouse('Insight Material')"
-                class="checkbox checkbox-success" />
+              <input type="checkbox" @change="filterWarehouse('Insight Material')" class="checkbox checkbox-success" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
               <span class="label-text text-warning text-xs font-bold">Resonate Material</span>
-              <input type="checkbox" @change="filterWarehouse('Resonate Material')" 
-                class="checkbox checkbox-warning" />
+              <input type="checkbox" @change="filterWarehouse('Resonate Material')" class="checkbox checkbox-warning" />
             </label>
           </div>
         </div>
       </div>
 
-      <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden flex-grow">
+      <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden flex-grow mb-5">
         <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8">
-          <ItemWarehouse class="" v-for="material in filteredWarehouse" :key="material.Material"
-            :material="material" @update:quantity="handleUpdateQuantity(material.Material, $event)" />
+          <ItemWarehouse class="" v-for="material in filteredWarehouse" :key="material.Material" :material="material"
+            @update:quantity="handleUpdateQuantity(material.Material, $event)" />
         </div>
       </div>
+
+      <button @click="resetCheckedCategories" className="btn btn-error btn-sm">Reset Selected Category</button>
     </div>
   </div>
 </template>

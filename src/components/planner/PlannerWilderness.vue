@@ -137,7 +137,7 @@ const wildernessOutput = computed(() => {
         <SelectList class="select-list" :options="options" :selected="selectedGold3" label="Gold 3"
           v-on:update:selected="handleSelected" />
       </div>
-      <div class="custom-label text-yellow-100">Vigor</div>
+      <div class="custom-label text-yellow-100">Vigor (%)</div>
       <div class="grid grid-cols-2 p-2 items-center">
         <input @input="validateVigor" v-model="vigor" type="text" placeholder="Vigor"
           class="input input-bordered input-info input-sm mx-10 lg:mx-5 gradient-blue text-center" />

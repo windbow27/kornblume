@@ -126,7 +126,8 @@ function sortLayer(layer) {
 export function useProcessCards(materials) {
     const calculatedCards = [];
 
-    const sortedMaterials = sortArcanists(materials);
+    const higherTierSubtractedMaterials = subtractMaterials(materials);
+    const sortedMaterials = sortArcanists(higherTierSubtractedMaterials);
     const subtractedMaterials = subtractMaterials(sortedMaterials);
 
     subtractedMaterials.forEach((matInfo) => {

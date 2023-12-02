@@ -27,10 +27,18 @@ export const useWarehouseStore = defineStore('warehouse', {
                 }
             }
         },
-        reset() {
-            this.data = [];
-            this.loaded = false;
+        resetAll() {
+            for (let i = 0; i < this.data.length; i++) {
+                this.data[i].Quantity = 0;
+            }
         },
+        resetCategory(category) {
+            for (let i = 0; i < this.data.length; i++) {
+                if (this.data[i].Category === category) {
+                    this.data[i].Quantity = 0;
+                }
+            }
+        }
     },
     persist: true,
 });
