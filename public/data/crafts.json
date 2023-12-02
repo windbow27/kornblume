@@ -2,54 +2,63 @@
     {
       "Id": 1,
       "Name": "Fruit of Good and Evil",
+      "Rarity": 6,
       "Material": ["Biting Box", "Holy Silver", "Prophetic Bird", "Salted Mandrake", "Bifurcated Skeleton", "Sharpodonty"],
       "Quantity": [3, 1, 6, 3, 2, 1800]
     },
     {
       "Id": 2,
       "Name": "Mistilteinn",
+      "Rarity": 6,
       "Material": ["Bifurcated Skeleton", "Biting Box", "Holy Silver", "Sharpodonty"],
       "Quantity": [6, 4, 4, 1800]
     },
     {
       "Id": 3,
       "Name": "Golden Fleece",
+      "Rarity": 6,
       "Material": ["Clawed Pendulum", "Holy Silver", "Bifurcated Skeleton", "Sharpodonty"],
       "Quantity": [4, 8, 2, 1800]
     },
     {
       "Id": 4,
       "Name": "Murmur of Insanity",
+      "Rarity": 5,
       "Material": ["Prophetic Bird", "Salted Mandrake", "Sharpodonty"],
       "Quantity": [3, 2, 500]
     },
     {
       "Id": 5,
       "Name": "Platinum Ouija",
+      "Rarity": 5,
       "Material": ["Clawed Pendulum", "Holy Silver", "Sharpodonty"],
       "Quantity": [2, 4, 500]
     },
     {
       "Id": 6,
       "Name": "Wyrmling Skeleton",
+      "Rarity": 5,
       "Material": ["Bifurcated Skeleton", "Biting Box", "Sharpodonty"],
       "Quantity": [3, 2, 500]
     },
     {
       "Id": 7,
       "Name": "Bogeyman",
+      "Rarity": 5,
       "Material": ["Biting Box", "Holy Silver", "Prophetic Bird", "Sharpodonty"],
       "Quantity": [3, 1, 2, 500]
     },
     {
       "Id": 8,
       "Name": "Incorrupt Monkeypaw",
+      "Rarity": 5,
       "Material": ["Salted Mandrake", "Bifurcated Skeleton", "Sharpodonty"],
       "Quantity": [3, 2, 500]
     },
     {
       "Id": 9,
       "Name": "Silver Bullet",
+      "Rarity": 5,
       "Material": ["Holy Silver", "Bifurcated Skeleton", "Salted Mandrake", "Sharpodonty"],
       "Quantity": [3, 1, 1, 500]
     }

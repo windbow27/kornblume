@@ -12,7 +12,6 @@ function subtractMaterials(materials) {
         // Find the corresponding craft item in craftJson
         //console.log(matInfo.Material);
         const subtractItem = warehouse.find((item) => item.Material === matInfo.Material);
-        //console.log(subtractItem);
         //if subtractItem is found
         if (subtractItem) {
             matInfo.Quantity -= subtractItem.Quantity;
@@ -20,6 +19,20 @@ function subtractMaterials(materials) {
     });
     return result;
 }
+
+function subtractHigherTierMaterials(materials) {
+    const result = materials.map((matInfo) => ({ ...matInfo }));
+    result.forEach((matInfo) => {
+        // Find the corresponding craft item in craftJson
+        //console.log(matInfo.Material);
+        const subtractItem = crafts.find((item) => item.Name === matInfo.Material && item.Rarity >= 5) && warehouse.find((item) => item.Material === matInfo.Material);      
+        if (subtractItem) {
+            //console.log(subtractItem);
+            matInfo.Quantity -= subtractItem.Quantity;
+        }
+    });
+    return result;
+}  
 
 function sortArcanists(materials) {
     let result = materials.map((matInfo) => ({ ...matInfo }));
@@ -126,11 +139,12 @@ function sortLayer(layer) {
 export function useProcessCards(materials) {
     const calculatedCards = [];
 
-    const higherTierSubtractedMaterials = subtractMaterials(materials);
+    const higherTierSubtractedMaterials = subtractHigherTierMaterials(materials);
     const sortedMaterials = sortArcanists(higherTierSubtractedMaterials);
     const subtractedMaterials = subtractMaterials(sortedMaterials);
 
     subtractedMaterials.forEach((matInfo) => {
+        if (matInfo.Quantity <= 0) return;
         const currentStage = stages.find((stage) => stage.Material.includes(matInfo.Material));
 
         if (currentStage) {
@@ -139,15 +153,13 @@ export function useProcessCards(materials) {
             const activity = Math.ceil(runs * currentStage.Activity);
             const days = (activity / 240).toFixed(1);
 
-            const material = matInfo;
-
-            if (material.Quantity > 0) {
+            if (matInfo.Quantity > 0) {
                 const existingCardIndex = calculatedCards.findIndex((card) => card.stage === currentStage.Name);
 
                 if (existingCardIndex !== -1) {
-                    calculatedCards[existingCardIndex].materials.push(material);
+                    calculatedCards[existingCardIndex].materials.push(matInfo);
                 } else {
-                    calculatedCards.push(createCard(currentStage.Name, runs, activity, days, [material]));
+                    calculatedCards.push(createCard(currentStage.Name, runs, activity, days, [matInfo]));
                 }
             }
         } else {
