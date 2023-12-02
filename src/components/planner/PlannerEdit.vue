@@ -230,6 +230,12 @@ const handleSelected = (option, optionType) => {
 watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, selectedGoalInsight, selectedGoalLevel, selectedGoalResonance], () => {
     // Whenever any selectedX changes, update the key to trigger a re-render in all SelectList components
     updateKey.value += 1;
+    if (selectedCurrentLevel.value > currentLevelOptions.value[currentLevelOptions.value.length - 1]) {
+        selectedCurrentLevel.value = currentLevelOptions.value[currentLevelOptions.value.length - 1];
+    }
+    if (selectedGoalLevel.value > goalLevelOptions.value[goalLevelOptions.value.length - 1]) {
+        selectedGoalLevel.value = goalLevelOptions.value[goalLevelOptions.value.length - 1];
+    }
 });
 
 watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance], () => {
