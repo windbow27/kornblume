@@ -9207,7 +9207,7 @@
   },
   {
     "Id": 10051,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Changeling",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -9451,7 +9451,7 @@
   },
   {
     "Id": 10048,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Tooth Fairy",
     "Rarity": 6,
     "Afflatus": "Star",

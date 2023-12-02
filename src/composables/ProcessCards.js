@@ -126,10 +126,10 @@ function sortLayer(layer) {
 export function useProcessCards(materials) {
     const calculatedCards = [];
 
-    const subtractedMaterials = subtractMaterials(materials);
-    const sortedMaterials = sortArcanists(subtractedMaterials);
+    const sortedMaterials = sortArcanists(materials);
+    const subtractedMaterials = subtractMaterials(sortedMaterials);
 
-    sortedMaterials.forEach((matInfo) => {
+    subtractedMaterials.forEach((matInfo) => {
         const currentStage = stages.find((stage) => stage.Material.includes(matInfo.Material));
 
         if (currentStage) {

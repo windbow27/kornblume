@@ -51,7 +51,7 @@ onClickOutside(resourcesRef, closeResources);
 </script>
 
 <template>
-    <div class="responsive-spacer overflow-x-hidden">
+    <div class="responsive-spacer overflow-x-hidden items-center">
         <div class="text-center p-10">
             <h1 class="text-5xl lg:text-6xl font-bold text-white">Kornblume</h1>
             <p class="text-lg lg:text-xl text-gray-300">A toolsite and cornflower worship place for Reverse:1999</p>
