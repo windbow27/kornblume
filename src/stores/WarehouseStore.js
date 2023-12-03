@@ -19,6 +19,14 @@ export const useWarehouseStore = defineStore('warehouse', {
         addItem(material, category) {
             this.data.push({Material: material, Quantity: 0, Category: category});
         },
+        addShopItem(material, quantity) {
+            for (let i = 0; i < this.data.length; i++) {
+                if (this.data[i].Material === material) {
+                    this.data[i].Quantity += quantity;
+                    break;
+                }
+            }
+        },
         updateItem(material, quantity) {
             for (let i = 0; i < this.data.length; i++) {
                 if (this.data[i].Material === material) {

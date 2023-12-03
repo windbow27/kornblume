@@ -1,0 +1,122 @@
+{
+    "1.21" : [
+        {
+            "Material": "Golden Fleece",
+            "Quantity": 3
+        },
+        {
+            "Material": "Incorrupt Monkeypaw",
+            "Quantity": 8
+        },
+        {
+            "Material": "Wyrmling Skeleton",
+            "Quantity": 8
+        },
+        {
+            "Material": "Sonorous Knell",
+            "Quantity": 5
+        },
+        {
+            "Material": "Brief Cacophony",
+            "Quantity": 8
+        },
+        {
+            "Material": "Salted Mandrake",
+            "Quantity": 15
+        },
+        {
+            "Material": "Bifurcated Skeleton",
+            "Quantity": 15
+        },
+        {
+            "Material": "Solidus",
+            "Quantity": 20
+        },
+        {
+            "Material": "Liquefied Terror",
+            "Quantity": 20
+        },
+        {
+            "Material": "Rough Silver Ingot",
+            "Quantity": 20
+        },
+        {
+            "Material": "Sharpodonty",
+            "Quantity": 480000
+        },
+        {
+            "Material": "Dust",
+            "Quantity": 540000
+        },
+        {
+            "Material": "Moment of Dissonance",
+            "Quantity": 10
+        },
+        {
+            "Material": "Spell of Banishing",
+            "Quantity": 25
+        },
+        {
+            "Material": "Silver Ore",
+            "Quantity": 25
+        },
+        {
+            "Material": "Milled Magnesia",
+            "Quantity": 25
+        }
+    ],
+    "1.22": [
+        {
+            "Material": "Sonorous Knell",
+            "Quantity": 3
+        },
+        {
+            "Material": "Tome of Plantal Vimen",
+            "Quantity": 6
+        },
+        {
+            "Material": "Scroll of Plantal Vimen",
+            "Quantity": 6
+        },
+        {
+            "Material": "Page of Plantal Vimen",
+            "Quantity": 6
+        },
+        {
+            "Material": "Holy Silver",
+            "Quantity": 5
+        },
+        {
+            "Material": "Prophetic Bird",
+            "Quantity": 5
+        },
+        {
+            "Material": "Brief Cacophony",
+            "Quantity": 5
+        },
+        {
+            "Material": "Milled Magnesia",
+            "Quantity": 10
+        },
+        {
+            "Material": "Esoteric Bones",
+            "Quantity": 10
+        },
+        {
+            "Material": "Moment of Dissonance",
+            "Quantity": 10
+        },
+        {
+            "Material": "Trembling Tooth",
+            "Quantity": 10
+        },
+        {
+            "Material": "Sharpodonty",
+            "Quantity": 75000
+        },
+        {
+            "Material": "Dust",
+            "Quantity": 125000
+        }
+    ]
+}

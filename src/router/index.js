@@ -17,7 +17,7 @@ const router = createRouter({
       name: 'about',
       component:() => import('../views/AboutView.vue'),
       meta: {
-        requiredJson: ['arcanists', 'calculations', 'crafts', 'items', 'stages']
+        requiredJson: ['arcanists']
       }
     },
     {
@@ -25,7 +25,7 @@ const router = createRouter({
       name: 'planner',
       component:() => import('../views/PlannerView.vue'),
       meta: {
-        requiredJson: ['arcanists', 'calculations', 'crafts', 'items', 'stages']
+        requiredJson: ['arcanists', 'calculations', 'crafts', 'items', 'stages', 'shops']
       }
     }
   ]

@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, defineEmits } from 'vue';
 import { useProcessMaterial } from '../../composables/ProcessItems';
+import { formatQuantity } from '../../composables/ProcessItems';
 
 const props = defineProps({
     material: {
@@ -24,7 +25,7 @@ const validateQuantity = () => {
         quantity.value = 0;
         return;
     }
-    quantity.value = quanityValue;
+    quantity.value = formatQuantity(quanityValue);
 };
 
 const updateQuantity = () => {

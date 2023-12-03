@@ -26,6 +26,10 @@ export const useDataStore = defineStore('dataStore', {
             data: null,
             loaded: false
         },
+        shops: {
+            data: null,
+            loaded: false
+        },
     }),
     actions: {
         async fetchData(module) {

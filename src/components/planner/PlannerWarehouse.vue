@@ -3,6 +3,7 @@ import { ref, onMounted, computed } from 'vue';
 import { useWarehouseStore } from '../../stores/WarehouseStore';
 import { useDataStore } from '../../stores/DataStore';
 import { sortMaterials } from '../../composables/CalculateMaterials';
+import { addMaterialsToWarehouse } from '../../composables/ShopMaterials';
 import ItemWarehouse from '../item/ItemWarehouse.vue';
 
 const emit = defineEmits({
@@ -69,6 +70,11 @@ const resetCheckedCategories = () => {
   emit('closeOverlay');
 };
 
+const addShopItems = (version) => {
+  addMaterialsToWarehouse(version);
+  emit('closeOverlay');
+};
+
 const closeOverlay = () => {
   emit('closeOverlay');
 };
@@ -120,7 +126,57 @@ const closeOverlay = () => {
         </div>
       </div>
 
-      <button @click="resetCheckedCategories" className="btn btn-error btn-sm">Reset Selected Category</button>
+      <!-- modal buttons -->
+      <div class="flex space-x-10">
+        <!-- shops -->
+        <div class="flex space-x-3">
+          <button class="btn btn-success btn-sm" onclick="my_modal_shop1.showModal()">1.2 pt.1</button>
+          <dialog id="my_modal_shop1" class="modal">
+            <div class="modal-box bg-slate-700">
+              <p class="py-4 text-lg text-white text-center">Add materials from 1.2 part 1 event shop?</p>
+              <p class="py-4 text-lg text-white text-center"> You should add once only.</p>
+              <div class="flex justify-center">
+                <button class="btn btn-success btn-md mr-2" @click="addShopItems('1.21')">Yes</button>
+                <button class="btn btn-error btn-md" onclick="my_modal_shop1.close()">No</button>
+              </div>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+              <button>close</button>
+            </form>
+          </dialog>
+  
+          <button class="btn btn-success btn-sm" onclick="my_modal_shop2.showModal()">1.2 pt.2</button>
+          <dialog id="my_modal_shop2" class="modal">
+            <div class="modal-box bg-slate-700">
+              <p class="py-4 text-lg text-white text-center">Add materials from 1.2 part 2 event shop?</p>
+              <p class="py-4 text-lg text-white text-center"> You should add once only.</p>
+              <div class="flex justify-center">
+                <button class="btn btn-success btn-md mr-2" @click="addShopItems('1.22')">Yes</button>
+                <button class="btn btn-error btn-md" onclick="my_modal_shop2.close()">No</button>
+              </div>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+              <button>close</button>
+            </form>
+          </dialog>
+        </div>
+
+        <!-- reset -->
+        <button class="btn btn-error btn-sm" onclick="my_modal_resetMat.showModal()">Reset</button>
+        <dialog id="my_modal_resetMat" class="modal">
+          <div class="modal-box bg-slate-700">
+            <p class="py-4 text-lg text-white text-center">Reset quantity of selected categories?</p>
+            <div class="flex justify-center">
+              <button class="btn btn-success btn-md mr-2" @click="resetCheckedCategories">Yes</button>
+              <button class="btn btn-error btn-md" onclick="my_modal_resetMat.close()">No</button>
+            </div>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+      </div>
+
     </div>
   </div>
 </template>
