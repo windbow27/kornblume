@@ -8540,13 +8540,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing",
-          "Solidus"
+          "Spell of Banishing"
         ],
         "Quantity": [
           5,
-          6,
-          3
+          6
         ]
       },
       {
@@ -8784,13 +8782,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Trembling Tooth",
-          "Solidus"
+          "Trembling Tooth"
         ],
         "Quantity": [
           5,
-          4,
-          3
+          4
         ]
       },
       {
@@ -8810,7 +8806,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Rough Silver Ingot",
+          "Esoteric Bones",
           "Milled Magnesia"
         ],
         "Quantity": [
@@ -8824,7 +8820,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "(Gold Beetle)"
+          "Clawed Pendulum"
         ],
         "Quantity": [
           30000,
@@ -9028,13 +9024,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing",
-          "Solidus"
+          "Spell of Banishing"
         ],
         "Quantity": [
           5,
-          6,
-          3
+          6
         ]
       },
       {
@@ -9272,13 +9266,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Magnesia Crystal",
-          "Solidus"
+          "Magnesia Crystal"
         ],
         "Quantity": [
           5,
-          4,
-          3
+          4
         ]
       },
       {
@@ -9312,7 +9304,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "(Gold Beetle)"
+          "Soldius"
         ],
         "Quantity": [
           30000,
@@ -9516,13 +9508,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Silver Ore",
-          "Solidus"
+          "Silver Ore"
         ],
         "Quantity": [
           5,
-          5,
-          3
+          5
         ]
       },
       {
@@ -9760,13 +9750,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Silver Ore",
-          "Solidus"
+          "Silver Ore"
         ],
         "Quantity": [
           5,
-          5,
-          3
+          5
         ]
       },
       {
@@ -10004,13 +9992,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Silver Ore",
-          "Solidus"
+          "Silver Ore"
         ],
         "Quantity": [
           5,
-          5,
-          3
+          5
         ]
       },
       {
@@ -10248,13 +10234,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Magnesia Crystal",
-          "Solidus"
+          "Magnesia Crystal"
         ],
         "Quantity": [
           5,
-          4,
-          3
+          4
         ]
       },
       {
@@ -10492,15 +10476,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing",
-          "Shattered Bones",
-          "Solidus"
+          "Spell of Banishing"
         ],
         "Quantity": [
           5,
-          6,
-          4,
-          3
+          6
         ]
       },
       {
@@ -10738,15 +10718,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing",
-          "Shattered Bones",
-          "Solidus"
+          "Spell of Banishing"
         ],
         "Quantity": [
           5,
-          6,
-          4,
-          3
+          6
         ]
       },
       {
@@ -10984,15 +10960,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing",
-          "Magnesia Crystal",
-          "Solidus"
+          "Magnesia Crystal"
         ],
         "Quantity": [
           5,
-          6,
-          4,
-          3
+          4
         ]
       },
       {
@@ -11230,12 +11202,10 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing",
           "Trembling Tooth"
         ],
         "Quantity": [
           5,
-          4,
           4
         ]
       },
@@ -11474,13 +11444,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Silver Ore",
-          "Solidus"
+          "Silver Ore"
         ],
         "Quantity": [
           5,
-          5,
-          3
+          5
         ]
       },
       {
@@ -11724,15 +11692,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing",
-          "Shattered Bones",
-          "Solidus"
+          "Spell of Banishing"
         ],
         "Quantity": [
           5,
-          6,
-          4,
-          3
+          6
         ]
       },
       {
@@ -11970,15 +11934,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Magnesia Crystal",
-          "Shattered Bones",
-          "Solidus"
+          "Magnesia Crystal"
         ],
         "Quantity": [
           5,
-          4,
-          4,
-          3
+          4
         ]
       },
       {
@@ -12216,15 +12176,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Trembling Tooth",
-          "Silver Ore",
-          "Solidus"
+          "Trembling Tooth"
         ],
         "Quantity": [
           5,
-          4,
-          4,
-          3
+          4
         ]
       },
       {
