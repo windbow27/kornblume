@@ -19,17 +19,7 @@ const processMaterial = computed(() => {
     return result;
 });
 
-const validateQuantity = () => {
-    const quanityValue = parseInt(quantity.value, 10);
-    if (isNaN(quanityValue) || quanityValue < 0) {
-        quantity.value = 0;
-        return;
-    }
-    quantity.value = formatQuantity(quanityValue);
-};
-
 const updateQuantity = () => {
-    validateQuantity();
     emit('update:quantity', quantity.value);
 };
 

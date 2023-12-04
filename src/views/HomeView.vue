@@ -74,10 +74,10 @@ onClickOutside(resourcesRef, closeResources);
         <footer class="text-white py-8">
             <div class="container mx-auto flex flex-col items-center space">
                 <div class="flex mb-4 space-x-4">
-                    <button @click="openChangelogs" class="btn btn-ghost btn-sm custom-gradient-button"><i
+                    <button @click="openChangelogs" class="btn btn-ghost btn-md custom-gradient-button"><i
                             class="fa-solid fa-book"></i> Changelogs</button>
-                    <button @click="openResources" class="btn btn-ghost btn-sm custom-gradient-button"><i
-                            class="fa-solid fa-book"></i> Resources</button>
+                    <button @click="openResources" class="btn btn-ghost btn-md custom-gradient-button"><i
+                            class="fa-solid fa-book"></i> Credits</button>
                 </div>
                 <a href="https://github.com/windbow27/Kornblume" target="_blank"
                     class="text-3xl text-gray-400 hover:text-white">
@@ -90,6 +90,18 @@ onClickOutside(resourcesRef, closeResources);
                     <p class="text-xs opacity-80">Kornblume is not affilated with BluePoch. All images and data belongs to
                         their respective owners.</p>
                     <p class="text-md opacity-80 m-2">Made by windbow</p>
+
+                    <button class="btn btn-ghost btn-sm opacity-80" onclick="my_modal_2.showModal()">Privacy Policy</button>
+                    <dialog id="my_modal_2" class="modal">
+                        <div class="modal-box custom-gradient-gray-blue">
+                            <p class="py-4">Kornblume use Google Analytics to collect traffics, most viewed pages in order to improve Kornblume. The data is used solely for that reason and will never be used for advertising purposes. </p>
+                            <p class="pb-4"> Planner data is stored locally on your device. </p>
+                        </div>
+                        <form method="dialog" class="modal-backdrop">
+                            <button>close</button>
+                        </form>
+                    </dialog>
+
                 </div>
             </div>
         </footer>

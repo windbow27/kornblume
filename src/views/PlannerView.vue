@@ -153,6 +153,14 @@ onClickOutside(settingsRef, closeSettings);
 </script>
 
 <template>
+  <head>
+    <meta name="description"
+      content="Plan your journey searching the truth behind the Storm. Insights, Resonances, Farming routes, and more!">
+    <meta name="image"
+      content="https://media.discordapp.net/attachments/1167647083730313256/1181227576195285002/image.png?ex=65804ae8&is=656dd5e8&hm=0b690f9cdd20d77a63d159a69ad0e34673c8a7ffe465de3687eb3d384d1a5cae&=&format=webp&quality=lossless">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="Kornblume">
+  </head>
   <div class="responsive-spacer">
     <!-- Selector -->
     <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Planner</h2>
