@@ -55,6 +55,7 @@ onClickOutside(resourcesRef, closeResources);
         <div class="text-center p-10">
             <h1 class="text-5xl lg:text-6xl font-bold text-white">Kornblume</h1>
             <p class="text-lg lg:text-xl text-gray-300">A toolsite and cornflower worship place for Reverse:1999</p>
+            <p class="text-md text-gray-300">For <i class="fa-solid fa-mobile-screen-button"></i> users, click top right <i class="fa-solid fa-bars"></i> to start.</p>
         </div>
 
         <div class="container mx-auto lg:w-2/3 p-4">
