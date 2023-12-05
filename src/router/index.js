@@ -9,15 +9,15 @@ const router = createRouter({
       name: 'home',
       component:() => import('../views/HomeView.vue'),
       meta: {
-        requiredJson: ['arcanists', 'calculations', 'crafts', 'items', 'stages']
+        requiredJson: []
       }
     },
     {
-      path: '/about',
-      name: 'about',
-      component:() => import('../views/AboutView.vue'),
+      path: '/profile',
+      name: 'profile',
+      component:() => import('../views/ProfileView.vue'),
       meta: {
-        requiredJson: ['arcanists']
+        requiredJson: []
       }
     },
     {

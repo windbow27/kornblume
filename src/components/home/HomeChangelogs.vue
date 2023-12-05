@@ -12,6 +12,7 @@ const closeOverlay = () => {
 
 const changelogs = [
     //Add more from top
+    { date: '05/12/2023', description: '• Added Profile. WIP.'},
     { date: '04/12/2023', description: '• Updated credits, minor bug fixes.' },
     { date: '03/12/2023', description: '• Fixed wrong jsons. Hopefully it is correct now.\n • Soldius. \n • Added 1.2 event shops. Two buttons, all the items.' },
     { date: '02/12/2023', description: '• Fixed warehouse, added Tooth Fairy and Changeling to released.\n • Fixed more warehouse bugs, added reset button.\n • Fixed MORE warehouse bugs.' },
