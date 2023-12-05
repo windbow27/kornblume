@@ -22,7 +22,7 @@ export const useWarehouseStore = defineStore('warehouse', {
         addShopItem(material, quantity) {
             for (let i = 0; i < this.data.length; i++) {
                 if (this.data[i].Material === material) {
-                    this.data[i].Quantity += quantity;
+                    this.data[i].Quantity += Number(quantity);
                     break;
                 }
             }
