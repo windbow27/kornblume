@@ -6,7 +6,7 @@
     <div v-if="!isSmallScreen" class="flex space-x-2">
       <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> Home</router-link>
       <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> Planner</router-link>
-      <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i class="fa-solid fa-user-plus"></i> Profile</router-link>
+      <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> Profile</router-link>
     </div>
 
     <!-- Dropdown Button for Small Screens -->
