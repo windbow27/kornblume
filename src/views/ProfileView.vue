@@ -1,7 +1,7 @@
 <template>
     <div class="responsive-spacer">
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Profile</h2>
-        <p class="text-white"> You can export or import your data here. Multiple profiles is WIP.</p>
+        <p class="text-white"> You can export or import your data here.</p>
         <div class="flex justify-center items-center p-2">
             <button @click="exportStores" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Export Stores

@@ -28,10 +28,12 @@ watchEffect(() => {
     const mergedResult = mergeResults(result);
     calculateAllMaterials.value = mergedResult;
 
-    emits('update:totalActivityAndDays', getTotalActivityAndDays(useProcessCards(mergedResult)));
+    const processedCards = useProcessCards(mergedResult);
+
+    emits('update:totalActivityAndDays', getTotalActivityAndDays(processedCards));
 
     // Update the calculateCards ref
-    calculateCards.value = useProcessCards(mergedResult);
+    calculateCards.value = processedCards;
 });
 </script>
 
