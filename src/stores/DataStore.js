@@ -26,6 +26,14 @@ export const useDataStore = defineStore('dataStore', {
             data: null,
             loaded: false
         },
+        formulas: {
+            data: null,
+            loaded: false
+        },
+        drops: {
+            data: null,
+            loaded: false
+        }, 
         shops: {
             data: null,
             loaded: false
