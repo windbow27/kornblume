@@ -223,72 +223,67 @@ export function useProcessCards(materials) {
 }
 
 function getPlan(materials) {
+  // prepare constraints
+  const materialConstraints = {};
+  const neededConstraints = {};
+  materials.forEach(({ Material: matlName, Quantity: quantity }) => {
+    neededConstraints[matlName] = { min: quantity };
+  });
 
-    // prepare constraints
-    const materialConstraints = {};
-    const neededConstraints = {};
-    materials.forEach(({Material: matlName, Quantity: quantity}) => {
-        neededConstraints[matlName] = { min: quantity };
-    })
+  // prepare craft mappings
+  const craftMapping = {};
 
-    // prepare craft mappings
-    const craftMapping = {};
+  for (let { Name: name, Material: matl, Quantity: quantity } of formulas) {
+    materialConstraints[name] = { min: 0 };
+    if (matl.length === 0) continue;
 
-	for (let { Name: name, Material: matl, Quantity: quantity } of (formulas)) {
-		materialConstraints[name] = { min: 0 };
-        if (matl.length === 0) continue;
+    const craftMaterials = {};
+    matl.forEach((matName, idx) => {
+      craftMaterials[matName] = -quantity[idx];
+    });
 
-        const craftMaterials = {};
-        matl.forEach((matName, idx) => {
-            craftMaterials[matName] = - quantity[idx]
-        })
-
-		craftMapping[`crafted-${name}`] = {
-            [name]: 1,
-			...craftMaterials,
-			cost: 0
-		};
-	}
-
-    // prepare drop mappings
-    const dropMapping = {};
-	for (let stage in drops) {
-        const stageInfo = drops[stage];
-        const {
-            count: times,
-            cost,
-            drops: dropCount,
-        } = stageInfo;
-        dropMapping[stage] = { cost };
-        for (let matlName in dropCount) {
-            dropMapping[stage][matlName] = dropCount[matlName] / times;
-        }
-	}
-
-    // define LP solver
-    const variables = Object.assign({}, craftMapping, dropMapping);
-
-    const constraints = {
-        ...materialConstraints,
-        ...neededConstraints,
+    craftMapping[`crafted-${name}`] = {
+      [name]: 1,
+      ...craftMaterials,
+      cost: 0,
     };
+  }
 
-    const ints = {};
-    for (let v in variables) {
-        ints[v] = 1;
+  // prepare drop mappings
+  const dropMapping = {};
+  for (let stage in drops) {
+    const stageInfo = drops[stage];
+    const { count: times, cost, drops: dropCount } = stageInfo;
+    dropMapping[stage] = { cost };
+    for (let matlName in dropCount) {
+      dropMapping[stage][matlName] = dropCount[matlName] / times;
     }
+  }
 
-	const model = {
-		optimize: 'cost',
-		opType: 'min',
-		constraints,
-		variables,
-        // FIXME: for some reason, when I try to pass in ints, it causes the app to crash... maybe we need to convert manually
-		// restrict the number of crafting to integers
-		// ints,
-	};
+  // define LP solver
+  const variables = Object.assign({}, craftMapping, dropMapping);
 
-    return linprog.Solve(model);
+  const constraints = {
+    ...materialConstraints,
+    ...neededConstraints,
+  };
+
+  const ints = {};
+  for (let v in variables) {
+    ints[v] = 1;
+  }
+
+  const model = {
+    optimize: "cost",
+    opType: "min",
+    constraints,
+    variables,
+    // FIXME: for some reason, when I try to pass in ints, it causes the app to crash... maybe we need to convert manually
+    // restrict the number of crafting to integers
+    // ints,
+  };
+
+  return linprog.Solve(model);
 }
 
 export function getCardLayers(materials) {
