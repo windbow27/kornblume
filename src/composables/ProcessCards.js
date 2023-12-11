@@ -1,9 +1,12 @@
 import { useDataStore } from '../stores/DataStore'
 import { useWarehouseStore } from '../stores/WarehouseStore'
+import linprog from "javascript-lp-solver/src/solver";
 
 const items = useDataStore().items.data;
 const stages = useDataStore().stages.data;
 const crafts = useDataStore().crafts.data;
+const formulas = useDataStore().formulas.data;
+const drops = useDataStore().drops.data;
 const warehouse = useWarehouseStore().data;
 
 function subtractMaterials(materials) {
@@ -143,6 +146,11 @@ export function useProcessCards(materials) {
     const sortedMaterials = sortArcanists(higherTierSubtractedMaterials);
     const subtractedMaterials = subtractMaterials(sortedMaterials);
 
+    // NOTE: No processing of the RESONANCE material yet
+    // TODO: I think we need to consider the warehouse inventory here, but I haven't made adjustments for this yet
+    const plan = getPlan(materials);
+    console.log('plan', plan);
+
     subtractedMaterials.forEach((matInfo) => {
         if (matInfo.Quantity <= 0) return;
         const currentStage = stages.find((stage) => stage.Material.includes(matInfo.Material));
@@ -212,6 +220,75 @@ export function useProcessCards(materials) {
     ];
 
     return cardLayers;
+}
+
+function getPlan(materials) {
+
+    // prepare constraints
+    const materialConstraints = {};
+    const neededConstraints = {};
+    materials.forEach(({Material: matlName, Quantity: quantity}) => {
+        neededConstraints[matlName] = { min: quantity };
+    })
+
+    // prepare craft mappings
+    const craftMapping = {};
+
+	for (let { Name: name, Material: matl, Quantity: quantity } of (formulas)) {
+		materialConstraints[name] = { min: 0 };
+        if (matl.length === 0) continue;
+
+        const craftMaterials = {};
+        matl.forEach((matName, idx) => {
+            craftMaterials[matName] = - quantity[idx]
+        })
+
+		craftMapping[`crafted-${name}`] = {
+            [name]: 1,
+			...craftMaterials,
+			cost: 0
+		};
+	}
+
+    // prepare drop mappings
+    const dropMapping = {};
+	for (let stage in drops) {
+        const stageInfo = drops[stage];
+        const {
+            count: times,
+            cost,
+            drops: dropCount,
+        } = stageInfo;
+        dropMapping[stage] = { cost };
+        for (let matlName in dropCount) {
+            dropMapping[stage][matlName] = dropCount[matlName] / times;
+        }
+	}
+
+    // define LP solver
+    const variables = Object.assign({}, craftMapping, dropMapping);
+
+    const constraints = {
+        ...materialConstraints,
+        ...neededConstraints,
+    };
+
+    const ints = {};
+    for (let v in variables) {
+        ints[v] = 1;
+    }
+
+	const model = {
+		optimize: 'cost',
+		opType: 'min',
+		constraints,
+		variables,
+        // FIXME: for some reason, when I try to pass in ints, it causes the app to crash... maybe we need to convert manually
+		// restrict the number of crafting to integers
+		// ints,
+	};
+
+    return linprog.Solve(model);
 }
 
 export function getCardLayers(materials) {
