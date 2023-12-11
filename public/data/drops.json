@@ -814,7 +814,8 @@
     "count": 1,
     "cost": 25,
     "drops": {
-        "Dust": 12000
+        "Dust": 12000,
+        "Sharpodonty": 250
     }
   },
   "Mintage Aesthetics VI": {
@@ -906,6 +907,13 @@
     "cost": 30,
     "drops": {
         "Tome of Beastly Thirst": 2
+    }
+  },
+  "Oneiric Shop": {
+    "count": 1,
+    "cost": 0,
+    "drops": {
+      "Oneiric Fluid": 1
     }
   }
 }

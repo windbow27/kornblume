@@ -1,352 +1,401 @@
 [
-    {
-      "Id": 1,
-      "Name": "Fruit of Good and Evil",
-      "Rarity": 6,
-      "Material": [
-        "Bogeyman",
-        "Incorrupt Monkeypaw",
-        "Prophetic Bird",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        1,
-        1,
-        4,
-        800
-      ]
-    },
-    {
-      "Id": 2,
-      "Name": "Mistilteinn",
-      "Rarity": 6,
-      "Material": [
-        "Wyrmling Skeleton",
-        "Holy Silver",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        2,
-        4,
-        800
-      ]
-    },
-    {
-      "Id": 3,
-      "Name": "Golden Fleece",
-      "Rarity": 6,
-      "Material": [
-        "Platinum Ouija",
-        "Bifurcated Skeleton",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        2,
-        2,
-        800
-      ]
-    },
-    {
-      "Id": 4,
-      "Name": "Bogeyman",
-      "Rarity": 5,
-      "Material": [
-        "Biting Box",
-        "Holy Silver",
-        "Prophetic Bird",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        1,
-        2,
-        500
-      ]
-    },
-    {
-      "Id": 5,
-      "Name": "Incorrupt Monkeypaw",
-      "Rarity": 5,
-      "Material": [
-        "Salted Mandrake",
-        "Bifurcated Skeleton",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        2,
-        500
-      ]
-    },
-    {
-      "Id": 6,
-      "Name": "Wyrmling Skeleton",
-      "Rarity": 5,
-      "Material": [
-        "Bifurcated Skeleton",
-        "Biting Box",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        2,
-        500
-      ]
-    },
-    {
-      "Id": 7,
-      "Name": "Silver Bullet",
-      "Rarity": 5,
-      "Material": [
-        "Holy Silver",
-        "Bifurcated Skeleton",
-        "Salted Mandrake",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        1,
-        1,
-        500
-      ]
-    },
-    {
-      "Id": 8,
-      "Name": "Murmur of Insanity",
-      "Rarity": 5,
-      "Material": [
-        "Prophetic Bird",
-        "Salted Mandrake",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        2,
-        500
-      ]
-    },
-    {
-      "Id": 9,
-      "Name": "Platinum Ouija",
-      "Rarity": 5,
-      "Material": [
-        "Clawed Pendulum",
-        "Holy Silver",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        2,
-        4,
-        500
-      ]
-    },
-    {
-      "Id": 10,
-      "Name": "Biting Box",
-      "Rarity": 4,
-      "Material": [
-        "Liquefied Terror",
-        "Spell of Fortune",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        1,
-        300
-      ]
-    },
-    {
-      "Id": 11,
-      "Name": "Salted Mandrake",
-      "Rarity": 4,
-      "Material": [
-        "Milled Magnesia",
-        "Esoteric Bones",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        1,
-        300
-      ]
-    },
-    {
-      "Id": 12,
-      "Name": "Bifurcated Skeleton",
-      "Rarity": 4,
-      "Material": [
-        "Esoteric Bones",
-        "Rough Silver Ingot",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        1,
-        300
-      ]
-    },
-    {
-      "Id": 13,
-      "Name": "Holy Silver",
-      "Rarity": 4,
-      "Material": [
-        "Rough Silver Ingot",
-        "Liquefied Terror",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        3,
-        1,
-        300
-      ]
-    },
-    {
-      "Id": 15,
-      "Name": "Prophetic Bird",
-      "Rarity": 4,
-      "Material": [
-        "Spell of Fortune",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        4,
-        300
-      ]
-    },
-    {
-      "Id": 16,
-      "Name": "Clawed Pendulum",
-      "Rarity": 4,
-      "Material": [
-        "Solidus",
-        "Rough Silver Ingot",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        2,
-        2,
-        400
-      ]
-    },
-    {
-      "Id": 17,
-      "Name": "Liquefied Terror",
-      "Rarity": 3,
-      "Material": [
-        "Trembling Tooth"
-      ],
-      "Quantity": [
-        3,
-        150
-      ]
-    },
-    {
-      "Id": 18,
-      "Name": "Milled Magnesia",
-      "Rarity": 3,
-      "Material": [
-        "Magnesia Crystal",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        4,
-        150
-      ]
-    },
-    {
-      "Id": 19,
-      "Name": "Esoteric Bones",
-      "Rarity": 3,
-      "Material": [
-        "Shattered Bones",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        4,
-        150
-      ]
-    },
-    {
-      "Id": 20,
-      "Name": "Rough Silver Ingot",
-      "Rarity": 3,
-      "Material": [
-        "Sliver Ore",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        4,
-        150
-      ]
-    },
-    {
-      "Id": 21,
-      "Name": "Spell of Fortune",
-      "Rarity": 3,
-      "Material": [
-        "Spell of Banishing",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        4,
-        150
-      ]
-    },
-    {
-      "Id": 22,
-      "Name": "Solidus",
-      "Rarity": 3,
-      "Material": [
-        "Sliver Ore",
-        "Spell of Banishing",
-        "Sharpodonty"
-      ],
-      "Quantity": [
-        5,
-        5,
-        200
-      ]
-    },
-    {
-      "Id": 23,
-      "Name": "Spell of Banishing",
-      "Rarity": 2,
-      "Material": [],
-      "Quantity": []
-    },
-    {
-      "Id": 24,
-      "Name": "Sliver Ore",
-      "Rarity": 2,
-      "Material": [],
-      "Quantity": []
-    },
-    {
-      "Id": 25,
-      "Name": "Shattered Bones",
-      "Rarity": 2,
-      "Material": [],
-      "Quantity": []
-    },
-    {
-      "Id": 26,
-      "Name": "Magnesia Crystal",
-      "Rarity": 2,
-      "Material": [],
-      "Quantity": []
-    },
-    {
-      "Id": 27,
-      "Name": "Dust",
-      "Rarity": 1,
-      "Material": [],
-      "Quantity": []
-    },
-    {
-      "Id": 28,
-      "Name": "Sharpodonty",
-      "Rarity": 1,
-      "Material": [],
-      "Quantity": []
-    }
+  {
+    "Id": 1,
+    "Name": "Fruit of Good and Evil",
+    "Rarity": 6,
+    "Material": [
+      "Bogeyman",
+      "Incorrupt Monkeypaw",
+      "Prophetic Bird",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      1,
+      1,
+      4,
+      800
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Mistilteinn",
+    "Rarity": 6,
+    "Material": [
+      "Wyrmling Skeleton",
+      "Holy Silver",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      2,
+      4,
+      800
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Golden Fleece",
+    "Rarity": 6,
+    "Material": [
+      "Platinum Ouija",
+      "Bifurcated Skeleton",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      2,
+      2,
+      800
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Bogeyman",
+    "Rarity": 5,
+    "Material": [
+      "Biting Box",
+      "Holy Silver",
+      "Prophetic Bird",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      2,
+      500
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Incorrupt Monkeypaw",
+    "Rarity": 5,
+    "Material": [
+      "Salted Mandrake",
+      "Bifurcated Skeleton",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      2,
+      500
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Wyrmling Skeleton",
+    "Rarity": 5,
+    "Material": [
+      "Bifurcated Skeleton",
+      "Biting Box",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      2,
+      500
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "Silver Bullet",
+    "Rarity": 5,
+    "Material": [
+      "Holy Silver",
+      "Bifurcated Skeleton",
+      "Salted Mandrake",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      1,
+      500
+    ]
+  },
+  {
+    "Id": 8,
+    "Name": "Murmur of Insanity",
+    "Rarity": 5,
+    "Material": [
+      "Prophetic Bird",
+      "Salted Mandrake",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      2,
+      500
+    ]
+  },
+  {
+    "Id": 9,
+    "Name": "Platinum Ouija",
+    "Rarity": 5,
+    "Material": [
+      "Clawed Pendulum",
+      "Holy Silver",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      2,
+      4,
+      500
+    ]
+  },
+  {
+    "Id": 10,
+    "Name": "Biting Box",
+    "Rarity": 4,
+    "Material": [
+      "Liquefied Terror",
+      "Spell of Fortune",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 11,
+    "Name": "Salted Mandrake",
+    "Rarity": 4,
+    "Material": [
+      "Milled Magnesia",
+      "Esoteric Bones",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 12,
+    "Name": "Bifurcated Skeleton",
+    "Rarity": 4,
+    "Material": [
+      "Esoteric Bones",
+      "Rough Silver Ingot",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 13,
+    "Name": "Holy Silver",
+    "Rarity": 4,
+    "Material": [
+      "Rough Silver Ingot",
+      "Liquefied Terror",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 15,
+    "Name": "Prophetic Bird",
+    "Rarity": 4,
+    "Material": [
+      "Spell of Fortune",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      4,
+      300
+    ]
+  },
+  {
+    "Id": 16,
+    "Name": "Clawed Pendulum",
+    "Rarity": 4,
+    "Material": [
+      "Solidus",
+      "Rough Silver Ingot",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      2,
+      2,
+      400
+    ]
+  },
+  {
+    "Id": 17,
+    "Name": "Liquefied Terror",
+    "Rarity": 3,
+    "Material": [
+      "Trembling Tooth"
+    ],
+    "Quantity": [
+      3,
+      150
+    ]
+  },
+  {
+    "Id": 18,
+    "Name": "Milled Magnesia",
+    "Rarity": 3,
+    "Material": [
+      "Magnesia Crystal",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      4,
+      150
+    ]
+  },
+  {
+    "Id": 19,
+    "Name": "Esoteric Bones",
+    "Rarity": 3,
+    "Material": [
+      "Shattered Bones",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      4,
+      150
+    ]
+  },
+  {
+    "Id": 20,
+    "Name": "Rough Silver Ingot",
+    "Rarity": 3,
+    "Material": [
+      "Sliver Ore",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      4,
+      150
+    ]
+  },
+  {
+    "Id": 21,
+    "Name": "Spell of Fortune",
+    "Rarity": 3,
+    "Material": [
+      "Spell of Banishing",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      4,
+      150
+    ]
+  },
+  {
+    "Id": 22,
+    "Name": "Solidus",
+    "Rarity": 3,
+    "Material": [
+      "Sliver Ore",
+      "Spell of Banishing",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      5,
+      5,
+      200
+    ]
+  },
+  {
+    "Id": 23,
+    "Name": "Spell of Banishing",
+    "Rarity": 2,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 24,
+    "Name": "Sliver Ore",
+    "Rarity": 2,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 25,
+    "Name": "Shattered Bones",
+    "Rarity": 2,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 26,
+    "Name": "Magnesia Crystal",
+    "Rarity": 2,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 27,
+    "Name": "Dust",
+    "Rarity": 1,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 28,
+    "Name": "Sharpodonty",
+    "Rarity": 1,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 29,
+    "Name": "Sinuous Howl",
+    "Rarity": 6,
+    "Material": ["Oneiric Fluid"],
+    "Quantity": [1500]
+  },
+  {
+    "Id": 30,
+    "Name": "Interlaced Shudder",
+    "Rarity": 6,
+    "Material": ["Oneiric Fluid"],
+    "Quantity": [1500]
+  },
+  {
+    "Id": 31,
+    "Name": "Hypocritical Murmur",
+    "Rarity": 6,
+    "Material": ["Oneiric Fluid"],
+    "Quantity": [1500]
+  },
+  {
+    "Id": 32,
+    "Name": "Hoarse Echo",
+    "Rarity": 6,
+    "Material": ["Oneiric Fluid"],
+    "Quantity": [1500]
+  },
+  {
+    "Id": 33,
+    "Name": "Sonorous Knell",
+    "Rarity": 5,
+    "Material": ["Oneiric Fluid"],
+    "Quantity": [250]
+  },
+  {
+    "Id": 34,
+    "Name": "Brief Cacophony",
+    "Rarity": 4,
+    "Material": ["Oneiric Fluid"],
+    "Quantity": [100]
+  },
+  {
+    "Id": 35,
+    "Name": "Moment of Dissonance",
+    "Rarity": 3,
+    "Material": ["Oneiric Fluid"],
+    "Quantity": [100]
+  }
 ]

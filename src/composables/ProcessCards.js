@@ -146,10 +146,9 @@ export function useProcessCards(materials) {
     const sortedMaterials = sortArcanists(higherTierSubtractedMaterials);
     const subtractedMaterials = subtractMaterials(sortedMaterials);
 
-    // NOTE: No processing of the RESONANCE material yet
     // TODO: I think we need to consider the warehouse inventory here, but I haven't made adjustments for this yet
     const plan = getPlan(materials);
-    console.log('plan', plan);
+    console.log(plan);
 
     subtractedMaterials.forEach((matInfo) => {
         if (matInfo.Quantity <= 0) return;
@@ -222,6 +221,7 @@ export function useProcessCards(materials) {
     return cardLayers;
 }
 
+// NOTE: not handle RESONANCE material in this function
 function getPlan(materials) {
   // prepare constraints
   const materialConstraints = {};
@@ -242,7 +242,7 @@ function getPlan(materials) {
       craftMaterials[matName] = -quantity[idx];
     });
 
-    craftMapping[`crafted-${name}`] = {
+    craftMapping[`Wilderness Crafting - ${name}`] = {
       [name]: 1,
       ...craftMaterials,
       cost: 0,
