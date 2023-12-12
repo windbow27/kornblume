@@ -222,11 +222,32 @@ export function useProcessCards(materials) {
 }
 
 function getPlan(materials) {
+
+  // restrict these variables number to integers
+  const integers = [
+    "The Poussiere VI",
+    "Mintage Aesthetics VI",
+    "Brutes Wilds II",
+    "Brutes Wilds IV",
+    "Brutes Wilds VI",
+    "Mountain Echoes II",
+    "Mountain Echoes IV",
+    "Mountain Echoes VI",
+    "Sylvanus Shape II",
+    "Sylvanus Shape IV",
+    "Sylvanus Shape VI",
+    "Starfall Locale II",
+    "Starfall Locale IV",
+    "Starfall Locale VI",
+  ];
+  // NOTE: this might cause a timeout if all variables are integers
+  // TODO: we exclude the level variables so need to manually round up the level count in the solve result 
+
   // prepare constraints
   const materialConstraints = {};
   const neededConstraints = {};
   const resonateMaterial = [
-      "Sinuous Howl", "Interlaced Shudder", "Hypocritical Murmur", "Hoarse Echo", "Sonorous Knell", "Brief Cacophony", "Moment of Dissonance"
+    "Sinuous Howl", "Interlaced Shudder", "Hypocritical Murmur", "Hoarse Echo", "Sonorous Knell", "Brief Cacophony", "Moment of Dissonance"
   ];
   materials.forEach(({ Material: matlName, Quantity: quantity }) => {
     // NOTE: not handle RESONANCE material in this function
@@ -235,7 +256,6 @@ function getPlan(materials) {
   });
 
   // prepare craft mappings
-  const integers = []; // restrict the number of crafting to integers
   const craftMapping = {};
 
   for (let { Name: name, Material: matl, Quantity: quantity } of formulas) {
@@ -263,11 +283,9 @@ function getPlan(materials) {
   for (let stage in drops) {
     const stageInfo = drops[stage];
     const { count: times, cost, drops: dropCount } = stageInfo;
-    if (times >= 100) { // only consider drop data with a higher number of drop reports
-        dropMapping[stage] = { cost };
-        for (let matlName in dropCount) {
-          dropMapping[stage][matlName] = dropCount[matlName] / times;
-        }
+    dropMapping[stage] = { cost };
+    for (let matlName in dropCount) {
+      dropMapping[stage][matlName] = dropCount[matlName] / times;
     }
   }
 
@@ -284,8 +302,6 @@ function getPlan(materials) {
     direction: "minimize",
     constraints,
     variables,
-    // FIXME: the solver could exit early for an integer problem
-    // integers: true, // all variables are indicated as integer
     integers,
   };
 
