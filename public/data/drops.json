@@ -6,7 +6,7 @@
       "Spell of Banishing": 7,
       "Magnesia Crystal": 2,
       "Shattered Bones": 2,
-      "Sliver Ore": 2
+      "Silver Ore": 2
     }
   },
   "1-4S": {
@@ -17,7 +17,7 @@
       "Trembling Tooth": 2,
       "Magnesia Crystal": 2,
       "Shattered Bones": 2,
-      "Sliver Ore": 3
+      "Silver Ore": 3
     }
   },
   "1-5S": {
@@ -28,7 +28,7 @@
       "Trembling Tooth": 4,
       "Magnesia Crystal": 1,
       "Shattered Bones": 1,
-      "Sliver Ore": 4
+      "Silver Ore": 4
     }
   },
   "1-6S": {
@@ -38,7 +38,7 @@
       "Spell of Banishing": 3,
       "Trembling Tooth": 3,
       "Shattered Bones": 4,
-      "Sliver Ore": 4
+      "Silver Ore": 4
     }
   },
   "1-7S": {
@@ -48,7 +48,7 @@
       "Spell of Banishing": 4,
       "Magnesia Crystal": 1,
       "Shattered Bones": 1,
-      "Sliver Ore": 2
+      "Silver Ore": 2
     }
   },
   "1-8S": {
@@ -57,7 +57,7 @@
     "drops": {
       "Spell of Banishing": 3,
       "Magnesia Crystal": 1,
-      "Sliver Ore": 1
+      "Silver Ore": 1
     }
   },
   "1-11S": {
@@ -68,7 +68,7 @@
       "Trembling Tooth": 3,
       "Magnesia Crystal": 2,
       "Shattered Bones": 4,
-      "Sliver Ore": 8
+      "Silver Ore": 8
     }
   },
   "1-12S": {
@@ -79,7 +79,7 @@
       "Trembling Tooth": 3,
       "Magnesia Crystal": 1,
       "Shattered Bones": 3,
-      "Sliver Ore": 5
+      "Silver Ore": 5
     }
   },
   "1-14S": {
@@ -90,7 +90,7 @@
       "Trembling Tooth": 1,
       "Magnesia Crystal": 3,
       "Shattered Bones": 4,
-      "Sliver Ore": 3
+      "Silver Ore": 3
     }
   },
   "1-16S": {
@@ -99,7 +99,7 @@
     "drops": {
       "Spell of Banishing": 6,
       "Trembling Tooth": 2,
-      "Sliver Ore": 1
+      "Silver Ore": 1
     }
   },
   "1-1H": {
@@ -110,7 +110,7 @@
       "Trembling Tooth": 18,
       "Magnesia Crystal": 1,
       "Shattered Bones": 5,
-      "Sliver Ore": 5
+      "Silver Ore": 5
     }
   },
   "1-4H": {
@@ -120,7 +120,7 @@
       "Spell of Banishing": 45,
       "Trembling Tooth": 2,
       "Shattered Bones": 4,
-      "Sliver Ore": 4
+      "Silver Ore": 4
     }
   },
   "1-5H": {
@@ -131,7 +131,7 @@
       "Trembling Tooth": 2,
       "Magnesia Crystal": 3,
       "Shattered Bones": 2,
-      "Sliver Ore": 53
+      "Silver Ore": 53
     }
   },
   "1-6H": {
@@ -141,7 +141,7 @@
       "Spell of Banishing": 2,
       "Magnesia Crystal": 1,
       "Shattered Bones": 18,
-      "Sliver Ore": 3
+      "Silver Ore": 3
     }
   },
   "1-7H": {
@@ -161,7 +161,7 @@
       "Trembling Tooth": 2,
       "Magnesia Crystal": 1,
       "Shattered Bones": 1,
-      "Sliver Ore": 4,
+      "Silver Ore": 4,
       "Spell of Banishing": 10
     }
   },
@@ -173,7 +173,7 @@
       "Trembling Tooth": 11,
       "Magnesia Crystal": 24,
       "Shattered Bones": 19,
-      "Sliver Ore": 31,
+      "Silver Ore": 31,
       "Spell of Banishing": 28
     }
   },
@@ -185,7 +185,7 @@
       "Trembling Tooth": 7,
       "Magnesia Crystal": 15,
       "Shattered Bones": 10,
-      "Sliver Ore": 12,
+      "Silver Ore": 12,
       "Spell of Banishing": 28
     }
   },
@@ -197,7 +197,7 @@
       "Trembling Tooth": 13,
       "Magnesia Crystal": 17,
       "Shattered Bones": 19,
-      "Sliver Ore": 26,
+      "Silver Ore": 26,
       "Spell of Banishing": 29
     }
   },
@@ -209,7 +209,7 @@
       "Trembling Tooth": 2,
       "Magnesia Crystal": 7,
       "Shattered Bones": 8,
-      "Sliver Ore": 19,
+      "Silver Ore": 19,
       "Spell of Banishing": 10
     }
   },
@@ -223,7 +223,7 @@
       "Rough Silver Ingot": 1,
       "Spell of Banishing": 3,
       "Shattered Bones": 1,
-      "Sliver Ore": 2,
+      "Silver Ore": 2,
       "Trembling Tooth": 1
     }
   },
@@ -243,7 +243,7 @@
     "drops": {
       "Shattered Bones": 3,
       "Magnesia Crystal": 1,
-      "Sliver Ore": 1,
+      "Silver Ore": 1,
       "Spell of Banishing": 1
     }
   },
@@ -252,7 +252,7 @@
     "cost": 12,
     "drops": {
       "Magnesia Crystal": 2,
-      "Sliver Ore": 1,
+      "Silver Ore": 1,
       "Spell of Banishing": 1
     }
   },
@@ -260,7 +260,7 @@
     "count": 4,
     "cost": 12,
     "drops": {
-      "Sliver Ore": 5
+      "Silver Ore": 5
     }
   },
   "2-6S": {
@@ -268,7 +268,7 @@
     "cost": 12,
     "drops": {
       "Trembling Tooth": 4,
-      "Sliver Ore": 1,
+      "Silver Ore": 1,
       "Spell of Banishing": 1
     }
   },
@@ -279,7 +279,7 @@
       "Spell of Fortune": 1,
       "Liquefied Terror": 1,
       "Esoteric Bones": 1,
-      "Sliver Ore": 1,
+      "Silver Ore": 1,
       "Spell of Banishing": 2,
       "Shattered Bones": 1
     }
@@ -288,7 +288,7 @@
     "count": 1,
     "cost": 12,
     "drops": {
-      "Sliver Ore": 1
+      "Silver Ore": 1
     }
   },
   "2-13S": {
@@ -299,7 +299,7 @@
       "Milled Magnesia": 2,
       "Esoteric Bones": 1,
       "Spell of Fortune": 1,
-      "Sliver Ore": 1,
+      "Silver Ore": 1,
       "Trembling Tooth": 1,
       "Magnesia Crystal": 1,
       "Shattered Bones": 1
@@ -316,7 +316,7 @@
       "Shattered Bones": 2,
       "Spell of Banishing": 9,
       "Magnesia Crystal": 2,
-      "Sliver Ore": 1
+      "Silver Ore": 1
     }
   },
   "2-3H": {
@@ -329,7 +329,7 @@
       "Esoteric Bones": 112,
       "Rough Silver Ingot": 128,
       "Spell of Fortune": 149,
-      "Sliver Ore": 4249
+      "Silver Ore": 4249
     }
   },
   "2-4H": {
@@ -341,7 +341,7 @@
       "Trembling Tooth": 14,
       "Magnesia Crystal": 17,
       "Shattered Bones": 13,
-      "Sliver Ore": 17,
+      "Silver Ore": 17,
       "Spell of Banishing": 14
     }
   },
@@ -352,7 +352,7 @@
       "Rough Silver Ingot": 40,
       "Spell of Fortune": 41,
       "Shattered Bones": 9,
-      "Sliver Ore": 17,
+      "Silver Ore": 17,
       "Spell of Banishing": 15,
       "Magnesia Crystal": 7,
       "Trembling Tooth": 4
@@ -403,7 +403,7 @@
       "Trembling Tooth": 6,
       "Magnesia Crystal": 7,
       "Shattered Bones": 10,
-      "Sliver Ore": 16,
+      "Silver Ore": 16,
       "Spell of Banishing": 20
     }
   },
@@ -419,7 +419,7 @@
       "Spell of Banishing": 5,
       "Magnesia Crystal": 5,
       "Shattered Bones": 5,
-      "Sliver Ore": 4,
+      "Silver Ore": 4,
       "Trembling Tooth": 8
     }
   },
@@ -445,7 +445,7 @@
       "Trembling Tooth": 3,
       "Magnesia Crystal": 1,
       "Shattered Bones": 3,
-      "Sliver Ore": 6,
+      "Silver Ore": 6,
       "Spell of Banishing": 3
     }
   },
@@ -493,7 +493,7 @@
     "cost": 18,
     "drops": {
       "Clawed Pendulum": 104,
-      "Sliver Ore": 304,
+      "Silver Ore": 304,
       "Spell of Fortune": 105,
       "Spell of Banishing": 593
     }
@@ -504,7 +504,7 @@
     "drops": {
       "Solidus": 68,
       "Rough Silver Ingot": 52,
-      "Sliver Ore": 229,
+      "Silver Ore": 229,
       "Spell of Banishing": 23,
       "Magnesia Crystal": 5,
       "Trembling Tooth": 11,
@@ -522,7 +522,7 @@
       "Liquefied Terror": 50,
       "Spell of Banishing": 29,
       "Shattered Bones": 17,
-      "Sliver Ore": 18,
+      "Silver Ore": 18,
       "Magnesia Crystal": 13,
       "Trembling Tooth": 7
     }
@@ -543,7 +543,7 @@
     "drops": {
       "Holy Silver": 321,
       "Esoteric Bones": 271,
-      "Sliver Ore": 582,
+      "Silver Ore": 582,
       "Shattered Bones": 1119
     }
   },
@@ -591,7 +591,7 @@
       "Milled Magnesia": 9,
       "Trembling Tooth": 6,
       "Magnesia Crystal": 16,
-      "Sliver Ore": 107,
+      "Silver Ore": 107,
       "Spell of Banishing": 23,
       "Shattered Bones": 12,
       "Spell of Fortune": 11
@@ -616,7 +616,7 @@
       "Trembling Tooth": 5,
       "Magnesia Crystal": 5,
       "Shattered Bones": 8,
-      "Sliver Ore": 3,
+      "Silver Ore": 3,
       "Spell of Banishing": 2
     }
   },
@@ -672,7 +672,7 @@
     "drops": {
       "Milled Magnesia": 74,
       "Rough Silver Ingot": 72,
-      "Sliver Ore": 75,
+      "Silver Ore": 75,
       "Magnesia Crystal": 35
     }
   },
@@ -692,7 +692,7 @@
     "drops": {
       "Biting Box": 1001,
       "Rough Silver Ingot": 1948,
-      "Sliver Ore": 2502,
+      "Silver Ore": 2502,
       "Liquefied Terror": 112,
       "Spell of Fortune": 208,
       "Milled Magnesia": 127,
@@ -715,7 +715,7 @@
     "drops": {
       "Holy Silver": 125,
       "Milled Magnesia": 83,
-      "Sliver Ore": 232,
+      "Silver Ore": 232,
       "Magnesia Crystal": 291
     }
   },
@@ -807,7 +807,7 @@
     "count": 1,
     "cost": 12,
     "drops": {
-      "Sliver Ore": 1
+      "Silver Ore": 1
     }
   },
   "The Poussiere VI": {

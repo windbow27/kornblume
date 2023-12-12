@@ -271,7 +271,7 @@
     "Name": "Rough Silver Ingot",
     "Rarity": 3,
     "Material": [
-      "Sliver Ore",
+      "Silver Ore",
       "Sharpodonty"
     ],
     "Quantity": [
@@ -297,7 +297,7 @@
     "Name": "Solidus",
     "Rarity": 3,
     "Material": [
-      "Sliver Ore",
+      "Silver Ore",
       "Spell of Banishing",
       "Sharpodonty"
     ],
@@ -316,7 +316,7 @@
   },
   {
     "Id": 24,
-    "Name": "Sliver Ore",
+    "Name": "Silver Ore",
     "Rarity": 2,
     "Material": [],
     "Quantity": []
