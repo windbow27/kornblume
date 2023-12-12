@@ -146,7 +146,6 @@ export function useProcessCards(materials) {
     const sortedMaterials = sortArcanists(higherTierSubtractedMaterials);
     const subtractedMaterials = subtractMaterials(sortedMaterials);
 
-    // TODO: I think we need to consider the warehouse inventory here, but I haven't made adjustments for this yet
     const plan = getPlan(materials);
     console.log(plan);
 
@@ -222,6 +221,16 @@ export function useProcessCards(materials) {
 }
 
 function getPlan(materials) {
+  // TODO: normalize the returned result data from the LP solver for integration with UI
+
+  // TODO: convert the stage count to integer and calculate the expected number of drop materials for each stage based on result
+  
+  // I think we could arrange the UI according to the strategy, including crafting, stage farming, shop exchange, etc
+  // Or maybe we could offer two views, one grouped by material, and the other grouped by strategy
+  return getSolve(materials);
+}
+
+function getSolve(materials) {
 
   // prepare constraints
   const materialConstraints = {};
