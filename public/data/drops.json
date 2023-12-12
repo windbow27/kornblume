@@ -337,5 +337,20 @@
     "drops": {
         "Tome of Beastly Thirst": 2
     }
+  },
+  "Unreleased": {
+    "count": 1,
+    "cost": 1,
+    "drops": {
+      "(Double Serpent Scepter)": 1,
+      "(Moth Lamp)": 1,
+      "(Wheel Core)": 1,
+      "(Gold Compass)": 1,
+      "(Wing Door Key)": 1,
+      "(Curved Goose Neck)": 1,
+      "(Gold Beetle)": 1,
+      "(Dry Cicada Wings)": 1,
+      "(Wheel)": 1
+    }
   }
 }
