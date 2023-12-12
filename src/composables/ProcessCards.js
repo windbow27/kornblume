@@ -237,7 +237,7 @@ function getPlan(materials) {
 
   // prepare craft mappings
   const craftMapping = {};
-  // restrict crafting number to integers
+  // restrict crafting materials number to integers
   const integers = [];
 
   for (let { Name: name, Material: matl, Quantity: quantity } of formulas) {
@@ -271,13 +271,34 @@ function getPlan(materials) {
     }
   }
 
-  // define LP solver
-  const variables = Object.assign({}, craftMapping, dropMapping);
-
   const constraints = {
     ...materialConstraints,
     ...neededConstraints,
   };
+
+  // consider warehouse
+  warehouse.forEach((matlInfo) => {
+    const {
+      Material: matlName,
+      Quantity: quantity
+    } = matlInfo;
+    const matlQuant = parseInt(quantity);
+    if (matlQuant > 0) {
+        if (constraints[matlName]) {
+            constraints[matlName] = {
+                min: constraints[matlName].min - matlQuant
+            }
+        }
+        else {
+            constraints[matlName] = {
+                min: - matlQuant
+            }
+        }
+    }
+  })
+
+  // define LP solver
+  const variables = Object.assign({}, craftMapping, dropMapping);
 
   const model = {
     objective: "cost",

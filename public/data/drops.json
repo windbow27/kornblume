@@ -1,4 +1,28 @@
 {
+  "1-11H": {
+    "count": 129,
+    "cost": 12,
+    "drops": {
+      "Esoteric Bones": 95,
+      "Trembling Tooth": 11,
+      "Magnesia Crystal": 24,
+      "Shattered Bones": 19,
+      "Silver Ore": 31,
+      "Spell of Banishing": 28
+    }
+  },
+  "1-14H": {
+    "count": 187,
+    "cost": 12,
+    "drops": {
+      "Liquefied Terror": 126,
+      "Trembling Tooth": 13,
+      "Magnesia Crystal": 17,
+      "Shattered Bones": 19,
+      "Silver Ore": 26,
+      "Spell of Banishing": 29
+    }
+  },
   "2-3H": {
     "count": 2531,
     "cost": 16,
@@ -36,6 +60,16 @@
       "Rough Silver Ingot": 28,
       "Spell of Fortune": 26,
       "Shattered Bones": 1090
+    }
+  },
+  "2-9H": {
+    "count": 160,
+    "cost": 16,
+    "drops": {
+      "Salted Mandrake": 40,
+      "Spell of Fortune": 26,
+      "Magnesia Crystal": 160,
+      "Spell of Banishing": 100
     }
   },
   "2-12H": {
@@ -113,6 +147,32 @@
       "Milled Magnesia": 297,
       "Magnesia Crystal": 1521,
       "Murmur of Insanity": 49
+    }
+  },
+  "3-15H": {
+    "count": 112,
+    "cost": 18,
+    "drops": {
+      "Rough Silver Ingot": 122,
+      "Liquefied Terror": 6,
+      "Esoteric Bones": 15,
+      "Milled Magnesia": 9,
+      "Trembling Tooth": 6,
+      "Magnesia Crystal": 16,
+      "Silver Ore": 107,
+      "Spell of Banishing": 23,
+      "Shattered Bones": 12,
+      "Spell of Fortune": 11
+    }
+  },
+  "4-5H": {
+    "count": 104,
+    "cost": 18,
+    "drops": {
+      "Milled Magnesia": 74,
+      "Rough Silver Ingot": 72,
+      "Silver Ore": 75,
+      "Magnesia Crystal": 35
     }
   },
   "4-10H": {
