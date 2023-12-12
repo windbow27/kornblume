@@ -223,26 +223,6 @@ export function useProcessCards(materials) {
 
 function getPlan(materials) {
 
-  // restrict these variables number to integers
-  const integers = [
-    "The Poussiere VI",
-    "Mintage Aesthetics VI",
-    "Brutes Wilds II",
-    "Brutes Wilds IV",
-    "Brutes Wilds VI",
-    "Mountain Echoes II",
-    "Mountain Echoes IV",
-    "Mountain Echoes VI",
-    "Sylvanus Shape II",
-    "Sylvanus Shape IV",
-    "Sylvanus Shape VI",
-    "Starfall Locale II",
-    "Starfall Locale IV",
-    "Starfall Locale VI",
-  ];
-  // NOTE: this might cause a timeout if all variables are integers
-  // TODO: we exclude the level variables so need to manually round up the level count in the solve result 
-
   // prepare constraints
   const materialConstraints = {};
   const neededConstraints = {};
@@ -257,6 +237,8 @@ function getPlan(materials) {
 
   // prepare craft mappings
   const craftMapping = {};
+  // restrict crafting number to integers
+  const integers = [];
 
   for (let { Name: name, Material: matl, Quantity: quantity } of formulas) {
     materialConstraints[name] = { min: 0 };
@@ -302,10 +284,15 @@ function getPlan(materials) {
     direction: "minimize",
     constraints,
     variables,
-    integers,
+    integers, // TODO: we need to manually round up the level count for stages in the solve result 
   };
 
-  return solve(model);
+  const options = {
+    precision: 0.01,
+    tolerance: 0.1
+  }
+
+  return solve(model, options);
 }
 
 export function getCardLayers(materials) {
