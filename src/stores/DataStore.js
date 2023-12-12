@@ -10,11 +10,7 @@ export const useDataStore = defineStore('dataStore', {
             data: null,
             loaded: false
         },
-        crafts: {
-            data: null,
-            loaded: false
-        },
-        items: {
+                items: {
             data: null,
             loaded: false
         },

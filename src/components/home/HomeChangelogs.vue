@@ -12,6 +12,7 @@ const closeOverlay = () => {
 
 const changelogs = [
     //Add more from top
+    { date: '12/12/2023', description: '• Optimized farming route, from the help of Fran!'},
     { date: '05/12/2023', description: '• Added Profile. WIP.'},
     { date: '04/12/2023', description: '• Updated credits, minor bug fixes.' },
     { date: '03/12/2023', description: '• Fixed wrong jsons. Hopefully it is correct now.\n • Soldius. \n • Added 1.2 event shops. Two buttons, all the items.' },

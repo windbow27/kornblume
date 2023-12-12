@@ -1,10 +1,15 @@
 <script setup>
+import { computed } from 'vue';
 import ItemIcon from '../item/ItemIcon.vue';
 const props = defineProps({
     card: {
         type: Object,
         required: true
     }
+});
+
+const shouldHideScrollbar = computed(() => {
+    return props.card.materials.length < 4;
 });
 
 </script>
@@ -22,19 +27,28 @@ const props = defineProps({
                 </span>
                 <span v-else>{{ card.runs }}</span>
             </p>
-            <p class="pl-2">{{ card.activity == null ? '?' : card.activity }}</p>
-            <img :src="card.activityImagePath" alt="Activity Image" class="inline-block w-8 h-8" />
+            <p class="pl-2">{{ card.activity == null ? 'Crafted from Hard Stages' : card.activity }}</p>
+            <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image" class="inline-block w-8 h-8" />
             <p class="border-blue-700/90 border-l pl-3">{{ card.days }} {{ card.days === null ? '' : card.days > 1 ? 'days'
                 : 'day' }}</p>
         </div>
 
-        <div class="items-center flex">
-            <div v-for="(material, materialIndex) in card.materials" :key="materialIndex">
-                <ItemIcon :material="material" />
+        <div :class="{'custom-scrollbar':shouldHideScrollbar}" class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">
+            <div v-for="(material, materialIndex) in card.materials" :key="materialIndex" class="flex-shrink-0">
+                <ItemIcon class="" :material="material" />
             </div>
         </div>
-
     </div>
 </template>
   
-<style scoped></style>
+<style scoped>
+.scrollbar {
+    scrollbar-width: thin;
+}
+
+.scrollbar::-webkit-scrollbar {
+    height: 6px;
+}
+</style>
+
+
