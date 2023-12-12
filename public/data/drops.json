@@ -811,102 +811,102 @@
     }
   },
   "The Poussiere VI": {
-    "count": 1,
+    "count": 100,
     "cost": 25,
     "drops": {
-        "Dust": 12000,
-        "Sharpodonty": 250
+        "Dust": 1200000,
+        "Sharpodonty": 25000
     }
   },
   "Mintage Aesthetics VI": {
-    "count": 1,
+    "count": 100,
     "cost": 25,
     "drops": {
-        "Sharpodonty": 9000
+        "Sharpodonty": 900000
     }
   },
   "Mountain Echoes II": {
-    "count": 1,
+    "count": 100,
     "cost": 18,
     "drops": {
-        "Page of Mineral Wealth": 2
+        "Page of Mineral Wealth": 200
     }
   },
   "Mountain Echoes IV": {
-    "count": 1,
+    "count": 100,
     "cost": 24,
     "drops": {
-        "Scroll of Mineral Wealth": 2
+        "Scroll of Mineral Wealth": 200
     }
   },
   "Mountain Echoes VI": {
-    "count": 1,
+    "count": 100,
     "cost": 30,
     "drops": {
-        "Tome of Mineral Wealth": 2
+        "Tome of Mineral Wealth": 200
     }
   },
   "Starfall Locale II": {
-    "count": 1,
+    "count": 100,
     "cost": 18,
     "drops": {
-        "Page of Starlit Ascent": 2
+        "Page of Starlit Ascent": 200
     }
   },
   "Starfall Locale IV": {
-    "count": 1,
+    "count": 100,
     "cost": 24,
     "drops": {
-        "Scroll of Starlit Ascent": 2
+        "Scroll of Starlit Ascent": 200
     }
   },
   "Starfall Locale VI": {
-    "count": 1,
+    "count": 100,
     "cost": 30,
     "drops": {
-        "Tome of Starlit Ascent": 2
+        "Tome of Starlit Ascent": 200
     }
   },
   "Sylvanus Shape II": {
-    "count": 1,
+    "count": 100,
     "cost": 18,
     "drops": {
-        "Page of Plantal Vimen": 2
+        "Page of Plantal Vimen": 200
     }
   },
   "Sylvanus Shape IV": {
-    "count": 1,
+    "count": 100,
     "cost": 24,
     "drops": {
-        "Scroll of Plantal Vimen": 2
+        "Scroll of Plantal Vimen": 200
     }
   },
   "Sylvanus Shape VI": {
-    "count": 1,
+    "count": 100,
     "cost": 30,
     "drops": {
-        "Tome of Plantal Vimen": 2
+        "Tome of Plantal Vimen": 200
     }
   },
   "Brutes Wilds II": {
-    "count": 1,
+    "count": 100,
     "cost": 18,
     "drops": {
-        "Page of Beastly Thirst": 2
+        "Page of Beastly Thirst": 200
     }
   },
   "Brutes Wilds IV": {
-    "count": 1,
+    "count": 100,
     "cost": 24,
     "drops": {
-        "Scroll of Beastly Thirst": 2
+        "Scroll of Beastly Thirst": 200
     }
   },
   "Brutes Wilds VI": {
-    "count": 1,
+    "count": 100,
     "cost": 30,
     "drops": {
-        "Tome of Beastly Thirst": 2
+        "Tome of Beastly Thirst": 200
     }
   }
 }

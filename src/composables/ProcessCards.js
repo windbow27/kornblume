@@ -258,9 +258,11 @@ function getPlan(materials) {
   for (let stage in drops) {
     const stageInfo = drops[stage];
     const { count: times, cost, drops: dropCount } = stageInfo;
-    dropMapping[stage] = { cost };
-    for (let matlName in dropCount) {
-      dropMapping[stage][matlName] = dropCount[matlName] / times;
+    if (times >= 100) { // only consider drop data with a higher number of drop reports
+        dropMapping[stage] = { cost };
+        for (let matlName in dropCount) {
+          dropMapping[stage][matlName] = dropCount[matlName] / times;
+        }
     }
   }
 
