@@ -96,13 +96,15 @@ export function getPlan(materials) {
             const runs = Math.ceil(stage[1]);
             const activity = Math.ceil(runs * stageInfo.cost);
             const days = (activity / 240).toFixed(1);
-            const materials = Object.entries(stageInfo.drops).map(([matlName, count]) => {
-                const quantity = Math.ceil((count / stageInfo.count) * runs);
+            let materials = Object.entries(stageInfo.drops).map(([matlName, count]) => {
+                let quantity = (count / stageInfo.count) * runs;
+                quantity = (quantity % 1 >= 0.99) ? Math.ceil(quantity) : Math.floor(quantity); //flooring, takes 0.99 for now
                 return {
                     Material: matlName,
                     Quantity: quantity,
                 };
             });
+            materials = materials.filter((matl) => matl.Quantity > 0);
             const card = createCard(stage[0], runs, activity, days, materials);
             calculatedCards.push(card);
         } else {
