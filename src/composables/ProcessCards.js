@@ -235,6 +235,7 @@ function getPlan(materials) {
   });
 
   // prepare craft mappings
+  const integers = []; // restrict the number of crafting to integers
   const craftMapping = {};
 
   for (let { Name: name, Material: matl, Quantity: quantity } of formulas) {
@@ -246,11 +247,15 @@ function getPlan(materials) {
       craftMaterials[matName] = -quantity[idx];
     });
 
-    craftMapping[`Wilderness Crafting - ${name}`] = {
+    const strategyName = `Wilderness Crafting - ${name}`;
+    craftMapping[strategyName] = {
       [name]: 1,
       ...craftMaterials,
       cost: 0,
     };
+
+    if (!integers.includes(strategyName))
+      integers.push(strategyName);
   }
 
   // prepare drop mappings
@@ -281,6 +286,7 @@ function getPlan(materials) {
     variables,
     // FIXME: the solver could exit early for an integer problem
     // integers: true, // all variables are indicated as integer
+    integers,
   };
 
   return solve(model);
