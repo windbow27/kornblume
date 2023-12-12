@@ -1,5 +1,6 @@
 {
   "1-11H": {
+    "id": 0,
     "count": 129,
     "cost": 12,
     "drops": {
@@ -12,6 +13,7 @@
     }
   },
   "1-14H": {
+    "id": 1,
     "count": 187,
     "cost": 12,
     "drops": {
@@ -24,6 +26,7 @@
     }
   },
   "2-3H": {
+    "id": 2,
     "count": 2531,
     "cost": 16,
     "drops": {
@@ -37,6 +40,7 @@
     }
   },
   "2-6H": {
+    "id": 3,
     "count": 1162,
     "cost": 16,
     "drops": {
@@ -50,6 +54,7 @@
     }
   },
   "2-8H": {
+    "id": 4,
     "count": 692,
     "cost": 16,
     "drops": {
@@ -63,6 +68,7 @@
     }
   },
   "2-9H": {
+    "id": 5,
     "count": 160,
     "cost": 16,
     "drops": {
@@ -73,6 +79,7 @@
     }
   },
   "2-12H": {
+    "id": 6,
     "count": 1870,
     "cost": 18,
     "drops": {
@@ -86,6 +93,7 @@
     }
   },
   "3-3H": {
+    "id": 7,
     "count": 431,
     "cost": 18,
     "drops": {
@@ -96,6 +104,7 @@
     }
   },
   "3-7H": {
+    "id": 8,
     "count": 1143,
     "cost": 18,
     "drops": {
@@ -106,6 +115,7 @@
     }
   },
   "3-8H": {
+    "id": 9,
     "count": 918,
     "cost": 18,
     "drops": {
@@ -116,6 +126,7 @@
     }
   },
   "3-9H": {
+    "id": 10,
     "count": 966,
     "cost": 18,
     "drops": {
@@ -130,6 +141,7 @@
     }
   },
   "3-11H": {
+    "id": 11,
     "count": 1130,
     "cost": 18,
     "drops": {
@@ -140,6 +152,7 @@
     }
   },
   "3-13H": {
+    "id": 12,
     "count": 2210,
     "cost": 18,
     "drops": {
@@ -150,6 +163,7 @@
     }
   },
   "3-15H": {
+    "id": 13,
     "count": 112,
     "cost": 18,
     "drops": {
@@ -166,6 +180,7 @@
     }
   },
   "4-5H": {
+    "id": 14,
     "count": 104,
     "cost": 18,
     "drops": {
@@ -176,6 +191,7 @@
     }
   },
   "4-10H": {
+    "id": 15,
     "count": 3558,
     "cost": 18,
     "drops": {
@@ -189,6 +205,7 @@
     }
   },
   "4-11H": {
+    "id": 16,
     "count": 292,
     "cost": 18,
     "drops": {
@@ -199,6 +216,7 @@
     }
   },
   "4-13H": {
+    "id": 17,
     "count": 363,
     "cost": 18,
     "drops": {
@@ -209,6 +227,7 @@
     }
   },
   "4-16H": {
+    "id": 18,
     "count": 152,
     "cost": 18,
     "drops": {
@@ -220,6 +239,7 @@
     }
   },
   "4-20H": {
+    "id": 19,
     "count": 1933,
     "cost": 18,
     "drops": {
@@ -230,6 +250,7 @@
     }
   },
   "4-21H": {
+    "id": 20,
     "count": 310,
     "cost": 18,
     "drops": {
@@ -240,105 +261,120 @@
     }
   },
   "The Poussiere VI": {
+    "id": 21,
     "count": 1,
     "cost": 25,
     "drops": {
-        "Dust": 12000,
-        "Sharpodonty": 250
+      "Dust": 12000,
+      "Sharpodonty": 250
     }
   },
   "Mintage Aesthetics VI": {
+    "id": 22,
     "count": 1,
     "cost": 25,
     "drops": {
-        "Sharpodonty": 9000
+      "Sharpodonty": 9000
     }
   },
   "Mountain Echoes II": {
+    "id": 23,
     "count": 1,
     "cost": 18,
     "drops": {
-        "Page of Mineral Wealth": 2
+      "Page of Mineral Wealth": 2
     }
   },
   "Mountain Echoes IV": {
+    "id": 24,
     "count": 1,
     "cost": 24,
     "drops": {
-        "Scroll of Mineral Wealth": 2
+      "Scroll of Mineral Wealth": 2
     }
   },
   "Mountain Echoes VI": {
+    "id": 25,
     "count": 1,
     "cost": 30,
     "drops": {
-        "Tome of Mineral Wealth": 2
+      "Tome of Mineral Wealth": 2
     }
   },
   "Starfall Locale II": {
+    "id": 26,
     "count": 1,
     "cost": 18,
     "drops": {
-        "Page of Starlit Ascent": 2
+      "Page of Starlit Ascent": 2
     }
   },
   "Starfall Locale IV": {
+    "id": 27,
     "count": 1,
     "cost": 24,
     "drops": {
-        "Scroll of Starlit Ascent": 2
+      "Scroll of Starlit Ascent": 2
     }
   },
   "Starfall Locale VI": {
+    "id": 28,
     "count": 1,
     "cost": 30,
     "drops": {
-        "Tome of Starlit Ascent": 2
+      "Tome of Starlit Ascent": 2
     }
   },
   "Sylvanus Shape II": {
+    "id": 29,
     "count": 1,
     "cost": 18,
     "drops": {
-        "Page of Plantal Vimen": 2
+      "Page of Plantal Vimen": 2
     }
   },
   "Sylvanus Shape IV": {
+    "id": 30,
     "count": 1,
     "cost": 24,
     "drops": {
-        "Scroll of Plantal Vimen": 2
+      "Scroll of Plantal Vimen": 2
     }
   },
   "Sylvanus Shape VI": {
+    "id": 31,
     "count": 1,
     "cost": 30,
     "drops": {
-        "Tome of Plantal Vimen": 2
+      "Tome of Plantal Vimen": 2
     }
   },
   "Brutes Wilds II": {
+    "id": 32,
     "count": 1,
     "cost": 18,
     "drops": {
-        "Page of Beastly Thirst": 2
+      "Page of Beastly Thirst": 2
     }
   },
   "Brutes Wilds IV": {
+    "id": 33,
     "count": 1,
     "cost": 24,
     "drops": {
-        "Scroll of Beastly Thirst": 2
+      "Scroll of Beastly Thirst": 2
     }
   },
   "Brutes Wilds VI": {
+    "id": 34,
     "count": 1,
     "cost": 30,
     "drops": {
-        "Tome of Beastly Thirst": 2
+      "Tome of Beastly Thirst": 2
     }
   },
   "Unreleased": {
+    "id": 35,
     "count": 1,
     "cost": 1,
     "drops": {
