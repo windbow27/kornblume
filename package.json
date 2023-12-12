@@ -12,13 +12,12 @@
   },
   "dependencies": {
     "@vueuse/core": "*",
-    "javascript-lp-solver": "^0.4.24",
-    "npm": "^10.2.5",
     "pinia": "*",
     "pinia-plugin-persistedstate": "^3.2.0",
     "tailwindcss": "*",
     "vue": "*",
-    "vue-router": "*"
+    "vue-router": "*",
+    "yalps": "^0.5.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "*",

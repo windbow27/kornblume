@@ -908,12 +908,5 @@
     "drops": {
         "Tome of Beastly Thirst": 2
     }
-  },
-  "Oneiric Shop": {
-    "count": 1,
-    "cost": 0,
-    "drops": {
-      "Oneiric Fluid": 1
-    }
   }
 }

@@ -348,54 +348,5 @@
     "Rarity": 1,
     "Material": [],
     "Quantity": []
-  },
-  {
-    "Id": 29,
-    "Name": "Sinuous Howl",
-    "Rarity": 6,
-    "Material": ["Oneiric Fluid"],
-    "Quantity": [1500]
-  },
-  {
-    "Id": 30,
-    "Name": "Interlaced Shudder",
-    "Rarity": 6,
-    "Material": ["Oneiric Fluid"],
-    "Quantity": [1500]
-  },
-  {
-    "Id": 31,
-    "Name": "Hypocritical Murmur",
-    "Rarity": 6,
-    "Material": ["Oneiric Fluid"],
-    "Quantity": [1500]
-  },
-  {
-    "Id": 32,
-    "Name": "Hoarse Echo",
-    "Rarity": 6,
-    "Material": ["Oneiric Fluid"],
-    "Quantity": [1500]
-  },
-  {
-    "Id": 33,
-    "Name": "Sonorous Knell",
-    "Rarity": 5,
-    "Material": ["Oneiric Fluid"],
-    "Quantity": [250]
-  },
-  {
-    "Id": 34,
-    "Name": "Brief Cacophony",
-    "Rarity": 4,
-    "Material": ["Oneiric Fluid"],
-    "Quantity": [100]
-  },
-  {
-    "Id": 35,
-    "Name": "Moment of Dissonance",
-    "Rarity": 3,
-    "Material": ["Oneiric Fluid"],
-    "Quantity": [100]
   }
 ]

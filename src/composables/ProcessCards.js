@@ -1,6 +1,6 @@
 import { useDataStore } from '../stores/DataStore'
 import { useWarehouseStore } from '../stores/WarehouseStore'
-import linprog from "javascript-lp-solver/src/solver";
+import { solve } from "yalps";
 
 const items = useDataStore().items.data;
 const stages = useDataStore().stages.data;
@@ -221,13 +221,17 @@ export function useProcessCards(materials) {
     return cardLayers;
 }
 
-// NOTE: not handle RESONANCE material in this function
 function getPlan(materials) {
   // prepare constraints
   const materialConstraints = {};
   const neededConstraints = {};
+  const resonateMaterial = [
+      "Sinuous Howl", "Interlaced Shudder", "Hypocritical Murmur", "Hoarse Echo", "Sonorous Knell", "Brief Cacophony", "Moment of Dissonance"
+  ];
   materials.forEach(({ Material: matlName, Quantity: quantity }) => {
-    neededConstraints[matlName] = { min: quantity };
+    // NOTE: not handle RESONANCE material in this function
+    if (!resonateMaterial.includes(matlName))
+      neededConstraints[matlName] = { min: quantity };
   });
 
   // prepare craft mappings
@@ -268,22 +272,16 @@ function getPlan(materials) {
     ...neededConstraints,
   };
 
-  const ints = {};
-  for (let v in variables) {
-    ints[v] = 1;
-  }
-
   const model = {
-    optimize: "cost",
-    opType: "min",
+    objective: "cost",
+    direction: "minimize",
     constraints,
     variables,
-    // FIXME: for some reason, when I try to pass in ints, it causes the app to crash... maybe we need to convert manually
-    // restrict the number of crafting to integers
-    // ints,
+    // FIXME: the solver could exit early for an integer problem
+    // integers: true, // all variables are indicated as integer
   };
 
-  return linprog.Solve(model);
+  return solve(model);
 }
 
 export function getCardLayers(materials) {
