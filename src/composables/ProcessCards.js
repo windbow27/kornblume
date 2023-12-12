@@ -1,9 +1,12 @@
 import { useDataStore } from '../stores/DataStore'
 import { useWarehouseStore } from '../stores/WarehouseStore'
+import { solve } from "yalps";
 
 const items = useDataStore().items.data;
 const stages = useDataStore().stages.data;
 const crafts = useDataStore().crafts.data;
+const formulas = useDataStore().formulas.data;
+const drops = useDataStore().drops.data;
 const warehouse = useWarehouseStore().data;
 
 function subtractMaterials(materials) {
@@ -143,6 +146,9 @@ export function useProcessCards(materials) {
     const sortedMaterials = sortArcanists(higherTierSubtractedMaterials);
     const subtractedMaterials = subtractMaterials(sortedMaterials);
 
+    const plan = getPlan(materials);
+    console.log(plan);
+
     subtractedMaterials.forEach((matInfo) => {
         if (matInfo.Quantity <= 0) return;
         const currentStage = stages.find((stage) => stage.Material.includes(matInfo.Material));
@@ -212,6 +218,111 @@ export function useProcessCards(materials) {
     ];
 
     return cardLayers;
+}
+
+function getPlan(materials) {
+  // TODO: normalize the returned result data from the LP solver for integration with UI
+
+  // TODO: convert the stage count to integer and calculate the expected number of drop materials for each stage based on result
+  
+  // I think we could arrange the UI according to the strategy, including crafting, stage farming, shop exchange, etc
+  // Or maybe we could offer two views, one grouped by material, and the other grouped by strategy
+  return getSolve(materials);
+}
+
+function getSolve(materials) {
+
+  // prepare constraints
+  const materialConstraints = {};
+  const neededConstraints = {};
+  const resonateMaterial = [
+    "Sinuous Howl", "Interlaced Shudder", "Hypocritical Murmur", "Hoarse Echo", "Sonorous Knell", "Brief Cacophony", "Moment of Dissonance"
+  ];
+  materials.forEach(({ Material: matlName, Quantity: quantity }) => {
+    // NOTE: not handle RESONANCE material in this function
+    if (!resonateMaterial.includes(matlName))
+      neededConstraints[matlName] = { min: quantity };
+  });
+
+  // prepare craft mappings
+  const craftMapping = {};
+  // restrict crafting materials number to integers
+  const integers = [];
+
+  for (let { Name: name, Material: matl, Quantity: quantity } of formulas) {
+    materialConstraints[name] = { min: 0 };
+    if (matl.length === 0) continue;
+
+    const craftMaterials = {};
+    matl.forEach((matName, idx) => {
+      craftMaterials[matName] = -quantity[idx];
+    });
+
+    const strategyName = `Wilderness Crafting - ${name}`;
+    craftMapping[strategyName] = {
+      [name]: 1,
+      ...craftMaterials,
+      cost: 0,
+    };
+
+    if (!integers.includes(strategyName))
+      integers.push(strategyName);
+  }
+
+  // prepare drop mappings
+  const dropMapping = {};
+  for (let stage in drops) {
+    const stageInfo = drops[stage];
+    const { count: times, cost, drops: dropCount } = stageInfo;
+    dropMapping[stage] = { cost };
+    for (let matlName in dropCount) {
+      dropMapping[stage][matlName] = dropCount[matlName] / times;
+    }
+  }
+
+  const constraints = {
+    ...materialConstraints,
+    ...neededConstraints,
+  };
+
+  // consider warehouse
+  warehouse.forEach((matlInfo) => {
+    const {
+      Material: matlName,
+      Quantity: quantity
+    } = matlInfo;
+    const matlQuant = parseInt(quantity);
+    if (matlQuant > 0) {
+        if (constraints[matlName]) {
+            constraints[matlName] = {
+                min: constraints[matlName].min - matlQuant
+            }
+        }
+        else {
+            constraints[matlName] = {
+                min: - matlQuant
+            }
+        }
+    }
+  })
+
+  // define LP solver
+  const variables = Object.assign({}, craftMapping, dropMapping);
+
+  const model = {
+    objective: "cost",
+    direction: "minimize",
+    constraints,
+    variables,
+    integers, // TODO: we need to manually round up the level count for stages in the solve result 
+  };
+
+  const options = {
+    precision: 0.01,
+    tolerance: 0.1
+  }
+
+  return solve(model, options);
 }
 
 export function getCardLayers(materials) {

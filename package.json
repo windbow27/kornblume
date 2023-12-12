@@ -9,7 +9,6 @@
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
     "deploy": "cd dist && copy index.html 404.html && cd .. && gh-pages -d dist"
-
   },
   "dependencies": {
     "@vueuse/core": "*",
@@ -17,14 +16,15 @@
     "pinia-plugin-persistedstate": "^3.2.0",
     "tailwindcss": "*",
     "vue": "*",
-    "vue-router": "*"
+    "vue-router": "*",
+    "yalps": "^0.5.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "*",
     "autoprefixer": "*",
     "daisyui": "*",
     "gh-pages": "^6.1.0",
-    "i": "*",
+    "i": "^0.3.7",
     "postcss": "*",
     "tailwindcss": "*",
     "vite": "*"
