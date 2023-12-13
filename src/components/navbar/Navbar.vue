@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4">
+  <nav class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4 z-50">
     <img src="/images/items/common/logo.png" alt="logo" class="w-8 h-8 mt-1 mr-4" />
 
     <!-- Navigation Links for Large Screens -->

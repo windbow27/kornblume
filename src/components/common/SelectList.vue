@@ -69,7 +69,7 @@ onMounted(() => {
         </button>
 
         <!-- Options box -->
-        <div v-if="isOptionsVisible" ref="containerRef" class="absolute mt-14 w-48 lg:w-64">
+        <div v-if="isOptionsVisible" ref="containerRef" class="absolute mt-14 w-48 lg:w-64 z-50">
             <!-- Caret-up icon -->
             <div class="flex items-center justify-center">
                 <i class="fa-solid fa-caret-up text-blue-500"></i>
