@@ -90,9 +90,9 @@ onClickOutside(resourcesRef, closeResources);
                 <div class="mb-4 text-center">
                     <p class="text-xs opacity-80">Kornblume is not affilated with BluePoch. All images and data belongs to
                         their respective owners.</p>
-                    <p class="text-md opacity-80 m-2">Developed by windbow. Joined by zero.day and Fran.</p>
+                    <p class="text-md opacity-90 mx-2 mt-2">Developed by windbow. Joined by zero.day and Fran.</p>
 
-                    <button class="btn btn-ghost btn-sm opacity-80" onclick="my_modal_2.showModal()">Privacy Policy</button>
+                    <button class="btn btn-ghost btn-xs opacity-80" onclick="my_modal_2.showModal()">Privacy Policy</button>
                     <dialog id="my_modal_2" class="modal">
                         <div class="modal-box custom-gradient-gray-blue">
                             <p class="py-4">Kornblume use Google Analytics to collect traffics, most viewed pages in order to improve Kornblume. The data is used solely for that reason and will never be used for advertising purposes. </p>

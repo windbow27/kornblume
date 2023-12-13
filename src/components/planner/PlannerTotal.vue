@@ -16,7 +16,7 @@ const props = defineProps({
 <template>
     <div class="flex custom-gradient-gray-blue-light px-2 py-2 md:px-4 lg:px-6 rounded-md items-center justify-center">
         <i class="fa-solid fa-calculator text-white mr-3"></i>
-        <div class="tooltip flex items-center" data-tip="Calculations hasn't been optimized">
+        <div class="tooltip flex items-center" data-tip="Total Activity and Days">
             <div class="text">{{ totalActivityAndDays[0] }}</div>
             <div class="avatar">
                 <div class="w-8 rounded">
@@ -50,6 +50,6 @@ const props = defineProps({
 
 <style scoped>
 .text {
-    @apply border-blue-700/90 border-l pl-3 text-sm text-white;
+    @apply border-blue-700/90 border-l pl-3 text-sm sm:text-base text-white;
 }
 </style>

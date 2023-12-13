@@ -19,18 +19,21 @@ const shouldHideScrollbar = computed(() => {
         <div class="stage text-white p-2">
             <p>{{ card.stage }}</p>
         </div>
-        <div
-            class="calculations w-full flex justify-center items-center bg-gradient-to-r from-blue-800/70 to-blue-900/90 text-white p-2 rounded-md">
-            <p class="border-blue-700/90 border-r pr-3">
-                <span v-if="card.runs > 0">
-                    <i class="fa-solid fa-xmark text-xs mr-0.5"></i>{{ card.runs }}
-                </span>
-                <span v-else>{{ card.runs }}</span>
-            </p>
-            <p class="pl-2">{{ card.activity == null ? 'Crafted from Hard Stages' : card.activity }}</p>
-            <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image" class="inline-block w-8 h-8" />
-            <p class="border-blue-700/90 border-l pl-3">{{ card.days }} {{ card.days === null ? '' : card.days > 1 ? 'days'
-                : 'day' }}</p>
+
+        <div class="tooltip w-full" data-tip="Number of runs | Activity | Days">
+            <div
+                class="calculations flex justify-center items-center bg-gradient-to-r from-blue-800/70 to-blue-900/90 text-white p-2 rounded-md">
+                <p class="border-blue-700/90 border-r pr-3">
+                    <span v-if="card.runs > 0">
+                        <i class="fa-solid fa-xmark text-xs mr-0.5"></i>{{ card.runs }}
+                    </span>
+                    <span v-else>{{ card.runs }}</span>
+                </p>
+                <p class="pl-2">{{ card.activity == null ? 'Crafted from Hard Stages' : card.activity }}</p>
+                <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image" class="inline-block w-8 h-8" />
+                <p class="border-blue-700/90 border-l pl-3">{{ card.days }} {{ card.days === null ? '' : card.days > 1 ? 'days'
+                    : 'day' }}</p>
+            </div>
         </div>
 
         <div :class="{'custom-scrollbar':shouldHideScrollbar}" class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">

@@ -26,8 +26,8 @@ const updateQuantity = () => {
 </script>
 
 <template>
-    <div class="pb-6 z-50">
-        <div class="relative inline-block z-50">
+    <div class="pb-6">
+        <div class="relative inline-block">
             <img :src="processMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute object-contain" />
             <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 object-contain" />
             <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""

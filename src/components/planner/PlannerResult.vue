@@ -39,7 +39,6 @@ watchEffect(() => {
 
 <template>
     <div class="flex flex-wrap">
-        <p class="text-slate-300 opacity-70 text-sm">High tier materials are converted to farmable ones.</p>
         <PlannerLayer v-for="(layer, index) in calculateCards" :key="index" :layer="layer" />
     </div>
 </template>

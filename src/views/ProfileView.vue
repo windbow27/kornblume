@@ -4,13 +4,13 @@
         <p class="text-white"> You can export or import your data here.</p>
         <div class="flex justify-center items-center p-2">
             <button @click="exportStores" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Export Stores
+                Export Data
             </button>
     
             <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4" style="display: none;" />
             <button @click="triggerFileInput"
                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
-                Import Stores
+                Import Data
             </button>
         </div>
     </div>

@@ -14,19 +14,19 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #1e3a8a;
+    background:#323f5f;
     border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #a3a3a3;
+    background: #1c3b88;
     border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #a3a3a3;
+    background: #1c3b88;
 }
 
 /*Custom common*/
@@ -107,9 +107,7 @@
 
 .custom-scrollbar {
     scrollbar-width: thin;
-    /* Firefox */
     scrollbar-color: transparent transparent;
-    /* Firefox */
 }
 
 .custom-scrollbar::-webkit-scrollbar {
