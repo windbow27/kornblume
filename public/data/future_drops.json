@@ -1,0 +1,863 @@
+{
+    "1-1H": {
+        "cost": 12,
+        "count": 15,
+        "Trembling Tooth": 18,
+        "Magnesia Crystal": 1,
+        "Shattered Bones": 5,
+        "Iron Ore": 5,
+        "Spell of Banishing": 1
+    },
+    "1-4H": {
+        "cost": 12,
+        "count": 18,
+        "Trembling Tooth": 2,
+        "Shattered Bones": 4,
+        "Iron Ore": 3,
+        "Spell of Banishing": 38
+    },
+    "1-5H": {
+        "cost": 12,
+        "count": 33,
+        "Trembling Tooth": 3,
+        "Magnesia Crystal": 4,
+        "Shattered Bones": 2,
+        "Iron Ore": 67,
+        "Spell of Banishing": 3
+    },
+    "1-6H": {
+        "cost": 12,
+        "count": 10,
+        "Magnesia Crystal": 1,
+        "Shattered Bones": 18,
+        "Iron Ore": 3,
+        "Spell of Banishing": 2
+    },
+    "1-7H": {
+        "cost": 12,
+        "count": 4,
+        "Shattered Bones": 3,
+        "Spell of Banishing": 1,
+        "Spell of Fortune": 3
+    },
+    "1-8H": {
+        "cost": 12,
+        "count": 24,
+        "Trembling Tooth": 2,
+        "Magnesia Crystal": 1,
+        "Shattered Bones": 1,
+        "Iron Ore": 4,
+        "Rough Silver Ingot": 17,
+        "Spell of Banishing": 10
+    },
+    "1-11H": {
+        "cost": 12,
+        "count": 144,
+        "Trembling Tooth": 13,
+        "Magnesia Crystal": 26,
+        "Shattered Bones": 20,
+        "Esoteric Bones": 106,
+        "Iron Ore": 34,
+        "Spell of Banishing": 33
+    },
+    "1-12H": {
+        "cost": 12,
+        "count": 90,
+        "Trembling Tooth": 9,
+        "Magnesia Crystal": 15,
+        "Milled Magnesia": 63,
+        "Shattered Bones": 13,
+        "Iron Ore": 12,
+        "Spell of Banishing": 28
+    },
+    "1-14H": {
+        "cost": 12,
+        "count": 195,
+        "Trembling Tooth": 13,
+        "Liquefied Terror": 130,
+        "Magnesia Crystal": 19,
+        "Shattered Bones": 20,
+        "Iron Ore": 27,
+        "Spell of Banishing": 29
+    },
+    "1-15H": {
+        "cost": 12,
+        "count": 40,
+        "Trembling Tooth": 2,
+        "Magnesia Crystal": 7,
+        "Shattered Bones": 8,
+        "Iron Ore": 19,
+        "Spell of Banishing": 10,
+        "Solidus": 10
+    },
+    "1-16H": {
+        "cost": 14,
+        "count": 11,
+        "Trembling Tooth": 1,
+        "Liquefied Terror": 3,
+        "Milled Magnesia": 1,
+        "Shattered Bones": 1,
+        "Esoteric Bones": 1,
+        "Iron Ore": 2,
+        "Rough Silver Ingot": 1,
+        "Spell of Banishing": 3
+    },
+    "2-1H": {
+        "cost": 14,
+        "count": 5,
+        "Milled Magnesia": 1,
+        "Shattered Bones": 1,
+        "Esoteric Bones": 3,
+        "Rough Silver Ingot": 1,
+        "Spell of Banishing": 3
+    },
+    "2-3H": {
+        "cost": 16,
+        "count": 3080,
+        "Liquefied Terror": 80,
+        "Milled Magnesia": 103,
+        "Esoteric Bones": 140,
+        "Iron Ore": 5147,
+        "Rough Silver Ingot": 159,
+        "Holy Silver": 1084,
+        "Spell of Fortune": 174
+    },
+    "2-4H": {
+        "cost": 16,
+        "count": 80,
+        "Trembling Tooth": 15,
+        "Magnesia Crystal": 17,
+        "Shattered Bones": 13,
+        "Esoteric Bones": 56,
+        "Iron Ore": 19,
+        "Rough Silver Ingot": 42,
+        "Spell of Banishing": 14
+    },
+    "2-5H": {
+        "cost": 16,
+        "count": 59,
+        "Trembling Tooth": 4,
+        "Magnesia Crystal": 8,
+        "Shattered Bones": 11,
+        "Iron Ore": 17,
+        "Rough Silver Ingot": 44,
+        "Spell of Banishing": 15,
+        "Spell of Fortune": 43
+    },
+    "2-6H": {
+        "cost": 16,
+        "count": 1321,
+        "Liquefied Terror": 34,
+        "Milled Magnesia": 38,
+        "Esoteric Bones": 46,
+        "Rough Silver Ingot": 63,
+        "Spell of Banishing": 2566,
+        "Spell of Fortune": 87,
+        "Prophetic Bird": 596
+    },
+    "2-8H": {
+        "cost": 16,
+        "count": 692,
+        "Liquefied Terror": 23,
+        "Milled Magnesia": 22,
+        "Shattered Bones": 1090,
+        "Esoteric Bones": 37,
+        "Bifurcated Skeleton": 209,
+        "Rough Silver Ingot": 28,
+        "Spell of Fortune": 26
+    },
+    "2-9H": {
+        "cost": 16,
+        "count": 172,
+        "Magnesia Crystal": 172,
+        "Salted Mandrake": 43,
+        "Spell of Banishing": 111,
+        "Spell of Fortune": 26
+    },
+    "2-10H": {
+        "cost": 16,
+        "count": 54,
+        "Trembling Tooth": 6,
+        "Magnesia Crystal": 7,
+        "Milled Magnesia": 35,
+        "Shattered Bones": 10,
+        "Esoteric Bones": 18,
+        "Iron Ore": 16,
+        "Spell of Banishing": 20
+    },
+    "2-11H": {
+        "cost": 16,
+        "count": 28,
+        "Trembling Tooth": 8,
+        "Liquefied Terror": 1,
+        "Magnesia Crystal": 5,
+        "Milled Magnesia": 1,
+        "Shattered Bones": 5,
+        "Esoteric Bones": 1,
+        "Iron Ore": 4,
+        "Rough Silver Ingot": 3,
+        "Spell of Banishing": 5,
+        "Spell of Fortune": 36
+    },
+    "2-12H": {
+        "cost": 18,
+        "count": 1950,
+        "Trembling Tooth": 1923,
+        "Liquefied Terror": 53,
+        "Biting Box": 560,
+        "Milled Magnesia": 64,
+        "Esoteric Bones": 73,
+        "Rough Silver Ingot": 104,
+        "Spell of Fortune": 102
+    },
+    "2-13H": {
+        "cost": 18,
+        "count": 35,
+        "Trembling Tooth": 3,
+        "Liquefied Terror": 20,
+        "Magnesia Crystal": 1,
+        "Milled Magnesia": 20,
+        "Shattered Bones": 3,
+        "Iron Ore": 6,
+        "Spell of Banishing": 3
+    },
+    "2-14H": {
+        "cost": 18,
+        "count": 3,
+        "Trembling Tooth": 1,
+        "Liquefied Terror": 2,
+        "Magnesia Crystal": 1,
+        "Rough Silver Ingot": 1,
+        "Spell of Fortune": 1
+    },
+    "2-3HVer1.4": {
+        "cost": 16,
+        "count": 1674,
+        "Liquefied Terror": 41,
+        "Milled Magnesia": 44,
+        "Esoteric Bones": 46,
+        "Iron Ore": 2736,
+        "Rough Silver Ingot": 56,
+        "Holy Silver": 579,
+        "Spell of Fortune": 73,
+        "(Dry Cicada Wings)": 32,
+        "(Wheel)": 28
+    },
+    "2-6HVer1.4": {
+        "cost": 16,
+        "count": 274,
+        "Liquefied Terror": 5,
+        "Milled Magnesia": 5,
+        "Esoteric Bones": 11,
+        "Rough Silver Ingot": 14,
+        "Spell of Banishing": 524,
+        "Spell of Fortune": 8,
+        "Prophetic Bird": 131,
+        "(Dry Cicada Wings)": 3,
+        "(Wheel)": 8
+    },
+    "2-8HVer1.4": {
+        "cost": 16,
+        "count": 36,
+        "Liquefied Terror": 2,
+        "Milled Magnesia": 1,
+        "Shattered Bones": 57,
+        "Esoteric Bones": 1,
+        "Bifurcated Skeleton": 10,
+        "Spell of Fortune": 1,
+        "(Dry Cicada Wings)": 2
+    },
+    "2-11HVer1.4": {
+        "cost": 16,
+        "Trembling Tooth": 0
+    },
+    "2-14HVer1.4": {
+        "cost": 18,
+        "Spell of Banishing": 0
+    },
+    "3-3H": {
+        "cost": 18,
+        "count": 435,
+        "Iron Ore": 307,
+        "Spell of Banishing": 597,
+        "Spell of Fortune": 106,
+        "Clawed Pendant": 105
+    },
+    "3-5H": {
+        "cost": 18,
+        "count": 157,
+        "Trembling Tooth": 12,
+        "Magnesia Crystal": 5,
+        "Shattered Bones": 10,
+        "Iron Ore": 238,
+        "Rough Silver Ingot": 60,
+        "Spell of Banishing": 23,
+        "Solidus": 73
+    },
+    "3-6H": {
+        "cost": 18,
+        "count": 104,
+        "Trembling Tooth": 7,
+        "Liquefied Terror": 50,
+        "Magnesia Crystal": 13,
+        "Milled Magnesia": 3,
+        "Shattered Bones": 17,
+        "Esoteric Bones": 62,
+        "Iron Ore": 18,
+        "Rough Silver Ingot": 9,
+        "Spell of Banishing": 29,
+        "Spell of Fortune": 12
+    },
+    "3-7H": {
+        "cost": 18,
+        "count": 1287,
+        "Trembling Tooth": 729,
+        "Liquefied Terror": 291,
+        "Shattered Bones": 855,
+        "Bifurcated Skeleton": 430
+    },
+    "3-8H": {
+        "cost": 18,
+        "count": 1024,
+        "Shattered Bones": 1257,
+        "Esoteric Bones": 306,
+        "Iron Ore": 649,
+        "Holy Silver": 358
+    },
+    "3-9H": {
+        "cost": 18,
+        "count": 966,
+        "Liquefied Terror": 24,
+        "Milled Magnesia": 35,
+        "Shattered Bones": 4,
+        "Esoteric Bones": 38,
+        "Rough Silver Ingot": 518,
+        "Spell of Banishing": 488,
+        "Spell of Fortune": 57,
+        "Prophetic Bird": 459
+    },
+    "3-11H": {
+        "cost": 18,
+        "count": 1641,
+        "Magnesia Crystal": 601,
+        "Milled Magnesia": 212,
+        "Spell of Banishing": 1105,
+        "Clawed Pendant": 518
+    },
+    "3-13H": {
+        "cost": 18,
+        "count": 2795,
+        "Magnesia Crystal": 1910,
+        "Milled Magnesia": 358,
+        "Salted Mandrake": 956,
+        "Murmur of Insanity": 57
+    },
+    "3-15H": {
+        "cost": 18,
+        "count": 112,
+        "Trembling Tooth": 6,
+        "Liquefied Terror": 6,
+        "Magnesia Crystal": 16,
+        "Milled Magnesia": 9,
+        "Shattered Bones": 12,
+        "Esoteric Bones": 15,
+        "Iron Ore": 107,
+        "Rough Silver Ingot": 122,
+        "Spell of Banishing": 23,
+        "Spell of Fortune": 11
+    },
+    "3-3Ver1.4": {
+        "cost": 14,
+        "count": 570,
+        "Liquefied Terror": 11,
+        "Milled Magnesia": 14,
+        "Esoteric Bones": 11,
+        "Iron Ore": 422,
+        "Rough Silver Ingot": 19,
+        "Spell of Fortune": 22,
+        "(Dry Cicada Wings)": 21,
+        "(Wing Door Key)": 149,
+        "(Wheel)": 12
+    },
+    "3-9Ver1.4": {
+        "cost": 14,
+        "count": 279,
+        "Liquefied Terror": 4,
+        "Milled Magnesia": 10,
+        "Esoteric Bones": 8,
+        "Rough Silver Ingot": 12,
+        "Spell of Banishing": 208,
+        "Spell of Fortune": 14,
+        "(Dry Cicada Wings)": 7,
+        "(Wheel)": 2,
+        "(Curved Goose Neck)": 71
+    },
+    "3-15Ver1.4": {
+        "cost": 14,
+        "count": 656,
+        "Liquefied Terror": 12,
+        "Milled Magnesia": 15,
+        "Shattered Bones": 528,
+        "Esoteric Bones": 23,
+        "Rough Silver Ingot": 27,
+        "Spell of Fortune": 44,
+        "(Dry Cicada Wings)": 28,
+        "(Wheel)": 15,
+        "(Gold Beetle)": 131
+    },
+    "3-9HVer1.4": {
+        "cost": 18,
+        "count": 130,
+        "Liquefied Terror": 5,
+        "Milled Magnesia": 1,
+        "Esoteric Bones": 4,
+        "Rough Silver Ingot": 69,
+        "Spell of Banishing": 69,
+        "Spell of Fortune": 4,
+        "Prophetic Bird": 61,
+        "(Dry Cicada Wings)": 5,
+        "(Wheel)": 3
+    },
+    "3-15HVer1.4": {
+        "cost": 18,
+        "count": 7,
+        "Trembling Tooth": 1,
+        "Iron Ore": 5,
+        "Rough Silver Ingot": 9,
+        "Spell of Banishing": 2,
+        "Spell of Fortune": 1
+    },
+    "4-3H": {
+        "cost": 18,
+        "count": 5,
+        "Liquefied Terror": 2,
+        "Milled Magnesia": 1,
+        "Rough Silver Ingot": 1,
+        "Spell of Fortune": 1
+    },
+    "4-4H": {
+        "cost": 18,
+        "count": 102,
+        "Liquefied Terror": 67,
+        "Spell of Banishing": 72,
+        "Spell of Fortune": 92
+    },
+    "4-5H": {
+        "cost": 18,
+        "count": 104,
+        "Magnesia Crystal": 35,
+        "Milled Magnesia": 74,
+        "Iron Ore": 75,
+        "Rough Silver Ingot": 72
+    },
+    "4-6H": {
+        "cost": 18,
+        "count": 13,
+        "Liquefied Terror": 1,
+        "Milled Magnesia": 3,
+        "Rough Silver Ingot": 3,
+        "Spell of Fortune": 9
+    },
+    "4-10H": {
+        "cost": 18,
+        "count": 3741,
+        "Liquefied Terror": 114,
+        "Biting Box": 1053,
+        "Milled Magnesia": 136,
+        "Esoteric Bones": 140,
+        "Iron Ore": 2627,
+        "Rough Silver Ingot": 2034,
+        "Spell of Fortune": 214
+    },
+    "4-11H": {
+        "cost": 18,
+        "count": 395,
+        "Shattered Bones": 455,
+        "Esoteric Bones": 131,
+        "Spell of Banishing": 206,
+        "Prophetic Bird": 176
+    },
+    "4-13H": {
+        "cost": 18,
+        "count": 382,
+        "Magnesia Crystal": 306,
+        "Milled Magnesia": 84,
+        "Iron Ore": 244,
+        "Holy Silver": 133
+    },
+    "4-16H": {
+        "cost": 18,
+        "count": 152,
+        "Liquefied Terror": 8,
+        "Milled Magnesia": 6,
+        "Esoteric Bones": 5,
+        "Rough Silver Ingot": 5,
+        "Spell of Fortune": 310
+    },
+    "4-18H": {
+        "cost": 18,
+        "count": 13,
+        "Liquefied Terror": 4,
+        "Milled Magnesia": 1,
+        "Esoteric Bones": 4,
+        "Rough Silver Ingot": 7,
+        "Spell of Fortune": 5
+    },
+    "4-20H": {
+        "cost": 18,
+        "count": 2889,
+        "Shattered Bones": 1924,
+        "Bifurcated Skeleton": 970,
+        "Spell of Banishing": 5817,
+        "Spell of Fortune": 1270
+    },
+    "4-21H": {
+        "cost": 18,
+        "count": 375,
+        "Trembling Tooth": 219,
+        "Liquefied Terror": 78,
+        "Magnesia Crystal": 263,
+        "Salted Mandrake": 113
+    },
+    "4-6Ver1.4": {
+        "cost": 16,
+        "count": 128,
+        "Spell of Banishing": 178,
+        "Spell of Fortune": 20,
+        "(Curved Goose Neck)": 34
+    },
+    "4-16Ver1.4": {
+        "cost": 16,
+        "count": 1,
+        "Liquefied Terror": 1,
+        "Rough Silver Ingot": 1
+    },
+    "4-18Ver1.4": {
+        "cost": 16,
+        "count": 636,
+        "Magnesia Crystal": 237,
+        "Milled Magnesia": 92,
+        "Iron Ore": 434,
+        "(Wing Door Key)": 194
+    },
+    "4-6HVer1.4": {
+        "cost": 18,
+        "count": 46,
+        "Liquefied Terror": 7,
+        "Milled Magnesia": 11,
+        "Esoteric Bones": 2,
+        "Rough Silver Ingot": 6,
+        "Spell of Fortune": 6,
+        "(Dry Cicada Wings)": 33,
+        "(Wheel)": 1
+    },
+    "4-10HVer1.4": {
+        "cost": 18,
+        "count": 250,
+        "Liquefied Terror": 4,
+        "Biting Box": 73,
+        "Milled Magnesia": 9,
+        "Esoteric Bones": 7,
+        "Iron Ore": 171,
+        "Rough Silver Ingot": 132,
+        "Spell of Fortune": 15,
+        "(Dry Cicada Wings)": 8,
+        "(Wheel)": 8
+    },
+    "4-18HVer1.4": {
+        "cost": 18,
+        "count": 69,
+        "Liquefied Terror": 4,
+        "Milled Magnesia": 7,
+        "Esoteric Bones": 5,
+        "Rough Silver Ingot": 10,
+        "Spell of Fortune": 32,
+        "(Dry Cicada Wings)": 2,
+        "(Wheel)": 48
+    },
+    "5-2": {
+        "cost": 18,
+        "count": 5,
+        "Milled Magnesia": 2,
+        "Shattered Bones": 1,
+        "Esoteric Bones": 2
+    },
+    "5-3": {
+        "cost": 18,
+        "count": 6,
+        "Magnesia Crystal": 2,
+        "Milled Magnesia": 2,
+        "Shattered Bones": 5,
+        "Esoteric Bones": 2,
+        "Iron Ore": 1,
+        "Spell of Banishing": 1,
+        "(Dry Cicada Wings)": 1
+    },
+    "5-4": {
+        "cost": 18,
+        "count": 671,
+        "Liquefied Terror": 5,
+        "Milled Magnesia": 3,
+        "Shattered Bones": 403,
+        "Esoteric Bones": 93,
+        "Rough Silver Ingot": 1,
+        "(Gold Beetle)": 190
+    },
+    "5-5": {
+        "cost": 18,
+        "count": 8,
+        "Shattered Bones": 2,
+        "Esoteric Bones": 1,
+        "Iron Ore": 6,
+        "Rough Silver Ingot": 3,
+        "Spell of Banishing": 2,
+        "Spell of Fortune": 1,
+        "(Dry Cicada Wings)": 1,
+        "(Wheel)": 1
+    },
+    "5-6": {
+        "cost": 18,
+        "count": 6,
+        "Trembling Tooth": 1,
+        "Shattered Bones": 2,
+        "Iron Ore": 1,
+        "Rough Silver Ingot": 2,
+        "(Dry Cicada Wings)": 1,
+        "(Wheel)": 1
+    },
+    "5-7": {
+        "cost": 18,
+        "count": 5,
+        "Esoteric Bones": 2,
+        "Rough Silver Ingot": 1,
+        "Spell of Banishing": 1,
+        "(Wheel)": 1
+    },
+    "5-8": {
+        "cost": 18,
+        "count": 7,
+        "Shattered Bones": 1,
+        "Esoteric Bones": 3,
+        "Iron Ore": 1,
+        "Spell of Banishing": 2,
+        "(Dry Cicada Wings)": 1
+    },
+    "5-9": {
+        "cost": 18,
+        "count": 11,
+        "Trembling Tooth": 1,
+        "Magnesia Crystal": 1,
+        "Esoteric Bones": 3,
+        "Iron Ore": 3,
+        "Rough Silver Ingot": 1,
+        "Spell of Banishing": 3,
+        "Spell of Fortune": 2,
+        "(Dry Cicada Wings)": 1,
+        "(Wheel)": 6
+    },
+    "5-10": {
+        "cost": 18,
+        "count": 7,
+        "Trembling Tooth": 1,
+        "Liquefied Terror": 1,
+        "Shattered Bones": 1,
+        "Iron Ore": 2,
+        "Spell of Banishing": 1,
+        "Spell of Fortune": 1,
+        "(Wheel)": 1
+    },
+    "5-12": {
+        "cost": 18,
+        "count": 6,
+        "Liquefied Terror": 2,
+        "Shattered Bones": 1,
+        "Iron Ore": 1,
+        "Rough Silver Ingot": 1,
+        "Spell of Banishing": 2
+    },
+    "5-14": {
+        "cost": 18,
+        "count": 13,
+        "Liquefied Terror": 1,
+        "Shattered Bones": 1,
+        "Esoteric Bones": 2,
+        "Iron Ore": 1,
+        "Rough Silver Ingot": 4,
+        "Spell of Banishing": 6,
+        "Spell of Fortune": 4,
+        "(Dry Cicada Wings)": 8
+    },
+    "5-16": {
+        "cost": 18,
+        "count": 7,
+        "Trembling Tooth": 1,
+        "Shattered Bones": 1,
+        "Esoteric Bones": 3,
+        "Iron Ore": 2,
+        "Spell of Banishing": 1,
+        "Spell of Fortune": 2
+    },
+    "5-19": {
+        "cost": 18,
+        "count": 4,
+        "Rough Silver Ingot": 1,
+        "Spell of Banishing": 1,
+        "Spell of Fortune": 1
+    },
+    "5-20": {
+        "cost": 18,
+        "count": 21,
+        "Trembling Tooth": 12,
+        "Liquefied Terror": 17,
+        "Magnesia Crystal": 2,
+        "Shattered Bones": 5,
+        "Iron Ore": 2,
+        "Spell of Banishing": 1,
+        "Spell of Fortune": 1
+    },
+    "5-2H": {
+        "cost": 18,
+        "count": 5,
+        "Magnesia Crystal": 1,
+        "Milled Magnesia": 1,
+        "Esoteric Bones": 1,
+        "Iron Ore": 2,
+        "Spell of Banishing": 1,
+        "Spell of Fortune": 1,
+        "(Wheel)": 2
+    },
+    "5-3H": {
+        "cost": 18,
+        "count": 691,
+        "Shattered Bones": 842,
+        "Esoteric Bones": 199,
+        "Iron Ore": 487,
+        "(Wing Door Key)": 196
+    },
+    "5-4H": {
+        "cost": 18,
+        "count": 1540,
+        "Liquefied Terror": 32,
+        "Magnesia Crystal": 1,
+        "Milled Magnesia": 42,
+        "Esoteric Bones": 45,
+        "Iron Ore": 1,
+        "Rough Silver Ingot": 827,
+        "Spell of Banishing": 1048,
+        "Spell of Fortune": 77,
+        "(Dry Cicada Wings)": 42,
+        "(Wheel)": 35,
+        "(Curved Goose Neck)": 465
+    },
+    "5-5H": {
+        "cost": 18,
+        "count": 363,
+        "Trembling Tooth": 209,
+        "Liquefied Terror": 74,
+        "Iron Ore": 238,
+        "Holy Silver": 125
+    },
+    "5-6H": {
+        "cost": 18,
+        "count": 5,
+        "Magnesia Crystal": 3,
+        "Shattered Bones": 1,
+        "Esoteric Bones": 1,
+        "Rough Silver Ingot": 2,
+        "Spell of Banishing": 1,
+        "Spell of Fortune": 1,
+        "(Wheel)": 1
+    },
+    "5-7H": {
+        "cost": 18,
+        "count": 237,
+        "Shattered Bones": 307,
+        "Esoteric Bones": 61,
+        "Bifurcated Skeleton": 84
+    },
+    "5-8H": {
+        "cost": 18,
+        "count": 177,
+        "Magnesia Crystal": 127,
+        "Milled Magnesia": 48,
+        "Spell of Banishing": 97,
+        "Prophetic Bird": 85
+    },
+    "5-9H": {
+        "cost": 18,
+        "count": 155,
+        "Liquefied Terror": 3,
+        "Magnesia Crystal": 113,
+        "Milled Magnesia": 9,
+        "Salted Mandrake": 43,
+        "Esoteric Bones": 7,
+        "Rough Silver Ingot": 78,
+        "Spell of Fortune": 7,
+        "(Dry Cicada Wings)": 4,
+        "(Wheel)": 1
+    },
+    "5-10H": {
+        "cost": 18,
+        "count": 7,
+        "Liquefied Terror": 1,
+        "Esoteric Bones": 1,
+        "Iron Ore": 3,
+        "Rough Silver Ingot": 1,
+        "Spell of Banishing": 3,
+        "Spell of Fortune": 1
+    },
+    "5-12H": {
+        "cost": 18,
+        "count": 7,
+        "Trembling Tooth": 1,
+        "Milled Magnesia": 1,
+        "Shattered Bones": 2,
+        "Esoteric Bones": 1,
+        "Iron Ore": 2,
+        "Spell of Banishing": 1,
+        "(Dry Cicada Wings)": 1
+    },
+    "5-14H": {
+        "cost": 18,
+        "count": 459,
+        "Iron Ore": 314,
+        "Spell of Banishing": 337,
+        "Spell of Fortune": 68,
+        "Clawed Pendant": 136
+    },
+    "5-16H": {
+        "cost": 18,
+        "count": 7,
+        "Trembling Tooth": 2,
+        "Liquefied Terror": 4,
+        "Milled Magnesia": 1,
+        "Esoteric Bones": 1,
+        "Iron Ore": 1,
+        "Rough Silver Ingot": 2,
+        "Spell of Banishing": 3,
+        "Spell of Fortune": 2,
+        "(Dry Cicada Wings)": 1,
+        "(Wheel)": 2
+    },
+    "5-19H": {
+        "cost": 18,
+        "count": 1095,
+        "Liquefied Terror": 112,
+        "Biting Box": 350,
+        "Iron Ore": 770,
+        "Silver Bullet": 23
+    },
+    "5-20H": {
+        "cost": 18,
+        "count": 7,
+        "Trembling Tooth": 1,
+        "Liquefied Terror": 1,
+        "Milled Magnesia": 2,
+        "Esoteric Bones": 1,
+        "Iron Ore": 3,
+        "Rough Silver Ingot": 2,
+        "Spell of Banishing": 2,
+        "Spell of Fortune": 1,
+        "(Dry Cicada Wings)": 3
+    }
+}

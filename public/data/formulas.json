@@ -348,5 +348,128 @@
     "Rarity": 1,
     "Material": [],
     "Quantity": []
+  },
+  {
+    "Id": 29,
+    "Name": "(Double Serpent Scepter)",
+    "Rarity": 6,
+    "Material": [
+      "(Moth Lamp)",
+      "(Gold Compass)",
+      "Salted Mandrake",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      1,
+      1,
+      2,
+      800
+    ]
+  },
+  {
+    "Id": 30,
+    "Name": "(Moth Lamp)",
+    "Rarity": 5,
+    "Material": [
+      "(Wing Door Key)",
+      "Salted Mandrake",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      2,
+      500
+    ]
+  },
+  {
+    "Id": 31,
+    "Name": "(Wheel Core)",
+    "Rarity": 5,
+    "Material": [
+      "(Curved Goose Neck)",
+      "Holy Silver",
+      "Biting Box",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      1,
+      500
+    ]
+  },
+  {
+    "Id": 32,
+    "Name": "(Gold Compass)",
+    "Rarity": 5,
+    "Material": [
+      "(Gold Beetle)",
+      "Bifurcated Skeleton",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      2,
+      4,
+      500
+    ]
+  },
+  {
+    "Id": 33,
+    "Name": "(Wing Door Key)",
+    "Rarity": 4,
+    "Material": [
+      "(Dry Cicada Wings)",
+      "Milled Magnesia",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 34,
+    "Name": "(Curved Goose Neck)",
+    "Rarity": 4,
+    "Material": [
+      "(Wheel)",
+      "Spell of Fortune",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 35,
+    "Name": "(Gold Beetle)",
+    "Rarity": 4,
+    "Material": [
+      "Solidus",
+      "Esoteric Bones",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      2,
+      2,
+      400
+    ]
+  },
+  {
+    "Id": 36,
+    "Name": "(Dry Cicada Wings)",
+    "Rarity": 3,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 37,
+    "Name": "(Wheel)",
+    "Rarity": 3,
+    "Material": [],
+    "Quantity": []
   }
 ]
