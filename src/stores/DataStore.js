@@ -18,10 +18,6 @@ export const useDataStore = defineStore('dataStore', {
             data: null,
             loaded: false
         },
-        stages: {
-            data: null,
-            loaded: false
-        },
         formulas: {
             data: null,
             loaded: false

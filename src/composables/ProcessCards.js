@@ -3,7 +3,6 @@ import { useWarehouseStore } from '../stores/WarehouseStore'
 import { solve } from "yalps";
 
 const items = useDataStore().items.data;
-const stages = useDataStore().stages.data;
 const formulas = useDataStore().formulas.data;
 const drops = useDataStore().drops.data;
 const warehouse = useWarehouseStore().data;
@@ -49,12 +48,12 @@ function findOrCreateCard(stage, calculatedCards) {
 
 function sortLayer(layer) {
     return layer.sort((a, b) => {
-        const stageA = stages.find((stage) => stage.Name === a.stage);
-        const stageB = stages.find((stage) => stage.Name === b.stage);
+        const stageA = Object.entries(drops).find(([key]) => key === a.stage);
+        const stageB = Object.entries(drops).find(([key]) => key === b.stage);
 
         if (stageA && stageB) {
             // If both stages have an id, sort based on id
-            return stageA.Id - stageB.Id;
+            return stageA.id - stageB.id;
         }
         if (stageA) {
             // If only stageA has an id, place it before stageB
@@ -84,7 +83,9 @@ export function getPlan(materials) {
     materials.forEach((matInfo) => {
         if (matInfo.Quantity <= 0) return;
         matInfo.Quantity = parseFloat(matInfo.Quantity);
-        const currentStage = stages.find((stage) => stage.Material.includes(matInfo.Material));
+        const currentStage = Object.entries(drops).find(([stageDrops, dropList]) => {
+            return stageDrops === matInfo.Material;
+        });
         if (!currentStage) processOneiric(matInfo);
     });
     //
