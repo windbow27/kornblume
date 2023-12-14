@@ -1,5 +1,6 @@
 {
   "1-1H": {
+    "id": 0,
     "cost": 12,
     "count": 15,
     "drops": {
@@ -11,6 +12,7 @@
     }
   },
   "1-4H": {
+    "id": 1,
     "cost": 12,
     "count": 18,
     "drops": {
@@ -21,6 +23,7 @@
     }
   },
   "1-5H": {
+    "id": 2,
     "cost": 12,
     "count": 33,
     "drops": {
@@ -32,6 +35,7 @@
     }
   },
   "1-6H": {
+    "id": 3,
     "cost": 12,
     "count": 10,
     "drops": {
@@ -42,6 +46,7 @@
     }
   },
   "1-7H": {
+    "id": 4,
     "cost": 12,
     "count": 4,
     "drops": {
@@ -51,6 +56,7 @@
     }
   },
   "1-8H": {
+    "id": 5,
     "cost": 12,
     "count": 24,
     "drops": {
@@ -63,6 +69,7 @@
     }
   },
   "1-11H": {
+    "id": 6,
     "cost": 12,
     "count": 144,
     "drops": {
@@ -75,6 +82,7 @@
     }
   },
   "1-12H": {
+    "id": 7,
     "cost": 12,
     "count": 90,
     "drops": {
@@ -87,6 +95,7 @@
     }
   },
   "1-14H": {
+    "id": 8,
     "cost": 12,
     "count": 195,
     "drops": {
@@ -99,6 +108,7 @@
     }
   },
   "1-15H": {
+    "id": 9,
     "cost": 12,
     "count": 40,
     "drops": {
@@ -111,6 +121,7 @@
     }
   },
   "1-16H": {
+    "id": 10,
     "cost": 14,
     "count": 11,
     "drops": {
@@ -125,6 +136,7 @@
     }
   },
   "2-1H": {
+    "id": 11,
     "cost": 14,
     "count": 5,
     "drops": {
@@ -136,6 +148,7 @@
     }
   },
   "2-3H": {
+    "id": 12,
     "cost": 16,
     "count": 1674,
     "drops": {
@@ -151,6 +164,7 @@
     }
   },
   "2-4H": {
+    "id": 13,
     "cost": 16,
     "count": 80,
     "drops": {
@@ -164,6 +178,7 @@
     }
   },
   "2-5H": {
+    "id": 14,
     "cost": 16,
     "count": 59,
     "drops": {
@@ -177,6 +192,7 @@
     }
   },
   "2-6H": {
+    "id": 15,
     "cost": 16,
     "count": 274,
     "drops": {
@@ -192,6 +208,7 @@
     }
   },
   "2-8H": {
+    "id": 16,
     "cost": 16,
     "count": 36,
     "drops": {
@@ -205,6 +222,7 @@
     }
   },
   "2-9H": {
+    "id": 17,
     "cost": 16,
     "count": 172,
     "drops": {
@@ -215,6 +233,7 @@
     }
   },
   "2-10H": {
+    "id": 18,
     "cost": 16,
     "count": 54,
     "drops": {
@@ -228,6 +247,7 @@
     }
   },
   "2-11H": {
+    "id": 19,
     "cost": 16,
     "count": 28,
     "drops": {
@@ -244,6 +264,7 @@
     }
   },
   "2-12H": {
+    "id": 20,
     "cost": 18,
     "count": 1950,
     "drops": {
@@ -257,6 +278,7 @@
     }
   },
   "2-13H": {
+    "id": 21,
     "cost": 18,
     "count": 35,
     "drops": {
@@ -270,6 +292,7 @@
     }
   },
   "2-14H": {
+    "id": 22,
     "cost": 18,
     "count": 3,
     "drops": {
@@ -281,6 +304,7 @@
     }
   },
   "3-3H": {
+    "id": 23,
     "cost": 18,
     "count": 435,
     "drops": {
@@ -291,6 +315,7 @@
     }
   },
   "3-5H": {
+    "id": 24,
     "cost": 18,
     "count": 157,
     "drops": {
@@ -304,6 +329,7 @@
     }
   },
   "3-6H": {
+    "id": 25,
     "cost": 18,
     "count": 104,
     "drops": {
@@ -320,6 +346,7 @@
     }
   },
   "3-7H": {
+    "id": 26,
     "cost": 18,
     "count": 1287,
     "drops": {
@@ -330,6 +357,7 @@
     }
   },
   "3-8H": {
+    "id": 27,
     "cost": 18,
     "count": 1024,
     "drops": {
@@ -340,6 +368,7 @@
     }
   },
   "3-9H": {
+    "id": 28,
     "cost": 18,
     "count": 130,
     "drops": {
@@ -355,6 +384,7 @@
     }
   },
   "3-11H": {
+    "id": 29,
     "cost": 18,
     "count": 1641,
     "drops": {
@@ -365,6 +395,7 @@
     }
   },
   "3-13H": {
+    "id": 30,
     "cost": 18,
     "count": 2795,
     "drops": {
@@ -375,6 +406,7 @@
     }
   },
   "3-15H": {
+    "id": 31,
     "cost": 18,
     "count": 7,
     "drops": {
@@ -386,6 +418,7 @@
     }
   },
   "4-3H": {
+    "id": 32,
     "cost": 18,
     "count": 5,
     "drops": {
@@ -396,6 +429,7 @@
     }
   },
   "4-4H": {
+    "id": 33,
     "cost": 18,
     "count": 102,
     "drops": {
@@ -405,6 +439,7 @@
     }
   },
   "4-5H": {
+    "id": 34,
     "cost": 18,
     "count": 104,
     "drops": {
@@ -415,6 +450,7 @@
     }
   },
   "4-6H": {
+    "id": 35,
     "cost": 18,
     "count": 46,
     "drops": {
@@ -428,6 +464,7 @@
     }
   },
   "4-10H": {
+    "id": 36,
     "cost": 18,
     "count": 250,
     "drops": {
@@ -443,6 +480,7 @@
     }
   },
   "4-11H": {
+    "id": 37,
     "cost": 18,
     "count": 395,
     "drops": {
@@ -453,6 +491,7 @@
     }
   },
   "4-13H": {
+    "id": 38,
     "cost": 18,
     "count": 382,
     "drops": {
@@ -463,6 +502,7 @@
     }
   },
   "4-16H": {
+    "id": 39,
     "cost": 18,
     "count": 152,
     "drops": {
@@ -474,6 +514,7 @@
     }
   },
   "4-18H": {
+    "id": 40,
     "cost": 18,
     "count": 69,
     "drops": {
@@ -487,6 +528,7 @@
     }
   },
   "4-20H": {
+    "id": 41,
     "cost": 18,
     "count": 2889,
     "drops": {
@@ -497,6 +539,7 @@
     }
   },
   "4-21H": {
+    "id": 42,
     "cost": 18,
     "count": 375,
     "drops": {
@@ -507,6 +550,7 @@
     }
   },
   "5-2": {
+    "id": 43,
     "cost": 18,
     "count": 5,
     "drops": {
@@ -516,6 +560,7 @@
     }
   },
   "5-3": {
+    "id": 44,
     "cost": 18,
     "count": 6,
     "drops": {
@@ -529,6 +574,7 @@
     }
   },
   "5-4": {
+    "id": 45,
     "cost": 18,
     "count": 671,
     "drops": {
@@ -541,6 +587,7 @@
     }
   },
   "5-5": {
+    "id": 46,
     "cost": 18,
     "count": 8,
     "drops": {
@@ -555,6 +602,7 @@
     }
   },
   "5-6": {
+    "id": 47,
     "cost": 18,
     "count": 6,
     "drops": {
@@ -567,6 +615,7 @@
     }
   },
   "5-7": {
+    "id": 48,
     "cost": 18,
     "count": 5,
     "drops": {
@@ -577,6 +626,7 @@
     }
   },
   "5-8": {
+    "id": 49,
     "cost": 18,
     "count": 7,
     "drops": {
@@ -588,6 +638,7 @@
     }
   },
   "5-9": {
+    "id": 50,
     "cost": 18,
     "count": 11,
     "drops": {
@@ -603,6 +654,7 @@
     }
   },
   "5-10": {
+    "id": 51,
     "cost": 18,
     "count": 7,
     "drops": {
@@ -616,6 +668,7 @@
     }
   },
   "5-12": {
+    "id": 52,
     "cost": 18,
     "count": 6,
     "drops": {
@@ -627,6 +680,7 @@
     }
   },
   "5-14": {
+    "id": 53,
     "cost": 18,
     "count": 13,
     "drops": {
@@ -641,6 +695,7 @@
     }
   },
   "5-16": {
+    "id": 54,
     "cost": 18,
     "count": 7,
     "drops": {
@@ -653,6 +708,7 @@
     }
   },
   "5-19": {
+    "id": 55,
     "cost": 18,
     "count": 4,
     "drops": {
@@ -662,6 +718,7 @@
     }
   },
   "5-20": {
+    "id": 56,
     "cost": 18,
     "count": 21,
     "drops": {
@@ -675,6 +732,7 @@
     }
   },
   "5-2H": {
+    "id": 57,
     "cost": 18,
     "count": 5,
     "drops": {
@@ -688,6 +746,7 @@
     }
   },
   "5-3H": {
+    "id": 58,
     "cost": 18,
     "count": 691,
     "drops": {
@@ -698,6 +757,7 @@
     }
   },
   "5-4H": {
+    "id": 59,
     "cost": 18,
     "count": 1540,
     "drops": {
@@ -715,6 +775,7 @@
     }
   },
   "5-5H": {
+    "id": 60,
     "cost": 18,
     "count": 363,
     "drops": {
@@ -725,6 +786,7 @@
     }
   },
   "5-6H": {
+    "id": 61,
     "cost": 18,
     "count": 5,
     "drops": {
@@ -738,6 +800,7 @@
     }
   },
   "5-7H": {
+    "id": 62,
     "cost": 18,
     "count": 237,
     "drops": {
@@ -747,6 +810,7 @@
     }
   },
   "5-8H": {
+    "id": 63,
     "cost": 18,
     "count": 177,
     "drops": {
@@ -757,6 +821,7 @@
     }
   },
   "5-9H": {
+    "id": 64,
     "cost": 18,
     "count": 155,
     "drops": {
@@ -772,6 +837,7 @@
     }
   },
   "5-10H": {
+    "id": 65,
     "cost": 18,
     "count": 7,
     "drops": {
@@ -784,6 +850,7 @@
     }
   },
   "5-12H": {
+    "id": 66,
     "cost": 18,
     "count": 7,
     "drops": {
@@ -797,6 +864,7 @@
     }
   },
   "5-14H": {
+    "id": 67,
     "cost": 18,
     "count": 459,
     "drops": {
@@ -807,6 +875,7 @@
     }
   },
   "5-16H": {
+    "id": 68,
     "cost": 18,
     "count": 7,
     "drops": {
@@ -823,6 +892,7 @@
     }
   },
   "5-19H": {
+    "id": 69,
     "cost": 18,
     "count": 1095,
     "drops": {
@@ -833,6 +903,7 @@
     }
   },
   "5-20H": {
+    "id": 70,
     "cost": 18,
     "count": 7,
     "drops": {
@@ -845,6 +916,119 @@
       "Spell of Banishing": 2,
       "Spell of Fortune": 1,
       "(Dry Cicada Wings)": 3
+    }
+  },
+  "The Poussiere VI": {
+    "id": 71,
+    "count": 1,
+    "cost": 25,
+    "drops": {
+      "Dust": 12000,
+      "Sharpodonty": 250
+    }
+  },
+  "Mintage Aesthetics VI": {
+    "id": 72,
+    "count": 1,
+    "cost": 25,
+    "drops": {
+      "Sharpodonty": 9000
+    }
+  },
+  "Mountain Echoes II": {
+    "id": 73,
+    "count": 1,
+    "cost": 18,
+    "drops": {
+      "Page of Mineral Wealth": 2
+    }
+  },
+  "Mountain Echoes IV": {
+    "id": 74,
+    "count": 1,
+    "cost": 24,
+    "drops": {
+      "Scroll of Mineral Wealth": 2
+    }
+  },
+  "Mountain Echoes VI": {
+    "id": 75,
+    "count": 1,
+    "cost": 30,
+    "drops": {
+      "Tome of Mineral Wealth": 2
+    }
+  },
+  "Starfall Locale II": {
+    "id": 76,
+    "count": 1,
+    "cost": 18,
+    "drops": {
+      "Page of Starlit Ascent": 2
+    }
+  },
+  "Starfall Locale IV": {
+    "id": 77,
+    "count": 1,
+    "cost": 24,
+    "drops": {
+      "Scroll of Starlit Ascent": 2
+    }
+  },
+  "Starfall Locale VI": {
+    "id": 78,
+    "count": 1,
+    "cost": 30,
+    "drops": {
+      "Tome of Starlit Ascent": 2
+    }
+  },
+  "Sylvanus Shape II": {
+    "id": 79,
+    "count": 1,
+    "cost": 18,
+    "drops": {
+      "Page of Plantal Vimen": 2
+    }
+  },
+  "Sylvanus Shape IV": {
+    "id": 80,
+    "count": 1,
+    "cost": 24,
+    "drops": {
+      "Scroll of Plantal Vimen": 2
+    }
+  },
+  "Sylvanus Shape VI": {
+    "id": 81,
+    "count": 1,
+    "cost": 30,
+    "drops": {
+      "Tome of Plantal Vimen": 2
+    }
+  },
+  "Brutes Wilds II": {
+    "id": 82,
+    "count": 1,
+    "cost": 18,
+    "drops": {
+      "Page of Beastly Thirst": 2
+    }
+  },
+  "Brutes Wilds IV": {
+    "id": 83,
+    "count": 1,
+    "cost": 24,
+    "drops": {
+      "Scroll of Beastly Thirst": 2
+    }
+  },
+  "Brutes Wilds VI": {
+    "id": 84,
+    "count": 1,
+    "cost": 30,
+    "drops": {
+      "Tome of Beastly Thirst": 2
     }
   }
 }

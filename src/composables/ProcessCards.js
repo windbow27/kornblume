@@ -6,9 +6,7 @@ import { solve } from "yalps";
 const items = useDataStore().items.data;
 const formulas = useDataStore().formulas.data;
 const warehouse = useWarehouseStore().data;
-
-let drops = useDataStore().dynamicDrops.data;
-loadDrops();
+let drops = getDrops();
 
 function calculateOneiric(matInfo) {
     const item = items.find(item => item.Name === matInfo.Material);
@@ -51,8 +49,8 @@ function findOrCreateCard(stage, calculatedCards) {
 
 function sortLayer(layer) {
     return layer.sort((a, b) => {
-        const stageA = Object.entries(drops).find(([key]) => key === a.stage);
-        const stageB = Object.entries(drops).find(([key]) => key === b.stage);
+        const stageA = Object.values(drops).find(stage => stage === a.stage);
+        const stageB = Object.values(drops).find(stage => stage === b.stage);
 
         if (stageA && stageB) {
             // If both stages have an id, sort based on id
@@ -84,6 +82,7 @@ function subtractResonateMaterials(materials) {
 
 export function getPlan(materials) {
     const calculatedCards = [];
+    drops = getDrops();
 
     function processOneiric(matInfo) {
         const oneiric = findOrCreateCard('Oneiric Shop', calculatedCards);
@@ -114,9 +113,7 @@ export function getPlan(materials) {
     materials.forEach((matInfo) => {
         if (matInfo.Quantity <= 0) return;
         matInfo.Quantity = parseFloat(matInfo.Quantity);
-        const currentStage = Object.entries(drops).find(([stageDrops, dropList]) => {
-            return stageDrops === matInfo.Material;
-        });
+        const currentStage = Object.values(drops).find(stage => stage.drops && stage.drops[matInfo.Material]);
         if (!currentStage) {
             processOneiric(matInfo);
         }
@@ -219,7 +216,7 @@ function getSolve(materials) {
             craftMaterials[matName] = -quantity[idx];
         });
 
-        const strategyName = `Wilderness Wishing Sprin - ${name}`;
+        const strategyName = `Wilderness Wishing Spring - ${name}`;
         craftMapping[strategyName] = {
             [name]: 1,
             ...craftMaterials,
@@ -307,7 +304,7 @@ export function getTotalActivityAndDays(cardLayers) {
     return [totalActivity, totalDays.toFixed(0)];
 }
 
-export function loadDrops() {
-    drops = usePlannerSettingsStore().settings.unreleasedDrops ? 
+function getDrops() {
+    return usePlannerSettingsStore().settings.unreleasedDrops ? 
         useDataStore().drops1_4.data : useDataStore().drops.data;
 }

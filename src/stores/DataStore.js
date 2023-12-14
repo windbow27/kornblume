@@ -30,10 +30,6 @@ export const useDataStore = defineStore('dataStore', {
             data: null,
             loaded: false
         },
-        dynamicDrops: {
-            data: null,
-            loaded: true
-        },
         shops: {
             data: null,
             loaded: false
