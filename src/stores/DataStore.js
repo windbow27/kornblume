@@ -10,7 +10,7 @@ export const useDataStore = defineStore('dataStore', {
             data: null,
             loaded: false
         },
-                items: {
+        items: {
             data: null,
             loaded: false
         },
@@ -26,6 +26,10 @@ export const useDataStore = defineStore('dataStore', {
             data: null,
             loaded: false
         }, 
+        drops1_4:{
+            data: null,
+            loaded: false
+        },
         shops: {
             data: null,
             loaded: false

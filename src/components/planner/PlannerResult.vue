@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watchEffect } from 'vue';
 import { useCalculation, mergeResults } from '../../composables/CalculateMaterials';
-import { getTotalActivityAndDays, getPlan } from '../../composables/ProcessCards.js';
+import { getTotalActivityAndDays, getPlan, setDropData } from '../../composables/ProcessCards.js';
 import PlannerLayer from './PlannerLayer.vue';
 
 const props = defineProps({
@@ -19,6 +19,8 @@ const calculateAllMaterials = ref([]);
 const calculateCards = ref([]);
 
 watchEffect(() => {
+    setDropData();
+
     const result = props.selectedArcanists.map(arc => {
         if (!arc.isVisible) return [];
         const arcResult = useCalculation(arc);

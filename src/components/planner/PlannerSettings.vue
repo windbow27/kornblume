@@ -20,6 +20,7 @@ const emit = defineEmits({
 });
 
 const isShowUnreleased = ref(props.settings.showUnreleased);
+const isFutureData = ref(props.settings.futureData);
 
 const closeOverlay = () => {
     emit('closeOverlay');
@@ -28,6 +29,7 @@ const closeOverlay = () => {
 const saveSettings = () => {
     const updatedSettings = {
         showUnreleased: isShowUnreleased.value,
+        futureData: isFutureData.value,
     };
     emit('saveSettings', updatedSettings);
     closeOverlay();
@@ -45,6 +47,12 @@ const saveSettings = () => {
                 <label class="cursor-pointer label justify-center space-x-5">
                     <span class="label-text text-white text-md">Show unreleased</span>
                     <input v-model="isShowUnreleased" type="checkbox" class="checkbox checkbox-info" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="cursor-pointer label justify-center space-x-5">
+                    <span class="label-text text-white text-md">Use 1.4 stage data</span>
+                    <input v-model="isFutureData" type="checkbox" class="checkbox checkbox-info" />
                 </label>
             </div>
             <div class="flex justify-center">
