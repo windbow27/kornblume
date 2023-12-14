@@ -1,7 +1,6 @@
 <script setup>
 import { ref, computed, defineEmits } from 'vue';
 import { useProcessMaterial } from '../../composables/ProcessItems';
-import { formatQuantity } from '../../composables/ProcessItems';
 
 const props = defineProps({
     material: {
@@ -20,7 +19,7 @@ const processMaterial = computed(() => {
 });
 
 const updateQuantity = () => {
-    emit('update:quantity', quantity.value);
+    emit('update:quantity', Number(quantity.value));
 };
 
 </script>
@@ -28,10 +27,10 @@ const updateQuantity = () => {
 <template>
     <div class="pb-6">
         <div class="relative inline-block">
-            <img :src="processMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute object-contain" />
-            <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 object-contain" />
+            <img :src="processMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
+            <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
             <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""
-                class="bg-slate-600 text-white absolute -bottom-3 left-3 w-14 input input-xs rounded-t-none text-center object-contain" />
+                class="bg-slate-600 text-white absolute -bottom-3 left-3 w-14 input input-xs rounded-t-none text-center" />
         </div>
     </div>
 </template>

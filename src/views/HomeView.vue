@@ -80,6 +80,10 @@ onClickOutside(resourcesRef, closeResources);
                     <button @click="openResources" class="btn btn-ghost btn-md custom-gradient-button"><i
                             class="fa-solid fa-book"></i> Credits</button>
                 </div>
+                <a href="https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=1134314937" target="_blank"
+                    class="text-md text-gray-400 hover:text-white">
+                    Comments / Bug Reports
+                </a>
                 <a href="https://github.com/windbow27/Kornblume" target="_blank"
                     class="text-3xl text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>

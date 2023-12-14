@@ -272,7 +272,7 @@
             "28": {"Dust": 2470, "Sharpodonty": 1120},
             "29": {"Dust": 2550, "Sharpodonty": 1160},
             "30": {"Dust": 2620, "Sharpodonty": 1200},
-            "31": {"Dust": 2720, "Sharpodonty": 1350},
+            "31": {"Dust": 2770, "Sharpodonty": 1350},
             "32": {"Dust": 2850, "Sharpodonty": 1500},
             "33": {"Dust": 2920, "Sharpodonty": 1650},
             "34": {"Dust": 3000, "Sharpodonty": 1800},
@@ -337,9 +337,9 @@
             "47": {"Dust": 10950, "Sharpodonty": 3670},
             "48": {"Dust": 11170, "Sharpodonty": 3750},
             "49": {"Dust": 11400, "Sharpodonty": 3820},
-            "50": {"Dust": 11600, "Sharpodonty": 3900}
+            "50": {"Dust": 11620, "Sharpodonty": 3900}
         },
-        "Total": { "Dust": 304900, "Sharpodonty": 103530}
+        "Total": { "Dust": 304900, "Sharpodonty": 102790}
     },
     {
         "Rarity": [2, 3],
@@ -390,7 +390,7 @@
             "8": {"Dust": 660, "Sharpodonty": 300},
             "9": {"Dust": 720, "Sharpodonty": 330},
             "10": {"Dust": 780, "Sharpodonty": 360},
-            "11": {"Dust": 880, "Sharpodonty": 390},
+            "11": {"Dust": 900, "Sharpodonty": 390},
             "12": {"Dust": 960, "Sharpodonty": 420},
             "13": {"Dust": 1020, "Sharpodonty": 450},
             "14": {"Dust": 1080, "Sharpodonty": 480},
