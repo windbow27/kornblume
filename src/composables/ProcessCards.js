@@ -308,6 +308,6 @@ export function getTotalActivityAndDays(cardLayers) {
 }
 
 export function loadDrops() {
-    drops = usePlannerSettingsStore().settings.futureData ? 
+    drops = usePlannerSettingsStore().settings.unreleasedDrops ? 
         useDataStore().drops1_4.data : useDataStore().drops.data;
 }

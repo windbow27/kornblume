@@ -2,6 +2,7 @@
 import { ref, onMounted, computed } from 'vue';
 import { useWarehouseStore } from '../../stores/WarehouseStore';
 import { useDataStore } from '../../stores/DataStore';
+import { usePlannerSettingsStore } from '../../stores/PlannerSettingsStore';
 import { sortMaterials } from '../../composables/CalculateMaterials';
 import { addMaterialsToWarehouse } from '../../composables/ShopMaterials';
 import ItemWarehouse from '../item/ItemWarehouse.vue';
@@ -21,10 +22,11 @@ const checkedCategories = ref({
 });
 
 onMounted(() => {
+  let unreleasedDropsEnabled = usePlannerSettingsStore().settings.unreleasedDrops;
   if (useWarehouseStore().data.length === 0) {
     console.log('Setting up warehouse');
     useDataStore().items.data.forEach((item) => {
-      if (item.IsReleased == true) {
+      if (item.IsReleased || unreleasedDropsEnabled) {
         if (
           item.Category === 'Build Material' ||
           item.Category === 'Insight Material' ||
@@ -35,6 +37,18 @@ onMounted(() => {
         ) {
           useWarehouseStore().addItem(item.Name, item.Category);
         }
+      }
+    });
+  }
+  else { //else statement to be updated for seamless addition of new warehouse items
+    useDataStore().items.data.forEach((item) => {
+      if (!useWarehouseStore().itemExists(item.Name) && 
+          (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled)))
+      {
+        useWarehouseStore().addItem(item.Name, item.Category);
+      }
+      else if (!item.IsReleased && !unreleasedDropsEnabled){
+        useWarehouseStore().removeItem(item.Name);
       }
     });
   }
