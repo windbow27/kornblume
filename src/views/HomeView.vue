@@ -55,10 +55,12 @@ onClickOutside(resourcesRef, closeResources);
         <div class="text-center p-10">
             <h1 class="text-5xl lg:text-6xl font-bold text-white">Kornblume</h1>
             <p class="text-lg lg:text-xl text-gray-300">A toolsite and cornflower worship place for Reverse:1999</p>
-            <p class="text-md text-gray-300">For <i class="fa-solid fa-mobile-screen-button"></i> users, click top right <i class="fa-solid fa-bars"></i> to start.</p>
+            <p class="text-md text-gray-300">Any help sharing this tool would be greated appreciated.</p>
+            <p class="text-md text-gray-300">For <i class="fa-solid fa-mobile-screen-button"></i> users, click top right <i
+                    class="fa-solid fa-bars"></i> to start.</p>
         </div>
 
-        <div class="container mx-auto lg:w-2/3 p-4">
+        <div class="container mx-auto lg:w-2/3 px-4">
             <div class="carousel w-full rounded-md">
                 <!-- Loop through carousel items -->
                 <div v-for="(item, index) in carouselItems" :key="index"
@@ -80,12 +82,13 @@ onClickOutside(resourcesRef, closeResources);
                     <button @click="openResources" class="btn btn-ghost btn-md custom-gradient-button"><i
                             class="fa-solid fa-book"></i> Credits</button>
                 </div>
-                <a href="https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=1134314937" target="_blank"
-                    class="text-md text-gray-400 hover:text-white">
-                    Comments / Bug Reports
+                <a href="https://forms.gle/vfapSjQmRNn7ChPe8" target="_blank"
+                    class="btn btn-ghost btn-md custom-gradient-button">
+                    <i class="fa-solid fa-rectangle-list"></i> Comments / Bug Reports
                 </a>
+
                 <a href="https://github.com/windbow27/Kornblume" target="_blank"
-                    class="text-3xl text-gray-400 hover:text-white">
+                    class="text-3xl text-gray-400 hover:text-white pt-5">
                     <i class="fab fa-github"></i>
                 </a>
                 <p class="text-xs opacity-80 mb-2 text-center">All contributions are welcomed. If you enjoy the work, please
@@ -99,7 +102,9 @@ onClickOutside(resourcesRef, closeResources);
                     <button class="btn btn-ghost btn-xs opacity-80" onclick="my_modal_2.showModal()">Privacy Policy</button>
                     <dialog id="my_modal_2" class="modal">
                         <div class="modal-box custom-gradient-gray-blue">
-                            <p class="py-4">Kornblume use Google Analytics to collect traffics, most viewed pages in order to improve Kornblume. The data is used solely for that reason and will never be used for advertising purposes. </p>
+                            <p class="py-4">Kornblume use Google Analytics to collect traffics, most viewed pages in order
+                                to improve Kornblume. The data is used solely for that reason and will never be used for
+                                advertising purposes. </p>
                             <p class="pb-4"> Planner data is stored locally on your device. </p>
                         </div>
                         <form method="dialog" class="modal-backdrop">

@@ -27,6 +27,6 @@
     "i": "^0.3.7",
     "postcss": "*",
     "tailwindcss": "*",
-    "vite": "*"
+    "vite": "^5.0.8"
   }
 }

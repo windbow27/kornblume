@@ -84,7 +84,7 @@ function subtractResonateMaterials(materials) {
 
 export function getPlan(materials) {
     const calculatedCards = [];
-    //placeholder Oneiric Shop for now
+
     function processOneiric(matInfo) {
         const oneiric = findOrCreateCard('Oneiric Shop', calculatedCards);
         const oneiricMat = items.find((item) => item.Name === matInfo.Material);
@@ -93,11 +93,16 @@ export function getPlan(materials) {
                 oneiric.activity += 1500;
                 let casketQuantity;
                 if (warehouse.find((item) => item.Material === "Crystal Casket")) casketQuantity = warehouse.find((item) => item.Material === "Crystal Casket").Quantity;
-                const material = {
-                    Material: "Crystal Casket",
-                    Quantity: matInfo.Quantity - (casketQuantity || 0),
+                const existingCasket = oneiric.materials.find((item) => item.Material === "Crystal Casket");
+                if (existingCasket) {
+                    existingCasket.Quantity += matInfo.Quantity - (casketQuantity || 0);
+                } else {
+                    const material = {
+                        Material: "Crystal Casket",
+                        Quantity: matInfo.Quantity - (casketQuantity || 0),
+                    }
+                    oneiric.materials.push(material);
                 }
-                oneiric.materials.push(material);
             } else {
                 oneiric.activity += calculateOneiric(matInfo);
                 oneiric.materials.push(matInfo);
@@ -143,9 +148,9 @@ export function getPlan(materials) {
                 Material: matName,
                 Quantity: stage[1],
             }
-            const crafting = findOrCreateCard('Wilderness Crafting', calculatedCards);
+            const crafting = findOrCreateCard('Wilderness Wishing Spring', calculatedCards);
             crafting.materials.push(material);
-            // const card = createCard('Wilderness Crafting', null, null, null, [material]);
+            // const card = createCard('Wilderness Wishing Spring', null, null, null, [material]);
             // calculatedCards.push(card);
         }
     });
@@ -166,14 +171,14 @@ export function getPlan(materials) {
     );
     const stagesThirdLayer = calculatedCards.filter(
         (card) =>
-            !['Wilderness Crafting', ...stagesFirstLayer.map((card) => card.stage), ...stagesSecondLayer.map((card) => card.stage)].includes(
+            !['Wilderness Wishing Spring', ...stagesFirstLayer.map((card) => card.stage), ...stagesSecondLayer.map((card) => card.stage)].includes(
                 card.stage
             ) && card.materials.length > 0
     );
     //the rest of the stages are in the fourth layer
     const stagesFourthLayer = calculatedCards.filter(
         (card) =>
-            ['Wilderness Crafting'].includes(card.stage) && card.materials.length > 0
+            ['Wilderness Wishing Spring'].includes(card.stage) && card.materials.length > 0
     );
 
     //console.log(stagesFourthLayer);
@@ -214,7 +219,7 @@ function getSolve(materials) {
             craftMaterials[matName] = -quantity[idx];
         });
 
-        const strategyName = `Wilderness Crafting - ${name}`;
+        const strategyName = `Wilderness Wishing Sprin - ${name}`;
         craftMapping[strategyName] = {
             [name]: 1,
             ...craftMaterials,
