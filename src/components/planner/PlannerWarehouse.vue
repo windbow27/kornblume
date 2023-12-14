@@ -43,7 +43,7 @@ onMounted(() => {
 });
 
 const handleUpdateQuantity = (materialName, updatedQuantity) => {
-  useWarehouseStore().updateItem(materialName, updatedQuantity);
+  useWarehouseStore().updateItem(materialName, Number(updatedQuantity));
 };
 
 const filterWarehouse = (category) => {
@@ -67,6 +67,7 @@ const resetCheckedCategories = () => {
   if (Object.values(checkedCategories.value).every((value) => value)) {
     //console.log('reset all');
     useWarehouseStore().resetAll();
+    window.location.reload();
   } else {
     Object.keys(checkedCategories.value).forEach((category) => {
       if (checkedCategories.value[category]) {

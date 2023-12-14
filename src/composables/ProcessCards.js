@@ -92,7 +92,7 @@ export function getPlan(materials) {
                 if (warehouse.find((item) => item.Material === "Crystal Casket")) casketQuantity = warehouse.find((item) => item.Material === "Crystal Casket").Quantity;
                 const material = {
                     Material: "Crystal Casket",
-                    Quantity: matInfo.Quantity - casketQuantity,
+                    Quantity: matInfo.Quantity - (casketQuantity || 0),
                 }
                 oneiric.materials.push(material);
             } else {
