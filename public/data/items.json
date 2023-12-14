@@ -688,5 +688,15 @@
         "Description": "",
         "Source": "",
         "Usage": ""
+    },
+    {
+        "Id": 70,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Crystal Casket",
+        "Rarity": 6,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
     }
 ]

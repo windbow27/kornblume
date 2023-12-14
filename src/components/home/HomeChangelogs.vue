@@ -12,6 +12,7 @@ const closeOverlay = () => {
 
 const changelogs = [
     //Add more from top
+    { date: '14/12/2023', description: '• Warehouse bug fixes (again), changed t6 resonate materials to casket. Sorry for the inconvenience but please reset your warehouse.'},
     { date: '12/12/2023', description: '• Optimized farming route, from the help of Fran!'},
     { date: '05/12/2023', description: '• Added Profile. WIP.'},
     { date: '04/12/2023', description: '• Updated credits, minor bug fixes.' },

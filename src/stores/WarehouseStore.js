@@ -30,15 +30,13 @@ export const useWarehouseStore = defineStore('warehouse', {
         updateItem(material, quantity) {
             for (let i = 0; i < this.data.length; i++) {
                 if (this.data[i].Material === material) {
-                    this.data[i].Quantity = quantity;
+                    this.data[i].Quantity = Number(quantity);
                     break;
                 }
             }
         },
         resetAll() {
-            for (let i = 0; i < this.data.length; i++) {
-                this.data[i].Quantity = 0;
-            }
+            this.data = [];
         },
         resetCategory(category) {
             for (let i = 0; i < this.data.length; i++) {

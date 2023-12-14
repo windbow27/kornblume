@@ -68,25 +68,50 @@ function sortLayer(layer) {
     });
 }
 
+function subtractResonateMaterials(materials) {
+    materials.forEach((matInfo) => {
+        const subtractItem = warehouse.find((item) => item.Category === "Resonate Material" && item.Material === matInfo.Material);
+        if (subtractItem) {
+            matInfo.Quantity -= subtractItem.Quantity;
+        }
+    });
+    //console.log(materials);
+    return materials;
+}
+
 export function getPlan(materials) {
     const calculatedCards = [];
-
     //placeholder Oneiric Shop for now
     function processOneiric(matInfo) {
         const oneiric = findOrCreateCard('Oneiric Shop', calculatedCards);
-        if (items.find((item) => item.Name === matInfo.Material).Category === 'Resonate Material') {
-            oneiric.activity += calculateOneiric(matInfo);
-            oneiric.materials.push(matInfo);
+        const oneiricMat = items.find((item) => item.Name === matInfo.Material);
+        if (oneiricMat.Category === 'Resonate Material') {
+            if (oneiricMat.Rarity === 6) {
+                oneiric.activity += 1500;
+                let casketQuantity;
+                if (warehouse.find((item) => item.Material === "Crystal Casket")) casketQuantity = warehouse.find((item) => item.Material === "Crystal Casket").Quantity;
+                const material = {
+                    Material: "Crystal Casket",
+                    Quantity: matInfo.Quantity - casketQuantity,
+                }
+                oneiric.materials.push(material);
+            } else {
+                oneiric.activity += calculateOneiric(matInfo);
+                oneiric.materials.push(matInfo);
+            }
         }
     }
 
+    subtractResonateMaterials(materials);
     materials.forEach((matInfo) => {
         if (matInfo.Quantity <= 0) return;
         matInfo.Quantity = parseFloat(matInfo.Quantity);
         const currentStage = Object.entries(drops).find(([stageDrops, dropList]) => {
             return stageDrops === matInfo.Material;
         });
-        if (!currentStage) processOneiric(matInfo);
+        if (!currentStage) {
+            processOneiric(matInfo);
+        }
     });
     //
 
@@ -160,7 +185,6 @@ export function getPlan(materials) {
 
 
 function getSolve(materials) {
-
     // prepare constraints
     const materialConstraints = {};
     const neededConstraints = {};

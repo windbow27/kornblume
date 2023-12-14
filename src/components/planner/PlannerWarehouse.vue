@@ -14,10 +14,10 @@ const emit = defineEmits({
 });
 
 const checkedCategories = ref({
-  'Base Item': false,
-  'Build Material': false,
-  'Insight Material': false,
-  'Resonate Material': false,
+  'Base Item': true,
+  'Build Material': true,
+  'Insight Material': true,
+  'Resonate Material': true,
 });
 
 onMounted(() => {
@@ -28,9 +28,10 @@ onMounted(() => {
         if (
           item.Category === 'Build Material' ||
           item.Category === 'Insight Material' ||
-          item.Category === 'Resonate Material' ||
+          (item.Category === 'Resonate Material' && item.Rarity < 6) ||
           item.Name === 'Dust' ||
-          item.Name === 'Sharpodonty'
+          item.Name === 'Sharpodonty' ||
+          item.Name === 'Crystal Casket'
         ) {
           useWarehouseStore().addItem(item.Name, item.Category);
         }
@@ -62,11 +63,17 @@ const filteredWarehouse = computed(() => {
 });
 
 const resetCheckedCategories = () => {
-  Object.keys(checkedCategories.value).forEach((category) => {
-    if (checkedCategories.value[category]) {
-      useWarehouseStore().resetCategory(category);
-    }
-  });
+  //if all box are checked, reset all
+  if (Object.values(checkedCategories.value).every((value) => value)) {
+    //console.log('reset all');
+    useWarehouseStore().resetAll();
+  } else {
+    Object.keys(checkedCategories.value).forEach((category) => {
+      if (checkedCategories.value[category]) {
+        useWarehouseStore().resetCategory(category);
+      }
+    });
+  }
   emit('closeOverlay');
 };
 
@@ -95,25 +102,27 @@ const closeOverlay = () => {
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
               <span class="label-text text-error text-xs font-bold">Base Item</span>
-              <input type="checkbox" @change="filterWarehouse('Base Item')" class="checkbox checkbox-error" />
+              <input type="checkbox" checked @change="filterWarehouse('Base Item')" class="checkbox checkbox-error" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
               <span class="label-text text-info text-xs font-bold">Build Material</span>
-              <input type="checkbox" @change="filterWarehouse('Build Material')" class="checkbox checkbox-info" />
+              <input type="checkbox" checked @change="filterWarehouse('Build Material')" class="checkbox checkbox-info" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
               <span class="label-text text-success text-xs font-bold">Insight Material</span>
-              <input type="checkbox" @change="filterWarehouse('Insight Material')" class="checkbox checkbox-success" />
+              <input type="checkbox" checked @change="filterWarehouse('Insight Material')"
+                class="checkbox checkbox-success" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
               <span class="label-text text-warning text-xs font-bold">Resonate Material</span>
-              <input type="checkbox" @change="filterWarehouse('Resonate Material')" class="checkbox checkbox-warning" />
+              <input type="checkbox" checked @change="filterWarehouse('Resonate Material')"
+                class="checkbox checkbox-warning" />
             </label>
           </div>
         </div>
@@ -133,7 +142,8 @@ const closeOverlay = () => {
           <button class="btn btn-success btn-sm" onclick="my_modal_shop1.showModal()">1.2 pt.1</button>
           <dialog id="my_modal_shop1" class="modal">
             <div class="modal-box bg-slate-700">
-              <p class="py-4 text-lg text-white text-center">Add materials from <span class="text-error">1.2 part 1</span> event shop?</p>
+              <p class="py-4 text-lg text-white text-center">Add materials from <span class="text-error">1.2 part 1</span>
+                event shop?</p>
               <p class="py-4 text-md text-white text-center"> You should add once only.</p>
               <div class="flex justify-center">
                 <button class="btn btn-success btn-md mr-2" @click="addShopItems('1.21')">Yes</button>
@@ -144,11 +154,12 @@ const closeOverlay = () => {
               <button>close</button>
             </form>
           </dialog>
-  
+
           <button class="btn btn-success btn-sm" onclick="my_modal_shop2.showModal()">1.2 pt.2</button>
           <dialog id="my_modal_shop2" class="modal">
             <div class="modal-box bg-slate-700">
-              <p class="py-4 text-lg text-white text-center">Add materials from <span class="text-error">1.2 part 2</span> event shop?</p>
+              <p class="py-4 text-lg text-white text-center">Add materials from <span class="text-error">1.2 part 2</span>
+                event shop?</p>
               <p class="py-4 text-md text-white text-center"> You should add once only.</p>
               <div class="flex justify-center">
                 <button class="btn btn-success btn-md mr-2" @click="addShopItems('1.22')">Yes</button>
@@ -165,7 +176,8 @@ const closeOverlay = () => {
         <button class="btn btn-error btn-sm" onclick="my_modal_resetMat.showModal()">Reset</button>
         <dialog id="my_modal_resetMat" class="modal">
           <div class="modal-box bg-slate-700">
-            <p class="py-4 text-lg text-white text-center">Reset quantity of <span class="text-error">selected</span> categories?</p>
+            <p class="py-4 text-lg text-white text-center">Reset quantity of <span class="text-error">selected</span>
+              categories?</p>
             <p class="py-4 text-md text-white text-center"> Click the buttons at the top to select.</p>
             <div class="flex justify-center">
               <button class="btn btn-success btn-md mr-2" @click="resetCheckedCategories">Yes</button>
@@ -179,7 +191,6 @@ const closeOverlay = () => {
       </div>
 
     </div>
-  </div>
-</template>
+  </div></template>
 
 <style scoped></style>
