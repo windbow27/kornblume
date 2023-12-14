@@ -4,6 +4,7 @@ export const usePlannerSettingsStore = defineStore('plannerSettings', {
     state: () => ({
         settings: {
             showUnreleased: false,
+            futureData: false,
         },
     }),
     persist: true,

@@ -6,7 +6,9 @@ import { solve } from "yalps";
 const items = useDataStore().items.data;
 const formulas = useDataStore().formulas.data;
 const warehouse = useWarehouseStore().data;
-let drops = usePlannerSettingsStore().settings.futureData ? useDataStore().drops1_4.data : useDataStore().drops.data;
+
+let drops = useDataStore().dynamicDrops.data;
+loadDrops();
 
 function calculateOneiric(matInfo) {
     const item = items.find(item => item.Name === matInfo.Material);
@@ -300,6 +302,7 @@ export function getTotalActivityAndDays(cardLayers) {
     return [totalActivity, totalDays.toFixed(0)];
 }
 
-export function setDropData() {
-    drops = usePlannerSettingsStore().settings.futureData ? useDataStore().drops1_4.data : useDataStore().drops.data;
+export function loadDrops() {
+    drops = usePlannerSettingsStore().settings.futureData ? 
+        useDataStore().drops1_4.data : useDataStore().drops.data;
 }
