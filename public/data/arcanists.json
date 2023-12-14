@@ -77,8 +77,8 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Milled Magnesia",
-          "Esoteric Bones"
+          "Esoteric Bones",
+          "Milled Magnesia"
         ],
         "Quantity": [
           2,
@@ -231,8 +231,8 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
-          "Milled Magnesia"
+          "Milled Magnesia",
+          "Esoteric Bones"
         ],
         "Quantity": [
           2,
@@ -417,7 +417,7 @@
       {
         "Id": 8,
         "Material": [
-          "Rough Silver Ingot",
+          "Brief Cacophony",
           "Bifurcated Skeleton",
           "Rough Silver Ingot"
         ],
@@ -430,7 +430,7 @@
       {
         "Id": 9,
         "Material": [
-          "Rough Silver Ingot",
+          "Brief Cacophony",
           "Holy Silver",
           "Spell of Fortune"
         ],
@@ -3650,7 +3650,7 @@
   {
     "Id": 10010,
     "IsReleased": true,
-    "Name": "Зима",
+    "Name": "\u00d0\u2014\u00d0\u00b8\u00d0\u00bc\u00d0\u00b0",
     "Rarity": 4,
     "Afflatus": "Plant",
     "Insight": [
@@ -3917,7 +3917,7 @@
         ],
         "Quantity": [
           4,
-          3,
+          2,
           3
         ]
       },
@@ -5320,6 +5320,248 @@
     ]
   },
   {
+    "Id": 10038,
+    "IsReleased": true,
+    "Name": "Tennant",
+    "Rarity": 5,
+    "Afflatus": "Beast",
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Beastly Thirst",
+          "Trembling Tooth",
+          "Milled Magnesia"
+        ],
+        "Quantity": [
+          12000,
+          6,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Beastly Thirst",
+          "Esoteric Bones",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          30000,
+          8,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Beastly Thirst",
+          "Murmur of Insanity",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          120000,
+          12,
+          5,
+          2
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          4
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Silver Ore"
+        ],
+        "Quantity": [
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Magnesia Crystal",
+          "Solidus"
+        ],
+        "Quantity": [
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Esoteric Bones",
+          "Milled Magnesia"
+        ],
+        "Quantity": [
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Clawed Pendulum"
+        ],
+        "Quantity": [
+          25000,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          5,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Salted Mandrake",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          4,
+          6,
+          8
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Interlaced Shudder",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          1,
+          100000,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Incorrupt Monkeypaw",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          5,
+          3,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Wyrmling Skeleton",
+          "Salted Mandrake"
+        ],
+        "Quantity": [
+          1,
+          5,
+          4,
+          7
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Fruit of Good and Evil",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          1,
+          6,
+          1,
+          3
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Mistilteinn",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          1,
+          6,
+          2,
+          4
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10036,
     "IsReleased": true,
     "Name": "Matilda",
@@ -5870,11 +6112,11 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing"
+          "Magnesia Crystal"
         ],
         "Quantity": [
           4,
-          6
+          4
         ]
       },
       {
@@ -6112,18 +6354,18 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Spell of Banishing"
+          "Silver Ore"
         ],
         "Quantity": [
           4,
-          6
+          5
         ]
       },
       {
         "Id": 4,
         "Material": [
           "Moment of Dissonance",
-          "Silver Ore",
+          "Magnesia Crystal",
           "Solidus"
         ],
         "Quantity": [
@@ -6646,7 +6888,7 @@
         "Id": 7,
         "Material": [
           "Brief Cacophony",
-          "Biting Box"
+          "Salted Mandrake"
         ],
         "Quantity": [
           5,
@@ -6657,13 +6899,11 @@
         "Id": 8,
         "Material": [
           "Brief Cacophony",
-          "Salted Mandrake",
           "Bifurcated Skeleton",
           "Rough Silver Ingot"
         ],
         "Quantity": [
           5,
-          4,
           4,
           5
         ]
@@ -7082,18 +7322,18 @@
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Magnesia Crystal"
+          "Silver Ore"
         ],
         "Quantity": [
           4,
-          4
+          5
         ]
       },
       {
         "Id": 4,
         "Material": [
           "Moment of Dissonance",
-          "Shattered Bones",
+          "Magnesia Crystal",
           "Solidus"
         ],
         "Quantity": [
@@ -7442,8 +7682,8 @@
         "Material": [
           "Hoarse Echo",
           "Sonorous Knell",
-          "Incorrupt Monkeypaw",
-          "Holy Silver"
+          "Murmur of Insanity",
+          "Biting Box"
         ],
         "Quantity": [
           1,
@@ -7457,14 +7697,14 @@
         "Material": [
           "Hoarse Echo",
           "Sonorous Knell",
-          "Wyrmling Skeleton",
-          "Salted Mandrake"
+          "Bogeyman",
+          "Bifurcated Skeleton"
         ],
         "Quantity": [
           1,
           5,
           4,
-          7
+          6
         ]
       },
       {
@@ -7479,7 +7719,7 @@
           1,
           6,
           1,
-          4
+          3
         ]
       },
       {
@@ -8806,13 +9046,13 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
-          "Milled Magnesia"
+          "Milled Magnesia",
+          "Esoteric Bones"
         ],
         "Quantity": [
           5,
-          4,
-          3
+          3,
+          4
         ]
       },
       {
@@ -9201,8 +9441,8 @@
   },
   {
     "Id": 10051,
-    "IsReleased": true,
-    "Name": "Jessica",
+    "IsReleased": false,
+    "Name": "Changeling",
     "Rarity": 6,
     "Afflatus": "Plant",
     "Insight": [
@@ -9443,7 +9683,7 @@
   },
   {
     "Id": 10048,
-    "IsReleased": true,
+    "IsReleased": false,
     "Name": "Tooth Fairy",
     "Rarity": 6,
     "Afflatus": "Star",
@@ -12346,6 +12586,738 @@
           1,
           8,
           3,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 10064,
+    "IsReleased": false,
+    "Name": "6",
+    "Rarity": 6,
+    "Afflatus": "Intellect",
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Mineral Wealth",
+          "Page of Starlit Ascent",
+          "Shattered Bones",
+          "(Wheel)"
+        ],
+        "Quantity": [
+          18000,
+          3,
+          3,
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Mineral Wealth",
+          "Scroll of Starlit Ascent",
+          "Milled Magnesia",
+          "Biting Box"
+        ],
+        "Quantity": [
+          40000,
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Mineral Wealth",
+          "Tome of Starlit Ascent",
+          "(Wheel Core)",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          200000,
+          8,
+          8,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Shattered Bones"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Spell of Banishing",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          6,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Liquefied Terror",
+          "(Wheel)"
+        ],
+        "Quantity": [
+          5,
+          3,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "(Gold Beetle)"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Salted Mandrake",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          6,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          8,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "(Curved Goose Neck)",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Sinuous Howl",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "(Gold Compass)"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "(Moth Lamp)",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Wyrmling Skeleton",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "(Double Serpent Scepter)",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Fruit of Good and Evil",
+          "Incorrupt Monkeypaw"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 10065,
+    "IsReleased": false,
+    "Name": "Spathodea",
+    "Rarity": 6,
+    "Afflatus": "Beast",
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Beastly Thirst",
+          "Trembling Tooth",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Beastly Thirst",
+          "(Dry Cicada Wings)",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Beastly Thirst",
+          "Incorrupt Monkeypaw",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          7,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Silver Ore"
+        ],
+        "Quantity": [
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Spell of Banishing",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          6,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Esoteric Bones",
+          "(Dry Cicada Wings)"
+        ],
+        "Quantity": [
+          5,
+          3,
+          4
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "(Gold Beetle)"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box"
+        ],
+        "Quantity": [
+          6,
+          4
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Salted Mandrake",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          6,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "(Curved Goose Neck)",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          8,
+          5,
+          8
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Bifurcated Skeleton",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          5,
+          8,
+          8
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "(Gold Compass)"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Silver Bullet",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Incorrupt Monkeypaw",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Mistilteinn",
+          "(Moth Lamp)"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Golden Fleece",
+          "(Wheel Core)"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 10066,
+    "IsReleased": false,
+    "Name": "Ulu",
+    "Rarity": 5,
+    "Afflatus": "Mineral",
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Mineral Wealth",
+          "Magnesia Crystal",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          12000,
+          6,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Mineral Wealth",
+          "Esoteric Bones",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          30000,
+          8,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Mineral Wealth",
+          "Platinum Ouija",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          120000,
+          12,
+          4,
+          2
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Spell of Banishing"
+        ],
+        "Quantity": [
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Trembling Tooth",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Rough Silver Ingot",
+          "Milled Magnesia"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "(Gold Beetle)"
+        ],
+        "Quantity": [
+          25000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          6,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Salted Mandrake",
+          "(Dry Cicada Wings)"
+        ],
+        "Quantity": [
+          8,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Holy Silver",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          8
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "(Gold Compass)"
+        ],
+        "Quantity": [
+          1,
+          100000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Silver Bullet",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          1,
+          6,
+          3,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Murmur of Insanity",
+          "Salted Mandrake"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Golden Fleece",
+          "(Wheel Core)"
+        ],
+        "Quantity": [
+          1,
+          8,
+          1,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "(Double Serpent Scepter)",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
           4
         ]
       }

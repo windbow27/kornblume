@@ -20,7 +20,7 @@ const shouldHideScrollbar = computed(() => {
             <p>{{ card.stage }}</p>
         </div>
 
-        <div class="tooltip w-full" data-tip="Number of runs | Activity | Days">
+        <div class="tooltip w-full" data-tip="Number of runs | Activities | Days">
             <div
                 class="calculations flex justify-center items-center bg-gradient-to-r from-blue-800/70 to-blue-900/90 text-white p-2 rounded-md">
                 <p class="border-blue-700/90 border-r pr-3">
@@ -29,7 +29,7 @@ const shouldHideScrollbar = computed(() => {
                     </span>
                     <span v-else>{{ card.runs }}</span>
                 </p>
-                <p class="pl-2">{{ card.activity == null ? 'Crafted from Hard Stages' : card.activity }}</p>
+                <p class="pl-2">{{ card.activity == null ? 'Crafted from available Materials' : card.activity }}</p>
                 <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image" class="inline-block w-8 h-8" />
                 <p class="border-blue-700/90 border-l pl-3">{{ card.days }} {{ card.days === null ? '' : card.days > 1 ? 'days'
                     : 'day' }}</p>
