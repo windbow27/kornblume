@@ -236,20 +236,15 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
     if (selectedGoalLevel.value > goalLevelOptions.value[goalLevelOptions.value.length - 1]) {
         selectedGoalLevel.value = goalLevelOptions.value[goalLevelOptions.value.length - 1];
     }
-});
-
-watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance], () => {
-    if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
-        // console.log('Current is higher than goal');
-        selectedGoalInsight.value = selectedCurrentInsight.value;
-        selectedGoalLevel.value = selectedCurrentLevel.value;
-        //console.log(selectedGoalInsight.value, selectedGoalLevel.value);
-    }
     if (Number(selectedCurrentResonance.value) > Number(selectedGoalResonance.value)) {
         selectedGoalResonance.value = selectedCurrentResonance.value;
     }
+    if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
+        //console.log('Current is higher than goal');
+        selectedGoalInsight.value = selectedCurrentInsight.value;
+        selectedGoalLevel.value = selectedCurrentLevel.value;
+    }
 });
-
 
 </script>
 
