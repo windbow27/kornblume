@@ -3,23 +3,11 @@ import { useDataStore } from '../stores/DataStore';
 const calculations = useDataStore().calculations.data;
 const items = useDataStore().items.data;
 
-const convertForLegacyMaterialName = {
-    "(Double Serpent Scepter)": "Caduceus",
-    "(Moth Lamp)": "Glimmering Mothwing Lamp",
-    "(Wheel Core)": "Wheel and Axle Core",
-    "(Gold Compass)": "Crimson Gold Compass",
-    "(Wing Door Key)": "Winged Key",
-    "(Curved Goose Neck)": "Curved Goose Neck",
-    "(Gold Beetle)": "Gold Dust Beetle",
-    "(Dry Cicada Wings)": "Dried Cicada Wing",
-    "(Wheel)": "Ceaseless Wheel"
-}
-
 export function sortMaterials(array) {
     array.sort((a, b) => {
         // Find corresponding item based on material name
-        const itemA = items.find(item => item.Name === a.Material || item.Name === convertForLegacyMaterialName[a.Material]);
-        const itemB = items.find(item => item.Name === b.Material || item.Name === convertForLegacyMaterialName[b.Material]);
+        const itemA = items.find(item => item.Name === a.Material);
+        const itemB = items.find(item => item.Name === b.Material);
 
         // Sort by category
         const categoryOrder = ["Base Item", "Resonate Material", "Insight Material", "Build Material"];
