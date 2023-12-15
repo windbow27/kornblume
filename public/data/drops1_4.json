@@ -37,8 +37,8 @@
       "Rough Silver Ingot": 56,
       "Holy Silver": 579,
       "Spell of Fortune": 73,
-      "(Dry Cicada Wings)": 32,
-      "(Wheel)": 28
+      "Dried Cicada Wing": 32,
+      "Ceaseless Wheel": 28
     }
   },
   "2-6H": {
@@ -53,8 +53,8 @@
       "Spell of Banishing": 524,
       "Spell of Fortune": 8,
       "Prophetic Bird": 131,
-      "(Dry Cicada Wings)": 3,
-      "(Wheel)": 8
+      "Dried Cicada Wing": 3,
+      "Ceaseless Wheel": 8
     }
   },
   "2-9H": {
@@ -157,8 +157,8 @@
       "Spell of Banishing": 69,
       "Spell of Fortune": 4,
       "Prophetic Bird": 61,
-      "(Dry Cicada Wings)": 5,
-      "(Wheel)": 3
+      "Dried Cicada Wing": 5,
+      "Ceaseless Wheel": 3
     }
   },
   "3-11H": {
@@ -216,8 +216,8 @@
       "Silver Ore": 171,
       "Rough Silver Ingot": 132,
       "Spell of Fortune": 15,
-      "(Dry Cicada Wings)": 8,
-      "(Wheel)": 8
+      "Dried Cicada Wing": 8,
+      "Ceaseless Wheel": 8
     }
   },
   "4-11H": {
@@ -284,7 +284,7 @@
       "Shattered Bones": 842,
       "Esoteric Bones": 199,
       "Silver Ore": 487,
-      "(Wing Door Key)": 196
+      "Winged Key": 196
     }
   },
   "5-4H": {
@@ -298,9 +298,9 @@
       "Rough Silver Ingot": 827,
       "Spell of Banishing": 1048,
       "Spell of Fortune": 77,
-      "(Dry Cicada Wings)": 42,
-      "(Wheel)": 35,
-      "(Curved Goose Neck)": 465
+      "Dried Cicada Wing": 42,
+      "Ceaseless Wheel": 35,
+      "Curved Goose Neck": 465
     }
   },
   "5-5H": {
@@ -347,7 +347,7 @@
       "Esoteric Bones": 7,
       "Rough Silver Ingot": 78,
       "Spell of Fortune": 7,
-      "(Dry Cicada Wings)": 4
+      "Dried Cicada Wing": 4
     }
   },
   "5-14H": {

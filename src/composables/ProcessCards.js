@@ -80,13 +80,25 @@ function subtractResonateMaterials(materials) {
     return materials;
 }
 
+const convertForLegacyMaterialName = {
+    "(Double Serpent Scepter)": "Caduceus",
+    "(Moth Lamp)": "Glimmering Mothwing Lamp",
+    "(Wheel Core)": "Wheel and Axle Core",
+    "(Gold Compass)": "Crimson Gold Compass",
+    "(Wing Door Key)": "Winged Key",
+    "(Curved Goose Neck)": "Curved Goose Neck",
+    "(Gold Beetle)": "Gold Dust Beetle",
+    "(Dry Cicada Wings)": "Dried Cicada Wing",
+    "(Wheel)": "Ceaseless Wheel"
+}
+
 export function getPlan(materials) {
     const calculatedCards = [];
     drops = getDrops();
 
     function processOneiric(matInfo) {
         const oneiric = findOrCreateCard('Oneiric Shop', calculatedCards);
-        const oneiricMat = items.find((item) => item.Name === matInfo.Material);
+        const oneiricMat = items.find((item) => item.Name === matInfo.Material || item.Name === convertForLegacyMaterialName[matInfo.Material]);
         if (oneiricMat.Category === 'Resonate Material') {
             if (oneiricMat.Rarity === 6) {
                 oneiric.activity += 1500;
