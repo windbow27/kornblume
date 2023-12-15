@@ -121,6 +121,7 @@ export function getPlan(materials) {
     //
 
     const plan = getSolve(materials);
+
     plan.variables.forEach((stage) => {
         const stageInfo = drops[stage[0]];
         if (stageInfo) {
@@ -193,12 +194,20 @@ function getSolve(materials) {
     // prepare constraints
     const materialConstraints = {};
     const neededConstraints = {};
-    const resonateMaterial = [
-        "Sinuous Howl", "Interlaced Shudder", "Hypocritical Murmur", "Hoarse Echo", "Sonorous Knell", "Brief Cacophony", "Moment of Dissonance"
+
+    // the LP currently doesn't account for the oneiric shop
+    // since it's not really related to activity or farming routes
+    const resonanceMaterial = [
+        "Sinuous Howl",
+        "Interlaced Shudder",
+        "Hypocritical Murmur",
+        "Hoarse Echo",
+        "Sonorous Knell",
+        "Brief Cacophony",
+        "Moment of Dissonance"
     ];
     materials.forEach(({ Material: matlName, Quantity: quantity }) => {
-        // NOTE: not handle RESONANCE material in this function
-        if (!resonateMaterial.includes(matlName))
+        if (!resonanceMaterial.includes(matlName)) // filters out the materials from the oneiric shop
             neededConstraints[matlName] = { min: quantity };
     });
 
@@ -272,15 +281,21 @@ function getSolve(materials) {
         direction: "minimize",
         constraints,
         variables,
-        integers, // TODO: we need to manually round up the level count for stages in the solve result 
+        integers,
     };
 
     const options = {
-        precision: 0.01,
-        tolerance: 0.1
+        maxIterations: 1048576,
+        tolerance: 0.25
     }
 
-    return solve(model, options);
+    const solver = solve(model, options)
+    if (solver.status !== "optimal") {
+        console.log(`%cStatus: ${solver.status}`, 'background-color: yellow; color: black;');
+        console.log(`constraints: `, constraints)
+        console.log(`variables: `, variables)
+    }
+    return solver
 }
 
 export function getCardLayers(materials) {

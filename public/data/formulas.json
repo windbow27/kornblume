@@ -351,11 +351,11 @@
   },
   {
     "Id": 29,
-    "Name": "(Double Serpent Scepter)",
+    "Name": "Caduceus",
     "Rarity": 6,
     "Material": [
-      "(Moth Lamp)",
-      "(Gold Compass)",
+      "Glimmering Mothwing Lamp",
+      "Crimson Gold Compass",
       "Salted Mandrake",
       "Sharpodonty"
     ],
@@ -368,10 +368,10 @@
   },
   {
     "Id": 30,
-    "Name": "(Moth Lamp)",
+    "Name": "Glimmering Mothwing Lamp",
     "Rarity": 5,
     "Material": [
-      "(Wing Door Key)",
+      "Winged Key",
       "Salted Mandrake",
       "Sharpodonty"
     ],
@@ -383,10 +383,10 @@
   },
   {
     "Id": 31,
-    "Name": "(Wheel Core)",
+    "Name": "Wheel and Axle Core",
     "Rarity": 5,
     "Material": [
-      "(Curved Goose Neck)",
+      "Curved Goose Neck",
       "Holy Silver",
       "Biting Box",
       "Sharpodonty"
@@ -400,10 +400,10 @@
   },
   {
     "Id": 32,
-    "Name": "(Gold Compass)",
+    "Name": "Crimson Gold Compass",
     "Rarity": 5,
     "Material": [
-      "(Gold Beetle)",
+      "Gold Dust Beetle",
       "Bifurcated Skeleton",
       "Sharpodonty"
     ],
@@ -415,10 +415,10 @@
   },
   {
     "Id": 33,
-    "Name": "(Wing Door Key)",
+    "Name": "Winged Key",
     "Rarity": 4,
     "Material": [
-      "(Dry Cicada Wings)",
+      "Dried Cicada Wing",
       "Milled Magnesia",
       "Sharpodonty"
     ],
@@ -430,10 +430,10 @@
   },
   {
     "Id": 34,
-    "Name": "(Curved Goose Neck)",
+    "Name": "Curved Goose Neck",
     "Rarity": 4,
     "Material": [
-      "(Wheel)",
+      "Ceaseless Wheel",
       "Spell of Fortune",
       "Sharpodonty"
     ],
@@ -445,7 +445,7 @@
   },
   {
     "Id": 35,
-    "Name": "(Gold Beetle)",
+    "Name": "Gold Dust Beetle",
     "Rarity": 4,
     "Material": [
       "Solidus",
@@ -460,14 +460,14 @@
   },
   {
     "Id": 36,
-    "Name": "(Dry Cicada Wings)",
+    "Name": "Dried Cicada Wing",
     "Rarity": 3,
     "Material": [],
     "Quantity": []
   },
   {
     "Id": 37,
-    "Name": "(Wheel)",
+    "Name": "Ceaseless Wheel",
     "Rarity": 3,
     "Material": [],
     "Quantity": []

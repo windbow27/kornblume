@@ -159,36 +159,8 @@
       "Rough Silver Ingot": 56,
       "Holy Silver": 579,
       "Spell of Fortune": 73,
-      "(Dry Cicada Wings)": 32,
-      "(Wheel)": 28
-    }
-  },
-  "2-4H": {
-    "id": 13,
-    "cost": 16,
-    "count": 80,
-    "drops": {
-      "Trembling Tooth": 15,
-      "Magnesia Crystal": 17,
-      "Shattered Bones": 13,
-      "Esoteric Bones": 56,
-      "Silver Ore": 19,
-      "Rough Silver Ingot": 42,
-      "Spell of Banishing": 14
-    }
-  },
-  "2-5H": {
-    "id": 14,
-    "cost": 16,
-    "count": 59,
-    "drops": {
-      "Trembling Tooth": 4,
-      "Magnesia Crystal": 8,
-      "Shattered Bones": 11,
-      "Silver Ore": 17,
-      "Rough Silver Ingot": 44,
-      "Spell of Banishing": 15,
-      "Spell of Fortune": 43
+      "Dried Cicada Wing": 32,
+      "Ceaseless Wheel": 28
     }
   },
   "2-6H": {
@@ -203,22 +175,8 @@
       "Spell of Banishing": 524,
       "Spell of Fortune": 8,
       "Prophetic Bird": 131,
-      "(Dry Cicada Wings)": 3,
-      "(Wheel)": 8
-    }
-  },
-  "2-8H": {
-    "id": 16,
-    "cost": 16,
-    "count": 36,
-    "drops": {
-      "Liquefied Terror": 2,
-      "Milled Magnesia": 1,
-      "Shattered Bones": 57,
-      "Esoteric Bones": 1,
-      "Bifurcated Skeleton": 10,
-      "Spell of Fortune": 1,
-      "(Dry Cicada Wings)": 2
+      "Dried Cicada Wing": 3,
+      "Ceaseless Wheel": 8
     }
   },
   "2-9H": {
@@ -379,8 +337,8 @@
       "Spell of Banishing": 69,
       "Spell of Fortune": 4,
       "Prophetic Bird": 61,
-      "(Dry Cicada Wings)": 5,
-      "(Wheel)": 3
+      "Dried Cicada Wing": 5,
+      "Ceaseless Wheel": 3
     }
   },
   "3-11H": {
@@ -475,8 +433,8 @@
       "Silver Ore": 171,
       "Rough Silver Ingot": 132,
       "Spell of Fortune": 15,
-      "(Dry Cicada Wings)": 8,
-      "(Wheel)": 8
+      "Dried Cicada Wing": 8,
+      "Ceaseless Wheel": 8
     }
   },
   "4-11H": {
@@ -753,7 +711,7 @@
       "Shattered Bones": 842,
       "Esoteric Bones": 199,
       "Silver Ore": 487,
-      "(Wing Door Key)": 196
+      "Winged Key": 196
     }
   },
   "5-4H": {
@@ -769,9 +727,9 @@
       "Rough Silver Ingot": 827,
       "Spell of Banishing": 1048,
       "Spell of Fortune": 77,
-      "(Dry Cicada Wings)": 42,
-      "(Wheel)": 35,
-      "(Curved Goose Neck)": 465
+      "Dried Cicada Wing": 42,
+      "Ceaseless Wheel": 35,
+      "Curved Goose Neck": 465
     }
   },
   "5-5H": {
@@ -832,35 +790,7 @@
       "Esoteric Bones": 7,
       "Rough Silver Ingot": 78,
       "Spell of Fortune": 7,
-      "(Dry Cicada Wings)": 4,
-      "(Wheel)": 1
-    }
-  },
-  "5-10H": {
-    "id": 65,
-    "cost": 18,
-    "count": 7,
-    "drops": {
-      "Liquefied Terror": 1,
-      "Esoteric Bones": 1,
-      "Silver Ore": 3,
-      "Rough Silver Ingot": 1,
-      "Spell of Banishing": 3,
-      "Spell of Fortune": 1
-    }
-  },
-  "5-12H": {
-    "id": 66,
-    "cost": 18,
-    "count": 7,
-    "drops": {
-      "Trembling Tooth": 1,
-      "Milled Magnesia": 1,
-      "Shattered Bones": 2,
-      "Esoteric Bones": 1,
-      "Silver Ore": 2,
-      "Spell of Banishing": 1,
-      "(Dry Cicada Wings)": 1
+      "Dried Cicada Wing": 4
     }
   },
   "5-14H": {
