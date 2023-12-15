@@ -34,10 +34,11 @@ const emit = defineEmits({
     }
 });
 
+const arcanists = useDataStore().arcanists.data;
 const isTheSame = ref(false);
 const updateKey = ref(0);
 const calculations = useDataStore().calculations.data;
-const selectedArcanist = ref(props.selectedArcanist.info);
+const selectedArcanist = ref(arcanists.find(arc => Number(arc.Id) === Number(props.selectedArcanist.Id)));
 const selectedArcanists = ref(props.selectedArcanists);
 const listArcanists = ref(props.listArcanists);
 const selectedCurrentInsight = ref(props.selectedArcanist.currentInsight);
@@ -49,7 +50,7 @@ const selectedGoalResonance = ref(props.selectedArcanist.goalResonance);
 const selectedVisible = ref(props.selectedArcanist.isVisible);
 
 const editingArcanist = computed(() => ({
-    info: selectedArcanist.value,
+    Id: selectedArcanist.value.Id,
     isVisible: selectedVisible.value,
     currentInsight: selectedCurrentInsight.value,
     currentLevel: selectedCurrentLevel.value,
@@ -163,7 +164,7 @@ const checkIfCurrentAndGoalAreTheSame = () => {
 const addArcanist = () => {
     if (checkIfCurrentAndGoalAreTheSame()) return;
     //console.log(selectedArcanists.value);
-    const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.info.Id) === Number(editingArcanist.value.info.Id));
+    const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.Id) === Number(editingArcanist.value.Id));
     //console.log(existingIndex);
 
     if (existingIndex !== -1) {
@@ -178,7 +179,7 @@ const addArcanist = () => {
     }
 
     // Remove the arcanist from listArcanists
-    listArcanists.value = listArcanists.value.filter(arc => arc.Id !== editingArcanist.value.info.Id);
+    listArcanists.value = listArcanists.value.filter(arc => arc.Id !== editingArcanist.value.Id);
 
     emit('updateSelectedArcanists', selectedArcanists.value);
     emit('updateListArcanists', listArcanists.value);
@@ -186,7 +187,7 @@ const addArcanist = () => {
 };
 
 const removeArcanist = () => {
-    const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.info.Id) === Number(editingArcanist.value.info.Id));
+    const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.Id) === Number(editingArcanist.value.Id));
     if (existingIndex !== -1) {
         // If found, remove it
         selectedArcanists.value.splice(existingIndex, 1);

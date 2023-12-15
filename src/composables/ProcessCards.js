@@ -1,10 +1,10 @@
 import { useDataStore } from '../stores/DataStore'
 import { useWarehouseStore } from '../stores/WarehouseStore'
+import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore'
 import { solve } from "yalps";
 
 const items = useDataStore().items.data;
 const formulas = useDataStore().formulas.data;
-const drops = useDataStore().drops.data;
 const warehouse = useWarehouseStore().data;
 
 function calculateOneiric(matInfo) {
@@ -46,10 +46,10 @@ function findOrCreateCard(stage, calculatedCards) {
     return card;
 }
 
-function sortLayer(layer) {
+function sortLayer(layer, drops) {
     return layer.sort((a, b) => {
-        const stageA = Object.entries(drops).find(([key]) => key === a.stage);
-        const stageB = Object.entries(drops).find(([key]) => key === b.stage);
+        const stageA = Object.values(drops).find(stage => stage === a.stage);
+        const stageB = Object.values(drops).find(stage => stage === b.stage);
 
         if (stageA && stageB) {
             // If both stages have an id, sort based on id
@@ -68,6 +68,10 @@ function sortLayer(layer) {
     });
 }
 
+function sortRunCount(layer) {
+    return layer.sort((a, b) => b.runs - a.runs);
+}
+
 function subtractResonateMaterials(materials) {
     materials.forEach((matInfo) => {
         const subtractItem = warehouse.find((item) => item.Category === "Resonate Material" && item.Material === matInfo.Material);
@@ -79,48 +83,157 @@ function subtractResonateMaterials(materials) {
     return materials;
 }
 
-export function getPlan(materials) {
-    const calculatedCards = [];
+function getDrops() {
+    return usePlannerSettingsStore().settings.unreleasedDrops ?
+        useDataStore().drops1_4.data : useDataStore().drops.data;
+}
 
-    function processOneiric(matInfo) {
-        const oneiric = findOrCreateCard('Oneiric Shop', calculatedCards);
-        const oneiricMat = items.find((item) => item.Name === matInfo.Material);
-        if (oneiricMat.Category === 'Resonate Material') {
-            if (oneiricMat.Rarity === 6) {
-                oneiric.activity += 1500;
-                let casketQuantity;
-                if (warehouse.find((item) => item.Material === "Crystal Casket")) casketQuantity = warehouse.find((item) => item.Material === "Crystal Casket").Quantity;
-                const existingCasket = oneiric.materials.find((item) => item.Material === "Crystal Casket");
-                if (existingCasket) {
-                    existingCasket.Quantity += matInfo.Quantity - (casketQuantity || 0);
-                } else {
-                    const material = {
-                        Material: "Crystal Casket",
-                        Quantity: matInfo.Quantity - (casketQuantity || 0),
-                    }
-                    oneiric.materials.push(material);
-                }
-            } else {
-                oneiric.activity += calculateOneiric(matInfo);
-                oneiric.materials.push(matInfo);
-            }
+function getSolve(materials, drops) {
+    // prepare constraints
+    const materialConstraints = {};
+    const neededConstraints = {};
+
+    // the LP currently doesn't account for the oneiric shop
+    // since it's not really related to activity or farming routes
+    const resonanceMaterial = [
+        "Sinuous Howl",
+        "Interlaced Shudder",
+        "Hypocritical Murmur",
+        "Hoarse Echo",
+        "Sonorous Knell",
+        "Brief Cacophony",
+        "Moment of Dissonance",
+        "Crystal Casket"
+    ];
+    materials.forEach(({ Material: matlName, Quantity: quantity }) => {
+        if (!resonanceMaterial.includes(matlName)) // filters out the materials from the oneiric shop
+            neededConstraints[matlName] = { min: quantity };
+    });
+
+    // prepare craft mappings
+    const craftMapping = {};
+    // restrict crafting materials number to integers
+    const integers = [];
+
+    for (let { Name: name, Material: matl, Quantity: quantity } of formulas) {
+        materialConstraints[name] = { min: 0 };
+        if (matl.length === 0) continue;
+
+        const craftMaterials = {};
+        matl.forEach((matName, idx) => {
+            craftMaterials[matName] = -quantity[idx];
+        });
+
+        const strategyName = `Wilderness Wishing Spring - ${name}`;
+        craftMapping[strategyName] = {
+            [name]: 1,
+            ...craftMaterials,
+            cost: 0,
+        };
+
+        if (!integers.includes(strategyName))
+            integers.push(strategyName);
+    }
+
+    // prepare drop mappings
+    const dropMapping = {};
+    for (let stage in drops) {
+        const stageInfo = drops[stage];
+        const { count: times, cost, drops: dropCount } = stageInfo;
+        dropMapping[stage] = { cost };
+        for (let matlName in dropCount) {
+            dropMapping[stage][matlName] = dropCount[matlName] / times;
         }
     }
 
-    subtractResonateMaterials(materials);
-    materials.forEach((matInfo) => {
-        if (matInfo.Quantity <= 0) return;
-        matInfo.Quantity = parseFloat(matInfo.Quantity);
-        const currentStage = Object.entries(drops).find(([stageDrops, dropList]) => {
-            return stageDrops === matInfo.Material;
-        });
-        if (!currentStage) {
-            processOneiric(matInfo);
-        }
-    });
-    //
+    const constraints = {
+        ...materialConstraints,
+        ...neededConstraints,
+    };
 
-    const plan = getSolve(materials);
+    // consider warehouse
+    warehouse.forEach((matlInfo) => {
+        const {
+            Material: matlName,
+            Quantity: quantity
+        } = matlInfo;
+        const matlQuant = parseInt(quantity);
+        if (matlQuant > 0) {
+            if (constraints[matlName]) {
+                constraints[matlName] = {
+                    min: constraints[matlName].min - matlQuant
+                }
+            }
+            else {
+                constraints[matlName] = {
+                    min: - matlQuant
+                }
+            }
+        }
+    })
+
+    // define LP solver
+    const variables = Object.assign({}, craftMapping, dropMapping);
+
+    const model = {
+        objective: "cost",
+        direction: "minimize",
+        constraints,
+        variables,
+        integers,
+    };
+
+    const options = {
+        maxIterations: 1048576,
+        tolerance: 0.25
+    }
+
+    const solver = solve(model, options)
+    if (solver.status !== "optimal") {
+        console.log(`%cStatus: ${solver.status}`, 'background-color: yellow; color: black;');
+        console.log(`constraints: `, constraints)
+        console.log(`variables: `, variables)
+    }
+    return solver
+}
+
+export function getPlan(materials) {
+    const calculatedCards = [];
+    const drops = getDrops();
+    let casketCount = 0;
+
+    function processOneiric(matInfo) {
+        if (matInfo.Quantity <= 0) return;
+        if (items.find((item) => item.Name === matInfo.Material).Category !== 'Resonate Material') return;
+        const oneiricCard = findOrCreateCard('Oneiric Shop', calculatedCards);
+        oneiricCard.materials.push(matInfo);
+        oneiricCard.activity += calculateOneiric(matInfo);
+    }
+
+    materials.forEach((matInfo) => {
+        if (items.find((item) => item.Name === matInfo.Material).Category !== 'Resonate Material' 
+        || items.find((item) => item.Name === matInfo.Material).Rarity !== 6) return;
+        casketCount += matInfo.Quantity;
+        matInfo.Quantity = 0;
+    });
+
+    //add casket materials
+    if (casketCount > 0) {
+        const material = {
+            Material: "Crystal Casket",
+            Quantity: casketCount,
+        }
+        materials.unshift(material);
+    }
+
+    subtractResonateMaterials(materials);
+
+    materials.forEach((matInfo) => {
+        processOneiric(matInfo);
+    });
+
+    const plan = getSolve(materials, drops);
+
     plan.variables.forEach((stage) => {
         const stageInfo = drops[stage[0]];
         if (stageInfo) {
@@ -180,107 +293,12 @@ export function getPlan(materials) {
 
     //console.log(stagesFourthLayer);
     const cardLayers = [
-        { id: 0, cards: sortLayer(stagesFirstLayer) },
-        { id: 1, cards: sortLayer(stagesSecondLayer) },
-        { id: 2, cards: sortLayer(stagesThirdLayer) },
-        { id: 3, cards: sortLayer(stagesFourthLayer) },
+        { id: 0, cards: sortLayer(stagesFirstLayer, drops) },
+        { id: 1, cards: sortLayer(stagesSecondLayer, drops) },
+        { id: 2, cards: sortRunCount(stagesThirdLayer) },
+        { id: 3, cards: sortLayer(stagesFourthLayer, drops) },
     ];
     return cardLayers;
-}
-
-
-function getSolve(materials) {
-    // prepare constraints
-    const materialConstraints = {};
-    const neededConstraints = {};
-    const resonateMaterial = [
-        "Sinuous Howl", "Interlaced Shudder", "Hypocritical Murmur", "Hoarse Echo", "Sonorous Knell", "Brief Cacophony", "Moment of Dissonance"
-    ];
-    materials.forEach(({ Material: matlName, Quantity: quantity }) => {
-        // NOTE: not handle RESONANCE material in this function
-        if (!resonateMaterial.includes(matlName))
-            neededConstraints[matlName] = { min: quantity };
-    });
-
-    // prepare craft mappings
-    const craftMapping = {};
-    // restrict crafting materials number to integers
-    const integers = [];
-
-    for (let { Name: name, Material: matl, Quantity: quantity } of formulas) {
-        materialConstraints[name] = { min: 0 };
-        if (matl.length === 0) continue;
-
-        const craftMaterials = {};
-        matl.forEach((matName, idx) => {
-            craftMaterials[matName] = -quantity[idx];
-        });
-
-        const strategyName = `Wilderness Wishing Sprin - ${name}`;
-        craftMapping[strategyName] = {
-            [name]: 1,
-            ...craftMaterials,
-            cost: 0,
-        };
-
-        if (!integers.includes(strategyName))
-            integers.push(strategyName);
-    }
-
-    // prepare drop mappings
-    const dropMapping = {};
-    for (let stage in drops) {
-        const stageInfo = drops[stage];
-        const { count: times, cost, drops: dropCount } = stageInfo;
-        dropMapping[stage] = { cost };
-        for (let matlName in dropCount) {
-            dropMapping[stage][matlName] = dropCount[matlName] / times;
-        }
-    }
-
-    const constraints = {
-        ...materialConstraints,
-        ...neededConstraints,
-    };
-
-    // consider warehouse
-    warehouse.forEach((matlInfo) => {
-        const {
-            Material: matlName,
-            Quantity: quantity
-        } = matlInfo;
-        const matlQuant = parseInt(quantity);
-        if (matlQuant > 0) {
-            if (constraints[matlName]) {
-                constraints[matlName] = {
-                    min: constraints[matlName].min - matlQuant
-                }
-            }
-            else {
-                constraints[matlName] = {
-                    min: - matlQuant
-                }
-            }
-        }
-    })
-
-    // define LP solver
-    const variables = Object.assign({}, craftMapping, dropMapping);
-
-    const model = {
-        objective: "cost",
-        direction: "minimize",
-        constraints,
-        variables,
-        integers, // TODO: we need to manually round up the level count for stages in the solve result 
-    };
-
-    const options = {
-        precision: 0.01,
-        tolerance: 0.1
-    }
-
-    return solve(model, options);
 }
 
 export function getCardLayers(materials) {

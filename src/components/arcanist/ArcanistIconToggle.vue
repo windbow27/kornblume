@@ -1,7 +1,9 @@
 <script setup>
+import { useDataStore } from '../../stores/DataStore';
+
 const props = defineProps({
     arcanist: {
-        type: Object,
+        type: Number,
         required: true
     },
     visible: {
@@ -9,24 +11,27 @@ const props = defineProps({
         required: true
     }
 });
+
+const arcInfo = useDataStore().arcanists.data.find(arc => arc.Id === props.arcanist);
+
 const getArcanistImagePath = (id) => {
     return `images/arcanists/icon/${id}.png`;
 };
 </script>
 
 <template>
-    <div class="tooltip" :data-tip="arcanist.Name">
+    <div class="tooltip" :data-tip="arcInfo.Name">
         <div class="rounded-md overflow-hidden">
             <div class="avatar">
                 <div class="w-12 rounded" :class="{
                     'filter-grayscale opacity-50': !visible,
-                    'bg-orange-300': arcanist.Rarity === 6,
-                    'bg-yellow-100': arcanist.Rarity === 5,
-                    'bg-purple-400': arcanist.Rarity === 4,
-                    'bg-sky-200': arcanist.Rarity === 3,
-                    'bg-green-200': arcanist.Rarity === 2
+                    'bg-orange-300': arcInfo.Rarity === 6,
+                    'bg-yellow-100': arcInfo.Rarity === 5,
+                    'bg-purple-400': arcInfo.Rarity === 4,
+                    'bg-sky-200': arcInfo.Rarity === 3,
+                    'bg-green-200': arcInfo.Rarity === 2
                 }">
-                    <img :src="getArcanistImagePath(arcanist.Id)" :alt="arcanist.Name" />
+                    <img :src="getArcanistImagePath(arcInfo.Id)" :alt="arcInfo.Name" />
                 </div>
             </div>
         </div>

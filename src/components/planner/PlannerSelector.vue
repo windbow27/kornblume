@@ -26,7 +26,7 @@ const handleRightClick = (arcanist) => {
 <template>
     <div>
         <div class="flex flex-row flex-wrap justify-center space-x-2">
-            <ArcanistIconToggle v-for="arcanist in arcanists" :key="arcanist.Name" :arcanist="arcanist.info"
+            <ArcanistIconToggle v-for="arcanist in arcanists" :arcanist="arcanist.Id"
                 :visible="arcanist.isVisible" 
                 @click="handleLeftClick(arcanist)"
                 @contextmenu.prevent="handleRightClick(arcanist)"/>

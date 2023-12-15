@@ -23,7 +23,7 @@ const settingsStore = usePlannerSettingsStore();
 const listArcanists = ref([]);
 
 const selectedArcanistIds = computed(() =>
-  plannerStore.selectedArcanists.map(arcanist => arcanist.info.Id)
+  plannerStore.selectedArcanists.map(arcanist => arcanist.Id)
 );
 
 watchEffect(() => {
@@ -107,7 +107,7 @@ const closeSettings = () => {
 
 const handleSelectArcanist = (arcanist) => {
   selectedArcanist.value = {
-    info: arcanist,
+    Id: arcanist.Id,
     isVisible: true,
     currentInsight: 0,
     currentLevel: 1,
