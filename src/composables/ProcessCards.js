@@ -82,43 +82,38 @@ function subtractResonateMaterials(materials) {
 
 export function getPlan(materials) {
     const calculatedCards = [];
+    let casketCount = 0;
     drops = getDrops();
 
     function processOneiric(matInfo) {
-        const oneiric = findOrCreateCard('Oneiric Shop', calculatedCards);
-        const oneiricMat = items.find((item) => item.Name === matInfo.Material);
-        if (oneiricMat.Category === 'Resonate Material') {
-            if (oneiricMat.Rarity === 6) {
-                oneiric.activity += 1500;
-                let casketQuantity;
-                if (warehouse.find((item) => item.Material === "Crystal Casket")) casketQuantity = warehouse.find((item) => item.Material === "Crystal Casket").Quantity;
-                const existingCasket = oneiric.materials.find((item) => item.Material === "Crystal Casket");
-                if (existingCasket) {
-                    existingCasket.Quantity += matInfo.Quantity - (casketQuantity || 0);
-                } else {
-                    const material = {
-                        Material: "Crystal Casket",
-                        Quantity: matInfo.Quantity - (casketQuantity || 0),
-                    }
-                    oneiric.materials.push(material);
-                }
-            } else {
-                oneiric.activity += calculateOneiric(matInfo);
-                oneiric.materials.push(matInfo);
-            }
+        if (matInfo.Quantity <= 0) return;
+        if (items.find((item) => item.Name === matInfo.Material).Category !== 'Resonate Material') return;
+        const oneiricCard = findOrCreateCard('Oneiric Shop', calculatedCards);
+        oneiricCard.materials.push(matInfo);
+        oneiricCard.activity += calculateOneiric(matInfo);
+    }
+
+    materials.forEach((matInfo) => {
+        if (items.find((item) => item.Name === matInfo.Material).Category !== 'Resonate Material' 
+        || items.find((item) => item.Name === matInfo.Material).Rarity !== 6) return;
+        casketCount += matInfo.Quantity;
+        matInfo.Quantity = 0;
+    });
+
+    //add casket materials
+    if (casketCount > 0) {
+        const material = {
+            Material: "Crystal Casket",
+            Quantity: casketCount,
         }
+        materials.push(material);
     }
 
     subtractResonateMaterials(materials);
+
     materials.forEach((matInfo) => {
-        if (matInfo.Quantity <= 0) return;
-        matInfo.Quantity = parseFloat(matInfo.Quantity);
-        const currentStage = Object.values(drops).find(stage => stage.drops && stage.drops[matInfo.Material]);
-        if (!currentStage) {
-            processOneiric(matInfo);
-        }
+        processOneiric(matInfo);
     });
-    //
 
     const plan = getSolve(materials);
 
@@ -204,7 +199,8 @@ function getSolve(materials) {
         "Hoarse Echo",
         "Sonorous Knell",
         "Brief Cacophony",
-        "Moment of Dissonance"
+        "Moment of Dissonance",
+        "Crystal Casket"
     ];
     materials.forEach(({ Material: matlName, Quantity: quantity }) => {
         if (!resonanceMaterial.includes(matlName)) // filters out the materials from the oneiric shop
@@ -320,6 +316,6 @@ export function getTotalActivityAndDays(cardLayers) {
 }
 
 function getDrops() {
-    return usePlannerSettingsStore().settings.unreleasedDrops ? 
+    return usePlannerSettingsStore().settings.unreleasedDrops ?
         useDataStore().drops1_4.data : useDataStore().drops.data;
 }
