@@ -133,8 +133,6 @@ export function getPlan(materials) {
     //
 
     const plan = getSolve(materials);
-    if (plan.status !== "optimal")
-        console.log(plan)
 
     plan.variables.forEach((stage) => {
         const stageInfo = drops[stage[0]];
@@ -303,7 +301,13 @@ function getSolve(materials) {
         tolerance: 0.25
     }
 
-    return solve(model, options);
+    const solver = solve(model, options)
+    if (solver.status !== "optimal") {
+        console.log(`%cStatus: ${solver.status}`, 'background-color: yellow; color: black;');
+        console.log(`constraints: `, constraints)
+        console.log(`variables: `, variables)
+    }
+    return solver
 }
 
 export function getCardLayers(materials) {
