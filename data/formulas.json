@@ -348,5 +348,128 @@
     "Rarity": 1,
     "Material": [],
     "Quantity": []
+  },
+  {
+    "Id": 29,
+    "Name": "Caduceus",
+    "Rarity": 6,
+    "Material": [
+      "Glimmering Mothwing Lamp",
+      "Crimson Gold Compass",
+      "Salted Mandrake",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      1,
+      1,
+      2,
+      800
+    ]
+  },
+  {
+    "Id": 30,
+    "Name": "Glimmering Mothwing Lamp",
+    "Rarity": 5,
+    "Material": [
+      "Winged Key",
+      "Salted Mandrake",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      2,
+      500
+    ]
+  },
+  {
+    "Id": 31,
+    "Name": "Wheel and Axle Core",
+    "Rarity": 5,
+    "Material": [
+      "Curved Goose Neck",
+      "Holy Silver",
+      "Biting Box",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      1,
+      500
+    ]
+  },
+  {
+    "Id": 32,
+    "Name": "Crimson Gold Compass",
+    "Rarity": 5,
+    "Material": [
+      "Gold Dust Beetle",
+      "Bifurcated Skeleton",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      2,
+      4,
+      500
+    ]
+  },
+  {
+    "Id": 33,
+    "Name": "Winged Key",
+    "Rarity": 4,
+    "Material": [
+      "Dried Cicada Wing",
+      "Milled Magnesia",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 34,
+    "Name": "Curved Goose Neck",
+    "Rarity": 4,
+    "Material": [
+      "Ceaseless Wheel",
+      "Spell of Fortune",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 35,
+    "Name": "Gold Dust Beetle",
+    "Rarity": 4,
+    "Material": [
+      "Solidus",
+      "Esoteric Bones",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      2,
+      2,
+      400
+    ]
+  },
+  {
+    "Id": 36,
+    "Name": "Dried Cicada Wing",
+    "Rarity": 3,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 37,
+    "Name": "Ceaseless Wheel",
+    "Rarity": 3,
+    "Material": [],
+    "Quantity": []
   }
 ]
