@@ -233,7 +233,8 @@
     "Name": "Liquefied Terror",
     "Rarity": 3,
     "Material": [
-      "Trembling Tooth"
+      "Trembling Tooth",
+      "Sharpodonty"
     ],
     "Quantity": [
       3,
@@ -469,6 +470,13 @@
     "Id": 37,
     "Name": "Ceaseless Wheel",
     "Rarity": 3,
+    "Material": [],
+    "Quantity": []
+  },
+  {
+    "Id": 38,
+    "Name": "Trembling Tooth",
+    "Rarity": 2,
     "Material": [],
     "Quantity": []
   }
