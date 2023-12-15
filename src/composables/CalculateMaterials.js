@@ -2,6 +2,7 @@ import { useDataStore } from '../stores/DataStore';
 
 const calculations = useDataStore().calculations.data;
 const items = useDataStore().items.data;
+const arcanists = useDataStore().arcanists.data;
 
 export function sortMaterials(array) {
     array.sort((a, b) => {
@@ -80,6 +81,7 @@ export function formatResults(result) {
 
 
 export function useCalculation(arc) {
+    const arcInfo = arcanists.find((arcanist) => arcanist.Id === arc.Id);
     const calculateExp = (arc) => {
         let total = { "Dust": 0, "Sharpodonty": 0 };
 
@@ -149,7 +151,7 @@ export function useCalculation(arc) {
 
     const getLevelsInfo = (arc, insight) => {
         const currentCalc = calculations.find((calc) =>
-            calc.Rarity.includes(arc.info.Rarity) &&
+            calc.Rarity.includes(arcInfo.Rarity) &&
             calc.Insight == insight
         );
         return currentCalc;
@@ -172,8 +174,8 @@ export function useCalculation(arc) {
         return total;
     };
     // Get the results from calculateInsight, calculateResonance, and calculateExp
-    const insightResults = calculateMaterials(arc.currentInsight, arc.goalInsight, arc.info.Insight);
-    const resonanceResults = calculateMaterials(arc.currentResonance, arc.goalResonance, arc.info.Resonance);
+    const insightResults = calculateMaterials(arc.currentInsight, arc.goalInsight, arcInfo.Insight);
+    const resonanceResults = calculateMaterials(arc.currentResonance, arc.goalResonance, arcInfo.Resonance);
     const expResults = calculateExp(arc);
     // Merge all results into a single object
     const mergedResults = mergeResults([insightResults, resonanceResults, expResults]);

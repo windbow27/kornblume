@@ -378,15 +378,15 @@
     "count": 1,
     "cost": 1,
     "drops": {
-      "(Double Serpent Scepter)": 1,
-      "(Moth Lamp)": 1,
-      "(Wheel Core)": 1,
-      "(Gold Compass)": 1,
-      "(Wing Door Key)": 1,
-      "(Curved Goose Neck)": 1,
-      "(Gold Beetle)": 1,
-      "(Dry Cicada Wings)": 1,
-      "(Wheel)": 1
+      "Caduceus": 1,
+      "Glimmering Mothwing Lamp": 1,
+      "Wheel and Axle Core": 1,
+      "Crimson Gold Compass": 1,
+      "Winged Key": 1,
+      "Curved Goose Neck": 1,
+      "Gold Dust Beetle": 1,
+      "Dried Cicada Wing": 1,
+      "Ceaseless Wheel": 1
     }
   }
 }

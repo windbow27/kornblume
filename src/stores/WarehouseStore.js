@@ -19,6 +19,13 @@ export const useWarehouseStore = defineStore('warehouse', {
         addItem(material, category) {
             this.data.push({Material: material, Quantity: 0, Category: category});
         },
+        removeItem(material) {
+            for (let i = 0; i < this.data.length; i++) {
+                if (this.data[i].Material === material) {
+                    this.data.splice(i, 1);
+                }
+            }
+        },
         addShopItem(material, quantity) {
             for (let i = 0; i < this.data.length; i++) {
                 if (this.data[i].Material === material) {
@@ -34,6 +41,14 @@ export const useWarehouseStore = defineStore('warehouse', {
                     break;
                 }
             }
+        },
+        itemExists(materialName) {
+            for (let i = 0; i < this.data.length; i++) {
+                if (this.data[i].Material === materialName){
+                    return true;
+                }
+            }
+            return false;
         },
         resetAll() {
             this.data = [];

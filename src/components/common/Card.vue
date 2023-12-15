@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import ItemIcon from '../item/ItemIcon.vue';
 const props = defineProps({
     card: {
@@ -10,6 +10,14 @@ const props = defineProps({
 
 const shouldHideScrollbar = computed(() => {
     return props.card.materials.length < 4;
+});
+
+const scrollDiv = ref(null);
+
+watch(shouldHideScrollbar, (newVal) => {
+    if (newVal && scrollDiv.value) {
+        scrollDiv.value.scrollLeft = 0;
+    }
 });
 
 </script>
@@ -36,7 +44,7 @@ const shouldHideScrollbar = computed(() => {
             </div>
         </div>
 
-        <div :class="{'custom-scrollbar':shouldHideScrollbar}" class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">
+        <div ref="scrollDiv" :class="{'custom-scrollbar':shouldHideScrollbar}" class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">
             <div v-for="(material, materialIndex) in card.materials" :key="materialIndex" class="flex-shrink-0">
                 <ItemIcon class="" :material="material" />
             </div>
