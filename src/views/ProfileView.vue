@@ -13,8 +13,18 @@
                 Import Data
             </button>
         </div>
+        <h2 class="text-2xl text-white font-bold my-4 lg:my-6">Danger Zone</h2>
+        <p class="text-white">If you encounter any unexpected issues with the webpage, you can reset your data.</p>
+        <div class="flex justify-center items-center p-2">   
+            <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4" style="display: none;" />
+            <button @click="triggerFileInput"
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
+                Reset Data
+            </button>
+        </div>
     </div>
 </template>
+
   
 <script setup>
 import { ref } from 'vue';
