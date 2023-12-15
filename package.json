@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit --skipLibCheck --allowJs && vite build",
     "preview": "vite preview",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
@@ -26,6 +26,9 @@
     "i": "^0.3.7",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
-    "vite": "^5.0.8"
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vue-tsc": "^1.8.25"
   }
 }
