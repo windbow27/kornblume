@@ -7,7 +7,7 @@
       "Trembling Tooth": 18,
       "Magnesia Crystal": 1,
       "Shattered Bones": 5,
-      "Iron Ore": 5,
+      "Silver Ore": 5,
       "Spell of Banishing": 1
     }
   },
@@ -18,7 +18,7 @@
     "drops": {
       "Trembling Tooth": 2,
       "Shattered Bones": 4,
-      "Iron Ore": 3,
+      "Silver Ore": 3,
       "Spell of Banishing": 38
     }
   },
@@ -30,7 +30,7 @@
       "Trembling Tooth": 3,
       "Magnesia Crystal": 4,
       "Shattered Bones": 2,
-      "Iron Ore": 67,
+      "Silver Ore": 67,
       "Spell of Banishing": 3
     }
   },
@@ -41,7 +41,7 @@
     "drops": {
       "Magnesia Crystal": 1,
       "Shattered Bones": 18,
-      "Iron Ore": 3,
+      "Silver Ore": 3,
       "Spell of Banishing": 2
     }
   },
@@ -63,7 +63,7 @@
       "Trembling Tooth": 2,
       "Magnesia Crystal": 1,
       "Shattered Bones": 1,
-      "Iron Ore": 4,
+      "Silver Ore": 4,
       "Rough Silver Ingot": 17,
       "Spell of Banishing": 10
     }
@@ -77,7 +77,7 @@
       "Magnesia Crystal": 26,
       "Shattered Bones": 20,
       "Esoteric Bones": 106,
-      "Iron Ore": 34,
+      "Silver Ore": 34,
       "Spell of Banishing": 33
     }
   },
@@ -90,7 +90,7 @@
       "Magnesia Crystal": 15,
       "Milled Magnesia": 63,
       "Shattered Bones": 13,
-      "Iron Ore": 12,
+      "Silver Ore": 12,
       "Spell of Banishing": 28
     }
   },
@@ -103,7 +103,7 @@
       "Liquefied Terror": 130,
       "Magnesia Crystal": 19,
       "Shattered Bones": 20,
-      "Iron Ore": 27,
+      "Silver Ore": 27,
       "Spell of Banishing": 29
     }
   },
@@ -115,7 +115,7 @@
       "Trembling Tooth": 2,
       "Magnesia Crystal": 7,
       "Shattered Bones": 8,
-      "Iron Ore": 19,
+      "Silver Ore": 19,
       "Spell of Banishing": 10,
       "Solidus": 10
     }
@@ -130,7 +130,7 @@
       "Milled Magnesia": 1,
       "Shattered Bones": 1,
       "Esoteric Bones": 1,
-      "Iron Ore": 2,
+      "Silver Ore": 2,
       "Rough Silver Ingot": 1,
       "Spell of Banishing": 3
     }
@@ -155,7 +155,7 @@
       "Liquefied Terror": 41,
       "Milled Magnesia": 44,
       "Esoteric Bones": 46,
-      "Iron Ore": 2736,
+      "Silver Ore": 2736,
       "Rough Silver Ingot": 56,
       "Holy Silver": 579,
       "Spell of Fortune": 73,
@@ -172,7 +172,7 @@
       "Magnesia Crystal": 17,
       "Shattered Bones": 13,
       "Esoteric Bones": 56,
-      "Iron Ore": 19,
+      "Silver Ore": 19,
       "Rough Silver Ingot": 42,
       "Spell of Banishing": 14
     }
@@ -185,7 +185,7 @@
       "Trembling Tooth": 4,
       "Magnesia Crystal": 8,
       "Shattered Bones": 11,
-      "Iron Ore": 17,
+      "Silver Ore": 17,
       "Rough Silver Ingot": 44,
       "Spell of Banishing": 15,
       "Spell of Fortune": 43
@@ -242,7 +242,7 @@
       "Milled Magnesia": 35,
       "Shattered Bones": 10,
       "Esoteric Bones": 18,
-      "Iron Ore": 16,
+      "Silver Ore": 16,
       "Spell of Banishing": 20
     }
   },
@@ -257,7 +257,7 @@
       "Milled Magnesia": 1,
       "Shattered Bones": 5,
       "Esoteric Bones": 1,
-      "Iron Ore": 4,
+      "Silver Ore": 4,
       "Rough Silver Ingot": 3,
       "Spell of Banishing": 5,
       "Spell of Fortune": 36
@@ -287,7 +287,7 @@
       "Magnesia Crystal": 1,
       "Milled Magnesia": 20,
       "Shattered Bones": 3,
-      "Iron Ore": 6,
+      "Silver Ore": 6,
       "Spell of Banishing": 3
     }
   },
@@ -308,7 +308,7 @@
     "cost": 18,
     "count": 435,
     "drops": {
-      "Iron Ore": 307,
+      "Silver Ore": 307,
       "Spell of Banishing": 597,
       "Spell of Fortune": 106,
       "Clawed Pendant": 105
@@ -322,7 +322,7 @@
       "Trembling Tooth": 12,
       "Magnesia Crystal": 5,
       "Shattered Bones": 10,
-      "Iron Ore": 238,
+      "Silver Ore": 238,
       "Rough Silver Ingot": 60,
       "Spell of Banishing": 23,
       "Solidus": 73
@@ -339,7 +339,7 @@
       "Milled Magnesia": 3,
       "Shattered Bones": 17,
       "Esoteric Bones": 62,
-      "Iron Ore": 18,
+      "Silver Ore": 18,
       "Rough Silver Ingot": 9,
       "Spell of Banishing": 29,
       "Spell of Fortune": 12
@@ -363,7 +363,7 @@
     "drops": {
       "Shattered Bones": 1257,
       "Esoteric Bones": 306,
-      "Iron Ore": 649,
+      "Silver Ore": 649,
       "Holy Silver": 358
     }
   },
@@ -411,7 +411,7 @@
     "count": 7,
     "drops": {
       "Trembling Tooth": 1,
-      "Iron Ore": 5,
+      "Silver Ore": 5,
       "Rough Silver Ingot": 9,
       "Spell of Banishing": 2,
       "Spell of Fortune": 1
@@ -445,7 +445,7 @@
     "drops": {
       "Magnesia Crystal": 35,
       "Milled Magnesia": 74,
-      "Iron Ore": 75,
+      "Silver Ore": 75,
       "Rough Silver Ingot": 72
     }
   },
@@ -472,7 +472,7 @@
       "Biting Box": 73,
       "Milled Magnesia": 9,
       "Esoteric Bones": 7,
-      "Iron Ore": 171,
+      "Silver Ore": 171,
       "Rough Silver Ingot": 132,
       "Spell of Fortune": 15,
       "(Dry Cicada Wings)": 8,
@@ -497,7 +497,7 @@
     "drops": {
       "Magnesia Crystal": 306,
       "Milled Magnesia": 84,
-      "Iron Ore": 244,
+      "Silver Ore": 244,
       "Holy Silver": 133
     }
   },
@@ -568,7 +568,7 @@
       "Milled Magnesia": 2,
       "Shattered Bones": 5,
       "Esoteric Bones": 2,
-      "Iron Ore": 1,
+      "Silver Ore": 1,
       "Spell of Banishing": 1,
       "(Dry Cicada Wings)": 1
     }
@@ -593,7 +593,7 @@
     "drops": {
       "Shattered Bones": 2,
       "Esoteric Bones": 1,
-      "Iron Ore": 6,
+      "Silver Ore": 6,
       "Rough Silver Ingot": 3,
       "Spell of Banishing": 2,
       "Spell of Fortune": 1,
@@ -608,7 +608,7 @@
     "drops": {
       "Trembling Tooth": 1,
       "Shattered Bones": 2,
-      "Iron Ore": 1,
+      "Silver Ore": 1,
       "Rough Silver Ingot": 2,
       "(Dry Cicada Wings)": 1,
       "(Wheel)": 1
@@ -632,7 +632,7 @@
     "drops": {
       "Shattered Bones": 1,
       "Esoteric Bones": 3,
-      "Iron Ore": 1,
+      "Silver Ore": 1,
       "Spell of Banishing": 2,
       "(Dry Cicada Wings)": 1
     }
@@ -645,7 +645,7 @@
       "Trembling Tooth": 1,
       "Magnesia Crystal": 1,
       "Esoteric Bones": 3,
-      "Iron Ore": 3,
+      "Silver Ore": 3,
       "Rough Silver Ingot": 1,
       "Spell of Banishing": 3,
       "Spell of Fortune": 2,
@@ -661,7 +661,7 @@
       "Trembling Tooth": 1,
       "Liquefied Terror": 1,
       "Shattered Bones": 1,
-      "Iron Ore": 2,
+      "Silver Ore": 2,
       "Spell of Banishing": 1,
       "Spell of Fortune": 1,
       "(Wheel)": 1
@@ -674,7 +674,7 @@
     "drops": {
       "Liquefied Terror": 2,
       "Shattered Bones": 1,
-      "Iron Ore": 1,
+      "Silver Ore": 1,
       "Rough Silver Ingot": 1,
       "Spell of Banishing": 2
     }
@@ -687,7 +687,7 @@
       "Liquefied Terror": 1,
       "Shattered Bones": 1,
       "Esoteric Bones": 2,
-      "Iron Ore": 1,
+      "Silver Ore": 1,
       "Rough Silver Ingot": 4,
       "Spell of Banishing": 6,
       "Spell of Fortune": 4,
@@ -702,7 +702,7 @@
       "Trembling Tooth": 1,
       "Shattered Bones": 1,
       "Esoteric Bones": 3,
-      "Iron Ore": 2,
+      "Silver Ore": 2,
       "Spell of Banishing": 1,
       "Spell of Fortune": 2
     }
@@ -726,7 +726,7 @@
       "Liquefied Terror": 17,
       "Magnesia Crystal": 2,
       "Shattered Bones": 5,
-      "Iron Ore": 2,
+      "Silver Ore": 2,
       "Spell of Banishing": 1,
       "Spell of Fortune": 1
     }
@@ -739,7 +739,7 @@
       "Magnesia Crystal": 1,
       "Milled Magnesia": 1,
       "Esoteric Bones": 1,
-      "Iron Ore": 2,
+      "Silver Ore": 2,
       "Spell of Banishing": 1,
       "Spell of Fortune": 1,
       "(Wheel)": 2
@@ -752,7 +752,7 @@
     "drops": {
       "Shattered Bones": 842,
       "Esoteric Bones": 199,
-      "Iron Ore": 487,
+      "Silver Ore": 487,
       "(Wing Door Key)": 196
     }
   },
@@ -765,7 +765,7 @@
       "Magnesia Crystal": 1,
       "Milled Magnesia": 42,
       "Esoteric Bones": 45,
-      "Iron Ore": 1,
+      "Silver Ore": 1,
       "Rough Silver Ingot": 827,
       "Spell of Banishing": 1048,
       "Spell of Fortune": 77,
@@ -781,7 +781,7 @@
     "drops": {
       "Trembling Tooth": 209,
       "Liquefied Terror": 74,
-      "Iron Ore": 238,
+      "Silver Ore": 238,
       "Holy Silver": 125
     }
   },
@@ -843,7 +843,7 @@
     "drops": {
       "Liquefied Terror": 1,
       "Esoteric Bones": 1,
-      "Iron Ore": 3,
+      "Silver Ore": 3,
       "Rough Silver Ingot": 1,
       "Spell of Banishing": 3,
       "Spell of Fortune": 1
@@ -858,7 +858,7 @@
       "Milled Magnesia": 1,
       "Shattered Bones": 2,
       "Esoteric Bones": 1,
-      "Iron Ore": 2,
+      "Silver Ore": 2,
       "Spell of Banishing": 1,
       "(Dry Cicada Wings)": 1
     }
@@ -868,7 +868,7 @@
     "cost": 18,
     "count": 459,
     "drops": {
-      "Iron Ore": 314,
+      "Silver Ore": 314,
       "Spell of Banishing": 337,
       "Spell of Fortune": 68,
       "Clawed Pendant": 136
@@ -883,7 +883,7 @@
       "Liquefied Terror": 4,
       "Milled Magnesia": 1,
       "Esoteric Bones": 1,
-      "Iron Ore": 1,
+      "Silver Ore": 1,
       "Rough Silver Ingot": 2,
       "Spell of Banishing": 3,
       "Spell of Fortune": 2,
@@ -898,7 +898,7 @@
     "drops": {
       "Liquefied Terror": 112,
       "Biting Box": 350,
-      "Iron Ore": 770,
+      "Silver Ore": 770,
       "Silver Bullet": 23
     }
   },
@@ -911,7 +911,7 @@
       "Liquefied Terror": 1,
       "Milled Magnesia": 2,
       "Esoteric Bones": 1,
-      "Iron Ore": 3,
+      "Silver Ore": 3,
       "Rough Silver Ingot": 2,
       "Spell of Banishing": 2,
       "Spell of Fortune": 1,
