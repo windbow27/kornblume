@@ -196,12 +196,20 @@ function getSolve(materials) {
     // prepare constraints
     const materialConstraints = {};
     const neededConstraints = {};
-    const resonateMaterial = [
-        "Sinuous Howl", "Interlaced Shudder", "Hypocritical Murmur", "Hoarse Echo", "Sonorous Knell", "Brief Cacophony", "Moment of Dissonance"
+
+    // the LP currently doesn't account for the oneiric shop
+    // since it's not really related to activity or farming routes
+    const resonanceMaterial = [
+        "Sinuous Howl",
+        "Interlaced Shudder",
+        "Hypocritical Murmur",
+        "Hoarse Echo",
+        "Sonorous Knell",
+        "Brief Cacophony",
+        "Moment of Dissonance"
     ];
     materials.forEach(({ Material: matlName, Quantity: quantity }) => {
-        // NOTE: not handle RESONANCE material in this function
-        if (!resonateMaterial.includes(matlName))
+        if (!resonanceMaterial.includes(matlName)) // filters out the materials from the oneiric shop
             neededConstraints[matlName] = { min: quantity };
     });
 
@@ -275,7 +283,7 @@ function getSolve(materials) {
         direction: "minimize",
         constraints,
         variables,
-        integers, // TODO: we need to manually round up the level count for stages in the solve result 
+        integers,
     };
 
     const options = {
