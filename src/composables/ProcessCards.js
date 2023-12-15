@@ -121,6 +121,9 @@ export function getPlan(materials) {
     //
 
     const plan = getSolve(materials);
+    if (plan.status !== "optimal")
+        console.log(plan)
+
     plan.variables.forEach((stage) => {
         const stageInfo = drops[stage[0]];
         if (stageInfo) {
@@ -276,8 +279,8 @@ function getSolve(materials) {
     };
 
     const options = {
-        precision: 0.01,
-        tolerance: 0.1
+        maxIterations: 1048576,
+        tolerance: 0.25
     }
 
     return solve(model, options);
