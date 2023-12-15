@@ -51,7 +51,7 @@ const saveSettings = () => {
             </div>
             <div class="form-control">
                 <label class="cursor-pointer label justify-center space-x-5">
-                    <span class="label-text text-white text-md">Use 1.4 stage data</span>
+                    <span class="label-text text-white text-md">Use 1.4 Stage Data (Experimental)</span>
                     <input v-model="isUnreleasedDrops" type="checkbox" class="checkbox checkbox-info" />
                 </label>
             </div>
