@@ -8,7 +8,7 @@
       "Magnesia Crystal": 26,
       "Shattered Bones": 20,
       "Esoteric Bones": 106,
-      "Iron Ore": 34,
+      "Silver Ore": 34,
       "Spell of Banishing": 33
     }
   },
@@ -21,7 +21,7 @@
       "Liquefied Terror": 130,
       "Magnesia Crystal": 19,
       "Shattered Bones": 20,
-      "Iron Ore": 27,
+      "Silver Ore": 27,
       "Spell of Banishing": 29
     }
   },
@@ -33,7 +33,7 @@
       "Liquefied Terror": 41,
       "Milled Magnesia": 44,
       "Esoteric Bones": 46,
-      "Iron Ore": 2736,
+      "Silver Ore": 2736,
       "Rough Silver Ingot": 56,
       "Holy Silver": 579,
       "Spell of Fortune": 73,
@@ -87,7 +87,7 @@
     "cost": 18,
     "count": 435,
     "drops": {
-      "Iron Ore": 307,
+      "Silver Ore": 307,
       "Spell of Banishing": 597,
       "Spell of Fortune": 106,
       "Clawed Pendant": 105
@@ -101,7 +101,7 @@
       "Trembling Tooth": 12,
       "Magnesia Crystal": 5,
       "Shattered Bones": 10,
-      "Iron Ore": 238,
+      "Silver Ore": 238,
       "Rough Silver Ingot": 60,
       "Spell of Banishing": 23,
       "Solidus": 73
@@ -118,7 +118,7 @@
       "Milled Magnesia": 3,
       "Shattered Bones": 17,
       "Esoteric Bones": 62,
-      "Iron Ore": 18,
+      "Silver Ore": 18,
       "Rough Silver Ingot": 9,
       "Spell of Banishing": 29,
       "Spell of Fortune": 12
@@ -142,7 +142,7 @@
     "drops": {
       "Shattered Bones": 1257,
       "Esoteric Bones": 306,
-      "Iron Ore": 649,
+      "Silver Ore": 649,
       "Holy Silver": 358
     }
   },
@@ -200,7 +200,7 @@
     "drops": {
       "Magnesia Crystal": 35,
       "Milled Magnesia": 74,
-      "Iron Ore": 75,
+      "Silver Ore": 75,
       "Rough Silver Ingot": 72
     }
   },
@@ -213,7 +213,7 @@
       "Biting Box": 73,
       "Milled Magnesia": 9,
       "Esoteric Bones": 7,
-      "Iron Ore": 171,
+      "Silver Ore": 171,
       "Rough Silver Ingot": 132,
       "Spell of Fortune": 15,
       "(Dry Cicada Wings)": 8,
@@ -238,7 +238,7 @@
     "drops": {
       "Magnesia Crystal": 306,
       "Milled Magnesia": 84,
-      "Iron Ore": 244,
+      "Silver Ore": 244,
       "Holy Silver": 133
     }
   },
@@ -283,7 +283,7 @@
     "drops": {
       "Shattered Bones": 842,
       "Esoteric Bones": 199,
-      "Iron Ore": 487,
+      "Silver Ore": 487,
       "(Wing Door Key)": 196
     }
   },
@@ -310,7 +310,7 @@
     "drops": {
       "Trembling Tooth": 209,
       "Liquefied Terror": 74,
-      "Iron Ore": 238,
+      "Silver Ore": 238,
       "Holy Silver": 125
     }
   },
@@ -355,7 +355,7 @@
     "cost": 18,
     "count": 459,
     "drops": {
-      "Iron Ore": 314,
+      "Silver Ore": 314,
       "Spell of Banishing": 337,
       "Spell of Fortune": 68,
       "Clawed Pendant": 136
@@ -368,7 +368,7 @@
     "drops": {
       "Liquefied Terror": 112,
       "Biting Box": 350,
-      "Iron Ore": 770,
+      "Silver Ore": 770,
       "Silver Bullet": 23
     }
   },
