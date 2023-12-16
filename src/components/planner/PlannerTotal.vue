@@ -39,7 +39,7 @@ const activityStore = useActivityStore();
                 <img src="/images/items/icon/51.png" alt="avatar" />
             </div>
         </div>
-        <div class="tooltip" data-tip="Wilderness Production">
+        <div class="tooltip tooltip-left" data-tip="Wilderness Production">
             <div class="text"> {{ formatQuantity(wildernessSettings.wildernessOutput.dust * totalActivityAndDays[1]) }}
             </div>
         </div>
@@ -48,7 +48,7 @@ const activityStore = useActivityStore();
                 <img src="/images/items/icon/55.png" alt="avatar" />
             </div>
         </div>
-        <div class="tooltip" data-tip="Wilderness Production">
+        <div class="tooltip tooltip-left" data-tip="Wilderness Production">
             <div class="text"> {{ formatQuantity(wildernessSettings.wildernessOutput.gold * totalActivityAndDays[1]) }}
             </div>
         </div>

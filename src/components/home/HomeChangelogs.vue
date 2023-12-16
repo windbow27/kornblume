@@ -12,7 +12,7 @@ const closeOverlay = () => {
 
 const changelogs = [
     //Add more from top
-    { date: '16/12/2023', description: '• Add names to 1.4 data. UI improvements.'},
+    { date: '16/12/2023', description: '• Add names to 1.4 data. UI improvements.\n • Added Activity Settings for Roaring Month and Refills.'},
     { date: '15/12/2023', description: '• Updated storing. Prior selected data will be corrupted, please head to profile to reset.' },
     { date: '14/12/2023', description: '• Warehouse bug fixes (again), changed t6 resonate materials to casket. Sorry for the inconvenience but please reset your warehouse.\n • Added 6, Spathodea and Ulu. Updated arcanists.json\n • Various bug fixes and UI improvements.'},
     { date: '12/12/2023', description: '• Optimized farming route, from the help of Fran!'},
