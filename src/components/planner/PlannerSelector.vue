@@ -18,16 +18,16 @@ const handleLeftClick = (arcanist) => {
 };
 
 const handleRightClick = (arcanist) => {
-    //console.log('right clicked');
+    // console.log('right clicked');
     arcanist.isVisible = !arcanist.isVisible;
 };
 </script>
-  
+
 <template>
     <div>
         <div class="flex flex-row flex-wrap justify-center space-x-2">
-            <ArcanistIconToggle v-for="arcanist in arcanists" :arcanist="arcanist.Id"
-                :visible="arcanist.isVisible" 
+            <ArcanistIconToggle v-for="arcanist in arcanists" :key="arcanist.Id" :arcanist="arcanist.Id"
+                :visible="arcanist.isVisible"
                 @click="handleLeftClick(arcanist)"
                 @contextmenu.prevent="handleRightClick(arcanist)"/>
         </div>
@@ -36,4 +36,3 @@ const handleRightClick = (arcanist) => {
 </template>
 
 <style scoped></style>
-  

@@ -1,16 +1,18 @@
+<!-- eslint-disable no-unused-vars -->
 <script setup>
 import { formatQuantity } from '../../composables/ProcessItems';
 import { useActivityStore } from '../../stores/ActivityStore';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
     totalActivityAndDays: {
         type: Array,
-        required: true,
+        required: true
     },
     wildernessSettings: {
         type: Object,
-        required: true,
-    },
+        required: true
+    }
 });
 
 const activityStore = useActivityStore();
@@ -21,14 +23,14 @@ const activityStore = useActivityStore();
     <div class="flex flex-wrap custom-gradient-gray-blue-light px-2 py-2 md:px-4 lg:px-6 rounded-md items-center justify-center">
         <i class="fa-solid fa-calculator text-white mr-3"></i>
         <div class="tooltip flex items-center" data-tip="Estimated total Activities and Days">
-            <div class="text">{{ totalActivityAndDays[0] }}</div>
+            <div class="text">{{ totalActivityAndDays?.[0] }}</div>
             <div class="avatar">
                 <div class="w-8 rounded">
                     <img src="/images/items/common/0.png" alt="avatar" />
                 </div>
             </div>
             <div class="text pr-3">
-                {{ totalActivityAndDays[1] }} {{ totalActivityAndDays[1] > 1 ? "days" : "day" }}</div>
+                {{ totalActivityAndDays?.[1] }} {{ totalActivityAndDays?.[1] > 1 ? "days" : "day" }}</div>
         </div>
         <div v-if="activityStore.settings.cost > 0" class="tooltip" data-tip="Drops Cost">
             <div class="text"> {{ formatQuantity(activityStore.settings.cost) * totalActivityAndDays[1] }}
@@ -59,7 +61,6 @@ const activityStore = useActivityStore();
         </div>
     </div>
 </template>
-
 
 <style scoped>
 .text {

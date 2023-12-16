@@ -53,25 +53,25 @@ interface ISelectedArcanist {
 }
 
 const selectedArcanistIds = computed(() =>
-  plannerStore.selectedArcanists.map((arcanist: IArcanist) => arcanist.Id)
+    plannerStore.selectedArcanists.map((arcanist: IArcanist) => arcanist.Id)
 )
 
 watchEffect(() => {
-  listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
-    !selectedArcanistIds.value.includes(arcanist.Id) &&
+    listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
+        !selectedArcanistIds.value.includes(arcanist.Id) &&
     (settingsStore.settings.showUnreleased ? true : arcanist.IsReleased)
-  )
+    )
 
-  listArcanists.value.sort((a: IArcanist, b: IArcanist) => {
-    const rarityComparison = b.Rarity - a.Rarity
+    listArcanists.value.sort((a: IArcanist, b: IArcanist) => {
+        const rarityComparison = b.Rarity - a.Rarity
 
-    if (rarityComparison !== 0) {
-      return rarityComparison
-    }
+        if (rarityComparison !== 0) {
+            return rarityComparison
+        }
 
-    // If rarity is the same, compare by name alphabetically
-    return a.Name.localeCompare(b.Name)
-  })
+        // If rarity is the same, compare by name alphabetically
+        return a.Name.localeCompare(b.Name)
+    })
 })
 
 // TODO: need to add the type definition for these refs
@@ -93,25 +93,25 @@ const warehouseRef = ref(null)
 const settingsRef = ref(null)
 
 const openAddOverlay = () => {
-  isAddingArcanist.value = true
+    isAddingArcanist.value = true
 }
 
 const closeAddOverlay = () => {
-  isAddingArcanist.value = false
+    isAddingArcanist.value = false
 }
 
 const openEditOverlay = () => {
-  isEditingArcanist.value = true
+    isEditingArcanist.value = true
 }
 
 const editEditOverlay = (arcanist) => {
-  // console.log(arcanist);
-  selectedArcanist.value = arcanist
-  openEditOverlay()
+    // console.log(arcanist);
+    selectedArcanist.value = arcanist
+    openEditOverlay()
 }
 
 const closeEditOverlay = () => {
-  isEditingArcanist.value = false
+    isEditingArcanist.value = false
 }
 
 const openActivity = () => {
@@ -123,56 +123,56 @@ const closeActivity = () => {
 }
 
 const openWilderness = () => {
-  isWilderness.value = true
+    isWilderness.value = true
 }
 
 const closeWilderness = () => {
-  isWilderness.value = false
+    isWilderness.value = false
 }
 
 const openWarehouse = () => {
-  isWarehouse.value = true
+    isWarehouse.value = true
 }
 
 const closeWarehouse = () => {
-  isWarehouse.value = false
+    isWarehouse.value = false
 }
 
 const openSettings = () => {
-  isSettings.value = true
+    isSettings.value = true
 }
 
 const closeSettings = () => {
-  isSettings.value = false
+    isSettings.value = false
 }
 
 const handleSelectArcanist = (arcanist: IArcanist) => {
-  selectedArcanist.value = {
-    Id: arcanist.Id,
-    isVisible: true,
-    currentInsight: 0,
-    currentLevel: 1,
-    currentResonance: 0,
-    goalInsight: 0,
-    goalLevel: 1,
-    goalResonance: 0
-  }
-  // console.log(selectedArcanist.value);
-  openEditOverlay()
+    selectedArcanist.value = {
+        Id: arcanist.Id,
+        isVisible: true,
+        currentInsight: 0,
+        currentLevel: 1,
+        currentResonance: 0,
+        goalInsight: 0,
+        goalLevel: 1,
+        goalResonance: 0
+    }
+    // console.log(selectedArcanist.value);
+    openEditOverlay()
 }
 
 const handleUpdateSelectedArcanists = (updateSelectedArcanists) => {
-  plannerStore.selectedArcanists = updateSelectedArcanists
-  // console.log(selectedArcanists.value);
-  closeEditOverlay()
+    plannerStore.selectedArcanists = updateSelectedArcanists
+    // console.log(selectedArcanists.value);
+    closeEditOverlay()
 }
 
 const handleUpdateListArcanists = (updateListArcanists) => {
-  listArcanists.value = updateListArcanists
+    listArcanists.value = updateListArcanists
 }
 
 const handleUpdateTotalActivityAndDays = (result) => {
-  totalActivityAndDays.value = result
+    totalActivityAndDays.value = result
 }
 
 const handleSaveActivitySettings = (result) => {
@@ -181,13 +181,13 @@ const handleSaveActivitySettings = (result) => {
 }
 
 const handleSaveWildernessSettings = (result) => {
-  wildernessStore.settings = result
-  // console.log(wildernessSettings.value);
+    wildernessStore.settings = result
+    // console.log(wildernessSettings.value);
 }
 
 const handleSaveSettings = (result) => {
-  settingsStore.settings = result
-  // console.log(result);
+    settingsStore.settings = result
+    // console.log(result);
 }
 
 onClickOutside(activityRef, closeActivity)

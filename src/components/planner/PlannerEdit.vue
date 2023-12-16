@@ -73,10 +73,10 @@ const goalInsightOptions = computed(() => {
 });
 
 const currentLevelOptions = computed(() => {
-    //if (selectedCurrentInsight.value == null) return [];
+    // if (selectedCurrentInsight.value == null) return [];
     const calc = calculations.find((calc) =>
         calc.Rarity.includes(selectedArcanist.value.Rarity) &&
-        calc.Insight == selectedCurrentInsight.value
+        calc.Insight === selectedCurrentInsight.value
     );
 
     if (!calc) return [];
@@ -88,11 +88,11 @@ const goalLevelOptions = computed(() => {
     if (selectedGoalInsight.value === null) return [];
     const calc = calculations.find((calc) =>
         calc.Rarity.includes(selectedArcanist.value.Rarity) &&
-        calc.Insight == selectedGoalInsight.value
+        calc.Insight === selectedGoalInsight.value
     );
 
     if (!calc) return [];
-    //console.log(calc);
+    // console.log(calc);
 
     if (selectedGoalInsight.value === selectedCurrentInsight.value) {
         return [1, ...Object.keys(calc.Levels).map(Number).filter(level => level % 5 === 0)].filter(level => level >= selectedCurrentLevel.value);
@@ -101,15 +101,18 @@ const goalLevelOptions = computed(() => {
     return [1, ...Object.keys(calc.Levels).map(Number).filter(level => level % 5 === 0)];
 });
 
-
 const currentResonanceOptions = computed(() => {
     if (selectedCurrentInsight.value === null) return [];
     if (selectedCurrentInsight.value === 0) {
+        // FIXME
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedCurrentResonance.value = 0;
         return [0];
     }
     const insightValue = Number(selectedCurrentInsight.value);
     if (insightValue === 0) {
+        // FIXME
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedCurrentResonance.value = null;
         return null;
     }
@@ -120,12 +123,16 @@ const currentResonanceOptions = computed(() => {
 const goalResonanceOptions = computed(() => {
     if (selectedGoalInsight.value === null) return [];
     if (selectedGoalInsight.value === 0) {
+        // FIXME
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedGoalResonance.value = 0;
         return [0];
     }
     const insightValue = Number(selectedGoalInsight.value);
     const currentResonance = Number(selectedCurrentResonance.value);
     if (insightValue === 0) {
+        // FIXME
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedGoalResonance.value = null;
         return null;
     }
@@ -133,7 +140,6 @@ const goalResonanceOptions = computed(() => {
     const upperLimit = insightValue * 5;
     return Array.from({ length: upperLimit - lowerLimit + 1 }, (_, index) => Number(lowerLimit + index));
 });
-
 
 const compareLevels = (currentInsightSelect, currentLevelSelect, goalInsightSelect, goalLevelSelect) => {
     if (Number(currentInsightSelect) > Number(goalInsightSelect)) {
@@ -149,9 +155,9 @@ const compareLevels = (currentInsightSelect, currentLevelSelect, goalInsightSele
 };
 
 const checkIfCurrentAndGoalAreTheSame = () => {
-    if (selectedCurrentInsight.value === selectedGoalInsight.value
-        && selectedCurrentLevel.value === selectedGoalLevel.value
-        && selectedCurrentResonance.value === selectedGoalResonance.value) {
+    if (selectedCurrentInsight.value === selectedGoalInsight.value &&
+        selectedCurrentLevel.value === selectedGoalLevel.value &&
+        selectedCurrentResonance.value === selectedGoalResonance.value) {
         isTheSame.value = true;
         setTimeout(() => {
             isTheSame.value = false;
@@ -163,15 +169,15 @@ const checkIfCurrentAndGoalAreTheSame = () => {
 
 const addArcanist = () => {
     if (checkIfCurrentAndGoalAreTheSame()) return;
-    //console.log(selectedArcanists.value);
+    // console.log(selectedArcanists.value);
     const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.Id) === Number(editingArcanist.value.Id));
-    //console.log(existingIndex);
+    // console.log(existingIndex);
 
     if (existingIndex !== -1) {
         // If the arcanist with the same Id already exists, update it
         selectedArcanists.value[existingIndex] = {
             ...selectedArcanists.value[existingIndex],
-            ...editingArcanist.value,
+            ...editingArcanist.value
         };
     } else {
         // If the arcanist with the same Id doesn't exist, add it
@@ -195,36 +201,35 @@ const removeArcanist = () => {
     closeOverlay();
 };
 
-
 const closeOverlay = () => {
     emit('closeOverlay');
 };
 
 const handleSelected = (option, optionType) => {
     switch (optionType) {
-        case 'Current Insight':
-            selectedCurrentInsight.value = option;
-            break;
-        case 'Current Level':
-            selectedCurrentLevel.value = option;
-            break;
-        case 'Current Resonance':
-            selectedCurrentResonance.value = option;
-            break;
-        case 'Goal Insight':
-            selectedGoalInsight.value = option;
-            break;
-        case 'Goal Level':
-            selectedGoalLevel.value = option;
-            break;
-        case 'Goal Resonance':
-            selectedGoalResonance.value = option;
-            break;
-        case 'Visible':
-            selectedVisible.value = option;
-            break;
-        default:
-            break;
+    case 'Current Insight':
+        selectedCurrentInsight.value = option;
+        break;
+    case 'Current Level':
+        selectedCurrentLevel.value = option;
+        break;
+    case 'Current Resonance':
+        selectedCurrentResonance.value = option;
+        break;
+    case 'Goal Insight':
+        selectedGoalInsight.value = option;
+        break;
+    case 'Goal Level':
+        selectedGoalLevel.value = option;
+        break;
+    case 'Goal Resonance':
+        selectedGoalResonance.value = option;
+        break;
+    case 'Visible':
+        selectedVisible.value = option;
+        break;
+    default:
+        break;
     }
 };
 
@@ -247,7 +252,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
         selectedGoalResonance.value = goalResonanceOptions.value[0];
     }
     if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
-        //console.log('Current is higher than goal');
+        // console.log('Current is higher than goal');
         selectedGoalInsight.value = selectedCurrentInsight.value;
         selectedGoalLevel.value = selectedCurrentLevel.value;
     }

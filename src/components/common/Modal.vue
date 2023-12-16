@@ -2,7 +2,7 @@
 const emit = defineEmits({
     closeOverlay: {
         type: Function,
-        required: true,
+        required: true
     }
 });
 

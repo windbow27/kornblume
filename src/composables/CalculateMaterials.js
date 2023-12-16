@@ -4,14 +4,14 @@ const calculations = useDataStore().calculations.data;
 const items = useDataStore().items.data;
 const arcanists = useDataStore().arcanists.data;
 
-export function sortMaterials(array) {
+export function sortMaterials (array) {
     array.sort((a, b) => {
         // Find corresponding item based on material name
         const itemA = items.find(item => item.Name === a.Material);
         const itemB = items.find(item => item.Name === b.Material);
 
         // Sort by category
-        const categoryOrder = ["Base Item", "Resonate Material", "Insight Material", "Build Material"];
+        const categoryOrder = ['Base Item', 'Resonate Material', 'Insight Material', 'Build Material'];
         const categoryIndexA = categoryOrder.indexOf(itemA.Category);
         const categoryIndexB = categoryOrder.indexOf(itemB.Category);
 
@@ -26,7 +26,7 @@ export function sortMaterials(array) {
     });
 }
 
-export function mergeResults(resultsArray) {
+export function mergeResults (resultsArray) {
     const merged = {};
 
     resultsArray.forEach((results) => {
@@ -57,13 +57,13 @@ export function mergeResults(resultsArray) {
     });
     const arrayMerged = Object.keys(merged).map((material) => ({
         Material: material,
-        Quantity: merged[material],
+        Quantity: merged[material]
     }));
 
     return arrayMerged;
 }
 
-export function formatResults(result) {
+export function formatResults (result) {
     sortMaterials(result);
 
     // Check if Dust and Sharpodonty quantities are both zero
@@ -79,14 +79,13 @@ export function formatResults(result) {
     return result;
 }
 
-
-export function useCalculation(arc) {
+export function useCalculation (arc) {
     const arcInfo = arcanists.find((arcanist) => arcanist.Id === arc.Id);
     const calculateExp = (arc) => {
-        let total = { "Dust": 0, "Sharpodonty": 0 };
+        const total = { Dust: 0, Sharpodonty: 0 };
 
         // Same level insight calculation
-        if (arc.currentInsight == arc.goalInsight) {
+        if (arc.currentInsight === arc.goalInsight) {
             const { Dust, Sharpodonty } = sumExp(arc.currentLevel, arc.goalLevel, arc, arc.currentInsight);
             total.Dust += Dust;
             total.Sharpodonty += Sharpodonty;
@@ -100,7 +99,7 @@ export function useCalculation(arc) {
                 total.Dust += currentCalc.Total.Dust;
                 total.Sharpodonty += currentCalc.Total.Sharpodonty;
 
-                if (insight == arc.currentInsight) {
+                if (insight === arc.currentInsight) {
                     const { Dust, Sharpodonty } = sumExp(1, arc.currentLevel, arc, insight);
                     total.Dust -= Dust;
                     total.Sharpodonty -= Sharpodonty;
@@ -114,7 +113,7 @@ export function useCalculation(arc) {
 
         const result = [
             { Material: 'Dust', Quantity: total.Dust },
-            { Material: 'Sharpodonty', Quantity: total.Sharpodonty },
+            { Material: 'Sharpodonty', Quantity: total.Sharpodonty }
         ];
 
         return result;
@@ -124,10 +123,10 @@ export function useCalculation(arc) {
         const materialsCount = {};
         if (currentType === goalType) return null;
         // Iterate over insights between currentInsight and goalInsight (inclusive)
-        for (let current = Number(currentType+1); current <= goalType; current++) {
+        for (let current = Number(currentType + 1); current <= goalType; current++) {
             const data = type.find(obj => obj.Id === current);
             if (data) {
-                //console.log(data);
+                // console.log(data);
                 data.Material.forEach((material, index) => {
                     const quantity = data.Quantity[index];
 
@@ -152,13 +151,13 @@ export function useCalculation(arc) {
     const getLevelsInfo = (arc, insight) => {
         const currentCalc = calculations.find((calc) =>
             calc.Rarity.includes(arcInfo.Rarity) &&
-            calc.Insight == insight
+            calc.Insight === insight
         );
         return currentCalc;
     };
 
     const sumExp = (startLevel, endlevel, arc, insight) => {
-        let total = { "Dust": 0, "Sharpodonty": 0 };
+        const total = { Dust: 0, Sharpodonty: 0 };
 
         for (let level = Number(++startLevel); level <= Number(endlevel); level++) {
             const currentCalc = getLevelsInfo(arc, insight);

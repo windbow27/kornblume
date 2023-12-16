@@ -8,100 +8,96 @@ import { addMaterialsToWarehouse } from '../../composables/ShopMaterials';
 import ItemWarehouse from '../item/ItemWarehouse.vue';
 
 const emit = defineEmits({
-  closeOverlay: {
-    type: Function,
-    required: true,
-  },
+    closeOverlay: {
+        type: Function,
+        required: true
+    }
 });
 
 const checkedCategories = ref({
-  'Base Item': true,
-  'Build Material': true,
-  'Insight Material': true,
-  'Resonate Material': true,
+    'Base Item': true,
+    'Build Material': true,
+    'Insight Material': true,
+    'Resonate Material': true
 });
 
 onMounted(() => {
-  let unreleasedDropsEnabled = usePlannerSettingsStore().settings.unreleasedDrops;
-  if (useWarehouseStore().data.length === 0) {
-    console.log('Setting up warehouse');
-    useDataStore().items.data.forEach((item) => {
-      if (item.IsReleased || unreleasedDropsEnabled) {
-        if (
-          item.Category === 'Build Material' ||
+    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.unreleasedDrops;
+    if (useWarehouseStore().data.length === 0) {
+        console.log('Setting up warehouse');
+        useDataStore().items.data.forEach((item) => {
+            if (item.IsReleased || unreleasedDropsEnabled) {
+                if (
+                    item.Category === 'Build Material' ||
           item.Category === 'Insight Material' ||
           (item.Category === 'Resonate Material' && item.Rarity < 6) ||
           item.Name === 'Dust' ||
           item.Name === 'Sharpodonty' ||
           item.Name === 'Crystal Casket'
-        ) {
-          useWarehouseStore().addItem(item.Name, item.Category);
-        }
-      }
-    });
-  }
-  else { //else statement to be updated for seamless addition of new warehouse items
-    useDataStore().items.data.forEach((item) => {
-      if (!useWarehouseStore().itemExists(item.Name) && 
-          (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled)))
-      {
-        useWarehouseStore().addItem(item.Name, item.Category);
-      }
-      else if (!item.IsReleased && !unreleasedDropsEnabled){
-        useWarehouseStore().removeItem(item.Name);
-      }
-    });
-  }
+                ) {
+                    useWarehouseStore().addItem(item.Name, item.Category);
+                }
+            }
+        });
+    } else { // else statement to be updated for seamless addition of new warehouse items
+        useDataStore().items.data.forEach((item) => {
+            if (!useWarehouseStore().itemExists(item.Name) &&
+          (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled))) {
+                useWarehouseStore().addItem(item.Name, item.Category);
+            } else if (!item.IsReleased && !unreleasedDropsEnabled) {
+                useWarehouseStore().removeItem(item.Name);
+            }
+        });
+    }
 
-  sortMaterials(useWarehouseStore().data);
+    sortMaterials(useWarehouseStore().data);
 });
 
 const handleUpdateQuantity = (materialName, updatedQuantity) => {
-  useWarehouseStore().updateItem(materialName, Number(updatedQuantity));
+    useWarehouseStore().updateItem(materialName, Number(updatedQuantity));
 };
 
 const filterWarehouse = (category) => {
-  checkedCategories.value[category] = !checkedCategories.value[category];
+    checkedCategories.value[category] = !checkedCategories.value[category];
 };
 
 const filteredWarehouse = computed(() => {
-  const anyChecked = Object.values(checkedCategories.value).some((value) => value);
+    const anyChecked = Object.values(checkedCategories.value).some((value) => value);
 
-  if (anyChecked) {
-    return useWarehouseStore().data.filter((material) => {
-      return checkedCategories.value[material.Category];
-    });
-  } else {
-    return useWarehouseStore().data;
-  }
+    if (anyChecked) {
+        return useWarehouseStore().data.filter((material) => {
+            return checkedCategories.value[material.Category];
+        });
+    } else {
+        return useWarehouseStore().data;
+    }
 });
 
 const resetCheckedCategories = () => {
-  //if all box are checked, reset all
-  if (Object.values(checkedCategories.value).every((value) => value)) {
-    //console.log('reset all');
-    useWarehouseStore().resetAll();
-    window.location.reload();
-  } else {
-    Object.keys(checkedCategories.value).forEach((category) => {
-      if (checkedCategories.value[category]) {
-        useWarehouseStore().resetCategory(category);
-      }
-    });
-  }
-  emit('closeOverlay');
+    // if all box are checked, reset all
+    if (Object.values(checkedCategories.value).every((value) => value)) {
+    // console.log('reset all');
+        useWarehouseStore().resetAll();
+        window.location.reload();
+    } else {
+        Object.keys(checkedCategories.value).forEach((category) => {
+            if (checkedCategories.value[category]) {
+                useWarehouseStore().resetCategory(category);
+            }
+        });
+    }
+    emit('closeOverlay');
 };
 
 const addShopItems = (version) => {
-  addMaterialsToWarehouse(version);
-  emit('closeOverlay');
+    addMaterialsToWarehouse(version);
+    emit('closeOverlay');
 };
 
 const closeOverlay = () => {
-  emit('closeOverlay');
+    emit('closeOverlay');
 };
 </script>
-
 
 <template>
   <div class="list-overlay">

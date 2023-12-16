@@ -2,7 +2,7 @@
 const emit = defineEmits({
     closeOverlay: {
         type: Function,
-        required: true,
+        required: true
     }
 });
 
@@ -11,18 +11,18 @@ const closeOverlay = () => {
 };
 
 const changelogs = [
-    //Add more from top
-    { date: '16/12/2023', description: '• Add names to 1.4 data. UI improvements.\n • Added Activity Settings for Roaring Month and Refills.'},
+    // Add more from top
+    { date: '16/12/2023', description: '• Add names to 1.4 data. UI improvements.\n • Added Activity Settings for Roaring Month and Refills.' },
     { date: '15/12/2023', description: '• Updated storing. Prior selected data will be corrupted, please head to profile to reset.' },
-    { date: '14/12/2023', description: '• Warehouse bug fixes (again), changed t6 resonate materials to casket. Sorry for the inconvenience but please reset your warehouse.\n • Added 6, Spathodea and Ulu. Updated arcanists.json\n • Various bug fixes and UI improvements.'},
-    { date: '12/12/2023', description: '• Optimized farming route, from the help of Fran!'},
-    { date: '05/12/2023', description: '• Added Profile. WIP.'},
+    { date: '14/12/2023', description: '• Warehouse bug fixes (again), changed t6 resonate materials to casket. Sorry for the inconvenience but please reset your warehouse.\n • Added 6, Spathodea and Ulu. Updated arcanists.json\n • Various bug fixes and UI improvements.' },
+    { date: '12/12/2023', description: '• Optimized farming route, from the help of Fran!' },
+    { date: '05/12/2023', description: '• Added Profile. WIP.' },
     { date: '04/12/2023', description: '• Updated credits, minor bug fixes.' },
     { date: '03/12/2023', description: '• Fixed wrong jsons. Hopefully it is correct now.\n • Soldius. \n • Added 1.2 event shops. Two buttons, all the items.' },
     { date: '02/12/2023', description: '• Fixed warehouse, added Tooth Fairy and Changeling to released.\n • Fixed more warehouse bugs, added reset button.\n • Fixed MORE warehouse bugs.' },
-    { date: '01/12/2023', description: '• Warehouse filter is broken, temporary disabled.'},
-    { date: '30/11/2023', description: '• Added Warehouse. Fixed wrong Insight levels and unreleased Arcanists'},
-    { date: '29/11/2023', description: '• First release.' },
+    { date: '01/12/2023', description: '• Warehouse filter is broken, temporary disabled.' },
+    { date: '30/11/2023', description: '• Added Warehouse. Fixed wrong Insight levels and unreleased Arcanists' },
+    { date: '29/11/2023', description: '• First release.' }
 ];
 
 </script>

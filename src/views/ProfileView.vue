@@ -47,25 +47,25 @@ import { exportLocalStorageToJson, importLocalStorageFromJson } from '../stores/
 const fileInput = ref(null)
 
 const exportStores = () => {
-  exportLocalStorageToJson()
+    exportLocalStorageToJson()
 }
 
 const triggerFileInput = () => {
-  // Trigger the file input programmatically
-  (fileInput as Ref<HTMLElement | null>).value?.click()
+    // Trigger the file input programmatically
+    (fileInput as Ref<HTMLElement | null>).value?.click()
 }
 
 const importStores = (event) => {
-  const file = event.target.files[0]
-  if (file) {
-    importLocalStorageFromJson(file)
-  }
+    const file = event.target.files[0]
+    if (file) {
+        importLocalStorageFromJson(file)
+    }
 }
 
 const resetStores = () => {
-  const storeKeys = ['plannerSettings', 'planner', 'wilderness', 'warehouse']
-  storeKeys.forEach((key) => localStorage.removeItem(key))
-  window.location.reload()
+    const storeKeys = ['plannerSettings', 'planner', 'wilderness', 'warehouse']
+    storeKeys.forEach((key) => localStorage.removeItem(key))
+    window.location.reload()
 }
 
 </script>

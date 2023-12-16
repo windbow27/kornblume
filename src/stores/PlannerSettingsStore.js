@@ -4,8 +4,8 @@ export const usePlannerSettingsStore = defineStore('plannerSettings', {
     state: () => ({
         settings: {
             showUnreleased: false,
-            unreleasedDrops: false,
-        },
+            unreleasedDrops: false
+        }
     }),
-    persist: true,
+    persist: true
 });

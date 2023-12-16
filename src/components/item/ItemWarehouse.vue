@@ -9,6 +9,8 @@ const props = defineProps({
     }
 });
 
+// FIXME
+// eslint-disable-next-line vue/valid-define-emits
 const emit = defineEmits();
 
 const quantity = ref(props.material.Quantity);

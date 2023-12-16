@@ -51,7 +51,7 @@ watch(shouldHideScrollbar, (newVal) => {
         </div>
     </div>
 </template>
-  
+
 <style scoped>
 .scrollbar {
     scrollbar-width: thin;
@@ -61,5 +61,3 @@ watch(shouldHideScrollbar, (newVal) => {
     height: 6px;
 }
 </style>
-
-

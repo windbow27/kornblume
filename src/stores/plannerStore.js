@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 export const usePlannerStore = defineStore('planner', {
     state: () => ({
-        selectedArcanists: [],
+        selectedArcanists: []
     }),
-    persist: true,
+    persist: true
 });
