@@ -29,7 +29,7 @@
           "Sharpodonty",
           "Scroll of Mineral Wealth",
           "Scroll of Starlit Ascent",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Biting Box"
         ],
         "Quantity": [
@@ -502,7 +502,7 @@
           "Sharpodonty",
           "Page of Beastly Thirst",
           "Shattered Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           18000,
@@ -580,7 +580,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -631,7 +631,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           8,
@@ -1065,7 +1065,7 @@
         "Material": [
           "Brief Cacophony",
           "Rough Silver Ingot",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -1306,7 +1306,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -1357,7 +1357,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           8,
@@ -1484,7 +1484,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Beastly Thirst",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Holy Silver"
         ],
         "Quantity": [
@@ -1586,7 +1586,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           6,
@@ -1701,7 +1701,7 @@
   },
   {
     "Id": 10051,
-    "IsReleased": true,
+    "IsReleased": false,
     "Name": "Jessica",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -1712,7 +1712,7 @@
           "Sharpodonty",
           "Page of Plantal Vimen",
           "Trembling Tooth",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           18000,
@@ -2033,7 +2033,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -2210,7 +2210,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Mineral Wealth",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Bifurcated Skeleton"
         ],
         "Quantity": [
@@ -2275,7 +2275,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -2452,7 +2452,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Mineral Wealth",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Bifurcated Skeleton"
         ],
         "Quantity": [
@@ -2517,7 +2517,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -3038,7 +3038,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           6,
@@ -3280,7 +3280,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           6,
@@ -3726,7 +3726,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -3777,7 +3777,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           8,
@@ -3969,7 +3969,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -4254,7 +4254,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           6,
@@ -4622,7 +4622,7 @@
           "Sharpodonty",
           "Page of Plantal Vimen",
           "Trembling Tooth",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           18000,
@@ -4700,7 +4700,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -4751,7 +4751,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           8,
@@ -4943,7 +4943,7 @@
         "Material": [
           "Brief Cacophony",
           "Rough Silver Ingot",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -5106,7 +5106,7 @@
           "Sharpodonty",
           "Page of Plantal Vimen",
           "Trembling Tooth",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           12000,
@@ -5669,7 +5669,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -5846,7 +5846,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Starlit Ascent",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Bifurcated Skeleton"
         ],
         "Quantity": [
@@ -5910,7 +5910,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -5961,7 +5961,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           6,
@@ -6158,7 +6158,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -6209,7 +6209,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           6,
@@ -6322,7 +6322,7 @@
           "Sharpodonty",
           "Page of Beastly Thirst",
           "Trembling Tooth",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           12000,
@@ -6401,7 +6401,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -6680,7 +6680,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -6806,7 +6806,7 @@
           "Sharpodonty",
           "Page of Plantal Vimen",
           "Trembling Tooth",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           12000,
@@ -6922,7 +6922,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -7304,7 +7304,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Mineral Wealth",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Bifurcated Skeleton"
         ],
         "Quantity": [
@@ -7369,7 +7369,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -7648,7 +7648,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -8030,7 +8030,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Plantal Vimen",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Holy Silver"
         ],
         "Quantity": [
@@ -8094,7 +8094,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -8145,7 +8145,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           6,
@@ -8337,7 +8337,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -8616,7 +8616,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -9068,7 +9068,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -9119,7 +9119,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           6,
@@ -9246,7 +9246,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Starlit Ascent",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Prophetic Bird"
         ],
         "Quantity": [
@@ -9451,7 +9451,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -9502,7 +9502,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -9608,7 +9608,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           3,
@@ -9797,7 +9797,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -9848,7 +9848,7 @@
           "Sharpodonty",
           "Page of Plantal Vimen",
           "Silver Ore",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           8000,
@@ -9949,7 +9949,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -10215,7 +10215,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -10266,7 +10266,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -10304,7 +10304,7 @@
           "Sharpodonty",
           "Page of Starlit Ascent",
           "Silver Ore",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           8000,
@@ -10368,7 +10368,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           3,
@@ -10557,7 +10557,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -10622,7 +10622,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Starlit Ascent",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Prophetic Bird"
         ],
         "Quantity": [
@@ -10823,7 +10823,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -10874,7 +10874,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -10912,7 +10912,7 @@
           "Sharpodonty",
           "Page of Beastly Thirst",
           "Silver Ore",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           8000,
@@ -10976,7 +10976,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           3,
@@ -11165,7 +11165,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -11382,7 +11382,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Beastly Thirst",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Prophetic Bird"
         ],
         "Quantity": [
@@ -11431,7 +11431,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -11482,7 +11482,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           5,
@@ -11731,7 +11731,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -11782,7 +11782,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -11882,7 +11882,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           2,
@@ -12069,7 +12069,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           3,
@@ -12135,7 +12135,7 @@
           "Sharpodonty",
           "Scroll of Plantal Vimen",
           "Scroll of Beastly Thirst",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Prophetic Bird"
         ],
         "Quantity": [
@@ -12339,7 +12339,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -12390,7 +12390,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -12490,7 +12490,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           2,
@@ -12677,7 +12677,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           3,
@@ -12939,7 +12939,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -12990,7 +12990,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
@@ -13043,7 +13043,7 @@
           "Sharpodonty",
           "Scroll of Mineral Wealth",
           "Scroll of Starlit Ascent",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Prophetic Bird"
         ],
         "Quantity": [
@@ -13094,7 +13094,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           2,
@@ -13247,7 +13247,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
+          "Milled Magnesia",
           "Esoteric Bones"
         ],
         "Quantity": [
@@ -13298,7 +13298,7 @@
         "Material": [
           "Brief Cacophony",
           "Bifurcated Skeleton",
-          "Esoteric Bones"
+          "Milled Magnesia"
         ],
         "Quantity": [
           4,
