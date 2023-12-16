@@ -5,19 +5,19 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Kornblume/',
-  plugins: [
-    vue(),
-    eslintPlugin({ cache: false })
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+    base: '/Kornblume/',
+    plugins: [
+        vue(),
+        eslintPlugin({ cache: false })
+    ],
+    resolve: {
+        alias: {
+            '@': fileURLToPath(new URL('./src', import.meta.url))
+        }
+    },
+    server: {
+        watch: {
+            usePolling: true // set to ensure that hot reload is enabled
+        }
     }
-  },
-  server: {
-    watch: {
-      usePolling: true // set to ensure that hot reload is enabled
-    }
-  }
 })
