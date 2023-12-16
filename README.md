@@ -8,7 +8,7 @@ Planner for Reverse:1999. All contributions are appreciated, the checklist is [h
  - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
  - [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-   Set up ESLint to auto-fix stuff every time when save a file, can check details [here](https://www.digitalocean.com/community/tutorials/workflow-auto-eslinting#step-4-adding-code-actions-on-save).
+   **Strongly recommend setting up ESLint to auto-fix issues each time a file is saved, please check details [here](https://www.digitalocean.com/community/tutorials/workflow-auto-eslinting#step-4-adding-code-actions-on-save)**.
 
 ## Customize configuration
 
