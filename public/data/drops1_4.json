@@ -1,5 +1,5 @@
 {
-  "2-3H": {
+  "2-3H Green Oranges": {
     "id": 12,
     "cost": 16,
     "count": 1674,
@@ -15,7 +15,7 @@
       "Ceaseless Wheel": 28
     }
   },
-  "2-6H": {
+  "2-6H The End of Immortal": {
     "id": 15,
     "cost": 16,
     "count": 274,
@@ -31,7 +31,7 @@
       "Ceaseless Wheel": 8
     }
   },
-  "2-9H": {
+  "2-9H Pearl and Bullet Hole": {
     "id": 17,
     "cost": 16,
     "count": 172,
@@ -42,7 +42,7 @@
       "Spell of Fortune": 26
     }
   },
-  "2-12H": {
+  "2-12H About the New Era": {
     "id": 20,
     "cost": 18,
     "count": 1950,
@@ -56,7 +56,7 @@
       "Spell of Fortune": 102
     }
   },
-  "3-3H": {
+  "3-3H Stalkee": {
     "id": 23,
     "cost": 18,
     "count": 435,
@@ -67,7 +67,7 @@
       "Clawed Pendant": 105
     }
   },
-  "3-7H": {
+  "3-7H Scottish": {
     "id": 26,
     "cost": 18,
     "count": 1287,
@@ -78,7 +78,7 @@
       "Bifurcated Skeleton": 430
     }
   },
-  "3-8H": {
+  "3-8H Scattered Pamphlets": {
     "id": 27,
     "cost": 18,
     "count": 1024,
@@ -89,7 +89,7 @@
       "Holy Silver": 358
     }
   },
-  "3-9H": {
+  "3-9H George the Oak": {
     "id": 28,
     "cost": 18,
     "count": 130,
@@ -105,7 +105,7 @@
       "Ceaseless Wheel": 3
     }
   },
-  "3-11H": {
+  "3-11H Freedom of the Dumb": {
     "id": 29,
     "cost": 18,
     "count": 1641,
@@ -116,7 +116,7 @@
       "Clawed Pendant": 518
     }
   },
-  "3-13H": {
+  "3-13H A Yard": {
     "id": 30,
     "cost": 18,
     "count": 2795,
@@ -127,7 +127,7 @@
       "Murmur of Insanity": 57
     }
   },
-  "4-10H": {
+  "4-10H A Wandering Dog": {
     "id": 36,
     "cost": 18,
     "count": 250,
@@ -143,7 +143,7 @@
       "Ceaseless Wheel": 8
     }
   },
-  "4-11H": {
+  "4-11H A Sweet Apple": {
     "id": 37,
     "cost": 18,
     "count": 395,
@@ -154,7 +154,7 @@
       "Prophetic Bird": 176
     }
   },
-  "4-13H": {
+  "4-13H Flashing Red": {
     "id": 38,
     "cost": 18,
     "count": 382,
@@ -165,7 +165,7 @@
       "Holy Silver": 133
     }
   },
-  "4-20H": {
+  "4-20H Picnic of the Lawn": {
     "id": 41,
     "cost": 18,
     "count": 2889,
@@ -176,7 +176,7 @@
       "Spell of Fortune": 1270
     }
   },
-  "4-21H": {
+  "4-21H Good Weather": {
     "id": 42,
     "cost": 18,
     "count": 375,
