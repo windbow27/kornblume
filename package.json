@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit --skipLibCheck --allowJs && vite build",
-    "type-check": "vue-tsc --noEmit --skipLibCheck --allowJs",
     "preview": "vite preview",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "deploy": "cd dist && copy index.html 404.html && cd .. && gh-pages -d dist"
+    "deploy": "cd dist && copy index.html 404.html && cd .. && gh-pages -d dist",
+    "type-check": "vue-tsc --noEmit --skipLibCheck --allowJs",
+    "test": "vitest"
   },
   "dependencies": {
     "@vueuse/core": "^10.7.0",
@@ -38,6 +39,7 @@
     "vite": "^5.0.8",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vitest": "^1.0.4",
     "vue-tsc": "^1.8.25"
   }
 }
