@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit --skipLibCheck --allowJs && vite build",
+    "type-check": "vue-tsc --noEmit --skipLibCheck --allowJs",
     "preview": "vite preview",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",

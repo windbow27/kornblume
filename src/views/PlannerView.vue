@@ -21,7 +21,7 @@ import PlannerSettings from '../components/planner/PlannerSettings.vue';
 const plannerStore = usePlannerStore();
 const activityStore = useActivityStore();
 const wildernessStore = useWildernessStore();
-const arcanistStore = useDataStore().arcanists.data;
+const arcanistStore = useDataStore().arcanists.data || [];
 const settingsStore = usePlannerSettingsStore();
 const listArcanists = ref([]);
 
@@ -259,7 +259,7 @@ onClickOutside(settingsRef, closeSettings);
 
     <!-- Edit Arcanist Overlay -->
     <div v-if="isEditingArcanist" class="overlay">
-      <PlannerEdit ref="plannerEditRef" :selectedArcanist="selectedArcanist"
+      <PlannerEdit ref="plannerEditRef" v-if="selectedArcanist" :selectedArcanist="selectedArcanist"
         :selectedArcanists="plannerStore.selectedArcanists" :listArcanists="listArcanists"
         @closeOverlay="closeEditOverlay" @updateSelectedArcanists="handleUpdateSelectedArcanists"
         @updateListArcanists="handleUpdateListArcanists" />
