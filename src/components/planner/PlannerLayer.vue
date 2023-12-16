@@ -4,7 +4,7 @@ import Card from '../common/Card.vue';
 
 const props = defineProps({
     layer: {
-        type: Object, 
+        type: Object,
         required: true
     }
 });

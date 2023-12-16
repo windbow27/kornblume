@@ -155,7 +155,25 @@ onClickOutside(settingsRef, closeSettings);
 <template>
   <div class="responsive-spacer">
     <!-- Selector -->
-    <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Planner</h2>
+    <h2 class="text-2xl text-white font-bold lg:mb-6">Planner</h2>
+    <button class="text-info text-sm opacity-80 pb-5" onclick="oldusers_explaination.showModal()">Returning users, please
+      click this if the site is not working.</button>
+    <dialog id="oldusers_explaination" class="modal">
+      <div class="modal-box custom-gradient-gray-blue">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+        </form>
+        <h3 class="font-bold text-lg text-white">Howdy!</h3>
+        <p class="text-slate-300 text-sm pb-4">
+          Due to a significant data change, the information for existing users has been corrupted. Please proceed to your
+          <router-link class=" text-info text-lg" to="/profile">Profile</router-link>
+          and reset your data. We apologize for any inconvenience this may cause and appreciate your understanding.
+        </p>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
     <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
     <div class="flex justify-between items-center mb-2 mt-2">
