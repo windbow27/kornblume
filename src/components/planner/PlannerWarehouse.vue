@@ -105,7 +105,7 @@ const closeOverlay = () => {
 
 <template>
   <div class="list-overlay">
-    <div class="custom-modal-big h-5/6 lg:h-2/3 flex flex-col items-center">
+    <div class="custom-modal-big h-5/6 xl:h-3/4 flex flex-col items-center">
       <!-- Close button -->
       <button @click="closeOverlay" class="absolute top-2 right-4 text-white">
         <i class="fas fa-times"></i>
@@ -144,9 +144,9 @@ const closeOverlay = () => {
       </div>
 
       <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden flex-grow mb-5">
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8">
-          <ItemWarehouse class="" v-for="material in filteredWarehouse" :key="material.Material" :material="material"
-            @update:quantity="handleUpdateQuantity(material.Material, $event)" />
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-10">
+          <ItemWarehouse v-for="material in filteredWarehouse" :key="material.Material" :material="material"
+            @update:quantity="handleUpdateQuantity(material.Material, $event)"/>
         </div>
       </div>
 
