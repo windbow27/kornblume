@@ -25,30 +25,30 @@
   </nav>
 </template>
 
-<script setup>
+<script lang="ts" setup name="Navbar">
 import { ref, watchEffect } from 'vue';
 
 const isSmallScreen = ref(window.innerWidth <= 768);
 const showDropdown = ref(false);
 
 const toggleDropdown = () => {
-  showDropdown.value = !showDropdown.value;
+    showDropdown.value = !showDropdown.value;
 };
 
 watchEffect(() => {
-  const handleResize = () => {
-    isSmallScreen.value = window.innerWidth <= 768;
-    if (!isSmallScreen.value) {
-      showDropdown.value = false; 
-    }
-  };
+    const handleResize = () => {
+        isSmallScreen.value = window.innerWidth <= 768;
+        if (!isSmallScreen.value) {
+            showDropdown.value = false;
+        }
+    };
 
-  window.addEventListener('resize', handleResize);
-  handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
 
-  return () => {
-    window.removeEventListener('resize', handleResize);
-  };
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
 });
 </script>
 

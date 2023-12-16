@@ -1,30 +1,30 @@
-<script setup>
-import { ref } from 'vue';
-import { onClickOutside } from '@vueuse/core';
-import HomeChangelogs from '../components/home/HomeChangelogs.vue';
-import HomeResources from '../components/home/HomeResources.vue';
+<script setup lang="ts" name="HomeView">
+import { ref } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import HomeChangelogs from '../components/home/HomeChangelogs.vue'
+import HomeResources from '../components/home/HomeResources.vue'
 
-const isChangeLogs = ref(false);
-const isResources = ref(false);
+const isChangeLogs = ref(false)
+const isResources = ref(false)
 
-const changelogsRef = ref(null);
-const resourcesRef = ref(null);
+const changelogsRef = ref(null)
+const resourcesRef = ref(null)
 
 const openChangelogs = () => {
-    isChangeLogs.value = true;
-};
+    isChangeLogs.value = true
+}
 
 const openResources = () => {
-    isResources.value = true;
-};
+    isResources.value = true
+}
 
 const closeChangelogs = () => {
-    isChangeLogs.value = false;
-};
+    isChangeLogs.value = false
+}
 
 const closeResources = () => {
-    isResources.value = false;
-};
+    isResources.value = false
+}
 
 const carouselItems = [
     {
@@ -43,10 +43,10 @@ const carouselItems = [
         link: 'https://re.bluepoch.com/home/detail.html#wallpaper',
         imageUrl: 'https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20231114/97%202560x1440_ccb31017a58b47a5b285019ecab4bb27.jpg'
     }
-];
+]
 
-onClickOutside(changelogsRef, closeChangelogs);
-onClickOutside(resourcesRef, closeResources);
+onClickOutside(changelogsRef, closeChangelogs)
+onClickOutside(resourcesRef, closeResources)
 
 </script>
 
@@ -126,5 +126,5 @@ onClickOutside(resourcesRef, closeResources);
     </div>
     <div></div>
 </template>
-    
+
 <style scoped></style>

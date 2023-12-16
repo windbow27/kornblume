@@ -5,14 +5,14 @@ import { onClickOutside } from '@vueuse/core';
 const props = defineProps({
     label: { // Label for the selected on the button
         type: String,
-        required: true,
+        required: true
     },
     options: { // List of options
         type: Array,
-        required: true,
+        required: true
     },
     selected: { // Selected option
-        type: Number,
+        type: Number
     }
 });
 
@@ -95,7 +95,6 @@ onMounted(() => {
                 </button>
             </div>
         </div>
-
 
     </div>
 </template>

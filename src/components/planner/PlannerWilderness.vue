@@ -3,25 +3,25 @@ import { ref, computed } from 'vue';
 import SelectList from '../common/SelectList.vue';
 
 const props = defineProps({
-  settings: {
-    type: Object,
-    required: true,
-  },
+    settings: {
+        type: Object,
+        required: true
+    }
 });
 
 const emit = defineEmits({
-  closeOverlay: {
-    type: Function,
-    required: true,
-  },
-  saveWildernessSettings: {
-    type: Function,
-    required: true,
-  },
+    closeOverlay: {
+        type: Function,
+        required: true
+    },
+    saveWildernessSettings: {
+        type: Function,
+        required: true
+    }
 });
 
 const closeOverlay = () => {
-  emit('closeOverlay');
+    emit('closeOverlay');
 };
 
 const selectedDust1 = ref(props.settings.dust1);
@@ -38,74 +38,73 @@ const dustMultiplier = [0, 120, 150, 175, 210, 240, 270];
 const goldMultiplier = [0, 60, 75, 80, 96, 108, 120];
 
 const handleSelected = (option, label) => {
-  switch (label) {
+    switch (label) {
     case 'Dust 1':
-      selectedDust1.value = option;
-      break;
+        selectedDust1.value = option;
+        break;
     case 'Dust 2':
-      selectedDust2.value = option;
-      break;
+        selectedDust2.value = option;
+        break;
     case 'Dust 3':
-      selectedDust3.value = option;
-      break;
+        selectedDust3.value = option;
+        break;
     case 'Gold 1':
-      selectedGold1.value = option;
-      break;
+        selectedGold1.value = option;
+        break;
     case 'Gold 2':
-      selectedGold2.value = option;
-      break;
+        selectedGold2.value = option;
+        break;
     case 'Gold 3':
-      selectedGold3.value = option;
-      break;
-  }
-
+        selectedGold3.value = option;
+        break;
+    }
 };
 
 const validateVigor = () => {
-  const vigorValue = parseInt(vigor.value, 10);
-  if (isNaN(vigorValue)) {
-    vigor.value = null;
-    return;
-  }
-  if (vigorValue < 0) {
-    vigor.value = 0;
-    return;
-  }
-  if (vigorValue > 50) {
-    vigor.value = 50;
-    return;
-  }
-  vigor.value = vigorValue;
+    const vigorValue = parseInt(vigor.value, 10);
+    if (isNaN(vigorValue)) {
+        vigor.value = null;
+        return;
+    }
+    if (vigorValue < 0) {
+        vigor.value = 0;
+        return;
+    }
+    if (vigorValue > 50) {
+        vigor.value = 50;
+        return;
+    }
+    vigor.value = vigorValue;
 };
 
 const saveWildernessSettings = () => {
-  const settings = {
-    dust1: selectedDust1.value,
-    dust2: selectedDust2.value,
-    dust3: selectedDust3.value,
-    gold1: selectedGold1.value,
-    gold2: selectedGold2.value,
-    gold3: selectedGold3.value,
-    vigor: vigor.value,
-    lazyModo: lazyModo.value,
-    wildernessOutput: wildernessOutput.value,
-  };
-  emit('saveWildernessSettings', settings);
-  closeOverlay();
+    const settings = {
+        dust1: selectedDust1.value,
+        dust2: selectedDust2.value,
+        dust3: selectedDust3.value,
+        gold1: selectedGold1.value,
+        gold2: selectedGold2.value,
+        gold3: selectedGold3.value,
+        vigor: vigor.value,
+        lazyModo: lazyModo.value,
+        wildernessOutput: wildernessOutput.value
+    };
+    emit('saveWildernessSettings', settings);
+    closeOverlay();
 };
 
 const wildernessOutput = computed(() => {
-  const valueDust = dustMultiplier[selectedDust1.value] + dustMultiplier[selectedDust2.value] + dustMultiplier[selectedDust3.value];
-  const valueGold = goldMultiplier[selectedGold1.value] + goldMultiplier[selectedGold2.value] + goldMultiplier[selectedGold3.value];
-  const valueVigor = vigor.value ? parseFloat(vigor.value / 100) : 0;
-  const valueLazyModo = lazyModo.value ? 20 : 24;
-  const resultDust = Math.ceil(valueDust * (1 + valueVigor) * valueLazyModo);
-  const resultGold = Math.ceil(valueGold * (1 + valueVigor) * valueLazyModo);
-  //console.log(resultDust, resultGold);
-  return {
-    dust: resultDust,
-    gold: resultGold,
-  };
+    const valueDust = dustMultiplier[selectedDust1.value] + dustMultiplier[selectedDust2.value] + dustMultiplier[selectedDust3.value];
+    const valueGold = goldMultiplier[selectedGold1.value] + goldMultiplier[selectedGold2.value] + goldMultiplier[selectedGold3.value];
+    const valueVigor = vigor.value ? parseFloat(vigor.value / 100) : 0;
+    const valueLazyModo = lazyModo.value ? 20 : 24;
+    const resultDust = Math.ceil(valueDust * (1 + valueVigor) * valueLazyModo);
+    const resultGold = Math.ceil(valueGold * (1 + valueVigor) * valueLazyModo);
+    // console.log(resultDust, resultGold);
+    return {
+        dust: resultDust,
+        gold: resultGold
+    };
 });
 
 </script>

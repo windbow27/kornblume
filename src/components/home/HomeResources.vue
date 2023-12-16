@@ -2,7 +2,7 @@
 const emit = defineEmits({
     closeOverlay: {
         type: Function,
-        required: true,
+        required: true
     }
 });
 
@@ -12,12 +12,12 @@ const closeOverlay = () => {
 
 // { name: '', author:'', comment:'', link: '' },
 const resources = [
-    { name: 'Huji wiki', author:'Huji wiki team', comment:'Very detailed. Most of the data are from this wiki.', link: 'https://res1999.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5' },
-    { name: '必要的记录', author:'Chinese community', comment:'The drop rates of farming stages are provided by this sheet.', link: 'https://www.kdocs.cn/l/cd5MWeCl5bKw' },
+    { name: 'Huji wiki', author: 'Huji wiki team', comment: 'Very detailed. Most of the data are from this wiki.', link: 'https://res1999.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5' },
+    { name: '必要的记录', author: 'Chinese community', comment: 'The drop rates of farming stages are provided by this sheet.', link: 'https://www.kdocs.cn/l/cd5MWeCl5bKw' },
     { name: 'ArkPlanner', author: 'Penguine Statistics', comment: 'Referred to ArkPlanner\'s farming route algorithm, enhanced with linear programming magic', link: 'https://penguin-stats.io/planner' },
     { name: 'Vanity Cake Reverse 1999', author: 'Vanity & Cake', comment: 'Spreadsheet for a lot of things. Insight III levels are taken here.', link: 'https://docs.google.com/spreadsheets/d/1qQinxxU_e0-YXwPj5WAd2PgTFksyLwIaHXwEcosUxU0/edit#gid=470385843' },
     { name: 'Seelie', author: 'Gabriel', comment: 'Ever wonder why this looks like Seelie?', link: 'https://hsr.seelie.me/' },
-    { name: 'Schale', author:'lonqie', comment:'cunny uwooghh', link: 'https://schale.gg/' }
+    { name: 'Schale', author: 'lonqie', comment: 'cunny uwooghh', link: 'https://schale.gg/' }
     // Add more resources as needed
 ];
 </script>

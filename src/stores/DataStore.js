@@ -25,7 +25,7 @@ export const useDataStore = defineStore('dataStore', {
         drops: {
             data: null,
             loaded: false
-        }, 
+        },
         drops1_4: {
             data: null,
             loaded: false
@@ -33,10 +33,10 @@ export const useDataStore = defineStore('dataStore', {
         shops: {
             data: null,
             loaded: false
-        },
+        }
     }),
     actions: {
-        async fetchData(module) {
+        async fetchData (module) {
             if (this[module].loaded !== true) {
                 console.log('DataStore', `fetching ${module}...`);
                 return fetch(`./data/${module}.json`)
@@ -49,8 +49,8 @@ export const useDataStore = defineStore('dataStore', {
                 return Promise.resolve();
             }
         },
-        async ensureData(...modules) {
+        async ensureData (...modules) {
             return Promise.all(modules.map((module) => this.fetchData(module)));
         }
-    },
+    }
 });

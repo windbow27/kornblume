@@ -4,29 +4,29 @@ export const useWarehouseStore = defineStore('warehouse', {
     state: () => ({
         isActive: false,
         data: [],
-        loaded: false,
+        loaded: false
     }),
     actions: {
-        toggle() {
+        toggle () {
             this.isActive = !this.isActive;
         },
-        setData(data) {
+        setData (data) {
             this.data = data;
         },
-        setLoaded() {
+        setLoaded () {
             this.loaded = true;
         },
-        addItem(material, category) {
-            this.data.push({Material: material, Quantity: 0, Category: category});
+        addItem (material, category) {
+            this.data.push({ Material: material, Quantity: 0, Category: category });
         },
-        removeItem(material) {
+        removeItem (material) {
             for (let i = 0; i < this.data.length; i++) {
                 if (this.data[i].Material === material) {
                     this.data.splice(i, 1);
                 }
             }
         },
-        addShopItem(material, quantity) {
+        addShopItem (material, quantity) {
             for (let i = 0; i < this.data.length; i++) {
                 if (this.data[i].Material === material) {
                     this.data[i].Quantity += Number(quantity);
@@ -34,7 +34,7 @@ export const useWarehouseStore = defineStore('warehouse', {
                 }
             }
         },
-        updateItem(material, quantity) {
+        updateItem (material, quantity) {
             for (let i = 0; i < this.data.length; i++) {
                 if (this.data[i].Material === material) {
                     this.data[i].Quantity = Number(quantity);
@@ -42,18 +42,18 @@ export const useWarehouseStore = defineStore('warehouse', {
                 }
             }
         },
-        itemExists(materialName) {
+        itemExists (materialName) {
             for (let i = 0; i < this.data.length; i++) {
-                if (this.data[i].Material === materialName){
+                if (this.data[i].Material === materialName) {
                     return true;
                 }
             }
             return false;
         },
-        resetAll() {
+        resetAll () {
             this.data = [];
         },
-        resetCategory(category) {
+        resetCategory (category) {
             for (let i = 0; i < this.data.length; i++) {
                 if (this.data[i].Category === category) {
                     this.data[i].Quantity = 0;
@@ -61,5 +61,5 @@ export const useWarehouseStore = defineStore('warehouse', {
             }
         }
     },
-    persist: true,
+    persist: true
 });

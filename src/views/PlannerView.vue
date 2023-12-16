@@ -1,173 +1,201 @@
-<script setup>
-import { ref, computed, watchEffect, onMounted } from 'vue';
-import { onClickOutside } from '@vueuse/core';
+<script setup lang="ts" name="PlannerView">
+import { ref, computed, watchEffect } from 'vue'
+import { onClickOutside } from '@vueuse/core'
 
-import { usePlannerStore } from '../stores/PlannerStore';
-import { useActivityStore } from '../stores/ActivityStore';
-import { useWildernessStore } from '../stores/WildernessStore';
-import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore';
-import { useDataStore } from '../stores/DataStore';
+import { usePlannerStore } from '../stores/PlannerStore'
+import { useActivityStore } from '../stores/ActivityStore'
+import { useWildernessStore } from '../stores/WildernessStore'
+import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore'
+import { useDataStore } from '../stores/DataStore'
 
-import ArcanistList from '../components/arcanist/ArcanistList.vue';
-import PlannerEdit from '../components/planner/PlannerEdit.vue';
-import PlannerSelector from '../components/planner/PlannerSelector.vue';
-import PlannerResult from '../components/planner/PlannerResult.vue';
-import PlannerTotal from '../components/planner/PlannerTotal.vue';
-import PlannerActivity from '../components/planner/PlannerActivity.vue';
-import PlannerWilderness from '../components/planner/PlannerWilderness.vue';
-import PlannerWarehouse from '../components/planner/PlannerWarehouse.vue';
-import PlannerSettings from '../components/planner/PlannerSettings.vue';
+import ArcanistList from '../components/arcanist/ArcanistList.vue'
+import PlannerEdit from '../components/planner/PlannerEdit.vue'
+import PlannerSelector from '../components/planner/PlannerSelector.vue'
+import PlannerResult from '../components/planner/PlannerResult.vue'
+import PlannerTotal from '../components/planner/PlannerTotal.vue'
+import PlannerActivity from '../components/planner/PlannerActivity.vue'
+import PlannerWilderness from '../components/planner/PlannerWilderness.vue'
+import PlannerWarehouse from '../components/planner/PlannerWarehouse.vue'
+import PlannerSettings from '../components/planner/PlannerSettings.vue'
 
-const plannerStore = usePlannerStore();
-const activityStore = useActivityStore();
-const wildernessStore = useWildernessStore();
-const arcanistStore = useDataStore().arcanists.data;
-const settingsStore = usePlannerSettingsStore();
-const listArcanists = ref([]);
+const plannerStore = usePlannerStore()
+const activityStore = useActivityStore()
+const wildernessStore = useWildernessStore()
+const arcanistStore = useDataStore().arcanists.data || []
+const settingsStore = usePlannerSettingsStore()
+const listArcanists = ref([])
+
+interface IMaterialNeeds {
+  Id: number,
+  Material: string[],
+  Quantity: number[],
+}
+
+interface IArcanist {
+  Afflatus: string,
+  Id: number,
+  Insight: IMaterialNeeds[],
+  IsReleased: boolean,
+  Name: string,
+  Rarity: number,
+  Resonance: IMaterialNeeds[],
+}
+
+interface ISelectedArcanist {
+  Id: number,
+  isVisible: boolean,
+  currentInsight: number,
+  currentLevel: number,
+  currentResonance: number,
+  goalInsight: number,
+  goalLevel: number,
+  goalResonance: number,
+}
 
 const selectedArcanistIds = computed(() =>
-  plannerStore.selectedArcanists.map(arcanist => arcanist.Id)
-);
+    plannerStore.selectedArcanists.map((arcanist: IArcanist) => arcanist.Id)
+)
 
 watchEffect(() => {
-  listArcanists.value = arcanistStore.filter(arcanist =>
-    !selectedArcanistIds.value.includes(arcanist.Id) &&
+    listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
+        !selectedArcanistIds.value.includes(arcanist.Id) &&
     (settingsStore.settings.showUnreleased ? true : arcanist.IsReleased)
-  );
+    )
 
-  listArcanists.value.sort((a, b) => {
-    const rarityComparison = b.Rarity - a.Rarity;
+    listArcanists.value.sort((a: IArcanist, b: IArcanist) => {
+        const rarityComparison = b.Rarity - a.Rarity
 
-    if (rarityComparison !== 0) {
-      return rarityComparison;
-    }
+        if (rarityComparison !== 0) {
+            return rarityComparison
+        }
 
-    // If rarity is the same, compare by name alphabetically
-    return a.Name.localeCompare(b.Name);
-  });
-});
+        // If rarity is the same, compare by name alphabetically
+        return a.Name.localeCompare(b.Name)
+    })
+})
 
-const selectedArcanist = ref([]); // Current working arcanist
-const totalActivityAndDays = ref([]); // Total activity and days
+// TODO: need to add the type definition for these refs
+const selectedArcanist = ref<ISelectedArcanist | null>(null) // Current working arcanist
+const totalActivityAndDays = ref([]) // Total activity and days
 
-const isAddingArcanist = ref(false);
-const isEditingArcanist = ref(false);
-const isActivity = ref(false);
-const isWilderness = ref(false);
-const isWarehouse = ref(false);
-const isSettings = ref(false);
+const isAddingArcanist = ref(false)
+const isEditingArcanist = ref(false)
+const isActivity = ref(false)
+const isWilderness = ref(false)
+const isWarehouse = ref(false)
+const isSettings = ref(false)
 
-const activityRef = ref(null); // Ref to close modal
-const arcanistListRef = ref(null); 
-const plannerEditRef = ref(null);
-const wildernessRef = ref(null);
-const warehouseRef = ref(null);
-const settingsRef = ref(null);
+const activityRef = ref(null) // Ref to close modal
+const arcanistListRef = ref(null)
+const plannerEditRef = ref(null)
+const wildernessRef = ref(null)
+const warehouseRef = ref(null)
+const settingsRef = ref(null)
 
 const openAddOverlay = () => {
-  isAddingArcanist.value = true;
-};
+    isAddingArcanist.value = true
+}
 
 const closeAddOverlay = () => {
-  isAddingArcanist.value = false;
-};
+    isAddingArcanist.value = false
+}
 
 const openEditOverlay = () => {
-  isEditingArcanist.value = true;
-};
+    isEditingArcanist.value = true
+}
 
 const editEditOverlay = (arcanist) => {
-  //console.log(arcanist);
-  selectedArcanist.value = arcanist;
-  openEditOverlay();
-};
+    // console.log(arcanist);
+    selectedArcanist.value = arcanist
+    openEditOverlay()
+}
 
 const closeEditOverlay = () => {
-  isEditingArcanist.value = false;
-};
+    isEditingArcanist.value = false
+}
 
 const openActivity = () => {
-  isActivity.value = true;
-};
+    isActivity.value = true
+}
 
 const closeActivity = () => {
-  isActivity.value = false;
-};
+    isActivity.value = false
+}
 
 const openWilderness = () => {
-  isWilderness.value = true;
-};
+    isWilderness.value = true
+}
 
 const closeWilderness = () => {
-  isWilderness.value = false;
-};
+    isWilderness.value = false
+}
 
 const openWarehouse = () => {
-  isWarehouse.value = true;
-};
+    isWarehouse.value = true
+}
 
 const closeWarehouse = () => {
-  isWarehouse.value = false;
-};
+    isWarehouse.value = false
+}
 
 const openSettings = () => {
-  isSettings.value = true;
-};
+    isSettings.value = true
+}
 
 const closeSettings = () => {
-  isSettings.value = false;
-};
+    isSettings.value = false
+}
 
-const handleSelectArcanist = (arcanist) => {
-  selectedArcanist.value = {
-    Id: arcanist.Id,
-    isVisible: true,
-    currentInsight: 0,
-    currentLevel: 1,
-    currentResonance: 0,
-    goalInsight: 0,
-    goalLevel: 1,
-    goalResonance: 0,
-  };
-  //console.log(selectedArcanist.value);
-  openEditOverlay();
+const handleSelectArcanist = (arcanist: IArcanist) => {
+    selectedArcanist.value = {
+        Id: arcanist.Id,
+        isVisible: true,
+        currentInsight: 0,
+        currentLevel: 1,
+        currentResonance: 0,
+        goalInsight: 0,
+        goalLevel: 1,
+        goalResonance: 0
+    }
+    // console.log(selectedArcanist.value);
+    openEditOverlay()
 }
 
 const handleUpdateSelectedArcanists = (updateSelectedArcanists) => {
-  plannerStore.selectedArcanists = updateSelectedArcanists;
-  //console.log(selectedArcanists.value);
-  closeEditOverlay();
-};
+    plannerStore.selectedArcanists = updateSelectedArcanists
+    // console.log(selectedArcanists.value);
+    closeEditOverlay()
+}
 
 const handleUpdateListArcanists = (updateListArcanists) => {
-  listArcanists.value = updateListArcanists;
-};
+    listArcanists.value = updateListArcanists
+}
 
 const handleUpdateTotalActivityAndDays = (result) => {
-  totalActivityAndDays.value = result;
-};
+    totalActivityAndDays.value = result
+}
 
 const handleSaveActivitySettings = (result) => {
-  activityStore.settings = result;
-  //console.log(activitySettings.value);
-};
+    activityStore.settings = result
+    // console.log(activitySettings.value);
+}
 
 const handleSaveWildernessSettings = (result) => {
-  wildernessStore.settings = result;
-  //console.log(wildernessSettings.value);
-};
+    wildernessStore.settings = result
+    // console.log(wildernessSettings.value);
+}
 
 const handleSaveSettings = (result) => {
-  settingsStore.settings = result;
-  //console.log(result);
-};
+    settingsStore.settings = result
+    // console.log(result);
+}
 
 onClickOutside(activityRef, closeActivity)
-onClickOutside(arcanistListRef, closeAddOverlay);
-onClickOutside(plannerEditRef, closeEditOverlay);
-onClickOutside(wildernessRef, closeWilderness);
-onClickOutside(warehouseRef, closeWarehouse);
-onClickOutside(settingsRef, closeSettings);
+onClickOutside(arcanistListRef, closeAddOverlay)
+onClickOutside(plannerEditRef, closeEditOverlay)
+onClickOutside(wildernessRef, closeWilderness)
+onClickOutside(warehouseRef, closeWarehouse)
+onClickOutside(settingsRef, closeSettings)
 
 </script>
 
@@ -200,7 +228,7 @@ onClickOutside(settingsRef, closeSettings);
           class="fa-solid fa-wand-magic-sparkles"></i> Add Arcanist</button>
       <div class="flex space-x-2">
         <div class="tooltip" data-tip="Activity Settings">
-          <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i 
+          <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i
             class="fa-solid fa-bolt"></i></button>
         </div>
         <div class="tooltip" data-tip="Wilderness Settings">
@@ -231,7 +259,7 @@ onClickOutside(settingsRef, closeSettings);
 
     <!-- Edit Arcanist Overlay -->
     <div v-if="isEditingArcanist" class="overlay">
-      <PlannerEdit ref="plannerEditRef" :selectedArcanist="selectedArcanist"
+      <PlannerEdit ref="plannerEditRef" v-if="selectedArcanist" :selectedArcanist="selectedArcanist"
         :selectedArcanists="plannerStore.selectedArcanists" :listArcanists="listArcanists"
         @closeOverlay="closeEditOverlay" @updateSelectedArcanists="handleUpdateSelectedArcanists"
         @updateListArcanists="handleUpdateListArcanists" />
@@ -265,7 +293,6 @@ onClickOutside(settingsRef, closeSettings);
       @update:totalActivityAndDays="handleUpdateTotalActivityAndDays" />
   </div>
 </template>
-
 
 <style scoped>
 /* * {

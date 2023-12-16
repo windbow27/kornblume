@@ -6,8 +6,8 @@ export const useActivityStore = defineStore('activity', {
             roaringMonth: false,
             refills: 0,
             activity: 240,
-            cost: 0,
-        },
+            cost: 0
+        }
     }),
-    persist: true,
+    persist: true
 });

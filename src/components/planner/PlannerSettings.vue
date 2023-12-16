@@ -4,19 +4,19 @@ import { ref } from 'vue';
 const props = defineProps({
     settings: {
         type: Object,
-        required: true,
-    },
+        required: true
+    }
 });
 
 const emit = defineEmits({
     closeOverlay: {
         type: Function,
-        required: true,
+        required: true
     },
     saveSettings: {
         type: Function,
-        required: true,
-    },
+        required: true
+    }
 });
 
 const isShowUnreleased = ref(props.settings.showUnreleased);
@@ -29,7 +29,7 @@ const closeOverlay = () => {
 const saveSettings = () => {
     const updatedSettings = {
         showUnreleased: isShowUnreleased.value,
-        unreleasedDrops: isUnreleasedDrops.value,
+        unreleasedDrops: isUnreleasedDrops.value
     };
     emit('saveSettings', updatedSettings);
     closeOverlay();

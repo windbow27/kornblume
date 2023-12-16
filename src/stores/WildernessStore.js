@@ -13,9 +13,9 @@ export const useWildernessStore = defineStore('wilderness', {
             lazyModo: false,
             wildernessOutput: {
                 dust: 19440,
-                gold: 8640,
-            },
-        },
+                gold: 8640
+            }
+        }
     }),
-    persist: true,
+    persist: true
 });

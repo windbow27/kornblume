@@ -13,7 +13,7 @@ const props = defineProps({
 const calculateArcanist = computed(() => {
     const arc = props.arcanist;
     const result = useCalculation(arc);
-    //console.log(result);
+    // console.log(result);
     return result;
 });
 

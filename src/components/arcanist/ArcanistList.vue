@@ -3,37 +3,37 @@ import { ref, computed } from 'vue';
 import ArcanistIcon from './ArcanistIcon.vue';
 
 const props = defineProps({
-  arcanists: {
-    type: Array,
-    required: true,
-  },
+    arcanists: {
+        type: Array,
+        required: true
+    }
 });
 
 const emit = defineEmits({
-  closeOverlay: {
-    type: Function,
-    required: true,
-  },
-  selectArcanist: {
-    type: Function,
-    required: true,
-  },
+    closeOverlay: {
+        type: Function,
+        required: true
+    },
+    selectArcanist: {
+        type: Function,
+        required: true
+    }
 });
 
 const selectArcanist = (arc) => {
-  emit('selectArcanist', arc);
-  closeOverlay();
+    emit('selectArcanist', arc);
+    closeOverlay();
 };
 
 const closeOverlay = () => {
-  emit('closeOverlay');
+    emit('closeOverlay');
 };
 
 const searchQuery = ref('');
 
 const filteredArcanists = computed(() => {
-  // Filter arcanists based on the searchQuery
-  return props.arcanists.filter(arc => arc.Name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+    // Filter arcanists based on the searchQuery
+    return props.arcanists.filter(arc => arc.Name.toLowerCase().includes(searchQuery.value.toLowerCase()));
 });
 
 </script>
@@ -64,7 +64,5 @@ const filteredArcanists = computed(() => {
   </div>
 </template>
 
-
 <style scoped>
 </style>
-
