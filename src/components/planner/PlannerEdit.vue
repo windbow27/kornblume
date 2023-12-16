@@ -240,6 +240,12 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
     if (Number(selectedCurrentResonance.value) > Number(selectedGoalResonance.value)) {
         selectedGoalResonance.value = selectedCurrentResonance.value;
     }
+    if (selectedCurrentResonance.value < currentResonanceOptions.value[0]) {
+        selectedCurrentResonance.value = currentResonanceOptions.value[0];
+    }
+    if (selectedGoalResonance.value < goalResonanceOptions.value[0]) {
+        selectedGoalResonance.value = goalResonanceOptions.value[0];
+    }
     if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
         //console.log('Current is higher than goal');
         selectedGoalInsight.value = selectedCurrentInsight.value;
