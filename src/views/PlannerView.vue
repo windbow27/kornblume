@@ -3,6 +3,7 @@ import { ref, computed, watchEffect, onMounted } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
 import { usePlannerStore } from '../stores/PlannerStore';
+import { useActivityStore } from '../stores/ActivityStore';
 import { useWildernessStore } from '../stores/WildernessStore';
 import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore';
 import { useDataStore } from '../stores/DataStore';
@@ -12,11 +13,13 @@ import PlannerEdit from '../components/planner/PlannerEdit.vue';
 import PlannerSelector from '../components/planner/PlannerSelector.vue';
 import PlannerResult from '../components/planner/PlannerResult.vue';
 import PlannerTotal from '../components/planner/PlannerTotal.vue';
+import PlannerActivity from '../components/planner/PlannerActivity.vue';
 import PlannerWilderness from '../components/planner/PlannerWilderness.vue';
 import PlannerWarehouse from '../components/planner/PlannerWarehouse.vue';
 import PlannerSettings from '../components/planner/PlannerSettings.vue';
 
 const plannerStore = usePlannerStore();
+const activityStore = useActivityStore();
 const wildernessStore = useWildernessStore();
 const arcanistStore = useDataStore().arcanists.data;
 const settingsStore = usePlannerSettingsStore();
@@ -49,11 +52,13 @@ const totalActivityAndDays = ref([]); // Total activity and days
 
 const isAddingArcanist = ref(false);
 const isEditingArcanist = ref(false);
+const isActivity = ref(false);
 const isWilderness = ref(false);
 const isWarehouse = ref(false);
 const isSettings = ref(false);
 
-const arcanistListRef = ref(null); // Ref to close modal
+const activityRef = ref(null); // Ref to close modal
+const arcanistListRef = ref(null); 
 const plannerEditRef = ref(null);
 const wildernessRef = ref(null);
 const warehouseRef = ref(null);
@@ -79,6 +84,14 @@ const editEditOverlay = (arcanist) => {
 
 const closeEditOverlay = () => {
   isEditingArcanist.value = false;
+};
+
+const openActivity = () => {
+  isActivity.value = true;
+};
+
+const closeActivity = () => {
+  isActivity.value = false;
 };
 
 const openWilderness = () => {
@@ -134,6 +147,11 @@ const handleUpdateTotalActivityAndDays = (result) => {
   totalActivityAndDays.value = result;
 };
 
+const handleSaveActivitySettings = (result) => {
+  activityStore.settings = result;
+  //console.log(activitySettings.value);
+};
+
 const handleSaveWildernessSettings = (result) => {
   wildernessStore.settings = result;
   //console.log(wildernessSettings.value);
@@ -144,6 +162,7 @@ const handleSaveSettings = (result) => {
   //console.log(result);
 };
 
+onClickOutside(activityRef, closeActivity)
 onClickOutside(arcanistListRef, closeAddOverlay);
 onClickOutside(plannerEditRef, closeEditOverlay);
 onClickOutside(wildernessRef, closeWilderness);
@@ -180,6 +199,10 @@ onClickOutside(settingsRef, closeSettings);
       <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
           class="fa-solid fa-wand-magic-sparkles"></i> Add Arcanist</button>
       <div class="flex space-x-2">
+        <div class="tooltip" data-tip="Activity Settings">
+          <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i 
+            class="fa-solid fa-bolt"></i></button>
+        </div>
         <div class="tooltip" data-tip="Wilderness Settings">
           <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-tree"></i></button>
@@ -188,10 +211,9 @@ onClickOutside(settingsRef, closeSettings);
           <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-box-archive"></i></button>
         </div>
-        <div class="tooltip" data-tip="Settings">
-          <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
-              class="fa-solid fa-gear"></i></button>
-        </div>
+        <!-- <div class="tooltip" data-tip="CN Data">
+          <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button">雷</button> -->
+        <!-- </div> -->
       </div>
     </div>
 
@@ -213,6 +235,12 @@ onClickOutside(settingsRef, closeSettings);
         :selectedArcanists="plannerStore.selectedArcanists" :listArcanists="listArcanists"
         @closeOverlay="closeEditOverlay" @updateSelectedArcanists="handleUpdateSelectedArcanists"
         @updateListArcanists="handleUpdateListArcanists" />
+    </div>
+
+    <!-- Activity Overlay -->
+    <div v-if="isActivity" class="overlay">
+      <PlannerActivity ref="activityRef" :settings="activityStore.settings" @closeOverlay="closeActivity"
+      @saveActivitySettings="handleSaveActivitySettings" />
     </div>
 
     <!-- Wilderness Overlay -->
@@ -239,4 +267,8 @@ onClickOutside(settingsRef, closeSettings);
 </template>
 
 
-<style scoped></style>
+<style scoped>
+* {
+  border: 1px solid red !important;
+}
+</style>

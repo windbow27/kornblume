@@ -45,7 +45,7 @@ const saveSettings = () => {
             </button>
             <div class="form-control">
                 <label class="cursor-pointer label justify-center space-x-5">
-                    <span class="label-text text-white text-md">Show unreleased</span>
+                    <span class="label-text text-white text-md">Show Unreleased Arcanists</span>
                     <input v-model="isShowUnreleased" type="checkbox" class="checkbox checkbox-info" />
                 </label>
             </div>

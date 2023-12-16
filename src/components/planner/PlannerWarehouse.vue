@@ -154,7 +154,7 @@ const closeOverlay = () => {
       <div class="flex space-x-10">
         <!-- shops -->
         <div class="flex space-x-3">
-          <button class="btn btn-success btn-sm" onclick="my_modal_shop1.showModal()">1.2 pt.1</button>
+          <div class="tooltip" data-tip="Event Shop"><button class="btn btn-success btn-sm" onclick="my_modal_shop1.showModal()">1.2 pt.1</button></div>
           <dialog id="my_modal_shop1" class="modal">
             <div class="modal-box bg-slate-700">
               <p class="py-4 text-lg text-white text-center">Add materials from <span class="text-error">1.2 part 1</span>
@@ -170,7 +170,7 @@ const closeOverlay = () => {
             </form>
           </dialog>
 
-          <button class="btn btn-success btn-sm" onclick="my_modal_shop2.showModal()">1.2 pt.2</button>
+          <div class="tooltip" data-tip="Event Shop"><button class="btn btn-success btn-sm" onclick="my_modal_shop2.showModal()">1.2 pt.2</button></div>
           <dialog id="my_modal_shop2" class="modal">
             <div class="modal-box bg-slate-700">
               <p class="py-4 text-lg text-white text-center">Add materials from <span class="text-error">1.2 part 2</span>

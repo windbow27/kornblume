@@ -174,4 +174,4 @@ const wildernessOutput = computed(() => {
 .select-list {
   @apply w-full
 }
-</style>../../stores/wildernessStore
+</style>

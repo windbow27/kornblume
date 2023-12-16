@@ -1,5 +1,6 @@
 import { useDataStore } from '../stores/DataStore'
 import { useWarehouseStore } from '../stores/WarehouseStore'
+import { useActivityStore } from '../stores/ActivityStore';
 import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore'
 import { solve } from "yalps";
 
@@ -239,7 +240,7 @@ export function getPlan(materials) {
         if (stageInfo) {
             const runs = Math.ceil(stage[1]);
             const activity = Math.ceil(runs * stageInfo.cost);
-            const days = (activity / 240).toFixed(1);
+            const days = (activity / useActivityStore().settings.activity).toFixed(1);
             let materials = Object.entries(stageInfo.drops).map(([matlName, count]) => {
                 let quantity = (count / stageInfo.count) * runs;
                 quantity = (quantity % 1 >= 0.9) ? Math.ceil(quantity) : Math.floor(quantity); //flooring, takes 0.99 for now
