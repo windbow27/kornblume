@@ -40,36 +40,34 @@
     </div>
 </template>
 
-  
 <script setup lang="ts" name="ProfileView">
-import { ref, Ref } from 'vue';
-import { exportLocalStorageToJson, importLocalStorageFromJson } from '../stores/ProfileStore.js';
+import { ref, Ref } from 'vue'
+import { exportLocalStorageToJson, importLocalStorageFromJson } from '../stores/ProfileStore.js'
 
-const fileInput = ref(null);
+const fileInput = ref(null)
 
 const exportStores = () => {
-    exportLocalStorageToJson();
+  exportLocalStorageToJson()
 }
 
 const triggerFileInput = () => {
-    // Trigger the file input programmatically
-    (fileInput as Ref<HTMLElement | null>).value?.click();
+  // Trigger the file input programmatically
+  (fileInput as Ref<HTMLElement | null>).value?.click()
 }
 
 const importStores = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        importLocalStorageFromJson(file);
-    }
+  const file = event.target.files[0]
+  if (file) {
+    importLocalStorageFromJson(file)
+  }
 }
 
 const resetStores = () => {
-    const storeKeys = ['plannerSettings', 'planner', 'wilderness', 'warehouse'];
-    storeKeys.forEach((key) => localStorage.removeItem(key));
-    window.location.reload();
+  const storeKeys = ['plannerSettings', 'planner', 'wilderness', 'warehouse']
+  storeKeys.forEach((key) => localStorage.removeItem(key))
+  window.location.reload()
 }
 
 </script>
-  
+
 <style scoped></style>
-  

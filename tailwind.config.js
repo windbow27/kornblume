@@ -1,16 +1,16 @@
 module.exports = {
   mode: 'jit',
   theme: {
-    extend: {},
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
   plugins: [
-    require('daisyui'),
+    require('daisyui')
   ],
   content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
-};
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}'
+  ]
+}
