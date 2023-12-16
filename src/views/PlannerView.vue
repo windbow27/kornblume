@@ -1,5 +1,5 @@
-<script setup>
-import { ref, computed, watchEffect, onMounted } from 'vue';
+<script setup lang="ts" name="PlannerView">
+import { ref, computed, watchEffect } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
 import { usePlannerStore } from '../stores/PlannerStore';
@@ -25,17 +25,44 @@ const arcanistStore = useDataStore().arcanists.data;
 const settingsStore = usePlannerSettingsStore();
 const listArcanists = ref([]);
 
+interface IMaterialNeeds {
+  Id: number,
+  Material: string[],
+  Quantity: number[],
+}
+
+interface IArcanist {
+  Afflatus: string,
+  Id: number,
+  Insight: IMaterialNeeds[],
+  IsReleased: boolean,
+  Name: string,
+  Rarity: number,
+  Resonance: IMaterialNeeds[],
+}
+
+interface ISelectedArcanist {
+  Id: number,
+  isVisible: boolean,
+  currentInsight: number,
+  currentLevel: number,
+  currentResonance: number,
+  goalInsight: number,
+  goalLevel: number,
+  goalResonance: number,
+}
+
 const selectedArcanistIds = computed(() =>
-  plannerStore.selectedArcanists.map(arcanist => arcanist.Id)
+  plannerStore.selectedArcanists.map((arcanist: IArcanist) => arcanist.Id)
 );
 
 watchEffect(() => {
-  listArcanists.value = arcanistStore.filter(arcanist =>
+  listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
     !selectedArcanistIds.value.includes(arcanist.Id) &&
     (settingsStore.settings.showUnreleased ? true : arcanist.IsReleased)
   );
 
-  listArcanists.value.sort((a, b) => {
+  listArcanists.value.sort((a: IArcanist, b: IArcanist) => {
     const rarityComparison = b.Rarity - a.Rarity;
 
     if (rarityComparison !== 0) {
@@ -47,7 +74,8 @@ watchEffect(() => {
   });
 });
 
-const selectedArcanist = ref([]); // Current working arcanist
+// TODO: need to add the type definition for these refs
+const selectedArcanist = ref<ISelectedArcanist | null>(null); // Current working arcanist
 const totalActivityAndDays = ref([]); // Total activity and days
 
 const isAddingArcanist = ref(false);
@@ -118,7 +146,7 @@ const closeSettings = () => {
   isSettings.value = false;
 };
 
-const handleSelectArcanist = (arcanist) => {
+const handleSelectArcanist = (arcanist: IArcanist) => {
   selectedArcanist.value = {
     Id: arcanist.Id,
     isVisible: true,

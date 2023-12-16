@@ -25,7 +25,7 @@
   </nav>
 </template>
 
-<script setup>
+<script lang="ts" setup name="Navbar">
 import { ref, watchEffect } from 'vue';
 
 const isSmallScreen = ref(window.innerWidth <= 768);

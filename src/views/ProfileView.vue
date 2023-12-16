@@ -41,8 +41,8 @@
 </template>
 
   
-<script setup>
-import { ref } from 'vue';
+<script setup lang="ts" name="ProfileView">
+import { ref, Ref } from 'vue';
 import { exportLocalStorageToJson, importLocalStorageFromJson } from '../stores/ProfileStore.js';
 
 const fileInput = ref(null);
@@ -53,7 +53,7 @@ const exportStores = () => {
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically
-    fileInput.value.click();
+    (fileInput as Ref<HTMLElement | null>).value?.click();
 }
 
 const importStores = (event) => {

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts" name="HomeView">
 import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 import HomeChangelogs from '../components/home/HomeChangelogs.vue';
