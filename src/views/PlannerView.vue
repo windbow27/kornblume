@@ -115,11 +115,11 @@ const closeEditOverlay = () => {
 }
 
 const openActivity = () => {
-  isActivity.value = true
+    isActivity.value = true
 }
 
 const closeActivity = () => {
-  isActivity.value = false
+    isActivity.value = false
 }
 
 const openWilderness = () => {
@@ -176,8 +176,8 @@ const handleUpdateTotalActivityAndDays = (result) => {
 }
 
 const handleSaveActivitySettings = (result) => {
-  activityStore.settings = result
-  // console.log(activitySettings.value);
+    activityStore.settings = result
+    // console.log(activitySettings.value);
 }
 
 const handleSaveWildernessSettings = (result) => {

@@ -5,19 +5,19 @@ import SelectList from '../common/SelectList.vue';
 const props = defineProps({
     settings: {
         type: Object,
-        required: true,
-    },
+        required: true
+    }
 });
 
 const emit = defineEmits({
     closeOverlay: {
         type: Function,
-        required: true,
+        required: true
     },
     saveActivitySettings: {
         type: Function,
-        required: true,
-    },
+        required: true
+    }
 });
 
 const options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
@@ -55,7 +55,7 @@ const saveActivitySettings = () => {
         roaringMonth: roaringMonth.value,
         refills: refills.value,
         activity: activity.value,
-        cost: cost.value,
+        cost: cost.value
     };
     emit('saveActivitySettings', settings);
     closeOverlay();
