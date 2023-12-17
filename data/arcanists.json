@@ -1701,7 +1701,7 @@
   },
   {
     "Id": 10051,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Jessica",
     "Rarity": 6,
     "Afflatus": "Plant",

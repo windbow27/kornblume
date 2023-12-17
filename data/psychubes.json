@@ -1,7 +1,7 @@
 [
     {
         "Id": 1,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Gluttony",
         "Rarity": 6,
         "Tag": "None",
@@ -10,7 +10,7 @@
     },
     {
         "Id": 2,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Greed",
         "Rarity": 5,
         "Tag": "None",
@@ -19,7 +19,7 @@
     },
     {
         "Id": 3,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Enlighten I",
         "Rarity": 3,
         "Tag": "None",
@@ -28,7 +28,7 @@
     },
     {
         "Id": 4,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Enlighten II",
         "Rarity": 3,
         "Tag": "None",
@@ -37,7 +37,7 @@
     },
     {
         "Id": 5,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Enlighten III",
         "Rarity": 3,
         "Tag": "None",
@@ -46,7 +46,7 @@
     },
     {
         "Id": 6,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Enlighten IV",
         "Rarity": 3,
         "Tag": "None",
@@ -55,7 +55,7 @@
     },
     {
         "Id": 7,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Slighted",
         "Rarity": 3,
         "Tag": "None",
@@ -64,7 +64,7 @@
     },
     {
         "Id": 8,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Flourishing",
         "Rarity": 3,
         "Tag": "None",
@@ -73,7 +73,7 @@
     },
     {
         "Id": 9,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Loss",
         "Rarity": 3,
         "Tag": "None",
@@ -82,7 +82,7 @@
     },
     {
         "Id": 10,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Cheering",
         "Rarity": 3,
         "Tag": "None",
@@ -91,7 +91,7 @@
     },
     {
         "Id": 11,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Numb",
         "Rarity": 3,
         "Tag": "None",
@@ -100,7 +100,7 @@
     },
     {
         "Id": 12,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Fatuous",
         "Rarity": 3,
         "Tag": "None",
@@ -109,7 +109,7 @@
     },
     {
         "Id": 13,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Navigating",
         "Rarity": 4,
         "Tag": "Survival",
@@ -118,7 +118,7 @@
     },
     {
         "Id": 14,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Bow",
         "Rarity": 4,
         "Tag": "ATK",
@@ -127,7 +127,7 @@
     },
     {
         "Id": 15,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Covet",
         "Rarity": 4,
         "Tag": "Critical",
@@ -136,7 +136,7 @@
     },
     {
         "Id": 16,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Venomous",
         "Rarity": 4,
         "Tag": "ATK",
@@ -145,7 +145,7 @@
     },
     {
         "Id": 17,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Meek",
         "Rarity": 4,
         "Tag": "Heal",
@@ -154,7 +154,7 @@
     },
     {
         "Id": 18,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Yearning Desire",
         "Rarity": 5,
         "Tag": "ATK",
@@ -184,7 +184,7 @@
     },
     {
         "Id": 19,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Tomorrow Also",
         "Rarity": 5,
         "Tag": "ATK, Critical",
@@ -214,7 +214,7 @@
     },
     {
         "Id": 20,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "The Footloose",
         "Rarity": 5,
         "Tag": "ATK",
@@ -244,7 +244,7 @@
     },
     {
         "Id": 21,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Decode",
         "Rarity": 5,
         "Tag": "Heal, Survival",
@@ -274,7 +274,7 @@
     },
     {
         "Id": 22,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "An Afternoon Nap",
         "Rarity": 5,
         "Tag": "Heal, Survival",
@@ -304,7 +304,7 @@
     },
     {
         "Id": 23,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Her Bright Future",
         "Rarity": 5,
         "Tag": "ATK",
@@ -334,7 +334,7 @@
     },
     {
         "Id": 24,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "A Free Heart",
         "Rarity": 5,
         "Tag": "Survival",
@@ -364,7 +364,7 @@
     },
     {
         "Id": 25,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Laughter and Laughter",
         "Rarity": 5,
         "Tag": "Heal, Survival",
@@ -394,7 +394,7 @@
     },
     {
         "Id": 28,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Brave New World",
         "Rarity": 6,
         "Tag": "ATK",
@@ -424,7 +424,7 @@
     },
     {
         "Id": 29,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Hopscotch",
         "Rarity": 6,
         "Tag": "ATK",
@@ -454,7 +454,7 @@
     },
     {
         "Id": 30,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Her Second Life",
         "Rarity": 6,
         "Tag": "Heal",
@@ -484,7 +484,7 @@
     },
     {
         "Id": 31,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Blasphemer of Night",
         "Rarity": 6,
         "Tag": "ATK",
@@ -514,7 +514,7 @@
     },
     {
         "Id": 32,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Thunderous Applause",
         "Rarity": 6,
         "Tag": "ATK, Critical",
@@ -544,7 +544,7 @@
     },
     {
         "Id": 33,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "That Inquisitive Dear",
         "Rarity": 6,
         "Tag": "Heal",
@@ -574,7 +574,7 @@
     },
     {
         "Id": 34,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "Luxurious Leisure",
         "Rarity": 6,
         "Tag": "ATK",
@@ -604,7 +604,7 @@
     },
     {
         "Id": 35,
-        "isReleased": true,
+        "IsReleased": true,
         "Name": "His Bounden Duty",
         "Rarity": 6,
         "Tag": "ATK, Heal",
@@ -634,7 +634,7 @@
     },
     {
         "Id": 36,
-        "isReleased": false,
+        "IsReleased": false,
         "Rarity": 6,
         "Name": null,
         "Tag": null,
@@ -643,7 +643,7 @@
     },
     {
         "Id": 37,
-        "isReleased": false,
+        "IsReleased": false,
         "Rarity": 6,
         "Name": null,
         "Tag": null,
@@ -652,7 +652,7 @@
     },
     {
         "Id": 38,
-        "isReleased": false,
+        "IsReleased": false,
         "Rarity": 6,
         "Name": null,
         "Tag": null,
@@ -661,7 +661,7 @@
     },
     {
         "Id": 39,
-        "isReleased": false,
+        "IsReleased": false,
         "Rarity": 6,
         "Name": null,
         "Tag": null,
