@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 
 interface IPlannerStore {
-    // FIXME: any
+    // FIXME: give selectedArcanists a type definition
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     selectedArcanists: any
 }

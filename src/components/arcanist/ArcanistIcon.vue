@@ -1,6 +1,6 @@
 <!-- eslint-disable no-unused-vars -->
 <script setup>
-// FIXME
+// FIXME:
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
     arcanist: {

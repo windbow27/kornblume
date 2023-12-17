@@ -16,6 +16,7 @@ export const useWarehouseStore = defineStore('warehouse', {
     state: (): IWarehouseStore => ({
         resource: []
     }),
+    // TODO: Review these actions while refactoring related components/composables
     actions: {
         addItem (materialName: string, category: string) {
             this.resource.push({ Material: materialName, Quantity: 0, Category: category });

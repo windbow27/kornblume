@@ -105,14 +105,14 @@ const goalLevelOptions = computed(() => {
 const currentResonanceOptions = computed(() => {
     if (selectedCurrentInsight.value === null) return [];
     if (selectedCurrentInsight.value === 0) {
-        // FIXME
+        // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedCurrentResonance.value = 0;
         return [0];
     }
     const insightValue = Number(selectedCurrentInsight.value);
     if (insightValue === 0) {
-        // FIXME
+        // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedCurrentResonance.value = null;
         return null;
@@ -124,7 +124,7 @@ const currentResonanceOptions = computed(() => {
 const goalResonanceOptions = computed(() => {
     if (selectedGoalInsight.value === null) return [];
     if (selectedGoalInsight.value === 0) {
-        // FIXME
+        // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedGoalResonance.value = 0;
         return [0];
@@ -132,7 +132,7 @@ const goalResonanceOptions = computed(() => {
     const insightValue = Number(selectedGoalInsight.value);
     const currentResonance = Number(selectedCurrentResonance.value);
     if (insightValue === 0) {
-        // FIXME
+        // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedGoalResonance.value = null;
         return null;

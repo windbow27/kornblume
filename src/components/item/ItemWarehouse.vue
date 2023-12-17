@@ -9,7 +9,7 @@ const props = defineProps({
     }
 });
 
-// FIXME
+// FIXME:
 // eslint-disable-next-line vue/valid-define-emits
 const emit = defineEmits();
 
