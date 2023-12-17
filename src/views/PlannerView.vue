@@ -2,11 +2,12 @@
 import { ref, computed, watchEffect } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 
-import { usePlannerStore } from '../stores/PlannerStore'
-import { useActivityStore } from '../stores/ActivityStore'
-import { useWildernessStore } from '../stores/WildernessStore'
-import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore'
-import { useDataStore } from '../stores/DataStore'
+import { usePlannerStore } from '../store/plannerStore'
+import { useActivityStore } from '../store/activityStore'
+import { useWildernessStore } from '../store/wildernessStore'
+import { usePlannerSettingsStore } from '../store/plannerSettingsStore'
+import { useDataStore } from '../store/dataStore'
+import { IArcanist } from '@/types'
 
 import ArcanistList from '../components/arcanist/ArcanistList.vue'
 import PlannerEdit from '../components/planner/PlannerEdit.vue'
@@ -21,25 +22,9 @@ import PlannerSettings from '../components/planner/PlannerSettings.vue'
 const plannerStore = usePlannerStore()
 const activityStore = useActivityStore()
 const wildernessStore = useWildernessStore()
-const arcanistStore = useDataStore().arcanists.data || []
+const arcanistStore = useDataStore().arcanists
 const settingsStore = usePlannerSettingsStore()
-const listArcanists = ref([])
-
-interface IMaterialNeeds {
-  Id: number,
-  Material: string[],
-  Quantity: number[],
-}
-
-interface IArcanist {
-  Afflatus: string,
-  Id: number,
-  Insight: IMaterialNeeds[],
-  IsReleased: boolean,
-  Name: string,
-  Rarity: number,
-  Resonance: IMaterialNeeds[],
-}
+const listArcanists = ref<IArcanist[]>([])
 
 interface ISelectedArcanist {
   Id: number,
@@ -59,7 +44,7 @@ const selectedArcanistIds = computed(() =>
 watchEffect(() => {
     listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
         !selectedArcanistIds.value.includes(arcanist.Id) &&
-    (settingsStore.settings.showUnreleased ? true : arcanist.IsReleased)
+    (settingsStore.settings.showUnreleasedArcanists ? true : arcanist.IsReleased)
     )
 
     listArcanists.value.sort((a: IArcanist, b: IArcanist) => {

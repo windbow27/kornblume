@@ -1,7 +1,25 @@
 import { defineStore } from 'pinia';
 
+// TODO: Reorganize the data structure
+interface IWildernessStore {
+    settings: {
+        dust1: number,
+        dust2: number,
+        dust3: number,
+        gold1: number,
+        gold2: number,
+        gold3: number,
+        vigor: number,
+        lazyModo: boolean,
+        wildernessOutput: {
+            dust: number,
+            gold: number,
+        }
+    }
+}
+
 export const useWildernessStore = defineStore('wilderness', {
-    state: () => ({
+    state: (): IWildernessStore => ({
         settings: {
             dust1: 6,
             dust2: 6,

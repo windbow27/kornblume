@@ -19,8 +19,8 @@ const emit = defineEmits({
     }
 });
 
-const isShowUnreleased = ref(props.settings.showUnreleased);
-const isUnreleasedDrops = ref(props.settings.unreleasedDrops);
+const isShowUnreleased = ref(props.settings.showUnreleasedArcanists);
+const isUnreleasedDrops = ref(props.settings.enabledUnreleasedStages);
 
 const closeOverlay = () => {
     emit('closeOverlay');
@@ -28,8 +28,8 @@ const closeOverlay = () => {
 
 const saveSettings = () => {
     const updatedSettings = {
-        showUnreleased: isShowUnreleased.value,
-        unreleasedDrops: isUnreleasedDrops.value
+        showUnreleasedArcanists: isShowUnreleased.value,
+        enabledUnreleasedStages: isUnreleasedDrops.value
     };
     emit('saveSettings', updatedSettings);
     closeOverlay();

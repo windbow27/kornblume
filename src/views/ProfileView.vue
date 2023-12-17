@@ -42,12 +42,12 @@
 
 <script setup lang="ts" name="ProfileView">
 import { ref, Ref } from 'vue'
-import { exportLocalStorageToJson, importLocalStorageFromJson } from '../stores/ProfileStore.js'
+import { exportKornblumeData, importKornblumeData, resetKornblumeData } from '@/utils';
 
 const fileInput = ref(null)
 
 const exportStores = () => {
-    exportLocalStorageToJson()
+    exportKornblumeData()
 }
 
 const triggerFileInput = () => {
@@ -58,14 +58,12 @@ const triggerFileInput = () => {
 const importStores = (event) => {
     const file = event.target.files[0]
     if (file) {
-        importLocalStorageFromJson(file)
+        importKornblumeData(file)
     }
 }
 
 const resetStores = () => {
-    const storeKeys = ['plannerSettings', 'planner', 'wilderness', 'warehouse']
-    storeKeys.forEach((key) => localStorage.removeItem(key))
-    window.location.reload()
+    resetKornblumeData()
 }
 
 </script>

@@ -1,6 +1,6 @@
-import { useDataStore } from '../stores/DataStore';
+import { useDataStore } from '../store/dataStore';
 
-const items = useDataStore().items.data;
+const items = useDataStore().items;
 
 export function formatQuantity (quantity) {
     if (quantity > 1000000) {

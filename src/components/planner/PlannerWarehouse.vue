@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import { useWarehouseStore } from '../../stores/WarehouseStore';
-import { useDataStore } from '../../stores/DataStore';
-import { usePlannerSettingsStore } from '../../stores/PlannerSettingsStore';
+import { useWarehouseStore } from '../../store/warehouseStore';
+import { useDataStore } from '../../store/dataStore';
+import { usePlannerSettingsStore } from '../../store/plannerSettingsStore';
 import { sortMaterials } from '../../composables/CalculateMaterials';
 import { addMaterialsToWarehouse } from '../../composables/ShopMaterials';
 import ItemWarehouse from '../item/ItemWarehouse.vue';
@@ -22,10 +22,10 @@ const checkedCategories = ref({
 });
 
 onMounted(() => {
-    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.unreleasedDrops;
+    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
     if (useWarehouseStore().data.length === 0) {
         console.log('Setting up warehouse');
-        useDataStore().items.data.forEach((item) => {
+        useDataStore().items.forEach((item) => {
             if (item.IsReleased || unreleasedDropsEnabled) {
                 if (
                     item.Category === 'Build Material' ||
@@ -40,7 +40,7 @@ onMounted(() => {
             }
         });
     } else { // else statement to be updated for seamless addition of new warehouse items
-        useDataStore().items.data.forEach((item) => {
+        useDataStore().items.forEach((item) => {
             if (!useWarehouseStore().itemExists(item.Name) &&
           (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled))) {
                 useWarehouseStore().addItem(item.Name, item.Category);

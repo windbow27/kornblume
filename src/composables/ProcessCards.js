@@ -1,11 +1,11 @@
-import { useDataStore } from '../stores/DataStore'
-import { useWarehouseStore } from '../stores/WarehouseStore'
-import { useActivityStore } from '../stores/ActivityStore';
-import { usePlannerSettingsStore } from '../stores/PlannerSettingsStore'
+import { useDataStore } from '../store/dataStore'
+import { useWarehouseStore } from '../store/warehouseStore'
+import { useActivityStore } from '../store/activityStore';
+import { usePlannerSettingsStore } from '../store/plannerSettingsStore'
 import { solve } from 'yalps';
 
-const items = useDataStore().items.data;
-const formulas = useDataStore().formulas.data;
+const items = useDataStore().items;
+const formulas = useDataStore().formulas;
 const warehouse = useWarehouseStore().data;
 
 function calculateOneiric (matInfo) {
@@ -85,9 +85,9 @@ function subtractResonateMaterials (materials) {
 }
 
 function getDrops () {
-    return usePlannerSettingsStore().settings.unreleasedDrops
-        ? useDataStore().drops1_4.data
-        : useDataStore().drops.data;
+    return usePlannerSettingsStore().settings.enabledUnreleasedStages
+        ? useDataStore().stages1_4
+        : useDataStore().stages;
 }
 
 function getSolve (materials, drops) {

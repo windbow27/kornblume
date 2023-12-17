@@ -1,9 +1,10 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
-import { useDataStore } from '../../stores/DataStore';
+import { useDataStore } from '../../store/dataStore';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
 import SelectList from '../common/SelectList.vue';
+import { levelUpResources } from '../../constants';
 
 const props = defineProps({
     selectedArcanist: {
@@ -34,10 +35,10 @@ const emit = defineEmits({
     }
 });
 
-const arcanists = useDataStore().arcanists.data;
+const arcanists = useDataStore().arcanists;
 const isTheSame = ref(false);
 const updateKey = ref(0);
-const calculations = useDataStore().calculations.data;
+const calculations = levelUpResources;
 const selectedArcanist = ref(arcanists.find(arc => Number(arc.Id) === Number(props.selectedArcanist.Id)));
 const selectedArcanists = ref(props.selectedArcanists);
 const listArcanists = ref(props.listArcanists);
@@ -334,3 +335,4 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
 </template>
 
 <style scoped></style>
+../../store/dataStore
