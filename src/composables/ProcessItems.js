@@ -1,4 +1,4 @@
-import { useDataStore } from '../store/dataStore';
+import { useDataStore } from '../stores/dataStore';
 
 const items = useDataStore().items;
 

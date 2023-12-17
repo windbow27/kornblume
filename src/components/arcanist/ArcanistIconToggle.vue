@@ -1,5 +1,5 @@
 <script setup>
-import { useDataStore } from '../../store/dataStore';
+import { useDataStore } from '../../stores/dataStore';
 
 const props = defineProps({
     arcanist: {
@@ -43,3 +43,4 @@ const getArcanistImagePath = (id) => {
     filter: grayscale(100%);
 }
 </style>
+../../stores/dataStore

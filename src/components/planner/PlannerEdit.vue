@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
-import { useDataStore } from '../../store/dataStore';
+import { useDataStore } from '../../stores/dataStore';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
 import SelectList from '../common/SelectList.vue';
@@ -335,3 +335,4 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
 </template>
 
 <style scoped></style>
+../../stores/dataStore

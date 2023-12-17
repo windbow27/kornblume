@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import { useWarehouseStore } from '../../store/warehouseStore';
-import { useDataStore } from '../../store/dataStore';
-import { usePlannerSettingsStore } from '../../store/plannerSettingsStore';
+import { useWarehouseStore } from '../../stores/warehouseStore';
+import { useDataStore } from '../../stores/dataStore';
+import { usePlannerSettingsStore } from '../../stores/plannerSettingsStore';
 import { sortMaterials } from '../../composables/CalculateMaterials';
 import { addMaterialsToWarehouse } from '../../composables/ShopMaterials';
 import ItemWarehouse from '../item/ItemWarehouse.vue';
@@ -205,3 +205,4 @@ const closeOverlay = () => {
   </div></template>
 
 <style scoped></style>
+../../stores/warehouseStore../../stores/dataStore../../stores/plannerSettingsStore

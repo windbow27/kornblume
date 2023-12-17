@@ -1,5 +1,5 @@
-import { useDataStore } from '../store/dataStore';
-import { useWarehouseStore } from '../store/warehouseStore';
+import { useDataStore } from '../stores/dataStore';
+import { useWarehouseStore } from '../stores/warehouseStore';
 
 export function addMaterialsToWarehouse (version) {
     const shopsData = useDataStore().shops;

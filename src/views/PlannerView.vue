@@ -2,11 +2,11 @@
 import { ref, computed, watchEffect } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 
-import { usePlannerStore } from '../store/plannerStore'
-import { useActivityStore } from '../store/activityStore'
-import { useWildernessStore } from '../store/wildernessStore'
-import { usePlannerSettingsStore } from '../store/plannerSettingsStore'
-import { useDataStore } from '../store/dataStore'
+import { usePlannerStore } from '../stores/plannerStore'
+import { useActivityStore } from '../stores/activityStore'
+import { useWildernessStore } from '../stores/wildernessStore'
+import { usePlannerSettingsStore } from '../stores/plannerSettingsStore'
+import { useDataStore } from '../stores/dataStore'
 import { IArcanist } from '@/types'
 
 import ArcanistList from '../components/arcanist/ArcanistList.vue'
@@ -284,3 +284,4 @@ onClickOutside(settingsRef, closeSettings)
   border: 1px solid red !important;
 } */
 </style>
+../stores/plannerStore../stores/activityStore../stores/wildernessStore../stores/plannerSettingsStore../stores/dataStore

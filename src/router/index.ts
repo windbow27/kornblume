@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useDataStore } from '../store/dataStore';
+import { useDataStore } from '../stores/dataStore';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),

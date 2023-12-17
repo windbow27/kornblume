@@ -1,7 +1,7 @@
-import { useDataStore } from '../store/dataStore'
-import { useWarehouseStore } from '../store/warehouseStore'
-import { useActivityStore } from '../store/activityStore';
-import { usePlannerSettingsStore } from '../store/plannerSettingsStore'
+import { useDataStore } from '../stores/dataStore'
+import { useWarehouseStore } from '../stores/warehouseStore'
+import { useActivityStore } from '../stores/activityStore';
+import { usePlannerSettingsStore } from '../stores/plannerSettingsStore'
 import { solve } from 'yalps';
 
 const items = useDataStore().items;

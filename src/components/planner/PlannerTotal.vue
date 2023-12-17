@@ -1,7 +1,7 @@
 <!-- eslint-disable no-unused-vars -->
 <script setup>
 import { formatQuantity } from '../../composables/ProcessItems';
-import { useActivityStore } from '../../store/activityStore';
+import { useActivityStore } from '../../stores/activityStore';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = defineProps({
@@ -67,4 +67,5 @@ const activityStore = useActivityStore();
     @apply border-blue-700/90 border-l pl-3 text-sm sm:text-base text-white;
 }
 </style>
-../../store/activityStore
+../../stores/activityStore
+../../stores/activityStore
