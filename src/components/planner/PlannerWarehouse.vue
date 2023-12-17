@@ -23,7 +23,7 @@ const checkedCategories = ref({
 
 onMounted(() => {
     const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
-    if (useWarehouseStore().data.length === 0) {
+    if (useWarehouseStore().resource.length === 0) {
         console.log('Setting up warehouse');
         useDataStore().items.forEach((item) => {
             if (item.IsReleased || unreleasedDropsEnabled) {
@@ -50,7 +50,7 @@ onMounted(() => {
         });
     }
 
-    sortMaterials(useWarehouseStore().data);
+    sortMaterials(useWarehouseStore().resource);
 });
 
 const handleUpdateQuantity = (materialName, updatedQuantity) => {
@@ -65,11 +65,11 @@ const filteredWarehouse = computed(() => {
     const anyChecked = Object.values(checkedCategories.value).some((value) => value);
 
     if (anyChecked) {
-        return useWarehouseStore().data.filter((material) => {
+        return useWarehouseStore().resource.filter((material) => {
             return checkedCategories.value[material.Category];
         });
     } else {
-        return useWarehouseStore().data;
+        return useWarehouseStore().resource;
     }
 });
 

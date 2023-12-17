@@ -6,7 +6,7 @@ import { solve } from 'yalps';
 
 const items = useDataStore().items;
 const formulas = useDataStore().formulas;
-const warehouse = useWarehouseStore().data;
+const warehouse = useWarehouseStore().resource;
 
 function calculateOneiric (matInfo) {
     const item = items.find(item => item.Name === matInfo.Material);

@@ -5,7 +5,7 @@ const getDataSize = data => {
     if (!data) {
         return 0;
     }
-    return data.constructor === Object ? Object.keys(data).length : data.length;
+    return data.constructor === Object ? Object.keys(data).length : data.length || 0;
 }
 
 interface IDataStore {
