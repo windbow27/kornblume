@@ -335,4 +335,3 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
 </template>
 
 <style scoped></style>
-../../store/dataStore
