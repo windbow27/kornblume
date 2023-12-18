@@ -67,5 +67,3 @@ const activityStore = useActivityStore();
     @apply border-blue-700/90 border-l pl-3 text-sm sm:text-base text-white;
 }
 </style>
-../../stores/activityStore
-../../stores/activityStore

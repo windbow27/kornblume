@@ -205,4 +205,3 @@ const closeOverlay = () => {
   </div></template>
 
 <style scoped></style>
-../../stores/warehouseStore../../stores/dataStore../../stores/plannerSettingsStore

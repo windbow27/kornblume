@@ -43,4 +43,3 @@ const getArcanistImagePath = (id) => {
     filter: grayscale(100%);
 }
 </style>
-../../stores/dataStore
