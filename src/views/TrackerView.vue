@@ -9,12 +9,36 @@ const fileInput = ref(null)
 const isImporting = ref(false);
 const text = ref('')
 const arcanists = useDataStore().arcanists;
-const pulls = ref<{ ArcanistName: string; Rarity: number; DateAndTime: Date }[]>([]);
+const pulls = ref<{ ArcanistName: string; Rarity: number; SummonTime: Date }[]>([]);
 
-const triggerFileInput = () => {
-    // Trigger the file input programmatically
-    (fileInput as Ref<HTMLElement | null>).value?.click()
-}
+const indexedPulls = computed(() => {
+    const sortedPulls = pulls.value.slice().sort((a, b) => new Date(b.SummonTime).getTime() - new Date(a.SummonTime).getTime());
+    return sortedPulls.map((pull, index) => {
+        return {
+            PullNumber: sortedPulls.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            SummonTime: pull.SummonTime
+        }
+    });
+});
+
+const sixStarsPullsList = computed(() => {
+    const sixStarPulls = indexedPulls.value
+        .filter(pull => pull.Rarity === 6)
+        .sort((a, b) => a.PullNumber - b.PullNumber)
+        .map(pull => pull.PullNumber);
+    return sixStarPulls.map((pullNumber, index) => index === 0 ? pullNumber : pullNumber - sixStarPulls[index - 1]);
+});
+
+const summonSinceLastSixStar = computed(() => {
+    const lastSixStarPull = indexedPulls.value.find(pull => pull.Rarity === 6);
+    if (lastSixStarPull) {
+        return indexedPulls.value.length - lastSixStarPull.PullNumber;
+    } else {
+        return indexedPulls.value.length;
+    }
+});
 
 type clickHandler = (payload: Event) => void | undefined;
 const ocr: clickHandler = (payload: Event): void => {
@@ -35,9 +59,9 @@ const ocr: clickHandler = (payload: Event): void => {
 
             const arcanistNames = arcanists.map(a => a.Name).join('|');
 
-            const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames})(\\((?<Rarity>\\d+)\\))?(?<BannerGroup>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`);
+            const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames})(\\((?<Rarity>\\d+)\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`);
 
-            const currentPulls: { ArcanistName: string; Rarity: number; BannerGroup: string; DateAndTime: Date }[] = [];
+            const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; SummonTime: Date }[] = [];
 
             // Extract information from each line
             text.value.trim().split('\n').forEach((line) => {
@@ -46,15 +70,15 @@ const ocr: clickHandler = (payload: Event): void => {
                     const arcanistName: string = match.groups?.ArcanistName.trim() || '';
                     const arcanist = arcanists.find(a => a.Name === arcanistName);
                     const rarity: number = arcanist ? arcanist.Rarity : 0;
-                    const bannerGroup: string = match.groups?.BannerGroup.trim() || '';
+                    const BannerType: string = match.groups?.BannerType.trim() || '';
                     const dateTime: Date = new Date(match.groups?.Date || '');
 
                     // Create an object for each pull
                     const pull = {
                         ArcanistName: arcanistName,
                         Rarity: rarity,
-                        BannerGroup: bannerGroup,
-                        DateAndTime: dateTime
+                        BannerType: BannerType,
+                        SummonTime: dateTime
                     };
 
                     // Add the pull to the array
@@ -77,9 +101,14 @@ const ocr: clickHandler = (payload: Event): void => {
     }
 }
 
+const triggerFileInput = () => {
+    // Trigger the file input programmatically
+    (fileInput as Ref<HTMLElement | null>).value?.click()
+}
+
 const isEqualPull = (pull1, pull2) => {
     return pull1.ArcanistName === pull2.ArcanistName &&
-        pull1.DateAndTime.getTime() === pull2.DateAndTime.getTime() &&
+        pull1.SummonTime.getTime() === pull2.SummonTime.getTime() &&
         pull1.Rarity === pull2.Rarity;
 }
 
@@ -96,35 +125,6 @@ const formatDate = (date: Date): string => {
     });
     return `${formattedDate} ${formattedTime}`;
 }
-
-const indexedPulls = computed(() => {
-    const sortedPulls = pulls.value.slice().sort((a, b) => new Date(b.DateAndTime).getTime() - new Date(a.DateAndTime).getTime());
-    return sortedPulls.map((pull, index) => {
-        return {
-            PullNumber: sortedPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            DateAndTime: pull.DateAndTime
-        }
-    });
-});
-
-const sixStarsPullsList = computed(() => {
-    const sixStarPulls = indexedPulls.value
-        .filter(pull => pull.Rarity === 6)
-        .sort((a, b) => a.PullNumber - b.PullNumber)
-        .map(pull => pull.PullNumber);
-    return sixStarPulls.map((pullNumber, index) => index === 0 ? pullNumber : pullNumber - sixStarPulls[index - 1]);
-});
-
-const summonSinceLastSixStar = computed(() => {
-    const lastSixStarPull = indexedPulls.value.find(pull => pull.Rarity === 6);
-    if (lastSixStarPull) {
-        return indexedPulls.value.length - lastSixStarPull.PullNumber;
-    } else {
-        return indexedPulls.value.length;
-    }
-});
 
 defineExpose({
     formatDate
@@ -188,7 +188,7 @@ defineExpose({
             <div class="flex flex-wrap justify-center space-x-8">
                 <!-- Fix the key later -->
                 <div v-for="(pull, index) in indexedPulls.filter(p => p.Rarity === 6)"
-                    :key="`${pull.DateAndTime}-${pull.ArcanistName}`">
+                    :key="`${pull.SummonTime}-${pull.ArcanistName}`">
                     <TrackerArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
                         :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
                 </div>
@@ -198,7 +198,7 @@ defineExpose({
         <!-- Summon History -->
         <div class="text text-center text-xl pb-4 pt-10">Summon History</div>
         <div class="max-w-lg m-auto">
-            <div v-for="(pull, index) in indexedPulls" :key="`${pull.DateAndTime}-${pull.ArcanistName}-${index}`"
+            <div v-for="(pull, index) in indexedPulls" :key="`${pull.SummonTime}-${pull.ArcanistName}-${index}`"
                 class="grid grid-cols-3 justify-between items-center p-2 border-b border-gray-200 space-x-5">
                 <div class="flex items-center space-x-5">
                     <div class="text-white">{{ pull.PullNumber }} </div>
@@ -218,7 +218,7 @@ defineExpose({
                     'text-sky-200': pull.Rarity === 3,
                     'text-green-200': pull.Rarity === 2
                 }">{{ pull.Rarity }} <i class="fa-solid fa-star"></i></div>
-                <div class="text-white"> {{ formatDate(pull.DateAndTime) }}</div>
+                <div class="text-white"> {{ formatDate(pull.SummonTime) }}</div>
             </div>
         </div>
 
