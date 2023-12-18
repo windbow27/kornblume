@@ -1,7 +1,16 @@
 import { defineStore } from 'pinia';
 
+interface IActivityStore {
+    settings: {
+        roaringMonth: boolean,
+        refills: number,
+        activity: number,
+        cost: number,
+    }
+}
+
 export const useActivityStore = defineStore('activity', {
-    state: () => ({
+    state: (): IActivityStore => ({
         settings: {
             roaringMonth: false,
             refills: 0,

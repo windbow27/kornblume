@@ -1,8 +1,9 @@
-import { useDataStore } from '../stores/DataStore';
+import { useDataStore } from '../stores/dataStore';
+import { levelUpResources } from '../constants';
 
-const calculations = useDataStore().calculations.data;
-const items = useDataStore().items.data;
-const arcanists = useDataStore().arcanists.data;
+const calculations = levelUpResources;
+const items = useDataStore().items;
+const arcanists = useDataStore().arcanists;
 
 export function sortMaterials (array) {
     array.sort((a, b) => {

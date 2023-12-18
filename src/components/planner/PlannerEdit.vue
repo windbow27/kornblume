@@ -1,9 +1,10 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
-import { useDataStore } from '../../stores/DataStore';
+import { useDataStore } from '../../stores/dataStore';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
 import SelectList from '../common/SelectList.vue';
+import { levelUpResources } from '../../constants';
 
 const props = defineProps({
     selectedArcanist: {
@@ -34,10 +35,10 @@ const emit = defineEmits({
     }
 });
 
-const arcanists = useDataStore().arcanists.data;
+const arcanists = useDataStore().arcanists;
 const isTheSame = ref(false);
 const updateKey = ref(0);
-const calculations = useDataStore().calculations.data;
+const calculations = levelUpResources;
 const selectedArcanist = ref(arcanists.find(arc => Number(arc.Id) === Number(props.selectedArcanist.Id)));
 const selectedArcanists = ref(props.selectedArcanists);
 const listArcanists = ref(props.listArcanists);
@@ -104,14 +105,14 @@ const goalLevelOptions = computed(() => {
 const currentResonanceOptions = computed(() => {
     if (selectedCurrentInsight.value === null) return [];
     if (selectedCurrentInsight.value === 0) {
-        // FIXME
+        // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedCurrentResonance.value = 0;
         return [0];
     }
     const insightValue = Number(selectedCurrentInsight.value);
     if (insightValue === 0) {
-        // FIXME
+        // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedCurrentResonance.value = null;
         return null;
@@ -123,7 +124,7 @@ const currentResonanceOptions = computed(() => {
 const goalResonanceOptions = computed(() => {
     if (selectedGoalInsight.value === null) return [];
     if (selectedGoalInsight.value === 0) {
-        // FIXME
+        // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedGoalResonance.value = 0;
         return [0];
@@ -131,7 +132,7 @@ const goalResonanceOptions = computed(() => {
     const insightValue = Number(selectedGoalInsight.value);
     const currentResonance = Number(selectedCurrentResonance.value);
     if (insightValue === 0) {
-        // FIXME
+        // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         selectedGoalResonance.value = null;
         return null;

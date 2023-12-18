@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useDataStore } from '../stores/DataStore';
+import { useDataStore } from '../stores/dataStore';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,7 +25,7 @@ const router = createRouter({
             name: 'planner',
             component: () => import('../views/PlannerView.vue'),
             meta: {
-                requiredJson: ['arcanists', 'calculations', 'items', 'shops', 'formulas', 'drops', 'drops1_4']
+                requiredJson: ['arcanists', 'items', 'shops', 'formulas', 'stages', 'stages1_4']
             }
         }
     ]
@@ -34,7 +34,7 @@ const router = createRouter({
 router.beforeEach(async (to) => {
     const dataStore = useDataStore();
     if (to.meta.requiredJson) {
-        await dataStore.ensureData(...to.meta.requiredJson);
+        await dataStore.checkDataLoaded([...to.meta.requiredJson as string[]]);
     }
 })
 

@@ -1,5 +1,5 @@
 <script setup>
-import { useDataStore } from '../../stores/DataStore';
+import { useDataStore } from '../../stores/dataStore';
 
 const props = defineProps({
     arcanist: {
@@ -12,7 +12,7 @@ const props = defineProps({
     }
 });
 
-const arcInfo = useDataStore().arcanists.data.find(arc => arc.Id === props.arcanist);
+const arcInfo = useDataStore().arcanists.find(arc => arc.Id === props.arcanist);
 
 const getArcanistImagePath = (id) => {
     return `images/arcanists/icon/${id}.png`;

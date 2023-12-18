@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import { useWarehouseStore } from '../../stores/WarehouseStore';
-import { useDataStore } from '../../stores/DataStore';
-import { usePlannerSettingsStore } from '../../stores/PlannerSettingsStore';
+import { useWarehouseStore } from '../../stores/warehouseStore';
+import { useDataStore } from '../../stores/dataStore';
+import { usePlannerSettingsStore } from '../../stores/plannerSettingsStore';
 import { sortMaterials } from '../../composables/CalculateMaterials';
 import { addMaterialsToWarehouse } from '../../composables/ShopMaterials';
 import ItemWarehouse from '../item/ItemWarehouse.vue';
@@ -22,10 +22,10 @@ const checkedCategories = ref({
 });
 
 onMounted(() => {
-    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.unreleasedDrops;
-    if (useWarehouseStore().data.length === 0) {
+    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
+    if (useWarehouseStore().resource.length === 0) {
         console.log('Setting up warehouse');
-        useDataStore().items.data.forEach((item) => {
+        useDataStore().items.forEach((item) => {
             if (item.IsReleased || unreleasedDropsEnabled) {
                 if (
                     item.Category === 'Build Material' ||
@@ -40,7 +40,7 @@ onMounted(() => {
             }
         });
     } else { // else statement to be updated for seamless addition of new warehouse items
-        useDataStore().items.data.forEach((item) => {
+        useDataStore().items.forEach((item) => {
             if (!useWarehouseStore().itemExists(item.Name) &&
           (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled))) {
                 useWarehouseStore().addItem(item.Name, item.Category);
@@ -50,7 +50,7 @@ onMounted(() => {
         });
     }
 
-    sortMaterials(useWarehouseStore().data);
+    sortMaterials(useWarehouseStore().resource);
 });
 
 const handleUpdateQuantity = (materialName, updatedQuantity) => {
@@ -65,11 +65,11 @@ const filteredWarehouse = computed(() => {
     const anyChecked = Object.values(checkedCategories.value).some((value) => value);
 
     if (anyChecked) {
-        return useWarehouseStore().data.filter((material) => {
+        return useWarehouseStore().resource.filter((material) => {
             return checkedCategories.value[material.Category];
         });
     } else {
-        return useWarehouseStore().data;
+        return useWarehouseStore().resource;
     }
 });
 
