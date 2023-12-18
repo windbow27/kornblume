@@ -12,11 +12,6 @@
                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
                 Import Data
             </button>
-            <input type="file" ref="fileInput" @change="ocr" accept=".jpg" class="ml-4" style="display: none;" multiple/>
-            <button @click="triggerFileInput"
-                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
-                OCR
-            </button>
         </div>
 
         <h2 class="text-2xl text-white font-bold my-4 lg:my-6">Danger Zone</h2>
@@ -48,7 +43,6 @@
 <script setup lang="ts" name="ProfileView">
 import { ref, Ref } from 'vue'
 import { exportKornblumeData, importKornblumeData, resetKornblumeData } from '@/utils';
-import Tesseract, { createWorker } from 'tesseract.js';
 
 const fileInput = ref(null)
 
@@ -68,28 +62,9 @@ const importStores = (event) => {
     }
 }
 
-type clickHandler = (payload: Event) => void | undefined;
-const ocr: clickHandler = (payload: Event): void => {
-    const fileList: FileList | null = (payload.target as HTMLInputElement).files;
-    if (fileList) {
-        (async (): Promise<void> => {
-            const worker: Tesseract.Worker = await createWorker('eng');
-            for (let i: number = 0; i < fileList.length; i++) {
-                const file: File = fileList[i];
-                if (file) {
-                    const ret: Tesseract.RecognizeResult = await worker.recognize(file);
-                    console.log(ret.data.text);
-                }
-            }
-            await worker.terminate();
-        })();
-    }
-}
-
 const resetStores = () => {
     resetKornblumeData()
 }
-
 </script>
 
 <style scoped></style>
