@@ -19,3 +19,15 @@ export interface IArcanist {
 }
 
 export interface IArcanists extends Array<IArcanist>{}
+
+// for planner
+export interface ISelectedArcanist {
+    Id: number,
+    isVisible: boolean,
+    currentInsight: number,
+    currentLevel: number,
+    goalInsight: number,
+    goalLevel: number,
+    currentResonance: number,
+    goalResonance: number
+}

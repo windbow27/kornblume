@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
 
-// TODO: Reorganize the data structure
 interface IWildernessStore {
     settings: {
         dust1: number,
