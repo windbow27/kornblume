@@ -170,9 +170,9 @@ defineExpose({
         </div>
 
         <div
-            class="w-full items-center custom-gradient-gray-blue rounded border border-blue-900 justify-center px-4 pt-4 pb-2">
+            class="w-full items-center custom-gradient-gray-blue rounded border border-blue-900 justify-center px-4 pt-4 pb-3">
             <div class="text text-center pb-4">Recent 6 <i class="fa-solid fa-star text-orange-300"></i> Summons</div>
-            <div class="flex flex-wrap justify-center space-x-3">
+            <div class="flex flex-wrap justify-center space-x-8">
                 <!-- Fix the key later -->
                 <div v-for="(pull, index) in indexedPulls.filter(p => p.Rarity === 6)"
                     :key="`${pull.DateAndTime}-${pull.ArcanistName}`">
