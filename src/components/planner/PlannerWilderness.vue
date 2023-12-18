@@ -127,7 +127,7 @@ const wildernessOutput = computed(() => {
         <SelectList class="select-list" :options="options" :selected="selectedDust3" label="Dust 3"
           v-on:update:selected="handleSelected" />
       </div>
-      <div class="custom-label text-yellow-100">Gold Bell Towers</div>
+      <div class="custom-label text-yellow-100">Sharpodonty Markets</div>
       <div class="grid grid-cols-3">
         <SelectList class="select-list" :options="options" :selected="selectedGold1" label="Gold 1"
           v-on:update:selected="handleSelected" />
