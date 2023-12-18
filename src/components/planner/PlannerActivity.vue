@@ -23,12 +23,12 @@ const emit = defineEmits({
 const options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const refillsCost = [0, 60, 90, 120, 120, 150, 150, 200, 200];
 
-const hasRoaringMonth = ref(props.settings.hasRoaringMonth);
+const roaringMonth = ref(props.settings.roaringMonth);
 const refills = ref(props.settings.refills);
 
 const activity = computed(() => {
     let result = 240;
-    if (hasRoaringMonth.value) {
+    if (roaringMonth.value) {
         result += 90;
     }
     result += refills.value * 100;
@@ -52,7 +52,7 @@ const handleSelected = (value) => {
 
 const saveActivitySettings = () => {
     const settings = {
-        hasRoaringMonth: hasRoaringMonth.value,
+        roaringMonth: roaringMonth.value,
         refills: refills.value,
         activity: activity.value,
         cost: cost.value
@@ -78,7 +78,7 @@ const closeOverlay = () => {
             <div class="form-control">
                 <label class="cursor-pointer label justify-center">
                     <span class="label-text text-white mr-3">Roaring Month</span>
-                    <input v-model="hasRoaringMonth" type="checkbox" :checked="hasRoaringMonth" class="checkbox checkbox-info" />
+                    <input v-model="roaringMonth" type="checkbox" :checked="roaringMonth" class="checkbox checkbox-info" />
                 </label>
             </div>
 
