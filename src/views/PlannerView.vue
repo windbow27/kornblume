@@ -7,7 +7,7 @@ import { useActivityStore } from '../stores/activityStore'
 import { useWildernessStore } from '../stores/wildernessStore'
 import { usePlannerSettingsStore } from '../stores/plannerSettingsStore'
 import { useDataStore } from '../stores/dataStore'
-import { IArcanist } from '@/types'
+import { IArcanist, ISelectedArcanist } from '@/types'
 
 import ArcanistList from '../components/arcanist/ArcanistList.vue'
 import PlannerEdit from '../components/planner/PlannerEdit.vue'
@@ -26,19 +26,8 @@ const arcanistStore = useDataStore().arcanists
 const settingsStore = usePlannerSettingsStore()
 const listArcanists = ref<IArcanist[]>([])
 
-interface ISelectedArcanist {
-  Id: number,
-  isVisible: boolean,
-  currentInsight: number,
-  currentLevel: number,
-  currentResonance: number,
-  goalInsight: number,
-  goalLevel: number,
-  goalResonance: number,
-}
-
 const selectedArcanistIds = computed(() =>
-    plannerStore.selectedArcanists.map((arcanist: IArcanist) => arcanist.Id)
+    plannerStore.selectedArcanists.map((arcanist) => arcanist.Id)
 )
 
 watchEffect(() => {
@@ -284,4 +273,3 @@ onClickOutside(settingsRef, closeSettings)
   border: 1px solid red !important;
 } */
 </style>
-../stores/plannerStore../stores/activityStore../stores/wildernessStore../stores/plannerSettingsStore../stores/dataStore
