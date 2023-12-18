@@ -1,9 +1,8 @@
 import { defineStore } from 'pinia';
+import { ISelectedArcanist } from '@/types';
 
 interface IPlannerStore {
-    // FIXME: give selectedArcanists a type definition
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    selectedArcanists: any
+    selectedArcanists: ISelectedArcanist[]
 }
 
 export const usePlannerStore = defineStore('planner', {

@@ -21,39 +21,39 @@ const emit = defineEmits({
 });
 
 const options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-const dailyRefillsCost = [0, 60, 90, 120, 120, 150, 150, 200, 200];
+const refillsCost = [0, 60, 90, 120, 120, 150, 150, 200, 200];
 
-const hasRoaringMonth = ref(props.settings.hasRoaringMonth);
-const dailyRefills = ref(props.settings.dailyRefills);
+const roaringMonth = ref(props.settings.roaringMonth);
+const refills = ref(props.settings.refills);
 
 const activity = computed(() => {
     let result = 240;
-    if (hasRoaringMonth.value) {
+    if (roaringMonth.value) {
         result += 90;
     }
-    result += dailyRefills.value * 100;
+    result += refills.value * 100;
     // console.log(result);
-    // console.log(dailyRefills.value);
+    // console.log(refills.value);
     return result;
 });
 
 const cost = computed(() => {
     let result = 0;
-    for (let i = 0; i <= dailyRefills.value; i++) {
-        result += dailyRefillsCost[i];
+    for (let i = 0; i <= refills.value; i++) {
+        result += refillsCost[i];
     }
     // console.log(result);
     return result;
 });
 
 const handleSelected = (value) => {
-    dailyRefills.value = value;
+    refills.value = value;
 };
 
 const saveActivitySettings = () => {
     const settings = {
-        hasRoaringMonth: hasRoaringMonth.value,
-        dailyRefills: dailyRefills.value,
+        roaringMonth: roaringMonth.value,
+        refills: refills.value,
         activity: activity.value,
         cost: cost.value
     };
@@ -78,13 +78,13 @@ const closeOverlay = () => {
             <div class="form-control">
                 <label class="cursor-pointer label justify-center">
                     <span class="label-text text-white mr-3">Roaring Month</span>
-                    <input v-model="hasRoaringMonth" type="checkbox" :checked="hasRoaringMonth" class="checkbox checkbox-info" />
+                    <input v-model="roaringMonth" type="checkbox" :checked="roaringMonth" class="checkbox checkbox-info" />
                 </label>
             </div>
 
             <div class="grid grid-cols-2 items-center translate-x-4 pt-3">
                 <span class="label-text text-white mr-3 justify-self-end">Daily Refill</span>
-                <SelectList class="w-50 justify-self-start" :options="options" :selected="dailyRefills" label="Refills"
+                <SelectList class="w-50 justify-self-start" :options="options" :selected="refills" label="Refills"
                     v-on:update:selected="handleSelected" />
             </div>
 

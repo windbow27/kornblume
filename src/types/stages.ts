@@ -1,6 +1,6 @@
 interface IStage {
     id: number,
-    runs: number,
+    cost: number,
     count: number, // runs
     drops: {
         [materialKey: string]: number,
