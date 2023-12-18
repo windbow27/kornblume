@@ -117,6 +117,15 @@ const sixStarsPullsList = computed(() => {
     return sixStarPulls.map((pullNumber, index) => index === 0 ? pullNumber : pullNumber - sixStarPulls[index - 1]);
 });
 
+const summonSinceLastSixStar = computed(() => {
+    const lastSixStarPull = indexedPulls.value.find(pull => pull.Rarity === 6);
+    if (lastSixStarPull) {
+        return indexedPulls.value.length - lastSixStarPull.PullNumber;
+    } else {
+        return indexedPulls.value.length;
+    }
+});
+
 defineExpose({
     formatDate
 })
@@ -138,34 +147,38 @@ defineExpose({
         <p class=" text-white font-bold text-xl text-center">Summon Summary</p>
         <div class="flex flex-col text-white p-4 gap-2 max-w-sm mx-auto">
             <div class="flex justify-between">
-                <div class="text">Total Summons:</div>
+                <div class="text">Total Summons</div>
                 <div class="number">{{ indexedPulls.length }}</div>
             </div>
             <div class="flex justify-between">
-                <div class="text">6 <i class="fa-solid fa-star text-orange-300"></i> Summons:</div>
+                <div class="text">6 <i class="fa-solid fa-star text-orange-300"></i> Summons</div>
                 <div class="number">{{ indexedPulls.filter(p => p.Rarity === 6).length }}</div>
             </div>
             <div class="flex justify-between">
-                <div class="text">5 <i class="fa-solid fa-star text-yellow-100"></i> Summons:</div>
+                <div class="text">5 <i class="fa-solid fa-star text-yellow-100"></i> Summons</div>
                 <div class="number">{{ indexedPulls.filter(p => p.Rarity === 5).length }}</div>
             </div>
             <div v-if="indexedPulls.filter(p => p.Rarity === 6).length > 0" class="flex justify-between">
-                <div class="text">AVG 6 <i class="fa-solid fa-star text-orange-300"></i> Pity:</div>
+                <div class="text">AVG 6 <i class="fa-solid fa-star text-orange-300"></i> Pity</div>
                 <div class="number">{{ Math.floor(indexedPulls.length / indexedPulls.filter(p => p.Rarity === 6).length) }}
                 </div>
             </div>
             <div v-else class="flex justify-between">
-                <div class="text">AVG 6 <i class="fa-solid fa-star text-orange-300"></i> Pity:</div>
+                <div class="text">AVG 6 <i class="fa-solid fa-star text-orange-300"></i> Pity</div>
                 <div class="number">0</div>
             </div>
             <div v-if="indexedPulls.filter(p => p.Rarity === 5).length > 0" class="flex justify-between">
-                <div class="text">AVG 5 <i class="fa-solid fa-star text-yellow-100"></i> Pity:</div>
+                <div class="text">AVG 5 <i class="fa-solid fa-star text-yellow-100"></i> Pity</div>
                 <div class="number">{{ Math.floor(indexedPulls.length / indexedPulls.filter(p => p.Rarity === 5).length) }}
                 </div>
             </div>
             <div v-else class="flex justify-between">
-                <div class="text">AVG 5 <i class="fa-solid fa-star text-yellow-100"></i> Pity:</div>
+                <div class="text">AVG 5 <i class="fa-solid fa-star text-yellow-100"></i> Pity</div>
                 <div class="number">0</div>
+            </div>
+            <div class="flex justify-between">
+                <div class="text">Current 6 <i class="fa-solid fa-star text-orange-300"></i> Pity</div>
+                <div class="number">{{ summonSinceLastSixStar }} / 70</div>
             </div>
         </div>
 
