@@ -65,7 +65,6 @@ const importStores = (event) => {
 const resetStores = () => {
     resetKornblumeData()
 }
-
 </script>
 
 <style scoped></style>
