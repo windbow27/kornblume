@@ -40,6 +40,67 @@ const summonSinceLastSixStar = computed(() => {
     }
 });
 
+function thresholdFilter (imageData: Uint8ClampedArray): void {
+    if (!imageData) { return; }
+    const thresh = Math.floor(0.5 * 255);
+    for (let i = 0; i < imageData.length; i += 4) {
+        const r = imageData[i];
+        const g = imageData[i + 1];
+        const b = imageData[i + 2];
+        const gray = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        const val: number = gray >= thresh ? 255 : 0;
+        imageData[i] = imageData[i + 1] = imageData[i + 2] = val;
+    }
+    console.log(imageData);
+}
+
+async function imageFileToCanvas (file: File): Promise<HTMLCanvasElement> {
+    return new Promise((resolve) => {
+        console.log(file.name);
+        const image = new Image();
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            image.onload = () => {
+                canvas.width = image.width;
+                canvas.height = image.height;
+                context?.drawImage(image, 0, 0, canvas.width, canvas.height);
+                const imageData = context?.getImageData(0, 0, canvas.width, canvas.height);
+                if (imageData) {
+                    thresholdFilter(imageData.data);
+                    context?.putImageData(imageData, 0, 0);
+                }
+            };
+            image.onerror = (error) => {
+                console.error('Error loading image: ', error);
+            };
+            image.src = event.target?.result as string;
+            const htmlimage: HTMLPictureElement = document.getElementById('testing123') as HTMLPictureElement;
+            htmlimage.setAttribute('src', reader.result as string);
+        };
+        reader.onloadend = () => resolve(canvas);
+        reader.readAsDataURL(file);
+    })
+}
+
+async function binarization (file: File): Promise<File> {
+    const canvas = await imageFileToCanvas(file);
+    return new Promise((resolve, reject) => {
+        canvas.toBlob(
+            (blob: Blob | null) => {
+                if (!blob) { reject(new Error('Couldn\'t convert canvas to blob')); }
+                const modifiedFile = new File([blob as Blob], file.name + '_updated', {
+                    type: file.type,
+                    lastModified: Date.now()
+                });
+                resolve(modifiedFile);
+            }, file.type
+        );
+    });
+}
+
 type clickHandler = (payload: Event) => void | undefined;
 const ocr: clickHandler = (payload: Event): void => {
     const fileList: FileList | null = (payload.target as HTMLInputElement).files;
@@ -48,9 +109,12 @@ const ocr: clickHandler = (payload: Event): void => {
         (async (): Promise<void> => {
             const worker: Tesseract.Worker = await createWorker('eng');
             for (let i: number = 0; i < fileList.length; i++) {
-                const file: File = fileList[i];
+                let file: File = fileList[i];
                 if (file) {
+                    file = await binarization(file);
+                    // imageFileToCanvas(file);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(file);
+                    console.log(ret.data.text);
                     text.value = ret.data.text;
                 }
                 isImporting.value = false;
@@ -77,7 +141,7 @@ const ocr: clickHandler = (payload: Event): void => {
                     const pull = {
                         ArcanistName: arcanistName,
                         Rarity: rarity,
-                        BannerType: BannerType,
+                        BannerType,
                         SummonTime: dateTime
                     };
 
@@ -133,6 +197,7 @@ defineExpose({
 </script>
 
 <template>
+    <img id="testing123" height="2px" width="2px"/>
     <div class="responsive-spacer">
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Summon Tracker</h2>
         <div class="space-x-3">
