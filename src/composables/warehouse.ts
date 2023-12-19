@@ -1,11 +1,10 @@
 import { useDataStore } from '../stores/dataStore';
 import { useWarehouseStore } from '../stores/warehouseStore';
 
-export function addMaterialsToWarehouse (version) {
+export function addEventShopMaterialsToWarehouse (version: string) {
     const shopsData = useDataStore().shops;
     if (version in shopsData) {
         const materials = shopsData[version];
-        // console.log(materials);
 
         materials.forEach((material) => {
             const { Material, Quantity } = material;
