@@ -1,18 +1,11 @@
-<script setup>
+<script setup lang="ts" name="PlannerWarehouse">
 import { ref, onMounted, computed } from 'vue';
-import { useDataStore } from '../../stores/dataStore';
 import { useWarehouseStore } from '../../stores/warehouseStore';
-import { usePlannerSettingsStore } from '../../stores/plannerSettingsStore';
-import { sortMaterials } from '../../composables/CalculateMaterials';
 import WarehouseItem from './warehouse/WarehouseItem.vue';
 import EventShopButton from './warehouse/EventShopButton.vue'
+import { setupWarehouse } from '../../composables/warehouse';
 
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    }
-});
+const emit = defineEmits<{(e: 'closeOverlay'): void}>()
 
 const checkedCategories = ref({
     'Base Item': true,
@@ -22,41 +15,11 @@ const checkedCategories = ref({
 });
 
 onMounted(() => {
-    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
-    if (useWarehouseStore().data.length === 0) {
-        console.log('Initialize warehouse');
-        useDataStore().items.forEach((item) => {
-            if (item.IsReleased || unreleasedDropsEnabled) {
-                if (
-                    item.Category === 'Build Material' ||
-                    item.Category === 'Insight Material' ||
-                    (item.Category === 'Resonate Material' && item.Rarity < 6) ||
-                    item.Name === 'Dust' ||
-                    item.Name === 'Sharpodonty' ||
-                    item.Name === 'Crystal Casket'
-                ) {
-                    useWarehouseStore().initItem(item.Name, item.Category);
-                }
-            }
-        });
-    } else { // else statement to be updated for seamless addition of new warehouse items
-        useDataStore().items.forEach((item) => {
-            if (
-                !useWarehouseStore().hasItem(item.Name) &&
-              (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled))
-            ) {
-                useWarehouseStore().initItem(item.Name, item.Category);
-            } else if (!item.IsReleased && !unreleasedDropsEnabled) {
-                useWarehouseStore().removeItem(item.Name);
-            }
-        });
-    }
-
-    sortMaterials(useWarehouseStore().data);
+    setupWarehouse();
 });
 
-const handleUpdateQuantity = (materialName, updatedQuantity) => {
-    useWarehouseStore().updateItem(materialName, Number(updatedQuantity));
+const updateMaterialQuantity = (materialName, materialQuantity) => {
+    useWarehouseStore().updateItem(materialName, Number(materialQuantity));
 };
 
 const filterWarehouse = (category) => {
@@ -138,7 +101,7 @@ const closeOverlay = () => {
       <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden flex-grow mb-5">
         <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-10">
           <WarehouseItem v-for="material in filteredWarehouse" :key="material.Material" :material="material"
-            @update:quantity="handleUpdateQuantity(material.Material, $event)"/>
+            @update:quantity="updateMaterialQuantity(material.Material, $event)"/>
         </div>
       </div>
 

@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia';
 
-interface IResource {
+export interface IItem {
     Category: string,
     Material: string,
     Quantity: number
 }
 
-interface IWarehouse extends Array<IResource>{}
+interface IWarehouse extends Array<IItem>{}
 
 interface IWarehouseStore {
     data: IWarehouse,
