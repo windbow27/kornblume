@@ -5,7 +5,7 @@ const calculations = levelUpResources;
 const items = useDataStore().items;
 const arcanists = useDataStore().arcanists;
 
-export function sortMaterials (array) {
+function sortMaterials (array) {
     array.sort((a, b) => {
         // Find corresponding item based on material name
         const itemA = items.find(item => item.Name === a.Material);

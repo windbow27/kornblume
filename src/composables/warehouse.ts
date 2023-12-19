@@ -16,7 +16,7 @@ export function addEventShopMaterialsToWarehouse (version: string) {
     }
 }
 
-const initializeWarehouse = () => {
+export const initializeWarehouse = () => {
     const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
     console.log('Initialize warehouse');
     useDataStore().items.forEach((item) => {
@@ -35,7 +35,7 @@ const initializeWarehouse = () => {
     });
 }
 
-const checkWarehouse = () => {
+export const checkWarehouse = () => {
     const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
     useDataStore().items.forEach((item) => {
         if (
@@ -56,7 +56,7 @@ const categoryPriority = {
     'Build Material': 2 // insight/build material have same priority, should be arranged according to rarity
 }
 
-function sortMaterials (array: IWarehouseItem[]) {
+export const sortWarehouseMaterials = (array: IWarehouseItem[]) => {
     const itemsData = useDataStore().items;
 
     array.sort((warehouseMatlA, warehouseMatlB) => {
@@ -82,13 +82,4 @@ function sortMaterials (array: IWarehouseItem[]) {
             return itemIndexB - itemIndexA;
         }
     });
-}
-
-export const setupWarehouse = () => {
-    if (useWarehouseStore().data.length === 0) {
-        initializeWarehouse();
-    } else { // else statement to be updated for seamless addition of new warehouse items
-        checkWarehouse();
-    }
-    sortMaterials(useWarehouseStore().data);
 }

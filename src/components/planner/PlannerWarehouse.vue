@@ -3,7 +3,7 @@ import { ref, onMounted, computed } from 'vue';
 import { useWarehouseStore } from '../../stores/warehouseStore';
 import WarehouseItem from './warehouse/WarehouseItem.vue';
 import EventShopButton from './warehouse/EventShopButton.vue'
-import { setupWarehouse } from '../../composables/warehouse';
+import { initializeWarehouse, checkWarehouse, sortWarehouseMaterials } from '../../composables/warehouse';
 
 const emit = defineEmits<{(e: 'closeOverlay'): void}>()
 
@@ -13,6 +13,15 @@ const checkedCategories = ref({
     'Insight Material': true,
     'Resonate Material': true
 });
+
+const setupWarehouse = () => {
+    if (useWarehouseStore().data.length === 0) {
+        initializeWarehouse();
+    } else { // else statement to be updated for seamless addition of new warehouse items
+        checkWarehouse();
+    }
+    sortWarehouseMaterials(useWarehouseStore().data);
+}
 
 onMounted(() => {
     setupWarehouse();
