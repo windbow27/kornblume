@@ -22,6 +22,9 @@ export const usePullsRecordStore = defineStore('pulls', {
             this.data = [
                 ...newData
             ]
+        },
+        reset () {
+            this.data = []
         }
     },
     persist: true

@@ -148,6 +148,12 @@ const isEqualPull = (pull1, pull2) => {
 }
 
 const formatDate = (date: Date): string => {
+    if (typeof date === 'string') {
+        date = new Date(date);
+    }
+    if (!(date instanceof Date) || isNaN(date.getTime())) {
+        return '';
+    }
     const formattedDate: string = date.toLocaleDateString('en-GB', {
         day: '2-digit',
         month: '2-digit',

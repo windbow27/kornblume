@@ -17,20 +17,38 @@
         <h2 class="text-2xl text-white font-bold my-4 lg:my-6">Danger Zone</h2>
         <p class="text-white">If you encounter any unexpected issues with the site, you can reset your data. Sorry for the
             inconvenience.</p>
-        <div class="flex justify-center items-center p-2">
-            <button onclick="my_modal_2.showModal()"
+        <div class="flex justify-center items-center p-2 space-x-10">
+            <button onclick="resetTracker.showModal()"
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
+                Reset Tracker
+            </button>
+            <button onclick="resetAll.showModal()"
                 class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
                 Reset Data
             </button>
         </div>
 
-        <dialog id="my_modal_2" class="modal">
+        <dialog id="resetTracker" class="modal">
             <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
                 <p class="pb-4 text-white text-center">Once you delete your data, there is no going back.</p>
                 <p class="pb-4 text-white text-center">Please be certain.</p>
+                <button @click="resetTracker"
+                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
+                    Reset Tracker
+                </button>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
+
+        <dialog id="resetAll" class="modal">
+            <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
+                <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.</p>
+                <p class="pb-4 text-white text-center">Please be certain.</p>
                 <button @click="resetStores"
                     class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
-                    Reset
+                    Reset All
                 </button>
             </div>
             <form method="dialog" class="modal-backdrop">
@@ -43,6 +61,7 @@
 <script setup lang="ts" name="ProfileView">
 import { ref, Ref } from 'vue'
 import { exportKornblumeData, importKornblumeData, resetKornblumeData } from '@/utils';
+import { usePullsRecordStore } from '@/stores/pullsRecordStore';
 
 const fileInput = ref(null)
 
@@ -64,6 +83,11 @@ const importStores = (event) => {
 
 const resetStores = () => {
     resetKornblumeData()
+}
+
+const resetTracker = () => {
+    usePullsRecordStore().reset()
+    window.location.reload()
 }
 </script>
 
