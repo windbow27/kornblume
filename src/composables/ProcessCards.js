@@ -86,6 +86,11 @@ function subtractResonateMaterials (materials) {
 }
 
 function getDrops () {
+    if (usePlannerSettingsStore().settings.enableGreedyMethod) {
+        return usePlannerSettingsStore().settings.enabledUnreleasedStages
+            ? useDataStore().stages1_4_greedy
+            : useDataStore().stages_greedy;
+    }
     return usePlannerSettingsStore().settings.enabledUnreleasedStages
         ? useDataStore().stages1_4
         : useDataStore().stages;

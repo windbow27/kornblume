@@ -1,17 +1,21 @@
 import { defineStore } from 'pinia';
 
+export interface IPlannerSettings {
+    showUnreleasedArcanists: boolean,
+    enabledUnreleasedStages: boolean,
+    enableGreedyMethod: boolean,
+}
+
 interface IPlannerSettingsStore {
-    settings: {
-        showUnreleasedArcanists: boolean,
-        enabledUnreleasedStages: boolean
-    }
+    settings: IPlannerSettings
 }
 
 export const usePlannerSettingsStore = defineStore('plannerSettings', {
     state: (): IPlannerSettingsStore => ({
         settings: {
             showUnreleasedArcanists: false,
-            enabledUnreleasedStages: false
+            enabledUnreleasedStages: false,
+            enableGreedyMethod: false
         }
     }),
     persist: true
