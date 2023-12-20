@@ -213,8 +213,8 @@ onClickOutside(settingsRef, closeSettings)
           <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-box-archive"></i></button>
         </div>
-        <div class="tooltip" data-tip="CN Data">
-          <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button">雷</button>
+        <div class="tooltip" data-tip="Settings">
+          <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-gear"></i></button>
         </div>
       </div>
     </div>

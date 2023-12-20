@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { usePlannerSettingsStore } from '../../stores/plannerSettingsStore';
 import ArcanistIcon from './ArcanistIcon.vue';
 
 const props = defineProps({
@@ -40,16 +41,22 @@ const filteredArcanists = computed(() => {
 
 <template>
   <div class="list-overlay">
-    <div class="custom-modal-small h-2/3">
+    <div class="custom-modal-small h-5/6 lg:h-3/4">
 
       <!-- Search bar -->
-      <div class="relative mb-4">
+      <div class="relative">
         <input v-model="searchQuery" type="text" placeholder="Search Arcanists"
           class="bg-gray-800 text-white p-2 rounded-md w-11/12 focus:outline-none">
         <!-- Close button aligned with the right edge of the search bar -->
         <button @click="closeOverlay" class="absolute top-2 right-0 text-white">
           <i class="fas fa-times"></i>
         </button>
+        <div class="form-control">
+          <label class="cursor-pointer label justify-center space-x-5">
+            <span class="label-text text-white text-md">Show Unreleased Arcanists</span>
+            <input v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists" type="checkbox" class="checkbox checkbox-info" />
+          </label>
+        </div>
       </div>
 
       <!-- Arcanist list with scrollbar -->
@@ -64,5 +71,4 @@ const filteredArcanists = computed(() => {
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

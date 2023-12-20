@@ -19,7 +19,6 @@ const emit = defineEmits({
     }
 });
 
-const isShowUnreleased = ref(props.settings.showUnreleasedArcanists);
 const isUnreleasedDrops = ref(props.settings.enabledUnreleasedStages);
 
 const closeOverlay = () => {
@@ -28,7 +27,7 @@ const closeOverlay = () => {
 
 const saveSettings = () => {
     const updatedSettings = {
-        showUnreleasedArcanists: isShowUnreleased.value,
+        showUnreleasedArcanists: props.settings.showUnreleasedArcanists,
         enabledUnreleasedStages: isUnreleasedDrops.value
     };
     emit('saveSettings', updatedSettings);
@@ -43,12 +42,6 @@ const saveSettings = () => {
             <button @click="closeOverlay" class="absolute top-2 right-4 text-white">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="form-control">
-                <label class="cursor-pointer label justify-center space-x-5">
-                    <span class="label-text text-white text-md">Show Unreleased Arcanists</span>
-                    <input v-model="isShowUnreleased" type="checkbox" class="checkbox checkbox-info" />
-                </label>
-            </div>
             <div class="form-control">
                 <label class="cursor-pointer label justify-center space-x-5 text-center">
                     <span class="label-text text-white text-md">Use 1.4 Stage Data (Experimental)</span>

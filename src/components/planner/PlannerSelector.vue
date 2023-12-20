@@ -31,7 +31,7 @@ const handleRightClick = (arcanist) => {
                 @click="handleLeftClick(arcanist)"
                 @contextmenu.prevent="handleRightClick(arcanist)"/>
         </div>
-        <p class="text-center text-slate-300 text-sm opacity-70">Left click to edit, right click to show / hide. Enable unreleased in (雷) CN Data.</p>
+        <p class="text-center text-slate-300 text-sm opacity-70">Left click to edit, right click to show / hide.</p>
     </div>
 </template>
 
