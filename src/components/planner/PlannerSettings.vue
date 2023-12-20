@@ -40,7 +40,7 @@ const saveSettings = () => {
             <div class="form-control">
                 <div class="tooltip" :data-tip="'Only consider droprates for Purple tier'">
                     <label class="cursor-pointer label justify-center space-x-5 text-center">
-                        <span class="label-text text-white text-md">Enable Greedy Method (Experimental)</span>
+                        <span class="label-text text-white text-md">Enable Greedy Method</span>
                         <input v-model="enableGreedyMethod" type="checkbox" class="checkbox checkbox-info" />
                     </label>
                 </div>
