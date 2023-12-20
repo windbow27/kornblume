@@ -48,7 +48,6 @@ async function preprocessImage (file: File) {
 
     const grey = blurred.grey();
 
-    // Define sharpening kernel
     const kernel = [
         [0, -1, 0],
         [-1, 5, -1],
@@ -58,7 +57,9 @@ async function preprocessImage (file: File) {
     // Apply sharpening filter
     const sharpened = grey.convolution(kernel);
 
-    return sharpened.getCanvas();
+    const gaussian = sharpened.gaussianFilter({ radius: 1 });
+
+    return gaussian.getCanvas();
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -79,8 +80,9 @@ const ocr: clickHandler = (payload: Event): void => {
                     const arcanistNames = arcanists.map(a => a.Name);
                     arcanistNames.push('3uma');
                     arcanistNames.push('uma');
+                    arcanistNames.push('aliEnT');
 
-                    const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames.join('|')})\\s*(\\((?<Rarity>\\d+)\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
+                    const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames.join('|')})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
                     const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; SummonTime: Date }[] = [];
 
                     // Extract information from each line
@@ -90,21 +92,23 @@ const ocr: clickHandler = (payload: Event): void => {
                             let arcanistName: string = match.groups?.ArcanistName.trim() || '';
                             if (arcanistName === '3uma' || arcanistName === 'uma') {
                                 arcanistName = 'Зима';
+                            } else if (arcanistName === 'aliEnT') {
+                                arcanistName = 'aliEn T';
                             }
-                            const arcanist = arcanists.find(a => a.Name === arcanistName);
+                            const arcanist = arcanists.find(a => a.Name.toLowerCase() === arcanistName.toLowerCase());
                             const rarity: number = arcanist ? arcanist.Rarity : 0;
                             const BannerType: string = match.groups?.BannerType.trim() || '';
                             const dateTime: Date = new Date(match.groups?.Date || '');
 
                             // Create an object for each pull
                             const pull = {
-                                ArcanistName: arcanistName,
+                                ArcanistName: arcanist?.Name || '',
                                 Rarity: rarity,
                                 BannerType,
                                 SummonTime: dateTime
                             };
+                            console.log(pull);
 
-                            // Add the pull to the array
                             currentPulls.push(pull);
                             // console.log(currentPulls);
                         }
@@ -153,6 +157,10 @@ const formatDate = (date: Date): string => {
     });
     return `${formattedDate} ${formattedTime}`;
 }
+
+// const rarityFilter = computed(() => {
+//     return pulls.value.filter(pull => pull.Rarity === 6);
+// });
 
 defineExpose({
     formatDate
