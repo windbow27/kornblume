@@ -83,7 +83,7 @@ const closeDialog = () => dialog.value?.close()
       <button @click="closeWarehouseOverlay" class="absolute top-2 right-4 text-white">
         <i class="fas fa-times"></i>
       </button>
-      <p class="text-white text-center font-bold text-lg">Warehouse</p>
+        <p class="text-white text-center font-bold text-lg">Warehouse (Auto-save)</p>
 
       <div>
         <div class="grid grid-cols-2 xl:grid-cols-4 justify-center items-center pb-5 text-center">

@@ -2,6 +2,7 @@
 import { ref, computed, watchEffect } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 
+import { useGlobalStore } from '../stores/global'
 import { usePlannerStore } from '../stores/plannerStore'
 import { useActivityStore } from '../stores/activityStore'
 import { useWildernessStore } from '../stores/wildernessStore'
@@ -110,6 +111,7 @@ const openWarehouse = () => {
 
 const closeWarehouse = () => {
     isWarehouse.value = false
+    useGlobalStore().setIsEditingWarehouse(false);
 }
 
 const openSettings = () => {
