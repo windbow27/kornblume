@@ -1,0 +1,222 @@
+{
+    "3-7H Scottish": {
+      "id": 8,
+      "count": 1143,
+      "cost": 18,
+      "drops": {
+        "Bifurcated Skeleton": 383,
+        "Liquefied Terror": 266,
+        "Shattered Bones": 760,
+        "Trembling Tooth": 654
+      }
+    },
+    "3-8H Scattered Pamphlets": {
+      "id": 9,
+      "count": 918,
+      "cost": 18,
+      "drops": {
+        "Holy Silver": 321,
+        "Esoteric Bones": 271,
+        "Silver Ore": 582,
+        "Shattered Bones": 1119
+      }
+    },
+    "3-11H Freedom of the Dumb": {
+      "id": 11,
+      "count": 1130,
+      "cost": 18,
+      "drops": {
+        "Clawed Pendulum": 354,
+        "Milled Magnesia": 151,
+        "Spell of Banishing": 760,
+        "Magnesia Crystal": 403
+      }
+    },
+    "3-13H A Yard": {
+      "id": 12,
+      "count": 2210,
+      "cost": 18,
+      "drops": {
+        "Salted Mandrake": 756,
+        "Milled Magnesia": 297,
+        "Magnesia Crystal": 1521,
+        "Murmur of Insanity": 49
+      }
+    },
+    "4-10H A Wandering Dog": {
+      "id": 15,
+      "count": 3558,
+      "cost": 18,
+      "drops": {
+        "Biting Box": 1001,
+        "Rough Silver Ingot": 1948,
+        "Silver Ore": 2502,
+        "Liquefied Terror": 112,
+        "Spell of Fortune": 208,
+        "Milled Magnesia": 127,
+        "Esoteric Bones": 129
+      }
+    },
+    "4-11H A Sweet Apple": {
+      "id": 16,
+      "count": 292,
+      "cost": 18,
+      "drops": {
+        "Prophetic Bird": 131,
+        "Esoteric Bones": 105,
+        "Shattered Bones": 337,
+        "Spell of Banishing": 151
+      }
+    },
+    "4-20H Picnic of the Lawn": {
+      "id": 19,
+      "count": 1933,
+      "cost": 18,
+      "drops": {
+        "Bifurcated Skeleton": 655,
+        "Spell of Fortune": 877,
+        "Shattered Bones": 1267,
+        "Spell of Banishing": 3905
+      }
+    },
+    "4-21H Good Weather": {
+      "id": 20,
+      "count": 310,
+      "cost": 18,
+      "drops": {
+        "Salted Mandrake": 94,
+        "Liquefied Terror": 63,
+        "Trembling Tooth": 174,
+        "Magnesia Crystal": 217
+      }
+    },
+    "The Poussiere VI": {
+      "id": 21,
+      "count": 1,
+      "cost": 25,
+      "drops": {
+        "Dust": 12000,
+        "Sharpodonty": 250
+      }
+    },
+    "Mintage Aesthetics VI": {
+      "id": 22,
+      "count": 1,
+      "cost": 25,
+      "drops": {
+        "Sharpodonty": 9000
+      }
+    },
+    "Mountain Echoes II": {
+      "id": 23,
+      "count": 1,
+      "cost": 18,
+      "drops": {
+        "Page of Mineral Wealth": 2
+      }
+    },
+    "Mountain Echoes IV": {
+      "id": 24,
+      "count": 1,
+      "cost": 24,
+      "drops": {
+        "Scroll of Mineral Wealth": 2
+      }
+    },
+    "Mountain Echoes VI": {
+      "id": 25,
+      "count": 1,
+      "cost": 30,
+      "drops": {
+        "Tome of Mineral Wealth": 2
+      }
+    },
+    "Starfall Locale II": {
+      "id": 26,
+      "count": 1,
+      "cost": 18,
+      "drops": {
+        "Page of Starlit Ascent": 2
+      }
+    },
+    "Starfall Locale IV": {
+      "id": 27,
+      "count": 1,
+      "cost": 24,
+      "drops": {
+        "Scroll of Starlit Ascent": 2
+      }
+    },
+    "Starfall Locale VI": {
+      "id": 28,
+      "count": 1,
+      "cost": 30,
+      "drops": {
+        "Tome of Starlit Ascent": 2
+      }
+    },
+    "Sylvanus Shape II": {
+      "id": 29,
+      "count": 1,
+      "cost": 18,
+      "drops": {
+        "Page of Plantal Vimen": 2
+      }
+    },
+    "Sylvanus Shape IV": {
+      "id": 30,
+      "count": 1,
+      "cost": 24,
+      "drops": {
+        "Scroll of Plantal Vimen": 2
+      }
+    },
+    "Sylvanus Shape VI": {
+      "id": 31,
+      "count": 1,
+      "cost": 30,
+      "drops": {
+        "Tome of Plantal Vimen": 2
+      }
+    },
+    "Brutes Wilds II": {
+      "id": 32,
+      "count": 1,
+      "cost": 18,
+      "drops": {
+        "Page of Beastly Thirst": 2
+      }
+    },
+    "Brutes Wilds IV": {
+      "id": 33,
+      "count": 1,
+      "cost": 24,
+      "drops": {
+        "Scroll of Beastly Thirst": 2
+      }
+    },
+    "Brutes Wilds VI": {
+      "id": 34,
+      "count": 1,
+      "cost": 30,
+      "drops": {
+        "Tome of Beastly Thirst": 2
+      }
+    },
+    "Unreleased (Placeholder)": {
+      "id": 35,
+      "count": 1,
+      "cost": 1,
+      "drops": {
+        "Caduceus": 1,
+        "Glimmering Mothwing Lamp": 1,
+        "Wheel and Axle Core": 1,
+        "Crimson Gold Compass": 1,
+        "Winged Key": 1,
+        "Curved Goose Neck": 1,
+        "Gold Dust Beetle": 1,
+        "Dried Cicada Wing": 1,
+        "Ceaseless Wheel": 1
+      }
+    }
+  }
