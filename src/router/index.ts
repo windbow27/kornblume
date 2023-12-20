@@ -13,11 +13,11 @@ const router = createRouter({
             }
         },
         {
-            path: '/profile',
-            name: 'profile',
-            component: () => import('../views/ProfileView.vue'),
+            path: '/tracker',
+            name: 'tracker',
+            component: () => import('../views/TrackerView.vue'),
             meta: {
-                requiredJson: []
+                requiredJson: ['arcanists']
             }
         },
         {
@@ -26,6 +26,14 @@ const router = createRouter({
             component: () => import('../views/PlannerView.vue'),
             meta: {
                 requiredJson: ['arcanists', 'items', 'shops', 'formulas', 'stages', 'stages1_4', 'stages_greedy', 'stages1_4_greedy']
+            }
+        },
+        {
+            path: '/profile',
+            name: 'profile',
+            component: () => import('../views/ProfileView.vue'),
+            meta: {
+                requiredJson: []
             }
         }
     ]
