@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ref, computed, defineExpose, Ref } from 'vue'
+import { ref, computed, defineExpose, Ref, watchEffect, onMounted } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { Image } from 'image-js';
 import Tesseract, { createWorker } from 'tesseract.js';
 import ArcanistIcon from '../components/arcanist/ArcanistIcon.vue';
 import TrackerArcanistIcon from '../components/tracker/TrackerArcanistIcon.vue';
+import { usePullsRecordStore } from '../stores/pullsRecordStore'
 
 const fileInput = ref(null)
 const isImporting = ref(false);
@@ -62,6 +63,12 @@ async function preprocessImage (file: File) {
     return gaussian.getCanvas();
 }
 
+const ocrCorrectionMap = {
+    '3uma': 'Зима',
+    uma: 'Зима',
+    aliEnT: 'aliEn T'
+}
+
 type clickHandler = (payload: Event) => void | undefined;
 const ocr: clickHandler = (payload: Event): void => {
     const fileList: FileList | null = (payload.target as HTMLInputElement).files;
@@ -74,15 +81,13 @@ const ocr: clickHandler = (payload: Event): void => {
                 if (file) {
                     const canvas = await preprocessImage(file);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(canvas);
-                    console.log(ret.data.text);
+                    // console.log(ret.data.text);
                     text.value = ret.data.text;
 
                     const arcanistNames = arcanists.map(a => a.Name);
-                    arcanistNames.push('3uma');
-                    arcanistNames.push('uma');
-                    arcanistNames.push('aliEnT');
+                    const arcanistNamesRegex = [...arcanistNames, ...Object.keys(ocrCorrectionMap)].join('|')
 
-                    const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames.join('|')})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
+                    const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNamesRegex})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
                     const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; SummonTime: Date }[] = [];
 
                     // Extract information from each line
@@ -90,10 +95,8 @@ const ocr: clickHandler = (payload: Event): void => {
                         const match = line.match(pattern);
                         if (match) {
                             let arcanistName: string = match.groups?.ArcanistName.trim() || '';
-                            if (arcanistName === '3uma' || arcanistName === 'uma') {
-                                arcanistName = 'Зима';
-                            } else if (arcanistName === 'aliEnT') {
-                                arcanistName = 'aliEn T';
+                            if (ocrCorrectionMap[arcanistName]) {
+                                arcanistName = ocrCorrectionMap[arcanistName]
                             }
                             const arcanist = arcanists.find(a => a.Name.toLowerCase() === arcanistName.toLowerCase());
                             const rarity: number = arcanist ? arcanist.Rarity : 0;
@@ -180,6 +183,18 @@ defineExpose({
     formatDate
 })
 
+watchEffect(() => {
+    if (pulls.value.length > 0) {
+        usePullsRecordStore().updatePullsRecord(pulls.value)
+    }
+});
+
+onMounted(() => {
+    if (usePullsRecordStore().data.length > 0) {
+        pulls.value = [...usePullsRecordStore().data]
+    }
+})
+
 </script>
 
 <template>
@@ -189,7 +204,7 @@ defineExpose({
         <div class="space-x-3">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                 multiple />
-            <button @click="triggerFileInput"
+            <button @click="triggerFileInput" :disabled="isImporting"
                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
                 OCR Import
             </button>
