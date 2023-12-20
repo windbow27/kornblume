@@ -46,10 +46,19 @@ async function preprocessImage (file: File) {
 
     const blurred = imageData.blurFilter({ radius: 1 });
 
-    // Convert the image to grayscale
     const grey = blurred.grey();
 
-    return grey.getCanvas();
+    // Define sharpening kernel
+    const kernel = [
+        [0, -1, 0],
+        [-1, 5, -1],
+        [0, -1, 0]
+    ];
+
+    // Apply sharpening filter
+    const sharpened = grey.convolution(kernel);
+
+    return sharpened.getCanvas();
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -66,54 +75,56 @@ const ocr: clickHandler = (payload: Event): void => {
                     const ret: Tesseract.RecognizeResult = await worker.recognize(canvas);
                     console.log(ret.data.text);
                     text.value = ret.data.text;
+
+                    const arcanistNames = arcanists.map(a => a.Name);
+                    arcanistNames.push('3uma');
+                    arcanistNames.push('uma');
+
+                    const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames.join('|')})\\s*(\\((?<Rarity>\\d+)\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
+                    const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; SummonTime: Date }[] = [];
+
+                    // Extract information from each line
+                    text.value.trim().split('\n').forEach((line) => {
+                        const match = line.match(pattern);
+                        if (match) {
+                            let arcanistName: string = match.groups?.ArcanistName.trim() || '';
+                            if (arcanistName === '3uma' || arcanistName === 'uma') {
+                                arcanistName = 'Зима';
+                            }
+                            const arcanist = arcanists.find(a => a.Name === arcanistName);
+                            const rarity: number = arcanist ? arcanist.Rarity : 0;
+                            const BannerType: string = match.groups?.BannerType.trim() || '';
+                            const dateTime: Date = new Date(match.groups?.Date || '');
+
+                            // Create an object for each pull
+                            const pull = {
+                                ArcanistName: arcanistName,
+                                Rarity: rarity,
+                                BannerType,
+                                SummonTime: dateTime
+                            };
+
+                            // Add the pull to the array
+                            currentPulls.push(pull);
+                            // console.log(currentPulls);
+                        }
+                    });
+
+                    // console.log(currentPulls);
+
+                    const isSubset = currentPulls.every(currentPull =>
+                        pulls.value.some(pull => isEqualPull(pull, currentPull))
+                    );
+                    // console.log(isSubset);
+
+                    if (!isSubset) {
+                        // If currentPulls is not a subset of pulls, add all currentPulls to pulls
+                        pulls.value.push(...currentPulls);
+                    }
                 }
-                isImporting.value = false;
             }
             await worker.terminate();
-
-            const arcanistNames = arcanists.map(a => a.Name);
-            arcanistNames.push('3uma');
-
-            const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames.join('|')})\\s*(\\((?<Rarity>\\d+)\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
-            const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; SummonTime: Date }[] = [];
-
-            // Extract information from each line
-            text.value.trim().split('\n').forEach((line) => {
-                const match = line.match(pattern);
-                if (match) {
-                    let arcanistName: string = match.groups?.ArcanistName.trim() || '';
-                    if (arcanistName === '3uma') {
-                        arcanistName = 'Зима';
-                    }
-                    const arcanist = arcanists.find(a => a.Name === arcanistName);
-                    const rarity: number = arcanist ? arcanist.Rarity : 0;
-                    const BannerType: string = match.groups?.BannerType.trim() || '';
-                    const dateTime: Date = new Date(match.groups?.Date || '');
-
-                    // Create an object for each pull
-                    const pull = {
-                        ArcanistName: arcanistName,
-                        Rarity: rarity,
-                        BannerType,
-                        SummonTime: dateTime
-                    };
-
-                    // Add the pull to the array
-                    currentPulls.push(pull);
-                }
-            });
-
-            // console.log(currentPulls);
-
-            const isSubset = currentPulls.every(currentPull =>
-                pulls.value.some(pull => isEqualPull(pull, currentPull))
-            );
-            // console.log(isSubset);
-
-            if (!isSubset) {
-                // If currentPulls is not a subset of pulls, add all currentPulls to pulls
-                pulls.value.push(...currentPulls);
-            }
+            isImporting.value = false;
         })();
     }
 }
@@ -161,6 +172,7 @@ defineExpose({
                 OCR Import
             </button>
             <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
+            <span v-show="isImporting" class="text-white text-base"> Processing... Please wait...</span>
         </div>
         <p class=" text-white font-bold text-xl text-center">Summon Summary</p>
         <div class="flex flex-col text-white p-4 gap-2 max-w-sm mx-auto">
