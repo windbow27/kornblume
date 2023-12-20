@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, defineExpose, Ref } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
+import { Image } from 'image-js';
 import Tesseract, { createWorker } from 'tesseract.js';
 import ArcanistIcon from '../components/arcanist/ArcanistIcon.vue';
 import TrackerArcanistIcon from '../components/tracker/TrackerArcanistIcon.vue';
@@ -40,65 +41,15 @@ const summonSinceLastSixStar = computed(() => {
     }
 });
 
-function thresholdFilter (imageData: Uint8ClampedArray): void {
-    if (!imageData) { return; }
-    const thresh = Math.floor(0.5 * 255);
-    for (let i = 0; i < imageData.length; i += 4) {
-        const r = imageData[i];
-        const g = imageData[i + 1];
-        const b = imageData[i + 2];
-        const gray = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-        const val: number = gray >= thresh ? 255 : 0;
-        imageData[i] = imageData[i + 1] = imageData[i + 2] = val;
-    }
-    console.log(imageData);
-}
+async function preprocessImage (file: File) {
+    const imageData = await Image.load(await file.arrayBuffer());
 
-async function imageFileToCanvas (file: File): Promise<HTMLCanvasElement> {
-    return new Promise((resolve) => {
-        console.log(file.name);
-        const image = new Image();
-        const canvas = document.createElement('canvas');
-        const context = canvas.getContext('2d');
+    const blurred = imageData.blurFilter({ radius: 1 });
 
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            image.onload = () => {
-                canvas.width = image.width;
-                canvas.height = image.height;
-                context?.drawImage(image, 0, 0, canvas.width, canvas.height);
-                const imageData = context?.getImageData(0, 0, canvas.width, canvas.height);
-                if (imageData) {
-                    thresholdFilter(imageData.data);
-                    context?.putImageData(imageData, 0, 0);
-                }
-            };
-            image.onerror = (error) => {
-                console.error('Error loading image: ', error);
-            };
-            image.src = event.target?.result as string;
-            const htmlimage: HTMLPictureElement = document.getElementById('testing123') as HTMLPictureElement;
-            htmlimage.setAttribute('src', reader.result as string);
-        };
-        reader.onloadend = () => resolve(canvas);
-        reader.readAsDataURL(file);
-    })
-}
+    // Convert the image to grayscale
+    const grey = blurred.grey();
 
-async function binarization (file: File): Promise<File> {
-    const canvas = await imageFileToCanvas(file);
-    return new Promise((resolve, reject) => {
-        canvas.toBlob(
-            (blob: Blob | null) => {
-                if (!blob) { reject(new Error('Couldn\'t convert canvas to blob')); }
-                const modifiedFile = new File([blob as Blob], file.name + '_updated', {
-                    type: file.type,
-                    lastModified: Date.now()
-                });
-                resolve(modifiedFile);
-            }, file.type
-        );
-    });
+    return grey.getCanvas();
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -109,11 +60,10 @@ const ocr: clickHandler = (payload: Event): void => {
         (async (): Promise<void> => {
             const worker: Tesseract.Worker = await createWorker('eng');
             for (let i: number = 0; i < fileList.length; i++) {
-                let file: File = fileList[i];
+                const file: File = fileList[i];
                 if (file) {
-                    file = await binarization(file);
-                    // imageFileToCanvas(file);
-                    const ret: Tesseract.RecognizeResult = await worker.recognize(file);
+                    const canvas = await preprocessImage(file);
+                    const ret: Tesseract.RecognizeResult = await worker.recognize(canvas);
                     console.log(ret.data.text);
                     text.value = ret.data.text;
                 }
@@ -121,17 +71,20 @@ const ocr: clickHandler = (payload: Event): void => {
             }
             await worker.terminate();
 
-            const arcanistNames = arcanists.map(a => a.Name).join('|');
+            const arcanistNames = arcanists.map(a => a.Name);
+            arcanistNames.push('3uma');
 
-            const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames})(\\((?<Rarity>\\d+)\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`);
-
+            const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNames.join('|')})\\s*(\\((?<Rarity>\\d+)\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
             const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; SummonTime: Date }[] = [];
 
             // Extract information from each line
             text.value.trim().split('\n').forEach((line) => {
                 const match = line.match(pattern);
                 if (match) {
-                    const arcanistName: string = match.groups?.ArcanistName.trim() || '';
+                    let arcanistName: string = match.groups?.ArcanistName.trim() || '';
+                    if (arcanistName === '3uma') {
+                        arcanistName = 'Зима';
+                    }
                     const arcanist = arcanists.find(a => a.Name === arcanistName);
                     const rarity: number = arcanist ? arcanist.Rarity : 0;
                     const BannerType: string = match.groups?.BannerType.trim() || '';
