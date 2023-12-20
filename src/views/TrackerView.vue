@@ -45,7 +45,9 @@ const summonSinceLastSixStar = computed(() => {
 async function preprocessImage (file: File) {
     const imageData = await Image.load(await file.arrayBuffer());
 
-    const grey = imageData.grey();
+    const blurred = imageData.blurFilter({ radius: 1 });
+
+    const grey = blurred.grey();
 
     const kernel = [
         [0, -1, 0],
@@ -99,14 +101,14 @@ const ocr: clickHandler = (payload: Event): void => {
                             }
                             const arcanist = arcanists.find(a => a.Name.toLowerCase() === arcanistName.toLowerCase());
                             const rarity: number = arcanist ? arcanist.Rarity : 0;
-                            const BannerType: string = match.groups?.BannerType.trim() || '';
+                            const bannerType: string = match.groups?.BannerType.trim() || '';
                             const dateTime: Date = new Date(match.groups?.Date || '');
 
                             // Create an object for each pull
                             const pull = {
                                 ArcanistName: arcanist?.Name || '',
                                 Rarity: rarity,
-                                BannerType,
+                                BannerType: bannerType,
                                 SummonTime: dateTime
                             };
                             // console.log(pull);
@@ -141,6 +143,9 @@ const triggerFileInput = () => {
 }
 
 const isEqualPull = (pull1, pull2) => {
+    if (!pull1.SummonTime || !pull2.SummonTime) {
+        return false;
+    }
     return pull1.ArcanistName === pull2.ArcanistName &&
         pull1.SummonTime.getTime() === pull2.SummonTime.getTime() &&
         pull1.Rarity === pull2.Rarity;
@@ -203,7 +208,7 @@ onMounted(() => {
     <div class="responsive-spacer">
 
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            Summon Tracker <span class="text-sm text-info">Beta. Expect bugs to happen.</span>
+            Summon Tracker <span class="text-sm text-info">Beta. Expect bugs to happen. Like, a lot of bugs. Be ready to reset your Tracker Data in Profile, and please report if you find any bugs (A lot).</span>
         </h2>
         <div class="space-x-3">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
@@ -239,7 +244,7 @@ onMounted(() => {
             </dialog>
         </div>
 
-        <p class=" text-white font-bold text-xl text-center">Summon Summary</p>
+        <p class=" text-white font-bold text-xl text-center pt-4">Summon Summary</p>
         <div class="flex flex-col text-white p-4 gap-2 max-w-sm mx-auto">
             <div class="flex justify-between">
                 <div class="text">Total Summons</div>
