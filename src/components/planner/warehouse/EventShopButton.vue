@@ -1,13 +1,15 @@
 <script setup lang="ts" name="EventShopButton">
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { addEventShopMaterialsToWarehouse } from '../../../composables/warehouse'
 
 const dialog = ref<HTMLDialogElement>()
 
-const emit = defineEmits<{(e: 'closeOverlay'): void}>()
+const emit = defineEmits<{(e: 'closeOverlay'): void }>()
 
 const props = defineProps<{
-    version: string
+    version: string,
+    text: string,
+    type: string
 }>()
 
 const addItems = () => {
@@ -16,16 +18,6 @@ const addItems = () => {
     closeDialog();
 };
 
-const majorVersion = computed(() => {
-    const { version } = props
-    return version.substring(0, version.length - 1)
-})
-
-const minorVersion = computed(() => {
-    const { version } = props
-    return version[version.length - 1]
-})
-
 const showDialog = () => dialog.value?.showModal()
 
 const closeDialog = () => dialog.value?.close()
@@ -33,12 +25,12 @@ const closeDialog = () => dialog.value?.close()
 </script>
 
 <template>
-    <div class="tooltip" data-tip="Event Shop">
-        <button class="btn btn-success btn-sm" @click="showDialog">{{ majorVersion }} pt.{{ minorVersion }}</button>
+    <div class="tooltip" :data-tip="type">
+        <button class="btn btn-info btn-sm" @click="showDialog"> {{ text }} </button>
     </div>
     <dialog ref="dialog" class="modal">
-        <div class="modal-box bg-slate-700">
-            <p class="py-4 text-lg text-white text-center">Add materials from<span class="text-error">{{ majorVersion }} part {{ minorVersion }}</span>event shop?</p>
+        <div class="modal-box custom-gradient-gray-blue border border-blue-800">
+            <p class="py-4 text-lg text-white text-center">Add materials from {{ text }}?</p>
             <p class="py-4 text-md text-white text-center"> You should add once only.</p>
             <div class="flex justify-center">
                 <button class="btn btn-success btn-md mr-2" @click="addItems">Yes</button>

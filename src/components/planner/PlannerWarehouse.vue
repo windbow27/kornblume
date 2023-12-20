@@ -8,7 +8,7 @@ import { useGlobalStore } from '../../stores/global';
 
 const dialog = ref<HTMLDialogElement>()
 
-const emit = defineEmits<{(e: 'closeOverlay'): void}>()
+const emit = defineEmits<{(e: 'closeOverlay'): void }>()
 
 const checkedCategories = ref({
     'Base Item': true,
@@ -119,16 +119,35 @@ const closeDialog = () => dialog.value?.close()
       <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden flex-grow mb-5">
         <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-10">
           <WarehouseItem v-for="material in filteredWarehouse" :key="material.Material" :material="material"
-            @update:quantity="updateMaterialQuantity(material.Material, $event)"/>
+            @update:quantity="updateMaterialQuantity(material.Material, $event)" />
         </div>
       </div>
 
-      <!-- modal buttons -->
       <div class="flex space-x-10">
         <!-- shops -->
         <div class="flex space-x-3">
-          <EventShopButton version="1.21" />
-          <EventShopButton version="1.22" />
+          <button class="btn btn-sm btn-success" onclick="shop_container.showModal()">Additional Materials</button>
+          <dialog id="shop_container" class="modal">
+            <div class="modal-box custom-gradient-gray-blue border border-blue-800 -translate-x-3">
+              <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
+              </form>
+              <p class="py-4 text-base text-white text-center">You can quickly add Materials from Jukeboxes and Events
+                here.</p>
+              <div class="grid grid-cols-2 gap-y-5">
+                <EventShopButton version="jb1" text="Jukebox Normal" type="Jukebox" />
+                <EventShopButton version="jb2" text="Jukebox Collector" type="Jukebox" />
+                <EventShopButton version="1.21" text="1.2 part 1" type="Event Shop" />
+                <EventShopButton version="1.22" text="1.2 part 2" type="Event Shop" />
+              </div>
+              <form method="dialog" class="flex justify-center">
+                <button class="btn btn-sm btn-success text-black">Close</button>
+              </form>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+              <button>close</button>
+            </form>
+          </dialog>
         </div>
 
         <!-- reset -->
@@ -150,6 +169,7 @@ const closeDialog = () => dialog.value?.close()
       </div>
 
     </div>
-  </div></template>
+  </div>
+</template>
 
 <style scoped></style>
