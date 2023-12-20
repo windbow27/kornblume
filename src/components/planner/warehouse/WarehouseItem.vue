@@ -1,6 +1,6 @@
-<script setup>
-import { ref, computed } from 'vue';
-import { useProcessMaterial } from '../../composables/ProcessItems';
+<script setup lang="ts" name="ItemWarehouse">
+import { ref, computed, watch } from 'vue';
+import { useProcessMaterial } from '../../../composables/ProcessItems';
 
 const props = defineProps({
     material: {
@@ -9,9 +9,7 @@ const props = defineProps({
     }
 });
 
-// FIXME:
-// eslint-disable-next-line vue/valid-define-emits
-const emit = defineEmits();
+const emit = defineEmits<{(e: 'update:quantity', quantity: number): void}>()
 
 const quantity = ref(props.material.Quantity);
 
@@ -21,8 +19,16 @@ const processMaterial = computed(() => {
 });
 
 const updateQuantity = () => {
-    emit('update:quantity', Number(quantity.value));
+    const newQuantity = Number(quantity.value)
+    if (!isNaN(newQuantity)) {
+        emit('update:quantity', Number(quantity.value));
+    }
 };
+
+// Must listen to parent component's prop changes, or the quantity won't update instantly
+watch(() => props.material, (newValue) => {
+    quantity.value = newValue.Quantity
+})
 
 </script>
 

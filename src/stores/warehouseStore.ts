@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia';
 
-interface IResource {
+export interface IItem {
     Category: string,
     Material: string,
     Quantity: number
 }
 
-interface IWarehouse extends Array<IResource>{}
+interface IWarehouse extends Array<IItem>{}
 
 interface IWarehouseStore {
     data: IWarehouse,
@@ -16,51 +16,51 @@ export const useWarehouseStore = defineStore('warehouse', {
     state: (): IWarehouseStore => ({
         data: []
     }),
-    // TODO: Review these actions while refactoring related components/composables
     actions: {
-        addItem (materialName: string, category: string) {
+        initWarehouse () {
+
+        },
+        initItem (materialName: string, category: string) {
             this.data.push({ Material: materialName, Quantity: 0, Category: category });
         },
         removeItem (materialName: string) {
-            for (let i = 0; i < this.data.length; i++) {
-                if (this.data[i].Material === materialName) {
-                    this.data.splice(i, 1);
-                }
-            }
+            this.data = this.data.filter(matl => matl.Material !== materialName)
         },
-        addShopItem (materialName: string, quantity: number) {
-            for (let i = 0; i < this.data.length; i++) {
-                if (this.data[i].Material === materialName) {
-                    this.data[i].Quantity += Number(quantity);
-                    break;
-                }
-            }
+        addItem (materialName: string, quantity: number) {
+            this.data = this.data.map((matl) => {
+                if (matl.Material === materialName) {
+                    return {
+                        ...matl,
+                        Quantity: matl.Quantity + quantity
+                    }
+                } else { return { ...matl } }
+            });
         },
         updateItem (materialName: string, quantity: number) {
-            for (let i = 0; i < this.data.length; i++) {
-                if (this.data[i].Material === materialName) {
-                    this.data[i].Quantity = Number(quantity);
-                    break;
-                }
-            }
+            this.data = this.data.map((matl) => {
+                if (matl.Material === materialName) {
+                    return {
+                        ...matl,
+                        Quantity: quantity
+                    }
+                } else { return { ...matl } }
+            });
         },
-        itemExists (materialName: string) {
-            for (let i = 0; i < this.data.length; i++) {
-                if (this.data[i].Material === materialName) {
-                    return true;
-                }
-            }
-            return false;
+        hasItem (materialName: string) {
+            return this.data.some((matl) => matl.Material === materialName);
         },
         resetAll () {
-            this.data = [];
+            this.data = this.data.map((matl) => ({ ...matl, Quantity: 0 }));
         },
         resetCategory (category: string) {
-            for (let i = 0; i < this.data.length; i++) {
-                if (this.data[i].Category === category) {
-                    this.data[i].Quantity = 0;
-                }
-            }
+            this.data = this.data.map((matl) => {
+                if (matl.Category === category) {
+                    return {
+                        ...matl,
+                        Quantity: 0
+                    }
+                } else { return { ...matl } }
+            });
         }
     },
     persist: true

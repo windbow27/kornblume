@@ -11,7 +11,7 @@ const getDataSize = data => {
 interface IDataStore {
   arcanists: IArcanists,
   stages: IStages | null,
-  stages1_4: IStages| null,
+  stages1_4: IStages | null,
   formulas: IFormulas,
   items: IItems,
   psychubes: IPsychubes,

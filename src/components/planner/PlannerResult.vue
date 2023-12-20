@@ -3,6 +3,7 @@ import { ref, watchEffect } from 'vue';
 import { useCalculation, mergeResults } from '../../composables/CalculateMaterials';
 import { getTotalActivityAndDays, getPlan } from '../../composables/ProcessCards.js';
 import PlannerLayer from './PlannerLayer.vue';
+import { useGlobalStore } from '../../stores/global';
 
 const props = defineProps({
     selectedArcanists: {
@@ -19,21 +20,23 @@ const calculateAllMaterials = ref([]);
 const calculateCards = ref([]);
 
 watchEffect(() => {
-    const result = props.selectedArcanists.map(arc => {
-        if (!arc.isVisible) return [];
-        const arcResult = useCalculation(arc);
-        return arcResult;
-    });
+    if (!useGlobalStore().isEditingWarehouse) {
+        const result = props.selectedArcanists.map(arc => {
+            if (!arc.isVisible) return [];
+            const arcResult = useCalculation(arc);
+            return arcResult;
+        });
 
-    const mergedResult = mergeResults(result);
-    calculateAllMaterials.value = mergedResult;
+        const mergedResult = mergeResults(result);
+        calculateAllMaterials.value = mergedResult;
 
-    const processedCards = getPlan(mergedResult);
+        const processedCards = getPlan(mergedResult);
 
-    emits('update:totalActivityAndDays', getTotalActivityAndDays(processedCards));
+        emits('update:totalActivityAndDays', getTotalActivityAndDays(processedCards));
 
-    // Update the calculateCards ref
-    calculateCards.value = processedCards;
+        // Update the calculateCards ref
+        calculateCards.value = processedCards;
+    }
 });
 </script>
 
