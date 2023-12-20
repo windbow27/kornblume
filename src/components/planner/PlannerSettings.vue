@@ -38,10 +38,12 @@ const saveSettings = () => {
                 <i class="fas fa-times"></i>
             </button>
             <div class="form-control">
-                <label class="cursor-pointer label justify-center space-x-5 text-center">
-                    <span class="label-text text-white text-md">Enable Greedy Method (Experimental)</span>
-                    <input v-model="enableGreedyMethod" type="checkbox" class="checkbox checkbox-info" />
-                </label>
+                <div class="tooltip" :data-tip="'Only consider droprates for Purple tier'">
+                    <label class="cursor-pointer label justify-center space-x-5 text-center">
+                        <span class="label-text text-white text-md">Enable Greedy Method (Experimental)</span>
+                        <input v-model="enableGreedyMethod" type="checkbox" class="checkbox checkbox-info" />
+                    </label>
+                </div>
             </div>
             <div class="form-control">
                 <label class="cursor-pointer label justify-center space-x-5 text-center">
