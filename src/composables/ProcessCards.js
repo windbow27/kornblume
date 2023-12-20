@@ -6,7 +6,6 @@ import { solve } from 'yalps';
 
 const items = useDataStore().items;
 const formulas = useDataStore().formulas;
-const warehouse = useWarehouseStore().data;
 
 function calculateOneiric (matInfo) {
     const item = items.find(item => item.Name === matInfo.Material);
@@ -74,6 +73,8 @@ function sortRunCount (layer) {
 }
 
 function subtractResonateMaterials (materials) {
+    const warehouse = useWarehouseStore().data;
+
     materials.forEach((matInfo) => {
         const subtractItem = warehouse.find((item) => item.Category === 'Resonate Material' && item.Material === matInfo.Material);
         if (subtractItem) {
@@ -91,6 +92,8 @@ function getDrops () {
 }
 
 function getSolve (materials, drops) {
+    const warehouse = useWarehouseStore().data;
+
     // prepare constraints
     const materialConstraints = {};
     const neededConstraints = {};

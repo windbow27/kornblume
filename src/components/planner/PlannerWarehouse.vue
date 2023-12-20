@@ -4,6 +4,9 @@ import { useWarehouseStore } from '../../stores/warehouseStore';
 import WarehouseItem from './warehouse/WarehouseItem.vue';
 import EventShopButton from './warehouse/EventShopButton.vue'
 import { initializeWarehouse, checkWarehouse, sortWarehouseMaterials } from '../../composables/warehouse';
+import { useGlobalStore } from '../../stores/global';
+
+const dialog = ref<HTMLDialogElement>()
 
 const emit = defineEmits<{(e: 'closeOverlay'): void}>()
 
@@ -24,6 +27,7 @@ const setupWarehouse = () => {
 }
 
 onMounted(() => {
+    useGlobalStore().setIsEditingWarehouse(true);
     setupWarehouse();
 });
 
@@ -58,12 +62,17 @@ const resetCheckedCategories = () => {
             }
         });
     }
-    // TODO: close dialog
+    closeDialog();
 };
 
-const closeOverlay = () => {
+const closeWarehouseOverlay = () => {
+    useGlobalStore().setIsEditingWarehouse(false);
     emit('closeOverlay');
 };
+
+const showDialog = () => dialog.value?.showModal()
+
+const closeDialog = () => dialog.value?.close()
 
 </script>
 
@@ -71,7 +80,7 @@ const closeOverlay = () => {
   <div class="list-overlay">
     <div class="custom-modal-big h-5/6 xl:h-3/4 flex flex-col items-center">
       <!-- Close button -->
-      <button @click="closeOverlay" class="absolute top-2 right-4 text-white">
+      <button @click="closeWarehouseOverlay" class="absolute top-2 right-4 text-white">
         <i class="fas fa-times"></i>
       </button>
       <p class="text-white text-center font-bold text-lg">Warehouse</p>
@@ -123,15 +132,15 @@ const closeOverlay = () => {
         </div>
 
         <!-- reset -->
-        <button class="btn btn-error btn-sm" onclick="my_modal_resetMat.showModal()">Reset</button>
-        <dialog id="my_modal_resetMat" class="modal">
+        <button class="btn btn-error btn-sm" @click="showDialog">Reset</button>
+        <dialog ref="dialog" class="modal">
           <div class="modal-box bg-slate-700">
             <p class="py-4 text-lg text-white text-center">Reset quantity of <span class="text-error">selected</span>
               categories?</p>
             <p class="py-4 text-md text-white text-center"> Click the buttons at the top to select.</p>
             <div class="flex justify-center">
               <button class="btn btn-success btn-md mr-2" @click="resetCheckedCategories">Yes</button>
-              <button class="btn btn-error btn-md" onclick="my_modal_resetMat.close()">No</button>
+              <button class="btn btn-error btn-md" @click="closeDialog">No</button>
             </div>
           </div>
           <form method="dialog" class="modal-backdrop">

@@ -19,7 +19,10 @@ const processMaterial = computed(() => {
 });
 
 const updateQuantity = () => {
-    emit('update:quantity', Number(quantity.value));
+    const newQuantity = Number(quantity.value)
+    if (!isNaN(newQuantity)) {
+        emit('update:quantity', Number(quantity.value));
+    }
 };
 
 // Must listen to parent component's prop changes, or the quantity won't update instantly
