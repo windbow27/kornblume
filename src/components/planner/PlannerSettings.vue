@@ -38,7 +38,7 @@ const saveSettings = () => {
                 <i class="fas fa-times"></i>
             </button>
             <div class="form-control">
-                <div class="tooltip" :data-tip="'Only consider droprates for Purple tier'">
+                <div class="tooltip" :data-tip="'Priority Purple Materials when farming'">
                     <label class="cursor-pointer label justify-center space-x-5 text-center">
                         <span class="label-text text-white text-md">Enable Greedy Method</span>
                         <input v-model="enableGreedyMethod" type="checkbox" class="checkbox checkbox-info" />

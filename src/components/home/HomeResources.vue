@@ -17,6 +17,7 @@ const resources = [
     { name: 'ArkPlanner', author: 'Penguine Statistics', comment: 'Referred to ArkPlanner\'s farming route algorithm, enhanced with linear programming magic', link: 'https://penguin-stats.io/planner' },
     { name: 'Vanity Cake Reverse 1999', author: 'Vanity & Cake', comment: 'Spreadsheet for a lot of things. Insight III levels are taken here.', link: 'https://docs.google.com/spreadsheets/d/1qQinxxU_e0-YXwPj5WAd2PgTFksyLwIaHXwEcosUxU0/edit#gid=470385843' },
     { name: 'Seelie', author: 'Gabriel', comment: 'Ever wonder why this looks like Seelie?', link: 'https://hsr.seelie.me/' },
+    { name: 'Star Rail Station', author: 'Star Rail Station', comment: 'Summon Tracker ideas.', link: 'https://starrailstation.com/' },
     { name: 'Schale', author: 'lonqie', comment: 'cunny uwooghh', link: 'https://schale.gg/' }
     // Add more resources as needed
 ];

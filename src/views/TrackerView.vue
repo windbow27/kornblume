@@ -45,9 +45,7 @@ const summonSinceLastSixStar = computed(() => {
 async function preprocessImage (file: File) {
     const imageData = await Image.load(await file.arrayBuffer());
 
-    const blurred = imageData.blurFilter({ radius: 1 });
-
-    const grey = blurred.grey();
+    const grey = imageData.grey();
 
     const kernel = [
         [0, -1, 0],
@@ -66,7 +64,8 @@ async function preprocessImage (file: File) {
 const ocrCorrectionMap = {
     '3uma': 'Зима',
     uma: 'Зима',
-    aliEnT: 'aliEn T'
+    aliEnT: 'aliEn T',
+    'Druvis I11': 'Druvis III'
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -110,7 +109,7 @@ const ocr: clickHandler = (payload: Event): void => {
                                 BannerType,
                                 SummonTime: dateTime
                             };
-                            console.log(pull);
+                            // console.log(pull);
 
                             currentPulls.push(pull);
                             // console.log(currentPulls);
@@ -203,12 +202,14 @@ onMounted(() => {
     <img id="testing123" height="2px" width="2px" />
     <div class="responsive-spacer">
 
-        <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Summon Tracker</h2>
+        <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
+            Summon Tracker <span class="text-sm text-info">Beta. Expect bugs to happen.</span>
+        </h2>
         <div class="space-x-3">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                 multiple />
             <button @click="triggerFileInput" :disabled="isImporting"
-                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
+                class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded ml-2">
                 OCR Import
             </button>
             <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
@@ -228,7 +229,8 @@ onMounted(() => {
                     <p class=" text-white">3. The Summon Tracker will automatically extract, display and save the
                         information from the screenshots</p>
                     <h3 class="font-bold text-lg pt-4 text-info">Limitations</h3>
-                    <p class=" text-white">1. Images must be clear or the Summon Tracker may fail to read.</p>
+                    <p class="text-white">1. Images <span class="text-red-500">must be clear</span> or the Summon Tracker
+                        may fail to read.</p>
                     <p class=" text-white">2. Summon Tracker is not yet tested on mobile devices.</p>
                 </div>
                 <form method="dialog" class="modal-backdrop">
