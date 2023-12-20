@@ -1,5 +1,49 @@
 {
-    "1.21" : [
+    "jb1": [
+        {
+            "Material": "Dust",
+            "Quantity": 75000
+        },
+        {
+            "Material": "Sharpodonty",
+            "Quantity": 55000
+        },
+        {
+            "Material": "Brief Cacophony",
+            "Quantity": 5
+        },
+        {
+            "Material": "Moment of Dissonance",
+            "Quantity": 20
+        },
+        {
+            "Material": "Sonorous Knell",
+            "Quantity": 5
+        }
+    ],
+    "jb2": [
+        {
+            "Material": "Dust",
+            "Quantity": 375000
+        },
+        {
+            "Material": "Sharpodonty",
+            "Quantity": 215000
+        },
+        {
+            "Material": "Moment of Dissonance",
+            "Quantity": 20
+        },
+        {
+            "Material": "Brief Cacophony",
+            "Quantity": 25
+        },
+        {
+            "Material": "Crystal Casket",
+            "Quantity": 1
+        }
+    ],
+    "1.21": [
         {
             "Material": "Golden Fleece",
             "Quantity": 3
