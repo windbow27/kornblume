@@ -1,5 +1,6 @@
-<script setup>
+<script setup lang="ts" name="PlannerSetting">
 import { ref } from 'vue';
+import { IPlannerSettings } from '../../stores/plannerSettingsStore'
 
 const props = defineProps({
     settings: {
@@ -8,18 +9,11 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    },
-    saveSettings: {
-        type: Function,
-        required: true
-    }
-});
+const emit = defineEmits<{(e: 'closeOverlay' | 'saveSettings', updatedSettings?: IPlannerSettings): void }>()
 
-const isUnreleasedDrops = ref(props.settings.enabledUnreleasedStages);
+const enabledUnreleasedStages = ref(props.settings.enabledUnreleasedStages);
+
+const enableGreedyMethod = ref(props.settings.enableGreedyMethod);
 
 const closeOverlay = () => {
     emit('closeOverlay');
@@ -28,7 +22,8 @@ const closeOverlay = () => {
 const saveSettings = () => {
     const updatedSettings = {
         showUnreleasedArcanists: props.settings.showUnreleasedArcanists,
-        enabledUnreleasedStages: isUnreleasedDrops.value
+        enabledUnreleasedStages: enabledUnreleasedStages.value,
+        enableGreedyMethod: enableGreedyMethod.value
     };
     emit('saveSettings', updatedSettings);
     closeOverlay();
@@ -44,8 +39,14 @@ const saveSettings = () => {
             </button>
             <div class="form-control">
                 <label class="cursor-pointer label justify-center space-x-5 text-center">
+                    <span class="label-text text-white text-md">Enable Greedy Method (Experimental)</span>
+                    <input v-model="enableGreedyMethod" type="checkbox" class="checkbox checkbox-info" />
+                </label>
+            </div>
+            <div class="form-control">
+                <label class="cursor-pointer label justify-center space-x-5 text-center">
                     <span class="label-text text-white text-md">Use 1.4 Stage Data (Experimental)</span>
-                    <input v-model="isUnreleasedDrops" type="checkbox" class="checkbox checkbox-info" />
+                    <input v-model="enabledUnreleasedStages" type="checkbox" class="checkbox checkbox-info" />
                 </label>
             </div>
             <div class="flex justify-center">
