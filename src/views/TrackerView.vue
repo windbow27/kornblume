@@ -162,6 +162,20 @@ const formatDate = (date: Date): string => {
 //     return pulls.value.filter(pull => pull.Rarity === 6);
 // });
 
+const activeRarities = ref<number[]>([5, 6]);
+
+const selectedRarities = (rarity: number) => {
+    if (activeRarities.value.includes(rarity)) {
+        activeRarities.value = activeRarities.value.filter(r => r !== rarity);
+    } else {
+        activeRarities.value.push(rarity);
+    }
+}
+
+const filteredRarityPulls = computed(() => {
+    return indexedPulls.value.filter(pull => activeRarities.value.includes(pull.Rarity));
+});
+
 defineExpose({
     formatDate
 })
@@ -169,7 +183,7 @@ defineExpose({
 </script>
 
 <template>
-    <img id="testing123" height="2px" width="2px"/>
+    <img id="testing123" height="2px" width="2px" />
     <div class="responsive-spacer">
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Summon Tracker</h2>
         <div class="space-x-3">
@@ -235,8 +249,23 @@ defineExpose({
 
         <!-- Summon History -->
         <div class="text text-center text-xl pb-4 pt-10">Summon History</div>
+
+        <!-- Rarity select -->
+        <div class="flex justify-center space-x-2">
+            <button v-for="i in [2, 3, 4, 5, 6]" :key="i" :class="{ 'border-2 border-info': activeRarities.includes(i)}"
+                @click="selectedRarities(i)" class="p-2 rounded-md">
+                <i class="fa-solid fa-star" :class="{
+                    'text-orange-300': i === 6,
+                    'text-yellow-100': i === 5,
+                    'text-purple-400': i === 4,
+                    'text-sky-200': i === 3,
+                    'text-green-200': i === 2
+                }"></i>
+            </button>
+        </div>
+
         <div class="max-w-lg m-auto">
-            <div v-for="(pull, index) in indexedPulls" :key="`${pull.SummonTime}-${pull.ArcanistName}-${index}`"
+            <div v-for="(pull, index) in filteredRarityPulls" :key="`${pull.SummonTime}-${pull.ArcanistName}-${index}`"
                 class="grid grid-cols-3 justify-between items-center p-2 border-b border-gray-200 space-x-5">
                 <div class="flex items-center space-x-5">
                     <div class="text-white">{{ pull.PullNumber }} </div>
