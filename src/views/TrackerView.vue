@@ -161,10 +161,6 @@ const formatDate = (date: Date): string => {
     return `${formattedDate} ${formattedTime}`;
 }
 
-// const rarityFilter = computed(() => {
-//     return pulls.value.filter(pull => pull.Rarity === 6);
-// });
-
 const activeRarities = ref<number[]>([5, 6]);
 
 const selectedRarities = (rarity: number) => {
@@ -200,6 +196,7 @@ onMounted(() => {
 <template>
     <img id="testing123" height="2px" width="2px" />
     <div class="responsive-spacer">
+
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Summon Tracker</h2>
         <div class="space-x-3">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
@@ -210,7 +207,30 @@ onMounted(() => {
             </button>
             <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
             <span v-show="isImporting" class="text-white text-base"> Processing... Please wait...</span>
+
+            <button class="btn btn-info btn-sm" onclick="tutorial.showModal()">Tutorial</button>
+            <dialog id="tutorial" class="modal">
+                <div class="modal-box custom-gradient-gray-blue border border-blue-800">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    </form>
+                    <h3 class="font-bold text-lg text-info">Tutorial</h3>
+                    <p class="py-4 text-white">Video demonstration/ tutorial: <a href="https://youtu.be/CNsZ4rGWtyY"
+                            target="_blank" class="text-blue-500 hover:text-blue-700">Summon Tracker Demo</a></p>
+                    <p class=" text-white">1. Take screenshots of your summon history</p>
+                    <p class=" text-white">2. Upload the screenshots to the Summon Tracker</p>
+                    <p class=" text-white">3. The Summon Tracker will automatically extract, display and save the
+                        information from the screenshots</p>
+                    <h3 class="font-bold text-lg pt-4 text-info">Limitations</h3>
+                    <p class=" text-white">1. Images must be clear or the Summon Tracker may fail to read.</p>
+                    <p class=" text-white">2. Summon Tracker is not yet tested on mobile devices.</p>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
         </div>
+
         <p class=" text-white font-bold text-xl text-center">Summon Summary</p>
         <div class="flex flex-col text-white p-4 gap-2 max-w-sm mx-auto">
             <div class="flex justify-between">
@@ -225,23 +245,19 @@ onMounted(() => {
                 <div class="text">5 <i class="fa-solid fa-star text-yellow-100"></i> Summons</div>
                 <div class="number">{{ indexedPulls.filter(p => p.Rarity === 5).length }}</div>
             </div>
-            <div v-if="indexedPulls.filter(p => p.Rarity === 6).length > 0" class="flex justify-between">
-                <div class="text">AVG 6 <i class="fa-solid fa-star text-orange-300"></i> Pity</div>
-                <div class="number">{{ Math.floor(indexedPulls.length / indexedPulls.filter(p => p.Rarity === 6).length) }}
+            <div class="flex justify-between">
+                <div class="text"> 6 <i class="fa-solid fa-star text-orange-300"></i> Average</div>
+                <div class="number">
+                    {{ indexedPulls.filter(p => p.Rarity === 6).length > 0 ? Math.floor(indexedPulls.length /
+                        indexedPulls.filter(p => p.Rarity === 6).length) : 0 }}
                 </div>
             </div>
-            <div v-else class="flex justify-between">
-                <div class="text">AVG 6 <i class="fa-solid fa-star text-orange-300"></i> Pity</div>
-                <div class="number">0</div>
-            </div>
-            <div v-if="indexedPulls.filter(p => p.Rarity === 5).length > 0" class="flex justify-between">
-                <div class="text">AVG 5 <i class="fa-solid fa-star text-yellow-100"></i> Pity</div>
-                <div class="number">{{ Math.floor(indexedPulls.length / indexedPulls.filter(p => p.Rarity === 5).length) }}
+            <div class="flex justify-between">
+                <div class="text"> 5 <i class="fa-solid fa-star text-yellow-100"></i> Average</div>
+                <div class="number">
+                    {{ indexedPulls.filter(p => p.Rarity === 5).length > 0 ? Math.floor(indexedPulls.length /
+                        indexedPulls.filter(p => p.Rarity === 5).length) : 0 }}
                 </div>
-            </div>
-            <div v-else class="flex justify-between">
-                <div class="text">AVG 5 <i class="fa-solid fa-star text-yellow-100"></i> Pity</div>
-                <div class="number">0</div>
             </div>
             <div class="flex justify-between">
                 <div class="text">Current 6 <i class="fa-solid fa-star text-orange-300"></i> Pity</div>
@@ -267,7 +283,7 @@ onMounted(() => {
 
         <!-- Rarity select -->
         <div class="flex justify-center space-x-2">
-            <button v-for="i in [2, 3, 4, 5, 6]" :key="i" :class="{ 'border-2 border-info': activeRarities.includes(i)}"
+            <button v-for="i in [2, 3, 4, 5, 6]" :key="i" :class="{ 'border-2 border-info': activeRarities.includes(i) }"
                 @click="selectedRarities(i)" class="p-2 rounded-md">
                 <i class="fa-solid fa-star" :class="{
                     'text-orange-300': i === 6,
