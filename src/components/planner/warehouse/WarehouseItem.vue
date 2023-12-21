@@ -1,4 +1,4 @@
-<script setup lang="ts" name="ItemWarehouse">
+<script setup lang="ts" name="WarehouseItem">
 import { ref, computed, watch } from 'vue';
 import { useProcessMaterial } from '../../../composables/ProcessItems';
 

@@ -17,9 +17,6 @@ export const useWarehouseStore = defineStore('warehouse', {
         data: []
     }),
     actions: {
-        initWarehouse () {
-
-        },
         initItem (materialName: string, category: string) {
             this.data.push({ Material: materialName, Quantity: 0, Category: category });
         },
@@ -61,6 +58,9 @@ export const useWarehouseStore = defineStore('warehouse', {
                     }
                 } else { return { ...matl } }
             });
+        },
+        getItem (materialName: string) {
+            return this.data.find((matl) => matl.Material === materialName);
         }
     },
     persist: true

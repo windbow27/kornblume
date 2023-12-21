@@ -2,7 +2,7 @@
 import { ref, watchEffect } from 'vue';
 import { useCalculation, mergeResults } from '../../composables/CalculateMaterials';
 import { getTotalActivityAndDays, getPlan } from '../../composables/ProcessCards.js';
-import PlannerLayer from './PlannerLayer.vue';
+import PlannerLayer from './result/PlannerLayer.vue';
 import { useGlobalStore } from '../../stores/global';
 
 const props = defineProps({
