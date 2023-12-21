@@ -11,16 +11,16 @@ const fileInput = ref(null)
 const isImporting = ref(false);
 const text = ref('')
 const arcanists = useDataStore().arcanists;
-const pulls = ref<{ ArcanistName: string; Rarity: number; SummonTime: Date }[]>([]);
+const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
 
 const indexedPulls = computed(() => {
-    const sortedPulls = pulls.value.slice().sort((a, b) => new Date(b.SummonTime).getTime() - new Date(a.SummonTime).getTime());
+    const sortedPulls = pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
     return sortedPulls.map((pull, index) => {
         return {
             PullNumber: sortedPulls.length - index,
             ArcanistName: pull.ArcanistName,
             Rarity: pull.Rarity,
-            SummonTime: pull.SummonTime
+            Timestamp: pull.Timestamp
         }
     });
 });
@@ -67,7 +67,7 @@ const ocrCorrectionMap = {
     '3uma': 'Зима',
     uma: 'Зима',
     aliEnT: 'aliEn T',
-    'Druvis I11': 'Druvis III'
+    Druvis: 'Druvis III'
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -80,16 +80,16 @@ const ocr: clickHandler = (payload: Event): void => {
             for (let i: number = 0; i < fileList.length; i++) {
                 const file: File = fileList[i];
                 if (file) {
-                    const canvas = await preprocessImage(file);
+                    const canvas: Tesseract.ImageLike = await preprocessImage(file);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(canvas);
-                    // console.log(ret.data.text);
+                    console.log(ret.data.text);
                     text.value = ret.data.text;
 
                     const arcanistNames = arcanists.map(a => a.Name);
                     const arcanistNamesRegex = [...arcanistNames, ...Object.keys(ocrCorrectionMap)].join('|')
 
                     const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNamesRegex})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
-                    const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; SummonTime: Date }[] = [];
+                    const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[] = [];
 
                     // Extract information from each line
                     text.value.trim().split('\n').forEach((line) => {
@@ -102,14 +102,14 @@ const ocr: clickHandler = (payload: Event): void => {
                             const arcanist = arcanists.find(a => a.Name.toLowerCase() === arcanistName.toLowerCase());
                             const rarity: number = arcanist ? arcanist.Rarity : 0;
                             const bannerType: string = match.groups?.BannerType.trim() || '';
-                            const dateTime: Date = new Date(match.groups?.Date || '');
+                            const timestamp: number = new Date(match.groups?.Date || '').getTime();
 
                             // Create an object for each pull
                             const pull = {
                                 ArcanistName: arcanist?.Name || '',
                                 Rarity: rarity,
                                 BannerType: bannerType,
-                                SummonTime: dateTime
+                                Timestamp: timestamp
                             };
                             // console.log(pull);
 
@@ -143,21 +143,13 @@ const triggerFileInput = () => {
 }
 
 const isEqualPull = (pull1, pull2) => {
-    if (!pull1.SummonTime || !pull2.SummonTime) {
-        return false;
-    }
     return pull1.ArcanistName === pull2.ArcanistName &&
-        pull1.SummonTime.getTime() === pull2.SummonTime.getTime() &&
+        pull1.Timestamp === pull2.Timestamp &&
         pull1.Rarity === pull2.Rarity;
 }
 
-const formatDate = (date: Date): string => {
-    if (typeof date === 'string') {
-        date = new Date(date);
-    }
-    if (!(date instanceof Date) || isNaN(date.getTime())) {
-        return '';
-    }
+const formatDate = (timestamp: number): string => {
+    const date: Date = new Date(timestamp);
     const formattedDate: string = date.toLocaleDateString('en-GB', {
         day: '2-digit',
         month: '2-digit',
@@ -208,17 +200,15 @@ onMounted(() => {
     <div class="responsive-spacer">
 
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            Summon Tracker <span class="text-sm text-info">Beta. Expect bugs to happen. Like, a lot of bugs. Be ready to reset your Tracker Data in Profile, and please report if you find any bugs (A lot).</span>
+            Summon Tracker <span class="text-sm text-info">Beta. Expect bugs to happen. Like, a lot of bugs. Be ready to reset your Tracker Data in Profile. If you find a bug in OCR (Possibly seeing 6), open your F12 -> Console, send the text through Bug Reports or directly to @windbow.</span>
         </h2>
         <div class="space-x-3">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                 multiple />
             <button @click="triggerFileInput" :disabled="isImporting"
-                class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded ml-2">
+                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
                 OCR Import
             </button>
-            <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
-            <span v-show="isImporting" class="text-white text-base"> Processing... Please wait...</span>
 
             <button class="btn btn-info btn-sm" onclick="tutorial.showModal()">Tutorial</button>
             <dialog id="tutorial" class="modal">
@@ -234,14 +224,16 @@ onMounted(() => {
                     <p class=" text-white">3. The Summon Tracker will automatically extract, display and save the
                         information from the screenshots</p>
                     <h3 class="font-bold text-lg pt-4 text-info">Limitations</h3>
-                    <p class="text-white">1. Images <span class="text-red-500">must be clear</span> or the Summon Tracker
-                        may fail to read.</p>
+                    <p class=" text-white">1. Images must be clear or the Summon Tracker may fail to read.</p>
                     <p class=" text-white">2. Summon Tracker is not yet tested on mobile devices.</p>
                 </div>
                 <form method="dialog" class="modal-backdrop">
                     <button>close</button>
                 </form>
             </dialog>
+
+            <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
+            <span v-show="isImporting" class="text-white text-base"> Processing... Please wait...</span>
         </div>
 
         <p class=" text-white font-bold text-xl text-center pt-4">Summon Summary</p>
@@ -284,7 +276,7 @@ onMounted(() => {
             <div class="flex flex-wrap justify-center space-x-8">
                 <!-- Fix the key later -->
                 <div v-for="(pull, index) in indexedPulls.filter(p => p.Rarity === 6)"
-                    :key="`${pull.SummonTime}-${pull.ArcanistName}`">
+                    :key="`${pull.Timestamp}-${pull.ArcanistName}`">
                     <TrackerArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
                         :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
                 </div>
@@ -309,7 +301,7 @@ onMounted(() => {
         </div>
 
         <div class="max-w-lg m-auto">
-            <div v-for="(pull, index) in filteredRarityPulls" :key="`${pull.SummonTime}-${pull.ArcanistName}-${index}`"
+            <div v-for="(pull, index) in filteredRarityPulls" :key="`${pull.Timestamp}-${pull.ArcanistName}-${index}`"
                 class="grid grid-cols-3 justify-between items-center p-2 border-b border-gray-200 space-x-5">
                 <div class="flex items-center space-x-5">
                     <div class="text-white">{{ pull.PullNumber }} </div>
@@ -329,7 +321,7 @@ onMounted(() => {
                     'text-sky-200': pull.Rarity === 3,
                     'text-green-200': pull.Rarity === 2
                 }">{{ pull.Rarity }} <i class="fa-solid fa-star"></i></div>
-                <div class="text-white"> {{ formatDate(pull.SummonTime) }}</div>
+                <div class="text-white"> {{ formatDate(pull.Timestamp) }}</div>
             </div>
         </div>
 

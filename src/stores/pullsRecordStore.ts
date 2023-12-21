@@ -4,7 +4,7 @@ export interface IPull {
     ArcanistName: string,
     Rarity: number,
     BannerType: string,
-    SummonTime: Date
+    Timestamp: number
 }
 
 interface IPullsRecord extends Array<IPull>{}
