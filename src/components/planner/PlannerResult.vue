@@ -42,8 +42,7 @@ watchEffect(() => {
 
 <template>
     <div class="flex flex-wrap">
-        <button class="text-center text-info text-sm opacity-80" onclick="process_explaination.showModal()">Confused at how
-            the process works?</button>
+        <button class="text-center text-info font-bold text-sm hover:text-blue-200 opacity-90" onclick="process_explaination.showModal()">Planner calculation explanation</button>
         <dialog id="process_explaination" class="modal">
             <div class="modal-box custom-gradient-gray-blue">
                 <form method="dialog">

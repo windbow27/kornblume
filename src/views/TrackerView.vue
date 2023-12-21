@@ -196,36 +196,43 @@ onMounted(() => {
 </script>
 
 <template>
-    <img id="testing123" height="2px" width="2px" />
     <div class="responsive-spacer">
 
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            Summon Tracker <span class="text-sm text-info">Beta. Expect bugs to happen. Like, a lot of bugs. Be ready to reset your Tracker Data in Profile. If you find a bug in OCR (Possibly seeing 6), open your F12 -> Console, send the text through Bug Reports or directly to @windbow.</span>
+            Summon Tracker <span class="text-sm text-info opacity-90">Beta. Remember to read Tutorial.</span>
         </h2>
         <div class="space-x-3">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                 multiple />
             <button @click="triggerFileInput" :disabled="isImporting"
-                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
+                class="bg-success hover:bg-green-600 text-black font-bold py-2 px-4 rounded ml-2">
                 OCR Import
             </button>
 
             <button class="btn btn-info btn-sm" onclick="tutorial.showModal()">Tutorial</button>
             <dialog id="tutorial" class="modal">
-                <div class="modal-box custom-gradient-gray-blue border border-blue-800">
+                <div class="modal-box custom-gradient-gray-blue border border-blue-800 -translate-x-3">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
                     <h3 class="font-bold text-lg text-info">Tutorial</h3>
                     <p class="py-4 text-white">Video demonstration/ tutorial: <a href="https://youtu.be/CNsZ4rGWtyY"
                             target="_blank" class="text-blue-500 hover:text-blue-700">Summon Tracker Demo</a></p>
-                    <p class=" text-white">1. Take screenshots of your summon history</p>
-                    <p class=" text-white">2. Upload the screenshots to the Summon Tracker</p>
+                    <p class=" text-white">1. Take screenshots of your summon history.</p>
+                    <p class=" text-white">2. Upload the screenshots to the Summon Tracker (You could upload <span
+                            class="text-error">multiple images</span> at once).</p>
                     <p class=" text-white">3. The Summon Tracker will automatically extract, display and save the
-                        information from the screenshots</p>
+                        information from the screenshots.</p>
+                    <p class=" text-white">4. It is advised to save your screenshots for future usages.</p>
                     <h3 class="font-bold text-lg pt-4 text-info">Limitations</h3>
-                    <p class=" text-white">1. Images must be clear or the Summon Tracker may fail to read.</p>
+                    <p class="text-white">1. Images <span class="text-error">must be clear</span> or the Summon Tracker
+                        may fail to read.</p>
                     <p class=" text-white">2. Summon Tracker is not yet tested on mobile devices.</p>
+                    <h3 class="font-bold text-lg pt-4 text-info">Bug Reports</h3>
+                    <p class="text-white">• Summon Tracker is still in Beta. Bugs are expected. If you encouter one, open
+                        your F12 ‣ Console,
+                        send the text through Bug Reports or directly to @windbow. </p>
+
                 </div>
                 <form method="dialog" class="modal-backdrop">
                     <button>close</button>
@@ -277,7 +284,7 @@ onMounted(() => {
                 <!-- Fix the key later -->
                 <div v-for="(pull, index) in indexedPulls.filter(p => p.Rarity === 6)"
                     :key="`${pull.Timestamp}-${pull.ArcanistName}`">
-                    <TrackerArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
+                    <TrackerArcanistIcon class="py-2" :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
                         :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
                 </div>
             </div>
@@ -302,17 +309,19 @@ onMounted(() => {
 
         <div class="max-w-lg m-auto">
             <div v-for="(pull, index) in filteredRarityPulls" :key="`${pull.Timestamp}-${pull.ArcanistName}-${index}`"
-                class="grid grid-cols-3 justify-between items-center p-2 border-b border-gray-200 space-x-5">
-                <div class="flex items-center space-x-5">
-                    <div class="text-white">{{ pull.PullNumber }} </div>
-                    <ArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)" />
-                    <div class="ml-2" :class="{
-                        'text-orange-300': pull.Rarity === 6,
-                        'text-yellow-100': pull.Rarity === 5,
-                        'text-purple-400': pull.Rarity === 4,
-                        'text-sky-200': pull.Rarity === 3,
-                        'text-green-200': pull.Rarity === 2
-                    }">{{ pull.ArcanistName }}</div>
+                class="grid grid-cols-3 sm:grid-cols-4 justify-between items-center p-2 border-b border-gray-200 space-x-5">
+                <div class="col-span-1 sm:col-span-2 flex items-center space-x-5">
+                    <div class="flex items-center space-x-5">
+                        <div class="text-white">{{ pull.PullNumber }} </div>
+                        <ArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)" />
+                        <div class="pullArcanistName ml-2" :class="{
+                            'text-orange-300': pull.Rarity === 6,
+                            'text-yellow-100': pull.Rarity === 5,
+                            'text-purple-400': pull.Rarity === 4,
+                            'text-sky-200': pull.Rarity === 3,
+                            'text-green-200': pull.Rarity === 2
+                        }">{{ pull.ArcanistName }}</div>
+                    </div>
                 </div>
                 <div class="text-center" :class="{
                     'text-orange-300': pull.Rarity === 6,
@@ -335,5 +344,15 @@ onMounted(() => {
 
 .number {
     @apply text-info font-bold;
+}
+
+.pullArcanistName {
+    display: none;
+}
+
+@media screen and (min-width: 640px) {
+    .pullArcanistName {
+        display: block;
+    }
 }
 </style>

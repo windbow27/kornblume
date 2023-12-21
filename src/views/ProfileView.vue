@@ -1,61 +1,71 @@
 <template>
     <div class="responsive-spacer">
-        <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">Profile</h2>
-        <p class="text-white"> You can export or import your data here.</p>
-        <div class="flex justify-center items-center p-2">
-            <button @click="exportStores" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Export Data
-            </button>
+        <div class="pb-6">
+            <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4">Profile</h2>
+            <p class="text-white"> You can export or import your data here.</p>
+            <div class="flex justify-center items-center p-2 space-x-5">
+                <button @click="exportStores" class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
+                    Export Data
+                </button>
 
-            <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4" style="display: none;" />
-            <button @click="triggerFileInput"
-                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">
-                Import Data
-            </button>
+                <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4" style="display: none;" />
+                <button @click="triggerFileInput"
+                    class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded ml-2">
+                    Import Data
+                </button>
+            </div>
         </div>
 
-        <h2 class="text-2xl text-white font-bold my-4 lg:my-6">Danger Zone</h2>
-        <p class="text-white">If you encounter any unexpected issues with the site, you can reset your data. Sorry for the
-            inconvenience.</p>
-        <div class="flex justify-center items-center p-2 space-x-10">
-            <button onclick="resetTracker.showModal()"
-                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
-                Reset Tracker
-            </button>
-            <button onclick="resetAll.showModal()"
-                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
-                Reset Data
-            </button>
-        </div>
-
-        <dialog id="resetTracker" class="modal">
-            <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
-                <p class="pb-4 text-white text-center">Once you delete your data, there is no going back.</p>
-                <p class="pb-4 text-white text-center">Please be certain.</p>
-                <button @click="resetTracker"
-                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
+        <div class="pb-6">
+            <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4">Danger Zone</h2>
+            <p class="text-white">If you encounter any unexpected issues with the site, you can reset your data. Sorry for the
+                inconvenience.</p>
+            <div class="flex justify-center items-center p-2 space-x-5">
+                <button onclick="resetTracker.showModal()"
+                    class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
                     Reset Tracker
                 </button>
-            </div>
-            <form method="dialog" class="modal-backdrop">
-                <button>close</button>
-            </form>
-        </dialog>
-
-        <dialog id="resetAll" class="modal">
-            <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
-                <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.</p>
-                <p class="pb-4 text-white text-center">Please be certain.</p>
-                <button @click="resetStores"
-                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
-                    Reset All
+                <button onclick="resetAll.showModal()"
+                    class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
+                    Reset Data
                 </button>
             </div>
-            <form method="dialog" class="modal-backdrop">
-                <button>close</button>
-            </form>
-        </dialog>
-    </div>
+
+            <dialog id="resetTracker" class="modal">
+                <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    </form>
+                    <p class="pb-4 text-white text-center">Once you delete your data, there is no going back.</p>
+                    <p class="pb-4 text-white text-center">Please be certain.</p>
+                    <button @click="resetTracker"
+                        class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
+                        Reset Tracker
+                    </button>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
+
+            <dialog id="resetAll" class="modal">
+                <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    </form>
+                    <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.</p>
+                    <p class="pb-4 text-white text-center">Please be certain.</p>
+                    <button @click="resetStores"
+                        class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
+                        Reset All
+                    </button>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
+        </div>
+        </div>
 </template>
 
 <script setup lang="ts" name="ProfileView">
