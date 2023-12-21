@@ -2,7 +2,8 @@ const localStorageKeys = [
     'plannerSettings',
     'planner',
     'wilderness',
-    'warehouse'
+    'warehouse',
+    'pulls'
 ];
 
 function getDateTimeString (): {

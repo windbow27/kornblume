@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, defineExpose, Ref, watchEffect, onMounted } from 'vue'
+import { ref, computed, Ref, watchEffect, onMounted } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { Image } from 'image-js';
 import Tesseract, { createWorker } from 'tesseract.js';
@@ -309,7 +309,8 @@ onMounted(() => {
 
         <div class="max-w-lg m-auto">
             <div v-for="(pull, index) in filteredRarityPulls" :key="`${pull.Timestamp}-${pull.ArcanistName}-${index}`"
-                class="grid grid-cols-3 sm:grid-cols-4 justify-between items-center p-2 border-b border-gray-200 space-x-5">
+                class="grid grid-cols-4 sm:grid-cols-5 justify-between items-center p-2 border-b border-gray-200 space-x-5">
+                <!-- Index, Image, Name -->
                 <div class="col-span-1 sm:col-span-2 flex items-center space-x-5">
                     <div class="flex items-center space-x-5">
                         <div class="text-white">{{ pull.PullNumber }} </div>
@@ -323,6 +324,7 @@ onMounted(() => {
                         }">{{ pull.ArcanistName }}</div>
                     </div>
                 </div>
+                <!-- Rarity -->
                 <div class="text-center" :class="{
                     'text-orange-300': pull.Rarity === 6,
                     'text-yellow-100': pull.Rarity === 5,
@@ -330,7 +332,10 @@ onMounted(() => {
                     'text-sky-200': pull.Rarity === 3,
                     'text-green-200': pull.Rarity === 2
                 }">{{ pull.Rarity }} <i class="fa-solid fa-star"></i></div>
-                <div class="text-white"> {{ formatDate(pull.Timestamp) }}</div>
+                <!-- Date -->
+                <div class="col-span-2">
+                    <div class="text-white"> {{ formatDate(pull.Timestamp) }}</div>
+                </div>
             </div>
         </div>
 
