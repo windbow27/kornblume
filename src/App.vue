@@ -18,5 +18,5 @@ import Navbar from './components/navbar/Navbar.vue'
 body, html {
     margin: 0;
     padding: 0;
-  }
+}
 </style>

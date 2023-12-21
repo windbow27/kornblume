@@ -266,8 +266,7 @@ onClickOutside(settingsRef, closeSettings)
     </div>
 
     <!-- Result -->
-    <PlannerResult :selectedArcanists="plannerStore.selectedArcanists"
-      @update:totalActivityAndDays="handleUpdateTotalActivityAndDays" />
+    <PlannerResult @update:totalActivityAndDays="handleUpdateTotalActivityAndDays" />
   </div>
 </template>
 

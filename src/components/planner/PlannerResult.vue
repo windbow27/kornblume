@@ -1,34 +1,31 @@
-<script setup>
+<script setup lang="ts" name="PannerResult">
 import { ref, watchEffect } from 'vue';
 import { useCalculation, mergeResults } from '../../composables/CalculateMaterials';
 import { getTotalActivityAndDays, getPlan } from '../../composables/ProcessCards.js';
 import PlannerLayer from './result/PlannerLayer.vue';
 import { useGlobalStore } from '../../stores/global';
-
-const props = defineProps({
-    selectedArcanists: {
-        type: Array,
-        required: true
-    }
-});
+import { usePlannerStore } from '../../stores/plannerStore';
 
 const emits = defineEmits([
     'update:totalActivityAndDays'
 ]);
 
-const calculateAllMaterials = ref([]);
 const calculateCards = ref([]);
+
+interface IResult {
+    Material: string,
+    Quantity: number
+}
 
 watchEffect(() => {
     if (!useGlobalStore().isEditingWarehouse) {
-        const result = props.selectedArcanists.map(arc => {
+        const result = usePlannerStore().selectedArcanists.map(arc => {
             if (!arc.isVisible) return [];
-            const arcResult = useCalculation(arc);
+            const arcResult: IResult = useCalculation(arc);
             return arcResult;
         });
 
-        const mergedResult = mergeResults(result);
-        calculateAllMaterials.value = mergedResult;
+        const mergedResult: IResult[] = mergeResults(result);
 
         const processedCards = getPlan(mergedResult);
 
