@@ -50,7 +50,7 @@ watchEffect(() => {
 </script>
 
 <template>
-    <div class="pb-6">
+    <div class="pb-4">
         <div class="relative flex flex-col">
             <div class="relative">
                 <img :src="processMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
@@ -59,9 +59,9 @@ watchEffect(() => {
             <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""
                    class="bg-slate-600 text-white w-14 input input-xs rounded-none text-center absolute right-3 bottom-6" />
             <div class="flex items-center justify-center font-bold w-20 mt-3">
-                <button class="btn btn-info btn-xs w-7 font-bold rounded-t-none rounded-r-none text-white"
+                <button class="btn btn-ghost custom-gradient-gray-blue-light btn-xs w-7 text-base rounded-t-none rounded-r-none text-white"
                         :disabled="!isMoreThanZero" @click="minus">-</button>
-                <button class="btn btn-info btn-xs w-7 font-bold rounded-t-none rounded-l-none text-white" @click="plus">+</button>
+                <button class="btn btn-ghost custom-gradient-gray-blue-light btn-xs w-7 text-base rounded-t-none rounded-l-none text-white" @click="plus">+</button>
             </div>
         </div>
     </div>
@@ -70,6 +70,7 @@ watchEffect(() => {
 <style scoped>
 .btn:disabled {
     color: rgb(255, 255, 255);
-    background-color: var(--tw-ring-color);
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
 }
 </style>

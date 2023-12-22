@@ -37,7 +37,7 @@ watch(shouldHideScrollbar, (newVal) => {
                     </span>
                     <span v-else>{{ card.runs }}</span>
                 </p>
-                <p class="pl-2">{{ card.activity == null ? 'Crafted from available Materials' : card.activity }}</p>
+                <p class="pl-2">{{ card.activity == null ? 'Crafted from available Materials. List includes dependencies. ' : card.activity }}</p>
                 <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image" class="inline-block w-8 h-8" />
                 <p class="border-blue-700/90 border-l pl-3">{{ card.days }} {{ card.days === null ? '' : card.days > 1 ? 'days'
                     : 'day' }}</p>
