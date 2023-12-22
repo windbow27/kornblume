@@ -79,8 +79,8 @@ const formula = computed(() => {
                     expected to drop/craft here
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-70">
-                    <span class="text-white">{{ neededQuantity }}</span>
-                    needed for your goals
+                    <span class="text-white">{{ isReachGoal ? 0: neededQuantity - (warehouseMaterial?.Quantity || 0) }}</span>
+                    left to farm/craft in total
                 </p>
                 <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">You don't have enough</div>
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed for all</div>
