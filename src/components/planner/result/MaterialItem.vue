@@ -80,12 +80,14 @@ const formula = computed(() => {
             <div class="flex items-center justify-center flex-col">
                 <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ props.material.Quantity }}</span>
-                    {{ layerId === 3 ? 'expected to be crafted here' : 'expected to drop' }}
+                    {{ layerId === 3 ? 'expected to be crafted here' : 'expected to drop' + (props.material.Material ===
+                        'Sharpodonty' ? ' (including crafting)' : '')  }}
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ isReachGoal ? 0 : neededQuantity - (warehouseMaterial?.Quantity || 0)
                     }}</span>
-                    needed to {{ layerId === 3 ? 'obtain' : 'farm' }}
+                    needed to {{ layerId === 3 ? 'obtain' : 'farm' + (props.material.Material ===
+                        'Sharpodonty' ? ' (excluding crafting)' : '')  }}
                 </p>
                 <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">You don't have enough</div>
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed</div>
@@ -111,4 +113,5 @@ const formula = computed(() => {
     --popper-theme-border-radius: 6px;
     --popper-theme-padding: 20px;
     --popper-theme-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}</style>
+}
+</style>
