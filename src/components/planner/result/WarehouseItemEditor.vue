@@ -1,9 +1,12 @@
 <script setup lang="ts" name="WarehouseItemEditor">
-import { ref, computed, onMounted } from 'vue';
-import { useProcessMaterial } from '../../../composables/ProcessItems';
+import { ref, computed, onMounted, watch } from 'vue';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 
 const props = defineProps({
+    processMaterial: {
+        type: Object,
+        required: true
+    },
     material: {
         type: Object,
         required: true
@@ -11,11 +14,6 @@ const props = defineProps({
 });
 
 const quantity = ref(props.material.Quantity);
-
-const processMaterial = computed(() => {
-    const result = useProcessMaterial(props.material);
-    return result;
-});
 
 const updateQuantity = () => {
     const newQuantity = Number(quantity.value)
@@ -33,7 +31,7 @@ const isMoreThanZero = computed(() => {
 });
 
 const minus = () => {
-    useWarehouseStore().addItem(props.material.Material, -1)
+    useWarehouseStore().reduceItem(props.material.Material, 1)
     quantity.value = quantity.value - 1
 }
 
@@ -41,6 +39,11 @@ const plus = () => {
     useWarehouseStore().addItem(props.material.Material, 1)
     quantity.value = quantity.value + 1
 }
+
+// Must listen to parent component's prop changes, or the quantity won't update instantly
+watch(() => props.material, (newValue) => {
+    quantity.value = newValue.Quantity
+})
 
 </script>
 

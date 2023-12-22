@@ -1,4 +1,4 @@
-interface IFormula {
+export interface IFormula {
     Id: number,
     Name: string,
     Rarity: number,

@@ -3,7 +3,9 @@ import { computed } from 'vue';
 import { useProcessMaterial, formatQuantity } from '../../../composables/ProcessItems';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
+import { useDataStore } from '@/stores/dataStore';
 import WarehouseItemEditor from './WarehouseItemEditor.vue';
+import MaterialFormula from './MaterialFormula.vue'
 import Popper from 'vue3-popper';
 
 const props = defineProps({
@@ -35,6 +37,10 @@ const formatNeededQuantity = computed(() => {
 const isReachGoal = computed(() => {
     return (warehouseMaterial.value?.Quantity || 0) >= neededQuantity.value;
 });
+
+const formula = computed(() => {
+    return useDataStore().formulas.find((matl) => matl.Name === props.material.Material)
+})
 
 </script>
 
@@ -68,7 +74,10 @@ const isReachGoal = computed(() => {
                 </p>
                 <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">You don't have enough</div>
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed for all</div>
-                <WarehouseItemEditor :material="material"/>
+                <div class="flex">
+                    <WarehouseItemEditor :material="material" :processMaterial="processMaterial"/>
+                    <MaterialFormula v-if="!!formula?.Material.length" :material="material" :processMaterial="processMaterial" :formula="(formula as Object)" />
+                </div>
             </div>
         </template>
     </Popper>

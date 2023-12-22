@@ -33,6 +33,16 @@ export const useWarehouseStore = defineStore('warehouse', {
                 } else { return { ...matl } }
             });
         },
+        reduceItem (materialName: string, quantity: number) {
+            this.data = this.data.map((matl) => {
+                if (matl.Material === materialName) {
+                    return {
+                        ...matl,
+                        Quantity: matl.Quantity >= quantity ? matl.Quantity - quantity : matl.Quantity
+                    }
+                } else { return { ...matl } }
+            });
+        },
         updateItem (materialName: string, quantity: number) {
             this.data = this.data.map((matl) => {
                 if (matl.Material === materialName) {
