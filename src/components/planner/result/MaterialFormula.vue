@@ -1,5 +1,5 @@
 <script setup lang="ts" name="MaterialFormula">
-import { defineProps, computed } from 'vue';
+import { computed } from 'vue';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import MaterialFormulaItem from './MaterialFormulaItem.vue';
 import { storeToRefs } from 'pinia'

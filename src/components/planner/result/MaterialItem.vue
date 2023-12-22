@@ -13,6 +13,10 @@ const props = defineProps({
     material: {
         type: Object,
         required: true
+    },
+    layerId: {
+        type: Number,
+        required: true
     }
 });
 
@@ -66,26 +70,29 @@ const formula = computed(() => {
                 </div>
                 <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
                     :class="(formatNeededQuantity.length > 3 && 'gap-0.5')">
-                    <i class="text-[10px]" :class="isReachGoal ? 'fa-solid fa-check text-green-300' : 'fa-solid fa-flag text-red-400/60'" />{{
-                        formatNeededQuantity }}
+                    <i class="text-[10px]"
+                        :class="isReachGoal ? 'fa-solid fa-check text-green-300' : 'fa-solid fa-flag text-red-400/60'" />{{
+                            formatNeededQuantity }}
                 </div>
             </div>
         </div>
         <template #content>
             <div class="flex items-center justify-center flex-col">
-                <p class="text-center text-slate-300 text-sm opacity-70">
+                <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ props.material.Quantity }}</span>
-                    expected to drop/craft here
+                    {{ layerId === 3 ? 'expected to be crafted here' : 'expected to drop' }}
                 </p>
-                <p class="text-center text-slate-300 text-sm opacity-70">
-                    <span class="text-white">{{ isReachGoal ? 0: neededQuantity - (warehouseMaterial?.Quantity || 0) }}</span>
-                    left to farm/craft in total
+                <p class="text-center text-slate-300 text-sm opacity-80">
+                    <span class="text-white">{{ isReachGoal ? 0 : neededQuantity - (warehouseMaterial?.Quantity || 0)
+                    }}</span>
+                    needed to {{ layerId === 3 ? 'obtain' : 'farm' }}
                 </p>
                 <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">You don't have enough</div>
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed</div>
                 <div class="flex">
-                    <WarehouseItemEditor :material="material" :processMaterial="processMaterial"/>
-                    <MaterialFormula v-if="!!formula?.Material.length" :material="material" :processMaterial="processMaterial" :formula="(formula as Object)" />
+                    <WarehouseItemEditor :material="material" :processMaterial="processMaterial" />
+                    <MaterialFormula v-if="!!formula?.Material.length" :material="material"
+                        :processMaterial="processMaterial" :formula="(formula as Object)" />
                 </div>
             </div>
         </template>
@@ -104,5 +111,4 @@ const formula = computed(() => {
     --popper-theme-border-radius: 6px;
     --popper-theme-padding: 20px;
     --popper-theme-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-</style>
+}</style>

@@ -5,6 +5,10 @@ const props = defineProps({
     card: {
         type: Object,
         required: true
+    },
+    layerId: {
+        type: Number,
+        required: true
     }
 });
 
@@ -46,7 +50,7 @@ watch(shouldHideScrollbar, (newVal) => {
 
         <div ref="scrollDiv" :class="{'custom-scrollbar':shouldHideScrollbar}" class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">
             <div v-for="(material, materialIndex) in card.materials" :key="materialIndex" class="flex-shrink-0">
-                <MaterialItem :material="material" />
+                <MaterialItem :material="material" :layerId="layerId"/>
             </div>
         </div>
     </div>

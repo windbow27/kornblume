@@ -61,7 +61,7 @@ const getContainerClass = computed(() => {
         <div v-if="isBadge" class="badge badge-lg badge-ghost mt-2 mb-2 w-32" :class="getBadgeType">{{ getBadgeContent }}
         </div>
         <div :class="getContainerClass">
-            <PlannerCard v-for="(card, index) in layer.cards" :key="index" :card="card" />
+            <PlannerCard v-for="(card, index) in layer.cards" :key="index" :card="card" :layerId="props.layer.id" />
         </div>
     </div>
 </template>

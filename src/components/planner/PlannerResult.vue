@@ -10,7 +10,8 @@ const emits = defineEmits([
     'update:totalActivityAndDays'
 ]);
 
-const calculateCards = ref([]);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const calculateCards = ref<{ id: number; cards: any; }[]>([]);
 
 interface IResult {
     Material: string,
@@ -32,7 +33,7 @@ watchEffect(() => {
         emits('update:totalActivityAndDays', getTotalActivityAndDays(processedCards));
 
         // Update the calculateCards ref
-        calculateCards.value = processedCards;
+        calculateCards.value = processedCards || [];
     }
 });
 </script>
