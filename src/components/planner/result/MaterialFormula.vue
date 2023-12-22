@@ -67,21 +67,19 @@ const isUndoable = computed(() => {
 <template>
     <div class="flex flex-col bg-slate-300/10 rounded py-2">
         <p class="text-center text-slate-300 text-sm opacity-70">Crafting Recipes</p>
-        <div class="flex">
+       <div class="grid grid-cols-2 sm:flex flex-row m-auto">
             <div v-for="(material, materialIndex) in formula?.Material" :key="materialIndex">
-                <MaterialFormulaItem
-                    :material="{
-                        Material: material,
-                        Quantity: formula?.Quantity[materialIndex]
-                    }"
-                />
+                <MaterialFormulaItem :material="{
+                    Material: material,
+                    Quantity: formula?.Quantity[materialIndex]
+                }" />
             </div>
-        </div>
+       </div>
         <div class="flex px-3 items-center justify-center gap-3">
-            <button class="btn btn-success btn-xs font-bold  text-white" @click="craft"
-            :disabled="!isCraftable" :class="isCraftable ? 'btn-success': 'btn-info'" >Craft</button>
-            <button class="btn btn-success btn-xs font-bold  text-white" @click="undo"
-            :disabled="!isUndoable" :class="isUndoable ? 'btn-success': 'btn-info'" >Undo</button>
+            <button class="btn btn-success btn-xs font-bold  text-white" @click="craft" :disabled="!isCraftable"
+                :class="isCraftable ? 'btn-success' : 'btn-info'">Craft</button>
+            <button class="btn btn-success btn-xs font-bold  text-white" @click="undo" :disabled="!isUndoable"
+                :class="isUndoable ? 'btn-success' : 'btn-info'">Reverse</button>
         </div>
-</div>
+    </div>
 </template>
