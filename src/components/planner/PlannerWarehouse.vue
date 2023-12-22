@@ -83,7 +83,7 @@ const closeDialog = () => dialog.value?.close()
       <button @click="closeWarehouseOverlay" class="absolute top-2 right-4 text-white">
         <i class="fas fa-times"></i>
       </button>
-        <p class="text-white text-center font-bold text-lg">Warehouse (Auto-save)</p>
+      <p class="text-white text-center font-bold text-lg">Warehouse (Auto-save)</p>
 
       <div>
         <div class="grid grid-cols-2 xl:grid-cols-4 justify-center items-center pb-5 text-center">
@@ -116,10 +116,10 @@ const closeDialog = () => dialog.value?.close()
         </div>
       </div>
 
-      <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden flex-grow mb-5">
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 2xl:grid-cols-10">
+      <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden mb-5">
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8 custom">
           <WarehouseItem v-for="material in filteredWarehouse" :key="material.Material" :material="material"
-            @update:quantity="updateMaterialQuantity(material.Material, $event)" />
+            @update:quantity="updateMaterialQuantity(material.Material, $event)" class=""/>
         </div>
       </div>
 
@@ -172,4 +172,10 @@ const closeDialog = () => dialog.value?.close()
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+@media (min-width: 1600px) {
+    .custom {
+        grid-template-columns: repeat(9, minmax(0, 1fr));
+    }
+}
+</style>
