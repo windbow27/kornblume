@@ -83,7 +83,7 @@ const formula = computed(() => {
                     left to farm/craft in total
                 </p>
                 <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">You don't have enough</div>
-                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed for all</div>
+                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed</div>
                 <div class="flex">
                     <WarehouseItemEditor :material="material" :processMaterial="processMaterial"/>
                     <MaterialFormula v-if="!!formula?.Material.length" :material="material" :processMaterial="processMaterial" :formula="(formula as Object)" />
