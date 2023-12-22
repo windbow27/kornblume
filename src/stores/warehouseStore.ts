@@ -68,9 +68,6 @@ export const useWarehouseStore = defineStore('warehouse', {
                     }
                 } else { return { ...matl } }
             });
-        },
-        getItem (materialName: string) {
-            return this.data.find((matl) => matl.Material === materialName);
         }
     },
     persist: true

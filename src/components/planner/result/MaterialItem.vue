@@ -7,6 +7,7 @@ import { useDataStore } from '@/stores/dataStore';
 import WarehouseItemEditor from './WarehouseItemEditor.vue';
 import MaterialFormula from './MaterialFormula.vue'
 import Popper from 'vue3-popper';
+import { storeToRefs } from 'pinia'
 
 const props = defineProps({
     material: {
@@ -20,10 +21,12 @@ const processMaterial = computed(() => {
     return result;
 });
 
+const warehouseStore = useWarehouseStore()
+const { data: warehouseData } = storeToRefs(warehouseStore)
+
 const warehouseMaterial = computed(() => {
-    const warehouseMatl = useWarehouseStore().getItem(processMaterial.value.material)
-    return warehouseMatl;
-});
+    return warehouseData.value.find((matl) => matl.Material === props.material.Material)
+})
 
 const neededQuantity = computed(() => {
     const quantity = useGlobalStore().getNeededMaterialsQuantity(processMaterial.value.material)

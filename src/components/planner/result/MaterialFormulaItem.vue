@@ -1,7 +1,11 @@
 <script setup lang="ts" name="MaterialFormula">
-import { defineProps, computed, ref } from 'vue';
+import { defineProps, computed } from 'vue';
 import { useProcessMaterial } from '../../../composables/ProcessItems';
 import { useWarehouseStore } from '@/stores/warehouseStore';
+import { storeToRefs } from 'pinia'
+
+const warehouseStore = useWarehouseStore()
+const { data: warehouseData } = storeToRefs(warehouseStore)
 
 const props = defineProps({
     material: {
@@ -15,7 +19,9 @@ const processMaterial = computed(() => {
     return result;
 });
 
-const warehouseQuantity = ref(useWarehouseStore().getItem(props.material.Material)?.Quantity || 0);
+const warehouseQuantity = computed(() => {
+    return warehouseData.value.find((matl) => matl.Material === props.material.Material)?.Quantity || 0
+})
 
 </script>
 

@@ -1,6 +1,10 @@
 <script setup lang="ts" name="WarehouseItemEditor">
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, watchEffect } from 'vue';
 import { useWarehouseStore } from '@/stores/warehouseStore';
+import { storeToRefs } from 'pinia'
+
+const warehouseStore = useWarehouseStore()
+const { data: warehouseData } = storeToRefs(warehouseStore)
 
 const props = defineProps({
     processMaterial: {
@@ -13,7 +17,11 @@ const props = defineProps({
     }
 });
 
-const quantity = ref(props.material.Quantity);
+const warehouseMatl = computed(() => {
+    return warehouseData.value.find((matl) => matl.Material === props.material.Material)
+})
+
+const quantity = ref(warehouseMatl.value?.Quantity || 0);
 
 const updateQuantity = () => {
     const newQuantity = Number(quantity.value)
@@ -22,27 +30,21 @@ const updateQuantity = () => {
     }
 };
 
-onMounted(() => {
-    quantity.value = useWarehouseStore().getItem(props.material.Material)?.Quantity
-})
-
 const isMoreThanZero = computed(() => {
     return quantity.value > 0;
 });
 
 const minus = () => {
     useWarehouseStore().reduceItem(props.material.Material, 1)
-    quantity.value = quantity.value - 1
 }
 
 const plus = () => {
     useWarehouseStore().addItem(props.material.Material, 1)
-    quantity.value = quantity.value + 1
 }
 
-// Must listen to parent component's prop changes, or the quantity won't update instantly
-watch(() => props.material, (newValue) => {
-    quantity.value = newValue.Quantity
+// Must listen to warehouse store data changes, or the quantity won't update instantly
+watchEffect(() => {
+    quantity.value = warehouseMatl.value?.Quantity || 0
 })
 
 </script>
