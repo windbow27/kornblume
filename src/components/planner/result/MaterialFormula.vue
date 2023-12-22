@@ -45,7 +45,7 @@ const isCraftable = computed(() => {
     return false
 })
 
-const undo = () => {
+const reverse = () => {
     if (props.formula) {
         const formula = props.formula
         useWarehouseStore().reduceItem(formula.Name, 1);
@@ -56,7 +56,7 @@ const undo = () => {
     }
 }
 
-const isUndoable = computed(() => {
+const isReversible = computed(() => {
     const matlName = props.material.Material
     const warehouseQuantity = warehouseData.value.find((matl) => matl.Material === matlName)?.Quantity || 0;
     return warehouseQuantity > 0;
@@ -80,8 +80,8 @@ const isUndoable = computed(() => {
         <div class="flex px-3 items-center justify-center gap-3">
             <button class="btn btn-success btn-xs font-bold  text-white" @click="craft"
             :disabled="!isCraftable" :class="isCraftable ? 'btn-success': 'btn-info'" >Craft</button>
-            <button class="btn btn-success btn-xs font-bold  text-white" @click="undo"
-            :disabled="!isUndoable" :class="isUndoable ? 'btn-success': 'btn-info'" >Undo</button>
+            <button class="btn btn-success btn-xs font-bold  text-white" @click="reverse"
+            :disabled="!isReversible" :class="isReversible ? 'btn-success': 'btn-info'" >Reverse</button>
         </div>
 </div>
 </template>
