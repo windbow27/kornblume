@@ -29,6 +29,13 @@ const warehouseMaterial = computed(() => {
 })
 
 const neededQuantity = computed(() => {
+    if (props.material.Material === 'Crystal Casket') {
+        let quantity = 0;
+        useDataStore().items.filter((matl) => matl.Category === 'Resonate Material' && matl.Rarity === 6).forEach((resonanceMatl) => {
+            quantity += useGlobalStore().getNeededMaterialsQuantity(resonanceMatl.Name)
+        })
+        return quantity;
+    }
     const quantity = useGlobalStore().getNeededMaterialsQuantity(processMaterial.value.material)
     return quantity;
 });
@@ -68,19 +75,17 @@ const formula = computed(() => {
             <div class="flex items-center justify-center flex-col">
                 <p class="text-center text-slate-300 text-sm opacity-70">
                     <span class="text-white">{{ props.material.Quantity }}</span>
-                    expected to droped/crafted from here
+                    expected to drop/craft here
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-70">
-                    <span class="text-white">{{ neededQuantity }}</span>
-                    needed for your goals
+                    <span class="text-white">{{ isReachGoal ? 0: neededQuantity - (warehouseMaterial?.Quantity || 0) }}</span>
+                    left to farm/craft in total
                 </p>
                 <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">You don't have enough</div>
-                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed for all
-                </div>
-                <div class="flex items-center">
-                    <WarehouseItemEditor :material="material" :processMaterial="processMaterial" />
-                    <MaterialFormula v-if="!!formula?.Material.length" :material="material"
-                        :processMaterial="processMaterial" :formula="(formula as Object)" />
+                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed</div>
+                <div class="flex">
+                    <WarehouseItemEditor :material="material" :processMaterial="processMaterial"/>
+                    <MaterialFormula v-if="!!formula?.Material.length" :material="material" :processMaterial="processMaterial" :formula="(formula as Object)" />
                 </div>
             </div>
         </template>
