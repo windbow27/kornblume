@@ -1,4 +1,5 @@
 import { useDataStore } from '../stores/dataStore';
+import { useGlobalStore } from '../stores/global';
 import { levelUpResources } from '../constants';
 
 const calculations = levelUpResources;
@@ -56,6 +57,9 @@ export function mergeResults (resultsArray) {
             }
         }
     });
+
+    useGlobalStore().updateNeededMaterialsMapping(merged);
+
     const arrayMerged = Object.keys(merged).map((material) => ({
         Material: material,
         Quantity: merged[material]

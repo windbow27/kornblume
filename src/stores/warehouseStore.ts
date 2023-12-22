@@ -17,9 +17,6 @@ export const useWarehouseStore = defineStore('warehouse', {
         data: []
     }),
     actions: {
-        initWarehouse () {
-
-        },
         initItem (materialName: string, category: string) {
             this.data.push({ Material: materialName, Quantity: 0, Category: category });
         },
@@ -32,6 +29,16 @@ export const useWarehouseStore = defineStore('warehouse', {
                     return {
                         ...matl,
                         Quantity: matl.Quantity + quantity
+                    }
+                } else { return { ...matl } }
+            });
+        },
+        reduceItem (materialName: string, quantity: number) {
+            this.data = this.data.map((matl) => {
+                if (matl.Material === materialName) {
+                    return {
+                        ...matl,
+                        Quantity: matl.Quantity >= quantity ? matl.Quantity - quantity : matl.Quantity
                     }
                 } else { return { ...matl } }
             });

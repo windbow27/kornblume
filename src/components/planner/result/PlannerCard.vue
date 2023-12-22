@@ -1,6 +1,6 @@
-<script setup>
+<script setup lang="ts" name="PlannerCard">
 import { computed, ref, watch } from 'vue';
-import ItemIcon from '../item/ItemIcon.vue';
+import MaterialItem from './MaterialItem.vue';
 const props = defineProps({
     card: {
         type: Object,
@@ -16,7 +16,7 @@ const scrollDiv = ref(null);
 
 watch(shouldHideScrollbar, (newVal) => {
     if (newVal && scrollDiv.value) {
-        scrollDiv.value.scrollLeft = 0;
+        (scrollDiv.value as HTMLDivElement).scrollLeft = 0;
     }
 });
 
@@ -46,7 +46,7 @@ watch(shouldHideScrollbar, (newVal) => {
 
         <div ref="scrollDiv" :class="{'custom-scrollbar':shouldHideScrollbar}" class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">
             <div v-for="(material, materialIndex) in card.materials" :key="materialIndex" class="flex-shrink-0">
-                <ItemIcon class="" :material="material" />
+                <MaterialItem :material="material" />
             </div>
         </div>
     </div>

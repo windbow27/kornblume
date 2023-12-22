@@ -1,6 +1,6 @@
-<script setup>
+<script setup lang="ts" name="PlannerLayer">
 import { computed } from 'vue'
-import Card from '../common/Card.vue';
+import PlannerCard from './PlannerCard.vue';
 
 const props = defineProps({
     layer: {
@@ -61,7 +61,7 @@ const getContainerClass = computed(() => {
         <div v-if="isBadge" class="badge badge-lg badge-ghost mt-2 mb-2 w-32" :class="getBadgeType">{{ getBadgeContent }}
         </div>
         <div :class="getContainerClass">
-            <Card v-for="(card, index) in layer.cards" :key="index" :card="card" />
+            <PlannerCard v-for="(card, index) in layer.cards" :key="index" :card="card" />
         </div>
     </div>
 </template>
