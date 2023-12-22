@@ -29,6 +29,13 @@ const warehouseMaterial = computed(() => {
 })
 
 const neededQuantity = computed(() => {
+    if (props.material.Material === 'Crystal Casket') {
+        let quantity = 0;
+        useDataStore().items.filter((matl) => matl.Category === 'Resonate Material' && matl.Rarity === 6).forEach((resonanceMatl) => {
+            quantity += useGlobalStore().getNeededMaterialsQuantity(resonanceMatl.Name)
+        })
+        return quantity;
+    }
     const quantity = useGlobalStore().getNeededMaterialsQuantity(processMaterial.value.material)
     return quantity;
 });
@@ -69,7 +76,7 @@ const formula = computed(() => {
             <div class="flex items-center justify-center flex-col">
                 <p class="text-center text-slate-300 text-sm opacity-70">
                     <span class="text-white">{{ props.material.Quantity }}</span>
-                    expected to droped/crafted from here
+                    expected to drop/craft here
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-70">
                     <span class="text-white">{{ neededQuantity }}</span>
