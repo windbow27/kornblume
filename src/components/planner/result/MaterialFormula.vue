@@ -66,7 +66,7 @@ const isReversible = computed(() => {
 
 <template>
     <div class="flex flex-col bg-slate-300/10 rounded py-2">
-        <p class="text-center text-slate-300 text-sm opacity-70">Crafting Recipes</p>
+        <p class="text-center text-slate-300 text-sm opacity-70">Crafting Recipe</p>
        <div class="grid grid-cols-2 sm:flex flex-row m-auto">
             <div v-for="(material, materialIndex) in formula?.Material" :key="materialIndex">
                 <MaterialFormulaItem :material="{

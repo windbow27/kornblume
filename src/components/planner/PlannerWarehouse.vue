@@ -119,14 +119,14 @@ const closeDialog = () => dialog.value?.close()
       <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden mb-5">
         <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8 custom">
           <WarehouseItem v-for="material in filteredWarehouse" :key="material.Material" :material="material"
-            @update:quantity="updateMaterialQuantity(material.Material, $event)" class=""/>
+            @update:quantity="updateMaterialQuantity(material.Material, $event)" class="" />
         </div>
       </div>
 
       <div class="flex space-x-10">
         <!-- shops -->
         <div class="flex space-x-3">
-          <button class="btn btn-sm btn-success" onclick="shop_container.showModal()">Additional Materials</button>
+          <button class="btn btn-sm btn-success" onclick="shop_container.showModal()">Event Materials</button>
           <dialog id="shop_container" class="modal">
             <div class="modal-box custom-gradient-gray-blue border border-blue-800 -translate-x-3">
               <form method="dialog">
@@ -134,7 +134,7 @@ const closeDialog = () => dialog.value?.close()
               </form>
               <p class="py-4 text-base text-white text-center">You can quickly add Materials from Jukeboxes and Events
                 here.</p>
-              <div class="grid grid-cols-2 gap-y-5">
+              <div class="grid grid-cols-2 gap-2 p-2">
                 <EventShopButton version="jb1" text="Jukebox Normal" type="Jukebox" />
                 <EventShopButton version="jb2" text="Jukebox Collector" type="Jukebox" />
                 <EventShopButton version="1.21" text="1.2 part 1" type="Event Shop" />
@@ -174,8 +174,8 @@ const closeDialog = () => dialog.value?.close()
 
 <style scoped>
 @media (min-width: 1600px) {
-    .custom {
-        grid-template-columns: repeat(9, minmax(0, 1fr));
-    }
+  .custom {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
 }
 </style>

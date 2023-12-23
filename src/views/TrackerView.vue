@@ -65,9 +65,11 @@ async function preprocessImage (file: File) {
 
 const ocrCorrectionMap = {
     '3uma': 'Зима',
+    '3lonney': 'Blonney',
     uma: 'Зима',
     aliEnT: 'aliEn T',
-    Druvis: 'Druvis III'
+    Druvis: 'Druvis III',
+    korn: 'Bkornblume'
 }
 
 type clickHandler = (payload: Event) => void | undefined;
