@@ -42,7 +42,7 @@ watchEffect(() => {
     <div class="flex flex-wrap">
         <button class="text-center text-info font-bold text-sm hover:text-blue-200 opacity-90" onclick="process_explaination.showModal()">Planner calculation explanation</button>
         <dialog id="process_explaination" class="modal">
-            <div class="modal-box custom-gradient-gray-blue">
+            <div class="modal-box custom-gradient-gray-blue border border-blue-800">
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                 </form>

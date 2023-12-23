@@ -85,7 +85,7 @@ const formula = computed(() => {
                 <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ isReachGoal ? 0 : neededQuantity - (warehouseMaterial?.Quantity || 0) }}
                     </span>
-                    needed for goal
+                    needed to reach the goal
                 </p>
                 <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">Insufficient Materials in Warehouse
                 </div>
