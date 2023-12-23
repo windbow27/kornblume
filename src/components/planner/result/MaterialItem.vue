@@ -79,18 +79,17 @@ const formula = computed(() => {
         <template #content>
             <div class="flex items-center justify-center flex-col">
                 <p class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ props.material.Quantity }}</span>
-                    {{ layerId === 3 ? 'expected to be crafted here' : 'expected to drop' + (props.material.Material ===
-                        'Sharpodonty' ? ' (including crafting)' : '')  }}
+                    <span class="text-white">{{ layerId === 0 ? '' : props.material.Quantity }}</span>
+                    {{ layerId === 0 ? '' : (layerId === 3 ? 'expected to be crafted here' : 'expected to drop') }}
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ isReachGoal ? 0 : neededQuantity - (warehouseMaterial?.Quantity || 0)
-                    }}</span>
-                    needed to {{ layerId === 3 ? 'obtain' : 'farm' + (props.material.Material ===
-                        'Sharpodonty' ? ' (excluding crafting)' : '')  }}
+                    <span class="text-white">{{ isReachGoal ? 0 : neededQuantity - (warehouseMaterial?.Quantity || 0) }}
+                    </span>
+                    needed {{ layerId === 3 ? 'to obtain' : 'in total' }}
                 </p>
-                <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">You don't have enough</div>
-                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">You have the amount needed</div>
+                <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">Insufficient Materials in Warehouse
+                </div>
+                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">Sufficient Materials in Warehouse</div>
                 <div class="flex">
                     <WarehouseItemEditor :material="material" :processMaterial="processMaterial" />
                     <MaterialFormula v-if="!!formula?.Material.length" :material="material"
