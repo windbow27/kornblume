@@ -80,12 +80,12 @@ const formula = computed(() => {
             <div class="flex items-center justify-center flex-col">
                 <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ layerId === 0 ? '' : props.material.Quantity }}</span>
-                    {{ layerId === 0 ? '' : (layerId === 3 ? 'expected to be crafted here' : 'expected to drop') }}
+                    {{ layerId === 0 ? '' : (layerId === 3 ? 'expected to be crafted' : 'expected to drop') }}
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ isReachGoal ? 0 : neededQuantity - (warehouseMaterial?.Quantity || 0) }}
                     </span>
-                    needed {{ layerId === 3 ? 'to obtain' : 'in total' }}
+                    needed for goal
                 </p>
                 <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">Insufficient Materials in Warehouse
                 </div>
