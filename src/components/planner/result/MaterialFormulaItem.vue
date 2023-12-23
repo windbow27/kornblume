@@ -1,6 +1,6 @@
 <script setup lang="ts" name="MaterialFormula">
 import { computed } from 'vue';
-import { useProcessMaterial } from '../../../composables/ProcessItems';
+import { normalizeDisplayMaterial } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { storeToRefs } from 'pinia'
 
@@ -14,8 +14,8 @@ const props = defineProps({
     }
 });
 
-const processMaterial = computed(() => {
-    const result = useProcessMaterial(props.material);
+const normalizedMaterial = computed(() => {
+    const result = normalizeDisplayMaterial(props.material);
     return result;
 });
 
@@ -27,10 +27,10 @@ const warehouseQuantity = computed(() => {
 
 <template>
     <div class="relative inline-block">
-        <img :src="processMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
-        <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+        <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
+        <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
         <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs">
-            {{ warehouseQuantity >= 1000 ? processMaterial.quantity: `${warehouseQuantity}/${processMaterial.quantity}`}}
+            {{ warehouseQuantity >= 1000 ? normalizedMaterial.quantity: `${warehouseQuantity}/${normalizedMaterial.quantity}`}}
         </div>
     </div>
 </template>
