@@ -143,7 +143,7 @@ const wildernessOutput = computed(() => {
         <div class="tooltip" data-tip="Collect once a day">
           <div class="form-control">
             <label class="cursor-pointer label justify-center">
-              <span class="label-text text-yellow-100 mr-3">Lazy Mode</span>
+              <span class="label-text text-yellow-100 mr-3">Lazy Modo</span>
               <input v-model="lazyModo" type="checkbox" :checked="lazyModo" class="checkbox checkbox-info" />
             </label>
           </div>
