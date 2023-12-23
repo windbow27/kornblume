@@ -1,4 +1,4 @@
-<script setup lang="ts" name="MaterialFormula">
+<script setup lang="ts" name="MaterialCraftingRecipe">
 import { computed } from 'vue';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import MaterialFormulaItem from './MaterialFormulaItem.vue';
@@ -8,7 +8,7 @@ const warehouseStore = useWarehouseStore()
 const { data: warehouseData } = storeToRefs(warehouseStore)
 
 const props = defineProps({
-    processMaterial: {
+    normalizedMaterial: {
         type: Object,
         required: true
     },

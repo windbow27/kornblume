@@ -7,7 +7,7 @@ const warehouseStore = useWarehouseStore()
 const { data: warehouseData } = storeToRefs(warehouseStore)
 
 const props = defineProps({
-    processMaterial: {
+    normalizedMaterial: {
         type: Object,
         required: true
     },
@@ -53,8 +53,8 @@ watchEffect(() => {
     <div class="pb-4">
         <div class="relative flex flex-col">
             <div class="relative">
-                <img :src="processMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
-                <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+                <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
+                <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
             </div>
             <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""
                    class="bg-slate-600 text-white w-14 input input-xs rounded-none text-center absolute right-3 bottom-6" />

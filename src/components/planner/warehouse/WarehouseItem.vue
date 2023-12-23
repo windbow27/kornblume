@@ -1,6 +1,6 @@
 <script setup lang="ts" name="WarehouseItem">
 import { ref, computed, watch } from 'vue';
-import { useProcessMaterial } from '../../../composables/ProcessItems';
+import { normalizeDisplayMaterial } from '../../../composables/materials';
 
 const props = defineProps({
     material: {
@@ -13,8 +13,8 @@ const emit = defineEmits<{(e: 'update:quantity', quantity: number): void}>()
 
 const quantity = ref(props.material.Quantity);
 
-const processMaterial = computed(() => {
-    const result = useProcessMaterial(props.material);
+const normalizedMaterial = computed(() => {
+    const result = normalizeDisplayMaterial(props.material);
     return result;
 });
 
@@ -35,8 +35,8 @@ watch(() => props.material, (newValue) => {
 <template>
     <div class="pb-6">
         <div class="relative inline-block">
-            <img :src="processMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
-            <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+            <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
+            <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
             <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""
                 class="bg-slate-600 text-white absolute -bottom-3 left-3 w-14 input input-xs rounded-t-none text-center" />
         </div>

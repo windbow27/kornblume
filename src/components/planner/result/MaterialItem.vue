@@ -1,11 +1,11 @@
 <script setup lang="ts" name="MaterialItem">
 import { computed } from 'vue';
-import { useProcessMaterial, formatQuantity } from '../../../composables/ProcessItems';
+import { normalizeDisplayMaterial, formatQuantity } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
 import WarehouseItemEditor from './WarehouseItemEditor.vue';
-import MaterialFormula from './MaterialFormula.vue'
+import MaterialCraftingRecipe from './MaterialCraftingRecipe.vue'
 import Popper from 'vue3-popper';
 import { storeToRefs } from 'pinia'
 
@@ -20,13 +20,18 @@ const props = defineProps({
     }
 });
 
-const processMaterial = computed(() => {
-    const result = useProcessMaterial(props.material);
+const normalizedMaterial = computed(() => {
+    const result = normalizeDisplayMaterial(props.material);
     return result;
 });
 
+const items = useDataStore().items;
 const warehouseStore = useWarehouseStore()
 const { data: warehouseData } = storeToRefs(warehouseStore)
+
+const materialItem = computed(() => {
+    return items.find(item => item.Name === props.material.Material)
+})
 
 const warehouseMaterial = computed(() => {
     return warehouseData.value.find((matl) => matl.Material === props.material.Material)
@@ -40,7 +45,7 @@ const neededQuantity = computed(() => {
         })
         return quantity;
     }
-    const quantity = useGlobalStore().getNeededMaterialsQuantity(processMaterial.value.material)
+    const quantity = useGlobalStore().getNeededMaterialsQuantity(normalizedMaterial.value.material)
     return quantity;
 });
 
@@ -51,6 +56,10 @@ const formatNeededQuantity = computed(() => {
 const isReachGoal = computed(() => {
     return (warehouseMaterial.value?.Quantity || 0) >= neededQuantity.value;
 });
+
+const needQuantityForGoal = computed(() => {
+    return isReachGoal.value ? 0 : neededQuantity.value - (warehouseMaterial.value?.Quantity || 0)
+})
 
 const formula = computed(() => {
     return useDataStore().formulas.find((matl) => matl.Name === props.material.Material)
@@ -63,10 +72,10 @@ const formula = computed(() => {
         @close:popper="useGlobalStore().setIsEditingWarehouse(false)">
         <div class="pb-6 cursor-pointer">
             <div class="relative inline-block">
-                <img :src="processMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
-                <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+                <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
+                <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
                 <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs cursor-default">
-                    {{ processMaterial.quantity }}
+                    {{ normalizedMaterial.quantity }}
                 </div>
                 <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
                     :class="(formatNeededQuantity.length > 3 && 'gap-0.5')">
@@ -78,12 +87,17 @@ const formula = computed(() => {
         </div>
         <template #content>
             <div class="flex items-center justify-center flex-col">
-                <p class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ layerId === 0 ? '' : props.material.Quantity }}</span>
-                    {{ layerId === 0 ? '' : (layerId === 3 ? 'expected to be crafted' : 'expected to drop') }}
+                <p v-if="props.layerId !== 0" class="text-center text-slate-300 text-sm opacity-80">
+                    <span class="text-white">{{ props.material.Quantity }}</span>
+                    {{ (layerId === 3 ? 'expected to be crafted' : 'expected to drop') }}
+                </p>
+                <p v-if="materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
+                    <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal, 0) }}
+                    </span>
+                    needed to craft higher tier materials
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ isReachGoal ? 0 : neededQuantity - (warehouseMaterial?.Quantity || 0) }}
+                    <span class="text-white">{{ needQuantityForGoal }}
                     </span>
                     needed to complete the goal
                 </p>
@@ -91,9 +105,9 @@ const formula = computed(() => {
                 </div>
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">Sufficient Materials in Warehouse</div>
                 <div class="flex">
-                    <WarehouseItemEditor :material="material" :processMaterial="processMaterial" />
-                    <MaterialFormula v-if="!!formula?.Material.length" :material="material"
-                        :processMaterial="processMaterial" :formula="(formula as Object)" />
+                    <WarehouseItemEditor :material="material" :normalizedMaterial="normalizedMaterial" />
+                    <MaterialCraftingRecipe v-if="!!formula?.Material.length" :material="material"
+                        :normalizedMaterial="normalizedMaterial" :formula="(formula as Object)" />
                 </div>
             </div>
         </template>
