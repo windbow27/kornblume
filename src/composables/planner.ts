@@ -144,8 +144,13 @@ function sortLayer (cards: ICard[], drops: IStages) {
     });
 }
 
-function sortByRunCount (cards: ICard[]) {
-    return cards.sort((a, b) => b.runs - a.runs);
+function sortHardStage (cards: ICard[]) {
+    return cards.sort((a, b) => {
+        // always place unreleased card at the end of the list
+        if (a.stage === 'Unreleased (Placeholder)') { return 1 }
+        if (b.stage === 'Unreleased (Placeholder)') { return -1 }
+        return b.runs - a.runs
+    });
 }
 
 interface IPlanCard {
@@ -221,7 +226,7 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
     const cardLayers = [
         { id: 0, cards: sortLayer(cardsFirstLayer, drops) },
         { id: 1, cards: sortLayer(cardsSecondLayer, drops) },
-        { id: 2, cards: sortByRunCount(cardsThirdLayer) },
+        { id: 2, cards: sortHardStage(cardsThirdLayer) },
         { id: 3, cards: cardsFourthLayer }
     ];
     return cardLayers;
