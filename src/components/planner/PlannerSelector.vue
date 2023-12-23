@@ -45,7 +45,7 @@ const totalMaterials = computed(() => {
             <div class="flex justify-center items-center">
                 <button class="btn btn-info btn-sm text-white" onclick="goalMaterials.showModal()">Goal</button>
                 <dialog id="goalMaterials" class="modal">
-                    <div class="modal-box custom-gradient-gray-blue border border-blue-800">
+                    <div class="modal-box custom-gradient-gray-blue border border-blue-800 custom-scrollbar">
                         <form method="dialog">
                             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                         </form>

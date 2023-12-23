@@ -124,7 +124,7 @@ const closePopover = () => {
                     <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
                     {{ (layerId === 3 ? 'expected to be crafted' : 'expected to drop') }}
                 </p>
-                <p v-if="materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
+                <p v-if="props.layerId === 3 && materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal - warehouseQuantityShift, 0) }}
                     </span>
                     used to craft higher tier materials
