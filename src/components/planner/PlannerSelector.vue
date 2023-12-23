@@ -46,10 +46,16 @@ const totalMaterials = computed(() => {
                 <button class="btn btn-info btn-sm text-white" onclick="goalMaterials.showModal()">Goal</button>
                 <dialog id="goalMaterials" class="modal">
                     <div class="modal-box custom-gradient-gray-blue border border-blue-800">
+                        <form method="dialog">
+                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                        </form>
                         <h3 class="font-bold text-lg text-white text-center">Total Goal Materials</h3>
                         <div class="flex flex-col">
                             <ItemList v-if="totalMaterials" :materialList="totalMaterials" />
                         </div>
+                        <form method="dialog" class="flex justify-center">
+                            <button class="btn btn-sm btn-success text-black">Close</button>
+                        </form>
                     </div>
                     <form method="dialog" class="modal-backdrop">
                         <button>close</button>

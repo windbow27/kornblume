@@ -188,7 +188,7 @@ onClickOutside(settingsRef, closeSettings)
           </form>
           <h3 class="font-bold text-lg text-white">Howdy!</h3>
           <p class="text-slate-300 text-sm pb-4">
-            Due to a significant data change, the information for existing users has been corrupted. Please proceed to your
+            Due to a significant data change on 15/12/2023, the information for existing users has been corrupted. Please proceed to your
             <router-link class=" text-info text-lg" to="/profile">Profile</router-link>
             and reset your data. We apologize for any inconvenience this may cause and appreciate your understanding.
           </p>
