@@ -1,5 +1,5 @@
 <script setup lang="ts" name="MaterialItem">
-import { computed } from 'vue';
+import { computed, watch, ref } from 'vue';
 import { normalizeDisplayMaterial, formatQuantity } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
@@ -19,6 +19,8 @@ const props = defineProps({
         required: true
     }
 });
+
+const quantity = ref(props.material.Quantity);
 
 const normalizedMaterial = computed(() => {
     const result = normalizeDisplayMaterial(props.material);
@@ -65,11 +67,42 @@ const formula = computed(() => {
     return useDataStore().formulas.find((matl) => matl.Name === props.material.Material)
 })
 
+// Must listen to parent component's prop changes, or the quantity won't update instantly
+watch(() => props.material, (newValue) => {
+    quantity.value = newValue.Quantity
+})
+
+const originalWarehouseQuantity = ref(warehouseMaterial.value ? warehouseMaterial.value?.Quantity : 0);
+const warehouseQuantityShift = ref(0);
+
+watch(warehouseMaterial, (newMatl) => {
+    if (useGlobalStore().isEditingMaterial === props.material.Material) {
+        const newQuantity = newMatl ? newMatl.Quantity : 0
+        warehouseQuantityShift.value = newQuantity - originalWarehouseQuantity.value
+    }
+})
+
+const openPopover = () => {
+    originalWarehouseQuantity.value = warehouseMaterial.value ? warehouseMaterial.value?.Quantity : 0;
+    warehouseQuantityShift.value = 0;
+    // reset the shift
+    useGlobalStore().setIsEditingWarehouse(true)
+    useGlobalStore().setIsEditingMaterial(props.material.Material)
+}
+
+const closePopover = () => {
+    useGlobalStore().setIsEditingWarehouse(false)
+    useGlobalStore().setIsEditingMaterial()
+    // reset the shift
+    originalWarehouseQuantity.value = warehouseMaterial.value ? warehouseMaterial.value?.Quantity : 0;
+    warehouseQuantityShift.value = 0;
+}
+
 </script>
 
 <template>
-    <Popper arrow placement="top" offsetDistance="2" @open:popper="useGlobalStore().setIsEditingWarehouse(true)"
-        @close:popper="useGlobalStore().setIsEditingWarehouse(false)">
+    <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover"
+        @close:popper="closePopover">
         <div class="pb-6 cursor-pointer">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
@@ -88,11 +121,11 @@ const formula = computed(() => {
         <template #content>
             <div class="flex items-center justify-center flex-col">
                 <p v-if="props.layerId !== 0" class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ props.material.Quantity }}</span>
+                    <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
                     {{ (layerId === 3 ? 'expected to be crafted' : 'expected to drop') }}
                 </p>
                 <p v-if="materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal, 0) }}
+                    <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal - warehouseQuantityShift, 0) }}
                     </span>
                     needed to craft higher tier materials
                 </p>

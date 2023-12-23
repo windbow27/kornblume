@@ -5,14 +5,16 @@ interface INeededMaterialsMapping {
 }
 
 interface IGlobalStore {
-  isEditingWarehouse: boolean,
-  neededMaterialsMapping: INeededMaterialsMapping
+    isEditingWarehouse: boolean,
+    isEditingMaterial: string,
+    neededMaterialsMapping: INeededMaterialsMapping
 }
 
 // can set some global state here, but never let it persist
 export const useGlobalStore = defineStore('global', {
     state: (): IGlobalStore => ({
         isEditingWarehouse: false,
+        isEditingMaterial: '',
         neededMaterialsMapping: {}
     }),
     actions: {
@@ -26,6 +28,9 @@ export const useGlobalStore = defineStore('global', {
             this.neededMaterialsMapping = {
                 ...mapping
             }
+        },
+        setIsEditingMaterial (editingMaterial?: string) {
+            this.isEditingMaterial = editingMaterial || ''
         }
     }
 })
