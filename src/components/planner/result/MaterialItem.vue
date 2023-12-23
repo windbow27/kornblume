@@ -127,7 +127,7 @@ const closePopover = () => {
                 <p v-if="materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal - warehouseQuantityShift, 0) }}
                     </span>
-                    needed to craft higher tier materials
+                    used to craft higher tier materials
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ needQuantityForGoal }}
