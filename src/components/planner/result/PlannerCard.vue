@@ -24,6 +24,15 @@ watch(shouldHideScrollbar, (newVal) => {
     }
 });
 
+const toolTipText = computed(() => {
+    if (props.card.activity === 0) {
+        return '';
+    } else if (props.card.stage === 'Oneiric Shop') {
+        return 'Number of Oneiric Fluid'
+    }
+    return 'Number of Runs | Activities | Days';
+})
+
 </script>
 
 <template>
@@ -32,7 +41,7 @@ watch(shouldHideScrollbar, (newVal) => {
             <p>{{ card.stage }}</p>
         </div>
 
-        <div class="tooltip w-full" data-tip="Number of runs | Activities | Days">
+        <div class="tooltip w-full" :data-tip="toolTipText">
             <div class="calculations flex justify-center items-center bg-gradient-to-r from-blue-800/70 to-blue-900/90 text-white p-2 rounded-md">
                 <p class="border-blue-700/90 border-r pr-3">
                     <span v-show="card.runs > 0">
