@@ -49,12 +49,12 @@ const toolTipText = computed(() => {
                     </span>
                 </p>
 
-                <p class="pl-2">
-                    {{ card.activity === 0 ?
-                        'Crafted from available Materials. List includes dependencies.':
-                        card.activity
-                    }}
+                <p class="pl-2" v-if="card.activity !== 0">{{ card.activity }}</p>
+                <p v-else>
+                    <span class="border-blue-700/90 border-r pr-3">Crafted from available Materials</span>
+                    <span class="pl-3">List includes dependencies</span>
                 </p>
+
                 <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image" class="inline-block w-8 h-8" />
 
                 <p class="border-blue-700/90 border-l pl-3">
