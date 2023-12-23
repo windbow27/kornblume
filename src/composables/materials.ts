@@ -1,6 +1,4 @@
-import { useDataStore } from '../stores/dataStore';
-
-const items = useDataStore().items;
+import { getItemImagePathByMatl, getBorderImagePathByMatl } from './images'
 
 export function formatQuantity (quantity: number): string {
     if (quantity > 1000000) {
@@ -11,26 +9,6 @@ export function formatQuantity (quantity: number): string {
     }
     return quantity.toString();
 }
-
-const getId = (material) => {
-    const item = items.find(item => item.Name === material);
-    return item ? item.Id : null;
-};
-
-const getRarity = (material) => {
-    const item = items.find(item => item.Name === material);
-    return item ? item.Rarity : null;
-};
-
-const getItemImagePath = (material) => {
-    const id = getId(material);
-    return id ? `images/items/icon/${id}.png` : '';
-};
-
-const getBorderImagePath = (material) => {
-    const rarity = getRarity(material);
-    return rarity ? `images/items/border/${rarity}.png` : '';
-};
 
 export interface INormalizedMaterial {
     material: string,
@@ -43,8 +21,8 @@ export function normalizeDisplayMaterial (unprocessedMaterial): INormalizedMater
     const result = {
         material: unprocessedMaterial.Material,
         quantity: formatQuantity(unprocessedMaterial.Quantity),
-        itemImagePath: getItemImagePath(unprocessedMaterial.Material),
-        borderImagePath: getBorderImagePath(unprocessedMaterial.Material)
+        itemImagePath: getItemImagePathByMatl(unprocessedMaterial.Material),
+        borderImagePath: getBorderImagePathByMatl(unprocessedMaterial.Material)
     };
     return result;
 }

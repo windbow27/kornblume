@@ -1,4 +1,4 @@
-interface IItem {
+export interface IItem {
     Category: string,
     Description:string,
     Id:number,
@@ -10,3 +10,8 @@ interface IItem {
 }
 
 export interface IItems extends Array<IItem>{}
+
+export interface IMaterialUnit {
+    Material: string,
+    Quantity: number
+}
