@@ -1,7 +1,7 @@
 <script setup lang="ts" name="PannerResult">
 import { ref, watchEffect } from 'vue';
 import { useCalculation, mergeResults } from '../../composables/CalculateMaterials';
-import { getTotalActivityAndDays, getPlan } from '../../composables/planner';
+import { getTotalActivityAndDays, getPlan, IPlanCards } from '../../composables/planner';
 import PlannerLayer from './result/PlannerLayer.vue';
 import { useGlobalStore } from '../../stores/global';
 import { usePlannerStore } from '../../stores/plannerStore';
@@ -11,8 +11,7 @@ const emits = defineEmits([
     'update:totalActivityAndDays'
 ]);
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const calculateCards = ref<{ id: number; cards: any; }[]>([]);
+const calculateCards = ref<IPlanCards>([]);
 
 watchEffect(() => {
     if (!useGlobalStore().isEditingWarehouse) {

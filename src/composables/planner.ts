@@ -148,7 +148,13 @@ function sortByRunCount (cards: ICard[]) {
     return cards.sort((a, b) => b.runs - a.runs);
 }
 
-export function getPlan (materials: IMaterialUnit[]) {
+interface IPlanCard {
+    id: number,
+    cards: ICard[]
+}
+export interface IPlanCards extends Array<IPlanCard>{}
+
+export function getPlan (materials: IMaterialUnit[]): IPlanCards {
     const generatedCards: ICard[] = [];
     const drops = getDrops();
 
