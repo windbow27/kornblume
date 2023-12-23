@@ -1,6 +1,6 @@
 <!-- eslint-disable no-unused-vars -->
 <script setup>
-import { formatQuantity } from '../../composables/ProcessItems';
+import { formatQuantity } from '../../composables/materials';
 import { useActivityStore } from '../../stores/activityStore';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

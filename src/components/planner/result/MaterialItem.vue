@@ -1,6 +1,6 @@
 <script setup lang="ts" name="MaterialItem">
 import { computed } from 'vue';
-import { useProcessMaterial, formatQuantity } from '../../../composables/ProcessItems';
+import { normalizeDisplayMaterial, formatQuantity } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
@@ -20,8 +20,8 @@ const props = defineProps({
     }
 });
 
-const processMaterial = computed(() => {
-    const result = useProcessMaterial(props.material);
+const normalizedMaterial = computed(() => {
+    const result = normalizeDisplayMaterial(props.material);
     return result;
 });
 
@@ -40,7 +40,7 @@ const neededQuantity = computed(() => {
         })
         return quantity;
     }
-    const quantity = useGlobalStore().getNeededMaterialsQuantity(processMaterial.value.material)
+    const quantity = useGlobalStore().getNeededMaterialsQuantity(normalizedMaterial.value.material)
     return quantity;
 });
 
@@ -63,10 +63,10 @@ const formula = computed(() => {
         @close:popper="useGlobalStore().setIsEditingWarehouse(false)">
         <div class="pb-6 cursor-pointer">
             <div class="relative inline-block">
-                <img :src="processMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
-                <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+                <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
+                <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
                 <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs cursor-default">
-                    {{ processMaterial.quantity }}
+                    {{ normalizedMaterial.quantity }}
                 </div>
                 <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
                     :class="(formatNeededQuantity.length > 3 && 'gap-0.5')">
@@ -91,9 +91,9 @@ const formula = computed(() => {
                 </div>
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">Sufficient Materials in Warehouse</div>
                 <div class="flex">
-                    <WarehouseItemEditor :material="material" :processMaterial="processMaterial" />
+                    <WarehouseItemEditor :material="material" :normalizedMaterial="normalizedMaterial" />
                     <MaterialCraftingRecipe v-if="!!formula?.Material.length" :material="material"
-                        :processMaterial="processMaterial" :formula="(formula as Object)" />
+                        :normalizedMaterial="normalizedMaterial" :formula="(formula as Object)" />
                 </div>
             </div>
         </template>

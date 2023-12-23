@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import { useProcessMaterial } from '../../composables/ProcessItems';
+import { normalizeDisplayMaterial } from '../../composables/materials';
 
 const props = defineProps({
     material: {
@@ -9,20 +9,20 @@ const props = defineProps({
     }
 });
 
-const processMaterial = computed(() => {
-    const result = useProcessMaterial(props.material);
+const normalizedMaterial = computed(() => {
+    const result = normalizeDisplayMaterial(props.material);
     return result;
 });
 
 </script>
 
 <template>
-    <div class="tooltip" :data-tip="processMaterial.material">
+    <div class="tooltip" :data-tip="normalizedMaterial.material">
         <div class="relative inline-block">
-            <img :src="processMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
-            <img :src="processMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+            <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
+            <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
             <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs">
-                {{ processMaterial.quantity }}
+                {{ normalizedMaterial.quantity }}
             </div>
         </div>
     </div>

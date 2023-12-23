@@ -33,7 +33,7 @@ watchEffect(() => {
         emits('update:totalActivityAndDays', getTotalActivityAndDays(processedCards));
 
         // Update the calculateCards ref
-        calculateCards.value = processedCards || [];
+        calculateCards.value = processedCards;
     }
 });
 </script>

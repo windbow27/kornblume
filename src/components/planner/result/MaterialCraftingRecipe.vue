@@ -8,7 +8,7 @@ const warehouseStore = useWarehouseStore()
 const { data: warehouseData } = storeToRefs(warehouseStore)
 
 const props = defineProps({
-    processMaterial: {
+    normalizedMaterial: {
         type: Object,
         required: true
     },
