@@ -43,7 +43,7 @@ const totalMaterials = computed(() => {
                 :visible="arcanist.isVisible" @click="handleLeftClick(arcanist)"
                 @contextmenu.prevent="handleRightClick(arcanist)" />
             <div class="flex justify-center items-center">
-                <button class="btn btn-info btn-sm text-white" onclick="goalMaterials.showModal()">Goal</button>
+                <button class="btn custom-gradient-button btn-sm text-white" onclick="goalMaterials.showModal()">Goal</button>
                 <dialog id="goalMaterials" class="modal">
                     <div class="modal-box custom-gradient-gray-blue border border-blue-800 custom-scrollbar">
                         <form method="dialog">
@@ -64,7 +64,7 @@ const totalMaterials = computed(() => {
             </div>
         </div>
 
-        <p class="text-center text-slate-300 text-sm opacity-70">Left click to edit, right click to show / hide.</p>
+        <p class="text-center text-slate-300 text-sm opacity-70 mt-2">Left click to edit, right click to show / hide.</p>
     </div>
 </template>
 
