@@ -72,6 +72,8 @@ watch(() => props.material, (newValue) => {
     quantity.value = newValue.Quantity
 })
 
+// Because props.material.Quantit is calculated by the LP solver and keeps static during warehouse changes
+// when user crafting, we may need to consider shifts in the warehouse during this case for wording
 const originalWarehouseQuantity = ref(warehouseMaterial.value ? warehouseMaterial.value?.Quantity : 0);
 const warehouseQuantityShift = ref(0);
 
@@ -120,10 +122,16 @@ const closePopover = () => {
         </div>
         <template #content>
             <div class="flex items-center justify-center flex-col">
-                <p v-if="props.layerId !== 0" class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
-                    {{ (layerId === 3 ? 'expected to be crafted' : 'expected to drop') }}
+                <p v-if="props.layerId === 1 || props.layerId === 2" class="text-center text-slate-300 text-sm opacity-80">
+                    <span class="text-white">{{ props.material.Quantity }}</span>
+                    expected to drop
                 </p>
+                <!-- only consider warehouseQuantityShift for crafting -->
+                <p v-if="props.layerId === 3" class="text-center text-slate-300 text-sm opacity-80">
+                    <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
+                    expected to be crafted
+                </p>
+                <!-- only consider warehouseQuantityShift for crafting -->
                 <p v-if="props.layerId === 3 && materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal - warehouseQuantityShift, 0) }}
                     </span>
