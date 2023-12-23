@@ -5,7 +5,7 @@ import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
 import WarehouseItemEditor from './WarehouseItemEditor.vue';
-import MaterialFormula from './MaterialFormula.vue'
+import MaterialCraftingRecipe from './MaterialCraftingRecipe.vue'
 import Popper from 'vue3-popper';
 import { storeToRefs } from 'pinia'
 
@@ -92,7 +92,7 @@ const formula = computed(() => {
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">Sufficient Materials in Warehouse</div>
                 <div class="flex">
                     <WarehouseItemEditor :material="material" :processMaterial="processMaterial" />
-                    <MaterialFormula v-if="!!formula?.Material.length" :material="material"
+                    <MaterialCraftingRecipe v-if="!!formula?.Material.length" :material="material"
                         :processMaterial="processMaterial" :formula="(formula as Object)" />
                 </div>
             </div>
