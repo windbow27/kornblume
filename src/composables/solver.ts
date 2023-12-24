@@ -2,6 +2,10 @@ import { useDataStore } from '../stores/dataStore'
 import { useWarehouseStore } from '../stores/warehouseStore'
 import { solve, Model } from 'yalps';
 import { getDrops } from './planner';
+import { useActivityStore } from '../stores/activityStore';
+import { useWildernessStore } from '../stores/wildernessStore';
+import { IMaterialUnit } from '@/types';
+import { useGlobalStore } from '../stores/global';
 
 const formulas = useDataStore().formulas;
 
@@ -116,4 +120,123 @@ export function getSolve (materials) {
         console.log('variables: ', variables)
     }
     return solver
+}
+
+interface ICard {
+    stage: string,
+    runs: number,
+    activity: number,
+    days: number,
+    materials: IMaterialUnit[],
+    activityImagePath: string,
+}
+
+function getDaysFromActivity (activity): number {
+    const dailyActivity = useActivityStore().settings.activity;
+    return Number((activity / dailyActivity).toFixed(1));
+}
+
+export function processSharpoAndDust (generatedCards: ICard[]) {
+    let sharpoForCrafting = 0
+    const craftingCard = generatedCards.find((card) => card.stage === 'Wilderness Wishing Spring')
+    if (craftingCard) {
+        craftingCard.materials.forEach(({ Material: matlName, Quantity: matlQuant }) => {
+            const formula = formulas.find((matl) => matl.Name === matlName);
+            if (formula?.Quantity.length) {
+                sharpoForCrafting += formula?.Quantity[formula?.Quantity.length - 1] * matlQuant
+            }
+        })
+    }
+    const sharpoForGoal = useGlobalStore().getNeededMaterialsQuantity('Sharpodonty') + sharpoForCrafting
+    const dustForGoal = useGlobalStore().getNeededMaterialsQuantity('Dust')
+
+    let activityForOthers = 0
+    const otherStageCards = generatedCards.filter((card) => card.stage !== 'The Poussiere VI' && card.stage !== 'Mintage Aesthetics VI')
+    otherStageCards.forEach((card) => {
+        if (card.stage !== 'Oneiric Shop') {
+            activityForOthers += card.activity
+        }
+    })
+    const dailyActivity = useActivityStore().settings.activity;
+    const daysForOthers = getDaysFromActivity(activityForOthers);
+
+    const warehouseSharpo = useWarehouseStore().data.find((matl) => matl.Material === 'Sharpodonty')?.Quantity || 0
+    const warehouseDust = useWarehouseStore().data.find((matl) => matl.Material === 'Dust')?.Quantity || 0
+
+    const wildernessDailyProduct = useWildernessStore().settings.wildernessOutput;
+    const remainingSharpo = sharpoForGoal - wildernessDailyProduct.gold * daysForOthers - warehouseSharpo;
+    const remainingDust = dustForGoal - wildernessDailyProduct.dust * daysForOthers - warehouseDust;
+
+    const variables = {
+        'The Poussiere VI': {
+            Dust: 12000 + Number((wildernessDailyProduct.dust * 25 / dailyActivity).toFixed(1)),
+            Sharpodonty: 250 + Number((wildernessDailyProduct.gold * 25 / dailyActivity).toFixed(1)),
+            Cost: 25
+        },
+        'Mintage Aesthetics VI': {
+            Dust: 0 + Number((wildernessDailyProduct.dust * 25 / dailyActivity).toFixed(1)),
+            Sharpodonty: 9000 + Number((wildernessDailyProduct.gold * 25 / dailyActivity).toFixed(1)),
+            Cost: 25
+        }
+    }
+    const constraints = {
+        Sharpodonty: { min: remainingSharpo },
+        Dust: { min: remainingDust }
+    }
+
+    const model = {
+        objective: 'Cost',
+        direction: 'minimize',
+        constraints,
+        variables,
+        integers: true
+    };
+
+    const solver = solve(model as Model)
+    let sharpoRuns = 0
+    let dustRuns = 0
+    solver.variables.forEach(([stage, run]) => {
+        if (stage === 'Mintage Aesthetics VI') {
+            sharpoRuns = run
+        } else {
+            dustRuns = run
+        }
+    })
+
+    const sharpoCard = {
+        ...generatedCards.find((card) => card.stage === 'Mintage Aesthetics VI'),
+        runs: sharpoRuns,
+        activity: 25 * sharpoRuns,
+        days: getDaysFromActivity(25 * sharpoRuns),
+        materials: [{
+            Material: 'Sharpodonty',
+            Quantity: 9000 * sharpoRuns
+        }]
+    }
+    const dustCard = {
+        ...generatedCards.find((card) => card.stage === 'The Poussiere VI'),
+        runs: dustRuns,
+        activity: 25 * dustRuns,
+        days: getDaysFromActivity(25 * dustRuns),
+        materials: [
+            {
+                Material: 'Dust',
+                Quantity: 12000 * dustRuns
+            },
+            {
+                Material: 'Sharpodonty',
+                Quantity: 250 * dustRuns
+            }
+        ]
+    }
+
+    const newGeneratedCards = [...otherStageCards]
+    if (dustRuns > 0) {
+        newGeneratedCards.push(dustCard as ICard)
+    }
+    if (sharpoRuns > 0) {
+        newGeneratedCards.push(sharpoCard as ICard)
+    }
+
+    return newGeneratedCards
 }

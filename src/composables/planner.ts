@@ -2,7 +2,7 @@ import { useDataStore } from '../stores/dataStore'
 import { useWarehouseStore } from '../stores/warehouseStore'
 import { useActivityStore } from '../stores/activityStore';
 import { usePlannerSettingsStore } from '../stores/plannerSettingsStore'
-import { getSolve } from './solver';
+import { getSolve, processSharpoAndDust } from './solver';
 import { getActivityImagePathByStage } from './images'
 import { IMaterialUnit, IStages } from '@/types';
 import { useGlobalStore } from '../stores/global';
@@ -200,9 +200,11 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
         }
     });
 
+    const generatedCardsConsideringWilderness = processSharpoAndDust(generatedCards)
+
     // console.log(generatedCards);
 
-    const cardsFirstLayer = generatedCards.filter(
+    const cardsFirstLayer = generatedCardsConsideringWilderness.filter(
         (card) =>
             ['The Poussiere VI', 'Mintage Aesthetics VI', 'Oneiric Shop'].includes(card.stage) &&
             card.materials.length > 0
