@@ -228,9 +228,9 @@ onMounted(() => {
                         information from the screenshots.</p>
                     <p class=" text-white">4. It is advised to save your screenshots for future usages.</p>
                     <h3 class="font-bold text-lg pt-4 text-info">Limitations</h3>
-                    <p class="text-white">1. Images <span class="text-error">must be clear</span> or the Summon Tracker
-                        may fail to read.</p>
-                    <p class=" text-white">2. Summon Tracker is not yet tested on mobile devices.</p>
+                    <p class="text-white">• Images <span class="text-error">must be clear</span>, or the Summon Tracker
+                        may fail to read. This is an example of a good <a href="https://i.imgur.com/NgspD1g.png"
+                            target="_blank" class="text-blue-500 hover:text-blue-700">Image</a>. Please try to capture the Summon section only, with minimum background shown. </p>
                     <h3 class="font-bold text-lg pt-4 text-info">Bug Reports</h3>
                     <p class="text-white">• Summon Tracker is still in Beta. Bugs are expected. If you encouter one, open
                         your F12 ‣ Console,

@@ -29,7 +29,7 @@ const refills = ref(props.settings.refills);
 const activity = computed(() => {
     let result = 240;
     if (roaringMonth.value) {
-        result += 90;
+        result += 60;
     }
     result += refills.value * 100;
     // console.log(result);
