@@ -1,6 +1,6 @@
 <script setup lang="ts" name="MaterialItem">
 import { computed, watch, ref } from 'vue';
-import { normalizeDisplayMaterial, formatQuantity } from '../../../composables/materials';
+import { normalizeDisplayMaterial } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
@@ -63,22 +63,6 @@ const isReachGoal = computed(() => {
     return (warehouseMaterial.value?.Quantity || 0) >= neededQuantityIncludingCraft.value;
 });
 
-const formatNeededQuantity = computed(() => {
-    return formatQuantity(neededQuantityIncludingCraft.value)
-})
-
-// const formatNeededQuantity = computed(() => {
-//     return formatQuantity(neededRawQuantity.value)
-// })
-
-// const isReachGoal = computed(() => {
-//     return (warehouseMaterial.value?.Quantity || 0) >= neededRawQuantity.value;
-// });
-
-// const remainingNeededQuantityForGoal = computed(() => {
-//     return isReachGoal.value ? 0 : neededRawQuantity.value - (warehouseMaterial.value?.Quantity || 0)
-// })
-
 const formula = computed(() => {
     return useDataStore().formulas.find((matl) => matl.Name === props.material.Material)
 })
@@ -123,18 +107,12 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
 <template>
     <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover"
         @close:popper="closePopover">
-        <div class="cursor-pointer pb-6" :class="isReachGoal ? 'opacity-50': ''">
+        <div class="cursor-pointer" :class="isReachGoal ? 'opacity-40': ''">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
                 <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
                 <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs cursor-default">
                     {{ normalizedMaterial.quantity }}
-                </div>
-                <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
-                    :class="(formatNeededQuantity.length > 3 && 'gap-0.5')">
-                    <i class="text-[10px]"
-                        :class="isReachGoal ? 'fa-solid fa-check text-green-300' : 'fa-solid fa-flag text-red-400/60'" />{{
-                            formatNeededQuantity }}
                 </div>
             </div>
         </div>
@@ -160,7 +138,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                 <p v-if="isLowerBuildMaterial && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
                     (with
                     <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
-                    used in crafting higher tier materials)
+                    used in crafting)
                 </p>
                 <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
