@@ -3,32 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* width */
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background:#323f5f;
-    border-radius: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #1c3b88;
-    border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #1c3b88;
-}
-
-.modal {
-    margin-left: 0 !important;
-}
-
 .responsive-spacer {
     @apply pt-4 pb-4 pr-4 pl-4 sm:pr-8 sm:pl-8 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 md:pr-16 md:pl-16 lg:pr-32 lg:pl-32 xl:pr-64 xl:pl-64
 }
@@ -45,6 +19,10 @@
 .custom-gradient-gray-blue-light {
     @apply bg-gradient-to-r from-blue-800/70 to-blue-900/90;
 
+}
+
+.custom-border {
+    @apply border-2 border-blue-800;
 }
 
 .gradient-blue {
@@ -64,11 +42,11 @@
 }
 
 .custom-modal-small {
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-gray-500 rounded-md w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4;
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4;
 }
 
 .custom-modal-big {
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-gray-500 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2;
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2;
 }
 
 .custom-gradient-button {
@@ -109,6 +87,28 @@
     @apply bg-indigo-100 text-indigo-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background:#323f5f;
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #1c3b88;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #1c3b88;
+}
+
 .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
@@ -125,4 +125,8 @@
 
 .custom-scrollbar::-webkit-scrollbar-track {
     background-color: transparent;
+}
+
+.modal {
+    margin-left: 0 !important;
 }

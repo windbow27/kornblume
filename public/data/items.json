@@ -60,36 +60,6 @@
         "Usage": "The ritual of Beast Insight III."
     },
     {
-        "Id": 30,
-        "Category": "Insight Material", 
-        "IsReleased": true,
-        "Name": "Page of Starlit Ascent",
-        "Rarity": 3,
-        "Description": "Neither the moon nor the sun could rob it of its colors.",
-        "Source": "Insight - Starfall Locale",
-        "Usage": "The ritual of Star Insight I."
-    },
-    {
-        "Id": 31,
-        "Category": "Insight Material", 
-        "IsReleased": true,
-        "Name": "Scroll of Starlit Ascent",
-        "Rarity": 4,
-        "Description": "It breeds infants and helps them sleep in peace. It is a friend of lengthy nights and fantasies.",
-        "Source": "Insight - Starfall Locale",
-        "Usage": "The ritual of Star Insight II."
-    },
-    {
-        "Id": 32,
-        "Category": "Insight Material", 
-        "IsReleased": true,
-        "Name": "Tome of Starlit Ascent",
-        "Rarity": 5,
-        "Description": "An omen, a filthy secret, or an act of absolute vileness. You can also treat it as a handful of broken glass on black satin.",
-        "Source": "Insight - Starfall Locale",
-        "Usage": "The ritual of Star Insight III."
-    },
-    {
         "Id": 33,
         "Category": "Insight Material", 
         "IsReleased": true,
@@ -118,6 +88,36 @@
         "Description": "It is the source of every twig in the deep woods, every strand of moss and floating weed and the mother of every tree. All of them know you.",
         "Source": "Insight - Sylvanus Shape",
         "Usage": "The ritual of Plant Insight III."
+    },
+    {
+        "Id": 30,
+        "Category": "Insight Material", 
+        "IsReleased": true,
+        "Name": "Page of Starlit Ascent",
+        "Rarity": 3,
+        "Description": "Neither the moon nor the sun could rob it of its colors.",
+        "Source": "Insight - Starfall Locale",
+        "Usage": "The ritual of Star Insight I."
+    },
+    {
+        "Id": 31,
+        "Category": "Insight Material", 
+        "IsReleased": true,
+        "Name": "Scroll of Starlit Ascent",
+        "Rarity": 4,
+        "Description": "It breeds infants and helps them sleep in peace. It is a friend of lengthy nights and fantasies.",
+        "Source": "Insight - Starfall Locale",
+        "Usage": "The ritual of Star Insight II."
+    },
+    {
+        "Id": 32,
+        "Category": "Insight Material", 
+        "IsReleased": true,
+        "Name": "Tome of Starlit Ascent",
+        "Rarity": 5,
+        "Description": "An omen, a filthy secret, or an act of absolute vileness. You can also treat it as a handful of broken glass on black satin.",
+        "Source": "Insight - Starfall Locale",
+        "Usage": "The ritual of Star Insight III."
     },
     {
         "Id": 27,

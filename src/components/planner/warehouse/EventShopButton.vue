@@ -29,7 +29,7 @@ const closeDialog = () => dialog.value?.close()
         <button class="btn btn-info btn-sm" @click="showDialog"> {{ text }} </button>
     </div>
     <dialog ref="dialog" class="modal">
-        <div class="modal-box custom-gradient-gray-blue border border-blue-800">
+        <div class="modal-box custom-gradient-gray-blue custom-border">
             <p class="py-4 text-lg text-white text-center">Add materials from {{ text }}?</p>
             <p class="py-4 text-md text-white text-center"> You should add once only.</p>
             <div class="flex justify-center">

@@ -15,7 +15,7 @@ export const usePlannerSettingsStore = defineStore('plannerSettings', {
         settings: {
             showUnreleasedArcanists: false,
             enabledUnreleasedStages: false,
-            enableGreedyMethod: false
+            enableGreedyMethod: true
         }
     }),
     persist: true
