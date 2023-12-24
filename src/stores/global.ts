@@ -7,7 +7,8 @@ interface INeededMaterialsMapping {
 interface IGlobalStore {
     isEditingWarehouse: boolean,
     isEditingMaterial: string,
-    neededMaterialsMapping: INeededMaterialsMapping
+    neededRawMaterialsMapping: INeededMaterialsMapping,
+    neededMaterialsMapping: INeededMaterialsMapping,
 }
 
 // can set some global state here, but never let it persist
@@ -15,11 +16,23 @@ export const useGlobalStore = defineStore('global', {
     state: (): IGlobalStore => ({
         isEditingWarehouse: false,
         isEditingMaterial: '',
-        neededMaterialsMapping: {}
+        neededRawMaterialsMapping: {}, // return quantity for raw materials
+        neededMaterialsMapping: {} // consider in-process crafting needs
     }),
     actions: {
         setIsEditingWarehouse (isEditing: boolean) {
             this.isEditingWarehouse = isEditing
+        },
+        setIsEditingMaterial (editingMaterial?: string) {
+            this.isEditingMaterial = editingMaterial || ''
+        },
+        getNeededRawMaterialsQuantity (materialName) {
+            return this.neededRawMaterialsMapping[materialName] || 0
+        },
+        updateNeededRawMaterialsMapping (mapping) {
+            this.neededRawMaterialsMapping = {
+                ...mapping
+            }
         },
         getNeededMaterialsQuantity (materialName) {
             return this.neededMaterialsMapping[materialName] || 0
@@ -28,9 +41,6 @@ export const useGlobalStore = defineStore('global', {
             this.neededMaterialsMapping = {
                 ...mapping
             }
-        },
-        setIsEditingMaterial (editingMaterial?: string) {
-            this.isEditingMaterial = editingMaterial || ''
         }
     }
 })

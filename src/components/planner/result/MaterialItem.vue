@@ -1,6 +1,6 @@
 <script setup lang="ts" name="MaterialItem">
 import { computed, watch, ref } from 'vue';
-import { normalizeDisplayMaterial } from '../../../composables/materials';
+import { normalizeDisplayMaterial, formatQuantity } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
@@ -39,29 +39,45 @@ const warehouseMaterial = computed(() => {
     return warehouseData.value.find((matl) => matl.Material === props.material.Material)
 })
 
-const neededQuantity = computed(() => {
+const neededRawQuantity = computed(() => {
     if (props.material.Material === 'Crystal Casket') {
         let quantity = 0;
         useDataStore().items.filter((matl) => matl.Category === 'Resonate Material' && matl.Rarity === 6).forEach((resonanceMatl) => {
-            quantity += useGlobalStore().getNeededMaterialsQuantity(resonanceMatl.Name)
+            quantity += useGlobalStore().getNeededRawMaterialsQuantity(resonanceMatl.Name)
         })
         return quantity;
     }
-    const quantity = useGlobalStore().getNeededMaterialsQuantity(normalizedMaterial.value.material)
+    const quantity = useGlobalStore().getNeededRawMaterialsQuantity(normalizedMaterial.value.material)
     return quantity;
 });
 
-// const formatNeededQuantity = computed(() => {
-//     return formatQuantity(neededQuantity.value)
-// })
+const neededQuantityIncludingCraft = computed(() => {
+    return useGlobalStore().getNeededMaterialsQuantity(normalizedMaterial.value.material)
+})
+
+const neededQuantityForCraftingHigherTier = computed(() => {
+    return Math.max(neededQuantityIncludingCraft.value - neededRawQuantity.value, 0)
+})
 
 const isReachGoal = computed(() => {
-    return (warehouseMaterial.value?.Quantity || 0) >= neededQuantity.value;
+    return (warehouseMaterial.value?.Quantity || 0) >= neededQuantityIncludingCraft.value;
 });
 
-const needQuantityForGoal = computed(() => {
-    return isReachGoal.value ? 0 : neededQuantity.value - (warehouseMaterial.value?.Quantity || 0)
+const formatNeededQuantity = computed(() => {
+    return formatQuantity(neededQuantityIncludingCraft.value)
 })
+
+// const formatNeededQuantity = computed(() => {
+//     return formatQuantity(neededRawQuantity.value)
+// })
+
+// const isReachGoal = computed(() => {
+//     return (warehouseMaterial.value?.Quantity || 0) >= neededRawQuantity.value;
+// });
+
+// const remainingNeededQuantityForGoal = computed(() => {
+//     return isReachGoal.value ? 0 : neededRawQuantity.value - (warehouseMaterial.value?.Quantity || 0)
+// })
 
 const formula = computed(() => {
     return useDataStore().formulas.find((matl) => matl.Name === props.material.Material)
@@ -100,47 +116,51 @@ const closePopover = () => {
     warehouseQuantityShift.value = 0;
 }
 
+const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Build Material' && materialItem.value?.Rarity < 6)
+
 </script>
 
 <template>
     <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover"
         @close:popper="closePopover">
-        <div class="cursor-pointer">
+        <div class="cursor-pointer pb-6" :class="isReachGoal ? 'opacity-50': ''">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
                 <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
                 <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs cursor-default">
                     {{ normalizedMaterial.quantity }}
                 </div>
-                <!-- <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
+                <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
                     :class="(formatNeededQuantity.length > 3 && 'gap-0.5')">
                     <i class="text-[10px]"
                         :class="isReachGoal ? 'fa-solid fa-check text-green-300' : 'fa-solid fa-flag text-red-400/60'" />{{
                             formatNeededQuantity }}
-                </div> -->
+                </div>
             </div>
         </div>
         <template #content>
             <div class="flex items-center justify-center flex-col">
                 <p v-if="props.layerId === 1 || props.layerId === 2" class="text-center text-slate-300 text-sm opacity-80">
+                    <!-- just a sum of the current values of a given mat in the LP result -->
                     <span class="text-white">{{ props.material.Quantity }}</span>
                     expected to drop
                 </p>
-                <!-- only consider warehouseQuantityShift for crafting -->
                 <p v-if="props.layerId === 3" class="text-center text-slate-300 text-sm opacity-80">
+                    <!-- only consider warehouseQuantityShift for crafting -->
                     <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
                     expected to be crafted
                 </p>
-                <!-- only consider warehouseQuantityShift for crafting -->
-                <p v-if="props.material.Quantity - needQuantityForGoal - warehouseQuantityShift > 0 && materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal - warehouseQuantityShift, 0) }}
-                    </span>
-                    used to craft higher tier materials
-                </p>
+
                 <p class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ needQuantityForGoal }}
+                    <span class="text-white">{{ neededQuantityIncludingCraft }}
                     </span>
                     needed to complete the goal
+                </p>
+
+                <p v-if="isLowerBuildMaterial && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
+                    (with
+                    <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
+                    used in crafting higher tier materials)
                 </p>
                 <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
