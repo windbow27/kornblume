@@ -1,6 +1,6 @@
 <script setup lang="ts" name="MaterialItem">
 import { computed, watch, ref } from 'vue';
-import { normalizeDisplayMaterial } from '../../../composables/materials';
+import { normalizeDisplayMaterial, formatQuantity } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
@@ -57,6 +57,14 @@ const neededQuantityIncludingCraft = computed(() => {
 
 const neededQuantityForCraftingHigherTier = computed(() => {
     return Math.max(neededQuantityIncludingCraft.value - neededRawQuantity.value, 0)
+})
+
+const isReachGoal = computed(() => {
+    return (warehouseMaterial.value?.Quantity || 0) >= neededQuantityIncludingCraft.value;
+});
+
+const formatNeededQuantity = computed(() => {
+    return formatQuantity(neededQuantityIncludingCraft.value)
 })
 
 // const formatNeededQuantity = computed(() => {
@@ -122,12 +130,12 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                 <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs cursor-default">
                     {{ normalizedMaterial.quantity }}
                 </div>
-                <!-- <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
+                <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
                     :class="(formatNeededQuantity.length > 3 && 'gap-0.5')">
                     <i class="text-[10px]"
                         :class="isReachGoal ? 'fa-solid fa-check text-green-300' : 'fa-solid fa-flag text-red-400/60'" />{{
                             formatNeededQuantity }}
-                </div> -->
+                </div>
             </div>
         </div>
         <template #content>
