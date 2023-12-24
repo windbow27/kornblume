@@ -51,7 +51,7 @@ const toolTipText = computed(() => {
                     </span>
                 </p>
                 <p v-else>
-                    Need to wait for 1.4 version update
+                    Available after 1.4 version update
                 </p>
 
                 <p class="pl-2" v-if="card.activity !== 0">{{ card.activity }}</p>

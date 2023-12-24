@@ -213,7 +213,7 @@ onMounted(() => {
 
             <button class="btn btn-info btn-sm" onclick="tutorial.showModal()">Tutorial</button>
             <dialog id="tutorial" class="modal">
-                <div class="modal-box custom-gradient-gray-blue border border-blue-800 -translate-x-3 custom-scrollbar">
+                <div class="modal-box custom-gradient-gray-blue border border-blue-800 custom-scrollbar">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>

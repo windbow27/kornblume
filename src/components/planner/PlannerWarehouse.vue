@@ -128,7 +128,7 @@ const closeDialog = () => dialog.value?.close()
         <div class="flex space-x-3">
           <button class="btn btn-sm btn-success" onclick="shop_container.showModal()">Event Materials</button>
           <dialog id="shop_container" class="modal">
-            <div class="modal-box custom-gradient-gray-blue border border-blue-800 -translate-x-3">
+            <div class="modal-box custom-gradient-gray-blue border border-blue-800">
               <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
               </form>
@@ -152,8 +152,8 @@ const closeDialog = () => dialog.value?.close()
 
         <!-- reset -->
         <button class="btn btn-error btn-sm" @click="showDialog">Reset</button>
-        <dialog ref="dialog" class="modal mr-5">
-          <div class="modal-box custom-gradient-gray-blue border border-blue-800 -translate-x-3">
+        <dialog ref="dialog" class="modal">
+          <div class="modal-box custom-gradient-gray-blue border border-blue-800">
             <p class="py-4 text-lg text-white text-center">Reset quantity of <span class="text-error">selected</span>
               categories?</p>
             <p class="py-4 text-md text-white text-center"> Click the buttons at the top to select.</p>

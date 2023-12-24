@@ -132,7 +132,7 @@ const closePopover = () => {
                     expected to be crafted
                 </p>
                 <!-- only consider warehouseQuantityShift for crafting -->
-                <p v-if="props.layerId === 3 && materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
+                <p v-if="props.material.Quantity - needQuantityForGoal > 0 && materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal - warehouseQuantityShift, 0) }}
                     </span>
                     used to craft higher tier materials
@@ -142,9 +142,9 @@ const closePopover = () => {
                     </span>
                     needed to complete the goal
                 </p>
-                <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge">Insufficient Materials in Warehouse
+                <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
-                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge">Sufficient Materials in Warehouse</div>
+                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge text-center">Sufficient Materials in Warehouse</div>
                 <div class="flex">
                     <WarehouseItemEditor :material="material" :normalizedMaterial="normalizedMaterial" />
                     <MaterialCraftingRecipe v-if="!!formula?.Material.length" :material="material"

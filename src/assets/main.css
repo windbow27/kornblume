@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.responsive-spacer {
-    @apply pt-4 pb-4 pr-4 pl-4 sm:pr-8 sm:pl-8 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 md:pr-16 md:pl-16 lg:pr-32 lg:pl-32 xl:pr-64 xl:pl-64
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
@@ -27,6 +23,14 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #1c3b88;
+}
+
+.modal {
+    margin-left: 0 !important;
+}
+
+.responsive-spacer {
+    @apply pt-4 pb-4 pr-4 pl-4 sm:pr-8 sm:pl-8 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 md:pr-16 md:pl-16 lg:pr-32 lg:pl-32 xl:pr-64 xl:pl-64
 }
 
 /*Custom common*/
