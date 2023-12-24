@@ -123,7 +123,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
 <template>
     <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover"
         @close:popper="closePopover">
-        <div class="cursor-pointer pb-6">
+        <div class="cursor-pointer pb-6" :class="isReachGoal ? 'opacity-50': ''">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
                 <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
