@@ -52,6 +52,9 @@ const neededRawQuantity = computed(() => {
 });
 
 const neededQuantityIncludingCraft = computed(() => {
+    if (props.material.Material === 'Crystal Casket') {
+        return neededRawQuantity.value
+    }
     return useGlobalStore().getNeededMaterialsQuantity(normalizedMaterial.value.material)
 })
 
