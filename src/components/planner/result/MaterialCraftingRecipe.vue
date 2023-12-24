@@ -66,7 +66,7 @@ const isReversible = computed(() => {
 
 <template>
     <div class="flex flex-col bg-slate-300/10 rounded py-2">
-        <p class="text-center text-slate-300 text-sm opacity-80">Crafting Recipe</p>
+        <p class="text-center text-white/95 text-sm opacity-80">Crafting Recipe</p>
        <div class="grid grid-cols-2 sm:flex flex-row m-auto">
             <div v-for="(material, materialIndex) in formula?.Material" :key="materialIndex">
                 <MaterialFormulaItem :material="{
@@ -76,10 +76,18 @@ const isReversible = computed(() => {
             </div>
        </div>
         <div class="flex px-3 items-center justify-center gap-3">
-            <button class="btn btn-success btn-xs font-bold  text-white" @click="craft"
-            :disabled="!isCraftable" :class="isCraftable ? 'btn-success': 'btn-info'" >Craft</button>
-            <button class="btn btn-success btn-xs font-bold  text-white" @click="reverse"
-            :disabled="!isReversible" :class="isReversible ? 'btn-success': 'btn-info'" >Reverse</button>
+            <button class="btn btn-ghost custom-gradient-gray-blue-light btn-xs font-bold text-white/95" @click="craft"
+            :disabled="!isCraftable">Craft</button>
+            <button class="btn btn-ghost custom-gradient-gray-blue-light btn-xs font-bold text-white/95" @click="reverse"
+            :disabled="!isReversible">Reverse</button>
         </div>
     </div>
 </template>
+
+<style scoped>
+.btn:disabled {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+}
+</style>
