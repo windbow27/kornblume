@@ -1,6 +1,6 @@
 <script setup lang="ts" name="MaterialItem">
 import { computed, watch, ref } from 'vue';
-import { normalizeDisplayMaterial, formatQuantity } from '../../../composables/materials';
+import { normalizeDisplayMaterial } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
@@ -51,9 +51,9 @@ const neededQuantity = computed(() => {
     return quantity;
 });
 
-const formatNeededQuantity = computed(() => {
-    return formatQuantity(neededQuantity.value)
-})
+// const formatNeededQuantity = computed(() => {
+//     return formatQuantity(neededQuantity.value)
+// })
 
 const isReachGoal = computed(() => {
     return (warehouseMaterial.value?.Quantity || 0) >= neededQuantity.value;
@@ -105,19 +105,19 @@ const closePopover = () => {
 <template>
     <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover"
         @close:popper="closePopover">
-        <div class="pb-6 cursor-pointer">
+        <div class="cursor-pointer">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
                 <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
                 <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs cursor-default">
                     {{ normalizedMaterial.quantity }}
                 </div>
-                <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
+                <!-- <div class="btn btn-xs text-white absolute -bottom-3 left-3 w-14 rounded-t-none text-center flex-nowrap btn-ghost custom-gradient-gray-blue-light opacity-95"
                     :class="(formatNeededQuantity.length > 3 && 'gap-0.5')">
                     <i class="text-[10px]"
                         :class="isReachGoal ? 'fa-solid fa-check text-green-300' : 'fa-solid fa-flag text-red-400/60'" />{{
                             formatNeededQuantity }}
-                </div>
+                </div> -->
             </div>
         </div>
         <template #content>
@@ -142,10 +142,10 @@ const closePopover = () => {
                     </span>
                     needed to complete the goal
                 </p>
-                <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
+                <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
-                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge text-center">Sufficient Materials in Warehouse</div>
-                <div class="flex">
+                <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge text-center">Sufficient Materials in Warehouse</div> -->
+                <div class="flex pt-2 justify-center items-center">
                     <WarehouseItemEditor :material="material" :normalizedMaterial="normalizedMaterial" />
                     <MaterialCraftingRecipe v-if="!!formula?.Material.length" :material="material"
                         :normalizedMaterial="normalizedMaterial" :formula="(formula as Object)" />
