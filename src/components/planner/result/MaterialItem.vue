@@ -123,7 +123,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
 <template>
     <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover"
         @close:popper="closePopover">
-        <div class="cursor-pointer">
+        <div class="cursor-pointer pb-6">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
                 <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
@@ -160,7 +160,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                 <p v-if="isLowerBuildMaterial && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
                     (with
                     <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
-                    used to craft higher tier materials)
+                    used in crafting higher tier materials)
                 </p>
                 <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
