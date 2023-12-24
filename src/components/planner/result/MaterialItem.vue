@@ -150,7 +150,8 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                 </p>
 
                 <p v-if="isLowerBuildMaterial && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
-                    (<span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
+                    (with
+                    <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
                     used to craft higher tier materials)
                 </p>
                 <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
