@@ -210,7 +210,7 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
             card.materials.length > 0
     );
 
-    const cardsSecondLayer = generatedCards.filter(
+    const cardsSecondLayer = generatedCardsConsideringWilderness.filter(
         (card) =>
             (card.stage.endsWith('II') || card.stage.endsWith('IV') || card.stage.endsWith('VI')) &&
             !cardsFirstLayer.some((firstLayerCard) => firstLayerCard.stage === card.stage) &&

@@ -164,8 +164,8 @@ export function processSharpoAndDust (generatedCards: ICard[]) {
     const warehouseDust = useWarehouseStore().data.find((matl) => matl.Material === 'Dust')?.Quantity || 0
 
     const wildernessDailyProduct = useWildernessStore().settings.wildernessOutput;
-    const remainingSharpo = sharpoForGoal - wildernessDailyProduct.gold * daysForOthers - warehouseSharpo;
-    const remainingDust = dustForGoal - wildernessDailyProduct.dust * daysForOthers - warehouseDust;
+    const remainingSharpo = Math.max(sharpoForGoal - wildernessDailyProduct.gold * daysForOthers - warehouseSharpo, 0);
+    const remainingDust = Math.max(dustForGoal - wildernessDailyProduct.dust * daysForOthers - warehouseDust, 0);
 
     const variables = {
         'The Poussiere VI': {
