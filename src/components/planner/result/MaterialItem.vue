@@ -132,7 +132,7 @@ const closePopover = () => {
                     expected to be crafted
                 </p>
                 <!-- only consider warehouseQuantityShift for crafting -->
-                <p v-if="props.material.Quantity - needQuantityForGoal > 0 && materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
+                <p v-if="props.material.Quantity - needQuantityForGoal - warehouseQuantityShift > 0 && materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal - warehouseQuantityShift, 0) }}
                     </span>
                     used to craft higher tier materials

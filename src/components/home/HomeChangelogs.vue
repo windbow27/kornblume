@@ -12,6 +12,7 @@ const closeOverlay = () => {
 
 const changelogs = [
     // Add more from top
+    { date: '24/12/2023', description: '• UI Improvements\n • Merry Christmas.' },
     { date: '23/12/2023', description: '• UI Improvements for goals and crafting list. \n • Added Goal Button.' },
     { date: '21/12/2023', description: '• UI Improvements. \n • Added Goals and Crafting List.' },
     { date: '20/12/2023', description: '• Yet another warehouse update. \n • Summon Tracker. Beta. \n • Added Greedy method to prioritize Purple Materials ' },
