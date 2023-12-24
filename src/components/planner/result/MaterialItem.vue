@@ -55,17 +55,21 @@ const neededQuantityIncludingCraft = computed(() => {
     return useGlobalStore().getNeededMaterialsQuantity(normalizedMaterial.value.material)
 })
 
+const neededQuantityForCraftingHigherTier = computed(() => {
+    return Math.max(neededQuantityIncludingCraft.value - neededRawQuantity.value, 0)
+})
+
 // const formatNeededQuantity = computed(() => {
 //     return formatQuantity(neededRawQuantity.value)
 // })
 
-const isReachGoal = computed(() => {
-    return (warehouseMaterial.value?.Quantity || 0) >= neededRawQuantity.value;
-});
+// const isReachGoal = computed(() => {
+//     return (warehouseMaterial.value?.Quantity || 0) >= neededRawQuantity.value;
+// });
 
-const remainingNeededQuantityForGoal = computed(() => {
-    return isReachGoal.value ? 0 : neededRawQuantity.value - (warehouseMaterial.value?.Quantity || 0)
-})
+// const remainingNeededQuantityForGoal = computed(() => {
+//     return isReachGoal.value ? 0 : neededRawQuantity.value - (warehouseMaterial.value?.Quantity || 0)
+// })
 
 const formula = computed(() => {
     return useDataStore().formulas.find((matl) => matl.Name === props.material.Material)
@@ -104,6 +108,8 @@ const closePopover = () => {
     warehouseQuantityShift.value = 0;
 }
 
+const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Build Material' && materialItem.value?.Rarity < 6)
+
 </script>
 
 <template>
@@ -127,24 +133,29 @@ const closePopover = () => {
         <template #content>
             <div class="flex items-center justify-center flex-col">
                 <p v-if="props.layerId === 1 || props.layerId === 2" class="text-center text-slate-300 text-sm opacity-80">
+                    <!-- just a sum of the current values of a given mat in the LP result -->
                     <span class="text-white">{{ props.material.Quantity }}</span>
                     expected to drop
                 </p>
-                <!-- only consider warehouseQuantityShift for crafting -->
                 <p v-if="props.layerId === 3" class="text-center text-slate-300 text-sm opacity-80">
+                    <!-- only consider warehouseQuantityShift for crafting -->
                     <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
                     expected to be crafted
                 </p>
-                <!-- only consider warehouseQuantityShift for crafting -->
-                <p v-if="materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ Math.max(neededQuantityIncludingCraft - warehouseQuantityShift, 0) }}
-                    </span>
-                    used to craft higher tier materials
-                </p>
+
                 <p class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ remainingNeededQuantityForGoal }}
+                    <span class="text-white">{{ neededQuantityIncludingCraft }}
                     </span>
                     needed to complete the goal
+                </p>
+                <!-- only consider warehouseQuantityShift for crafting -->
+                <p v-if="props.layerId === 3 && isLowerBuildMaterial && neededQuantityForCraftingHigherTier - warehouseQuantityShift > 0" class="text-center text-slate-300 text-sm opacity-80">
+                    (<span class="text-white">{{ neededQuantityForCraftingHigherTier - warehouseQuantityShift }}</span>
+                    used to craft higher tier materials)
+                </p>
+                <p v-else-if="isLowerBuildMaterial && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
+                    (<span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
+                    used to craft higher tier materials)
                 </p>
                 <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
