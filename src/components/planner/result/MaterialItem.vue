@@ -148,12 +148,8 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                     </span>
                     needed to complete the goal
                 </p>
-                <!-- only consider warehouseQuantityShift for crafting -->
-                <p v-if="props.layerId === 3 && isLowerBuildMaterial && neededQuantityForCraftingHigherTier - warehouseQuantityShift > 0" class="text-center text-slate-300 text-sm opacity-80">
-                    (<span class="text-white">{{ neededQuantityForCraftingHigherTier - warehouseQuantityShift }}</span>
-                    used to craft higher tier materials)
-                </p>
-                <p v-else-if="isLowerBuildMaterial && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
+
+                <p v-if="isLowerBuildMaterial && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
                     (<span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
                     used to craft higher tier materials)
                 </p>
