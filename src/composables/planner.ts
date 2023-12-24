@@ -5,8 +5,10 @@ import { usePlannerSettingsStore } from '../stores/plannerSettingsStore'
 import { getSolve } from './solver';
 import { getActivityImagePathByStage } from './images'
 import { IMaterialUnit, IStages } from '@/types';
+import { useGlobalStore } from '../stores/global';
 
 const items = useDataStore().items;
+const formulas = useDataStore().formulas;
 
 export function getDrops () {
     const {
@@ -167,6 +169,8 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
 
     const plan = getSolve(materials);
 
+    updateCraftingMaterialsForGlobalStore(plan.variables);
+
     plan.variables.forEach((stage) => {
         const stageInfo = drops[stage[0]];
         if (stageInfo) {
@@ -245,4 +249,24 @@ export function getTotalActivityAndDays (cardLayers) {
         });
     });
     return [totalActivity, totalDays.toFixed(0)];
+}
+
+function updateCraftingMaterialsForGlobalStore (stages) {
+    const neededMaterialsMapping = { ...useGlobalStore().neededRawMaterialsMapping };
+    stages.filter(([stageName]) => stageName.startsWith('Wilderness Wishing Spring'))
+        .forEach(([craftingName, craftingCount]) => {
+            const matlName = craftingName.split('-')[1].trim();
+            const formula = formulas.find((matl) => matl.Name === matlName)
+            if (formula?.Material.length) {
+                formula?.Material.forEach((matlName, matlIndex) => {
+                    const matlQuant = formula?.Quantity[matlIndex];
+                    if (neededMaterialsMapping[matlName]) {
+                        neededMaterialsMapping[matlName] += matlQuant * craftingCount
+                    } else {
+                        neededMaterialsMapping[matlName] = matlQuant * craftingCount
+                    }
+                })
+            }
+        })
+    useGlobalStore().updateNeededMaterialsMapping(neededMaterialsMapping)
 }

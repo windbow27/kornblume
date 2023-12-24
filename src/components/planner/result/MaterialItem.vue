@@ -39,28 +39,32 @@ const warehouseMaterial = computed(() => {
     return warehouseData.value.find((matl) => matl.Material === props.material.Material)
 })
 
-const neededQuantity = computed(() => {
+const neededRawQuantity = computed(() => {
     if (props.material.Material === 'Crystal Casket') {
         let quantity = 0;
         useDataStore().items.filter((matl) => matl.Category === 'Resonate Material' && matl.Rarity === 6).forEach((resonanceMatl) => {
-            quantity += useGlobalStore().getNeededMaterialsQuantity(resonanceMatl.Name)
+            quantity += useGlobalStore().getNeededRawMaterialsQuantity(resonanceMatl.Name)
         })
         return quantity;
     }
-    const quantity = useGlobalStore().getNeededMaterialsQuantity(normalizedMaterial.value.material)
+    const quantity = useGlobalStore().getNeededRawMaterialsQuantity(normalizedMaterial.value.material)
     return quantity;
 });
 
+const neededQuantityIncludingCraft = computed(() => {
+    return useGlobalStore().getNeededMaterialsQuantity(normalizedMaterial.value.material)
+})
+
 // const formatNeededQuantity = computed(() => {
-//     return formatQuantity(neededQuantity.value)
+//     return formatQuantity(neededRawQuantity.value)
 // })
 
 const isReachGoal = computed(() => {
-    return (warehouseMaterial.value?.Quantity || 0) >= neededQuantity.value;
+    return (warehouseMaterial.value?.Quantity || 0) >= neededRawQuantity.value;
 });
 
-const needQuantityForGoal = computed(() => {
-    return isReachGoal.value ? 0 : neededQuantity.value - (warehouseMaterial.value?.Quantity || 0)
+const remainingNeededQuantityForGoal = computed(() => {
+    return isReachGoal.value ? 0 : neededRawQuantity.value - (warehouseMaterial.value?.Quantity || 0)
 })
 
 const formula = computed(() => {
@@ -132,13 +136,13 @@ const closePopover = () => {
                     expected to be crafted
                 </p>
                 <!-- only consider warehouseQuantityShift for crafting -->
-                <p v-if="props.material.Quantity - needQuantityForGoal - warehouseQuantityShift > 0 && materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ Math.max(props.material.Quantity - needQuantityForGoal - warehouseQuantityShift, 0) }}
+                <p v-if="materialItem?.Category === 'Build Material' && materialItem?.Rarity < 6" class="text-center text-slate-300 text-sm opacity-80">
+                    <span class="text-white">{{ Math.max(neededQuantityIncludingCraft - warehouseQuantityShift, 0) }}
                     </span>
                     used to craft higher tier materials
                 </p>
                 <p class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ needQuantityForGoal }}
+                    <span class="text-white">{{ remainingNeededQuantityForGoal }}
                     </span>
                     needed to complete the goal
                 </p>

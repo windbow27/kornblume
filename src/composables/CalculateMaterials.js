@@ -58,7 +58,7 @@ export function mergeResults (resultsArray) {
         }
     });
 
-    useGlobalStore().updateNeededMaterialsMapping(merged);
+    useGlobalStore().updateNeededRawMaterialsMapping(merged);
 
     const arrayMerged = Object.keys(merged).map((material) => ({
         Material: material,

@@ -71,7 +71,7 @@ const toolTipText = computed(() => {
         </div>
 
         <div v-if="card.stage === 'Unreleased (Placeholder)'" ref="scrollDiv" :class="{'custom-scrollbar':shouldHideScrollbar}" class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">
-            <div  v-for="(material, materialIndex) in card.materials.filter((matl) => useGlobalStore().neededMaterialsMapping[matl.Material] > 0)" :key="materialIndex" class="flex-shrink-0">
+            <div  v-for="(material, materialIndex) in card.materials.filter((matl) => useGlobalStore().neededRawMaterialsMapping[matl.Material] > 0)" :key="materialIndex" class="flex-shrink-0">
                 <MaterialItem :material="{...material, Quantity: 0}" :layerId="layerId"/>
             </div>
         </div>
