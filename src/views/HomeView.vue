@@ -66,9 +66,9 @@ onClickOutside(resourcesRef, closeResources)
             <div class="container mx-auto flex flex-col items-center space">
                 <div class="flex mb-4 space-x-4">
                     <button @click="openChangelogs" class="btn btn-ghost btn-md custom-gradient-button"><i
-                            class="fa-solid fa-book"></i> Changelogs</button>
+                            class="fa-solid fa-book"></i>{{ $t('Changelogs') }}</button>
                     <button @click="openResources" class="btn btn-ghost btn-md custom-gradient-button"><i
-                            class="fa-solid fa-book"></i> Credits</button>
+                            class="fa-solid fa-book"></i>{{ $t('Credits') }}</button>
                 </div>
                 <a href="https://forms.gle/vfapSjQmRNn7ChPe8" target="_blank"
                     class="btn btn-ghost btn-md custom-gradient-button">
