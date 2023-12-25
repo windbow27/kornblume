@@ -1,4 +1,6 @@
 import { createI18n } from 'vue-i18n'
+import enUS from '../../lang/en-US.json'
+import zhTW from '../../lang/zh-TW.json'
 
 const i18n = createI18n({
     legacy: false, // to enable Composition API
@@ -6,8 +8,8 @@ const i18n = createI18n({
     fallbackLocale: 'en-US',
     globalInjection: true,
     messages: {
-        // 'zh-TW': zh,
-        // 'en-US': en
+        'en-US': enUS,
+        'zh-TW': zhTW
     }
 })
 

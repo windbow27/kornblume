@@ -24,11 +24,23 @@
       <router-link @click="toggleDropdown" to="/planner" class="nav-button block" :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> Planner</router-link>
       <router-link @click="toggleDropdown" to="/profile" class="nav-button block" :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> Profile</router-link>
     </div>
+
+    <!-- I18n Dropdown for testings  -->
+    <div v-if="enableI18n && !isSmallScreen">
+      <select @change="handleChangeLanguage">
+        <option value="en-US">English</option>
+        <option value="zh-TW">繁體中文</option>
+      </select>
+    </div>
   </nav>
 </template>
 
 <script lang="ts" setup name="Navbar">
-import { ref, watchEffect } from 'vue';
+import { onMounted, ref, watchEffect } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+// just for debug
+const enableI18n = localStorage.getItem('i18n-testing') === '1'
 
 const isSmallScreen = ref(window.innerWidth <= 768);
 const showDropdown = ref(false);
@@ -52,6 +64,21 @@ watchEffect(() => {
         window.removeEventListener('resize', handleResize);
     };
 });
+
+const { locale } = useI18n()
+const handleChangeLanguage = (e) => {
+    locale.value = e.target.value
+}
+
+onMounted(() => {
+    const userLocale = navigator.language || 'en-US'
+    if (['en-US', 'zh-CN', 'zh-TW', 'ko-KR', 'ja-JP'].includes(userLocale)) {
+        locale.value = userLocale
+    } else {
+        locale.value = 'en-US'
+    }
+})
+
 </script>
 
 <style scoped>
