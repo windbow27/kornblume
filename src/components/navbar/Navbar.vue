@@ -4,10 +4,10 @@
 
     <!-- Navigation Links for Large Screens -->
     <div v-if="!isSmallScreen" class="flex space-x-2">
-      <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> Home</router-link>
-      <router-link to="/tracker" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> Summon Tracker </router-link>
-      <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> Planner</router-link>
-      <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> Profile</router-link>
+      <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> {{ $t('Home') }}</router-link>
+      <router-link to="/tracker" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> {{ $t('Summon Tracker') }} </router-link>
+      <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> {{ $t('Planner') }}</router-link>
+      <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> {{ $t('Profile') }}</router-link>
     </div>
 
     <!-- Dropdown Button for Small Screens -->
@@ -19,17 +19,17 @@
 
     <!-- Dropdown Menu for Small Screens -->
     <div v-if="isSmallScreen && showDropdown" class="absolute top-full left-0 right-0 bg-gray-800 py-2">
-      <router-link @click="toggleDropdown" to="/" class="nav-button block" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> Home</router-link>
-      <router-link @click="toggleDropdown" to="/tracker" class="nav-button block" :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> Summon Tracker</router-link>
-      <router-link @click="toggleDropdown" to="/planner" class="nav-button block" :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> Planner</router-link>
-      <router-link @click="toggleDropdown" to="/profile" class="nav-button block" :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> Profile</router-link>
+      <router-link @click="toggleDropdown" to="/" class="nav-button block" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> {{ $t('Home') }}</router-link>
+      <router-link @click="toggleDropdown" to="/tracker" class="nav-button block" :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> {{ $t('Summon Tracker') }}</router-link>
+      <router-link @click="toggleDropdown" to="/planner" class="nav-button block" :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> {{ $t('Planner') }}</router-link>
+      <router-link @click="toggleDropdown" to="/profile" class="nav-button block" :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> {{ $t('Profile') }}</router-link>
     </div>
 
     <!-- I18n Dropdown for testings  -->
     <div v-if="enableI18n && !isSmallScreen">
       <select @change="handleChangeLanguage">
-        <option value="en-US">English</option>
-        <option value="zh-TW">繁體中文</option>
+        <option value="en-US" :selected="locale==='en-US'">English</option>
+        <option value="zh-TW" :selected="locale==='zh-TW'">繁體中文</option>
       </select>
     </div>
   </nav>
