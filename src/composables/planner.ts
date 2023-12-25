@@ -216,14 +216,14 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
             !cardsFirstLayer.some((firstLayerCard) => firstLayerCard.stage === card.stage) &&
             card.materials.length > 0
     );
-    const cardsThirdLayer = generatedCards.filter(
+    const cardsThirdLayer = generatedCardsConsideringWilderness.filter(
         (card) =>
             !['Wilderness Wishing Spring', ...cardsFirstLayer.map((card) => card.stage), ...cardsSecondLayer.map((card) => card.stage)].includes(
                 card.stage
             ) && card.materials.length > 0
     );
     // the rest of the stages are in the fourth layer
-    const cardsFourthLayer = generatedCards.filter(
+    const cardsFourthLayer = generatedCardsConsideringWilderness.filter(
         (card) =>
             ['Wilderness Wishing Spring'].includes(card.stage) && card.materials.length > 0
     );

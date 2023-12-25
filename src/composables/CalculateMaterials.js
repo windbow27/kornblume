@@ -6,25 +6,36 @@ const calculations = levelUpResources;
 const items = useDataStore().items;
 const arcanists = useDataStore().arcanists;
 
+const categoryPriority = {
+    'Base Item': 0,
+    'Resonate Material': 1,
+    'Insight Material': 2,
+    'Build Material': 2 // insight/build material have same priority, should be arranged according to rarity
+}
+
 function sortMaterials (array) {
-    array.sort((a, b) => {
+    array.sort((matA, matB) => {
         // Find corresponding item based on material name
-        const itemA = items.find(item => item.Name === a.Material);
-        const itemB = items.find(item => item.Name === b.Material);
+        const itemIndexA = items.findIndex(item => item.Name === matA.Material);
+        const itemIndexB = items.findIndex(item => item.Name === matB.Material);
+        const itemA = items[itemIndexA];
+        const itemB = items[itemIndexB];
 
-        // Sort by category
-        const categoryOrder = ['Base Item', 'Resonate Material', 'Insight Material', 'Build Material'];
-        const categoryIndexA = categoryOrder.indexOf(itemA.Category);
-        const categoryIndexB = categoryOrder.indexOf(itemB.Category);
-
-        if (categoryIndexA !== categoryIndexB) {
-            return categoryIndexA - categoryIndexB;
+        if (itemA && itemB) {
+            // Sort by category priority first
+            const categoryOrderA = categoryPriority[itemA.Category];
+            const categoryOrderB = categoryPriority[itemB.Category];
+            if (categoryOrderA !== categoryOrderB) {
+                return categoryOrderA - categoryOrderB;
+            } else if (itemB.Rarity !== itemA.Rarity) {
+                return itemB.Rarity - itemA.Rarity;
+            }
+            //  If there is no difference in rarity and category priority, arrange in the original order in Items
+            return itemIndexA - itemIndexB;
+        } else {
+            // If it does not exist, arrange it towards the back
+            return itemIndexB - itemIndexA;
         }
-
-        if (itemB.Rarity !== itemA.Rarity) {
-            return itemB.Rarity - itemA.Rarity;
-        }
-        return itemA.Name.localeCompare(itemB.Name);
     });
 }
 

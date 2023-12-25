@@ -162,5 +162,133 @@
             "Material": "Dust",
             "Quantity": 125000
         }
+    ],
+    "1.31": [
+        {
+            "Material": "Mistilteinn",
+            "Quantity": 3
+        },
+        {
+            "Material": "Silver Bullet",
+            "Quantity": 8
+        },
+        {
+            "Material": "Murmur of Insanity",
+            "Quantity": 8
+        },
+        {
+            "Material": "Sonorous Knell",
+            "Quantity": 5
+        },
+        {
+            "Material": "Brief Cacophony",
+            "Quantity": 8
+        },
+        {
+            "Material": "Clawed Pendulum",
+            "Quantity": 15
+        },
+        {
+            "Material": "Salted Mandrake",
+            "Quantity": 15
+        },
+        {
+            "Material": "Spell of Fortune",
+            "Quantity": 20
+        },
+        {
+            "Material": "Milled Magnesia",
+            "Quantity": 20
+        },
+        {
+            "Material": "Liquefied Terror",
+            "Quantity": 20
+        },
+        {
+            "Material": "Milled Magnesia",
+            "Quantity": 20
+        },
+        {
+            "Material": "Sharpodonty",
+            "Quantity": 480000
+        },
+        {
+            "Material": "Dust",
+            "Quantity": 540000
+        },
+        {
+            "Material": "Moment of Dissonance",
+            "Quantity": 10
+        },
+        {
+            "Material": "Shattered Bones",
+            "Quantity": 25
+        },
+        {
+            "Material": "Magnesia Crystal",
+            "Quantity": 25
+        },
+        {
+            "Material": "Trembling Tooth",
+            "Quantity": 25
+        }
+    ],
+    "1.32": [
+        {
+            "Material": "Crystal Casket",
+            "Quantity": 1
+        },
+        {
+            "Material": "Sonorous Knell",
+            "Quantity": 3
+        },
+        {
+            "Material": "Tome of Mineral Wealth",
+            "Quantity": 6
+        },
+        {
+            "Material": "Bifurcated Skeleton",
+            "Quantity": 5
+        },
+        {
+            "Material": "Prophetic Bird",
+            "Quantity": 5
+        },
+        {
+            "Material": "Brief Cacophony",
+            "Quantity": 5
+        },
+        {
+            "Material": "Scroll of Mineral Wealth",
+            "Quantity": 6
+        },
+        {
+            "Material": "Rough Silver Ingot",
+            "Quantity": 10
+        },
+        {
+            "Material": "Esoteric Bones",
+            "Quantity": 10
+        },
+        {
+            "Material": "Moment of Dissonance",
+            "Quantity": 10
+        },
+        {
+            "Material": "Page of Mineral Wealth",
+            "Quantity": 6
+        },
+        {
+            "Material": "Milled Magnesia",
+            "Quantity": 15
+        },
+        {
+            "Material": "Dust",
+            "Quantity": 125000
+        },
+        {
+            "Material": "Sharpodonty",
+            "Quantity": 75000
+        }
     ]
 }

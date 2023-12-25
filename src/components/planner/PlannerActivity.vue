@@ -24,16 +24,19 @@ const options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const refillsCost = [0, 60, 90, 120, 120, 150, 150, 200, 200];
 
 const roaringMonth = ref(props.settings.roaringMonth);
+const lazyModo = ref(props.settings.lazyModo);
+const weeklyActivity = ref(props.settings.weeklyActivity);
 const refills = ref(props.settings.refills);
 
 const activity = computed(() => {
-    let result = 240;
+    let result = lazyModo.value ? 190 : 240;
     if (roaringMonth.value) {
         result += 60;
     }
     result += refills.value * 100;
-    // console.log(result);
-    // console.log(refills.value);
+    if (weeklyActivity.value) {
+        result += Math.floor(240 / 7);
+    }
     return result;
 });
 
@@ -53,6 +56,8 @@ const handleSelected = (value) => {
 const saveActivitySettings = () => {
     const settings = {
         roaringMonth: roaringMonth.value,
+        lazyModo: lazyModo.value,
+        weeklyActivity: weeklyActivity.value,
         refills: refills.value,
         activity: activity.value,
         cost: cost.value
@@ -74,18 +79,43 @@ const closeOverlay = () => {
                 <i class="fas fa-times"></i>
             </button>
 
-            <!-- Selectors -->
-            <div class="form-control">
-                <label class="cursor-pointer label justify-center">
-                    <span class="label-text text-white mr-3">Roaring Month</span>
-                    <input v-model="roaringMonth" type="checkbox" :checked="roaringMonth" class="checkbox checkbox-info" />
-                </label>
-            </div>
+            <p class="text-white text-center text-lg font-bold">Activity Settings</p>
+            <p class="text-info text-center pb-5">Current / day: <span class="font-bold">{{ activity }}</span></p>
 
-            <div class="grid grid-cols-2 items-center translate-x-4 pt-3">
-                <span class="label-text text-white mr-3 justify-self-end">Daily Refill</span>
-                <SelectList class="w-50 justify-self-start" :options="options" :selected="refills" label="Refills"
-                    v-on:update:selected="handleSelected" />
+            <!-- Selectors -->
+            <div class="grid grid-cols-1 space-y-3">
+                <div class="form-control">
+                    <label class="cursor-pointer label justify-center">
+                        <span class="label-text text-white mr-3">Roaring Month</span>
+                        <input v-model="roaringMonth" type="checkbox" :checked="roaringMonth"
+                            class="checkbox checkbox-info" />
+                    </label>
+                </div>
+
+                <div class="tooltip" data-tip="240 Activities per week">
+                    <div class="form-control">
+                        <label class="cursor-pointer label justify-center">
+                            <span class="label-text text-white mr-3">Weekly Activeness</span>
+                            <input v-model="weeklyActivity" type="checkbox" :checked="weeklyActivity"
+                                class="checkbox checkbox-info" />
+                        </label>
+                    </div>
+                </div>
+
+                <div class="tooltip" data-tip="Login once per day for base 190 Activities">
+                    <div class="form-control">
+                        <label class="cursor-pointer label justify-center">
+                            <span class="label-text text-white mr-3">Lazy Modo</span>
+                            <input v-model="lazyModo" type="checkbox" :checked="lazyModo" class="checkbox checkbox-info" />
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center translate-x-4">
+                    <span class="label-text text-white">Daily Refill</span>
+                    <SelectList class="w-1/3" :options="options" :selected="refills" label="Refills"
+                        v-on:update:selected="handleSelected" />
+                </div>
             </div>
 
             <div class="flex justify-center pt-3">
@@ -95,5 +125,4 @@ const closeOverlay = () => {
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

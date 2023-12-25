@@ -139,6 +139,8 @@ const closeDialog = () => dialog.value?.close()
                 <EventShopButton version="jb2" text="Jukebox Collector" type="Jukebox" />
                 <EventShopButton version="1.21" text="1.2 part 1" type="Event Shop" />
                 <EventShopButton version="1.22" text="1.2 part 2" type="Event Shop" />
+                <EventShopButton version="1.31" text="1.3 part 1" type="Event Shop" />
+                <EventShopButton version="1.32" text="1.3 part 2" type="Event Shop" />
               </div>
               <form method="dialog" class="flex justify-center">
                 <button class="btn btn-sm btn-success text-black">Close</button>
