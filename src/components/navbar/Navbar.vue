@@ -71,11 +71,13 @@ const handleChangeLanguage = (e) => {
 }
 
 onMounted(() => {
-    const userLocale = navigator.language || 'en-US'
-    if (['en-US', 'zh-CN', 'zh-TW', 'ko-KR', 'ja-JP'].includes(userLocale)) {
-        locale.value = userLocale
-    } else {
-        locale.value = 'en-US'
+    if (enableI18n) { // feature toggle
+        const userLocale = navigator.language || 'en-US'
+        if (['en-US', 'zh-CN', 'zh-TW', 'ko-KR', 'ja-JP'].includes(userLocale)) {
+            locale.value = userLocale
+        } else {
+            locale.value = 'en-US'
+        }
     }
 })
 
