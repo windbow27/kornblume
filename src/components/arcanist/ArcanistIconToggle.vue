@@ -20,7 +20,7 @@ const getArcanistImagePath = (id) => {
 </script>
 
 <template>
-    <div class="tooltip" :data-tip="arcInfo.Name">
+    <div class="tooltip" :data-tip="$t(arcInfo.Name)">
         <div class="rounded-md overflow-hidden w-12 h-12">
             <div class="avatar">
                 <div class="w-12 rounded" :class="{

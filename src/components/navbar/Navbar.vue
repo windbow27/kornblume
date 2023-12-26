@@ -30,6 +30,7 @@
       <select @change="handleChangeLanguage">
         <option value="en-US" :selected="locale==='en-US'">English</option>
         <option value="zh-TW" :selected="locale==='zh-TW'">繁體中文</option>
+        <option value="zh-CN" :selected="locale==='zh-CN'">简体中文</option>
       </select>
     </div>
   </nav>
