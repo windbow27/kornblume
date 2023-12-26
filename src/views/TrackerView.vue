@@ -437,7 +437,7 @@ const resetTracker = () => {
                 <div class="col-span-1 sm:col-span-2 flex items-center space-x-5">
                     <div class="flex items-center space-x-5">
                         <div class="text-white">{{ pull.PullNumber }} </div>
-                        <ArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)" />
+                        <ArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>" />
                         <div class="pullArcanistName ml-2" :class="{
                             'text-orange-300': pull.Rarity === 6,
                             'text-yellow-100': pull.Rarity === 5,
