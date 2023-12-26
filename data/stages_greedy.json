@@ -1,4 +1,32 @@
 {
+    "2-3H Green Oranges": {
+      "id": 2,
+      "count": 2531,
+      "cost": 16,
+      "drops": {
+        "Holy Silver": 901,
+        "Liquefied Terror": 66,
+        "Milled Magnesia": 79,
+        "Esoteric Bones": 112,
+        "Rough Silver Ingot": 128,
+        "Spell of Fortune": 149,
+        "Silver Ore": 4249
+      }
+    },
+    "2-6H The End of Immortal": {
+      "id": 3,
+      "count": 1162,
+      "cost": 16,
+      "drops": {
+        "Prophetic Bird": 522,
+        "Liquefied Terror": 28,
+        "Milled Magnesia": 34,
+        "Esoteric Bones": 45,
+        "Rough Silver Ingot": 56,
+        "Spell of Fortune": 75,
+        "Spell of Banishing": 2248
+      }
+    },
     "3-7H Scottish": {
       "id": 8,
       "count": 1143,
@@ -19,6 +47,21 @@
         "Esoteric Bones": 271,
         "Silver Ore": 582,
         "Shattered Bones": 1119
+      }
+    },
+    "3-9H George the Oak": {
+      "id": 10,
+      "count": 966,
+      "cost": 18,
+      "drops": {
+        "Prophetic Bird": 459,
+        "Rough Silver Ingot": 518,
+        "Liquefied Terror": 24,
+        "Milled Magnesia": 35,
+        "Esoteric Bones": 38,
+        "Spell of Fortune": 57,
+        "Spell of Banishing": 488,
+        "Shattered Bones": 4
       }
     },
     "3-11H Freedom of the Dumb": {

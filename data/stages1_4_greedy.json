@@ -2,108 +2,152 @@
     "2-3H Green Oranges": {
       "id": 12,
       "cost": 16,
-      "count": 1674,
+      "count": 2136,
       "drops": {
-        "Liquefied Terror": 41,
-        "Milled Magnesia": 44,
-        "Esoteric Bones": 46,
-        "Silver Ore": 2736,
-        "Rough Silver Ingot": 56,
-        "Holy Silver": 579,
-        "Spell of Fortune": 73,
-        "Dried Cicada Wing": 32,
-        "Ceaseless Wheel": 28
+        "Liquefied Terror": 48,
+        "Milled Magnesia": 55,
+        "Esoteric Bones": 57,
+        "Silver Ore": 3495,
+        "Rough Silver Ingot": 159,
+        "Holy Silver": 735,
+        "Spell of Fortune": 174,
+        "Dried Cicada Wing": 43,
+        "Ceaseless Wheel": 36
       }
     },
     "2-6H The End of Immortal": {
       "id": 15,
       "cost": 16,
-      "count": 274,
+      "count": 491,
       "drops": {
-        "Liquefied Terror": 5,
-        "Milled Magnesia": 5,
-        "Esoteric Bones": 11,
-        "Rough Silver Ingot": 14,
-        "Spell of Banishing": 524,
-        "Spell of Fortune": 8,
-        "Prophetic Bird": 131,
-        "Dried Cicada Wing": 3,
-        "Ceaseless Wheel": 8
+        "Liquefied Terror": 10,
+        "Milled Magnesia": 13,
+        "Esoteric Bones": 21,
+        "Rough Silver Ingot": 26,
+        "Spell of Banishing": 953,
+        "Spell of Fortune": 17,
+        "Prophetic Bird": 219,
+        "Dried Cicada Wing": 12,
+        "Ceaseless Wheel": 13
+      }
+    },
+    "2-9S Pearl and Bullet Hole": {
+      "id": 17,
+      "cost": 12,
+      "count": 100,
+      "drops": {
+        "Dried Cicada Wing": 71,
+        "Liquefied Terror": 3,
+        "Milled Magnesia": 1,
+        "Esoteric Bones": 4,
+        "Rough Silver Ingot": 4,
+        "Spell of Fortune": 6,
+        "Ceaseless Wheel": 1
+      }
+    },
+    "2-10S The Chew-Chew Potion": {
+      "id": 18,
+      "cost": 12,
+      "count": 138,
+      "drops": {
+        "Ceaseless Wheel": 84,
+        "Liquefied Terror": 1,
+        "Milled Magnesia": 4,
+        "Esoteric Bones": 5,
+        "Rough Silver Ingot": 7,
+        "Spell of Fortune": 5,
+        "Dried Cicada Wing": 1
       }
     },
     "3-7H Scottish": {
       "id": 26,
       "cost": 18,
-      "count": 1287,
+      "count": 1310,
       "drops": {
-        "Trembling Tooth": 729,
-        "Liquefied Terror": 291,
-        "Shattered Bones": 855,
-        "Bifurcated Skeleton": 430
+        "Trembling Tooth": 745,
+        "Liquefied Terror": 293,
+        "Shattered Bones": 871,
+        "Bifurcated Skeleton": 437
       }
     },
     "3-8H Scattered Pamphlets": {
       "id": 27,
       "cost": 18,
-      "count": 1024,
+      "count": 1036,
       "drops": {
-        "Shattered Bones": 1257,
-        "Esoteric Bones": 306,
-        "Silver Ore": 649,
-        "Holy Silver": 358
+        "Shattered Bones": 1270,
+        "Esoteric Bones": 308,
+        "Silver Ore": 657,
+        "Holy Silver": 362
       }
     },
     "3-9H George the Oak": {
       "id": 28,
       "cost": 18,
-      "count": 130,
+      "count": 333,
       "drops": {
-        "Liquefied Terror": 5,
-        "Milled Magnesia": 1,
-        "Esoteric Bones": 4,
-        "Rough Silver Ingot": 69,
-        "Spell of Banishing": 69,
-        "Spell of Fortune": 4,
-        "Prophetic Bird": 61,
-        "Dried Cicada Wing": 5,
-        "Ceaseless Wheel": 3
+        "Liquefied Terror": 9,
+        "Milled Magnesia": 5,
+        "Esoteric Bones": 11,
+        "Rough Silver Ingot": 174,
+        "Spell of Banishing": 183,
+        "Spell of Fortune": 11,
+        "Prophetic Bird": 151,
+        "Dried Cicada Wing": 8,
+        "Ceaseless Wheel": 9
       }
     },
     "3-11H Freedom of the Dumb": {
       "id": 29,
       "cost": 18,
-      "count": 1641,
+      "count": 1809,
       "drops": {
-        "Magnesia Crystal": 601,
-        "Milled Magnesia": 212,
-        "Spell of Banishing": 1105,
-        "Clawed Pendant": 518
+        "Magnesia Crystal": 664,
+        "Milled Magnesia": 226,
+        "Spell of Banishing": 1215,
+        "Clawed Pendant": 566
       }
     },
     "3-13H A Yard": {
       "id": 30,
       "cost": 18,
-      "count": 2795,
+      "count": 2907,
       "drops": {
-        "Magnesia Crystal": 1910,
-        "Milled Magnesia": 358,
-        "Salted Mandrake": 956,
-        "Murmur of Insanity": 57
+        "Magnesia Crystal": 1987,
+        "Milled Magnesia": 368,
+        "Salted Mandrake": 990,
+        "Murmur of Insanity": 59
+      }
+    },
+    "3-15S": {
+      "id": 32,
+      "cost": 14,
+      "count": 668,
+      "drops": {
+        "Gold Dust Beetle": 113,
+        "Shattered Bones": 538,
+        "Liquefied Terror": 14,
+        "Milled Magnesia": 15,
+        "Esoteric Bones": 24,
+        "Rough Silver Ingot": 27,
+        "Spell of Fortune": 44,
+        "Dried Cicada Wing": 28,
+        "Ceaseless Wheel": 15
       }
     },
     "4-10H Sailing at Night": {
       "id": 36,
       "cost": 18,
-      "count": 250,
+      "count": 302,
       "drops": {
-        "Liquefied Terror": 4,
-        "Biting Box": 73,
+        "Liquefied Terror": 9,
+        "Biting Box": 86,
         "Milled Magnesia": 9,
-        "Esoteric Bones": 7,
-        "Silver Ore": 171,
-        "Rough Silver Ingot": 132,
-        "Spell of Fortune": 15,
-        "Dried Cicada Wing": 8,
+        "Esoteric Bones": 9,
+        "Silver Ore": 205,
+        "Rough Silver Ingot": 155,
+        "Spell of Fortune": 17,
+        "Dried Cicada Wing": 10,
         "Ceaseless Wheel": 8
       }
     },
@@ -121,74 +165,74 @@
     "4-13H Flashing Red": {
       "id": 38,
       "cost": 18,
-      "count": 382,
+      "count": 389,
       "drops": {
-        "Magnesia Crystal": 306,
-        "Milled Magnesia": 84,
-        "Silver Ore": 244,
-        "Holy Silver": 133
+        "Magnesia Crystal": 309,
+        "Milled Magnesia": 88,
+        "Silver Ore": 249,
+        "Holy Silver": 135
       }
     },
     "4-20H Picnic of the Lawn": {
       "id": 41,
       "cost": 18,
-      "count": 2889,
+      "count": 3018,
       "drops": {
-        "Shattered Bones": 1924,
-        "Bifurcated Skeleton": 970,
-        "Spell of Banishing": 5817,
-        "Spell of Fortune": 1270
+        "Shattered Bones": 2003,
+        "Bifurcated Skeleton": 1017,
+        "Spell of Banishing": 6064,
+        "Spell of Fortune": 1326
       }
     },
     "4-21H Good Weather": {
       "id": 42,
       "cost": 18,
-      "count": 375,
+      "count": 379,
       "drops": {
-        "Trembling Tooth": 219,
-        "Liquefied Terror": 78,
-        "Magnesia Crystal": 263,
-        "Salted Mandrake": 113
+        "Trembling Tooth": 221,
+        "Liquefied Terror": 79,
+        "Magnesia Crystal": 266,
+        "Salted Mandrake": 114
       }
     },
     "5-3H": {
       "id": 58,
       "cost": 18,
-      "count": 691,
+      "count": 731,
       "drops": {
-        "Shattered Bones": 842,
-        "Esoteric Bones": 199,
-        "Silver Ore": 487,
-        "Winged Key": 196
+        "Shattered Bones": 893,
+        "Esoteric Bones": 212,
+        "Silver Ore": 517,
+        "Winged Key": 206
       }
     },
     "5-4H": {
       "id": 59,
       "cost": 18,
-      "count": 1540,
+      "count": 1605,
       "drops": {
-        "Liquefied Terror": 32,
+        "Liquefied Terror": 37,
         "Magnesia Crystal": 1,
-        "Milled Magnesia": 42,
-        "Esoteric Bones": 45,
+        "Milled Magnesia": 43,
+        "Esoteric Bones": 50,
         "Silver Ore": 1,
-        "Rough Silver Ingot": 827,
-        "Spell of Banishing": 1048,
-        "Spell of Fortune": 77,
+        "Rough Silver Ingot": 872,
+        "Spell of Banishing": 1090,
+        "Spell of Fortune": 79,
         "Dried Cicada Wing": 42,
         "Ceaseless Wheel": 35,
-        "Curved Goose Neck": 465
+        "Curved Goose Neck": 488
       }
     },
     "5-19H": {
       "id": 69,
       "cost": 18,
-      "count": 1095,
+      "count": 1308,
       "drops": {
-        "Liquefied Terror": 112,
-        "Biting Box": 350,
-        "Silver Ore": 770,
-        "Silver Bullet": 23
+        "Liquefied Terror": 129,
+        "Biting Box": 420,
+        "Silver Ore": 928,
+        "Silver Bullet": 28
       }
     },
     "The Poussiere VI": {
