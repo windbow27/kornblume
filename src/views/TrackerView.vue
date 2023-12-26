@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, Ref, watchEffect, onMounted } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
-import { Image } from 'image-js';
+import { GreyAlgorithm, Image } from 'image-js';
 import Tesseract, { createWorker } from 'tesseract.js';
 import ArcanistIcon from '../components/arcanist/ArcanistIcon.vue';
 import TrackerArcanistIcon from '../components/tracker/TrackerArcanistIcon.vue';
@@ -47,7 +47,9 @@ async function preprocessImage (file: File) {
 
     const blurred = imageData.blurFilter({ radius: 1 });
 
-    const grey = blurred.grey();
+    const grey = blurred.grey({
+        algorithm: 'average' as GreyAlgorithm
+    });
 
     const kernel = [
         [0, -1, 0],
@@ -70,7 +72,8 @@ const ocrCorrectionMap = {
     aliEnT: 'aliEn T',
     Druvis: 'Druvis III',
     korn: 'Bkornblume',
-    corn: 'Bkornblume'
+    corn: 'Bkornblume',
+    AKnight: 'A Knight'
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -202,7 +205,28 @@ onMounted(() => {
     <div class="responsive-spacer">
 
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            Summon Tracker <span class="text-sm text-info opacity-90">Beta. Remember to read Tutorial.</span>
+            Summon Tracker
+            <button class="text-info text-sm font-bold pt-2 pl-3 hover:text-blue-200 opacity-90"
+                onclick="oldusers_explaination.showModal()">Released. Returning users notice</button>
+            <dialog id="oldusers_explaination" class="modal">
+                <div class="modal-box custom-gradient-gray-blue">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    </form>
+                    <h3 class="font-bold text-lg text-white">Howdy!</h3>
+                    <p class="text-slate-300 text-sm pb-4">
+                        With the release update on 26/12/2023, the information for existing users has been
+                        corrupted. Please proceed to your
+                        <router-link class=" text-info text-lg" to="/profile">Profile</router-link>
+                        and reset your <span class="text-error"> Summon Tracker</span> data. We apologize for any
+                        inconvenience this may cause and appreciate your
+                        understanding.
+                    </p>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
         </h2>
         <div class="space-x-3">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
@@ -229,11 +253,13 @@ onMounted(() => {
                     <p class=" text-white">4. It is advised to save your screenshots for future usages.</p>
                     <h3 class="font-bold text-lg pt-4 text-info">Limitations</h3>
                     <p class="text-white">• Images <span class="text-error">must be clear</span>, or the Summon Tracker
-                        may fail to read. This is an example of a good <a href="https://i.imgur.com/NgspD1g.png"
-                            target="_blank" class="text-blue-500 hover:text-blue-700">Image</a>. Please try to capture the Summon section only, with minimum background shown. </p>
+                        may fail to read.</p>
+                    <p class=" text-white">• This is an example of a good <a href="https://i.imgur.com/NgspD1g.png"
+                            target="_blank" class="text-blue-500 hover:text-blue-700">Image</a>.
+                    </p>
                     <h3 class="font-bold text-lg pt-4 text-info">Bug Reports</h3>
-                    <p class="text-white">• Summon Tracker is still in Beta. Bugs are expected. If you encouter one, open
-                        your F12 ‣ Console,
+                    <p class="text-white">• If you encouter a bug, open
+                        your F12 ‣ Console ‣
                         send the text through Bug Reports or directly to @windbow. </p>
 
                 </div>

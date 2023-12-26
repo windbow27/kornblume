@@ -36,7 +36,7 @@
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
-                    <p class="pb-4 text-white text-center">Once you delete your data, there is no going back.</p>
+                    <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.</p>
                     <p class="pb-4 text-white text-center">Please be certain.</p>
                     <button @click="resetTracker"
                         class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
@@ -53,7 +53,7 @@
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
-                    <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.</p>
+                    <p class="pb-4 text-white text-center">Once you delete your data, there is no going back.</p>
                     <p class="pb-4 text-white text-center">Please be certain.</p>
                     <button @click="resetStores"
                         class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">

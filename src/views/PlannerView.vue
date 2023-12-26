@@ -180,23 +180,6 @@ onClickOutside(settingsRef, closeSettings)
     <!-- Selector -->
     <div class="flex pb-4">
       <h2 class="text-2xl text-white font-bold">Planner</h2>
-      <button class="text-info text-sm font-bold pt-2 pl-3 hover:text-blue-200 opacity-90" onclick="oldusers_explaination.showModal()">Returning users notice</button>
-      <dialog id="oldusers_explaination" class="modal">
-        <div class="modal-box custom-gradient-gray-blue">
-          <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
-          </form>
-          <h3 class="font-bold text-lg text-white">Howdy!</h3>
-          <p class="text-slate-300 text-sm pb-4">
-            Due to a significant data change on 15/12/2023, the information for existing users has been corrupted. Please proceed to your
-            <router-link class=" text-info text-lg" to="/profile">Profile</router-link>
-            and reset your data. We apologize for any inconvenience this may cause and appreciate your understanding.
-          </p>
-        </div>
-        <form method="dialog" class="modal-backdrop">
-          <button>close</button>
-        </form>
-      </dialog>
     </div>
     <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
@@ -206,7 +189,7 @@ onClickOutside(settingsRef, closeSettings)
       <div class="flex space-x-2">
         <div class="tooltip" data-tip="Activity Settings">
           <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i
-            class="fa-solid fa-bolt"></i></button>
+              class="fa-solid fa-bolt"></i></button>
         </div>
         <div class="tooltip" data-tip="Wilderness Settings">
           <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
@@ -217,7 +200,8 @@ onClickOutside(settingsRef, closeSettings)
               class="fa-solid fa-box-archive"></i></button>
         </div>
         <div class="tooltip" data-tip="Settings">
-          <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i class="fa-solid fa-gear"></i></button>
+          <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
+              class="fa-solid fa-gear"></i></button>
         </div>
       </div>
     </div>
@@ -245,7 +229,7 @@ onClickOutside(settingsRef, closeSettings)
     <!-- Activity Overlay -->
     <div v-if="isActivity" class="overlay">
       <PlannerActivity ref="activityRef" :settings="activityStore.settings" @closeOverlay="closeActivity"
-      @saveActivitySettings="handleSaveActivitySettings" />
+        @saveActivitySettings="handleSaveActivitySettings" />
     </div>
 
     <!-- Wilderness Overlay -->
