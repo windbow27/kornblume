@@ -12,7 +12,8 @@ const closeOverlay = () => {
 
 const changelogs = [
     // Add more from top
-    { date: '24/12/2023', description: '• Improved Activity Settings. UI Improvements.' },
+    { date: '26/12/2023', description: '• Improved OCR for 5*. \n • Updated Stage Data and Greedy Method improvements. \n • Added Ezra Theodore and Desert Flanndel.' },
+    { date: '25/12/2023', description: '• Improved Activity Settings. UI Improvements.' },
     { date: '24/12/2023', description: '• UI Improvements\n • Wilderness output is now considered for calculations.\n • Merry Christmas.' },
     { date: '23/12/2023', description: '• UI Improvements for goals and crafting list. \n • Added Goal Button.' },
     { date: '21/12/2023', description: '• UI Improvements. \n • Added Goals and Crafting List.' },

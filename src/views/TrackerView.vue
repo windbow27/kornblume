@@ -205,8 +205,8 @@ onMounted(() => {
     <div class="responsive-spacer">
 
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            Summon Tracker
-            <button class="text-info text-sm font-bold pt-2 pl-3 hover:text-blue-200 opacity-90"
+            Summon Tracker <span class="text-info text-sm">Beta. Improved 5* OCR.</span>
+            <!-- <button class="text-info text-sm font-bold pt-2 pl-3 hover:text-blue-200 opacity-90"
                 onclick="oldusers_explaination.showModal()">Released. Returning users notice</button>
             <dialog id="oldusers_explaination" class="modal">
                 <div class="modal-box custom-gradient-gray-blue">
@@ -226,7 +226,7 @@ onMounted(() => {
                 <form method="dialog" class="modal-backdrop">
                     <button>close</button>
                 </form>
-            </dialog>
+            </dialog> -->
         </h2>
         <div class="space-x-3">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
