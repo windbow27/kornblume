@@ -5,7 +5,7 @@ import { GreyAlgorithm, Image } from 'image-js';
 import Tesseract, { createWorker } from 'tesseract.js';
 import ArcanistIcon from '../components/arcanist/ArcanistIcon.vue';
 import TrackerArcanistIcon from '../components/tracker/TrackerArcanistIcon.vue';
-import { usePullsRecordStore } from '../stores/pullsRecordStore'
+import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 
 const fileInput = ref(null)
 const isImporting = ref(false);
@@ -80,6 +80,15 @@ const ocrCorrectionMap = {
 type clickHandler = (payload: Event) => void | undefined;
 const ocr: clickHandler = (payload: Event): void => {
     const fileList: FileList | null = (payload.target as HTMLInputElement).files;
+    const timestampMapping = pulls.value.reduce((prev, curr) => {
+        const { Timestamp } = curr;
+        if (prev[Timestamp] && prev[Timestamp][0]) {
+            prev[Timestamp][0].push(curr)
+        } else {
+            prev[Timestamp] = [[curr]]
+        }
+        return prev
+    }, {});
     if (fileList) {
         isImporting.value = true;
         (async (): Promise<void> => {
@@ -97,6 +106,7 @@ const ocr: clickHandler = (payload: Event): void => {
 
                     const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNamesRegex})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
                     const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[] = [];
+                    const currentPullsMapping = {}
 
                     // Extract information from each line
                     text.value.trim().split('\n').forEach((line) => {
@@ -120,25 +130,80 @@ const ocr: clickHandler = (payload: Event): void => {
                             };
                             // console.log(pull);
 
-                            currentPulls.push(pull);
+                            currentPulls.unshift(pull);
                             // console.log(currentPulls);
+
+                            if (currentPullsMapping[timestamp]) {
+                                currentPullsMapping[timestamp].unshift(pull)
+                            } else {
+                                currentPullsMapping[timestamp] = [pull]
+                            }
                         }
                     });
 
-                    // console.log(currentPulls);
-
-                    const isSubset = currentPulls.every(currentPull =>
-                        pulls.value.some(pull => isEqualPull(pull, currentPull))
-                    );
-                    // console.log(isSubset);
-
-                    if (!isSubset) {
-                        // If currentPulls is not a subset of pulls, add all currentPulls to pulls
-                        pulls.value.push(...currentPulls);
-                    }
+                    Object.keys(currentPullsMapping).forEach((ts) => {
+                        const pullsArray = currentPullsMapping[ts]
+                        if (!timestampMapping[ts]) {
+                            timestampMapping[ts] = [pullsArray]
+                        } else { // has repeated timestamp
+                            let fullLengh = 0
+                            timestampMapping[ts].forEach(pullsAry => { fullLengh += pullsAry.length })
+                            if (fullLengh !== 10) { // is not complete yet
+                                if (isEqualPull(pullsArray[0], currentPulls[0])) {
+                                    // assume this array is the second half of the 10-pull
+                                    timestampMapping[ts].push(pullsArray)
+                                } else if (isEqualPull(pullsArray[pullsArray.length - 1], currentPulls[currentPulls.length - 1])) {
+                                    // assume this array is the first half of the 10-pull
+                                    timestampMapping[ts].unshift(pullsArray)
+                                }
+                            }
+                        }
+                    })
                 }
             }
+
+            const flattenPullsArrayByTimestamp = {}
+            Object.keys(timestampMapping).sort((a, b) => Number(b) - Number(a)).forEach(timestamp => {
+                if (timestampMapping[timestamp].length === 1) {
+                    flattenPullsArrayByTimestamp[timestamp] = timestampMapping[timestamp][0]
+                } else if (timestampMapping[timestamp].length === 2) {
+                    const firstHalf = timestampMapping[timestamp][0]
+                    const secondHalf = timestampMapping[timestamp][1]
+                    const fullLengh = firstHalf.length + secondHalf.length
+                    if (!(isEqualPulls(firstHalf, secondHalf))) {
+                        if (fullLengh <= 10) {
+                            flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf]
+                        } else { // has overlap
+                            flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf.slice(fullLengh - 10)]
+                        }
+                    } else {
+                        flattenPullsArrayByTimestamp[timestamp] = [...firstHalf]
+                    }
+                } else if (timestampMapping[timestamp].length > 2) { // screenshots from different times?
+                    // idk, just take the top and bottom
+                    const firstHalf = timestampMapping[timestamp][0]
+                    const secondHalf = timestampMapping[timestamp][timestampMapping[timestamp].length - 1]
+                    const fullLengh = firstHalf.length + secondHalf.length
+                    if (!(isEqualPulls(firstHalf, secondHalf))) {
+                        if (fullLengh <= 10) {
+                            flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf]
+                        } else { // has overlap
+                            flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf.slice(fullLengh - 10)]
+                        }
+                    } else {
+                        flattenPullsArrayByTimestamp[timestamp] = [...firstHalf]
+                    }
+                }
+            })
+            let result: IPull[] = []
+            Object.keys(flattenPullsArrayByTimestamp).sort((a, b) => Number(b) - Number(a)).forEach((ts) => {
+                result = [
+                    ...result,
+                    ...flattenPullsArrayByTimestamp[ts]
+                ]
+            })
             await worker.terminate();
+            pulls.value = result;
             isImporting.value = false;
         })();
     }
@@ -151,8 +216,12 @@ const triggerFileInput = () => {
 
 const isEqualPull = (pull1, pull2) => {
     return pull1.ArcanistName === pull2.ArcanistName &&
-        pull1.Timestamp === pull2.Timestamp &&
+        pull1.BannerType === pull2.BannerType &&
         pull1.Rarity === pull2.Rarity;
+}
+
+const isEqualPulls = (pulls1, pulls2) => {
+    return JSON.stringify(pulls1) === JSON.stringify(pulls2);
 }
 
 const formatDate = (timestamp: number): string => {
