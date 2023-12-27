@@ -37,7 +37,7 @@
 </template>
 
 <script lang="ts" setup name="Navbar">
-import { onMounted, ref, watchEffect } from 'vue';
+import { onMounted, ref, watchEffect, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 // just for debug
@@ -73,13 +73,22 @@ const handleChangeLanguage = (e) => {
 
 onMounted(() => {
     if (enableI18n) { // feature toggle
-        const userLocale = navigator.language || 'en-US'
-        if (['en-US', 'zh-CN', 'zh-TW', 'ko-KR', 'ja-JP'].includes(userLocale)) {
+        if (localStorage.getItem('locale')) {
+            const userLocale = localStorage.getItem('locale') || 'en-US'
             locale.value = userLocale
         } else {
-            locale.value = 'en-US'
+            const userLocale = navigator.language || 'en-US'
+            if (['en-US', 'zh-CN', 'zh-TW', 'ko-KR', 'ja-JP'].includes(userLocale)) {
+                locale.value = userLocale
+            } else {
+                locale.value = 'en-US'
+            }
         }
     }
+})
+
+watch(locale, (newLocale) => {
+    localStorage.setItem('locale', newLocale);
 })
 
 </script>
