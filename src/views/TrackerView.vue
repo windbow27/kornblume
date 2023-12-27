@@ -73,7 +73,8 @@ const ocrCorrectionMap = {
     Druvis: 'Druvis III',
     korn: 'Bkornblume',
     corn: 'Bkornblume',
-    AKnight: 'A Knight'
+    AKnight: 'A Knight',
+    THT: 'TTT'
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -199,6 +200,11 @@ onMounted(() => {
     }
 })
 
+const resetTracker = () => {
+    usePullsRecordStore().reset()
+    window.location.reload()
+}
+
 </script>
 
 <template>
@@ -228,15 +234,20 @@ onMounted(() => {
                 </form>
             </dialog> -->
         </h2>
-        <div class="space-x-3">
-            <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
-                multiple />
-            <button @click="triggerFileInput" :disabled="isImporting"
-                class="bg-success hover:bg-green-600 text-black font-bold py-2 px-4 rounded ml-2">
-                OCR Import
-            </button>
+        <div class="flex justify-between">
+            <div class="space-x-3">
+                <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
+                    multiple />
+                <button @click="triggerFileInput" :disabled="isImporting"
+                    class="bg-success hover:bg-green-600 text-white/90 font-bold py-2 px-4 rounded ml-2">
+                    OCR Import
+                </button>
 
-            <button class="btn btn-info btn-sm" onclick="tutorial.showModal()">Tutorial</button>
+                <button class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">Tutorial</button>
+
+                <button onclick="resetTracker.showModal()" class="btn btn-ghost custom-gradient-button btn-sm text-white">Reset</button>
+            </div>
+
             <dialog id="tutorial" class="modal">
                 <div class="modal-box custom-gradient-gray-blue custom-border custom-scrollbar">
                     <form method="dialog">
@@ -268,6 +279,26 @@ onMounted(() => {
                 </form>
             </dialog>
 
+            <dialog id="resetTracker" class="modal">
+                <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    </form>
+                    <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.
+                    </p>
+                    <p class="pb-4 text-white text-center">Please be certain.</p>
+                    <button @click="resetTracker"
+                        class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
+                        Reset Tracker
+                    </button>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
+        </div>
+
+        <div class="p-3">
             <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
             <span v-show="isImporting" class="text-white text-base"> Processing... Please wait...</span>
         </div>

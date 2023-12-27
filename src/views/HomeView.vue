@@ -29,19 +29,7 @@ const closeResources = () => {
 const carouselItems = [
     {
         link: 'https://www.pixiv.net/en/artworks/110046834',
-        imageUrl: 'https://media.discordapp.net/attachments/1167811155021013113/1179403660472631296/bkornblume_reverse_1999_drawn_by_zaocan_nai_cha__e82e6a9976933a9f7bfe10bd786df82d.jpg?ex=6579a840&is=65673340&hm=158852f2b2081144a2e7b57acbff0be1e9edb0bf4fa2ccaa7c98e3a45dba26fb&=&format=webp&width=904&height=499'
-    },
-    {
-        link: 'https://xieyun767.lofter.com/post/1e42475f_2b9822a23',
-        imageUrl: 'https://r.res.easebar.com/pic/20231023/66e376a5-01c0-4e03-8b91-2a9084a48079.jpg'
-    },
-    {
-        link: 'https://www.weibo.com/7600886366/KBBM3bSf6',
-        imageUrl: 'https://media.discordapp.net/attachments/1167811155021013113/1179403455736057906/bkornblume_reverse_1999__f556d62c5766d7048c1023dc10bccbd7.jpg?ex=6579a810&is=65673310&hm=5932e6233dadaace15105efc4f323693aaf8037b01dd38c303c361d19c4e6d93&=&format=webp&width=978&height=425'
-    },
-    {
-        link: 'https://re.bluepoch.com/home/detail.html#wallpaper',
-        imageUrl: 'https://gamecms-res.sl916.com/official_website_resource/50001/4/PICTURE/20231114/97%202560x1440_ccb31017a58b47a5b285019ecab4bb27.jpg'
+        imageUrl: 'https://pbs.twimg.com/media/F1XIYQXakAAgrt4?format=jpg&name=4096x4096'
     }
 ]
 
@@ -97,7 +85,7 @@ onClickOutside(resourcesRef, closeResources)
                 <div class="mb-4 text-center">
                     <p class="text-xs opacity-80">Kornblume is not affilated with BluePoch. All images and data belongs to
                         their respective owners.</p>
-                    <p class="text-md opacity-90 mx-2 mt-2">Developed by windbow. Joined by zero.day and Fran.</p>
+                    <p class="text-md opacity-90 mx-2 mt-2">Developed by windbow. Joined by zero.day and fran.</p>
 
                     <button class="btn btn-ghost btn-xs opacity-80" onclick="my_modal_2.showModal()">Privacy Policy</button>
                     <dialog id="my_modal_2" class="modal">

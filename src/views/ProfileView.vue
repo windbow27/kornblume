@@ -4,13 +4,13 @@
             <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4">Profile</h2>
             <p class="text-white"> You can export or import your data here.</p>
             <div class="flex justify-center items-center p-2 space-x-5">
-                <button @click="exportStores" class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
+                <button @click="exportStores" class="btn btn-info text-black font-bold py-2 px-4 rounded">
                     Export Data
                 </button>
 
                 <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4" style="display: none;" />
                 <button @click="triggerFileInput"
-                    class="bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded ml-2">
+                    class="btn btn-success text-black font-bold py-2 px-4 rounded ml-2">
                     Import Data
                 </button>
             </div>
@@ -22,11 +22,11 @@
                 inconvenience.</p>
             <div class="flex justify-center items-center p-2 space-x-5">
                 <button onclick="resetTracker.showModal()"
-                    class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
+                    class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
                     Reset Tracker
                 </button>
                 <button onclick="resetAll.showModal()"
-                    class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
+                    class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
                     Reset Data
                 </button>
             </div>
@@ -39,7 +39,7 @@
                     <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.</p>
                     <p class="pb-4 text-white text-center">Please be certain.</p>
                     <button @click="resetTracker"
-                        class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
+                        class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
                         Reset Tracker
                     </button>
                 </div>
@@ -56,7 +56,7 @@
                     <p class="pb-4 text-white text-center">Once you delete your data, there is no going back.</p>
                     <p class="pb-4 text-white text-center">Please be certain.</p>
                     <button @click="resetStores"
-                        class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded ml-2">
+                        class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
                         Reset All
                     </button>
                 </div>
