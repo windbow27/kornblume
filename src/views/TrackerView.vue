@@ -1,42 +1,47 @@
 <script setup lang="ts">
-import { ref, computed, Ref, watchEffect, onMounted } from 'vue'
+import { ref, computed, Ref, ComputedRef, watchEffect, onMounted } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { GreyAlgorithm, Image } from 'image-js';
 import Tesseract, { createWorker } from 'tesseract.js';
 import ArcanistIcon from '../components/arcanist/ArcanistIcon.vue';
 import TrackerArcanistIcon from '../components/tracker/TrackerArcanistIcon.vue';
-import { usePullsRecordStore } from '../stores/pullsRecordStore'
+import { usePullsRecordStore, IPull } from '../stores/pullsRecordStore'
 
 const fileInput = ref(null)
 const isImporting = ref(false);
 const text = ref('')
 const arcanists = useDataStore().arcanists;
-const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
 
-const indexedPulls = computed(() => {
-    const sortedPulls = pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
-    return sortedPulls.map((pull, index) => {
-        return {
-            PullNumber: sortedPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            Timestamp: pull.Timestamp
+type PullMap = Map<number, IPull[]>;
+const pullMap: Ref<PullMap> = ref(new Map<number, IPull[]>());
+
+const indexedPulls: ComputedRef<IPull[]> = computed(() => {
+    const sortedMap: PullMap = new Map([...pullMap.value.entries()].sort().reverse());
+    const sortedArray: IPull[] = [];
+    let index: number = 1;
+    for (const [key, value] of sortedMap.entries()) {
+        for (const pull of value) {
+            pull.PullNumber = index++;
+            pull.Timestamp = key;
+            sortedArray.push(pull);
         }
-    });
+    }
+    return sortedArray;
 });
 
 const sixStarsPullsList = computed(() => {
     const sixStarPulls = indexedPulls.value
         .filter(pull => pull.Rarity === 6)
-        .sort((a, b) => a.PullNumber - b.PullNumber)
         .map(pull => pull.PullNumber);
-    return sixStarPulls.map((pullNumber, index) => index === 0 ? pullNumber : pullNumber - sixStarPulls[index - 1]);
+    return sixStarPulls.map((pullNumber, index) =>
+        index === sixStarPulls.length - 1 ? indexedPulls.value.length - pullNumber : sixStarPulls[index + 1] - sixStarPulls[index]
+    );
 });
 
 const summonSinceLastSixStar = computed(() => {
     const lastSixStarPull = indexedPulls.value.find(pull => pull.Rarity === 6);
     if (lastSixStarPull) {
-        return indexedPulls.value.length - lastSixStarPull.PullNumber;
+        return lastSixStarPull.PullNumber - 1;
     } else {
         return indexedPulls.value.length;
     }
@@ -96,7 +101,7 @@ const ocr: clickHandler = (payload: Event): void => {
                     const arcanistNamesRegex = [...arcanistNames, ...Object.keys(ocrCorrectionMap)].join('|')
 
                     const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNamesRegex})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
-                    const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[] = [];
+                    const currentPulls: IPull[] = [];
 
                     // Extract information from each line
                     text.value.trim().split('\n').forEach((line) => {
@@ -111,31 +116,29 @@ const ocr: clickHandler = (payload: Event): void => {
                             const bannerType: string = match.groups?.BannerType.trim() || '';
                             const timestamp: number = new Date(match.groups?.Date || '').getTime();
 
-                            // Create an object for each pull
-                            const pull = {
+                            currentPulls.push({
+                                PullNumber: 0,
                                 ArcanistName: arcanist?.Name || '',
                                 Rarity: rarity,
                                 BannerType: bannerType,
                                 Timestamp: timestamp
-                            };
-                            // console.log(pull);
-
-                            currentPulls.push(pull);
+                            } as IPull);
                             // console.log(currentPulls);
                         }
                     });
 
-                    // console.log(currentPulls);
-
-                    const isSubset = currentPulls.every(currentPull =>
-                        pulls.value.some(pull => isEqualPull(pull, currentPull))
-                    );
-                    // console.log(isSubset);
-
-                    if (!isSubset) {
-                        // If currentPulls is not a subset of pulls, add all currentPulls to pulls
-                        pulls.value.push(...currentPulls);
+                    for (const pull of currentPulls) {
+                        const key: number = pull.Timestamp;
+                        const existingPulls: IPull[] = pullMap.value.get(key) || [];
+                        if (existingPulls.length === 10) { continue; }
+                        existingPulls.push(pull);
+                        pullMap.value.set(key, existingPulls);
                     }
+                }
+            }
+            for (const pullArray of pullMap.value.values()) {
+                while (pullArray.length !== 10 && pullArray.length > 1) {
+                    pullArray.pop();
                 }
             }
             await worker.terminate();
@@ -147,12 +150,6 @@ const ocr: clickHandler = (payload: Event): void => {
 const triggerFileInput = () => {
     // Trigger the file input programmatically
     (fileInput as Ref<HTMLElement | null>).value?.click()
-}
-
-const isEqualPull = (pull1, pull2) => {
-    return pull1.ArcanistName === pull2.ArcanistName &&
-        pull1.Timestamp === pull2.Timestamp &&
-        pull1.Rarity === pull2.Rarity;
 }
 
 const formatDate = (timestamp: number): string => {
@@ -189,14 +186,17 @@ defineExpose({
 })
 
 watchEffect(() => {
-    if (pulls.value.length > 0) {
-        usePullsRecordStore().updatePullsRecord(pulls.value)
+    if (pullMap.value.size > 0) {
+        usePullsRecordStore().updatePullsRecord(pullMap.value)
     }
 });
 
 onMounted(() => {
-    if (usePullsRecordStore().data.length > 0) {
-        pulls.value = [...usePullsRecordStore().data]
+    if (usePullsRecordStore().keys.length > 0) {
+        const pullsStore = usePullsRecordStore();
+        pullsStore.keys.forEach((key, index) => {
+            pullMap.value.set(key, pullsStore.values[index]);
+        });
     }
 })
 
@@ -345,7 +345,7 @@ const resetTracker = () => {
                 <div v-for="(pull, index) in indexedPulls.filter(p => p.Rarity === 6)"
                     :key="`${pull.Timestamp}-${pull.ArcanistName}`">
                     <TrackerArcanistIcon class="py-2" :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
-                        :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
+                        :pity="sixStarsPullsList[index]" />
                 </div>
             </div>
         </div>

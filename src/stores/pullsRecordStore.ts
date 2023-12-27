@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 
 export interface IPull {
+    PullNumber: number,
     ArcanistName: string,
     Rarity: number,
     BannerType: string,
@@ -10,21 +11,27 @@ export interface IPull {
 interface IPullsRecord extends Array<IPull>{}
 
 interface IPullsRecordStore {
-    data: IPullsRecord,
+    keys: number[],
+    values: IPullsRecord[]
 }
 
 export const usePullsRecordStore = defineStore('pulls', {
     state: (): IPullsRecordStore => ({
-        data: []
+        keys: [] as number[],
+        values: [] as IPullsRecord[]
     }),
     actions: {
-        updatePullsRecord (newData) {
-            this.data = [
-                ...newData
+        updatePullsRecord (newData: Map<number, IPull[]>) {
+            this.keys = [
+                ...newData.keys()
+            ].flat()
+            this.values = [
+                ...newData.values()
             ]
         },
         reset () {
-            this.data = []
+            this.values = []
+            this.keys = []
         }
     },
     persist: true
