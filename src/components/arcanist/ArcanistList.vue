@@ -2,6 +2,9 @@
 import { ref, computed } from 'vue';
 import { usePlannerSettingsStore } from '../../stores/plannerSettingsStore';
 import ArcanistIcon from './ArcanistIcon.vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale, t } = useI18n()
 
 const props = defineProps({
     arcanists: {
@@ -34,7 +37,11 @@ const searchQuery = ref('');
 
 const filteredArcanists = computed(() => {
     // Filter arcanists based on the searchQuery
-    return props.arcanists.filter(arc => arc.Name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+    if (locale.value === 'en-US') {
+        return props.arcanists.filter(arc => arc.Name.toLowerCase().includes(searchQuery.value.toLowerCase()));
+    } else {
+        return props.arcanists.filter(arc => t(arc.Name).includes(searchQuery.value));
+    }
 });
 
 </script>
@@ -64,7 +71,7 @@ const filteredArcanists = computed(() => {
         <div v-for="arc in filteredArcanists" :key="arc.Id" @click="selectArcanist(arc)"
           class="p-4 flex items-center cursor-pointer hover:bg-gray-700 transition-colors">
           <ArcanistIcon :arcanist="arc" />
-          <span class="text-white ml-8">{{ arc.Name }} </span>
+          <span class="text-white ml-8">{{ $t(arc.Name) }} </span>
         </div>
       </div>
     </div>
