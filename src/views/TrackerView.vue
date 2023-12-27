@@ -146,14 +146,19 @@ const ocr: clickHandler = (payload: Event): void => {
                         if (!timestampMapping[ts]) {
                             timestampMapping[ts] = [pullsArray]
                         } else { // has repeated timestamp
-                            let fullLengh = 0
-                            timestampMapping[ts].forEach(pullsAry => { fullLengh += pullsAry.length })
-                            if (fullLengh !== 10) { // is not complete yet
-                                if (isEqualPull(pullsArray[0], currentPulls[0])) {
-                                    // assume this array is the second half of the 10-pull
+                            const isExistComplete10Pulls = timestampMapping[ts].some((ary) => ary.length === 10)
+                            if (!isExistComplete10Pulls) { // is not complete yet
+                                if (
+                                    isEqualPull(pullsArray[0], currentPulls[0]) &&
+                                    isEqualPull(pullsArray[pullsArray.length - 1], currentPulls[pullsArray.length - 1])
+                                ) {
+                                    // assume this array is the second half of the 10-pulls
                                     timestampMapping[ts].push(pullsArray)
-                                } else if (isEqualPull(pullsArray[pullsArray.length - 1], currentPulls[currentPulls.length - 1])) {
-                                    // assume this array is the first half of the 10-pull
+                                } else if (
+                                    isEqualPull(pullsArray[pullsArray.length - 1], currentPulls[currentPulls.length - 1]) &&
+                                    isEqualPull(pullsArray[0], currentPulls[currentPulls.length - pullsArray.length])
+                                ) {
+                                    // assume this array is the first half of the 10-pulls
                                     timestampMapping[ts].unshift(pullsArray)
                                 }
                             }
@@ -174,7 +179,7 @@ const ocr: clickHandler = (payload: Event): void => {
                         if (fullLengh <= 10) {
                             flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf]
                         } else { // has overlap
-                            flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf.slice(fullLengh - 10)]
+                            flattenPullsArrayByTimestamp[timestamp] = [...firstHalf.slice(0, 10 - fullLengh), ...secondHalf]
                         }
                     } else {
                         flattenPullsArrayByTimestamp[timestamp] = [...firstHalf]
@@ -188,7 +193,7 @@ const ocr: clickHandler = (payload: Event): void => {
                         if (fullLengh <= 10) {
                             flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf]
                         } else { // has overlap
-                            flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf.slice(fullLengh - 10)]
+                            flattenPullsArrayByTimestamp[timestamp] = [...firstHalf.slice(0, 10 - fullLengh), ...secondHalf]
                         }
                     } else {
                         flattenPullsArrayByTimestamp[timestamp] = [...firstHalf]
