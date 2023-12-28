@@ -134,11 +134,11 @@ const ocr: clickHandler = (payload: Event): void => {
                             };
                             // console.log(pull);
 
-                            currentPulls.unshift(pull);
+                            currentPulls.push(pull);
                             // console.log(currentPulls);
 
                             if (currentPullsMapping[timestamp]) {
-                                currentPullsMapping[timestamp].unshift(pull)
+                                currentPullsMapping[timestamp].push(pull)
                             } else {
                                 currentPullsMapping[timestamp] = [pull]
                             }
