@@ -116,11 +116,9 @@ const closeDialog = () => dialog.value?.close()
         </div>
       </div>
 
-      <div class="custom-scrollbar overflow-y-scroll overflow-x-hidden mb-5">
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8 custom">
-          <WarehouseItem v-for="material in filteredWarehouse" :key="material.Material" :material="material"
-            @update:quantity="updateMaterialQuantity(material.Material, $event)" class="" />
-        </div>
+      <div class="custom-item-list mb-5">
+        <WarehouseItem v-for="material in filteredWarehouse" :key="material.Material" :material="material"
+          @update:quantity="updateMaterialQuantity(material.Material, $event)" class="" />
       </div>
 
       <div class="flex space-x-10">
@@ -173,11 +171,3 @@ const closeDialog = () => dialog.value?.close()
     </div>
   </div>
 </template>
-
-<style scoped>
-@media (min-width: 1600px) {
-  .custom {
-    grid-template-columns: repeat(9, minmax(0, 1fr));
-  }
-}
-</style>

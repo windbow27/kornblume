@@ -25,7 +25,7 @@ const resources = [
 
 <template>
     <div class="list-overlay">
-        <div class="custom-modal-small h-2/3 overflow-y-scroll custom-scrollbar">
+        <div class="custom-modal-small h-2/3 overflow-y-scroll hidden-scrollbar">
             <button @click="closeOverlay" class="absolute top-2 right-2 text-white">
                 <i class="fas fa-times"></i>
             </button>

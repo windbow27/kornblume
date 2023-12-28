@@ -9,6 +9,8 @@ import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 
 const fileInput = ref(null)
 const isImporting = ref(false);
+const currentFileIndex = ref(0);
+const totalFiles = ref(0);
 const text = ref('')
 const arcanists = useDataStore().arcanists;
 const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
@@ -95,6 +97,8 @@ const ocr: clickHandler = (payload: Event): void => {
             const worker: Tesseract.Worker = await createWorker('eng');
             for (let i: number = 0; i < fileList.length; i++) {
                 const file: File = fileList[i];
+                currentFileIndex.value = i + 1;
+                totalFiles.value = fileList.length;
                 if (file) {
                     const canvas: Tesseract.ImageLike = await preprocessImage(file);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(canvas);
@@ -285,28 +289,7 @@ const resetTracker = () => {
     <div class="responsive-spacer">
 
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            Summon Tracker <span class="text-info text-sm">Beta. Improved 5* OCR.</span>
-            <!-- <button class="text-info text-sm font-bold pt-2 pl-3 hover:text-blue-200 opacity-90"
-                onclick="oldusers_explaination.showModal()">Released. Returning users notice</button>
-            <dialog id="oldusers_explaination" class="modal">
-                <div class="modal-box custom-gradient-gray-blue">
-                    <form method="dialog">
-                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
-                    </form>
-                    <h3 class="font-bold text-lg text-white">Howdy!</h3>
-                    <p class="text-slate-300 text-sm pb-4">
-                        With the release update on 26/12/2023, the information for existing users has been
-                        corrupted. Please proceed to your
-                        <router-link class=" text-info text-lg" to="/profile">Profile</router-link>
-                        and reset your <span class="text-error"> Summon Tracker</span> data. We apologize for any
-                        inconvenience this may cause and appreciate your
-                        understanding.
-                    </p>
-                </div>
-                <form method="dialog" class="modal-backdrop">
-                    <button>close</button>
-                </form>
-            </dialog> -->
+            Summon Tracker <span class="text-info text-sm">Released</span>
         </h2>
         <div class="flex justify-between">
             <div class="space-x-3">
@@ -317,13 +300,15 @@ const resetTracker = () => {
                     OCR Import
                 </button>
 
-                <button class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">Tutorial</button>
+                <button class="btn btn-ghost custom-gradient-button btn-sm text-white"
+                    onclick="tutorial.showModal()">Tutorial</button>
 
-                <button onclick="resetTracker.showModal()" class="btn btn-ghost custom-gradient-button btn-sm text-white">Reset</button>
+                <button onclick="resetTracker.showModal()"
+                    class="btn btn-ghost custom-gradient-button btn-sm text-white">Reset</button>
             </div>
 
             <dialog id="tutorial" class="modal">
-                <div class="modal-box custom-gradient-gray-blue custom-border custom-scrollbar">
+                <div class="modal-box custom-gradient-gray-blue custom-border hidden-scrollbar">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
@@ -339,6 +324,9 @@ const resetTracker = () => {
                     <h3 class="font-bold text-lg pt-4 text-info">Limitations</h3>
                     <p class="text-white">• Images <span class="text-error">must be clear</span>, or the Summon Tracker
                         may fail to read.</p>
+                    <p class="text-white">• If images <span class="text-error">take too long</span> to process or <span
+                            class="text-error">fail to read</span> 5 <i class="fa-solid fa-star text-yellow-100"></i>
+                        arcanists, consider screenshotting clearer images. </p>
                     <p class=" text-white">• This is an example of a good <a href="https://i.imgur.com/NgspD1g.png"
                             target="_blank" class="text-blue-500 hover:text-blue-700">Image</a>.
                     </p>
@@ -361,8 +349,7 @@ const resetTracker = () => {
                     <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.
                     </p>
                     <p class="pb-4 text-white text-center">Please be certain.</p>
-                    <button @click="resetTracker"
-                        class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
+                    <button @click="resetTracker" class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
                         Reset Tracker
                     </button>
                 </div>
@@ -374,7 +361,9 @@ const resetTracker = () => {
 
         <div class="p-3">
             <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
-            <span v-show="isImporting" class="text-white text-base"> Processing... Please wait...</span>
+            <span v-show="isImporting" class="text-white text-base"> Processing file <span class="text-info">{{
+                currentFileIndex }}</span> out of <span class="text-info">{{ totalFiles }}</span> ... Please
+                wait...</span>
         </div>
 
         <p class=" text-white font-bold text-xl text-center pt-4">Summon Summary</p>

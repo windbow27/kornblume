@@ -53,6 +53,10 @@
     @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 bg-clip-padding
 }
 
+.custom-item-list {
+    @apply flex flex-wrap justify-center overflow-y-scroll overflow-x-hidden
+}
+
 /*Badges*/
 
 .blue-badge {
@@ -109,21 +113,21 @@
     background: #1c3b88;
 }
 
-.custom-scrollbar {
+.hidden-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
+.hidden-scrollbar::-webkit-scrollbar {
+    width: 0px;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
+.hidden-scrollbar::-webkit-scrollbar-thumb {
     background-color: transparent;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
+.hidden-scrollbar::-webkit-scrollbar-track {
     background-color: transparent;
 }
 

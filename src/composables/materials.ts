@@ -1,10 +1,10 @@
 import { getItemImagePathByMatl, getBorderImagePathByMatl } from './images'
 
 export function formatQuantity (quantity: number): string {
-    if (quantity > 1000000) {
+    if (quantity >= 1000000) {
         return `${(quantity / 1000000).toFixed(1)}m`;
     }
-    if (quantity > 10000) {
+    if (quantity >= 10000) {
         return `${(quantity / 1000).toFixed(0)}k`;
     }
     return quantity.toString();
