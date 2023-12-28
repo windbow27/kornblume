@@ -289,7 +289,7 @@ const resetTracker = () => {
     <div class="responsive-spacer">
 
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            Summon Tracker <span class="text-info text-sm">Released</span>
+            Summon Tracker <span class="text-info text-sm">Please read Tutorial</span>
         </h2>
         <div class="flex justify-between">
             <div class="space-x-3">

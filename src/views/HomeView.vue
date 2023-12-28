@@ -81,7 +81,8 @@ onClickOutside(resourcesRef, closeResources)
                 </a>
                 <p class="text-xs opacity-80 mb-2 text-center">All contributions are welcomed. If you enjoy the work, please
                     like, subscribe and smash that <i class="fa-regular fa-star"></i> button.</p>
-
+                <p class="text-xs opacity-80 mb-2 text-center">We are translating the site into other languages. <a href="https://github.com/windbow27/Kornblume/pull/26"
+                            target="_blank" class="text-blue-500 hover:text-blue-700">Please help us out</a>. You could reach out to us through @windbow in Discord.</p>
                 <div class="mb-4 text-center">
                     <p class="text-xs opacity-80">Kornblume is not affilated with BluePoch. All images and data belongs to
                         their respective owners.</p>

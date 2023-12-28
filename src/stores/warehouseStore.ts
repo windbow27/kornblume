@@ -57,7 +57,7 @@ export const useWarehouseStore = defineStore('warehouse', {
             return this.data.some((matl) => matl.Material === materialName);
         },
         getItemQuantity (materialName: string) {
-            return this.data.find((matl) => matl.Material === materialName)?.Quantity;
+            return this.data.find((matl) => matl.Material === materialName)?.Quantity || 0;
         },
         resetAll () {
             this.data = this.data.map((matl) => ({ ...matl, Quantity: 0 }));
