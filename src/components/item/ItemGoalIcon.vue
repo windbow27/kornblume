@@ -34,7 +34,7 @@ const checkQuantity = () => {
             <div class="text-white absolute -bottom-3 left-3 input input-xs rounded-t-none text-center"
                 :class="{
                     'left-[17px] w-[85px]': checkQuantity(), 'w-14': !checkQuantity(),
-                    'bg-green-800/80': useWarehouseStore().getItemQuantity(props.material.Material) > props.material.Quantity, 'bg-red-500/60': useWarehouseStore().getItemQuantity(props.material.Material) <= props.material.Quantity
+                    'bg-green-800/80': useWarehouseStore().getItemQuantity(props.material.Material) >= props.material.Quantity, 'bg-red-500/60': useWarehouseStore().getItemQuantity(props.material.Material) < props.material.Quantity
                 }">
                 {{ formatQuantity(useWarehouseStore().getItemQuantity(normalizedMaterial.material)) }} / {{
                     normalizedMaterial.quantity }}

@@ -38,10 +38,10 @@ const totalMaterials = computed(() => {
 
 <template>
     <div class="p-2">
-        <div class="flex flex-row flex-wrap justify-center space-x-2">
+        <div class="flex flex-wrap justify-center space-x-2">
             <ArcanistIconToggle v-for="arcanist in arcanists" :key="arcanist.Id" :arcanist="arcanist.Id"
                 :visible="arcanist.isVisible" @click="handleLeftClick(arcanist)"
-                @contextmenu.prevent="handleRightClick(arcanist)" />
+                @contextmenu.prevent="handleRightClick(arcanist)" class="mb-2"/>
             <div class="flex justify-center items-center">
                 <button class="btn btn-ghost custom-gradient-button btn-sm text-white"
                     onclick="goalMaterials.showModal()">Goal</button>
@@ -66,7 +66,7 @@ const totalMaterials = computed(() => {
             </div>
         </div>
 
-        <p class="text-center text-slate-300 text-sm opacity-70 mt-2">Left click to edit, right click to show / hide.</p>
+        <p class="text-center text-slate-300 text-sm opacity-70">Left click to edit, right click to show / hide.</p>
     </div>
 </template>
 
