@@ -2,6 +2,23 @@
     "home": "首頁",
     "summon-tracker": "徵集追蹤",
     "planner": "規劃工具",
-    "profile": "個人檔案"
-  }
+    "profile": "個人檔案",
+    "a-toolsite-and-cornflower-worship-place-for-reverse-1999": "這是遊戲「重返未來：1999」的工具箱，為矢車菊獻上崇拜！",
+    "any-help-sharing-this-tool-would-be-greated-appreciated": "歡迎分享這個工具，任何分享行為對我們來說是最棒的回饋",
+    "for-mobile-users-click-top-right-to-start": "{mobile} 使用者，請點選右上方 {bars} 按鈕以開啟",
+    "changelogs": "更新日誌",
+    "credits": "特別感謝",
+    "comments-bug-reports": "意見 / 錯誤回報",
+    "all-contributions-are-welcomed-if-you-enjoy-the-work-please-like-subscribe-and-smash-that-star-button": "我們歡迎任何貢獻。如果你喜歡我們的成果，請為我們的開源專案按 {star}",
+    "kornblume-is-not-affilated-with-bluepoch-all-images-and-data-belongs-to-their-respective-owners": "本站並不從屬於深藍互動。所有圖像與資料皆為深藍互動之版權所有。",
+    "developed-by-windbow": "由 windbow 建設。",
+    "joined-by-zero-day-and-fran": "由 zero.day 與 fran 參與貢獻。",
+    "privacy-policy": "隱私權政策",
+    "kornblume-use-google-analytics-to-collect-traffics-most-viewed-pages-in-order-to-improve-kornblume-the-data-is-used-solely-for-that-reason-and-will-never-be-used-for-advertising-purposes":
+      "Kornblume 使用 Google Analytics 技術來蒐集流量和最多訪問頁面，目的是為改善本站。相關數據僅用於此目的，絕不會用於廣告宣傳。",
+    "planner-data-is-stored-locally-on-your-device": "你的使用資料將儲存在你的個人裝置。",
+    "close": "關閉",
+    "we-are-translating-the-site-into-other-languages-please-help-us-out-you-could-reach-out-to-us-through-windbow-in-discord": "我們正在著手進行網站的翻譯計畫。{link}。你可以透過 Discord 聯繫 {discord} 來幫助我們。",
+    "please-help-us-out": "請幫助我們"
+}
   
