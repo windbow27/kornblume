@@ -9,6 +9,9 @@ const enableI18n = localStorage.getItem('i18n-testing') === '1'
 const isSmallScreen = ref(window.innerWidth <= 768);
 const showDropdown = ref(false);
 
+const currentLanguage = ref('English');
+const currentFlag = ref('fi fi-us');
+
 const toggleDropdown = () => {
     showDropdown.value = !showDropdown.value;
 };
@@ -30,8 +33,10 @@ watchEffect(() => {
 });
 
 const { locale } = useI18n()
-const handleChangeLanguage = (e) => {
-    locale.value = e.target.value
+const handleChangeLanguage = (e: string, flag: string, language: string) => {
+    currentLanguage.value = language;
+    currentFlag.value = flag;
+    locale.value = e;
 }
 
 onMounted(() => {
@@ -41,7 +46,7 @@ onMounted(() => {
             locale.value = userLocale
         } else {
             const userLocale = navigator.language || 'en-US'
-            if (['en-US', 'zh-CN', 'zh-TW', 'ko-KR', 'ja-JP'].includes(userLocale)) {
+            if (['en-US', 'de-DE', 'zh-CN', 'zh-TW', 'vi-VN', 'id-ID', 'ko-KR', 'ja-JP'].includes(userLocale)) {
                 locale.value = userLocale
             } else {
                 locale.value = 'en-US'
@@ -53,14 +58,6 @@ onMounted(() => {
 watch(locale, (newLocale) => {
     localStorage.setItem('locale', newLocale);
 })
-
-const openPopover = () => {
-    console.log('open');
-}
-
-const closePopover = () => {
-    console.log('close');
-}
 
 </script>
 
@@ -81,25 +78,34 @@ const closePopover = () => {
     </div>
 
     <div class="ml-auto flex items-center">
-      <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover" @close:popper="closePopover">
-        <button class="btn btn-ghost btn-sm text-white"> English </button>
+      <Popper arrow placement="top" offsetDistance="2">
+        <button class="btn btn-ghost btn-sm text-white"> <span :class="currentFlag"></span> {{ currentLanguage }}
+        </button>
         <template #content>
           <div class="grid grid-cols-2">
-            <p class="btn btn-ghost"> <span class="fi fi-us"></span> English </p>
-            <p class="btn btn-ghost"> <span class="fi fi-de"></span> Deutsch </p>
-            <p class="btn btn-ghost"> <span class="fi fi-cn"></span> 简体中文 </p>
-            <p class="btn btn-ghost"> <span class="fi fi-tw"></span> 繁體中文 </p>
-            <p class="btn btn-ghost"> <span class="fi fi-vn"></span> Tiếng Việt </p>
-            <p class="btn btn-ghost"> <span class="fi fi-id"></span> Indonesia </p>
-            <p class="btn btn-ghost"> <span class="fi fi-kr"></span> 한국어 </p>
-            <p class="btn btn-ghost"> <span class="fi fi-jp"></span> 日本語 </p>
+            <p class="btn btn-ghost" @click="handleChangeLanguage('en-US', 'fi fi-us', 'English')"> <span
+                class="fi fi-us"></span> English </p>
+            <p class="btn btn-ghost" @click="handleChangeLanguage('de-DE', 'fi fi-de', 'Deutsch')"> <span
+                class="fi fi-de"></span> Deutsch </p>
+            <p class="btn btn-ghost" @click="handleChangeLanguage('zh-CN', 'fi fi-cn', '简体中文')"> <span
+                class="fi fi-cn"></span> 简体中文 </p>
+            <p class="btn btn-ghost" @click="handleChangeLanguage('zh-TW', 'fi fi-tw', '繁體中文')"> <span
+                class="fi fi-tw"></span> 繁體中文 </p>
+            <p class="btn btn-ghost" @click="handleChangeLanguage('vi-VN', 'fi fi-vn', 'Tiếng Việt')"> <span
+                class="fi fi-vn"></span> Tiếng Việt </p>
+            <p class="btn btn-ghost" @click="handleChangeLanguage('id-ID', 'fi fi-id', 'Indonesia')"> <span
+                class="fi fi-id"></span> Indonesia </p>
+            <p class="btn btn-ghost" @click="handleChangeLanguage('ko-KR', 'fi fi-kr', '한국어')"> <span
+                class="fi fi-kr"></span> 한국어 </p>
+            <p class="btn btn-ghost" @click="handleChangeLanguage('ja-JP', 'fi fi-jp', '日本語')"> <span
+                class="fi fi-jp"></span> 日本語 </p>
           </div>
         </template>
       </Popper>
 
       <!-- Dropdown Button for Small Screens -->
       <div v-if="isSmallScreen">
-        <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover" @close:popper="closePopover">
+        <Popper arrow placement="top" offsetDistance="2">
           <div class="nav-button cursor-pointer">
             <i class="fa-solid fa-bars text-white"></i>
           </div>
@@ -122,15 +128,6 @@ const closePopover = () => {
           </template>
         </Popper>
       </div>
-    </div>
-
-    <!-- I18n Dropdown for testings  -->
-    <div v-if="enableI18n && !isSmallScreen">
-      <select @change="handleChangeLanguage">
-        <option value="en-US" :selected="locale === 'en-US'">English</option>
-        <option value="zh-TW" :selected="locale === 'zh-TW'">繁體中文</option>
-        <option value="zh-CN" :selected="locale === 'zh-CN'">简体中文</option>
-      </select>
     </div>
   </nav>
 </template>
