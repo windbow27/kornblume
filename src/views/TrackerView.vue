@@ -362,7 +362,7 @@ const resetTracker = () => {
         <div class="p-3">
             <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
             <span v-show="isImporting" class="text-white text-base"> Processing file <span class="text-info">{{
-                currentFileIndex }}</span> out of <span class="text-info">{{ totalFiles }}</span> ... Please
+                currentFileIndex }}</span> out of <span class="text-info">{{ totalFiles }}</span>... Please
                 wait...</span>
         </div>
 

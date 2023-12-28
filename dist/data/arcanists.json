@@ -5876,7 +5876,7 @@
   },
   {
     "Id": 10056,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Horropedia",
     "Rarity": 5,
     "Afflatus": "Mineral",
