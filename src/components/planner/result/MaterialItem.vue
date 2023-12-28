@@ -156,17 +156,6 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
     </Popper>
 </template>
 
-<style>
+<style scoped>
 /* @see: https://valgeirb.github.io/vue3-popper/guide/getting-started.html#css-variables */
-:root {
-    --popper-theme-background-color: #172554;
-    --popper-theme-background-color-hover: #172554;
-    --popper-theme-text-color: #ffffff;
-    --popper-theme-border-width: 1px;
-    --popper-theme-border-style: solid;
-    --popper-theme-border-color: rgb(147, 197, 253);
-    --popper-theme-border-radius: 6px;
-    --popper-theme-padding: 20px;
-    --popper-theme-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 </style>

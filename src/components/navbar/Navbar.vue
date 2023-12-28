@@ -1,43 +1,6 @@
-<template>
-  <nav class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4 z-50">
-    <img src="/images/items/common/logo.png" alt="logo" class="w-8 h-8 mt-1 mr-4" />
-
-    <!-- Navigation Links for Large Screens -->
-    <div v-if="!isSmallScreen" class="flex space-x-2">
-      <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> {{ $t('home') }} </router-link>
-      <router-link to="/tracker" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> {{ $t('summon-tracker') }} </router-link>
-      <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> {{ $t('planner') }} </router-link>
-      <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> {{ $t('profile') }} </router-link>
-    </div>
-
-    <!-- Dropdown Button for Small Screens -->
-    <div v-if="isSmallScreen" class="ml-auto">
-      <div @click="toggleDropdown" class="nav-button cursor-pointer">
-        <i class="fa-solid fa-bars text-white"></i>
-      </div>
-    </div>
-
-    <!-- Dropdown Menu for Small Screens -->
-    <div v-if="isSmallScreen && showDropdown" class="absolute top-full left-0 right-0 bg-gray-800 py-2">
-      <router-link @click="toggleDropdown" to="/" class="nav-button block" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> {{ $t('home') }} </router-link>
-      <router-link @click="toggleDropdown" to="/tracker" class="nav-button block" :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> {{ $t('summon-tracker') }} </router-link>
-      <router-link @click="toggleDropdown" to="/planner" class="nav-button block" :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> {{ $t('planner') }} </router-link>
-      <router-link @click="toggleDropdown" to="/profile" class="nav-button block" :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> {{ $t('profile') }} </router-link>
-    </div>
-
-    <!-- I18n Dropdown for testings  -->
-    <div v-if="enableI18n && !isSmallScreen">
-      <select @change="handleChangeLanguage">
-        <option value="en-US" :selected="locale==='en-US'">English</option>
-        <option value="zh-TW" :selected="locale==='zh-TW'">繁體中文</option>
-        <option value="zh-CN" :selected="locale==='zh-CN'">简体中文</option>
-      </select>
-    </div>
-  </nav>
-</template>
-
 <script lang="ts" setup name="Navbar">
 import { onMounted, ref, watchEffect, watch } from 'vue';
+import Popper from 'vue3-popper';
 import { useI18n } from 'vue-i18n';
 
 // just for debug
@@ -91,7 +54,86 @@ watch(locale, (newLocale) => {
     localStorage.setItem('locale', newLocale);
 })
 
+const openPopover = () => {
+    console.log('open');
+}
+
+const closePopover = () => {
+    console.log('close');
+}
+
 </script>
+
+<template>
+  <nav class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4 z-50">
+    <img src="/images/items/common/logo.png" alt="logo" class="w-8 h-8 mt-1 mr-4" />
+
+    <!-- Navigation Links for Large Screens -->
+    <div v-if="!isSmallScreen" class="flex space-x-2">
+      <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i>
+        {{ $t('home') }} </router-link>
+      <router-link to="/tracker" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i
+          class="fa-brands fa-galactic-republic"></i> {{ $t('summon-tracker') }} </router-link>
+      <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i
+          class="fas fa-tasks"></i> {{ $t('planner') }} </router-link>
+      <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i
+          class="fa-solid fa-user-plus"></i> {{ $t('profile') }} </router-link>
+    </div>
+
+    <div class="ml-auto flex items-center">
+      <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover" @close:popper="closePopover">
+        <button class="btn btn-ghost btn-sm text-white"> English </button>
+        <template #content>
+          <div class="grid grid-cols-2">
+            <p class="btn btn-ghost"> <span class="fi fi-us"></span> English </p>
+            <p class="btn btn-ghost"> <span class="fi fi-de"></span> Deutsch </p>
+            <p class="btn btn-ghost"> <span class="fi fi-cn"></span> 简体中文 </p>
+            <p class="btn btn-ghost"> <span class="fi fi-tw"></span> 繁體中文 </p>
+            <p class="btn btn-ghost"> <span class="fi fi-vn"></span> Tiếng Việt </p>
+            <p class="btn btn-ghost"> <span class="fi fi-id"></span> Indonesia </p>
+            <p class="btn btn-ghost"> <span class="fi fi-kr"></span> 한국어 </p>
+            <p class="btn btn-ghost"> <span class="fi fi-jp"></span> 日本語 </p>
+          </div>
+        </template>
+      </Popper>
+
+      <!-- Dropdown Button for Small Screens -->
+      <div v-if="isSmallScreen">
+        <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover" @close:popper="closePopover">
+          <div class="nav-button cursor-pointer">
+            <i class="fa-solid fa-bars text-white"></i>
+          </div>
+          <template #content>
+            <div class="flex flex-col space-y-2">
+              <router-link @click="toggleDropdown" to="/" class="nav-button block"
+                :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> {{ $t('home') }}
+              </router-link>
+              <router-link @click="toggleDropdown" to="/tracker" class="nav-button block"
+                :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> {{
+                  $t('summon-tracker') }} </router-link>
+              <router-link @click="toggleDropdown" to="/planner" class="nav-button block"
+                :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> {{ $t('planner') }}
+              </router-link>
+              <router-link @click="toggleDropdown" to="/profile" class="nav-button block"
+                :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> {{ $t('profile')
+                }}
+              </router-link>
+            </div>
+          </template>
+        </Popper>
+      </div>
+    </div>
+
+    <!-- I18n Dropdown for testings  -->
+    <div v-if="enableI18n && !isSmallScreen">
+      <select @change="handleChangeLanguage">
+        <option value="en-US" :selected="locale === 'en-US'">English</option>
+        <option value="zh-TW" :selected="locale === 'zh-TW'">繁體中文</option>
+        <option value="zh-CN" :selected="locale === 'zh-CN'">简体中文</option>
+      </select>
+    </div>
+  </nav>
+</template>
 
 <style scoped>
 .nav-button {
