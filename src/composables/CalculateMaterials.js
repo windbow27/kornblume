@@ -95,6 +95,34 @@ export function formatResults (result) {
     return result;
 }
 
+export function formatResultsWithCasket (result) {
+    // Check if Dust and Sharpodonty quantities are both zero
+    const dustQuantity = result.find(item => item.Material === 'Dust')?.Quantity || 0;
+    const sharpodontyQuantity = result.find(item => item.Material === 'Sharpodonty')?.Quantity || 0;
+
+    if (dustQuantity === 0 && sharpodontyQuantity === 0) {
+        // If both 'Dust' and 'Sharpodonty' quantities are zero, remove them from the result
+        const filteredResult = result.filter(item => item.Material !== 'Dust' && item.Material !== 'Sharpodonty');
+        return filteredResult;
+    }
+
+    // count the total of 'Sinuous Howl',
+    // 'Interlaced Shudder',
+    // 'Hypocritical Murmur',
+    // 'Hoarse Echo',
+
+    const sinuousHowlQuantity = result.find(item => item.Material === 'Sinuous Howl')?.Quantity || 0;
+    const interlacedShudderQuantity = result.find(item => item.Material === 'Interlaced Shudder')?.Quantity || 0;
+    const hypocriticalMurmurQuantity = result.find(item => item.Material === 'Hypocritical Murmur')?.Quantity || 0;
+    const hoarseEchoQuantity = result.find(item => item.Material === 'Hoarse Echo')?.Quantity || 0;
+    result.push({ Material: 'Crystal Casket', Quantity: sinuousHowlQuantity + interlacedShudderQuantity + hypocriticalMurmurQuantity + hoarseEchoQuantity });
+    // remove the 'Sinuous Howl', 'Interlaced Shudder', 'Hypocritical Murmur', 'Hoarse Echo' from the result
+    const filteredResult = result.filter(item => item.Material !== 'Sinuous Howl' && item.Material !== 'Interlaced Shudder' && item.Material !== 'Hypocritical Murmur' && item.Material !== 'Hoarse Echo');
+    sortMaterials(filteredResult);
+
+    return filteredResult;
+}
+
 export function useCalculation (arc) {
     const arcInfo = arcanists.find((arcanist) => arcanist.Id === arc.Id);
     const calculateExp = (arc) => {

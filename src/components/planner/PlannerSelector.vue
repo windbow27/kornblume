@@ -2,7 +2,7 @@
 import ArcanistIconToggle from '../arcanist/ArcanistIconToggle.vue';
 import ItemGoalIcon from '../item/ItemGoalIcon.vue';
 import { ref, computed } from 'vue';
-import { useCalculation, mergeResults, formatResults } from '../../composables/CalculateMaterials';
+import { useCalculation, mergeResults, formatResultsWithCasket } from '../../composables/CalculateMaterials';
 
 const props = defineProps({
     selectedArcanists: {
@@ -30,7 +30,7 @@ const totalMaterials = computed(() => {
         return useCalculation(arc);
     });
     const mergedResult = mergeResults(result);
-    const formattedResult = formatResults(mergedResult);
+    const formattedResult = formatResultsWithCasket(mergedResult);
     return formattedResult;
 });
 
