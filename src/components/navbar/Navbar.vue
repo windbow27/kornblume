@@ -3,9 +3,6 @@ import { onMounted, ref, watchEffect, watch } from 'vue';
 import Popper from 'vue3-popper';
 import { useI18n } from 'vue-i18n';
 
-// just for debug
-const enableI18n = localStorage.getItem('i18n-testing') === '1'
-
 const isSmallScreen = ref(window.innerWidth <= 768);
 const showDropdown = ref(false);
 
@@ -33,24 +30,45 @@ watchEffect(() => {
 });
 
 const { locale } = useI18n()
-const handleChangeLanguage = (e: string, flag: string, language: string) => {
-    currentLanguage.value = language;
-    currentFlag.value = flag;
-    locale.value = e;
+
+const flagMapping = {
+    'en-US': 'fi fi-us',
+    'de-DE': 'fi fi-de',
+    'zh-CN': 'fi fi-cn',
+    'zh-TW': 'fi fi-tw',
+    'vi-VN': 'fi fi-vn',
+    'id-ID': 'fi fi-id',
+    'ko-KR': 'fi fi-kr',
+    'ja-JP': 'fi fi-jp'
+}
+
+const langMapping = {
+    'en-US': 'English',
+    'de-DE': 'Deutsch',
+    'zh-CN': '简体中文',
+    'zh-TW': '繁體中文',
+    'vi-VN': 'Tiếng Việt',
+    'id-ID': 'Indonesia',
+    'ko-KR': '한국어',
+    'ja-JP': '日本語'
+}
+
+const handleChangeLanguage = (langCode: string) => {
+    currentLanguage.value = langMapping[langCode];
+    currentFlag.value = flagMapping[langCode];
+    locale.value = langCode;
 }
 
 onMounted(() => {
-    if (enableI18n) { // feature toggle
-        if (localStorage.getItem('locale')) {
-            const userLocale = localStorage.getItem('locale') || 'en-US'
-            locale.value = userLocale
+    if (localStorage.getItem('locale')) {
+        const userLocale = localStorage.getItem('locale') || 'en-US'
+        handleChangeLanguage(userLocale)
+    } else {
+        const userLocale = navigator.language || 'en-US'
+        if (['en-US', 'de-DE', 'zh-CN', 'zh-TW', 'vi-VN', 'id-ID', 'ko-KR', 'ja-JP'].includes(userLocale)) {
+            handleChangeLanguage(userLocale)
         } else {
-            const userLocale = navigator.language || 'en-US'
-            if (['en-US', 'de-DE', 'zh-CN', 'zh-TW', 'vi-VN', 'id-ID', 'ko-KR', 'ja-JP'].includes(userLocale)) {
-                locale.value = userLocale
-            } else {
-                locale.value = 'en-US'
-            }
+            handleChangeLanguage('en-US')
         }
     }
 })
@@ -83,21 +101,21 @@ watch(locale, (newLocale) => {
         </button>
         <template #content>
           <div class="grid grid-cols-2">
-            <p class="btn btn-ghost" @click="handleChangeLanguage('en-US', 'fi fi-us', 'English')"> <span
+            <p class="btn btn-ghost" @click="handleChangeLanguage('en-US')"> <span
                 class="fi fi-us"></span> English </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('de-DE', 'fi fi-de', 'Deutsch')"> <span
+            <p class="btn btn-ghost" @click="handleChangeLanguage('de-DE')"> <span
                 class="fi fi-de"></span> Deutsch </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('zh-CN', 'fi fi-cn', '简体中文')"> <span
+            <p class="btn btn-ghost" @click="handleChangeLanguage('zh-CN')"> <span
                 class="fi fi-cn"></span> 简体中文 </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('zh-TW', 'fi fi-tw', '繁體中文')"> <span
+            <p class="btn btn-ghost" @click="handleChangeLanguage('zh-TW')"> <span
                 class="fi fi-tw"></span> 繁體中文 </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('vi-VN', 'fi fi-vn', 'Tiếng Việt')"> <span
+            <p class="btn btn-ghost" @click="handleChangeLanguage('vi-VN')"> <span
                 class="fi fi-vn"></span> Tiếng Việt </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('id-ID', 'fi fi-id', 'Indonesia')"> <span
+            <p class="btn btn-ghost" @click="handleChangeLanguage('id-ID')"> <span
                 class="fi fi-id"></span> Indonesia </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('ko-KR', 'fi fi-kr', '한국어')"> <span
+            <p class="btn btn-ghost" @click="handleChangeLanguage('ko-KR')"> <span
                 class="fi fi-kr"></span> 한국어 </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('ja-JP', 'fi fi-jp', '日本語')"> <span
+            <p class="btn btn-ghost" @click="handleChangeLanguage('ja-JP')"> <span
                 class="fi fi-jp"></span> 日本語 </p>
           </div>
         </template>
