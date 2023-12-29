@@ -1,5 +1,5 @@
 {
-  "1-11H Charge Baby, Charge!": {
+  "1-11H": {
     "id": 0,
     "count": 129,
     "cost": 12,
@@ -12,7 +12,7 @@
       "Spell of Banishing": 28
     }
   },
-  "1-14H The Eye of the Storm": {
+  "1-14H": {
     "id": 1,
     "count": 187,
     "cost": 12,
@@ -25,7 +25,7 @@
       "Spell of Banishing": 29
     }
   },
-  "2-3H Green Oranges": {
+  "2-3H": {
     "id": 2,
     "count": 2531,
     "cost": 16,
@@ -39,7 +39,7 @@
       "Silver Ore": 4249
     }
   },
-  "2-6H The End of Immortal": {
+  "2-6H": {
     "id": 3,
     "count": 1162,
     "cost": 16,
@@ -53,7 +53,7 @@
       "Spell of Banishing": 2248
     }
   },
-  "2-8H Popular Literature": {
+  "2-8H": {
     "id": 4,
     "count": 692,
     "cost": 16,
@@ -67,7 +67,7 @@
       "Shattered Bones": 1090
     }
   },
-  "2-9H Pearl and Bullet Hole": {
+  "2-9H": {
     "id": 5,
     "count": 160,
     "cost": 16,
@@ -78,7 +78,7 @@
       "Spell of Banishing": 100
     }
   },
-  "2-12H About the New Era": {
+  "2-12H": {
     "id": 6,
     "count": 1870,
     "cost": 18,
@@ -92,7 +92,7 @@
       "Liquefied Terror": 52
     }
   },
-  "3-3H Stalkee": {
+  "3-3H": {
     "id": 7,
     "count": 431,
     "cost": 18,
@@ -103,7 +103,7 @@
       "Spell of Banishing": 593
     }
   },
-  "3-7H Scottish": {
+  "3-7H": {
     "id": 8,
     "count": 1143,
     "cost": 18,
@@ -114,7 +114,7 @@
       "Trembling Tooth": 654
     }
   },
-  "3-8H Scattered Pamphlets": {
+  "3-8H": {
     "id": 9,
     "count": 918,
     "cost": 18,
@@ -125,7 +125,7 @@
       "Shattered Bones": 1119
     }
   },
-  "3-9H George the Oak": {
+  "3-9H": {
     "id": 10,
     "count": 966,
     "cost": 18,
@@ -140,7 +140,7 @@
       "Shattered Bones": 4
     }
   },
-  "3-11H Freedom of the Dumb": {
+  "3-11H": {
     "id": 11,
     "count": 1130,
     "cost": 18,
@@ -151,7 +151,7 @@
       "Magnesia Crystal": 403
     }
   },
-  "3-13H A Yard": {
+  "3-13H": {
     "id": 12,
     "count": 2210,
     "cost": 18,
@@ -162,7 +162,7 @@
       "Murmur of Insanity": 49
     }
   },
-  "3-15H The Other Future": {
+  "3-15H": {
     "id": 13,
     "count": 112,
     "cost": 18,
@@ -179,7 +179,7 @@
       "Spell of Fortune": 11
     }
   },
-  "4-5H In the Castle": {
+  "4-5H": {
     "id": 14,
     "count": 104,
     "cost": 18,
@@ -190,7 +190,7 @@
       "Magnesia Crystal": 35
     }
   },
-  "4-10H Sailing at Night": {
+  "4-10H": {
     "id": 15,
     "count": 3558,
     "cost": 18,
@@ -204,7 +204,7 @@
       "Esoteric Bones": 129
     }
   },
-  "4-11H A Sweet Apple": {
+  "4-11H": {
     "id": 16,
     "count": 292,
     "cost": 18,
@@ -215,7 +215,7 @@
       "Spell of Banishing": 151
     }
   },
-  "4-13H Flashing Red": {
+  "4-13H": {
     "id": 17,
     "count": 363,
     "cost": 18,
@@ -226,7 +226,7 @@
       "Magnesia Crystal": 291
     }
   },
-  "4-16H Contact Point": {
+  "4-16H": {
     "id": 18,
     "count": 152,
     "cost": 18,
@@ -238,7 +238,7 @@
       "Rough Silver Ingot": 5
     }
   },
-  "4-20H Picnic of the Lawn": {
+  "4-20H": {
     "id": 19,
     "count": 1933,
     "cost": 18,
@@ -249,7 +249,7 @@
       "Spell of Banishing": 3905
     }
   },
-  "4-21H Good Weather": {
+  "4-21H": {
     "id": 20,
     "count": 310,
     "cost": 18,
@@ -373,7 +373,7 @@
       "Tome of Beastly Thirst": 2
     }
   },
-  "Unreleased (Placeholder)": {
+  "Unreleased": {
     "id": 35,
     "count": 1,
     "cost": 0,

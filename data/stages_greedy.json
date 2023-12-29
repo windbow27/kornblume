@@ -1,5 +1,5 @@
 {
-    "2-3H Green Oranges": {
+    "2-3H": {
       "id": 2,
       "count": 2531,
       "cost": 16,
@@ -13,7 +13,7 @@
         "Silver Ore": 4249
       }
     },
-    "2-6H The End of Immortal": {
+    "2-6H": {
       "id": 3,
       "count": 1162,
       "cost": 16,
@@ -27,7 +27,7 @@
         "Spell of Banishing": 2248
       }
     },
-    "3-7H Scottish": {
+    "3-7H": {
       "id": 8,
       "count": 1143,
       "cost": 18,
@@ -38,7 +38,7 @@
         "Trembling Tooth": 654
       }
     },
-    "3-8H Scattered Pamphlets": {
+    "3-8H": {
       "id": 9,
       "count": 918,
       "cost": 18,
@@ -49,7 +49,7 @@
         "Shattered Bones": 1119
       }
     },
-    "3-9H George the Oak": {
+    "3-9H": {
       "id": 10,
       "count": 966,
       "cost": 18,
@@ -64,7 +64,7 @@
         "Shattered Bones": 4
       }
     },
-    "3-11H Freedom of the Dumb": {
+    "3-11H": {
       "id": 11,
       "count": 1130,
       "cost": 18,
@@ -75,7 +75,7 @@
         "Magnesia Crystal": 403
       }
     },
-    "3-13H A Yard": {
+    "3-13H": {
       "id": 12,
       "count": 2210,
       "cost": 18,
@@ -86,7 +86,7 @@
         "Murmur of Insanity": 49
       }
     },
-    "4-10H Sailing at Night": {
+    "4-10H": {
       "id": 15,
       "count": 3558,
       "cost": 18,
@@ -100,7 +100,7 @@
         "Esoteric Bones": 129
       }
     },
-    "4-11H A Sweet Apple": {
+    "4-11H": {
       "id": 16,
       "count": 292,
       "cost": 18,
@@ -111,7 +111,7 @@
         "Spell of Banishing": 151
       }
     },
-    "4-20H Picnic of the Lawn": {
+    "4-20H": {
       "id": 19,
       "count": 1933,
       "cost": 18,
@@ -122,7 +122,7 @@
         "Spell of Banishing": 3905
       }
     },
-    "4-21H Good Weather": {
+    "4-21H": {
       "id": 20,
       "count": 310,
       "cost": 18,
@@ -246,7 +246,7 @@
         "Tome of Beastly Thirst": 2
       }
     },
-    "Unreleased (Placeholder)": {
+    "Unreleased": {
       "id": 35,
       "count": 1,
       "cost": 0,
