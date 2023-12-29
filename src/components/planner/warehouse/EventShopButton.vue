@@ -33,8 +33,8 @@ const closeDialog = () => dialog.value?.close()
             <p class="py-4 text-lg text-white text-center">{{ $t('add-materials-from-text', [text]) }}</p>
             <p class="py-4 text-md text-white text-center"> {{ $t('you-should-add-once-only') }}</p>
             <div class="flex justify-center">
-                <button class="btn btn-success btn-md mr-2" @click="addItems">{{ $t('yes-0') }}</button>
-                <button class="btn btn-error btn-md" @click="closeDialog">{{ $t('no-0') }}</button>
+                <button class="btn btn-success btn-md mr-2" @click="addItems">{{ $t('yes') }}</button>
+                <button class="btn btn-error btn-md" @click="closeDialog">{{ $t('no') }}</button>
             </div>
         </div>
         <form method="dialog" class="modal-backdrop">

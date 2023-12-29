@@ -105,7 +105,7 @@ const closeOverlay = () => {
                 <div class="tooltip" data-tip="Login once per day for base 190 Activities">
                     <div class="form-control">
                         <label class="cursor-pointer label justify-center">
-                            <span class="label-text text-white mr-3">{{ $t('lazy-modo-1') }}</span>
+                            <span class="label-text text-white mr-3">{{ $t('lazy-modo') }}</span>
                             <input v-model="lazyModo" type="checkbox" :checked="lazyModo" class="checkbox checkbox-info" />
                         </label>
                     </div>
@@ -119,7 +119,7 @@ const closeOverlay = () => {
             </div>
 
             <div class="flex justify-center pt-3">
-                <button @click="saveActivitySettings" class="btn btn-success">{{ $t('save-3') }}</button>
+                <button @click="saveActivitySettings" class="btn btn-success">{{ $t('save') }}</button>
             </div>
         </div>
     </div>

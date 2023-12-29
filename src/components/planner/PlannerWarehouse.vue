@@ -140,7 +140,7 @@ const closeDialog = () => dialog.value?.close()
                 <EventShopButton version="1.32" text="1.3 part 2" type="Event Shop" />
               </div>
               <form method="dialog" class="flex justify-center">
-                <button class="btn btn-sm btn-success text-black">{{ $t('close-0') }}</button>
+                <button class="btn btn-sm btn-success text-black">{{ $t('close') }}</button>
               </form>
             </div>
             <form method="dialog" class="modal-backdrop">
@@ -150,7 +150,7 @@ const closeDialog = () => dialog.value?.close()
         </div>
 
         <!-- reset -->
-        <button class="btn btn-error btn-sm" @click="showDialog">{{ $t('reset-0') }}</button>
+        <button class="btn btn-error btn-sm" @click="showDialog">{{ $t('reset') }}</button>
         <dialog ref="dialog" class="modal">
           <div class="modal-box custom-gradient-gray-blue custom-border">
             <p class="py-4 text-lg text-white text-center">{{ $t('reset-quantity-of') }} <span class="text-error">selected</span>

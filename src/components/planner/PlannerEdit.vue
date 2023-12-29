@@ -321,7 +321,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <!-- Save -->
             <div class="flex justify-center space-x-4">
-                <button @click="addArcanist" class="btn btn-success">{{ $t('save-2') }}</button>
+                <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
                 <div v-if="isTheSame" class="toast toast-middle toast-center">
                     <div class="-translate-x-3 alert alert-info bg-red-300">
                         <span>{{ $t('current-and-goal-are-the-same') }}</span>

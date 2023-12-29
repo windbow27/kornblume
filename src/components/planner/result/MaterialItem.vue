@@ -133,12 +133,12 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                 <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ neededQuantityIncludingCraft }}
                     </span>
-                    {{ $t('needed-to-complete-the-goal-0') }} </p>
+                    {{ $t('needed-to-complete-the-goal') }} </p>
 
                 <p v-if="(isLowerBuildMaterial || props.material.Material === 'Sharpodonty') && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
                     (with
                     <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
-                    {{ $t('used-in-crafting-0') }} </p>
+                    {{ $t('used-in-crafting') }} </p>
                 <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge text-center">Sufficient Materials in Warehouse</div> -->

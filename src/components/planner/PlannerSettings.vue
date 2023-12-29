@@ -52,7 +52,7 @@ const saveSettings = () => {
                 </label>
             </div>
             <div class="flex justify-center">
-                <button @click="saveSettings" class="btn btn-success">{{ $t('save-1') }}</button>
+                <button @click="saveSettings" class="btn btn-success">{{ $t('save') }}</button>
             </div>
         </div>
     </div>
