@@ -15,11 +15,14 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.7.0",
+    "flag-icons": "^7.1.0",
+    "i18n": "^0.15.1",
     "image-js": "^0.35.5",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.0",
     "tesseract.js": "^5.0.3",
     "vue": "^3.3.11",
+    "vue-i18n": "^9.8.0",
     "vue-router": "^4.2.5",
     "vue3-popper": "^1.5.0",
     "yalps": "^0.5.5"

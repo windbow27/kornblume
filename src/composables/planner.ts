@@ -149,8 +149,8 @@ function sortLayer (cards: ICard[], drops: IStages) {
 function sortHardStage (cards: ICard[]) {
     return cards.sort((a, b) => {
         // always place unreleased card at the end of the list
-        if (a.stage === 'Unreleased (Placeholder)') { return 1 }
-        if (b.stage === 'Unreleased (Placeholder)') { return -1 }
+        if (a.stage === 'Unreleased') { return 1 }
+        if (b.stage === 'Unreleased') { return -1 }
         return b.runs - a.runs
     });
 }

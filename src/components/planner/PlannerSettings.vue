@@ -38,21 +38,21 @@ const saveSettings = () => {
                 <i class="fas fa-times"></i>
             </button>
             <div class="form-control">
-                <div class="tooltip" :data-tip="'Prioritize Purple Materials when farming'">
+                <div class="tooltip" :data-tip="$t('prioritize-purple-materials-when-farming')">
                     <label class="cursor-pointer label justify-center space-x-5 text-center">
-                        <span class="label-text text-white text-md">Enable Greedy Method</span>
+                        <span class="label-text text-white text-md">{{ $t('enable-greedy-method') }}</span>
                         <input v-model="enableGreedyMethod" type="checkbox" class="checkbox checkbox-info" />
                     </label>
                 </div>
             </div>
             <div class="form-control">
                 <label class="cursor-pointer label justify-center space-x-5 text-center">
-                    <span class="label-text text-white text-md">Use 1.4 Stage Data (Experimental)</span>
+                    <span class="label-text text-white text-md">{{ $t('use-1-4-stage-data-experimental') }}</span>
                     <input v-model="enabledUnreleasedStages" type="checkbox" class="checkbox checkbox-info" />
                 </label>
             </div>
             <div class="flex justify-center">
-                <button @click="saveSettings" class="btn btn-success">Save</button>
+                <button @click="saveSettings" class="btn btn-success">{{ $t('save') }}</button>
             </div>
         </div>
     </div>

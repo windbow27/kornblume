@@ -123,25 +123,35 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
             <div class="flex items-center justify-center flex-col">
                 <p v-if="props.layerId === 1 || props.layerId === 2" class="text-center text-slate-300 text-sm opacity-80">
                     <!-- just a sum of the current values of a given mat in the LP result -->
-                    <span class="text-white">{{ props.material.Quantity }}</span>
-                    expected to drop
+                    <i18n-t keypath="numbers-expected-to-drop">
+                        <template #numbers>
+                            <span class="text-white">{{ props.material.Quantity }}</span>
+                        </template>
+                    </i18n-t>
                 </p>
                 <p v-if="props.layerId === 3" class="text-center text-slate-300 text-sm opacity-80">
                     <!-- only consider warehouseQuantityShift for crafting -->
-                    <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
-                    expected to be crafted
+                    <i18n-t keypath="numbers-expected-to-be-crafted">
+                        <template #numbers>
+                            <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
+                        </template>
+                    </i18n-t>
                 </p>
 
                 <p class="text-center text-slate-300 text-sm opacity-80">
-                    <span class="text-white">{{ neededQuantityIncludingCraft }}
-                    </span>
-                    needed to complete the goal
+                    <i18n-t keypath="numbers-needed-to-complete-the-goal">
+                        <template #numbers>
+                            <span class="text-white">{{ neededQuantityIncludingCraft }}</span>
+                        </template>
+                    </i18n-t>
                 </p>
 
                 <p v-if="(isLowerBuildMaterial || props.material.Material === 'Sharpodonty') && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
-                    (with
-                    <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
-                    used in crafting)
+                    <i18n-t keypath="with-numbers-used-in-crafting">
+                        <template #numbers>
+                            <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
+                        </template>
+                    </i18n-t>
                 </p>
                 <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
@@ -156,17 +166,6 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
     </Popper>
 </template>
 
-<style>
+<style scoped>
 /* @see: https://valgeirb.github.io/vue3-popper/guide/getting-started.html#css-variables */
-:root {
-    --popper-theme-background-color: #172554;
-    --popper-theme-background-color-hover: #172554;
-    --popper-theme-text-color: #ffffff;
-    --popper-theme-border-width: 1px;
-    --popper-theme-border-style: solid;
-    --popper-theme-border-color: rgb(147, 197, 253);
-    --popper-theme-border-radius: 6px;
-    --popper-theme-padding: 20px;
-    --popper-theme-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 </style>

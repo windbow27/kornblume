@@ -79,47 +79,47 @@ const closeOverlay = () => {
                 <i class="fas fa-times"></i>
             </button>
 
-            <p class="text-white text-center text-lg font-bold">Activity Settings</p>
-            <p class="text-info text-center pb-5">Current / day: <span class="font-bold">{{ activity }}</span></p>
+            <p class="text-white text-center text-lg font-bold">{{ $t('activity-settings') }}</p>
+            <p class="text-info text-center pb-5">{{ $t('current-per-day') }} <span class="font-bold">{{ activity }}</span></p>
 
             <!-- Selectors -->
             <div class="grid grid-cols-1 space-y-3">
                 <div class="form-control">
                     <label class="cursor-pointer label justify-center">
-                        <span class="label-text text-white mr-3">Roaring Month</span>
+                        <span class="label-text text-white mr-3">{{ $t('roaring-month') }}</span>
                         <input v-model="roaringMonth" type="checkbox" :checked="roaringMonth"
                             class="checkbox checkbox-info" />
                     </label>
                 </div>
 
-                <div class="tooltip" data-tip="240 Activities per week">
+                <div class="tooltip" :data-tip="$t('240-activities-per-week')">
                     <div class="form-control">
                         <label class="cursor-pointer label justify-center">
-                            <span class="label-text text-white mr-3">Weekly Activeness</span>
+                            <span class="label-text text-white mr-3">{{ $t('weekly-activeness') }}</span>
                             <input v-model="weeklyActivity" type="checkbox" :checked="weeklyActivity"
                                 class="checkbox checkbox-info" />
                         </label>
                     </div>
                 </div>
 
-                <div class="tooltip" data-tip="Login once per day for base 190 Activities">
+                <div class="tooltip" :data-tip="$t('login-once-per-day-for-base-190-activities')">
                     <div class="form-control">
                         <label class="cursor-pointer label justify-center">
-                            <span class="label-text text-white mr-3">Lazy Modo</span>
+                            <span class="label-text text-white mr-3">{{ $t('lazy-modo') }}</span>
                             <input v-model="lazyModo" type="checkbox" :checked="lazyModo" class="checkbox checkbox-info" />
                         </label>
                     </div>
                 </div>
 
                 <div class="flex items-center justify-center translate-x-4">
-                    <span class="label-text text-white">Daily Refill</span>
-                    <SelectList class="w-1/3" :options="options" :selected="refills" label="Refills"
+                    <span class="label-text text-white">{{ $t('daily-refill') }}</span>
+                    <SelectList class="w-1/3" :options="options" :selected="refills" label="refills"
                         v-on:update:selected="handleSelected" />
                 </div>
             </div>
 
             <div class="flex justify-center pt-3">
-                <button @click="saveActivitySettings" class="btn btn-success">Save</button>
+                <button @click="saveActivitySettings" class="btn btn-success">{{ $t('save') }}</button>
             </div>
         </div>
     </div>

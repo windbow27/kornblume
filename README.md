@@ -1,6 +1,6 @@
 # Kornblume
 
-Planner for Reverse:1999. All contributions are appreciated, the checklist is [here](https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=1859046052).
+Planner for Reverse :1999. All contributions are appreciated, the checklist is [here](https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=1859046052).
 
 ## Recommended IDE Setup
 
@@ -8,7 +8,8 @@ Planner for Reverse:1999. All contributions are appreciated, the checklist is [h
  - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
  - [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-   **Strongly recommend setting up ESLint to auto-fix issues each time a file is saved, please check details [here](https://www.digitalocean.com/community/tutorials/workflow-auto-eslinting#step-4-adding-code-actions-on-save)**.
+      **Strongly recommend setting up ESLint to auto-fix issues each time a file is saved, please check details [here](https://www.digitalocean.com/community/tutorials/workflow-auto-eslinting#step-4-adding-code-actions-on-save)**.
+ - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)
 
 ## Customize configuration
 

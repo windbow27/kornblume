@@ -269,7 +269,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <div class="flex items-center p-2 mb-3 shadow-border-b">
                 <div class="flex items-center justify-center mr-2 space-x-3">
                     <ArcanistIcon class="ml-2" :arcanist="selectedArcanist" />
-                    <h2 class="text-1xl md:text-2xl text-white font-bold">{{ selectedArcanist.Name }}</h2>
+                    <h2 class="text-1xl md:text-2xl text-white font-bold">{{ $t(selectedArcanist.Name) }}</h2>
                     <label class="text-sm text-white" for="raritySelect">{{ rarity }}
                         <i class="fa-solid fa-star" :class="{
                             'text-orange-300': rarity === 6,
@@ -279,10 +279,10 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                             'text-green-200': rarity === 2
                         }"></i>
                     </label>
-                    <div class="tooltip" data-tip="Remove Arcanist"><i @click="removeArcanist" class="fas fa-trash-alt text-gray-500"></i></div>
+                    <div class="tooltip" :data-tip="$t('remove-arcanist')"><i @click="removeArcanist" class="fas fa-trash-alt text-gray-500"></i></div>
                 </div>
                 <div class="ml-auto flex items-center space-x-3">
-                    <div class="tooltip" data-tip="Hidden / Show">
+                    <div class="tooltip" :data-tip="$t('hidden-show')">
                         <div @click="selectedVisible = !selectedVisible" class="badge badge-ghost"
                             :class="selectedVisible ? 'green-badge' : 'red-badge'">
                             <i :class="selectedVisible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i>
@@ -295,7 +295,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <div class="custom-line"></div>
             <!-- Selectors -->
-            <div class="custom-label text-blue-100">Current Level</div>
+            <div class="custom-label text-blue-100">{{ $t('current-level') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedCurrentInsight" :selected="selectedCurrentInsight"
                     :label="'Current Insight'" :options="currentInsightOptions" v-on:update:selected="handleSelected" />
@@ -303,7 +303,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <SelectList :key="updateKey" v-model="selectedCurrentLevel" :selected="selectedCurrentLevel"
                     :label="'Current Level'" :options="currentLevelOptions" v-on:update:selected="handleSelected" />
             </div>
-            <div class="custom-label text-blue-100">Goal Level</div>
+            <div class="custom-label text-blue-100">{{ $t('goal-level') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedGoalInsight" :selected="selectedGoalInsight"
                     :label="'Goal Insight'" :options="goalInsightOptions" v-on:update:selected="handleSelected" />
@@ -311,7 +311,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <SelectList :key="updateKey" v-model="selectedGoalLevel" :selected="selectedGoalLevel" :label="'Goal Level'"
                     :options="goalLevelOptions" v-on:update:selected="handleSelected" />
             </div>
-            <div class="custom-label text-blue-100">Resonance</div>
+            <div class="custom-label text-blue-100">{{ $t('resonance') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
                     :label="'Current Resonance'" :options="currentResonanceOptions" v-on:update:selected="handleSelected" />
@@ -321,10 +321,10 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <!-- Save -->
             <div class="flex justify-center space-x-4">
-                <button @click="addArcanist" class="btn btn-success">Save</button>
+                <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
                 <div v-if="isTheSame" class="toast toast-middle toast-center">
                     <div class="-translate-x-3 alert alert-info bg-red-300">
-                        <span>Current and Goal are the same!</span>
+                        <span>{{ $t('current-and-goal-are-the-same') }}</span>
                     </div>
                 </div>
             </div>

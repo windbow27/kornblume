@@ -1,6 +1,9 @@
 <script setup lang="ts" name="PlannerLayer">
 import { computed } from 'vue'
 import PlannerCard from './PlannerCard.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n()
 
 const props = defineProps({
     layer: {
@@ -31,13 +34,13 @@ const getBadgeType = computed(() => {
 const getBadgeContent = computed(() => {
     switch (props.layer.id) {
     case 0:
-        return 'Resources';
+        return t('resources');
     case 1:
-        return 'Insight';
+        return t('insight');
     case 2:
-        return 'Hard Stages';
+        return t('hard-stages');
     case 3:
-        return 'Crafting';
+        return t('crafting');
     default:
         return 'Undefined';
     }

@@ -179,27 +179,27 @@ onClickOutside(settingsRef, closeSettings)
   <div class="responsive-spacer">
     <!-- Selector -->
     <div class="flex pb-4">
-      <h2 class="text-2xl text-white font-bold">Planner</h2>
+      <h2 class="text-2xl text-white font-bold">{{ $t('planner') }}</h2>
     </div>
     <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
     <div class="flex justify-between items-center mb-2 mt-2">
       <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
-          class="fa-solid fa-wand-magic-sparkles"></i> Add Arcanist</button>
+          class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('add-arcanist') }}</button>
       <div class="flex space-x-2">
-        <div class="tooltip" data-tip="Activity Settings">
+        <div class="tooltip" :data-tip="$t('activity-settings')">
           <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-bolt"></i></button>
         </div>
-        <div class="tooltip" data-tip="Wilderness Settings">
+        <div class="tooltip" :data-tip="$t('wilderness-settings')">
           <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-tree"></i></button>
         </div>
-        <div class="tooltip" data-tip="Manage Warehouse">
+        <div class="tooltip" :data-tip="$t('manage-warehouse')">
           <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-box-archive"></i></button>
         </div>
-        <div class="tooltip" data-tip="Settings">
+        <div class="tooltip" :data-tip="$t('settings')">
           <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-gear"></i></button>
         </div>

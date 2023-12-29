@@ -83,32 +83,32 @@ const closeDialog = () => dialog.value?.close()
       <button @click="closeWarehouseOverlay" class="absolute top-2 right-4 text-white">
         <i class="fas fa-times"></i>
       </button>
-      <p class="text-white text-center font-bold text-lg">Warehouse (Auto-save)</p>
+      <p class="text-white text-center font-bold text-lg">{{ $t('warehouse-auto-save') }}</p>
 
       <div>
         <div class="grid grid-cols-2 xl:grid-cols-4 justify-center items-center pb-5 text-center">
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
-              <span class="label-text text-error text-xs font-bold">Base Item</span>
+              <span class="label-text text-error text-xs font-bold">{{ $t('base-item') }}</span>
               <input type="checkbox" checked @change="filterWarehouse('Base Item')" class="checkbox checkbox-error" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
-              <span class="label-text text-info text-xs font-bold">Build Material</span>
+              <span class="label-text text-info text-xs font-bold">{{ $t('build-material') }}</span>
               <input type="checkbox" checked @change="filterWarehouse('Build Material')" class="checkbox checkbox-info" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
-              <span class="label-text text-success text-xs font-bold">Insight Material</span>
+              <span class="label-text text-success text-xs font-bold">{{ $t('insight-material') }}</span>
               <input type="checkbox" checked @change="filterWarehouse('Insight Material')"
                 class="checkbox checkbox-success" />
             </label>
           </div>
           <div class="form-control items-center">
             <label class="label cursor-pointer space-x-2">
-              <span class="label-text text-warning text-xs font-bold">Resonate Material</span>
+              <span class="label-text text-warning text-xs font-bold">{{ $t('resonate-material') }}</span>
               <input type="checkbox" checked @change="filterWarehouse('Resonate Material')"
                 class="checkbox checkbox-warning" />
             </label>
@@ -124,46 +124,50 @@ const closeDialog = () => dialog.value?.close()
       <div class="flex space-x-10">
         <!-- shops -->
         <div class="flex space-x-3">
-          <button class="btn btn-sm btn-success" onclick="shop_container.showModal()">Event Materials</button>
+          <button class="btn btn-sm btn-success" onclick="shop_container.showModal()">{{ $t('event-materials') }}</button>
           <dialog id="shop_container" class="modal">
             <div class="modal-box custom-gradient-gray-blue custom-border">
               <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
               </form>
-              <p class="py-4 text-base text-white text-center">You can quickly add Materials from Jukeboxes and Events
-                here.</p>
+              <p class="py-4 text-base text-white text-center">{{ $t('you-can-quickly-add-materials-from-jukeboxes-and-events-here') }}</p>
               <div class="grid grid-cols-2 gap-2 p-2">
-                <EventShopButton version="jb1" text="Jukebox Normal" type="Jukebox" />
-                <EventShopButton version="jb2" text="Jukebox Collector" type="Jukebox" />
-                <EventShopButton version="1.21" text="1.2 part 1" type="Event Shop" />
-                <EventShopButton version="1.22" text="1.2 part 2" type="Event Shop" />
-                <EventShopButton version="1.31" text="1.3 part 1" type="Event Shop" />
-                <EventShopButton version="1.32" text="1.3 part 2" type="Event Shop" />
+                <EventShopButton version="jb1" :text="$t('jukebox-normal')" :type="$t('jukebox')" />
+                <EventShopButton version="jb2" :text="$t('jukebox-collector')" :type="$t('jukebox')" />
+                <EventShopButton version="1.21" :text="$t('event-shop-button', {version: '1.2', number: '1'})" :type="$t('event-shop')" />
+                <EventShopButton version="1.22" :text="$t('event-shop-button', {version: '1.2', number: '2'})" :type="$t('event-shop')" />
+                <EventShopButton version="1.31" :text="$t('event-shop-button', {version: '1.3', number: '1'})" :type="$t('event-shop')" />
+                <EventShopButton version="1.32" :text="$t('event-shop-button', {version: '1.3', number: '2'})" :type="$t('event-shop')" />
               </div>
               <form method="dialog" class="flex justify-center">
-                <button class="btn btn-sm btn-success text-black">Close</button>
+                <button class="btn btn-sm btn-success text-black">{{ $t('close') }}</button>
               </form>
             </div>
             <form method="dialog" class="modal-backdrop">
-              <button>close</button>
+              <button></button>
             </form>
           </dialog>
         </div>
 
         <!-- reset -->
-        <button class="btn btn-error btn-sm" @click="showDialog">Reset</button>
+        <button class="btn btn-error btn-sm" @click="showDialog">{{ $t('reset') }}</button>
         <dialog ref="dialog" class="modal">
           <div class="modal-box custom-gradient-gray-blue custom-border">
-            <p class="py-4 text-lg text-white text-center">Reset quantity of <span class="text-error">selected</span>
-              categories?</p>
-            <p class="py-4 text-md text-white text-center"> Click the buttons at the top to select.</p>
+            <p class="py-4 text-lg text-white text-center">
+              <i18n-t keypath="reset-quantity-of-selected-categories">
+                <template #highlight>
+                  <span class="text-error">{{ $t('selected') }}</span>
+                </template>
+              </i18n-t>
+            </p>
+            <p class="py-4 text-md text-white text-center"> {{ $t('click-the-buttons-at-the-top-to-select') }}</p>
             <div class="flex justify-center">
-              <button class="btn btn-success btn-md mr-2" @click="resetCheckedCategories">Yes</button>
-              <button class="btn btn-error btn-md" @click="closeDialog">No</button>
+              <button class="btn btn-success btn-md mr-2" @click="resetCheckedCategories">{{ $t('yes') }}</button>
+              <button class="btn btn-error btn-md" @click="closeDialog">{{ $t('no') }}</button>
             </div>
           </div>
           <form method="dialog" class="modal-backdrop">
-            <button>close</button>
+            <button></button>
           </form>
         </dialog>
       </div>

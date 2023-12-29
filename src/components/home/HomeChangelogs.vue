@@ -40,7 +40,7 @@ const changelogs = [
         <button @click="closeOverlay" class="absolute top-2 right-2 text-white">
           <i class="fas fa-times"></i>
         </button>
-        <h1 class="text-white font-bold text-2xl pb-2">Changelogs</h1>
+        <h1 class="text-white font-bold text-2xl pb-2">{{ $t('changelogs') }}</h1>
 
         <ul class="text-white space-y-5">
             <li v-for="(log, index) in changelogs" :key="index">
