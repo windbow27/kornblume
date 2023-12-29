@@ -80,7 +80,7 @@ const closeOverlay = () => {
             </button>
 
             <p class="text-white text-center text-lg font-bold">{{ $t('activity-settings') }}</p>
-            <p class="text-info text-center pb-5">{{ $t('current-day') }} <span class="font-bold">{{ activity }}</span></p>
+            <p class="text-info text-center pb-5">{{ $t('current-per-day') }} <span class="font-bold">{{ activity }}</span></p>
 
             <!-- Selectors -->
             <div class="grid grid-cols-1 space-y-3">
@@ -92,7 +92,7 @@ const closeOverlay = () => {
                     </label>
                 </div>
 
-                <div class="tooltip" data-tip="240 Activities per week">
+                <div class="tooltip" :data-tip="$t('240-activities-per-week')">
                     <div class="form-control">
                         <label class="cursor-pointer label justify-center">
                             <span class="label-text text-white mr-3">{{ $t('weekly-activeness') }}</span>
@@ -102,7 +102,7 @@ const closeOverlay = () => {
                     </div>
                 </div>
 
-                <div class="tooltip" data-tip="Login once per day for base 190 Activities">
+                <div class="tooltip" :data-tip="$t('login-once-per-day-for-base-190-activities')">
                     <div class="form-control">
                         <label class="cursor-pointer label justify-center">
                             <span class="label-text text-white mr-3">{{ $t('lazy-modo') }}</span>

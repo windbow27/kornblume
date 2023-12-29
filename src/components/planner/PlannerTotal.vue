@@ -22,7 +22,7 @@ const activityStore = useActivityStore();
 <template>
     <div class="flex flex-wrap custom-gradient-gray-blue-light px-2 py-2 md:px-4 lg:px-6 rounded-md items-center justify-center">
         <i class="fa-solid fa-calculator text-white mr-3"></i>
-        <div class="tooltip flex items-center" data-tip="Estimated total Activities and Days">
+        <div class="tooltip flex items-center" :data-tip="$t('estimated-total-activities-and-days')">
             <div class="text">{{ totalActivityAndDays?.[0] }}</div>
             <div class="avatar">
                 <div class="w-8 rounded">
@@ -32,7 +32,7 @@ const activityStore = useActivityStore();
             <div class="text pr-3">
                 {{ totalActivityAndDays?.[1] }} {{ totalActivityAndDays?.[1] > 1 ? "days" : "day" }}</div>
         </div>
-        <div v-if="activityStore.settings.cost > 0" class="tooltip" data-tip="Drops Cost">
+        <div v-if="activityStore.settings.cost > 0" class="tooltip" :data-tip="$t('drops-cost')">
             <div class="text"> {{ formatQuantity(activityStore.settings.cost) * totalActivityAndDays[1] }}
             </div>
         </div>
@@ -41,7 +41,7 @@ const activityStore = useActivityStore();
                 <img src="/images/items/icon/51.png" alt="avatar" />
             </div>
         </div>
-        <div class="tooltip tooltip-left" data-tip="Wilderness Production">
+        <div class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
             <div class="text"> {{ formatQuantity(wildernessSettings.wildernessOutput.dust * totalActivityAndDays[1]) }}
             </div>
         </div>
@@ -50,7 +50,7 @@ const activityStore = useActivityStore();
                 <img src="/images/items/icon/55.png" alt="avatar" />
             </div>
         </div>
-        <div class="tooltip tooltip-left" data-tip="Wilderness Production">
+        <div class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
             <div class="text"> {{ formatQuantity(wildernessSettings.wildernessOutput.gold * totalActivityAndDays[1]) }}
             </div>
         </div>

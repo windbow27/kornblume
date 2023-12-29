@@ -38,7 +38,7 @@ const saveSettings = () => {
                 <i class="fas fa-times"></i>
             </button>
             <div class="form-control">
-                <div class="tooltip" :data-tip="'Prioritize Purple Materials when farming'">
+                <div class="tooltip" :data-tip="$t('prioritize-purple-materials-when-farming')">
                     <label class="cursor-pointer label justify-center space-x-5 text-center">
                         <span class="label-text text-white text-md">{{ $t('enable-greedy-method') }}</span>
                         <input v-model="enableGreedyMethod" type="checkbox" class="checkbox checkbox-info" />

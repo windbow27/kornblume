@@ -138,9 +138,9 @@ const wildernessOutput = computed(() => {
       </div>
       <div class="custom-label text-yellow-100">{{ $t('vigor-percent') }}</div>
       <div class="grid grid-cols-2 p-2 items-center">
-        <input @input="validateVigor" v-model="vigor" type="text" placeholder="{{ $t('vigor') }}"
+        <input @input="validateVigor" v-model="vigor" type="text" :placeholder="$t('vigor')"
           class="input input-bordered input-info input-sm mx-10 lg:mx-5 gradient-blue text-center" />
-        <div class="tooltip" data-tip="Collect once a day">
+        <div class="tooltip" :data-tip="$t('collect-once-a-day')">
           <div class="form-control">
             <label class="cursor-pointer label justify-center">
               <span class="label-text text-yellow-100 mr-3">{{ $t('lazy-modo') }}</span>
@@ -151,12 +151,12 @@ const wildernessOutput = computed(() => {
       </div>
       <div class="custom-label text-yellow-100">{{ $t('output') }}</div>
       <div class="grid grid-cols-2 p-2">
-        <div class="tooltip" data-tip="Dust">
+        <div class="tooltip" :data-tip="$t('Dust')">
           <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
             {{ wildernessOutput.dust }}
           </label>
         </div>
-        <div class="tooltip" data-tip="Sharpodonty">
+        <div class="tooltip" :data-tip="$t('Sharpodonty')">
           <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
             {{ wildernessOutput.gold }}
           </label>

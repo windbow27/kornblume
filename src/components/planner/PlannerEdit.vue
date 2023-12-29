@@ -279,10 +279,10 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                             'text-green-200': rarity === 2
                         }"></i>
                     </label>
-                    <div class="tooltip" data-tip="Remove Arcanist"><i @click="removeArcanist" class="fas fa-trash-alt text-gray-500"></i></div>
+                    <div class="tooltip" :data-tip="$t('remove-arcanist')"><i @click="removeArcanist" class="fas fa-trash-alt text-gray-500"></i></div>
                 </div>
                 <div class="ml-auto flex items-center space-x-3">
-                    <div class="tooltip" data-tip="Hidden / Show">
+                    <div class="tooltip" :data-tip="$t('hidden-show')">
                         <div @click="selectedVisible = !selectedVisible" class="badge badge-ghost"
                             :class="selectedVisible ? 'green-badge' : 'red-badge'">
                             <i :class="selectedVisible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i>

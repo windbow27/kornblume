@@ -2,6 +2,9 @@
 import { computed, ref, watch } from 'vue';
 import MaterialItem from './MaterialItem.vue';
 import { useGlobalStore } from '@/stores/global';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n()
 
 const props = defineProps({
     card: {
@@ -30,9 +33,9 @@ const toolTipText = computed(() => {
     if (props.layerId === 3 || props.card.stage === 'Unreleased (Placeholder)') {
         return undefined;
     } else if (props.card.stage === 'Oneiric Shop') {
-        return 'Number of Oneiric Fluid'
+        return t('number-of-oneiric-fluid')
     }
-    return 'Number of Runs | Activities | Days';
+    return t('number-of-runs-or-activities-or-days');
 })
 
 </script>

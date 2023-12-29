@@ -187,19 +187,19 @@ onClickOutside(settingsRef, closeSettings)
       <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
           class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('add-arcanist') }}</button>
       <div class="flex space-x-2">
-        <div class="tooltip" data-tip="Activity Settings">
+        <div class="tooltip" :data-tip="$t('activity-settings')">
           <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-bolt"></i></button>
         </div>
-        <div class="tooltip" data-tip="Wilderness Settings">
+        <div class="tooltip" :data-tip="$t('wilderness-settings')">
           <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-tree"></i></button>
         </div>
-        <div class="tooltip" data-tip="Manage Warehouse">
+        <div class="tooltip" :data-tip="$t('manage-warehouse')">
           <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-box-archive"></i></button>
         </div>
-        <div class="tooltip" data-tip="Settings">
+        <div class="tooltip" :data-tip="$t('settings')">
           <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
               class="fa-solid fa-gear"></i></button>
         </div>

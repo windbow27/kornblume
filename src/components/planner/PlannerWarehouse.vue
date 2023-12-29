@@ -130,14 +130,14 @@ const closeDialog = () => dialog.value?.close()
               <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
               </form>
-              <p class="py-4 text-base text-white text-center">{{ $t('you-can-quickly-add-materials-from-jukeboxes-and-events-here') }}.</p>
+              <p class="py-4 text-base text-white text-center">{{ $t('you-can-quickly-add-materials-from-jukeboxes-and-events-here') }}</p>
               <div class="grid grid-cols-2 gap-2 p-2">
-                <EventShopButton version="jb1" text="Jukebox Normal" type="Jukebox" />
-                <EventShopButton version="jb2" text="Jukebox Collector" type="Jukebox" />
-                <EventShopButton version="1.21" text="1.2 part 1" type="Event Shop" />
-                <EventShopButton version="1.22" text="1.2 part 2" type="Event Shop" />
-                <EventShopButton version="1.31" text="1.3 part 1" type="Event Shop" />
-                <EventShopButton version="1.32" text="1.3 part 2" type="Event Shop" />
+                <EventShopButton version="jb1" :text="$t('jukebox-normal')" :type="$t('jukebox')" />
+                <EventShopButton version="jb2" :text="$t('jukebox-collector')" :type="$t('jukebox')" />
+                <EventShopButton version="1.21" :text="$t('event-shop-button', {version: '1.2', number: '1'})" :type="$t('event-shop')" />
+                <EventShopButton version="1.22" :text="$t('event-shop-button', {version: '1.2', number: '2'})" :type="$t('event-shop')" />
+                <EventShopButton version="1.31" :text="$t('event-shop-button', {version: '1.3', number: '1'})" :type="$t('event-shop')" />
+                <EventShopButton version="1.32" :text="$t('event-shop-button', {version: '1.3', number: '2'})" :type="$t('event-shop')" />
               </div>
               <form method="dialog" class="flex justify-center">
                 <button class="btn btn-sm btn-success text-black">{{ $t('close') }}</button>
@@ -153,8 +153,13 @@ const closeDialog = () => dialog.value?.close()
         <button class="btn btn-error btn-sm" @click="showDialog">{{ $t('reset') }}</button>
         <dialog ref="dialog" class="modal">
           <div class="modal-box custom-gradient-gray-blue custom-border">
-            <p class="py-4 text-lg text-white text-center">{{ $t('reset-quantity-of') }} <span class="text-error">selected</span>
-              categories?</p>
+            <p class="py-4 text-lg text-white text-center">
+              <i18n-t keypath="reset-quantity-of-selected-categories">
+                <template #highlight>
+                  <span class="text-error">{{ $t('selected') }}</span>
+                </template>
+              </i18n-t>
+            </p>
             <p class="py-4 text-md text-white text-center"> {{ $t('click-the-buttons-at-the-top-to-select') }}</p>
             <div class="flex justify-center">
               <button class="btn btn-success btn-md mr-2" @click="resetCheckedCategories">{{ $t('yes') }}</button>
