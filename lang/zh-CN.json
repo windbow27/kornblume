@@ -19,7 +19,7 @@
   "close": "关闭",
   "we-are-translating-the-site-into-other-languages-please-help-us-out-you-could-reach-out-to-us-through-windbow-in-discord": "我们正在进行网站的多语言翻译工作，{link}，你可以通过 Discord 联系 {discord}",
   "please-help-us-out": "请帮助我们",
-  "very-detailed-most-of-the-data-are-from-this-wiki": "非常详细，大部分数据来源参考自这里",
+  "very-detailed-most-of-the-data-is-from-this-wiki": "非常详细，大部分数据来源参考自这里",
   "the-drop-rates-of-farming-stages-are-provided-by-this-sheet": "各个关卡的掉落数据由这里提供",
   "referred-to-arkplanner-s-farming-route-algorithm-enhanced-with-linear-programming-magic": "参考了 ArkPlanner 的素材获取策略算法，通过线性规划进行算法优化",
   "spreadsheet-for-a-lot-of-things-insight-iii-levels-are-taken-here": "提供许多信息的表格，我们引用了洞察 III 的等级数据",

@@ -66,7 +66,7 @@ const toolTipText = computed(() => {
 
                 <p class="border-blue-700/90 border-l pl-3">
                     <span v-show="card.days > 0">
-                        {{ card.days }} {{ card.days === 0 ? '' : card.days > 1 ? 'days': 'day' }}
+                        {{ card.days }} {{ card.days === 0 ? '' : card.days > 1 ? $t('days'): $t('day') }}
                     </span>
                 </p>
             </div>
