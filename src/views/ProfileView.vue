@@ -54,7 +54,7 @@
                         {{ $t('reset-all') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">
-                    <button>{{ $t('close') }}</button>
+                    <button> close </button>
                 </form>
             </dialog>
         </div>

@@ -38,7 +38,7 @@ const closeDialog = () => dialog.value?.close()
             </div>
         </div>
         <form method="dialog" class="modal-backdrop">
-            <button>close</button>
+            <button></button>
         </form>
     </dialog>
 </template>

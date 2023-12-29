@@ -39,8 +39,8 @@ const resources = [
             <ul class="text-white space-y-5">
                 <li v-for="(resource, index) in resources" :key="index">
                     <a :href="resource.link" target="_blank" class="text-sky-300 text-lg"> <i class="fa-solid fa-link"></i> {{
-                        resource.name }}</a>
-                    <a class="text-sm"> by {{ resource.author }} </a>
+                        resource.name }} </a>
+                    <a class="text-sm pl-1"> {{ $t('by') }} {{ resource.author }} </a>
                     <p class="text-sm"> {{ resource.comment }}</p>
                 </li>
             </ul>

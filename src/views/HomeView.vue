@@ -117,7 +117,7 @@ onClickOutside(resourcesRef, closeResources)
                             <p class="pb-4"> {{ $t('planner-data-is-stored-locally-on-your-device') }} </p>
                         </div>
                         <form method="dialog" class="modal-backdrop">
-                            <button>{{ $t('close') }}</button>
+                            <button>{{ $t('') }}</button>
                         </form>
                     </dialog>
 
