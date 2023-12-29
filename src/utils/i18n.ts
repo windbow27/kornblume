@@ -3,14 +3,17 @@ import { createI18n } from 'vue-i18n'
 import enUS from '../../lang/en-US.json'
 import arcanistsEnUS from '../../lang/arcanists/en-US.json'
 import itemsEnUS from '../../lang/items/en-US.json'
+import stagesEnUs from '../../lang/stages/en-US.json'
 
 import zhTW from '../../lang/zh-TW.json'
 import arcanistsZhTW from '../../lang/arcanists/zh-TW.json'
 import itemsZhTW from '../../lang/items/zh-TW.json'
+import stagesZhTW from '../../lang/stages/zh-TW.json'
 
 import zhCN from '../../lang/zh-CN.json'
 import arcanistsZhCN from '../../lang/arcanists/zh-CN.json'
 import itemsZhCN from '../../lang/items/zh-CN.json'
+import stagesZhCN from '../../lang/stages/zh-CN.json'
 
 import jaJP from '../../lang/ja-JP.json'
 import koKR from '../../lang/ko-KR.json'
@@ -37,17 +40,20 @@ const i18n = createI18n({
         'en-US': {
             ...enUS,
             ...arcanistsEnUS,
-            ...itemsEnUS
+            ...itemsEnUS,
+            ...stagesEnUs
         },
         'zh-TW': {
             ...zhTW,
             ...arcanistsZhTW,
-            ...itemsZhTW
+            ...itemsZhTW,
+            ...stagesZhTW
         },
         'zh-CN': {
             ...zhCN,
             ...arcanistsZhCN,
-            ...itemsZhCN
+            ...itemsZhCN,
+            ...stagesZhCN
         },
         'ja-JP': {
             ...jaJP
