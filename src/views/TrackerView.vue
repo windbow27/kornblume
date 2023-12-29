@@ -289,7 +289,7 @@ const resetTracker = () => {
     <div class="responsive-spacer">
 
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            Summon Tracker <span class="text-info text-sm">Please read Tutorial</span>
+            {{ $t('summon-tracker') }} <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
         </h2>
         <div class="flex justify-between">
             <div class="space-x-3">
@@ -297,14 +297,13 @@ const resetTracker = () => {
                     multiple />
                 <button @click="triggerFileInput" :disabled="isImporting"
                     class="bg-success hover:bg-green-600 text-white/90 font-bold py-2 px-4 rounded ml-2">
-                    OCR Import
-                </button>
+                    {{ $t('ocr-import') }} </button>
 
                 <button class="btn btn-ghost custom-gradient-button btn-sm text-white"
-                    onclick="tutorial.showModal()">Tutorial</button>
+                    onclick="tutorial.showModal()">{{ $t('tutorial') }}</button>
 
                 <button onclick="resetTracker.showModal()"
-                    class="btn btn-ghost custom-gradient-button btn-sm text-white">Reset</button>
+                    class="btn btn-ghost custom-gradient-button btn-sm text-white">{{ $t('reset') }}</button>
             </div>
 
             <dialog id="tutorial" class="modal">
@@ -312,28 +311,62 @@ const resetTracker = () => {
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
-                    <h3 class="font-bold text-lg text-info">Tutorial</h3>
-                    <p class="py-4 text-white">Video demonstration/ tutorial: <a href="https://youtu.be/CNsZ4rGWtyY"
-                            target="_blank" class="text-blue-500 hover:text-blue-700">Summon Tracker Demo</a></p>
-                    <p class=" text-white">1. Take screenshots of your summon history.</p>
-                    <p class=" text-white">2. Upload the screenshots to the Summon Tracker (You could upload <span
-                            class="text-error">multiple images</span> at once).</p>
-                    <p class=" text-white">3. The Summon Tracker will automatically extract, display and save the
-                        information from the screenshots.</p>
-                    <p class=" text-white">4. It is advised to save your screenshots for future usages.</p>
-                    <h3 class="font-bold text-lg pt-4 text-info">Limitations</h3>
-                    <p class="text-white">• Images <span class="text-error">must be clear</span>, or the Summon Tracker
-                        may fail to read.</p>
-                    <p class="text-white">• If images <span class="text-error">take too long</span> to process or <span
-                            class="text-error">fail to read</span> 5 <i class="fa-solid fa-star text-yellow-100"></i>
-                        arcanists, consider screenshotting clearer images. </p>
-                    <p class=" text-white">• This is an example of a good <a href="https://i.imgur.com/NgspD1g.png"
-                            target="_blank" class="text-blue-500 hover:text-blue-700">Image</a>.
+                    <h3 class="font-bold text-lg text-info">{{ $t('tutorial') }}</h3>
+                    <p class="py-4 text-white">{{ $t('video-demonstration-tutorial') }} <a href="https://youtu.be/CNsZ4rGWtyY"
+                            target="_blank" class="text-blue-500 hover:text-blue-700">{{ $t('summon-tracker-demo') }}</a></p>
+                    <p class=" text-white">1. {{ $t('take-screenshots-of-your-summon-history') }}</p>
+                    <p class=" text-white">2.
+                        <i18n-t keypath="upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once">
+                            <template #highlight>
+                                <span
+                                    class="text-error">{{ $t('multiple-images') }}</span>
+                            </template>
+                        </i18n-t>
                     </p>
-                    <h3 class="font-bold text-lg pt-4 text-info">Bug Reports</h3>
-                    <p class="text-white">• If you encouter a bug, open
-                        your F12 ‣ Console ‣
-                        send the text through Bug Reports or directly to @windbow. </p>
+                    <p class=" text-white">3. {{ $t('the-summon-tracker-will-automatically-extract-display-and-save-the-information-from-the-screenshots') }}</p>
+                    <p class=" text-white">4. {{ $t('it-is-advised-to-save-your-screenshots-for-future-usages') }}</p>
+                    <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
+                    <p class="text-white">•
+                        <i18n-t keypath="ocr-import-only-works-with-english-text-consider-changing-your-language-into-english-to-screenshot">
+                            <template #highlight>
+                                <span class="text-error">{{ $t('english-text') }}</span>
+                            </template>
+                        </i18n-t>
+                    </p>
+                    <p class="text-white">•
+                        <i18n-t keypath="images-must-be-clear-or-the-summon-tracker-may-fail-to-read">
+                            <template #highlight>
+                                <span class="text-error">{{ $t('must-be-clear') }}</span>
+                            </template>
+                        </i18n-t>
+                    </p>
+                    <p class="text-white">•
+                        <i18n-t keypath='if-images-take-too-long-to-process-or-fail-to-read-5-arcanists-consider-screenshotting-clearer-images'>
+                            <template #highlight1>
+                                <span class="text-error">{{ $t('take-too-long') }}</span>
+                            </template>
+                            <template #highlight2>
+                                <span class="text-error">{{ $t('fail-to-read') }}</span>
+                            </template>
+                            <template #star>
+                                <i class="fa-solid fa-star text-yellow-100"></i>
+                            </template>
+                        </i18n-t>
+                    </p>
+                    <p class="text-white">•
+                        <i18n-t keypath='this-is-an-example-of-a-good-image'>
+                            <template #highlight>
+                                <a href="https://i.imgur.com/NgspD1g.png"
+                            target="_blank" class="text-blue-500 hover:text-blue-700">{{ $t('image') }}</a>
+                            </template>
+                        </i18n-t>
+                    </p>
+                    <h3 class="font-bold text-lg pt-4 text-info">{{ $t('bug-reports') }}</h3>
+                    <p class="text-white">•
+                        <i18n-t keypath='if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow'>
+                            <template #discord>@windbow</template>
+                        </i18n-t>
+                    </p>
 
                 </div>
                 <form method="dialog" class="modal-backdrop">
@@ -346,12 +379,11 @@ const resetTracker = () => {
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
-                    <p class="pb-4 text-white text-center">Once you delete your Summon Tracker data, there is no going back.
+                    <p class="pb-4 text-white text-center">{{ $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
                     </p>
-                    <p class="pb-4 text-white text-center">Please be certain.</p>
+                    <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
                     <button @click="resetTracker" class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
-                        Reset Tracker
-                    </button>
+                        {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">
                     <button>close</button>
@@ -361,48 +393,91 @@ const resetTracker = () => {
 
         <div class="p-3">
             <i v-show="isImporting" class="text-white text-2xl text-center fa-solid fa-spinner fa-spin-pulse"></i>
-            <span v-show="isImporting" class="text-white text-base"> Processing file <span class="text-info">{{
-                currentFileIndex }}</span> out of <span class="text-info">{{ totalFiles }}</span>... Please
-                wait...</span>
+            <span v-show="isImporting" class="text-white text-base pl-1">
+                <i18n-t keypath='processing-file-number-out-of-numbers-please-wait'>
+                    <template #current>
+                        <span class="text-info">{{currentFileIndex }}</span>
+                    </template>
+                    <template #total>
+                        <span class="text-info">{{ totalFiles }}</span>
+                    </template>
+                </i18n-t>
+            </span>
         </div>
 
-        <p class=" text-white font-bold text-xl text-center pt-4">Summon Summary</p>
+        <p class=" text-white font-bold text-xl text-center pt-4">{{ $t('summon-summary') }}</p>
         <div class="flex flex-col text-white p-4 gap-2 max-w-sm mx-auto">
             <div class="flex justify-between">
-                <div class="text">Total Summons</div>
+                <div class="text">{{ $t('total-summons') }}</div>
                 <div class="number">{{ indexedPulls.length }}</div>
             </div>
             <div class="flex justify-between">
-                <div class="text">6 <i class="fa-solid fa-star text-orange-300"></i> Summons</div>
+                <div class="text">
+                    <i18n-t keypath='6-star-summons'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-orange-300"></i>
+                        </template>
+                    </i18n-t>
+                </div>
                 <div class="number">{{ indexedPulls.filter(p => p.Rarity === 6).length }}</div>
             </div>
             <div class="flex justify-between">
-                <div class="text">5 <i class="fa-solid fa-star text-yellow-100"></i> Summons</div>
+                <div class="text">
+                    <i18n-t keypath='5-star-summons'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-yellow-100"></i>
+                        </template>
+                    </i18n-t>
+                </div>
                 <div class="number">{{ indexedPulls.filter(p => p.Rarity === 5).length }}</div>
             </div>
             <div class="flex justify-between">
-                <div class="text"> 6 <i class="fa-solid fa-star text-orange-300"></i> Average</div>
+                <div class="text">
+                    <i18n-t keypath='6-star-average'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-orange-300"></i>
+                        </template>
+                    </i18n-t>
+                </div>
                 <div class="number">
                     {{ indexedPulls.filter(p => p.Rarity === 6).length > 0 ? Math.floor(indexedPulls.length /
                         indexedPulls.filter(p => p.Rarity === 6).length) : 0 }}
                 </div>
             </div>
             <div class="flex justify-between">
-                <div class="text"> 5 <i class="fa-solid fa-star text-yellow-100"></i> Average</div>
+                <div class="text">
+                    <i18n-t keypath='5-star-average'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-yellow-100"></i>
+                        </template>
+                    </i18n-t>
+                </div>
                 <div class="number">
                     {{ indexedPulls.filter(p => p.Rarity === 5).length > 0 ? Math.floor(indexedPulls.length /
                         indexedPulls.filter(p => p.Rarity === 5).length) : 0 }}
                 </div>
             </div>
             <div class="flex justify-between">
-                <div class="text">Current 6 <i class="fa-solid fa-star text-orange-300"></i> Pity</div>
+                <div class="text">
+                    <i18n-t keypath='current-6-star-pity'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-orange-300"></i>
+                        </template>
+                    </i18n-t>
+                </div>
                 <div class="number">{{ summonSinceLastSixStar }} / 70</div>
             </div>
         </div>
 
         <div
             class="w-full items-center custom-gradient-gray-blue rounded border border-blue-800 justify-center px-4 pt-4 pb-3">
-            <div class="text text-center pb-4">Recent 6 <i class="fa-solid fa-star text-orange-300"></i> Summons</div>
+            <div class="text text-center pb-4">
+                <i18n-t keypath='recent-6-star-summons'>
+                    <template #star>
+                        <i class="fa-solid fa-star text-orange-300"></i>
+                    </template>
+                </i18n-t>
+            </div>
             <div class="flex flex-wrap justify-center space-x-8">
                 <!-- Fix the key later -->
                 <div v-for="(pull, index) in indexedPulls.filter(p => p.Rarity === 6)"
@@ -414,7 +489,7 @@ const resetTracker = () => {
         </div>
 
         <!-- Summon History -->
-        <div class="text text-center text-xl pb-4 pt-10">Summon History</div>
+        <div class="text text-center text-xl pb-4 pt-10">{{ $t('summon-history') }}</div>
 
         <!-- Rarity select -->
         <div class="flex justify-center space-x-2">
@@ -444,7 +519,7 @@ const resetTracker = () => {
                             'text-purple-400': pull.Rarity === 4,
                             'text-sky-200': pull.Rarity === 3,
                             'text-green-200': pull.Rarity === 2
-                        }">{{ pull.ArcanistName }}</div>
+                        }">{{ $t(pull.ArcanistName) }}</div>
                     </div>
                 </div>
                 <!-- Rarity -->
