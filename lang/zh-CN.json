@@ -122,7 +122,7 @@
   "crafted-from-available-materials": "此清单根据仓库库存调整",
   "number-of-runs": "执行次数",
   "activities": "活性",
-  "days": "天数",
+  "days": "天",
   "with-numbers-used-in-crafting": "（其中有 {numbers} 个将作为下位合成材料使用）",
   "numbers-needed-to-complete-the-goal": "需求总数：{numbers} 个",
   "numbers-expected-to-be-crafted": "目前仍需合成 {numbers} 个",
@@ -150,5 +150,5 @@
   "remove-arcanist": "移除神秘学家",
   "by-author": "来自 {author}",
   "day": "天",
-  "uppercase-days": "天"
+  "uppercase-days": "天数"
 }

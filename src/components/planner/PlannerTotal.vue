@@ -30,7 +30,7 @@ const activityStore = useActivityStore();
                 </div>
             </div>
             <div class="text pr-3">
-                {{ totalActivityAndDays?.[1] }} {{ totalActivityAndDays?.[1] > 1 ? "days" : "day" }}</div>
+                {{ totalActivityAndDays?.[1] }} {{ totalActivityAndDays?.[1] > 1 ? $t("days") : $t("day") }}</div>
         </div>
         <div v-if="activityStore.settings.cost > 0" class="tooltip" :data-tip="$t('drops-cost')">
             <div class="text"> {{ formatQuantity(activityStore.settings.cost) * totalActivityAndDays[1] }}

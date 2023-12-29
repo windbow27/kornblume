@@ -123,7 +123,7 @@
   "crafted-from-available-materials": "此清單根據倉庫庫存調整",
   "number-of-runs": "執行次數",
   "activities": "活性",
-  "days": "天數",
+  "days": "天",
   "with-numbers-used-in-crafting": "（其中有 {numbers} 個將作為下位合成素材使用）",
   "numbers-needed-to-complete-the-goal": "需求總數：{numbers} 個",
   "numbers-expected-to-be-crafted": "目前仍需合成 {numbers} 個",
@@ -151,5 +151,5 @@
   "remove-arcanist": "移除神祕學家",
   "by-author": "來自 {author}",
   "day": "天",
-  "uppercase-days": "天"
+  "uppercase-days": "天數"
 }
