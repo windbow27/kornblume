@@ -150,5 +150,7 @@
   "number-of-oneiric-fluid": "Number of Oneiric Fluid",
   "hidden-show": "Hidden / Show",
   "remove-arcanist": "Remove Arcanist",
-  "uppercase-days": "Days"
+  "uppercase-days": "Days",
+  "search-arcanists": "Search Arcanists",
+  "show-unreleased-arcanists": "Show Unreleased Arcanists"
 }

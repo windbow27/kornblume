@@ -52,7 +52,7 @@ const filteredArcanists = computed(() => {
 
       <!-- Search bar -->
       <div class="relative">
-        <input v-model="searchQuery" type="text" placeholder="Search Arcanists"
+        <input v-model="searchQuery" type="text" :placeholder="$t('search-arcanists')"
           class="bg-gray-800 text-white p-2 rounded-md w-11/12 focus:outline-none">
         <!-- Close button aligned with the right edge of the search bar -->
         <button @click="closeOverlay" class="absolute top-2 right-0 text-white">
@@ -60,7 +60,7 @@ const filteredArcanists = computed(() => {
         </button>
         <div class="form-control">
           <label class="cursor-pointer label justify-center space-x-5">
-            <span class="label-text text-white text-md">Show Unreleased Arcanists</span>
+            <span class="label-text text-white text-md">{{ $t('show-unreleased-arcanists') }}</span>
             <input v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists" type="checkbox" class="checkbox checkbox-info" />
           </label>
         </div>

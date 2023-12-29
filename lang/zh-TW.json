@@ -151,5 +151,7 @@
   "remove-arcanist": "移除神祕學家",
   "by-author": "來自 {author}",
   "day": "天",
-  "uppercase-days": "天數"
+  "uppercase-days": "天數",
+  "search-arcanists": "搜尋神祕學家",
+  "show-unreleased-arcanists": "是否顯示未上線的神祕學家"
 }
