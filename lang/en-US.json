@@ -127,7 +127,6 @@
   "crafted-from-available-materials": "Crafted from available Materials",
   "number-of-runs": "Number of Runs",
   "activities": "Activities",
-  "days": "Days",
   "with-numbers-used-in-crafting": "(with {numbers} used in crafting)",
   "numbers-needed-to-complete-the-goal": "{numbers} needed to complete the goal",
   "numbers-expected-to-be-crafted": "{numbers} expected to be crafted",
@@ -152,5 +151,6 @@
   "prioritize-purple-materials-when-farming": "Prioritize Purple Materials when farming",
   "number-of-oneiric-fluid": "Number of Oneiric Fluid",
   "hidden-show": "Hidden / Show",
-  "remove-arcanist": "Remove Arcanist"
+  "remove-arcanist": "Remove Arcanist",
+  "uppercase-days": "Days"
 }

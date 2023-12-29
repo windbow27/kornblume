@@ -132,6 +132,7 @@
   "upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once": "Tải ảnh chụp màn hình lên Theo dõi triệu tập (Bạn có thể tải {highlight} lên cùng một lúc).",
   "use-1-4-stage-data-experimental": "Sử dụng dữ liệu 1.4 (Thử nghiệm)",
   "video-demonstration-tutorial": "Video hướng dẫn:",
+  "uppercase-days": "Ngày",
   "vigor": "Sức sống",
   "vigor-percent": "Sức sống (%)",
   "visible": "Dễ thấy",
@@ -150,5 +151,7 @@
   "expected": "dự kiến",
   "by-author": "bởi {author}",
   "day": "ngày",
-  "days": "ngày"
+  "days": "ngày",
+  "activities": "Hoạt động",
+  "number-of-runs": "Số lần chạy"
 }
