@@ -71,13 +71,13 @@ watchEffect(() => {
                         <br>
                         <i18n-t keypath="please-note-that-we-do-not-know-exact-drop-rates-so-we-can-only-show-what-youre-expected-to-get-not-what-you-will-get-exactly-the-hard-stages-section-will-also-show-any-drop-that-you-may-get-rather-than-only-the-items-that-you-need-this-does-not-affect-the-results-of-the-farm-plan">
                             <template #expected>
-                                <span class="text-red-500"> expected </span>
+                                <span class="text-red-500">{{ $t('expected') }}</span>
                             </template>
                             <template #hardstages>
                                 <span class="text-purple-500">{{ $t('hard-stages') }}</span>
                             </template>
                             <template #any>
-                                <span class="text-red-500"> any </span>
+                                <span class="text-red-500">{{ $t('any') }}</span>
                             </template>
                         </i18n-t>
                     </p>
