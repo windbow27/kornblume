@@ -109,7 +109,7 @@ onClickOutside(resourcesRef, closeResources)
 
                 <div class="mb-4 text-center">
                     <p class="text-xs opacity-80">{{ $t('kornblume-is-not-affilated-with-bluepoch-all-images-and-data-belongs-to-their-respective-owners') }}</p>
-                    <p class="text-md opacity-90 mx-2 mt-2">{{ $t('developed-by-windbow') }} {{ $t('joined-by-zero-day-and-fran') }}</p>
+                    <p class="text-md opacity-90 mx-2 mt-2">{{ $t('developed-by-windbow-joined-by-zero-day-and-fran') }}</p>
                     <button class="btn btn-ghost btn-xs opacity-80" onclick="my_modal_2.showModal()">{{ $t('privacy-policy') }}</button>
                     <dialog id="my_modal_2" class="modal">
                         <div class="modal-box custom-gradient-gray-blue">
