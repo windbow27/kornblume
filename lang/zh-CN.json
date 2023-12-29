@@ -13,8 +13,7 @@
   "kornblume-is-not-affilated-with-bluepoch-all-images-and-data-belongs-to-their-respective-owners": "本站并不从属于深蓝互动，所有图像与资料皆为深蓝互动之版权所有",
   "developed-by-windbow-joined-by-zero-day-and-fran": "由 windbow 建设，zero.day 与 fran 参与贡献",
   "privacy-policy": "隐私权政策",
-  "kornblume-use-google-analytics-to-collect-traffics-most-viewed-pages-in-order-to-improve-kornblume-the-data-is-used-solely-for-that-reason-and-will-never-be-used-for-advertising-purposes":
-    "Kornblume 使用 Google Analytics 技术来收集流量和最多访问页面，目的是为改善本站。相关数据仅用于此目的，绝不会用于广告宣传。",
+  "kornblume-use-google-analytics-to-collect-traffics-most-viewed-pages-in-order-to-improve-kornblume-the-data-is-used-solely-for-that-reason-and-will-never-be-used-for-advertising-purposes": "Kornblume 使用 Google Analytics 技术来收集流量和最多访问页面，目的是为改善本站。相关数据仅用于此目的，绝不会用于广告宣传。",
   "planner-data-is-stored-locally-on-your-device": "你的使用资料将储存在你的个人装置。",
   "close": "关闭",
   "we-are-translating-the-site-into-other-languages-please-help-us-out-you-could-reach-out-to-us-through-windbow-in-discord": "我们正在进行网站的多语言翻译工作，{link}，你可以通过 Discord 联系 {discord}",
@@ -148,5 +147,8 @@
   "prioritize-purple-materials-when-farming": "优先考虑紫级材料的掉落效率",
   "number-of-oneiric-fluid": "所需的梦境流体数量",
   "hidden-show": "隐藏／显示",
-  "remove-arcanist": "移除神秘学家"
+  "remove-arcanist": "移除神秘学家",
+  "by-author": "来自 {author}",
+  "day": "天",
+  "uppercase-days": "天"
 }

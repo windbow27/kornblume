@@ -113,7 +113,7 @@ const closeOverlay = () => {
 
                 <div class="flex items-center justify-center translate-x-4">
                     <span class="label-text text-white">{{ $t('daily-refill') }}</span>
-                    <SelectList class="w-1/3" :options="options" :selected="refills" label="{{ $t('refills') }}"
+                    <SelectList class="w-1/3" :options="options" :selected="refills" label="refills"
                         v-on:update:selected="handleSelected" />
                 </div>
             </div>
