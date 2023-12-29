@@ -35,7 +35,7 @@ const toolTipText = computed(() => {
     } else if (props.card.stage === 'Oneiric Shop') {
         return t('number-of-oneiric-fluid')
     }
-    return t('number-of-runs-or-activities-or-days');
+    return t('number-of-runs') + ' | ' + t('activities') + ' | ' + t('days')
 })
 
 </script>

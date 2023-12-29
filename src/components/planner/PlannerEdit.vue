@@ -269,7 +269,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <div class="flex items-center p-2 mb-3 shadow-border-b">
                 <div class="flex items-center justify-center mr-2 space-x-3">
                     <ArcanistIcon class="ml-2" :arcanist="selectedArcanist" />
-                    <h2 class="text-1xl md:text-2xl text-white font-bold">{{ selectedArcanist.Name }}</h2>
+                    <h2 class="text-1xl md:text-2xl text-white font-bold">{{ $t(selectedArcanist.Name) }}</h2>
                     <label class="text-sm text-white" for="raritySelect">{{ rarity }}
                         <i class="fa-solid fa-star" :class="{
                             'text-orange-300': rarity === 6,
