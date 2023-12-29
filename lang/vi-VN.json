@@ -150,5 +150,7 @@
   "day": "ngày",
   "days": "ngày",
   "activities": "Hoạt động",
-  "number-of-runs": "Số lần chạy"
+  "number-of-runs": "Số lần chạy",
+  "search-arcanists": "Tìm Arcanist",
+  "show-unreleased-arcanists": "Hiện Arcanist chưa ra mắt"
 }
