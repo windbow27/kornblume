@@ -179,13 +179,13 @@ onClickOutside(settingsRef, closeSettings)
   <div class="responsive-spacer">
     <!-- Selector -->
     <div class="flex pb-4">
-      <h2 class="text-2xl text-white font-bold">Planner</h2>
+      <h2 class="text-2xl text-white font-bold">{{ $t('planner-1') }}</h2>
     </div>
     <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
     <div class="flex justify-between items-center mb-2 mt-2">
       <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
-          class="fa-solid fa-wand-magic-sparkles"></i> Add Arcanist</button>
+          class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('add-arcanist-0') }}</button>
       <div class="flex space-x-2">
         <div class="tooltip" data-tip="Activity Settings">
           <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i

@@ -118,7 +118,7 @@ const wildernessOutput = computed(() => {
       </button>
 
       <!-- Selectors -->
-      <div class="custom-label text-yellow-100">Dust Bell Towers</div>
+      <div class="custom-label text-yellow-100">{{ $t('dust-bell-towers-2') }}</div>
       <div class="grid grid-cols-3">
         <SelectList class="select-list" :options="options" :selected="selectedDust1" label="Dust 1"
           v-on:update:selected="handleSelected" />
@@ -127,7 +127,7 @@ const wildernessOutput = computed(() => {
         <SelectList class="select-list" :options="options" :selected="selectedDust3" label="Dust 3"
           v-on:update:selected="handleSelected" />
       </div>
-      <div class="custom-label text-yellow-100">Sharpodonty Markets</div>
+      <div class="custom-label text-yellow-100">{{ $t('sharpodonty-markets-0') }}</div>
       <div class="grid grid-cols-3">
         <SelectList class="select-list" :options="options" :selected="selectedGold1" label="Gold 1"
           v-on:update:selected="handleSelected" />
@@ -136,20 +136,20 @@ const wildernessOutput = computed(() => {
         <SelectList class="select-list" :options="options" :selected="selectedGold3" label="Gold 3"
           v-on:update:selected="handleSelected" />
       </div>
-      <div class="custom-label text-yellow-100">Vigor (%)</div>
+      <div class="custom-label text-yellow-100">{{ $t('vigor-3') }}</div>
       <div class="grid grid-cols-2 p-2 items-center">
-        <input @input="validateVigor" v-model="vigor" type="text" placeholder="Vigor"
+        <input @input="validateVigor" v-model="vigor" type="text" placeholder="{{ $t('vigor-1') }}"
           class="input input-bordered input-info input-sm mx-10 lg:mx-5 gradient-blue text-center" />
         <div class="tooltip" data-tip="Collect once a day">
           <div class="form-control">
             <label class="cursor-pointer label justify-center">
-              <span class="label-text text-yellow-100 mr-3">Lazy Modo</span>
+              <span class="label-text text-yellow-100 mr-3">{{ $t('lazy-modo-0') }}</span>
               <input v-model="lazyModo" type="checkbox" :checked="lazyModo" class="checkbox checkbox-info" />
             </label>
           </div>
         </div>
       </div>
-      <div class="custom-label text-yellow-100">Output</div>
+      <div class="custom-label text-yellow-100">{{ $t('output-0') }}</div>
       <div class="grid grid-cols-2 p-2">
         <div class="tooltip" data-tip="Dust">
           <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
@@ -162,9 +162,9 @@ const wildernessOutput = computed(() => {
           </label>
         </div>
       </div>
-      <p class="text-yellow-100 text-sm text-center p-2">Wilderness output will be considered for calculations</p>
+      <p class="text-yellow-100 text-sm text-center p-2">{{ $t('wilderness-output-will-be-considered-for-calculations-0') }}</p>
       <div class="flex justify-center">
-        <button @click="saveWildernessSettings" class="btn btn-success">Save</button>
+        <button @click="saveWildernessSettings" class="btn btn-success">{{ $t('save-0') }}</button>
       </div>
     </div>
   </div>

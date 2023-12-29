@@ -124,25 +124,21 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                 <p v-if="props.layerId === 1 || props.layerId === 2" class="text-center text-slate-300 text-sm opacity-80">
                     <!-- just a sum of the current values of a given mat in the LP result -->
                     <span class="text-white">{{ props.material.Quantity }}</span>
-                    expected to drop
-                </p>
+                    {{ $t('expected-to-drop') }} </p>
                 <p v-if="props.layerId === 3" class="text-center text-slate-300 text-sm opacity-80">
                     <!-- only consider warehouseQuantityShift for crafting -->
                     <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
-                    expected to be crafted
-                </p>
+                    {{ $t('expected-to-be-crafted') }} </p>
 
                 <p class="text-center text-slate-300 text-sm opacity-80">
                     <span class="text-white">{{ neededQuantityIncludingCraft }}
                     </span>
-                    needed to complete the goal
-                </p>
+                    {{ $t('needed-to-complete-the-goal-0') }} </p>
 
                 <p v-if="(isLowerBuildMaterial || props.material.Material === 'Sharpodonty') && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
                     (with
                     <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
-                    used in crafting)
-                </p>
+                    {{ $t('used-in-crafting-0') }} </p>
                 <!-- <div v-if="!isReachGoal" class="badge badge-lg mt-2 mb-2 red-badge text-center">Insufficient Materials in Warehouse
                 </div>
                 <div v-if="isReachGoal" class="badge badge-lg mt-2 mb-2 green-badge text-center">Sufficient Materials in Warehouse</div> -->

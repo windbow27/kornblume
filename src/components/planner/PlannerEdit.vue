@@ -295,7 +295,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <div class="custom-line"></div>
             <!-- Selectors -->
-            <div class="custom-label text-blue-100">Current Level</div>
+            <div class="custom-label text-blue-100">{{ $t('current-level') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedCurrentInsight" :selected="selectedCurrentInsight"
                     :label="'Current Insight'" :options="currentInsightOptions" v-on:update:selected="handleSelected" />
@@ -303,7 +303,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <SelectList :key="updateKey" v-model="selectedCurrentLevel" :selected="selectedCurrentLevel"
                     :label="'Current Level'" :options="currentLevelOptions" v-on:update:selected="handleSelected" />
             </div>
-            <div class="custom-label text-blue-100">Goal Level</div>
+            <div class="custom-label text-blue-100">{{ $t('goal-level') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedGoalInsight" :selected="selectedGoalInsight"
                     :label="'Goal Insight'" :options="goalInsightOptions" v-on:update:selected="handleSelected" />
@@ -311,7 +311,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <SelectList :key="updateKey" v-model="selectedGoalLevel" :selected="selectedGoalLevel" :label="'Goal Level'"
                     :options="goalLevelOptions" v-on:update:selected="handleSelected" />
             </div>
-            <div class="custom-label text-blue-100">Resonance</div>
+            <div class="custom-label text-blue-100">{{ $t('resonance') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
                     :label="'Current Resonance'" :options="currentResonanceOptions" v-on:update:selected="handleSelected" />
@@ -321,10 +321,10 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <!-- Save -->
             <div class="flex justify-center space-x-4">
-                <button @click="addArcanist" class="btn btn-success">Save</button>
+                <button @click="addArcanist" class="btn btn-success">{{ $t('save-2') }}</button>
                 <div v-if="isTheSame" class="toast toast-middle toast-center">
                     <div class="-translate-x-3 alert alert-info bg-red-300">
-                        <span>Current and Goal are the same!</span>
+                        <span>{{ $t('current-and-goal-are-the-same') }}</span>
                     </div>
                 </div>
             </div>

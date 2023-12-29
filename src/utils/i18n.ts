@@ -12,6 +12,12 @@ import zhCN from '../../lang/zh-CN.json'
 import arcanistsZhCN from '../../lang/arcanists/zh-CN.json'
 import itemsZhCN from '../../lang/items/zh-CN.json'
 
+import jaJP from '../../lang/ja-JP.json'
+import koKR from '../../lang/ko-KR.json'
+import viVN from '../../lang/vi-VN.json'
+import deDE from '../../lang/de-DE.json'
+import idID from '../../lang/id-ID.json'
+
 const getI18nKeyFromText = (str: string) => {
     return str.replaceAll('.', '').replaceAll(' ', '-').toLowerCase()
 }
@@ -42,6 +48,21 @@ const i18n = createI18n({
             ...zhCN,
             ...arcanistsZhCN,
             ...itemsZhCN
+        },
+        'ja-JP': {
+            ...jaJP
+        },
+        'ko-KR': {
+            ...koKR
+        },
+        'vi-VN': {
+            ...viVN
+        },
+        'de-DE': {
+            ...deDE
+        },
+        'id-ID': {
+            ...idID
         }
     }
 })

@@ -1,6 +1,6 @@
 # Kornblume
 
-Planner for Reverse:1999. All contributions are appreciated, the checklist is [here](https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=1859046052).
+Planner for Reverse :1999. All contributions are appreciated, the checklist is [here](https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=1859046052).
 
 ## Recommended IDE Setup
 
