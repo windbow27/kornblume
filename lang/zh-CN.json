@@ -57,7 +57,7 @@
   "this-is-an-example-of-a-good-image": "这是一个好的{highlight}的例子。",
   "image": "图片",
   "bug-reports": "错误报告",
-  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "如果你遇到错误，请按 F12 ‣ Console ‣ 复制文字信息并回报，可以通过首页的错误报告或是直接通过 Discord {discord}。",
+  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "如果你遇到错误，请使用丢失数据的时间戳来确定错误的位置，重新截取更清晰的错误图片，进行一些编辑，如裁剪，并再次导入。如果错误仍然存在，请按 F12 ‣ Console ‣ 复制文字与图片并回报，可以通过首页的错误报告或是直接通过 Discord 联繫 {discord}。",
   "processing-file-number-out-of-numbers-please-wait": "正在處理 {current} / {total} 的檔案... 請稍後...",
   "summon-summary": "征集一览",
   "total-summons": "所有抽数",
@@ -153,5 +153,7 @@
   "uppercase-days": "天数",
   "search-arcanists": "搜寻神祕学家",
   "show-unreleased-arcanists": "是否显示未上线的神祕学家",
-  "help-us-translate": "请帮助我们翻译"
+  "help-us-translate": "请帮助我们翻译",
+  "wrong-timestamps": "遗失该时间戳的数据：{timestamps}",
+  "import-error": "导入图片时发生错误。请确保所有图片清晰，且没有遗失的图片。阅读使用教学以了解更多信息。"
 }

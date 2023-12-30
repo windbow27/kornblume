@@ -62,7 +62,7 @@
   "this-is-an-example-of-a-good-image": "This is an example of a good {highlight}.",
   "image": "Image",
   "bug-reports": "Bug Reports",
-  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "If you encouter a bug, open your F12 ‣ Console ‣ send the text through Bug Reports or directly to {discord}.",
+  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "If you encounter a bug, pinpoint its location by using Missing information timestamps. Recapture the error images clearer, doing some modifications like cropping, and import again. If the error persist, open your F12 ‣ Console ‣ Send the text and images through Bug Reports or directly to {discord}.",
   "processing-file-number-out-of-numbers-please-wait": "Processing file {current} out of {total}... Please wait...",
   "summon-summary": "Summon Summary",
   "total-summons": "Total Summons",
@@ -154,6 +154,6 @@
   "search-arcanists": "Search Arcanists",
   "show-unreleased-arcanists": "Show Unreleased Arcanists",
   "help-us-translate": "Help us translate!",
-  "import-error": "An error has occurred while importing images. Please make sure all images are clear, and there are no missing images. Read the tutorial for more information. If the problem persists, please contact us through Bug Reports or Discord.",
-  "wrong-timestamps": "Missing information timestamps: {timestamps}"
+  "import-error": "An error has occurred while importing images. Please make sure all images are clear, and there are no missing images. Read the tutorial for more information.",
+  "wrong-timestamps": "Missing data timestamps: {timestamps}"
 }

@@ -13,8 +13,7 @@
   "kornblume-is-not-affilated-with-bluepoch-all-images-and-data-belongs-to-their-respective-owners": "本站並不從屬於深藍互動，所有圖像與資料皆為深藍互動之版權所有",
   "developed-by-windbow-joined-by-zero-day-and-fran": "由 windbow 建設，zero.day 與 fran 參與貢獻",
   "privacy-policy": "隱私權政策",
-  "kornblume-use-google-analytics-to-collect-traffics-most-viewed-pages-in-order-to-improve-kornblume-the-data-is-used-solely-for-that-reason-and-will-never-be-used-for-advertising-purposes":
-    "Kornblume 使用 Google Analytics 技術來蒐集流量和最多訪問頁面，目的是為改善本站。相關數據僅用於此目的，絕不會用於廣告宣傳。",
+  "kornblume-use-google-analytics-to-collect-traffics-most-viewed-pages-in-order-to-improve-kornblume-the-data-is-used-solely-for-that-reason-and-will-never-be-used-for-advertising-purposes": "Kornblume 使用 Google Analytics 技術來蒐集流量和最多訪問頁面，目的是為改善本站。相關數據僅用於此目的，絕不會用於廣告宣傳。",
   "planner-data-is-stored-locally-on-your-device": "你的使用資料將儲存在你的個人裝置。",
   "close": "關閉",
   "we-are-translating-the-site-into-other-languages-please-help-us-out-you-could-reach-out-to-us-through-windbow-in-discord": "我們正在著手進行網站的翻譯計畫，{link}，你可以透過 Discord 聯繫 {discord}",
@@ -58,7 +57,7 @@
   "this-is-an-example-of-a-good-image": "這是一個好的{highlight}的例子。",
   "image": "圖片",
   "bug-reports": "回報錯誤",
-  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "如果你遇到錯誤，請按 F12 ‣ Console ‣ 複製文字訊息並回報，可以透過首頁的錯誤回報或是直接透過 Discord {discord}。",
+  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "如果你遇到錯誤，請使用遺失資料的時間戳記來確定錯誤的位置，重新擷取更清晰的錯誤圖片，進行一些編輯，如裁剪並再次導入。如果錯誤仍然發生，請按 F12 ‣ Console ‣ 複製文字訊息並回報，可以透過首頁的錯誤回報或是直接透過 Discord 聯繫 {discord}。",
   "processing-file-number-out-of-numbers-please-wait": "正在處理 {current} / {total} 的檔案... 請稍後...",
   "summon-summary": "徵集一覽",
   "total-summons": "所有抽數",
@@ -154,5 +153,7 @@
   "uppercase-days": "天數",
   "search-arcanists": "搜尋神祕學家",
   "show-unreleased-arcanists": "是否顯示未上線的神祕學家",
-  "help-us-translate": "請幫助我們翻譯"
+  "help-us-translate": "請幫助我們翻譯",
+  "wrong-timestamps": "遺失該時間戳記的資料：{timestamps}",
+  "import-error": "導入圖片時發生錯誤。請確保所有圖片清晰，且沒有遺失的圖片。閱讀使用教學以瞭解更多資訊。"
 }

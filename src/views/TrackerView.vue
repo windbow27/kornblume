@@ -40,7 +40,7 @@ watch(indexedPulls, (newVal) => {
         .map(([timestamp]) => Number(timestamp));
 
     isError.value = wrongTimestamps.value.length > 0;
-    console.log(wrongTimestamps.value);
+    // console.log(wrongTimestamps.value);
 });
 
 const sixStarsPullsList = computed(() => {
@@ -92,7 +92,10 @@ const ocrCorrectionMap = {
     korn: 'Bkornblume',
     corn: 'Bkornblume',
     AKnight: 'A Knight',
-    THT: 'TTT'
+    THT: 'TTT',
+    fennant: 'Tennant',
+    Blonnev: 'Blonney',
+    Doc: 'Door'
 }
 
 type clickHandler = (payload: Event) => void | undefined;
