@@ -153,5 +153,7 @@
   "uppercase-days": "Days",
   "search-arcanists": "Search Arcanists",
   "show-unreleased-arcanists": "Show Unreleased Arcanists",
-  "help-us-translate": "Help us translate"
+  "help-us-translate": "Help us translate!",
+  "import-error": "An error has occurred while importing images. Please make sure all images are clear, and there are no missing images. Read the tutorial for more information. If the problem persists, please contact us through Bug Reports or Discord.",
+  "wrong-timestamps": "Missing information timestamps: {timestamps}"
 }

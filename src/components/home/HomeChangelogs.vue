@@ -12,6 +12,7 @@ const closeOverlay = () => {
 
 const changelogs = [
     // Add more from top
+    { date: '29/12/2023', description: '• Added more languages! vi-VN, zh-CN, zh-TW have been fully translated. We need your help!' },
     { date: '28/12/2023', description: '• Summon Tracker out of beta release. \n • Various UI updates.' },
     { date: '26/12/2023', description: '• Improved OCR for 5*. \n • Updated Stage Data and Greedy Method improvements. \n • Added Ezra Theodore and Desert Flanndel.' },
     { date: '25/12/2023', description: '• Improved Activity Settings. UI Improvements.' },

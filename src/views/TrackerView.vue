@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, Ref, watchEffect, onMounted } from 'vue'
+import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { GreyAlgorithm, Image } from 'image-js';
 import Tesseract, { createWorker } from 'tesseract.js';
@@ -14,6 +14,8 @@ const totalFiles = ref(0);
 const text = ref('')
 const arcanists = useDataStore().arcanists;
 const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
+const isError = ref(false);
+const wrongTimestamps = ref<number[]>([]);
 
 const indexedPulls = computed(() => {
     const sortedPulls = pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
@@ -25,6 +27,20 @@ const indexedPulls = computed(() => {
             Timestamp: pull.Timestamp
         }
     });
+});
+
+watch(indexedPulls, (newVal) => {
+    const timestampCounts = newVal.reduce((counts, pull) => {
+        counts[pull.Timestamp] = (counts[pull.Timestamp] || 0) + 1;
+        return counts;
+    }, {});
+
+    wrongTimestamps.value = Object.entries(timestampCounts)
+        .filter(([, count]) => count !== 1 && count !== 10)
+        .map(([timestamp]) => Number(timestamp));
+
+    isError.value = wrongTimestamps.value.length > 0;
+    console.log(wrongTimestamps.value);
 });
 
 const sixStarsPullsList = computed(() => {
@@ -108,7 +124,7 @@ const ocr: clickHandler = (payload: Event): void => {
                     const arcanistNames = arcanists.map(a => a.Name);
                     const arcanistNamesRegex = [...arcanistNames, ...Object.keys(ocrCorrectionMap)].join('|')
 
-                    const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNamesRegex})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})`, 'i');
+                    const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNamesRegex})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2}\\s*\\d{2}:\\d{2}:\\d{2})`, 'i');
                     const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[] = [];
                     const currentPullsMapping = {}
 
@@ -116,6 +132,7 @@ const ocr: clickHandler = (payload: Event): void => {
                     text.value.trim().split('\n').forEach((line) => {
                         const match = line.match(pattern);
                         if (match) {
+                            // console.log(match);
                             let arcanistName: string = match.groups?.ArcanistName.trim() || '';
                             if (ocrCorrectionMap[arcanistName]) {
                                 arcanistName = ocrCorrectionMap[arcanistName]
@@ -123,7 +140,7 @@ const ocr: clickHandler = (payload: Event): void => {
                             const arcanist = arcanists.find(a => a.Name.toLowerCase() === arcanistName.toLowerCase());
                             const rarity: number = arcanist ? arcanist.Rarity : 0;
                             const bannerType: string = match.groups?.BannerType.trim() || '';
-                            const timestamp: number = new Date(match.groups?.Date || '').getTime();
+                            const timestamp: number = new Date((match.groups?.Date || '').replace(/(\d{4}-\d{2}-\d{2})(\d{2}:\d{2}:\d{2})/, '$1 $2')).getTime();
 
                             // Create an object for each pull
                             const pull = {
@@ -259,6 +276,7 @@ const selectedRarities = (rarity: number) => {
 }
 
 const filteredRarityPulls = computed(() => {
+    // console.log(filteredRarityPulls.value);
     return indexedPulls.value.filter(pull => activeRarities.value.includes(pull.Rarity));
 });
 
@@ -299,11 +317,11 @@ const resetTracker = () => {
                     class="bg-success hover:bg-green-600 text-white/90 font-bold py-2 px-4 rounded ml-2">
                     {{ $t('ocr-import') }} </button>
 
-                <button class="btn btn-ghost custom-gradient-button btn-sm text-white"
-                    onclick="tutorial.showModal()">{{ $t('tutorial') }}</button>
+                <button class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
+                    $t('tutorial') }}</button>
 
-                <button onclick="resetTracker.showModal()"
-                    class="btn btn-ghost custom-gradient-button btn-sm text-white">{{ $t('reset') }}</button>
+                <button onclick="resetTracker.showModal()" class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                    $t('reset') }}</button>
             </div>
 
             <dialog id="tutorial" class="modal">
@@ -312,22 +330,26 @@ const resetTracker = () => {
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
                     <h3 class="font-bold text-lg text-info">{{ $t('tutorial') }}</h3>
-                    <p class="py-4 text-white">{{ $t('video-demonstration-tutorial') }} <a href="https://youtu.be/CNsZ4rGWtyY"
-                            target="_blank" class="text-blue-500 hover:text-blue-700">{{ $t('summon-tracker-demo') }}</a></p>
+                    <p class="py-4 text-white">{{ $t('video-demonstration-tutorial') }} <a
+                            href="https://youtu.be/CNsZ4rGWtyY" target="_blank" class="text-blue-500 hover:text-blue-700">{{
+                                $t('summon-tracker-demo') }}</a></p>
                     <p class=" text-white">1. {{ $t('take-screenshots-of-your-summon-history') }}</p>
                     <p class=" text-white">2.
-                        <i18n-t keypath="upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once">
+                        <i18n-t
+                            keypath="upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once">
                             <template #highlight>
-                                <span
-                                    class="text-error">{{ $t('multiple-images') }}</span>
+                                <span class="text-error">{{ $t('multiple-images') }}</span>
                             </template>
                         </i18n-t>
                     </p>
-                    <p class=" text-white">3. {{ $t('the-summon-tracker-will-automatically-extract-display-and-save-the-information-from-the-screenshots') }}</p>
+                    <p class=" text-white">3. {{
+                        $t('the-summon-tracker-will-automatically-extract-display-and-save-the-information-from-the-screenshots')
+                    }}</p>
                     <p class=" text-white">4. {{ $t('it-is-advised-to-save-your-screenshots-for-future-usages') }}</p>
                     <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
                     <p class="text-white">•
-                        <i18n-t keypath="ocr-import-only-works-with-english-text-consider-changing-your-language-into-english-to-screenshot">
+                        <i18n-t
+                            keypath="ocr-import-only-works-with-english-text-consider-changing-your-language-into-english-to-screenshot">
                             <template #highlight>
                                 <span class="text-error">{{ $t('english-text') }}</span>
                             </template>
@@ -341,7 +363,8 @@ const resetTracker = () => {
                         </i18n-t>
                     </p>
                     <p class="text-white">•
-                        <i18n-t keypath='if-images-take-too-long-to-process-or-fail-to-read-5-arcanists-consider-screenshotting-clearer-images'>
+                        <i18n-t
+                            keypath='if-images-take-too-long-to-process-or-fail-to-read-5-arcanists-consider-screenshotting-clearer-images'>
                             <template #highlight1>
                                 <span class="text-error">{{ $t('take-too-long') }}</span>
                             </template>
@@ -356,14 +379,15 @@ const resetTracker = () => {
                     <p class="text-white">•
                         <i18n-t keypath='this-is-an-example-of-a-good-image'>
                             <template #highlight>
-                                <a href="https://i.imgur.com/NgspD1g.png"
-                            target="_blank" class="text-blue-500 hover:text-blue-700">{{ $t('image') }}</a>
+                                <a href="https://i.imgur.com/NgspD1g.png" target="_blank"
+                                    class="text-blue-500 hover:text-blue-700">{{ $t('image') }}</a>
                             </template>
                         </i18n-t>
                     </p>
                     <h3 class="font-bold text-lg pt-4 text-info">{{ $t('bug-reports') }}</h3>
                     <p class="text-white">•
-                        <i18n-t keypath='if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow'>
+                        <i18n-t
+                            keypath='if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow'>
                             <template #discord>@windbow</template>
                         </i18n-t>
                     </p>
@@ -379,7 +403,8 @@ const resetTracker = () => {
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
-                    <p class="pb-4 text-white text-center">{{ $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
+                    <p class="pb-4 text-white text-center">{{
+                        $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
                     <button @click="resetTracker" class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
@@ -396,7 +421,7 @@ const resetTracker = () => {
             <span v-show="isImporting" class="text-white text-base pl-1">
                 <i18n-t keypath='processing-file-number-out-of-numbers-please-wait'>
                     <template #current>
-                        <span class="text-info">{{currentFileIndex }}</span>
+                        <span class="text-info">{{ currentFileIndex }}</span>
                     </template>
                     <template #total>
                         <span class="text-info">{{ totalFiles }}</span>
@@ -467,6 +492,16 @@ const resetTracker = () => {
                 </div>
                 <div class="number">{{ summonSinceLastSixStar }} / 70</div>
             </div>
+            <div class="flex flex-col justify-between opacity-95" v-if="isError">
+                <div class=" text-error text-sm">{{ $t('import-error') }}</div>
+                <div class="text-error text-sm">
+                    <i18n-t keypath='wrong-timestamps'>
+                        <template #timestamps>
+                            <span class="number text-sm">{{ wrongTimestamps.map(formatDate).join(', ') }}</span>
+                        </template>
+                    </i18n-t>
+                </div>
+            </div>
         </div>
 
         <div
@@ -512,7 +547,8 @@ const resetTracker = () => {
                 <div class="col-span-1 sm:col-span-2 flex items-center space-x-5">
                     <div class="flex items-center space-x-5">
                         <div class="text-white">{{ pull.PullNumber }} </div>
-                        <ArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>" />
+                        <ArcanistIcon
+                            :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>" />
                         <div class="pullArcanistName ml-2" :class="{
                             'text-orange-300': pull.Rarity === 6,
                             'text-yellow-100': pull.Rarity === 5,

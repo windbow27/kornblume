@@ -118,9 +118,9 @@ watch(locale, (newLocale) => {
             <p class="btn btn-ghost" @click="handleChangeLanguage('ja-JP')"> <span
                 class="fi fi-jp"></span> 日本語 </p>
           </div>
-          <div class="flex justify-center">
+          <div class="flex justify-center pt-2">
             <a href="https://github.com/windbow27/Kornblume/pull/26">
-              <p class="btn btn-sm btn-outline btn-info text-white"> {{ $t('help-us-translate') }} </p>
+              <p class="btn btn-sm btn-outline btn-ghost hover:border-info hover:bg-transparent hover:text-info text-white"> {{ $t('help-us-translate') }} </p>
             </a>
           </div>
         </template>
