@@ -31,7 +31,7 @@ const checkQuantity = () => {
                 :class="{ 'w-36': checkQuantity() }" />
             <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20"
                 :class="{ 'mx-5': checkQuantity() }" />
-            <div class="text-white absolute -bottom-3 left-3 input input-xs rounded-t-none text-center"
+            <div class="flex items-center justify-center small-text text-white absolute -bottom-3 left-3 input input-xs rounded-t-none"
                 :class="{
                     'left-[17px] w-[85px]': checkQuantity(), 'w-14': !checkQuantity(),
                     'bg-green-800/80': useWarehouseStore().getItemQuantity(props.material.Material) >= props.material.Quantity, 'bg-red-500/60': useWarehouseStore().getItemQuantity(props.material.Material) < props.material.Quantity
@@ -43,4 +43,8 @@ const checkQuantity = () => {
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.small-text {
+    font-size: 11px;
+}
+</style>
