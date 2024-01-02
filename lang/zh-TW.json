@@ -155,5 +155,8 @@
   "show-unreleased-arcanists": "是否顯示未上線的神祕學家",
   "help-us-translate": "請幫助我們翻譯",
   "wrong-timestamps": "遺失該時間戳記的資料：{timestamps}",
-  "import-error": "導入圖片時發生錯誤。請確保所有圖片清晰，且沒有遺失的圖片。閱讀使用教學以瞭解更多資訊。"
+  "import-error": "導入圖片時發生錯誤。請確保所有圖片清晰，且沒有遺失的圖片。閱讀使用教學以瞭解更多資訊。",
+  "Unreleased": "尚未開放",
+  "Wilderness Wishing Spring": "不休荒原合成",
+  "Oneiric Shop": "夢境記述商店"
 }

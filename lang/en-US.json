@@ -155,5 +155,8 @@
   "show-unreleased-arcanists": "Show Unreleased Arcanists",
   "help-us-translate": "Help us translate!",
   "import-error": "An error has occurred while importing images. Please make sure all images are clear, and there are no missing images. Read the tutorial for more information.",
-  "wrong-timestamps": "Missing data timestamps: {timestamps}"
+  "wrong-timestamps": "Missing data timestamps: {timestamps}",
+  "Unreleased": "Unreleased",
+  "Wilderness Wishing Spring": "Wilderness Wishing Spring",
+  "Oneiric Shop": "Oneiric Shop"
 }
