@@ -47,9 +47,6 @@ export const langDropdownOptions = [
     }
 ]
 
-// List of all supported lang codes for static files (for arcanists/items/stages data)
-const supportedStaticLangCodes = ['en-US', 'zh-TW', 'zh-CN'];
-
 const getI18nKeyFromText = (str: string) => {
     return str.replaceAll('.', '').replaceAll(' ', '-').toLowerCase()
 }
@@ -72,13 +69,12 @@ const i18n = createI18n({
 export async function setLocale (locale) {
     // Load locale if not available yet
     const lang = supportedLangCodes.includes(locale) ? locale : 'en-US'
-    const staticLang = supportedStaticLangCodes.includes(locale) ? locale : 'en-US'
 
     if (!i18n.global.availableLocales.includes(lang)) {
         const messages = await loadLocale(`../../lang/${lang}.json`);
-        const arcanists = await loadLocale(`../../lang/static/arcanists/${staticLang}.json`);
-        const items = await loadLocale(`../../lang/static/items/${staticLang}.json`);
-        const stages = await loadLocale(`../../lang/static/stages/${staticLang}.json`);
+        const arcanists = await loadLocale(`../../lang/static/arcanists/${lang}.json`);
+        const items = await loadLocale(`../../lang/static/items/${lang}.json`);
+        const stages = await loadLocale(`../../lang/static/stages/${lang}.json`);
 
         // Add locale
         i18n.global.setLocaleMessage(locale, {
