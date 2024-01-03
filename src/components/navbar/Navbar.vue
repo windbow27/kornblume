@@ -1,13 +1,10 @@
 <script lang="ts" setup name="Navbar">
-import { onMounted, ref, watchEffect, watch } from 'vue';
+import { onMounted, ref, watchEffect } from 'vue';
 import Popper from 'vue3-popper';
-import { useI18n } from 'vue-i18n';
+import { setLocale, supportedLangCodes, langDropdownOptions } from '@/utils/i18n';
 
 const isSmallScreen = ref(window.innerWidth <= 768);
 const showDropdown = ref(false);
-
-const currentLanguage = ref('English');
-const currentFlag = ref('fi fi-us');
 
 const toggleDropdown = () => {
     showDropdown.value = !showDropdown.value;
@@ -29,52 +26,34 @@ watchEffect(() => {
     };
 });
 
-const { locale } = useI18n()
+const currentLanguage = ref('English');
+const currentFlag = ref('fi fi-us');
 
-const flagMapping = {
-    'en-US': 'fi fi-us',
-    'de-DE': 'fi fi-de',
-    'zh-CN': 'fi fi-cn',
-    'zh-TW': 'fi fi-tw',
-    'vi-VN': 'fi fi-vn',
-    'id-ID': 'fi fi-id',
-    'ko-KR': 'fi fi-kr',
-    'ja-JP': 'fi fi-jp'
-}
-
-const langMapping = {
-    'en-US': 'English',
-    'de-DE': 'Deutsch',
-    'zh-CN': '简体中文',
-    'zh-TW': '繁體中文',
-    'vi-VN': 'Tiếng Việt',
-    'id-ID': 'Indonesia',
-    'ko-KR': '한국어',
-    'ja-JP': '日本語'
-}
-
-const handleChangeLanguage = (langCode: string) => {
-    currentLanguage.value = langMapping[langCode];
-    currentFlag.value = flagMapping[langCode];
-    locale.value = langCode;
+const handleChangeLanguage = ({
+    locale,
+    text,
+    icon
+}) => {
+    currentLanguage.value = text;
+    currentFlag.value = icon;
+    setLocale(locale);
 }
 
 onMounted(() => {
+    // get default locale from local storage or broswer settings
+    let defaultLocale = 'en-US'
     if (localStorage.getItem('locale')) {
-        const userLocale = localStorage.getItem('locale') || 'en-US'
-        handleChangeLanguage(userLocale)
+        defaultLocale = localStorage.getItem('locale') || 'en-US'
     } else {
-        const userLocale = navigator.language || 'en-US'
-        if (['en-US', 'de-DE', 'zh-CN', 'zh-TW', 'vi-VN', 'id-ID', 'ko-KR', 'ja-JP'].includes(userLocale)) {
-            handleChangeLanguage(userLocale)
-        } else {
-            handleChangeLanguage('en-US')
+        defaultLocale = navigator.language || 'en-US'
+        if (!supportedLangCodes.includes(defaultLocale)) {
+            defaultLocale = 'en-US'
         }
     }
-})
-
-watch(locale, (newLocale) => {
-    localStorage.setItem('locale', newLocale);
+    const option = langDropdownOptions.find((opt) => opt.locale === defaultLocale)
+    if (option) {
+        handleChangeLanguage(option)
+    }
 })
 
 </script>
@@ -101,25 +80,11 @@ watch(locale, (newLocale) => {
         </button>
         <template #content>
           <div class="grid grid-cols-2">
-            <p class="btn btn-ghost" @click="handleChangeLanguage('en-US')"> <span
-                class="fi fi-us"></span> English </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('de-DE')"> <span
-                class="fi fi-de"></span> Deutsch </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('zh-CN')"> <span
-                class="fi fi-cn"></span> 简体中文 </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('zh-TW')"> <span
-                class="fi fi-tw"></span> 繁體中文 </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('vi-VN')"> <span
-                class="fi fi-vn"></span> Tiếng Việt </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('id-ID')"> <span
-                class="fi fi-id"></span> Indonesia </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('ko-KR')"> <span
-                class="fi fi-kr"></span> 한국어 </p>
-            <p class="btn btn-ghost" @click="handleChangeLanguage('ja-JP')"> <span
-                class="fi fi-jp"></span> 日本語 </p>
+            <p v-for="option in langDropdownOptions" :key="option.locale" class="btn btn-ghost" @click="handleChangeLanguage(option)">
+              <span :class="option.icon"></span>{{ option.text }}</p>
           </div>
           <div class="flex justify-center pt-2">
-            <a href="https://github.com/frantw/Kornblume/blob/chore/update-i18n-readme/lang/README.md">
+            <a href="https://github.com/windbow27/Kornblume/blob/main/lang/README.md">
               <p class="btn btn-sm btn-outline btn-ghost hover:border-info hover:bg-transparent hover:text-info text-white"> {{ $t('help-us-translate') }} </p>
             </a>
           </div>

@@ -1,26 +1,54 @@
 import { createI18n } from 'vue-i18n'
+import messages from '@intlify/unplugin-vue-i18n/messages';
 
-import enUS from '../../lang/en-US.json'
-import arcanistsEnUS from '../../lang/arcanists/en-US.json'
-import itemsEnUS from '../../lang/items/en-US.json'
-import stagesEnUs from '../../lang/stages/en-US.json'
+// List of all supported lang codes, please update this list when new language is added
+export const supportedLangCodes = ['en-US', 'de-DE', 'zh-CN', 'zh-TW', 'vi-VN', 'id-ID', 'ko-KR', 'ja-JP'];
 
-import zhTW from '../../lang/zh-TW.json'
-import arcanistsZhTW from '../../lang/arcanists/zh-TW.json'
-import itemsZhTW from '../../lang/items/zh-TW.json'
-import stagesZhTW from '../../lang/stages/zh-TW.json'
+export const langDropdownOptions = [
+    {
+        locale: 'en-US',
+        text: 'English',
+        icon: 'fi fi-us'
+    },
+    {
+        locale: 'de-DE',
+        text: 'Deutsch',
+        icon: 'fi fi-de'
+    },
+    {
+        locale: 'zh-CN',
+        text: '简体中文',
+        icon: 'fi fi-cn'
+    },
+    {
+        locale: 'zh-TW',
+        text: '繁體中文',
+        icon: 'fi fi-tw'
+    },
+    {
+        locale: 'vi-VN',
+        text: 'Tiếng Việt',
+        icon: 'fi fi-vn'
+    },
+    {
+        locale: 'id-ID',
+        text: 'Indonesia',
+        icon: 'fi fi-id'
+    },
+    {
+        locale: 'ko-KR',
+        text: '한국어',
+        icon: 'fi fi-kr'
+    },
+    {
+        locale: 'ja-JP',
+        text: '日本語',
+        icon: 'fi fi-jp'
+    }
+]
 
-import zhCN from '../../lang/zh-CN.json'
-import arcanistsZhCN from '../../lang/arcanists/zh-CN.json'
-import itemsZhCN from '../../lang/items/zh-CN.json'
-import stagesZhCN from '../../lang/stages/zh-CN.json'
-
-import jaJP from '../../lang/ja-JP.json'
-import koKR from '../../lang/ko-KR.json'
-import viVN from '../../lang/vi-VN.json'
-import deDE from '../../lang/de-DE.json'
-import idID from '../../lang/id-ID.json'
-
+// this function is used to map plain text to i18n keys
+// and it specifically handles static data like arcanists, items, and stages
 const getI18nKeyFromText = (str: string) => {
     return str.replaceAll('.', '').replaceAll(' ', '-').toLowerCase()
 }
@@ -36,41 +64,46 @@ const i18n = createI18n({
     fallbackLocale: 'en-US',
     globalInjection: true,
     messageResolver,
-    messages: {
-        'en-US': {
-            ...enUS,
-            ...arcanistsEnUS,
-            ...itemsEnUS,
-            ...stagesEnUs
-        },
-        'zh-TW': {
-            ...zhTW,
-            ...arcanistsZhTW,
-            ...itemsZhTW,
-            ...stagesZhTW
-        },
-        'zh-CN': {
-            ...zhCN,
-            ...arcanistsZhCN,
-            ...itemsZhCN,
-            ...stagesZhCN
-        },
-        'ja-JP': {
-            ...jaJP
-        },
-        'ko-KR': {
-            ...koKR
-        },
-        'vi-VN': {
-            ...viVN
-        },
-        'de-DE': {
-            ...deDE
-        },
-        'id-ID': {
-            ...idID
-        }
-    }
+    messages
 })
+
+// Set new locale
+export async function setLocale (locale) {
+    // Load locale if not available yet
+    const lang = supportedLangCodes.includes(locale) ? locale : 'en-US'
+
+    if (!i18n.global.availableLocales.includes(lang)) {
+        const messages = await loadLocale(`../../lang/${lang}.json`);
+        const arcanists = await loadLocale(`../../lang/static/arcanists/${lang}.json`);
+        const items = await loadLocale(`../../lang/static/items/${lang}.json`);
+        const stages = await loadLocale(`../../lang/static/stages/${lang}.json`);
+
+        // Add locale
+        i18n.global.setLocaleMessage(locale, {
+            ...messages,
+            ...arcanists,
+            ...items,
+            ...stages
+        });
+    }
+
+    // Set locale
+    i18n.global.locale.value = locale;
+    localStorage.setItem('locale', locale);
+}
+
+// Fetch locale
+function loadLocale (path) {
+    return fetch(path)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(`Failed to fetch locale json file: ${path}`);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
 
 export default i18n

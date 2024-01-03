@@ -1,7 +1,7 @@
 # Kornblume
 
 Reverse: 1999 Toolsite. All contributions are appreciated, the checklist is [here](https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=1859046052).
-[Help us translate](https://github.com/frantw/Kornblume/blob/chore/update-i18n-readme/lang/README.md).
+[Help us translate](https://github.com/windbow27/Kornblume/blob/main/lang/README.md).
 
 ## Recommended IDE Setup
 
