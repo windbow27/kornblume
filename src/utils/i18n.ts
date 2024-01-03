@@ -47,6 +47,8 @@ export const langDropdownOptions = [
     }
 ]
 
+// this function is used to map plain text to i18n keys
+// and it specifically handles static data like arcanists, items, and stages
 const getI18nKeyFromText = (str: string) => {
     return str.replaceAll('.', '').replaceAll(' ', '-').toLowerCase()
 }
