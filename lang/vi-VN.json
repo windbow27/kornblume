@@ -155,5 +155,8 @@
   "show-unreleased-arcanists": "Hiện Arcanist chưa ra mắt",
   "help-us-translate": "Giúp chúng tôi dịch!",
   "import-error": "Đã xảy ra lỗi khi tải ảnh. \nHãy đảm bảo rằng tất cả các hình ảnh đều rõ ràng và không có hình ảnh nào bị thiếu. \nĐọc hướng dẫn để biết thêm thông tin. ",
-  "wrong-timestamps": "Thiếu dữ liệu tại: {timestamps}"
+  "wrong-timestamps": "Thiếu dữ liệu tại: {timestamps}",
+  "Oneiric Shop": "Cửa hàng Oneiric",
+  "Unreleased": "Chưa ra mắt",
+  "Wilderness Wishing Spring": "Giếng ước vùng hoang dã"
 }

@@ -8,11 +8,11 @@ import TrackerArcanistIcon from '../components/tracker/TrackerArcanistIcon.vue';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 import Fuse from 'fuse.js';
 
-const fileInput = ref(null)
+const fileInput = ref(null);
 const isImporting = ref(false);
 const currentFileIndex = ref(0);
 const totalFiles = ref(0);
-const text = ref('')
+const text = ref('');
 const arcanists = useDataStore().arcanists;
 const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
 const isError = ref(false);

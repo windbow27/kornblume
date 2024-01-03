@@ -12,6 +12,7 @@ const closeOverlay = () => {
 
 const changelogs = [
     // Add more from top
+    { date: '29/12/2023', description: '• Improved i18n. \n • Improved Tracker OCR' },
     { date: '29/12/2023', description: '• Error log for Summon Tracker.' },
     { date: '29/12/2023', description: '• Added more languages! vi-VN, zh-CN, zh-TW have been fully translated. We need your help!' },
     { date: '28/12/2023', description: '• Summon Tracker out of beta release. \n • Various UI updates.' },
