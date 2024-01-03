@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
-import { useDataStore } from '@/stores/dataStore';
 import { GreyAlgorithm, Image } from 'image-js';
+import { useDataStore } from '@/stores/dataStore';
 import Tesseract, { createWorker } from 'tesseract.js';
 import ArcanistIcon from '../components/arcanist/ArcanistIcon.vue';
 import TrackerArcanistIcon from '../components/tracker/TrackerArcanistIcon.vue';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
+import Fuse from 'fuse.js';
 
 const fileInput = ref(null)
 const isImporting = ref(false);
@@ -40,7 +41,6 @@ watch(indexedPulls, (newVal) => {
         .map(([timestamp]) => Number(timestamp));
 
     isError.value = wrongTimestamps.value.length > 0;
-    // console.log(wrongTimestamps.value);
 });
 
 const sixStarsPullsList = computed(() => {
@@ -60,42 +60,83 @@ const summonSinceLastSixStar = computed(() => {
     }
 });
 
-async function preprocessImage (file: File) {
-    const imageData = await Image.load(await file.arrayBuffer());
+// function binarize (canvas: HTMLCanvasElement): ImageData {
+//     const data: ImageData | undefined = canvas.getContext('2d')?.getImageData(0, 0, canvas.width, canvas.height);
+//     if (!data) {
+//         console.log('failed to obtain image data (binarize)');
+//         return new ImageData(0, 0);
+//     }
+//     const pixels: Uint8ClampedArray = data?.data;
+//     if (!pixels) {
+//         console.log('failed to obtain pixel data (binarize)');
+//         return new ImageData(0, 0);
+//     }
+//     const level: number = 0.6;
+//     const thresh: number = Math.floor(level * 255);
+//     for (let i = 0; i < pixels.length; i += 4) {
+//         const r: number = pixels[i];
+//         const g: number = pixels[i + 1];
+//         const b: number = pixels[i + 2];
+//         const grey: number = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+//         const val: number = grey >= thresh ? 255 : 0;
+//         pixels[i] = pixels[i + 1] = pixels[i + 2] = val;
+//     }
+//     return data;
+// }
 
-    const blurred = imageData.blurFilter({ radius: 1 });
+async function crop (file: File): Promise<File> {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        let modifiedFile: File;
+        reader.onload = (event: ProgressEvent<FileReader>) => {
+            const img = document.createElement('img');
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                if (!context) { reject(new Error('getContext failed (preprocessImage)')); }
+                /* 2408x1080 was the resolution of the full image that was used to test/initialize */
+                const x_scale = img.width / 2408;
+                const y_scale = img.height / 1080;
+                /* 1250x650 was the resolution of the cropped area for data */
+                canvas.width = 1250 * x_scale;
+                canvas.height = 650 * y_scale;
+                context?.drawImage(img,
+                    800 * x_scale, 320 * y_scale, /* point(800,320) was top left of data crop */
+                    1350 * x_scale, 650 * y_scale, /* point(1350, 650) was bottom right of data crop */
+                    0, 0, canvas.width, canvas.height
+                );
 
-    const grey = blurred.grey({
-        algorithm: 'average' as GreyAlgorithm
+                // const newData: ImageData = binarize(canvas);
+                // if (!newData) { reject(new Error('binarize failed (preprocessImage)')); }
+                // context?.putImageData(newData, 0, 0);
+
+                canvas.toBlob((blob) => {
+                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
+                    resolve(modifiedFile);
+                }, file.type);
+            };
+            img.src = event.target?.result as string;
+        };
+        reader.readAsDataURL(file);
     });
+}
 
+async function preprocessImage (file: File) {
+    const modifiedFile: File = await crop(file);
+    const imageData = await Image.load(await modifiedFile.arrayBuffer());
+    const blurred = imageData.blurFilter({ radius: 1 });
+    const grey = blurred.grey({
+        algorithm: 'lightness' as GreyAlgorithm
+    });
     const kernel = [
         [0, -1, 0],
         [-1, 5, -1],
         [0, -1, 0]
     ];
-
     // Apply sharpening filter
     const sharpened = grey.convolution(kernel);
-
     const gaussian = sharpened.gaussianFilter({ radius: 1 });
-
     return gaussian.getCanvas();
-}
-
-const ocrCorrectionMap = {
-    '3uma': 'Зима',
-    '3lonney': 'Blonney',
-    uma: 'Зима',
-    aliEnT: 'aliEn T',
-    Druvis: 'Druvis III',
-    korn: 'Bkornblume',
-    corn: 'Bkornblume',
-    AKnight: 'A Knight',
-    THT: 'TTT',
-    fennant: 'Tennant',
-    Blonnev: 'Blonney',
-    Doc: 'Door'
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -110,37 +151,53 @@ const ocr: clickHandler = (payload: Event): void => {
         }
         return prev
     }, {});
+    const fuse: Fuse<string> = new Fuse(arcanists.map((arcanist) => arcanist.Name === 'Зима' ? '3uma' : arcanist.Name));
     if (fileList) {
         isImporting.value = true;
         (async (): Promise<void> => {
+            // const startTime = performance.now();
             const worker: Tesseract.Worker = await createWorker('eng');
             for (let i: number = 0; i < fileList.length; i++) {
                 const file: File = fileList[i];
                 currentFileIndex.value = i + 1;
                 totalFiles.value = fileList.length;
                 if (file) {
-                    const canvas: Tesseract.ImageLike = await preprocessImage(file);
-                    const ret: Tesseract.RecognizeResult = await worker.recognize(canvas);
-                    console.log(ret.data.text);
+                    const modifiedImage: HTMLCanvasElement = await preprocessImage(file);
+                    const ret: Tesseract.RecognizeResult = await worker.recognize(modifiedImage);
                     text.value = ret.data.text;
+                    // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedFile);
 
-                    const arcanistNames = arcanists.map(a => a.Name);
-                    const arcanistNamesRegex = [...arcanistNames, ...Object.keys(ocrCorrectionMap)].join('|')
+                    const bannerList: string = [
+                        // limited
+                        'One Gram of Curiosity',
+                        'Clang of Sword & Armor',
+                        'Pop Is Everything',
+                        'Whisper of the Woods',
+                        'Thus Spoke the Border Collie',
+                        'Swinging Freely',
+                        'The Fairies Shining at Night',
+                        'Where the Star Alighted',
+                        'The Changeling Awaits',
+                        'The Ever-flowing',
+                        'Midnight Movie Party',
+                        // standard
+                        'Amongst the Lake',
+                        // thread
+                        'Invitation From the Water'
+                    ].join('|');
 
-                    const pattern: RegExp = new RegExp(`(?<ArcanistName>${arcanistNamesRegex})\\s*(?:\\(.*?\\))?(?<BannerType>.*?)(?<Date>\\d{4}-\\d{2}-\\d{2}\\s*\\d{2}:\\d{2}:\\d{2})`, 'i');
+                    const pattern = new RegExp(`(?<ArcanistName>^\\w+\\.?(?:\\s\\w+\\.?)?)(?:\\(?.*\\)?)?\\s+(?<BannerType>${bannerList})\\s+(?<Date>\\d{4}-\\d{2}-\\d{2}\\s*\\d{2}:\\d{2}:\\d{2})`, 'i');
                     const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[] = [];
                     const currentPullsMapping = {}
 
                     // Extract information from each line
                     text.value.trim().split('\n').forEach((line) => {
                         const match = line.match(pattern);
+                        if (!match && line.length !== 0 && !line.match(String.raw`(?:<\s*)?(\d+)\s*\/\s*(\d+)(?:\s*>)?`)) { console.log(line); }
                         if (match) {
-                            // console.log(match);
-                            let arcanistName: string = match.groups?.ArcanistName.trim() || '';
-                            if (ocrCorrectionMap[arcanistName]) {
-                                arcanistName = ocrCorrectionMap[arcanistName]
-                            }
-                            const arcanist = arcanists.find(a => a.Name.toLowerCase() === arcanistName.toLowerCase());
+                            const arcanistName: string = match.groups?.ArcanistName.trim() || '';
+                            const fuseResult = fuse.search(arcanistName);
+                            const arcanist = arcanists.at(fuseResult[0].refIndex);
                             const rarity: number = arcanist ? arcanist.Rarity : 0;
                             const bannerType: string = match.groups?.BannerType.trim() || '';
                             const timestamp: number = new Date((match.groups?.Date || '').replace(/(\d{4}-\d{2}-\d{2})(\d{2}:\d{2}:\d{2})/, '$1 $2')).getTime();
@@ -152,10 +209,7 @@ const ocr: clickHandler = (payload: Event): void => {
                                 BannerType: bannerType,
                                 Timestamp: timestamp
                             };
-                            // console.log(pull);
-
                             currentPulls.push(pull);
-                            // console.log(currentPulls);
 
                             if (currentPullsMapping[timestamp]) {
                                 currentPullsMapping[timestamp].push(pull)
@@ -234,6 +288,8 @@ const ocr: clickHandler = (payload: Event): void => {
             await worker.terminate();
             pulls.value = result;
             isImporting.value = false;
+            // const endTime = performance.now();
+            // console.log('time: ', endTime - startTime);
         })();
     }
 }
@@ -307,8 +363,8 @@ const resetTracker = () => {
 </script>
 
 <template>
+    <!-- <img id="testing" src=""/> -->
     <div class="responsive-spacer">
-
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
             {{ $t('summon-tracker') }} <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
         </h2>
