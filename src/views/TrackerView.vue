@@ -3,10 +3,9 @@ import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
 import { GreyAlgorithm, Image } from 'image-js';
 import { useDataStore } from '@/stores/dataStore';
 import Tesseract, { createWorker } from 'tesseract.js';
-import ArcanistIcon from '../components/arcanist/ArcanistIcon.vue';
-import TrackerArcanistIcon from '../components/tracker/TrackerArcanistIcon.vue';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 import Fuse from 'fuse.js';
+import TrackerBoard from '../components/tracker/TrackerBoard.vue';
 
 const fileInput = ref(null);
 const isImporting = ref(false);
@@ -17,6 +16,7 @@ const arcanists = useDataStore().arcanists;
 const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
+const selectedBannerType = ref('Limited');
 
 const indexedPulls = computed(() => {
     const sortedPulls = pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
@@ -25,9 +25,22 @@ const indexedPulls = computed(() => {
             PullNumber: sortedPulls.length - index,
             ArcanistName: pull.ArcanistName,
             Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
             Timestamp: pull.Timestamp
         }
     });
+});
+
+const threadPulls = computed(() => {
+    return indexedPulls.value.filter(pull => pull.BannerType === 'Invitation From the Water');
+});
+
+const standardPulls = computed(() => {
+    return indexedPulls.value.filter(pull => pull.BannerType === 'Amongst the Lake');
+});
+
+const limitedPulls = computed(() => {
+    return indexedPulls.value.filter(pull => pull.BannerType !== 'Amongst the Lake' && pull.BannerType !== 'Invitation From the Water');
 });
 
 watch(indexedPulls, (newVal) => {
@@ -42,47 +55,6 @@ watch(indexedPulls, (newVal) => {
 
     isError.value = wrongTimestamps.value.length > 0;
 });
-
-const sixStarsPullsList = computed(() => {
-    const sixStarPulls = indexedPulls.value
-        .filter(pull => pull.Rarity === 6)
-        .sort((a, b) => a.PullNumber - b.PullNumber)
-        .map(pull => pull.PullNumber);
-    return sixStarPulls.map((pullNumber, index) => index === 0 ? pullNumber : pullNumber - sixStarPulls[index - 1]);
-});
-
-const summonSinceLastSixStar = computed(() => {
-    const lastSixStarPull = indexedPulls.value.find(pull => pull.Rarity === 6);
-    if (lastSixStarPull) {
-        return indexedPulls.value.length - lastSixStarPull.PullNumber;
-    } else {
-        return indexedPulls.value.length;
-    }
-});
-
-// function binarize (canvas: HTMLCanvasElement): ImageData {
-//     const data: ImageData | undefined = canvas.getContext('2d')?.getImageData(0, 0, canvas.width, canvas.height);
-//     if (!data) {
-//         console.log('failed to obtain image data (binarize)');
-//         return new ImageData(0, 0);
-//     }
-//     const pixels: Uint8ClampedArray = data?.data;
-//     if (!pixels) {
-//         console.log('failed to obtain pixel data (binarize)');
-//         return new ImageData(0, 0);
-//     }
-//     const level: number = 0.6;
-//     const thresh: number = Math.floor(level * 255);
-//     for (let i = 0; i < pixels.length; i += 4) {
-//         const r: number = pixels[i];
-//         const g: number = pixels[i + 1];
-//         const b: number = pixels[i + 2];
-//         const grey: number = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-//         const val: number = grey >= thresh ? 255 : 0;
-//         pixels[i] = pixels[i + 1] = pixels[i + 2] = val;
-//     }
-//     return data;
-// }
 
 async function crop (file: File): Promise<File> {
     return new Promise((resolve, reject) => {
@@ -165,6 +137,7 @@ const ocr: clickHandler = (payload: Event): void => {
                     const modifiedImage: HTMLCanvasElement = await preprocessImage(file);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(modifiedImage);
                     text.value = ret.data.text;
+                    console.log(text.value);
                     // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedFile);
 
                     const bannerList: string = [
@@ -308,40 +281,6 @@ const isEqualPull = (pull1, pull2) => {
 const isEqualPulls = (pulls1, pulls2) => {
     return JSON.stringify(pulls1) === JSON.stringify(pulls2);
 }
-
-const formatDate = (timestamp: number): string => {
-    const date: Date = new Date(timestamp);
-    const formattedDate: string = date.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
-    const formattedTime: string = date.toLocaleTimeString('en-GB', {
-        hour12: false,
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-    return `${formattedDate} ${formattedTime}`;
-}
-
-const activeRarities = ref<number[]>([5, 6]);
-
-const selectedRarities = (rarity: number) => {
-    if (activeRarities.value.includes(rarity)) {
-        activeRarities.value = activeRarities.value.filter(r => r !== rarity);
-    } else {
-        activeRarities.value.push(rarity);
-    }
-}
-
-const filteredRarityPulls = computed(() => {
-    // console.log(filteredRarityPulls.value);
-    return indexedPulls.value.filter(pull => activeRarities.value.includes(pull.Rarity));
-});
-
-defineExpose({
-    formatDate
-})
 
 watchEffect(() => {
     if (pulls.value.length > 0) {
@@ -489,168 +428,26 @@ const resetTracker = () => {
             </span>
         </div>
 
-        <p class=" text-white font-bold text-xl text-center pt-4">{{ $t('summon-summary') }}</p>
-        <div class="flex flex-col text-white p-4 gap-2 max-w-sm mx-auto">
-            <div class="flex justify-between">
-                <div class="text">{{ $t('total-summons') }}</div>
-                <div class="number">{{ indexedPulls.length }}</div>
-            </div>
-            <div class="flex justify-between">
-                <div class="text">
-                    <i18n-t keypath='6-star-summons'>
-                        <template #star>
-                            <i class="fa-solid fa-star text-orange-300"></i>
-                        </template>
-                    </i18n-t>
-                </div>
-                <div class="number">{{ indexedPulls.filter(p => p.Rarity === 6).length }}</div>
-            </div>
-            <div class="flex justify-between">
-                <div class="text">
-                    <i18n-t keypath='5-star-summons'>
-                        <template #star>
-                            <i class="fa-solid fa-star text-yellow-100"></i>
-                        </template>
-                    </i18n-t>
-                </div>
-                <div class="number">{{ indexedPulls.filter(p => p.Rarity === 5).length }}</div>
-            </div>
-            <div class="flex justify-between">
-                <div class="text">
-                    <i18n-t keypath='6-star-average'>
-                        <template #star>
-                            <i class="fa-solid fa-star text-orange-300"></i>
-                        </template>
-                    </i18n-t>
-                </div>
-                <div class="number">
-                    {{ indexedPulls.filter(p => p.Rarity === 6).length > 0 ? Math.floor(indexedPulls.length /
-                        indexedPulls.filter(p => p.Rarity === 6).length) : 0 }}
-                </div>
-            </div>
-            <div class="flex justify-between">
-                <div class="text">
-                    <i18n-t keypath='5-star-average'>
-                        <template #star>
-                            <i class="fa-solid fa-star text-yellow-100"></i>
-                        </template>
-                    </i18n-t>
-                </div>
-                <div class="number">
-                    {{ indexedPulls.filter(p => p.Rarity === 5).length > 0 ? Math.floor(indexedPulls.length /
-                        indexedPulls.filter(p => p.Rarity === 5).length) : 0 }}
-                </div>
-            </div>
-            <div class="flex justify-between">
-                <div class="text">
-                    <i18n-t keypath='current-6-star-pity'>
-                        <template #star>
-                            <i class="fa-solid fa-star text-orange-300"></i>
-                        </template>
-                    </i18n-t>
-                </div>
-                <div class="number">{{ summonSinceLastSixStar }} / 70</div>
-            </div>
-            <div class="flex flex-col justify-between opacity-95" v-if="isError">
-                <div class=" text-error text-sm">{{ $t('import-error') }}</div>
-                <div class="text-error text-sm">
-                    <i18n-t keypath='wrong-timestamps'>
-                        <template #timestamps>
-                            <span class="number text-sm">{{ wrongTimestamps.map(formatDate).join(', ') }}</span>
-                        </template>
-                    </i18n-t>
-                </div>
-            </div>
+        <div class="flex justify-center space-x-5 pb-5">
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }" class=' text-white py-1 px-3'
+                @click="selectedBannerType = 'Limited'">Limited</button>
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }" class=' text-white py-1 px-3'
+                @click="selectedBannerType = 'Standard'">Standard</button>
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }" class=' text-white py-1 px-3'
+                @click="selectedBannerType = 'Thread'">Thread</button>
         </div>
 
-        <div
-            class="w-full items-center custom-gradient-gray-blue rounded border border-blue-800 justify-center px-4 pt-4 pb-3">
-            <div class="text text-center pb-4">
-                <i18n-t keypath='recent-6-star-summons'>
-                    <template #star>
-                        <i class="fa-solid fa-star text-orange-300"></i>
-                    </template>
-                </i18n-t>
-            </div>
-            <div class="flex flex-wrap justify-center space-x-8">
-                <!-- Fix the key later -->
-                <div v-for="(pull, index) in indexedPulls.filter(p => p.Rarity === 6)"
-                    :key="`${pull.Timestamp}-${pull.ArcanistName}`">
-                    <TrackerArcanistIcon class="py-2" :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
-                        :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
-                </div>
-            </div>
-        </div>
-
-        <!-- Summon History -->
-        <div class="text text-center text-xl pb-4 pt-10">{{ $t('summon-history') }}</div>
-
-        <!-- Rarity select -->
-        <div class="flex justify-center space-x-2">
-            <button v-for="i in [2, 3, 4, 5, 6]" :key="i" :class="{ 'border-2 border-info': activeRarities.includes(i) }"
-                @click="selectedRarities(i)" class="p-2 rounded-md">
-                <i class="fa-solid fa-star" :class="{
-                    'text-orange-300': i === 6,
-                    'text-yellow-100': i === 5,
-                    'text-purple-400': i === 4,
-                    'text-sky-200': i === 3,
-                    'text-green-200': i === 2
-                }"></i>
-            </button>
-        </div>
-
-        <div class="max-w-lg m-auto">
-            <div v-for="(pull, index) in filteredRarityPulls" :key="`${pull.Timestamp}-${pull.ArcanistName}-${index}`"
-                class="grid grid-cols-4 sm:grid-cols-5 justify-between items-center p-2 border-b border-gray-200 space-x-5">
-                <!-- Index, Image, Name -->
-                <div class="col-span-1 sm:col-span-2 flex items-center space-x-5">
-                    <div class="flex items-center space-x-5">
-                        <div class="text-white">{{ pull.PullNumber }} </div>
-                        <ArcanistIcon
-                            :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>" />
-                        <div class="pullArcanistName ml-2" :class="{
-                            'text-orange-300': pull.Rarity === 6,
-                            'text-yellow-100': pull.Rarity === 5,
-                            'text-purple-400': pull.Rarity === 4,
-                            'text-sky-200': pull.Rarity === 3,
-                            'text-green-200': pull.Rarity === 2
-                        }">{{ $t(pull.ArcanistName) }}</div>
-                    </div>
-                </div>
-                <!-- Rarity -->
-                <div class="text-center" :class="{
-                    'text-orange-300': pull.Rarity === 6,
-                    'text-yellow-100': pull.Rarity === 5,
-                    'text-purple-400': pull.Rarity === 4,
-                    'text-sky-200': pull.Rarity === 3,
-                    'text-green-200': pull.Rarity === 2
-                }">{{ pull.Rarity }} <i class="fa-solid fa-star"></i></div>
-                <!-- Date -->
-                <div class="col-span-2">
-                    <div class="text-white"> {{ formatDate(pull.Timestamp) }}</div>
-                </div>
-            </div>
-        </div>
-
+        <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
+            :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Standard'" :text="$t('summary-standard')" :pulls="standardPulls"
+            :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls"
+            :isError="isError" :wrongTimestamps="wrongTimestamps" />
     </div>
 </template>
 
 <style scoped>
-.text {
-    @apply text-white font-bold;
-}
-
-.number {
-    @apply text-info font-bold;
-}
-
-.pullArcanistName {
-    display: none;
-}
-
-@media screen and (min-width: 640px) {
-    .pullArcanistName {
-        display: block;
-    }
+.border-button {
+    @apply border-2 border-info rounded-md
 }
 </style>

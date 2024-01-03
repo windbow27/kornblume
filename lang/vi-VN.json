@@ -116,7 +116,6 @@
   "settings": "Cài đặt",
   "sharpodonty-markets": "Chợ Sharpodonty",
   "summon-history": "Lịch sử triệu hồi",
-  "summon-summary": "Tổng kết triệu hồi",
   "summon-tracker-demo": "Theo dõi triệu hồi Demo",
   "take-screenshots-of-your-summon-history": "Chụp ảnh màn hình lịch sử triệu hồi của bạn.",
   "take-too-long": "mất quá lâu",
@@ -156,7 +155,10 @@
   "help-us-translate": "Giúp chúng tôi dịch!",
   "import-error": "Đã xảy ra lỗi khi tải ảnh. \nHãy đảm bảo rằng tất cả các hình ảnh đều rõ ràng và không có hình ảnh nào bị thiếu. \nĐọc hướng dẫn để biết thêm thông tin. ",
   "wrong-timestamps": "Thiếu dữ liệu tại: {timestamps}",
-  "Oneiric Shop": "Cửa hàng Oneiric",
-  "Unreleased": "Chưa ra mắt",
-  "Wilderness Wishing Spring": "Giếng ước vùng hoang dã"
+  "oneiric-shop": "Cửa hàng Oneiric",
+  "unreleased": "Chưa ra mắt",
+  "wilderness-wishing-spring": "Giếng ước vùng hoang dã",
+  "summary-limited": "Tổng kết triệu hồi giới hạn",
+  "summary-standard": "Tổng kết triệu hồi thường",
+  "summary-thread": "Tổng kết triệu hồi sợi chỉ vàng"
 }

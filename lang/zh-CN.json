@@ -59,7 +59,6 @@
   "bug-reports": "错误报告",
   "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "如果你遇到错误，请使用丢失数据的时间戳来确定错误的位置，重新截取更清晰的错误图片，进行一些编辑，如裁剪，并再次导入。如果错误仍然存在，请按 F12 ‣ Console ‣ 复制文字与图片并回报，可以通过首页的错误报告或是直接通过 Discord 联繫 {discord}。",
   "processing-file-number-out-of-numbers-please-wait": "正在處理 {current} / {total} 的檔案... 請稍後...",
-  "summon-summary": "征集一览",
   "total-summons": "所有抽数",
   "6-star-summons": "6 {star} 获取数",
   "5-star-summons": "5 {star} 获取数",
@@ -156,7 +155,10 @@
   "help-us-translate": "请帮助我们翻译",
   "wrong-timestamps": "遗失该时间戳的数据：{timestamps}",
   "import-error": "导入图片时发生错误。请确保所有图片清晰，且没有遗失的图片。阅读使用教学以了解更多信息。",
-  "Unreleased": "尚未实装",
-  "Wilderness Wishing Spring": "不休荒原合成",
-  "Oneiric Shop": "梦境记述商店"
+  "unreleased": "尚未实装",
+  "wilderness-wishing-spring": "不休荒原合成",
+  "oneiric-shop": "梦境记述商店",
+  "summary-limited": "限时角色徵集",
+  "summary-standard": "常驻角色徵集",
+  "summary-thread": "湖的邀约"
 }

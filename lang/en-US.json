@@ -64,7 +64,6 @@
   "bug-reports": "Bug Reports",
   "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "If you encounter a bug, pinpoint its location by using Missing information timestamps. Recapture the error images clearer, doing some modifications like cropping, and import again. If the error persist, open your F12 ‣ Console ‣ Send the text and images through Bug Reports or directly to {discord}.",
   "processing-file-number-out-of-numbers-please-wait": "Processing file {current} out of {total}... Please wait...",
-  "summon-summary": "Summon Summary",
   "total-summons": "Total Summons",
   "6-star-summons": "6 {star} Summons",
   "5-star-summons": "5 {star} Summons",
@@ -156,7 +155,10 @@
   "help-us-translate": "Help us translate!",
   "import-error": "An error has occurred while importing images. Please make sure all images are clear, and there are no missing images. Read the tutorial for more information.",
   "wrong-timestamps": "Missing data timestamps: {timestamps}",
-  "Unreleased": "Unreleased",
-  "Wilderness Wishing Spring": "Wilderness Wishing Spring",
-  "Oneiric Shop": "Oneiric Shop"
+  "unreleased": "Unreleased",
+  "wilderness-wishing-spring": "Wilderness Wishing Spring",
+  "oneiric-shop": "Oneiric Shop",
+  "summary-limited": "Limited Summary",
+  "summary-standard": "Standard Summary",
+  "summary-thread": "Golden Thread Summary"
 }
