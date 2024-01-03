@@ -1,6 +1,6 @@
 # How to Help Us Translate Kornblume
 
-Hey everyone, we are translating the site into other languagts and need your help.
+Hey everyone, we are translating the site into other languages and need your help.
 
 Let's understand how to help us with the translation.
 
