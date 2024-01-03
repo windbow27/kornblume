@@ -152,11 +152,11 @@
   "day": "天",
   "uppercase-days": "天数",
   "search-arcanists": "搜寻神祕学家",
-  "show-unreleased-arcanists": "是否显示未上线的神祕学家",
+  "show-unreleased-arcanists": "是否显示未实装的神祕学家",
   "help-us-translate": "请帮助我们翻译",
   "wrong-timestamps": "遗失该时间戳的数据：{timestamps}",
   "import-error": "导入图片时发生错误。请确保所有图片清晰，且没有遗失的图片。阅读使用教学以了解更多信息。",
-  "Unreleased": "尚未开放",
+  "Unreleased": "尚未实装",
   "Wilderness Wishing Spring": "不休荒原合成",
   "Oneiric Shop": "梦境记述商店"
 }
