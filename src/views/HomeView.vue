@@ -98,7 +98,7 @@ onClickOutside(resourcesRef, closeResources)
                 <p class="text-xs opacity-80 mb-2 text-center">
                     <i18n-t keypath="we-are-translating-the-site-into-other-languages-please-help-us-out-you-could-reach-out-to-us-through-windbow-in-discord">
                     <template #link>
-                        <a href="https://github.com/frantw/Kornblume/blob/chore/update-i18n-readme/lang/README.md"
+                        <a href="https://github.com/windbow27/Kornblume/blob/main/lang/README.md"
                             target="_blank" class="text-blue-500 hover:text-blue-700">{{ $t('please-help-us-out') }}</a>
                     </template>
                     <template #discord>
