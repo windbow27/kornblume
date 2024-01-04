@@ -146,6 +146,9 @@ defineExpose({
         <div v-if="props.text == $t('summary-limited')" class="flex justify-between">
             <div class="text">
                 <i18n-t keypath='50-50-winrate'>
+                    <template #star>
+                        <i class="fa-solid fa-star text-orange-300"></i>
+                    </template>
                 </i18n-t>
             </div>
             <div class="number">

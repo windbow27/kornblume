@@ -23,6 +23,20 @@ export function addEventShopMaterialsToWarehouse (version: string) {
     }
 }
 
+export function removeEventShopMaterialsFromWarehouse (version: string) {
+    const shopsData = useDataStore().shops;
+    if (version in shopsData) {
+        const materials = shopsData[version];
+
+        materials.forEach((material) => {
+            const { Material, Quantity } = material;
+            useWarehouseStore().reduceItem(Material, Quantity);
+        });
+    } else {
+        console.error(`Version ${version} not found in shops data.`);
+    }
+}
+
 export const initializeWarehouse = () => {
     const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
     console.log('Initialize warehouse');

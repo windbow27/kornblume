@@ -141,7 +141,7 @@
   "with-numbers-used-in-crafting": "(với {numbers} được sử dụng trong chế tạo)",
   "yes": "Xác nhận",
   "you-can-quickly-add-materials-from-jukeboxes-and-events-here": "Bạn có thể nhanh chóng thêm Vật phẩm từ Jukebox và Sự kiện tại đây.",
-  "you-should-add-once-only": "Bạn chỉ nên thêm một lần.",
+  "you-should-add-once-only": "Hãy cẩn thận khi bớt Vật phẩm",
   "add-materials-from-text": "Thêm vật phẩm từ {0}?",
   "any": "bất kì",
   "expected": "dự kiến",
@@ -165,5 +165,7 @@
   "standard": "Thường",
   "thread": "Chỉ vàng",
   "translators": "Dịch viên",
-  "50-50-winrate": "Tỷ lệ thắng 50/50"
+  "50-50-winrate": "Tỷ lệ thắng 50/50",
+  "add": "Thêm",
+  "remove": "Bớt"
 }

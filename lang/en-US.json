@@ -117,7 +117,7 @@
   "roaring-month": "Roaring Month",
   "weekly-activeness": "Weekly Activeness",
   "daily-refill": "Daily Refill",
-  "you-should-add-once-only": "You should add once only.",
+  "you-should-add-once-only": "Be careful when removing Materials",
   "add-materials-from-text": "Add materials from {0}?",
   "list-includes-dependencies": "List includes dependencies",
   "available-after-1-4-version-update": "Available after 1.4 version update",
@@ -165,5 +165,7 @@
   "standard": "Standard",
   "thread": "Thread",
   "translators": "Translators",
-  "50-50-winrate": "50 / 50 Win Rate"
+  "50-50-winrate": "50 / 50 Win Rate",
+  "add": "Add",
+  "remove": "Remove"
 }

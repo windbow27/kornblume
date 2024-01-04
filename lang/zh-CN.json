@@ -114,7 +114,7 @@
   "roaring-month": "咆哮的一月",
   "weekly-activeness": "每周任务",
   "daily-refill": "每日限购恢复次数",
-  "you-should-add-once-only": "你应只需添加一次。",
+  "you-should-add-once-only": "移除材料时要小心",
   "add-materials-from-text": "确定添加来自{0}的材料？",
   "list-includes-dependencies": "清单中包含合成所需的所有下位材料",
   "available-after-1-4-version-update": "1.4 版本更新后才可获得",
