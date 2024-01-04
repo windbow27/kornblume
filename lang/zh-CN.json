@@ -158,8 +158,11 @@
   "unreleased": "尚未实装",
   "wilderness-wishing-spring": "不休荒原合成",
   "oneiric-shop": "梦境记述商店",
-  "summary-limited": "限时角色徵集",
-  "summary-standard": "常驻角色徵集",
+  "summary-limited": "限时角色征集",
+  "summary-standard": "常驻角色征集",
   "summary-thread": "湖的邀约",
-  "limited": ""
+  "limited": "限时",
+  "standard": "常驻",
+  "thread": "湖的邀约",
+  "translators": "翻译者"
 }
