@@ -2,6 +2,13 @@ import { useDataStore } from '../stores/dataStore';
 import { useWarehouseStore, IItem as IWarehouseItem } from '../stores/warehouseStore';
 import { usePlannerSettingsStore } from '../stores/plannerSettingsStore';
 
+const categoryPriority = {
+    'Base Item': 0,
+    'Resonate Material': 1,
+    'Insight Material': 2,
+    'Build Material': 2 // insight/build material have same priority, should be arranged according to rarity
+}
+
 export function addEventShopMaterialsToWarehouse (version: string) {
     const shopsData = useDataStore().shops;
     if (version in shopsData) {
@@ -23,11 +30,11 @@ export const initializeWarehouse = () => {
         if (item.IsReleased || unreleasedDropsEnabled) {
             if (
                 item.Category === 'Build Material' ||
-                    item.Category === 'Insight Material' ||
-                    (item.Category === 'Resonate Material' && item.Rarity < 6) ||
-                    item.Name === 'Dust' ||
-                    item.Name === 'Sharpodonty' ||
-                    item.Name === 'Crystal Casket'
+                item.Category === 'Insight Material' ||
+                (item.Category === 'Resonate Material' && item.Rarity < 6) ||
+                item.Name === 'Dust' ||
+                item.Name === 'Sharpodonty' ||
+                item.Name === 'Crystal Casket'
             ) {
                 useWarehouseStore().initItem(item.Name, item.Category);
             }
@@ -40,20 +47,13 @@ export const checkWarehouse = () => {
     useDataStore().items.forEach((item) => {
         if (
             !useWarehouseStore().hasItem(item.Name) &&
-              (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled))
+            (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled))
         ) {
             useWarehouseStore().initItem(item.Name, item.Category);
         } else if (!item.IsReleased && !unreleasedDropsEnabled) {
             useWarehouseStore().removeItem(item.Name);
         }
     });
-}
-
-const categoryPriority = {
-    'Base Item': 0,
-    'Resonate Material': 1,
-    'Insight Material': 2,
-    'Build Material': 2 // insight/build material have same priority, should be arranged according to rarity
 }
 
 export const sortWarehouseMaterials = (array: IWarehouseItem[]) => {

@@ -2,15 +2,15 @@
 import { ref } from 'vue'
 import { addEventShopMaterialsToWarehouse } from '../../../composables/warehouse'
 
-const dialog = ref<HTMLDialogElement>()
-
-const emit = defineEmits<{(e: 'closeOverlay'): void }>()
-
 const props = defineProps<{
     version: string,
     text: string,
     type: string
 }>()
+
+const emit = defineEmits<{(e: 'closeOverlay'): void }>()
+
+const dialog = ref<HTMLDialogElement>()
 
 const addItems = () => {
     addEventShopMaterialsToWarehouse(props.version);

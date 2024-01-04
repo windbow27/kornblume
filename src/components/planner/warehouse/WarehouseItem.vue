@@ -9,14 +9,9 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits<{(e: 'update:quantity', quantity: number): void}>()
+const emit = defineEmits<{(e: 'update:quantity', quantity: number): void }>()
 
 const quantity = ref(props.material.Quantity);
-
-const normalizedMaterial = computed(() => {
-    const result = normalizeDisplayMaterial(props.material);
-    return result;
-});
 
 const updateQuantity = () => {
     const newQuantity = Number(quantity.value)
@@ -24,6 +19,11 @@ const updateQuantity = () => {
         emit('update:quantity', Number(quantity.value));
     }
 };
+
+const normalizedMaterial = computed(() => {
+    const result = normalizeDisplayMaterial(props.material);
+    return result;
+});
 
 // Must listen to parent component's prop changes, or the quantity won't update instantly
 watch(() => props.material, (newValue) => {
@@ -42,7 +42,8 @@ watch(() => props.material, (newValue) => {
             <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""
                 class="bg-slate-600 text-white absolute -bottom-3 left-3 w-14 input input-xs rounded-t-none text-center"
                 :class="{
-                    'left-[17px] w-[85px]': normalizedMaterial.material === 'Sharpodonty' || normalizedMaterial.material === 'Dust' }"/>
+                    'left-[17px] w-[85px]': normalizedMaterial.material === 'Sharpodonty' || normalizedMaterial.material === 'Dust'
+                }" />
         </div>
     </div>
 </template>

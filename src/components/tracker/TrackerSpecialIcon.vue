@@ -1,4 +1,5 @@
-<script setup>
+<script setup lang="ts" name="TrackerSpecialIcon">
+
 const props = defineProps({
     name: {
         type: String,
@@ -10,7 +11,7 @@ const props = defineProps({
     }
 });
 
-const getImagePath = (name) => {
+const getImagePath = (name: string) => {
     return `images/items/common/${name}.png`;
 };
 

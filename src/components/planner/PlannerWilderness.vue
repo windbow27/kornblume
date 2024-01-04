@@ -20,10 +20,6 @@ const emit = defineEmits({
     }
 });
 
-const closeOverlay = () => {
-    emit('closeOverlay');
-};
-
 const selectedDust1 = ref(props.settings.dust1);
 const selectedDust2 = ref(props.settings.dust2);
 const selectedDust3 = ref(props.settings.dust3);
@@ -36,6 +32,10 @@ const lazyModo = ref(props.settings.lazyModo);
 const options = [0, 1, 2, 3, 4, 5, 6];
 const dustMultiplier = [0, 120, 150, 175, 210, 240, 270];
 const goldMultiplier = [0, 60, 75, 80, 96, 108, 120];
+
+const closeOverlay = () => {
+    emit('closeOverlay');
+};
 
 const handleSelected = (option, label) => {
     switch (label) {
@@ -162,7 +162,8 @@ const wildernessOutput = computed(() => {
           </label>
         </div>
       </div>
-      <p class="text-yellow-100 text-sm text-center p-2">{{ $t('wilderness-output-will-be-considered-for-calculations') }}</p>
+      <p class="text-yellow-100 text-sm text-center p-2">{{ $t('wilderness-output-will-be-considered-for-calculations') }}
+      </p>
       <div class="flex justify-center">
         <button @click="saveWildernessSettings" class="btn btn-success">{{ $t('save') }}</button>
       </div>

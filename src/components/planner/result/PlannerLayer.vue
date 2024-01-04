@@ -1,9 +1,7 @@
 <script setup lang="ts" name="PlannerLayer">
 import { computed } from 'vue'
-import PlannerCard from './PlannerCard.vue';
 import { useI18n } from 'vue-i18n';
-
-const { t } = useI18n()
+import PlannerCard from './PlannerCard.vue';
 
 const props = defineProps({
     layer: {
@@ -11,6 +9,8 @@ const props = defineProps({
         required: true
     }
 });
+
+const { t } = useI18n()
 
 const isBadge = computed(() => {
     return props.layer.cards && props.layer.cards.length > 0;

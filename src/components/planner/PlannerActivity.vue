@@ -28,6 +28,27 @@ const lazyModo = ref(props.settings.lazyModo);
 const weeklyActivity = ref(props.settings.weeklyActivity);
 const refills = ref(props.settings.refills);
 
+const handleSelected = (value) => {
+    refills.value = value;
+};
+
+const saveActivitySettings = () => {
+    const settings = {
+        roaringMonth: roaringMonth.value,
+        lazyModo: lazyModo.value,
+        weeklyActivity: weeklyActivity.value,
+        refills: refills.value,
+        activity: activity.value,
+        cost: cost.value
+    };
+    emit('saveActivitySettings', settings);
+    closeOverlay();
+};
+
+const closeOverlay = () => {
+    emit('closeOverlay');
+};
+
 const activity = computed(() => {
     let result = lazyModo.value ? 190 : 240;
     if (roaringMonth.value) {
@@ -49,26 +70,6 @@ const cost = computed(() => {
     return result;
 });
 
-const handleSelected = (value) => {
-    refills.value = value;
-};
-
-const saveActivitySettings = () => {
-    const settings = {
-        roaringMonth: roaringMonth.value,
-        lazyModo: lazyModo.value,
-        weeklyActivity: weeklyActivity.value,
-        refills: refills.value,
-        activity: activity.value,
-        cost: cost.value
-    };
-    emit('saveActivitySettings', settings);
-    closeOverlay();
-};
-
-const closeOverlay = () => {
-    emit('closeOverlay');
-};
 </script>
 
 <template>
@@ -80,7 +81,8 @@ const closeOverlay = () => {
             </button>
 
             <p class="text-white text-center text-lg font-bold">{{ $t('activity-settings') }}</p>
-            <p class="text-info text-center pb-5">{{ $t('current-per-day') }} <span class="font-bold">{{ activity }}</span></p>
+            <p class="text-info text-center pb-5">{{ $t('current-per-day') }} <span class="font-bold">{{ activity }}</span>
+            </p>
 
             <!-- Selectors -->
             <div class="grid grid-cols-1 space-y-3">

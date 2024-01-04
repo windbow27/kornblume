@@ -1,9 +1,5 @@
 import { useDataStore } from '../stores/dataStore'
 
-export function getActivityImagePathByStage (stage: string) {
-    return `images/items/common/${stage === 'Oneiric Shop' ? 1 : 0}.png`
-}
-
 const items = useDataStore().items;
 
 const getId = (material) => {
@@ -25,3 +21,7 @@ export const getBorderImagePathByMatl = (material) => {
     const rarity = getRarity(material);
     return rarity ? `images/items/border/${rarity}.png` : '';
 };
+
+export function getActivityImagePathByStage (stage: string) {
+    return `images/items/common/${stage === 'Oneiric Shop' ? 1 : 0}.png`
+}

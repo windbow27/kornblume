@@ -10,17 +10,17 @@ const props = defineProps({
     }
 });
 
-const normalizedMaterial = computed(() => {
-    const result = normalizeDisplayMaterial(props.material);
-    return result;
-});
-
 const checkQuantity = () => {
     if (props.material.Quantity > 99 || useWarehouseStore().getItemQuantity(props.material.Material) > 99) {
         return true;
     }
     return false;
 };
+
+const normalizedMaterial = computed(() => {
+    const result = normalizeDisplayMaterial(props.material);
+    return result;
+});
 
 </script>
 

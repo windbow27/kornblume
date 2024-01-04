@@ -1,10 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { usePlannerSettingsStore } from '../../stores/plannerSettingsStore';
 import ArcanistIcon from './ArcanistIcon.vue';
-import { useI18n } from 'vue-i18n';
-
-const { locale, t } = useI18n()
 
 const props = defineProps({
     arcanists: {
@@ -24,6 +22,9 @@ const emit = defineEmits({
     }
 });
 
+const { locale, t } = useI18n()
+const searchQuery = ref('');
+
 const selectArcanist = (arc) => {
     emit('selectArcanist', arc);
     closeOverlay();
@@ -32,8 +33,6 @@ const selectArcanist = (arc) => {
 const closeOverlay = () => {
     emit('closeOverlay');
 };
-
-const searchQuery = ref('');
 
 const filteredArcanists = computed(() => {
     // Filter arcanists based on the searchQuery

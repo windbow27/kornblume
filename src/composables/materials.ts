@@ -1,5 +1,12 @@
 import { getItemImagePathByMatl, getBorderImagePathByMatl } from './images'
 
+export interface INormalizedMaterial {
+    material: string,
+    quantity: string,
+    itemImagePath: string,
+    borderImagePath: string,
+}
+
 export function formatQuantity (quantity: number): string {
     if (quantity >= 1000000) {
         return `${(quantity / 1000000).toFixed(1)}m`;
@@ -8,13 +15,6 @@ export function formatQuantity (quantity: number): string {
         return `${(quantity / 1000).toFixed(0)}k`;
     }
     return quantity.toString();
-}
-
-export interface INormalizedMaterial {
-    material: string,
-    quantity: string,
-    itemImagePath: string,
-    borderImagePath: string,
 }
 
 export function normalizeDisplayMaterial (unprocessedMaterial): INormalizedMaterial {

@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import { useDataStore } from '@/stores/dataStore';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
 import TrackerArcanistIcon from './TrackerArcanistIcon.vue';
 import TrackerSpecialIcon from './TrackerSpecialIcon.vue';
-import { useDataStore } from '@/stores/dataStore';
-
-const arcanists = useDataStore().arcanists;
 
 interface Pull {
     PullNumber: number;
@@ -34,6 +32,37 @@ const props = defineProps({
     }
 });
 
+const arcanists = useDataStore().arcanists;
+const activeRarities = ref<number[]>([5, 6]);
+
+const formatDate = (timestamp: number): string => {
+    const date: Date = new Date(timestamp);
+    const formattedDate: string = date.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+    const formattedTime: string = date.toLocaleTimeString('en-GB', {
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    return `${formattedDate} ${formattedTime}`;
+}
+
+const selectedRarities = (rarity: number) => {
+    if (activeRarities.value.includes(rarity)) {
+        activeRarities.value = activeRarities.value.filter(r => r !== rarity);
+    } else {
+        activeRarities.value.push(rarity);
+    }
+}
+
+const filteredRarityPulls = computed(() => {
+    // console.log(filteredRarityPulls.value);
+    return props.pulls.filter(pull => activeRarities.value.includes(pull.Rarity));
+});
+
 const sixStarsPullsList = computed(() => {
     const sixStarPulls = (props.pulls)
         .filter(pull => pull.Rarity === 6)
@@ -51,39 +80,10 @@ const summonSinceLastSixStar = computed(() => {
     }
 });
 
-const formatDate = (timestamp: number): string => {
-    const date: Date = new Date(timestamp);
-    const formattedDate: string = date.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
-    const formattedTime: string = date.toLocaleTimeString('en-GB', {
-        hour12: false,
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-    return `${formattedDate} ${formattedTime}`;
-}
-
-const activeRarities = ref<number[]>([5, 6]);
-
-const selectedRarities = (rarity: number) => {
-    if (activeRarities.value.includes(rarity)) {
-        activeRarities.value = activeRarities.value.filter(r => r !== rarity);
-    } else {
-        activeRarities.value.push(rarity);
-    }
-}
-
-const filteredRarityPulls = computed(() => {
-    // console.log(filteredRarityPulls.value);
-    return props.pulls.filter(pull => activeRarities.value.includes(pull.Rarity));
-});
-
 defineExpose({
     formatDate
 })
+
 </script>
 
 <template>
@@ -207,7 +207,7 @@ defineExpose({
                 <div class="flex items-center space-x-5">
                     <div class="text-white">{{ pull.PullNumber }} </div>
                     <ArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)"
-                        :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>"/>
+                        :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>" />
                     <SpecialIcon v-else :name="pull.ArcanistName" />
                     <div class="pullArcanistName ml-2" :class="{
                         'text-orange-300': pull.Rarity === 6,

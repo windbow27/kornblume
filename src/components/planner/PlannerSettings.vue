@@ -12,7 +12,6 @@ const props = defineProps({
 const emit = defineEmits<{(e: 'closeOverlay' | 'saveSettings', updatedSettings?: IPlannerSettings): void }>()
 
 const enabledUnreleasedStages = ref(props.settings.enabledUnreleasedStages);
-
 const enableGreedyMethod = ref(props.settings.enableGreedyMethod);
 
 const closeOverlay = () => {

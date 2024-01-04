@@ -1,33 +1,16 @@
 <script lang="ts" setup name="Navbar">
 import { onMounted, ref, watchEffect } from 'vue';
-import Popper from 'vue3-popper';
 import { setLocale, supportedLangCodes, langDropdownOptions } from '@/utils/i18n';
+import Popper from 'vue3-popper';
 
 const isSmallScreen = ref(window.innerWidth <= 768);
 const showDropdown = ref(false);
+const currentLanguage = ref('English');
+const currentFlag = ref('fi fi-us');
 
 const toggleDropdown = () => {
     showDropdown.value = !showDropdown.value;
 };
-
-watchEffect(() => {
-    const handleResize = () => {
-        isSmallScreen.value = window.innerWidth <= 768;
-        if (!isSmallScreen.value) {
-            showDropdown.value = false;
-        }
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
-
-    return () => {
-        window.removeEventListener('resize', handleResize);
-    };
-});
-
-const currentLanguage = ref('English');
-const currentFlag = ref('fi fi-us');
 
 const handleChangeLanguage = ({
     locale,
@@ -56,6 +39,22 @@ onMounted(() => {
     }
 })
 
+watchEffect(() => {
+    const handleResize = () => {
+        isSmallScreen.value = window.innerWidth <= 768;
+        if (!isSmallScreen.value) {
+            showDropdown.value = false;
+        }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial check
+
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+});
+
 </script>
 
 <template>
@@ -80,12 +79,16 @@ onMounted(() => {
         </button>
         <template #content>
           <div class="grid grid-cols-2">
-            <p v-for="option in langDropdownOptions" :key="option.locale" class="btn btn-ghost" @click="handleChangeLanguage(option)">
-              <span :class="option.icon"></span>{{ option.text }}</p>
+            <p v-for="option in langDropdownOptions" :key="option.locale" class="btn btn-ghost"
+              @click="handleChangeLanguage(option)">
+              <span :class="option.icon"></span>{{ option.text }}
+            </p>
           </div>
           <div class="flex justify-center pt-2">
             <a href="https://github.com/windbow27/Kornblume/blob/main/lang/README.md">
-              <p class="btn btn-sm btn-outline btn-ghost hover:border-info hover:bg-transparent hover:text-info text-white"> {{ $t('help-us-translate') }} </p>
+              <p
+                class="btn btn-sm btn-outline btn-ghost hover:border-info hover:bg-transparent hover:text-info text-white">
+                {{ $t('help-us-translate') }} </p>
             </a>
           </div>
         </template>

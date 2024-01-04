@@ -2,8 +2,8 @@
 import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
 import { GreyAlgorithm, Image } from 'image-js';
 import { useDataStore } from '@/stores/dataStore';
-import Tesseract, { createWorker } from 'tesseract.js';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
+import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse from 'fuse.js';
 import TrackerBoard from '../components/tracker/TrackerBoard.vue';
 
@@ -42,6 +42,26 @@ const specialNames = [
     'The Golden Thread II',
     'The Golden Thread I'
 ]
+
+const triggerFileInput = () => {
+    // Trigger the file input programmatically
+    (fileInput as Ref<HTMLElement | null>).value?.click()
+}
+
+const isEqualPull = (pull1, pull2) => {
+    return pull1.ArcanistName === pull2.ArcanistName &&
+        pull1.BannerType === pull2.BannerType &&
+        pull1.Rarity === pull2.Rarity;
+}
+
+const isEqualPulls = (pulls1, pulls2) => {
+    return JSON.stringify(pulls1) === JSON.stringify(pulls2);
+}
+
+const resetTracker = () => {
+    usePullsRecordStore().reset()
+    window.location.reload()
+}
 
 const sortedPulls = computed(() => {
     return pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
@@ -299,37 +319,17 @@ const ocr: clickHandler = (payload: Event): void => {
     }
 }
 
-const triggerFileInput = () => {
-    // Trigger the file input programmatically
-    (fileInput as Ref<HTMLElement | null>).value?.click()
-}
-
-const isEqualPull = (pull1, pull2) => {
-    return pull1.ArcanistName === pull2.ArcanistName &&
-        pull1.BannerType === pull2.BannerType &&
-        pull1.Rarity === pull2.Rarity;
-}
-
-const isEqualPulls = (pulls1, pulls2) => {
-    return JSON.stringify(pulls1) === JSON.stringify(pulls2);
-}
-
-watchEffect(() => {
-    if (pulls.value.length > 0) {
-        usePullsRecordStore().updatePullsRecord(pulls.value)
-    }
-});
-
 onMounted(() => {
     if (usePullsRecordStore().data.length > 0) {
         pulls.value = [...usePullsRecordStore().data]
     }
 })
 
-const resetTracker = () => {
-    usePullsRecordStore().reset()
-    window.location.reload()
-}
+watchEffect(() => {
+    if (pulls.value.length > 0) {
+        usePullsRecordStore().updatePullsRecord(pulls.value)
+    }
+});
 
 </script>
 

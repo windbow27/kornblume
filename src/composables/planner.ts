@@ -10,18 +10,6 @@ import { useGlobalStore } from '../stores/global';
 const items = useDataStore().items;
 const formulas = useDataStore().formulas;
 
-export function getDrops () {
-    const {
-        enableGreedyMethod,
-        enabledUnreleasedStages
-    } = usePlannerSettingsStore().settings;
-    const dataStore = useDataStore();
-    if (enableGreedyMethod) {
-        return dataStore[enabledUnreleasedStages ? 'stages1_4_greedy' : 'stages_greedy'] || {}
-    }
-    return dataStore[enabledUnreleasedStages ? 'stages1_4' : 'stages'] || {}
-}
-
 interface ICard {
     stage: string,
     runs: number,
@@ -29,6 +17,11 @@ interface ICard {
     days: number,
     materials: IMaterialUnit[],
     activityImagePath: string,
+}
+
+interface IPlanCard {
+    id: number,
+    cards: ICard[]
 }
 
 function calculateOneiric (matlInfo) {
@@ -155,11 +148,39 @@ function sortHardStage (cards: ICard[]) {
     });
 }
 
-interface IPlanCard {
-    id: number,
-    cards: ICard[]
+function updateCraftingMaterialsForGlobalStore (stages) {
+    const neededMaterialsMapping = { ...useGlobalStore().neededRawMaterialsMapping };
+    stages.filter(([stageName]) => stageName.startsWith('Wilderness Wishing Spring'))
+        .forEach(([craftingName, craftingCount]) => {
+            const matlName = craftingName.split('-')[1].trim();
+            const formula = formulas.find((matl) => matl.Name === matlName)
+            if (formula?.Material.length) {
+                formula?.Material.forEach((matlName, matlIndex) => {
+                    const matlQuant = formula?.Quantity[matlIndex];
+                    if (neededMaterialsMapping[matlName]) {
+                        neededMaterialsMapping[matlName] += matlQuant * craftingCount
+                    } else {
+                        neededMaterialsMapping[matlName] = matlQuant * craftingCount
+                    }
+                })
+            }
+        })
+    useGlobalStore().updateNeededMaterialsMapping(neededMaterialsMapping)
 }
-export interface IPlanCards extends Array<IPlanCard>{}
+
+export interface IPlanCards extends Array<IPlanCard> { }
+
+export function getDrops () {
+    const {
+        enableGreedyMethod,
+        enabledUnreleasedStages
+    } = usePlannerSettingsStore().settings;
+    const dataStore = useDataStore();
+    if (enableGreedyMethod) {
+        return dataStore[enabledUnreleasedStages ? 'stages1_4_greedy' : 'stages_greedy'] || {}
+    }
+    return dataStore[enabledUnreleasedStages ? 'stages1_4' : 'stages'] || {}
+}
 
 export function getPlan (materials: IMaterialUnit[]): IPlanCards {
     const generatedCards: ICard[] = [];
@@ -251,24 +272,4 @@ export function getTotalActivityAndDays (cardLayers) {
         });
     });
     return [totalActivity, totalDays.toFixed(0)];
-}
-
-function updateCraftingMaterialsForGlobalStore (stages) {
-    const neededMaterialsMapping = { ...useGlobalStore().neededRawMaterialsMapping };
-    stages.filter(([stageName]) => stageName.startsWith('Wilderness Wishing Spring'))
-        .forEach(([craftingName, craftingCount]) => {
-            const matlName = craftingName.split('-')[1].trim();
-            const formula = formulas.find((matl) => matl.Name === matlName)
-            if (formula?.Material.length) {
-                formula?.Material.forEach((matlName, matlIndex) => {
-                    const matlQuant = formula?.Quantity[matlIndex];
-                    if (neededMaterialsMapping[matlName]) {
-                        neededMaterialsMapping[matlName] += matlQuant * craftingCount
-                    } else {
-                        neededMaterialsMapping[matlName] = matlQuant * craftingCount
-                    }
-                })
-            }
-        })
-    useGlobalStore().updateNeededMaterialsMapping(neededMaterialsMapping)
 }

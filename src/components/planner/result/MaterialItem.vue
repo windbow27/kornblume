@@ -4,10 +4,10 @@ import { normalizeDisplayMaterial } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
+import { storeToRefs } from 'pinia'
 import WarehouseItemEditor from './WarehouseItemEditor.vue';
 import MaterialCraftingRecipe from './MaterialCraftingRecipe.vue'
 import Popper from 'vue3-popper';
-import { storeToRefs } from 'pinia'
 
 const props = defineProps({
     material: {
@@ -21,15 +21,14 @@ const props = defineProps({
 });
 
 const quantity = ref(props.material.Quantity);
+const items = useDataStore().items;
+const warehouseStore = useWarehouseStore()
+const { data: warehouseData } = storeToRefs(warehouseStore)
 
 const normalizedMaterial = computed(() => {
     const result = normalizeDisplayMaterial(props.material);
     return result;
 });
-
-const items = useDataStore().items;
-const warehouseStore = useWarehouseStore()
-const { data: warehouseData } = storeToRefs(warehouseStore)
 
 const materialItem = computed(() => {
     return items.find(item => item.Name === props.material.Material)
@@ -108,9 +107,8 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
 </script>
 
 <template>
-    <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover"
-        @close:popper="closePopover">
-        <div class="cursor-pointer" :class="isReachGoal ? 'opacity-40': ''">
+    <Popper arrow placement="top" offsetDistance="2" @open:popper="openPopover" @close:popper="closePopover">
+        <div class="cursor-pointer" :class="isReachGoal ? 'opacity-40' : ''">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
                 <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
@@ -133,7 +131,8 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                     <!-- only consider warehouseQuantityShift for crafting -->
                     <i18n-t keypath="numbers-expected-to-be-crafted">
                         <template #numbers>
-                            <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift, 0)}}</span>
+                            <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift,
+                                0) }}</span>
                         </template>
                     </i18n-t>
                 </p>
@@ -146,7 +145,8 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                     </i18n-t>
                 </p>
 
-                <p v-if="(isLowerBuildMaterial || props.material.Material === 'Sharpodonty') && neededQuantityForCraftingHigherTier > 0" class="text-center text-slate-300 text-sm opacity-80">
+                <p v-if="(isLowerBuildMaterial || props.material.Material === 'Sharpodonty') && neededQuantityForCraftingHigherTier > 0"
+                    class="text-center text-slate-300 text-sm opacity-80">
                     <i18n-t keypath="with-numbers-used-in-crafting">
                         <template #numbers>
                             <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>

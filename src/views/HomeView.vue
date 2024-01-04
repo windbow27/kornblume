@@ -6,9 +6,14 @@ import HomeResources from '../components/home/HomeResources.vue'
 
 const isChangeLogs = ref(false)
 const isResources = ref(false)
-
 const changelogsRef = ref(null)
 const resourcesRef = ref(null)
+const carouselItems = [
+    {
+        link: 'https://www.pixiv.net/en/artworks/110046834',
+        imageUrl: 'https://pbs.twimg.com/media/F1XIYQXakAAgrt4?format=jpg&name=4096x4096'
+    }
+]
 
 const openChangelogs = () => {
     isChangeLogs.value = true
@@ -25,13 +30,6 @@ const closeChangelogs = () => {
 const closeResources = () => {
     isResources.value = false
 }
-
-const carouselItems = [
-    {
-        link: 'https://www.pixiv.net/en/artworks/110046834',
-        imageUrl: 'https://pbs.twimg.com/media/F1XIYQXakAAgrt4?format=jpg&name=4096x4096'
-    }
-]
 
 onClickOutside(changelogsRef, closeChangelogs)
 onClickOutside(resourcesRef, closeResources)

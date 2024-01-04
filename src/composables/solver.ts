@@ -9,6 +9,20 @@ import { useGlobalStore } from '../stores/global';
 
 const formulas = useDataStore().formulas;
 
+interface ICard {
+    stage: string,
+    runs: number,
+    activity: number,
+    days: number,
+    materials: IMaterialUnit[],
+    activityImagePath: string,
+}
+
+function getDaysFromActivity (activity): number {
+    const dailyActivity = useActivityStore().settings.activity;
+    return Number((activity / dailyActivity).toFixed(1));
+}
+
 export function getSolve (materials) {
     const drops = getDrops();
     const warehouse = useWarehouseStore().data;
@@ -38,7 +52,7 @@ export function getSolve (materials) {
     // prepare craft mappings
     const craftMapping = {};
     // restrict crafting materials number to integers
-    const integers : string[] = [];
+    const integers: string[] = [];
 
     for (const { Name: name, Material: matl, Quantity: quantity } of formulas) {
         materialConstraints[name] = { min: 0 };
@@ -120,20 +134,6 @@ export function getSolve (materials) {
         console.log('variables: ', variables)
     }
     return solver
-}
-
-interface ICard {
-    stage: string,
-    runs: number,
-    activity: number,
-    days: number,
-    materials: IMaterialUnit[],
-    activityImagePath: string,
-}
-
-function getDaysFromActivity (activity): number {
-    const dailyActivity = useActivityStore().settings.activity;
-    return Number((activity / dailyActivity).toFixed(1));
 }
 
 export function processSharpoAndDust (generatedCards: ICard[]) {

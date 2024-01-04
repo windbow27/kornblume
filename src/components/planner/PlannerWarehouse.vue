@@ -1,15 +1,14 @@
 <script setup lang="ts" name="PlannerWarehouse">
 import { ref, onMounted, computed } from 'vue';
 import { useWarehouseStore } from '../../stores/warehouseStore';
-import WarehouseItem from './warehouse/WarehouseItem.vue';
-import EventShopButton from './warehouse/EventShopButton.vue'
 import { initializeWarehouse, checkWarehouse, sortWarehouseMaterials } from '../../composables/warehouse';
 import { useGlobalStore } from '../../stores/global';
-
-const dialog = ref<HTMLDialogElement>()
+import WarehouseItem from './warehouse/WarehouseItem.vue';
+import EventShopButton from './warehouse/EventShopButton.vue'
 
 const emit = defineEmits<{(e: 'closeOverlay'): void }>()
 
+const dialog = ref<HTMLDialogElement>()
 const checkedCategories = ref({
     'Base Item': true,
     'Build Material': true,
@@ -26,30 +25,13 @@ const setupWarehouse = () => {
     sortWarehouseMaterials(useWarehouseStore().data);
 }
 
-onMounted(() => {
-    useGlobalStore().setIsEditingWarehouse(true);
-    setupWarehouse();
-});
-
-const updateMaterialQuantity = (materialName, materialQuantity) => {
+const updateMaterialQuantity = (materialName: string, materialQuantity: number) => {
     useWarehouseStore().updateItem(materialName, Number(materialQuantity));
 };
 
-const filterWarehouse = (category) => {
+const filterWarehouse = (category: string | number) => {
     checkedCategories.value[category] = !checkedCategories.value[category];
 };
-
-const filteredWarehouse = computed(() => {
-    const anyChecked = Object.values(checkedCategories.value).some((value) => value);
-
-    if (anyChecked) {
-        return useWarehouseStore().data.filter(
-            (material) => checkedCategories.value[material.Category]
-        );
-    } else {
-        return useWarehouseStore().data;
-    }
-});
 
 const resetCheckedCategories = () => {
     // if all box are checked, reset all
@@ -74,6 +56,22 @@ const showDialog = () => dialog.value?.showModal()
 
 const closeDialog = () => dialog.value?.close()
 
+const filteredWarehouse = computed(() => {
+    const anyChecked = Object.values(checkedCategories.value).some((value) => value);
+
+    if (anyChecked) {
+        return useWarehouseStore().data.filter(
+            (material) => checkedCategories.value[material.Category]
+        );
+    } else {
+        return useWarehouseStore().data;
+    }
+});
+
+onMounted(() => {
+    useGlobalStore().setIsEditingWarehouse(true);
+    setupWarehouse();
+});
 </script>
 
 <template>
@@ -130,14 +128,19 @@ const closeDialog = () => dialog.value?.close()
               <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
               </form>
-              <p class="py-4 text-base text-white text-center">{{ $t('you-can-quickly-add-materials-from-jukeboxes-and-events-here') }}</p>
+              <p class="py-4 text-base text-white text-center">{{
+                $t('you-can-quickly-add-materials-from-jukeboxes-and-events-here') }}</p>
               <div class="grid grid-cols-2 gap-2 p-2">
                 <EventShopButton version="jb1" :text="$t('jukebox-normal')" :type="$t('jukebox')" />
                 <EventShopButton version="jb2" :text="$t('jukebox-collector')" :type="$t('jukebox')" />
-                <EventShopButton version="1.21" :text="$t('event-shop-button', {version: '1.2', number: '1'})" :type="$t('event-shop')" />
-                <EventShopButton version="1.22" :text="$t('event-shop-button', {version: '1.2', number: '2'})" :type="$t('event-shop')" />
-                <EventShopButton version="1.31" :text="$t('event-shop-button', {version: '1.3', number: '1'})" :type="$t('event-shop')" />
-                <EventShopButton version="1.32" :text="$t('event-shop-button', {version: '1.3', number: '2'})" :type="$t('event-shop')" />
+                <EventShopButton version="1.21" :text="$t('event-shop-button', { version: '1.2', number: '1' })"
+                  :type="$t('event-shop')" />
+                <EventShopButton version="1.22" :text="$t('event-shop-button', { version: '1.2', number: '2' })"
+                  :type="$t('event-shop')" />
+                <EventShopButton version="1.31" :text="$t('event-shop-button', { version: '1.3', number: '1' })"
+                  :type="$t('event-shop')" />
+                <EventShopButton version="1.32" :text="$t('event-shop-button', { version: '1.3', number: '2' })"
+                  :type="$t('event-shop')" />
               </div>
               <form method="dialog" class="flex justify-center">
                 <button class="btn btn-sm btn-success text-black">{{ $t('close') }}</button>

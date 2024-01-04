@@ -1,10 +1,10 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
 import { useDataStore } from '../../stores/dataStore';
+import { levelUpResources } from '../../constants';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
 import SelectList from '../common/SelectList.vue';
-import { levelUpResources } from '../../constants';
 
 const props = defineProps({
     selectedArcanist: {
@@ -49,98 +49,6 @@ const selectedGoalInsight = ref(props.selectedArcanist.goalInsight);
 const selectedGoalLevel = ref(props.selectedArcanist.goalLevel);
 const selectedGoalResonance = ref(props.selectedArcanist.goalResonance);
 const selectedVisible = ref(props.selectedArcanist.isVisible);
-
-const editingArcanist = computed(() => ({
-    Id: selectedArcanist.value.Id,
-    isVisible: selectedVisible.value,
-    currentInsight: selectedCurrentInsight.value,
-    currentLevel: selectedCurrentLevel.value,
-    goalInsight: selectedGoalInsight.value,
-    goalLevel: selectedGoalLevel.value,
-    currentResonance: selectedCurrentResonance.value,
-    goalResonance: selectedGoalResonance.value
-}));
-
-const rarity = computed(() => {
-    return selectedArcanist.value.Rarity;
-});
-
-const currentInsightOptions = computed(() => {
-    return [0, ...selectedArcanist.value.Insight.map((insight) => insight.Id)];
-});
-
-const goalInsightOptions = computed(() => {
-    return currentInsightOptions.value.filter(insight => insight >= selectedCurrentInsight.value);
-});
-
-const currentLevelOptions = computed(() => {
-    // if (selectedCurrentInsight.value == null) return [];
-    const calc = calculations.find((calc) =>
-        calc.Rarity.includes(selectedArcanist.value.Rarity) &&
-        calc.Insight === selectedCurrentInsight.value
-    );
-
-    if (!calc) return [];
-
-    return [1, ...Object.keys(calc.Levels).map(Number).filter(level => level % 5 === 0)];
-});
-
-const goalLevelOptions = computed(() => {
-    if (selectedGoalInsight.value === null) return [];
-    const calc = calculations.find((calc) =>
-        calc.Rarity.includes(selectedArcanist.value.Rarity) &&
-        calc.Insight === selectedGoalInsight.value
-    );
-
-    if (!calc) return [];
-    // console.log(calc);
-
-    if (selectedGoalInsight.value === selectedCurrentInsight.value) {
-        return [1, ...Object.keys(calc.Levels).map(Number).filter(level => level % 5 === 0)].filter(level => level >= selectedCurrentLevel.value);
-    }
-
-    return [1, ...Object.keys(calc.Levels).map(Number).filter(level => level % 5 === 0)];
-});
-
-const currentResonanceOptions = computed(() => {
-    if (selectedCurrentInsight.value === null) return [];
-    if (selectedCurrentInsight.value === 0) {
-        // FIXME:
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedCurrentResonance.value = 0;
-        return [0];
-    }
-    const insightValue = Number(selectedCurrentInsight.value);
-    if (insightValue === 0) {
-        // FIXME:
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedCurrentResonance.value = null;
-        return null;
-    }
-    const upperLimit = insightValue * 5;
-    return Array.from({ length: upperLimit }, (_, index) => Number(index + 1));
-});
-
-const goalResonanceOptions = computed(() => {
-    if (selectedGoalInsight.value === null) return [];
-    if (selectedGoalInsight.value === 0) {
-        // FIXME:
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedGoalResonance.value = 0;
-        return [0];
-    }
-    const insightValue = Number(selectedGoalInsight.value);
-    const currentResonance = Number(selectedCurrentResonance.value);
-    if (insightValue === 0) {
-        // FIXME:
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedGoalResonance.value = null;
-        return null;
-    }
-    const lowerLimit = currentResonance || 1; // Start from selectedCurrentResonance or 1 if not set
-    const upperLimit = insightValue * 5;
-    return Array.from({ length: upperLimit - lowerLimit + 1 }, (_, index) => Number(lowerLimit + index));
-});
 
 const compareLevels = (currentInsightSelect, currentLevelSelect, goalInsightSelect, goalLevelSelect) => {
     if (Number(currentInsightSelect) > Number(goalInsightSelect)) {
@@ -234,6 +142,98 @@ const handleSelected = (option, optionType) => {
     }
 };
 
+const editingArcanist = computed(() => ({
+    Id: selectedArcanist.value.Id,
+    isVisible: selectedVisible.value,
+    currentInsight: selectedCurrentInsight.value,
+    currentLevel: selectedCurrentLevel.value,
+    goalInsight: selectedGoalInsight.value,
+    goalLevel: selectedGoalLevel.value,
+    currentResonance: selectedCurrentResonance.value,
+    goalResonance: selectedGoalResonance.value
+}));
+
+const rarity = computed(() => {
+    return selectedArcanist.value.Rarity;
+});
+
+const currentInsightOptions = computed(() => {
+    return [0, ...selectedArcanist.value.Insight.map((insight) => insight.Id)];
+});
+
+const goalInsightOptions = computed(() => {
+    return currentInsightOptions.value.filter(insight => insight >= selectedCurrentInsight.value);
+});
+
+const currentLevelOptions = computed(() => {
+    // if (selectedCurrentInsight.value == null) return [];
+    const calc = calculations.find((calc) =>
+        calc.Rarity.includes(selectedArcanist.value.Rarity) &&
+        calc.Insight === selectedCurrentInsight.value
+    );
+
+    if (!calc) return [];
+
+    return [1, ...Object.keys(calc.Levels).map(Number).filter(level => level % 5 === 0)];
+});
+
+const goalLevelOptions = computed(() => {
+    if (selectedGoalInsight.value === null) return [];
+    const calc = calculations.find((calc) =>
+        calc.Rarity.includes(selectedArcanist.value.Rarity) &&
+        calc.Insight === selectedGoalInsight.value
+    );
+
+    if (!calc) return [];
+    // console.log(calc);
+
+    if (selectedGoalInsight.value === selectedCurrentInsight.value) {
+        return [1, ...Object.keys(calc.Levels).map(Number).filter(level => level % 5 === 0)].filter(level => level >= selectedCurrentLevel.value);
+    }
+
+    return [1, ...Object.keys(calc.Levels).map(Number).filter(level => level % 5 === 0)];
+});
+
+const currentResonanceOptions = computed(() => {
+    if (selectedCurrentInsight.value === null) return [];
+    if (selectedCurrentInsight.value === 0) {
+        // FIXME:
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        selectedCurrentResonance.value = 0;
+        return [0];
+    }
+    const insightValue = Number(selectedCurrentInsight.value);
+    if (insightValue === 0) {
+        // FIXME:
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        selectedCurrentResonance.value = null;
+        return null;
+    }
+    const upperLimit = insightValue * 5;
+    return Array.from({ length: upperLimit }, (_, index) => Number(index + 1));
+});
+
+const goalResonanceOptions = computed(() => {
+    if (selectedGoalInsight.value === null) return [];
+    if (selectedGoalInsight.value === 0) {
+        // FIXME:
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        selectedGoalResonance.value = 0;
+        return [0];
+    }
+    const insightValue = Number(selectedGoalInsight.value);
+    const currentResonance = Number(selectedCurrentResonance.value);
+    if (insightValue === 0) {
+        // FIXME:
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        selectedGoalResonance.value = null;
+        return null;
+    }
+    const lowerLimit = currentResonance || 1; // Start from selectedCurrentResonance or 1 if not set
+    const upperLimit = insightValue * 5;
+    return Array.from({ length: upperLimit - lowerLimit + 1 }, (_, index) => Number(lowerLimit + index));
+});
+
 watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, selectedGoalInsight, selectedGoalLevel, selectedGoalResonance], () => {
     // Whenever any selectedX changes, update the key to trigger a re-render in all SelectList components
     updateKey.value += 1;
@@ -279,7 +279,8 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                             'text-green-200': rarity === 2
                         }"></i>
                     </label>
-                    <div class="tooltip" :data-tip="$t('remove-arcanist')"><i @click="removeArcanist" class="fas fa-trash-alt text-gray-500"></i></div>
+                    <div class="tooltip" :data-tip="$t('remove-arcanist')"><i @click="removeArcanist"
+                            class="fas fa-trash-alt text-gray-500"></i></div>
                 </div>
                 <div class="ml-auto flex items-center space-x-3">
                     <div class="tooltip" :data-tip="$t('hidden-show')">
@@ -299,7 +300,8 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedCurrentInsight" :selected="selectedCurrentInsight"
                     :label="'Current Insight'" :options="currentInsightOptions" v-on:update:selected="handleSelected" />
-                    <i class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
+                <i
+                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
                 <SelectList :key="updateKey" v-model="selectedCurrentLevel" :selected="selectedCurrentLevel"
                     :label="'Current Level'" :options="currentLevelOptions" v-on:update:selected="handleSelected" />
             </div>
@@ -307,7 +309,8 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedGoalInsight" :selected="selectedGoalInsight"
                     :label="'Goal Insight'" :options="goalInsightOptions" v-on:update:selected="handleSelected" />
-                    <i class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
+                <i
+                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
                 <SelectList :key="updateKey" v-model="selectedGoalLevel" :selected="selectedGoalLevel" :label="'Goal Level'"
                     :options="goalLevelOptions" v-on:update:selected="handleSelected" />
             </div>

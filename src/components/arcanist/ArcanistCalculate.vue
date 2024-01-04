@@ -1,7 +1,7 @@
-<script setup>
+<script setup lang="ts" name="ArcanistCalculate">
 import { computed } from 'vue';
-import ItemList from '../item/ItemList.vue'
 import { useCalculation } from '../../composables/CalculateMaterials';
+import ItemList from '../item/ItemList.vue'
 
 const props = defineProps({
     arcanist: {

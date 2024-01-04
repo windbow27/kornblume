@@ -1,13 +1,16 @@
 <script setup lang="ts" name="ArcanistIcon">
+
 const props = defineProps({
     arcanist: {
         type: Object,
         required: true
     }
 });
-const getArcanistImagePath = (id) => {
+
+const getArcanistImagePath = (id: string) => {
     return `images/arcanists/icon/${id}.png`;
 };
+
 </script>
 
 <template>

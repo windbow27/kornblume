@@ -1,7 +1,6 @@
 <script setup lang="ts" name="PlannerView">
 import { ref, computed, watchEffect } from 'vue'
 import { onClickOutside } from '@vueuse/core'
-
 import { useGlobalStore } from '../stores/global'
 import { usePlannerStore } from '../stores/plannerStore'
 import { useActivityStore } from '../stores/activityStore'
@@ -30,24 +29,6 @@ const listArcanists = ref<IArcanist[]>([])
 const selectedArcanistIds = computed(() =>
     plannerStore.selectedArcanists.map((arcanist) => arcanist.Id)
 )
-
-watchEffect(() => {
-    listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
-        !selectedArcanistIds.value.includes(arcanist.Id) &&
-    (settingsStore.settings.showUnreleasedArcanists ? true : arcanist.IsReleased)
-    )
-
-    listArcanists.value.sort((a: IArcanist, b: IArcanist) => {
-        const rarityComparison = b.Rarity - a.Rarity
-
-        if (rarityComparison !== 0) {
-            return rarityComparison
-        }
-
-        // If rarity is the same, compare by name alphabetically
-        return a.Name.localeCompare(b.Name)
-    })
-})
 
 // TODO: need to add the type definition for these refs
 const selectedArcanist = ref<ISelectedArcanist | null>(null) // Current working arcanist
@@ -166,6 +147,24 @@ const handleSaveSettings = (result) => {
     // console.log(result);
 }
 
+watchEffect(() => {
+    listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
+        !selectedArcanistIds.value.includes(arcanist.Id) &&
+        (settingsStore.settings.showUnreleasedArcanists ? true : arcanist.IsReleased)
+    )
+
+    listArcanists.value.sort((a: IArcanist, b: IArcanist) => {
+        const rarityComparison = b.Rarity - a.Rarity
+
+        if (rarityComparison !== 0) {
+            return rarityComparison
+        }
+
+        // If rarity is the same, compare by name alphabetically
+        return a.Name.localeCompare(b.Name)
+    })
+})
+
 onClickOutside(activityRef, closeActivity)
 onClickOutside(arcanistListRef, closeAddOverlay)
 onClickOutside(plannerEditRef, closeEditOverlay)
@@ -176,82 +175,82 @@ onClickOutside(settingsRef, closeSettings)
 </script>
 
 <template>
-  <div class="responsive-spacer">
-    <!-- Selector -->
-    <div class="flex pb-4">
-      <h2 class="text-2xl text-white font-bold">{{ $t('planner') }}</h2>
-    </div>
-    <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
-
-    <div class="flex justify-between items-center mb-2 mt-2">
-      <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
-          class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('add-arcanist') }}</button>
-      <div class="flex space-x-2">
-        <div class="tooltip" :data-tip="$t('activity-settings')">
-          <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i
-              class="fa-solid fa-bolt"></i></button>
+    <div class="responsive-spacer">
+        <!-- Selector -->
+        <div class="flex pb-4">
+            <h2 class="text-2xl text-white font-bold">{{ $t('planner') }}</h2>
         </div>
-        <div class="tooltip" :data-tip="$t('wilderness-settings')">
-          <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
-              class="fa-solid fa-tree"></i></button>
+        <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
+
+        <div class="flex justify-between items-center mb-2 mt-2">
+            <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
+                    class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('add-arcanist') }}</button>
+            <div class="flex space-x-2">
+                <div class="tooltip" :data-tip="$t('activity-settings')">
+                    <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i
+                            class="fa-solid fa-bolt"></i></button>
+                </div>
+                <div class="tooltip" :data-tip="$t('wilderness-settings')">
+                    <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
+                            class="fa-solid fa-tree"></i></button>
+                </div>
+                <div class="tooltip" :data-tip="$t('manage-warehouse')">
+                    <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
+                            class="fa-solid fa-box-archive"></i></button>
+                </div>
+                <div class="tooltip" :data-tip="$t('settings')">
+                    <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
+                            class="fa-solid fa-gear"></i></button>
+                </div>
+            </div>
         </div>
-        <div class="tooltip" :data-tip="$t('manage-warehouse')">
-          <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
-              class="fa-solid fa-box-archive"></i></button>
+
+        <div class="custom-line"></div>
+
+        <PlannerTotal :totalActivityAndDays="totalActivityAndDays" :wildernessSettings="wildernessStore.settings" />
+
+        <div class="custom-line"></div>
+
+        <!-- Add Arcanist Overlay -->
+        <div v-if="isAddingArcanist" class="overlay">
+            <ArcanistList ref="arcanistListRef" :arcanists="listArcanists" @closeOverlay="closeAddOverlay"
+                @selectArcanist="handleSelectArcanist" />
         </div>
-        <div class="tooltip" :data-tip="$t('settings')">
-          <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
-              class="fa-solid fa-gear"></i></button>
+
+        <!-- Edit Arcanist Overlay -->
+        <div v-if="isEditingArcanist" class="overlay">
+            <PlannerEdit ref="plannerEditRef" v-if="selectedArcanist" :selectedArcanist="selectedArcanist"
+                :selectedArcanists="plannerStore.selectedArcanists" :listArcanists="listArcanists"
+                @closeOverlay="closeEditOverlay" @updateSelectedArcanists="handleUpdateSelectedArcanists"
+                @updateListArcanists="handleUpdateListArcanists" />
         </div>
-      </div>
+
+        <!-- Activity Overlay -->
+        <div v-if="isActivity" class="overlay">
+            <PlannerActivity ref="activityRef" :settings="activityStore.settings" @closeOverlay="closeActivity"
+                @saveActivitySettings="handleSaveActivitySettings" />
+        </div>
+
+        <!-- Wilderness Overlay -->
+        <div v-if="isWilderness" class="overlay">
+            <PlannerWilderness ref="wildernessRef" :settings="wildernessStore.settings" @closeOverlay="closeWilderness"
+                @saveWildernessSettings="handleSaveWildernessSettings" />
+        </div>
+
+        <!-- Warehouse Overlay -->
+        <div v-if="isWarehouse" class="overlay">
+            <PlannerWarehouse ref="warehouseRef" @closeOverlay="closeWarehouse" />
+        </div>
+
+        <!-- Settings Overlay -->
+        <div v-if="isSettings" class="overlay">
+            <PlannerSettings ref="settingsRef" :settings="settingsStore.settings" @closeOverlay="closeSettings"
+                @saveSettings="handleSaveSettings" />
+        </div>
+
+        <!-- Result -->
+        <PlannerResult @update:totalActivityAndDays="handleUpdateTotalActivityAndDays" />
     </div>
-
-    <div class="custom-line"></div>
-
-    <PlannerTotal :totalActivityAndDays="totalActivityAndDays" :wildernessSettings="wildernessStore.settings" />
-
-    <div class="custom-line"></div>
-
-    <!-- Add Arcanist Overlay -->
-    <div v-if="isAddingArcanist" class="overlay">
-      <ArcanistList ref="arcanistListRef" :arcanists="listArcanists" @closeOverlay="closeAddOverlay"
-        @selectArcanist="handleSelectArcanist" />
-    </div>
-
-    <!-- Edit Arcanist Overlay -->
-    <div v-if="isEditingArcanist" class="overlay">
-      <PlannerEdit ref="plannerEditRef" v-if="selectedArcanist" :selectedArcanist="selectedArcanist"
-        :selectedArcanists="plannerStore.selectedArcanists" :listArcanists="listArcanists"
-        @closeOverlay="closeEditOverlay" @updateSelectedArcanists="handleUpdateSelectedArcanists"
-        @updateListArcanists="handleUpdateListArcanists" />
-    </div>
-
-    <!-- Activity Overlay -->
-    <div v-if="isActivity" class="overlay">
-      <PlannerActivity ref="activityRef" :settings="activityStore.settings" @closeOverlay="closeActivity"
-        @saveActivitySettings="handleSaveActivitySettings" />
-    </div>
-
-    <!-- Wilderness Overlay -->
-    <div v-if="isWilderness" class="overlay">
-      <PlannerWilderness ref="wildernessRef" :settings="wildernessStore.settings" @closeOverlay="closeWilderness"
-        @saveWildernessSettings="handleSaveWildernessSettings" />
-    </div>
-
-    <!-- Warehouse Overlay -->
-    <div v-if="isWarehouse" class="overlay">
-      <PlannerWarehouse ref="warehouseRef" @closeOverlay="closeWarehouse" />
-    </div>
-
-    <!-- Settings Overlay -->
-    <div v-if="isSettings" class="overlay">
-      <PlannerSettings ref="settingsRef" :settings="settingsStore.settings" @closeOverlay="closeSettings"
-        @saveSettings="handleSaveSettings" />
-    </div>
-
-    <!-- Result -->
-    <PlannerResult @update:totalActivityAndDays="handleUpdateTotalActivityAndDays" />
-  </div>
 </template>
 
 <style scoped>

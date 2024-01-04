@@ -1,23 +1,23 @@
 import { defineStore } from 'pinia'
 import { IArcanists, IFormulas, IItems, IPsychubes, IShops, IStages } from '@/types';
 
+interface IDataStore {
+    arcanists: IArcanists,
+    stages: IStages | null,
+    stages1_4: IStages | null,
+    stages_greedy: IStages | null,
+    stages1_4_greedy: IStages | null,
+    formulas: IFormulas,
+    items: IItems,
+    psychubes: IPsychubes,
+    shops: IShops,
+}
+
 const getDataSize = data => {
     if (!data) {
         return 0;
     }
     return data.constructor === Object ? Object.keys(data).length : data.length || 0;
-}
-
-interface IDataStore {
-  arcanists: IArcanists,
-  stages: IStages | null,
-  stages1_4: IStages | null,
-  stages_greedy: IStages | null,
-  stages1_4_greedy: IStages | null,
-  formulas: IFormulas,
-  items: IItems,
-  psychubes: IPsychubes,
-  shops: IShops,
 }
 
 export const useDataStore = defineStore('dataStore', {

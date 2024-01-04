@@ -1,4 +1,5 @@
-<script setup>
+<script setup lang="ts" name="TrackerArcanistIcon">
+
 const props = defineProps({
     arcanist: {
         type: Object,
@@ -9,9 +10,11 @@ const props = defineProps({
         required: true
     }
 });
-const getArcanistImagePath = (id) => {
+
+const getArcanistImagePath = (id: number) => {
     return `images/arcanists/icon/${id}.png`;
 };
+
 </script>
 
 <template>
