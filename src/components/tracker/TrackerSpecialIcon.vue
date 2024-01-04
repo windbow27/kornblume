@@ -1,7 +1,7 @@
 <script setup>
 const props = defineProps({
-    arcanist: {
-        type: Object,
+    name: {
+        type: String,
         required: true
     },
     pity: {
@@ -9,17 +9,19 @@ const props = defineProps({
         required: true
     }
 });
-const getArcanistImagePath = (id) => {
-    return `images/arcanists/icon/${id}.png`;
+
+const getImagePath = (name) => {
+    return `images/items/common/${name}.png`;
 };
+
 </script>
 
 <template>
-    <div class="tooltip" :data-tip="$t(props.arcanist.Name)">
+    <div class="tooltip" :data-tip="$t(props.name)">
         <div class="rounded-md">
             <div class="avatar relative flex items-center justify-center">
                 <div class="w-16 rounded">
-                    <img :src="getArcanistImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
+                    <img :src="getImagePath(props.name)" :alt="props.name" />
                 </div>
                 <div class="absolute text-white font-bold w-8 h-6 -right-2 -bottom-2 rounded-md text-sm opacity-90" :class="{
                     'bg-success': props.pity < 40,

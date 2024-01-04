@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
+import SpecialIcon from '../common/SpecialIcon.vue';
 import TrackerArcanistIcon from './TrackerArcanistIcon.vue';
+import TrackerSpecialIcon from './TrackerSpecialIcon.vue';
 import { useDataStore } from '@/stores/dataStore';
 
 const arcanists = useDataStore().arcanists;
@@ -169,9 +171,12 @@ defineExpose({
         </div>
         <div class="flex flex-wrap justify-center space-x-8">
             <!-- Fix the key later -->
-            <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)"
-                :key="`${pull.Timestamp}-${pull.ArcanistName}`">
-                <TrackerArcanistIcon class="py-2" :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
+            <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)" :key="`${pull.Timestamp}-${pull.ArcanistName}`">
+                {{ console.log(pull.ArcanistName) }}
+                <TrackerArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)" class="py-2"
+                    :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
+                    :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
+                <TrackerSpecialIcon v-else class="py-2" :name="pull.ArcanistName"
                     :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
             </div>
         </div>
@@ -201,7 +206,9 @@ defineExpose({
             <div class="col-span-1 sm:col-span-2 flex items-center space-x-5">
                 <div class="flex items-center space-x-5">
                     <div class="text-white">{{ pull.PullNumber }} </div>
-                    <ArcanistIcon :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>" />
+                    <ArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)"
+                        :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>"/>
+                    <SpecialIcon v-else :name="pull.ArcanistName" />
                     <div class="pullArcanistName ml-2" :class="{
                         'text-orange-300': pull.Rarity === 6,
                         'text-yellow-100': pull.Rarity === 5,
@@ -209,6 +216,7 @@ defineExpose({
                         'text-sky-200': pull.Rarity === 3,
                         'text-green-200': pull.Rarity === 2
                     }">{{ $t(pull.ArcanistName) }}</div>
+
                 </div>
             </div>
             <!-- Rarity -->

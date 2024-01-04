@@ -160,5 +160,9 @@
   "oneiric-shop": "Oneiric Shop",
   "summary-limited": "Limited Summary",
   "summary-standard": "Standard Summary",
-  "summary-thread": "Golden Thread Summary"
+  "summary-thread": "Golden Thread Summary",
+  "limited": "Limited",
+  "standard": "Standard",
+  "thread": "Thread",
+  "golden-thread": "The Golden Thread"
 }

@@ -18,11 +18,15 @@ const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
 
-const indexedPulls = computed(() => {
-    const sortedPulls = pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
-    return sortedPulls.map((pull, index) => {
+const sortedPulls = computed(() => {
+    return pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
+});
+
+const threadPulls = computed(() => {
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Invitation From the Water');
+    return filteredPulls.map((pull, index) => {
         return {
-            PullNumber: sortedPulls.length - index,
+            PullNumber: filteredPulls.length - index,
             ArcanistName: pull.ArcanistName,
             Rarity: pull.Rarity,
             BannerType: pull.BannerType,
@@ -31,19 +35,33 @@ const indexedPulls = computed(() => {
     });
 });
 
-const threadPulls = computed(() => {
-    return indexedPulls.value.filter(pull => pull.BannerType === 'Invitation From the Water');
-});
-
 const standardPulls = computed(() => {
-    return indexedPulls.value.filter(pull => pull.BannerType === 'Amongst the Lake');
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Amongst the Lake');
+    return filteredPulls.map((pull, index) => {
+        return {
+            PullNumber: filteredPulls.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
+            Timestamp: pull.Timestamp
+        }
+    });
 });
 
 const limitedPulls = computed(() => {
-    return indexedPulls.value.filter(pull => pull.BannerType !== 'Amongst the Lake' && pull.BannerType !== 'Invitation From the Water');
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType !== 'Amongst the Lake' && pull.BannerType !== 'Invitation From the Water');
+    return filteredPulls.map((pull, index) => {
+        return {
+            PullNumber: filteredPulls.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
+            Timestamp: pull.Timestamp
+        }
+    });
 });
 
-watch(indexedPulls, (newVal) => {
+watch(sortedPulls, (newVal) => {
     const timestampCounts = newVal.reduce((counts, pull) => {
         counts[pull.Timestamp] = (counts[pull.Timestamp] || 0) + 1;
         return counts;
@@ -123,7 +141,17 @@ const ocr: clickHandler = (payload: Event): void => {
         }
         return prev
     }, {});
-    const fuse: Fuse<string> = new Fuse(arcanists.map((arcanist) => arcanist.Name === 'Зима' ? '3uma' : arcanist.Name));
+
+    const specialNames = [
+        'The Golden Thread III',
+        'The Golden Thread II',
+        'The Golden Thread III'
+    ]
+
+    const fuseSearchList = arcanists.map((arcanist) => arcanist.Name === 'Зима' ? '3uma' : arcanist.Name);
+    const fuse: Fuse<string> = new Fuse(fuseSearchList);
+    specialNames.forEach(name => fuse.add(name));
+
     if (fileList) {
         isImporting.value = true;
         (async (): Promise<void> => {
@@ -159,7 +187,12 @@ const ocr: clickHandler = (payload: Event): void => {
                         'Invitation From the Water'
                     ].join('|');
 
-                    const pattern = new RegExp(`(?<ArcanistName>^\\w+\\.?(?:\\s\\w+\\.?)?)(?:\\(?.*\\)?)?\\s+(?<BannerType>${bannerList})\\s+(?<Date>\\d{4}-\\d{2}-\\d{2}\\s*\\d{2}:\\d{2}:\\d{2})`, 'i');
+                    const arcanistNameGroup = /(?<ArcanistName>^\w+\.?(?:\s\w+\.?)*)/;
+                    const parenGroup = /(?:\(?.*\)?)?\s+/;
+                    const bannerGroup = String.raw`(?<BannerType>${bannerList})\s+`;
+                    const dateGroup = /(?<Date>\d{4}-\d{2}-\d{2}\s*\d{2}:\d{2}:\d{2})/;
+
+                    const pattern = new RegExp(arcanistNameGroup.source + parenGroup.source + bannerGroup + dateGroup.source, 'i');
                     const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[] = [];
                     const currentPullsMapping = {}
 
@@ -170,18 +203,19 @@ const ocr: clickHandler = (payload: Event): void => {
                         if (match) {
                             const arcanistName: string = match.groups?.ArcanistName.trim() || '';
                             const fuseResult = fuse.search(arcanistName);
-                            const arcanist = arcanists.at(fuseResult[0].refIndex);
-                            const rarity: number = arcanist ? arcanist.Rarity : 0;
+                            const arcanist = fuseResult[0].refIndex < arcanists.length ? arcanists.at(fuseResult[0].refIndex) : undefined;
+                            const rarity: number = arcanist ? arcanist.Rarity : 6; // Special are always 6*
                             const bannerType: string = match.groups?.BannerType.trim() || '';
                             const timestamp: number = new Date((match.groups?.Date || '').replace(/(\d{4}-\d{2}-\d{2})(\d{2}:\d{2}:\d{2})/, '$1 $2')).getTime();
 
                             // Create an object for each pull
                             const pull = {
-                                ArcanistName: arcanist?.Name || '',
+                                ArcanistName: fuseSearchList[fuseResult[0].refIndex],
                                 Rarity: rarity,
                                 BannerType: bannerType,
                                 Timestamp: timestamp
                             };
+                            console.log(pull)
                             currentPulls.push(pull);
 
                             if (currentPullsMapping[timestamp]) {
@@ -430,11 +464,11 @@ const resetTracker = () => {
 
         <div class="flex justify-center space-x-5 pb-5">
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }" class=' text-white py-1 px-3'
-                @click="selectedBannerType = 'Limited'">Limited</button>
+                @click="selectedBannerType = 'Limited'">{{ $t('limited') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }" class=' text-white py-1 px-3'
-                @click="selectedBannerType = 'Standard'">Standard</button>
+                @click="selectedBannerType = 'Standard'">{{ $t('standard') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }" class=' text-white py-1 px-3'
-                @click="selectedBannerType = 'Thread'">Thread</button>
+                @click="selectedBannerType = 'Thread'">{{ $t('thread') }}</button>
         </div>
 
         <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
