@@ -29,6 +29,10 @@ const props = defineProps({
     text: {
         type: String,
         required: true
+    },
+    winrate: {
+        type: Number,
+        required: false
     }
 });
 
@@ -139,6 +143,15 @@ defineExpose({
                     pulls.filter(p => p.Rarity === 5).length) : 0 }}
             </div>
         </div>
+        <div v-if="props.winrate" class="flex justify-between">
+            <div class="text">
+                <i18n-t keypath='50-50-winrate'>
+                </i18n-t>
+            </div>
+            <div class="number">
+                {{ props.winrate }} %
+            </div>
+        </div>
         <div class="flex justify-between">
             <div class="text">
                 <i18n-t keypath='current-6-star-pity'>
@@ -172,9 +185,8 @@ defineExpose({
         <div class="flex flex-wrap justify-center space-x-8">
             <!-- Fix the key later -->
             <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)" :key="`${pull.Timestamp}-${pull.ArcanistName}`">
-                {{ console.log(pull.ArcanistName) }}
                 <TrackerArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)" class="py-2"
-                    :arcanist="arcanists.find(a => a.Name === pull.ArcanistName)"
+                    :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) ?? {}"
                     :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
                 <TrackerSpecialIcon v-else class="py-2" :name="pull.ArcanistName"
                     :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />

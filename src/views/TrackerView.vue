@@ -37,6 +37,20 @@ const bannerList: string = [
     'Invitation From the Water'
 ].join('|');
 
+const bannerRateUp: string[] = [
+    'Sotheby',
+    'A Knight',
+    'Melania',
+    'Druvis',
+    'Pickles',
+    'Regulus',
+    'Tooth Fairy',
+    'Voyager',
+    'Changeling',
+    'Eternity',
+    'An-an Lee'
+]
+
 const specialNames = [
     'The Golden Thread III',
     'The Golden Thread II',
@@ -104,6 +118,18 @@ const limitedPulls = computed(() => {
             Timestamp: pull.Timestamp
         }
     });
+});
+
+const winrate = computed(() => {
+    const winAttempts = limitedPulls.value.filter(pull => {
+        const bannerIndex = bannerList.split('|').indexOf(pull.BannerType);
+        const rateUpArcanist = bannerRateUp[bannerIndex];
+        // console.log(bannerIndex, rateUpArcanist, pull.ArcanistName)
+        return pull.ArcanistName === rateUpArcanist && pull.Rarity === 6;
+    }).length;
+
+    const totalAttempts = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
+    return Math.round(winAttempts / totalAttempts * 100);
 });
 
 watch(sortedPulls, (newVal) => {
@@ -335,6 +361,7 @@ watchEffect(() => {
 
 <template>
     <!-- <img id="testing" src=""/> -->
+    {{ console.log(winrate) }}
     <div class="responsive-spacer">
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
             {{ $t('summon-tracker') }} <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
@@ -470,7 +497,7 @@ watchEffect(() => {
         </div>
 
         <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
-            :isError="isError" :wrongTimestamps="wrongTimestamps" />
+            :isError="isError" :wrongTimestamps="wrongTimestamps" :winrate="winrate" />
         <TrackerBoard v-if="selectedBannerType === 'Standard'" :text="$t('summary-standard')" :pulls="standardPulls"
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls"
