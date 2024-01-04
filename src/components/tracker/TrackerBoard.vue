@@ -143,7 +143,7 @@ defineExpose({
                     pulls.filter(p => p.Rarity === 5).length) : 0 }}
             </div>
         </div>
-        <div v-if="props.winrate" class="flex justify-between">
+        <div v-if="props.text == $t('summary-limited')" class="flex justify-between">
             <div class="text">
                 <i18n-t keypath='50-50-winrate'>
                 </i18n-t>

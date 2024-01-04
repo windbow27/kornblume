@@ -5,6 +5,7 @@ import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse from 'fuse.js';
+import cannyEdgeDetector from 'canny-edge-detector';
 import TrackerBoard from '../components/tracker/TrackerBoard.vue';
 
 const fileInput = ref(null);
@@ -145,46 +146,63 @@ watch(sortedPulls, (newVal) => {
     isError.value = wrongTimestamps.value.length > 0;
 });
 
-async function crop (file: File): Promise<File> {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        let modifiedFile: File;
-        reader.onload = (event: ProgressEvent<FileReader>) => {
-            const img = document.createElement('img');
-            img.onload = () => {
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                if (!context) { reject(new Error('getContext failed (preprocessImage)')); }
-                /* 2408x1080 was the resolution of the full image that was used to test/initialize */
-                const x_scale = img.width / 2408;
-                const y_scale = img.height / 1080;
-                /* 1250x650 was the resolution of the cropped area for data */
-                canvas.width = 1250 * x_scale;
-                canvas.height = 650 * y_scale;
-                context?.drawImage(img,
-                    800 * x_scale, 320 * y_scale, /* point(800,320) was top left of data crop */
-                    1350 * x_scale, 650 * y_scale, /* point(1350, 650) was bottom right of data crop */
-                    0, 0, canvas.width, canvas.height
-                );
+type cropOptions = {x: number, y: number, width:number, height: number};
+function getCropOptions (image: Image): cropOptions {
+    const edge: Image = cannyEdgeDetector(image);
+    const x_half: number = ~~((image.width - 1) / 2);
+    const y_half: number = ~~((image.height - 1) / 2);
+    const pixels: number[][] = edge.getPixelsArray();
 
-                // const newData: ImageData = binarize(canvas);
-                // if (!newData) { reject(new Error('binarize failed (preprocessImage)')); }
-                // context?.putImageData(newData, 0, 0);
+    /* search for bottom of border, indicates corner y coordinate */
+    let bottomRightY: number = 0;
+    for (let i: number = image.height - 1; i > y_half; i--) {
+        for (let j: number = x_half; j < x_half + (x_half / 2); j++) {
+            if (pixels[j + image.width * i][0] === 255) {
+                bottomRightY = i;
+                break;
+            }
+        }
+        if (bottomRightY > 0) break;
+    }
 
-                canvas.toBlob((blob) => {
-                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
-                    resolve(modifiedFile);
-                }, file.type);
-            };
-            img.src = event.target?.result as string;
-        };
-        reader.readAsDataURL(file);
-    });
+    /* search for right side of border, indicates corner x coordinate */
+    let bottomRightX: number = 0;
+    for (let i: number = image.width - 1; i > x_half; i--) {
+        for (let j: number = y_half; j < y_half + (y_half / 2); j++) {
+            if (pixels[i + image.width * j][0] === 255) {
+                bottomRightX = i;
+                break;
+            }
+        }
+        if (bottomRightX > 0) break;
+    }
+
+    /* original measurements needed to construct ratios */
+    const og_width: number = 2408;
+    const og_height: number = 1080;
+    const imageX_scale: number = image.width / og_width;
+    const imageY_scale: number = image.height / og_height;
+
+    const og_bottomRightX: number = 2069;
+    const og_bottomRightY: number = 977;
+    const og_topLeftX: number = 775;
+    const og_topLeftY: number = 240;
+
+    const target_width: number = og_bottomRightX - og_topLeftX;
+    const target_height: number = og_bottomRightY - og_topLeftY;
+    const targetX_scale: number = bottomRightX / og_bottomRightX;
+    const targetY_scale: number = bottomRightY / og_bottomRightY;
+
+    return {
+        x: og_topLeftX * imageX_scale,
+        y: og_topLeftY * imageY_scale,
+        width: target_width * targetX_scale,
+        height: target_height * targetY_scale
+    };
 }
 
 async function preprocessImage (file: File) {
-    const modifiedFile: File = await crop(file);
-    const imageData = await Image.load(await modifiedFile.arrayBuffer());
+    const imageData = await Image.load(await file.arrayBuffer());
     const blurred = imageData.blurFilter({ radius: 1 });
     const grey = blurred.grey({
         algorithm: 'lightness' as GreyAlgorithm
@@ -197,7 +215,10 @@ async function preprocessImage (file: File) {
     // Apply sharpening filter
     const sharpened = grey.convolution(kernel);
     const gaussian = sharpened.gaussianFilter({ radius: 1 });
-    return gaussian.getCanvas();
+
+    const options: cropOptions = getCropOptions(gaussian);
+    const cropped: Image = gaussian.crop(options);
+    return cropped.getCanvas();
 }
 
 type clickHandler = (payload: Event) => void | undefined;
