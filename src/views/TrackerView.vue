@@ -382,7 +382,6 @@ watchEffect(() => {
 
 <template>
     <!-- <img id="testing" src=""/> -->
-    {{ console.log(winrate) }}
     <div class="responsive-spacer">
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
             {{ $t('summon-tracker') }} <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>

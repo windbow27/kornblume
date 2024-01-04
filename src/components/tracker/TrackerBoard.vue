@@ -149,7 +149,7 @@ defineExpose({
                 </i18n-t>
             </div>
             <div class="number">
-                {{ props.winrate }} %
+                {{ props.winrate ? props.winrate : 0 }} %
             </div>
         </div>
         <div class="flex justify-between">
