@@ -13,10 +13,35 @@ const currentFileIndex = ref(0);
 const totalFiles = ref(0);
 const text = ref('');
 const arcanists = useDataStore().arcanists;
-const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
+const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
+
+const bannerList: string = [
+    // limited
+    'One Gram of Curiosity',
+    'Clang of Sword & Armor',
+    'Pop Is Everything',
+    'Whisper of the Woods',
+    'Thus Spoke the Border Collie',
+    'Swinging Freely',
+    'The Fairies Shining at Night',
+    'Where the Star Alighted',
+    'The Changeling Awaits',
+    'The Ever-flowing',
+    'Midnight Movie Party',
+    // standard
+    'Amongst the Lake',
+    // thread
+    'Invitation From the Water'
+].join('|');
+
+const specialNames = [
+    'The Golden Thread III',
+    'The Golden Thread II',
+    'The Golden Thread I'
+]
 
 const sortedPulls = computed(() => {
     return pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
@@ -142,12 +167,6 @@ const ocr: clickHandler = (payload: Event): void => {
         return prev
     }, {});
 
-    const specialNames = [
-        'The Golden Thread III',
-        'The Golden Thread II',
-        'The Golden Thread III'
-    ]
-
     const fuseSearchList = arcanists.map((arcanist) => arcanist.Name === 'Зима' ? '3uma' : arcanist.Name);
     const fuse: Fuse<string> = new Fuse(fuseSearchList);
     specialNames.forEach(name => fuse.add(name));
@@ -168,25 +187,6 @@ const ocr: clickHandler = (payload: Event): void => {
                     console.log(text.value);
                     // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedFile);
 
-                    const bannerList: string = [
-                        // limited
-                        'One Gram of Curiosity',
-                        'Clang of Sword & Armor',
-                        'Pop Is Everything',
-                        'Whisper of the Woods',
-                        'Thus Spoke the Border Collie',
-                        'Swinging Freely',
-                        'The Fairies Shining at Night',
-                        'Where the Star Alighted',
-                        'The Changeling Awaits',
-                        'The Ever-flowing',
-                        'Midnight Movie Party',
-                        // standard
-                        'Amongst the Lake',
-                        // thread
-                        'Invitation From the Water'
-                    ].join('|');
-
                     const arcanistNameGroup = /(?<ArcanistName>^\w+\.?(?:\s\w+\.?)*)/;
                     const parenGroup = /(?:\(?.*\)?)?\s+/;
                     const bannerGroup = String.raw`(?<BannerType>${bannerList})\s+`;
@@ -203,19 +203,17 @@ const ocr: clickHandler = (payload: Event): void => {
                         if (match) {
                             const arcanistName: string = match.groups?.ArcanistName.trim() || '';
                             const fuseResult = fuse.search(arcanistName);
-                            const arcanist = fuseResult[0].refIndex < arcanists.length ? arcanists.at(fuseResult[0].refIndex) : undefined;
-                            const rarity: number = arcanist ? arcanist.Rarity : 6; // Special are always 6*
-                            const bannerType: string = match.groups?.BannerType.trim() || '';
+                            if (fuseResult.length === 0) { console.log(`could not match fuzzy string ${arcanistName}`); return; }
+                            const isGoldenThread: boolean = fuseResult[0].refIndex - arcanists.length + 1 > 0
                             const timestamp: number = new Date((match.groups?.Date || '').replace(/(\d{4}-\d{2}-\d{2})(\d{2}:\d{2}:\d{2})/, '$1 $2')).getTime();
 
                             // Create an object for each pull
-                            const pull = {
-                                ArcanistName: fuseSearchList[fuseResult[0].refIndex],
-                                Rarity: rarity,
-                                BannerType: bannerType,
+                            const pull: IPull = {
+                                ArcanistName: isGoldenThread ? fuseSearchList[fuseResult[0].refIndex] : arcanists[fuseResult[0].refIndex].Name,
+                                Rarity: isGoldenThread ? 6 : arcanists[fuseResult[0].refIndex].Rarity,
+                                BannerType: match.groups?.BannerType.trim() || '',
                                 Timestamp: timestamp
                             };
-                            console.log(pull)
                             currentPulls.push(pull);
 
                             if (currentPullsMapping[timestamp]) {

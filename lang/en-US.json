@@ -41,7 +41,7 @@
   "once-you-delete-your-data-there-is-no-going-back": "Once you delete your data, there is no going back.",
   "reset-all": "Reset All",
   "please-read-tutorial": "Please read Tutorial",
-  "ocr-import": "OCR Import",
+  "ocr-import": "Import Images",
   "tutorial": "Tutorial",
   "reset": "Reset",
   "video-demonstration-tutorial": "Video demonstration/ tutorial:",
@@ -164,5 +164,5 @@
   "limited": "Limited",
   "standard": "Standard",
   "thread": "Thread",
-  "golden-thread": "The Golden Thread"
+  "translators": "Translators"
 }
