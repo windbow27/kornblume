@@ -160,5 +160,9 @@
   "oneiric-shop": "夢境記述商店",
   "summary-limited": "限時角色徵集",
   "summary-standard": "常駐角色徵集",
-  "summary-thread": "湖的邀約"
+  "summary-thread": "湖的邀約",
+  "limited": "限時",
+  "standard": "常駐",
+  "thread": "湖的邀約",
+  "translators": "翻譯者"
 }
