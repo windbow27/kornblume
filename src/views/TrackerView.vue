@@ -40,7 +40,7 @@ const bannerRateUp: string[] = [
     'Sotheby',
     'A Knight',
     'Melania',
-    'Druvis',
+    'Druvis III',
     'Pickles',
     'Regulus',
     'Tooth Fairy',
