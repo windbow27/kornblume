@@ -17,7 +17,7 @@ const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
 const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
 
-const bannerList: string = [
+const bannerList: string[] = [
     // limited
     'One Gram of Curiosity',
     'Clang of Sword & Armor',
@@ -34,7 +34,7 @@ const bannerList: string = [
     'Amongst the Lake',
     // thread
     'Invitation From the Water'
-].join('|');
+];
 
 const bannerRateUp: string[] = [
     'Sotheby',
@@ -49,6 +49,12 @@ const bannerRateUp: string[] = [
     'Eternity',
     'An-an Lee'
 ]
+
+const specialArcanists: string[] = [
+    'The Golden Thread III',
+    'The Golden Thread II',
+    'The Golden Thread I'
+];
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically
@@ -115,7 +121,7 @@ const limitedPulls = computed(() => {
 
 const winrate = computed(() => {
     const totalRateUps = limitedPulls.value.filter(pull => {
-        const bannerIndex = bannerList.split('|').indexOf(pull.BannerType);
+        const bannerIndex = bannerList.indexOf(pull.BannerType);
         const rateUpArcanist = bannerRateUp[bannerIndex];
         return pull.ArcanistName === rateUpArcanist && pull.Rarity === 6;
     }).length;
@@ -273,31 +279,12 @@ const ocr: clickHandler = (payload: Event): void => {
         return prev
     }, {});
 
-    const bannerList: string[] = [
-        // limited
-        'One Gram of Curiosity',
-        'Clang of Sword & Armor',
-        'Pop Is Everything',
-        'Whisper of the Woods',
-        'Thus Spoke the Border Collie',
-        'Swinging Freely',
-        'The Fairies Shining at Night',
-        'Where the Star Alighted',
-        'The Changeling Awaits',
-        'The Ever-flowing',
-        'Midnight Movie Party',
-        // standard
-        'Amongst the Lake',
-        // thread
-        'Invitation From the Water'
-    ];
     const bannerFuse: Fuse<string> = new Fuse(bannerList);
 
     const arcanistList = arcanists.map((arcanist) => arcanist.Name === 'Зима' ? '3uma' : arcanist.Name);
     const arcanistFuse: Fuse<string> = new Fuse(arcanistList);
-    arcanistFuse.add('The Golden Thread III');
-    arcanistFuse.add('The Golden Thread II');
-    arcanistFuse.add('The Golden Thread I');
+    specialArcanists.forEach((arcanist) => arcanistFuse.add(arcanist));
+
     if (fileList) {
         isImporting.value = true;
         (async (): Promise<void> => {
@@ -453,7 +440,7 @@ watchEffect(() => {
             <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
         </h2>
         <div class="flex justify-between">
-            <div class="flex flex-wrap space-x-3 space-y-2 items-center">
+            <div class="flex flex-wrap space-x-3 gap-y-2 items-center">
                 <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                     multiple />
                 <button @click="triggerFileInput" :disabled="isImporting"
