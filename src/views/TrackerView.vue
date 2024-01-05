@@ -121,11 +121,8 @@ const winrate = computed(() => {
     }).length;
 
     const totalSixStars = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
-    console.log(totalRateUps, totalSixStars);
     const loseAttempts = totalSixStars - totalRateUps;
-    console.log(loseAttempts);
     const winAttempts = totalSixStars - 2 * loseAttempts;
-    console.log(winAttempts, loseAttempts);
     return Math.round(winAttempts / (winAttempts + loseAttempts) * 100);
 });
 
@@ -314,7 +311,7 @@ const ocr: clickHandler = (payload: Event): void => {
                     const modifiedImage: File = await preprocessImage(file);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(modifiedImage);
                     text.value = ret.data.text;
-                    console.log(text.value);
+                    // console.log(text.value);
                     // (document.getElementById('testing') as HTMLImageElement).src = modifiedImage.toDataURL(); /* if modifiedImage is canvas */
                     // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedImage); /* if modifiedImage is file */
 
@@ -452,7 +449,8 @@ watchEffect(() => {
     <!-- <img id="testing" src=""/> -->
     <div class="responsive-spacer">
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            {{ $t('summon-tracker') }} <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
+            {{ $t('summon-tracker') }}
+            <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
         </h2>
         <div class="flex justify-between">
             <div class="space-x-3">
