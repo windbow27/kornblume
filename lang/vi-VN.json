@@ -167,5 +167,10 @@
   "translators": "Dịch viên",
   "50-50-winrate": "Tỷ lệ thắng 50/50",
   "add": "Thêm",
-  "remove": "Bớt"
+  "remove": "Bớt",
+  "1-if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Nếu bạn gặp lỗi, hãy xác định vị trí của lỗi đó bằng cách sử dụng dấu thời gian {missing}.",
+  "2-import-the-error-images-again": "2. Tải lại hình ảnh lỗi.",
+  "3-if-that-doesnt-work-recapture-the-images-and-import-them-again": "3. Nếu cách đó không hiệu quả, hãy chụp lại ảnh và tải lại chúng.",
+  "4-if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "4. Nếu lỗi vẫn tiếp diễn, hãy mở F12 ‣ Bảng điều khiển ‣ Gửi văn bản và hình ảnh qua Báo cáo lỗi hoặc trực tiếp đến {discord}.",
+  "missing-information": "Thiếu thông tin"
 }

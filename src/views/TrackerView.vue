@@ -138,7 +138,7 @@ watch(sortedPulls, (newVal) => {
     isError.value = wrongTimestamps.value.length > 0;
 });
 
-type cropOptions = {x: number, y: number, width: number, height: number};
+type cropOptions = { x: number, y: number, width: number, height: number };
 function getCropOptions (context: CanvasRenderingContext2D | null, width: number, height: number): cropOptions {
     const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
     if (!imageData) {
@@ -526,13 +526,22 @@ watchEffect(() => {
                         </i18n-t>
                     </p>
                     <h3 class="font-bold text-lg pt-4 text-info">{{ $t('bug-reports') }}</h3>
-                    <p class="text-white">•
+                    <p class=" text-white">
                         <i18n-t
-                            keypath='if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow'>
+                            keypath='1-if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps'>
+                            <template #missing>
+                                <span class="text-error">{{ $t('missing-information') }}</span>
+                            </template>
+                        </i18n-t>
+                    </p>
+                    <p class=" text-white">{{ $t('2-import-the-error-images-again') }}</p>
+                    <p class="text-white">{{ $t('3-if-that-doesnt-work-recapture-the-images-and-import-them-again') }}</p>
+                    <p class="text-white">
+                        <i18n-t
+                            keypath='4-if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord'>
                             <template #discord>@windbow</template>
                         </i18n-t>
                     </p>
-
                 </div>
                 <form method="dialog" class="modal-backdrop">
                     <button>close</button>

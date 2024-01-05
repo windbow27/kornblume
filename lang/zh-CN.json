@@ -56,7 +56,7 @@
   "fail-to-read": "无法识别",
   "this-is-an-example-of-a-good-image": "这是一个好的{highlight}的例子。",
   "image": "图片",
-  "bug-reports": "错误报告",
+  "bug-reports": "错误处理",
   "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "如果你遇到错误，请使用丢失数据的时间戳来确定错误的位置，重新截取更清晰的错误图片，进行一些编辑，如裁剪，并再次导入。如果错误仍然存在，请按 F12 ‣ Console ‣ 复制文字与图片并回报，可以通过首页的错误报告或是直接通过 Discord 联繫 {discord}。",
   "processing-file-number-out-of-numbers-please-wait": "正在處理 {current} / {total} 的檔案... 請稍後...",
   "total-summons": "所有抽数",
@@ -154,7 +154,7 @@
   "show-unreleased-arcanists": "是否显示未实装的神祕学家",
   "help-us-translate": "请帮助我们翻译",
   "wrong-timestamps": "遗失该时间戳的数据：{timestamps}",
-  "import-error": "导入图片时发生错误。请确保所有图片清晰，且没有遗失的图片。阅读使用教学以了解更多信息。",
+  "import-error": "导入图片时发生错误, 由于读取失败或丢失用户的图像。阅读使用教学以了解更多信息。",
   "unreleased": "尚未实装",
   "wilderness-wishing-spring": "不休荒原合成",
   "oneiric-shop": "梦境记述商店",
@@ -165,5 +165,12 @@
   "standard": "常驻",
   "thread": "湖的邀约",
   "translators": "翻译者",
-  "50-50-winrate": "6 {star} UP 角色概率"
+  "50-50-winrate": "6 {star} UP 角色概率",
+  "add": "添加",
+  "2-import-the-error-images-again": "2. 重新导入错误图像。",
+  "1-if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. 如果遇到错误，请使用 {missing} 时间戳来查明其位置。",
+  "missing-information": "丢失的信息",
+  "remove": "消除",
+  "3-if-that-doesnt-work-recapture-the-images-and-import-them-again": "3. 如果这不起作用，请重新捕获图像并再次导入。",
+  "4-if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "如果错误仍然存在，请按 F12 ‣ Console ‣ 复制文字与图片并回报，可以通过首页的错误报告或是直接通过 Discord 联繫 {discord}。"
 }
