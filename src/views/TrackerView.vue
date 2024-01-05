@@ -45,7 +45,7 @@ const bannerRateUp: string[] = [
     'Regulus',
     'Tooth Fairy',
     'Voyager',
-    'Changeling',
+    'Jessica',
     'Eternity',
     'An-an Lee'
 ]
@@ -114,15 +114,19 @@ const limitedPulls = computed(() => {
 });
 
 const winrate = computed(() => {
-    const winAttempts = limitedPulls.value.filter(pull => {
+    const totalRateUps = limitedPulls.value.filter(pull => {
         const bannerIndex = bannerList.split('|').indexOf(pull.BannerType);
         const rateUpArcanist = bannerRateUp[bannerIndex];
-        // console.log(bannerIndex, rateUpArcanist, pull.ArcanistName)
         return pull.ArcanistName === rateUpArcanist && pull.Rarity === 6;
     }).length;
 
-    const totalAttempts = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
-    return Math.round(winAttempts / totalAttempts * 100);
+    const totalSixStars = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
+    console.log(totalRateUps, totalSixStars);
+    const loseAttempts = totalSixStars - totalRateUps;
+    console.log(loseAttempts);
+    const winAttempts = totalSixStars - 2 * loseAttempts;
+    console.log(winAttempts, loseAttempts);
+    return Math.round(winAttempts / (winAttempts + loseAttempts) * 100);
 });
 
 watch(sortedPulls, (newVal) => {
@@ -528,17 +532,17 @@ watchEffect(() => {
                     <h3 class="font-bold text-lg pt-4 text-info">{{ $t('bug-reports') }}</h3>
                     <p class=" text-white">
                         <i18n-t
-                            keypath='1-if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps'>
+                            keypath='if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps'>
                             <template #missing>
                                 <span class="text-error">{{ $t('missing-information') }}</span>
                             </template>
                         </i18n-t>
+                        <span class=" text-white ml-1">{{ $t('import-the-error-images-again') }}</span>
                     </p>
-                    <p class=" text-white">{{ $t('2-import-the-error-images-again') }}</p>
-                    <p class="text-white">{{ $t('3-if-that-doesnt-work-recapture-the-images-and-import-them-again') }}</p>
+                    <p class="text-white">{{ $t('if-that-doesnt-work-recapture-the-images-and-import-them-again') }}</p>
                     <p class="text-white">
                         <i18n-t
-                            keypath='4-if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord'>
+                            keypath='if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord'>
                             <template #discord>@windbow</template>
                         </i18n-t>
                     </p>

@@ -99,7 +99,7 @@
   "output": "Tổng số",
   "planner-calculation-explanation": "Giải thích cách tính toán",
   "please-note-that-we-do-not-know-exact-drop-rates-so-we-can-only-show-what-youre-expected-to-get-not-what-you-will-get-exactly-the-hard-stages-section-will-also-show-any-drop-that-you-may-get-rather-than-only-the-items-that-you-need-this-does-not-affect-the-results-of-the-farm-plan": "Xin lưu ý rằng chúng tôi không biết chính xác tỷ lệ rớt, vì vậy chúng tôi chỉ có thể hiển thị những gì bạn {expected} nhận được - chứ không phải chính xác những gì bạn sẽ nhận được. \nPhần {hardstages} cũng sẽ hiển thị {any} vật phẩm nào bạn có thể nhận được - thay vì chỉ hiển thị những vật phẩm bạn cần. \nĐiều này không ảnh hưởng gì đến kết quả của kế hoạch farm.",
-  "please-read-tutorial": "Vui lòng đọc Hướng dẫn",
+  "please-read-tutorial": "Đã có một bản cập nhật lớn. \nVui lòng đặt lại và tải lại hình ảnh.",
   "prioritize-purple-materials-when-farming": "Ưu Tiên Vật phẩm T4 khi farm",
   "processing-file-number-out-of-numbers-please-wait": "Đang xử lý tệp {current} trong tổng số {total}... Vui lòng đợi...",
   "recent-6-star-summons": "Triệu hồi 6 {star} gần đây",
@@ -168,9 +168,9 @@
   "50-50-winrate": "Tỷ lệ thắng 50/50",
   "add": "Thêm",
   "remove": "Bớt",
-  "1-if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Nếu bạn gặp lỗi, hãy xác định vị trí của lỗi đó bằng cách sử dụng dấu thời gian {missing}.",
-  "2-import-the-error-images-again": "2. Tải lại hình ảnh lỗi.",
-  "3-if-that-doesnt-work-recapture-the-images-and-import-them-again": "3. Nếu cách đó không hiệu quả, hãy chụp lại ảnh và tải lại chúng.",
-  "4-if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "4. Nếu lỗi vẫn tiếp diễn, hãy mở F12 ‣ Bảng điều khiển ‣ Gửi văn bản và hình ảnh qua Báo cáo lỗi hoặc trực tiếp đến {discord}.",
-  "missing-information": "Thiếu thông tin"
+  "missing-information": "Thiếu thông tin",
+  "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. Nếu cách đó không hiệu quả, hãy chụp lại ảnh và tải lại chúng.",
+  "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. Nếu lỗi vẫn tiếp diễn, hãy mở F12 ‣ Bảng điều khiển ‣ Gửi văn bản và hình ảnh qua Báo cáo lỗi hoặc trực tiếp đến {discord}.",
+  "import-the-error-images-again": "Tải lại hình ảnh lỗi.",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Nếu bạn gặp lỗi, hãy xác định vị trí của lỗi đó bằng cách sử dụng dấu thời gian {missing}."
 }

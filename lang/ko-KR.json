@@ -40,7 +40,7 @@
   "please-be-certain": "신중하게 사용하길 바랍니다.",
   "once-you-delete-your-data-there-is-no-going-back": "데이터를 한번 리셋하면 다시 되돌릴 수 없습니다.",
   "reset-all": "모두 리셋하기",
-  "please-read-tutorial": "튜토리얼을 읽어주세요.",
+  "please-read-tutorial": "대규모 업데이트가 있었습니다. \n이미지를 재설정하고 다시 가져오세요.",
   "ocr-import": "사진 붙여넣기",
   "tutorial": "튜토리얼",
   "reset": "리셋",
@@ -167,10 +167,10 @@
   "translators": "번역가",
   "50-50-winrate": "6 {star} UP 캐릭터획득확률",
   "add": "추가하다",
-  "2-import-the-error-images-again": "2. 오류가 발생한 이미지를 다시 캡처하.",
-  "1-if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. 버그가 발생하면 {missing} 타임스탬프를 사용하여 해당 위치를 정확히 찾아냅니다.",
   "missing-information": "누락 데이터 ",
   "remove": "제거하다",
-  "3-if-that-doesnt-work-recapture-the-images-and-import-them-again": "3. 그래도 문제가 해결되지 않으면 이미지를 다시 캡처하고 다시 가져오세요.",
-  "4-if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "에러가 지속되면 F12 ‣ 개발자 설정 ‣ 사진과 글을 동봉한 버그 리포트 작성 혹은  {discord}로 연락주세요."
+  "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. 그래도 문제가 해결되지 않으면 이미지를 다시 캡처하고 다시 가져오세요.",
+  "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. 에러가 지속되면 F12 ‣ 개발자 설정 ‣ 사진과 글을 동봉한 버그 리포트 작성 혹은  {discord}로 연락주세요.",
+  "import-the-error-images-again": "오류가 발생한 이미지를 다시 캡처하.",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. 버그가 발생하면 {missing} 타임스탬프를 사용하여 해당 위치를 정확히 찾아냅니다."
 }
