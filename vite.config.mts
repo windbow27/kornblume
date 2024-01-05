@@ -18,8 +18,7 @@ export default defineConfig({
             strictMessage: false
         }),
         vsharp({
-            // Plugin options go here
-            width: 80 // Max width
+            width: 80 // max width
         }),
         eslintPlugin({ cache: false })
     ],
