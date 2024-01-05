@@ -11,15 +11,16 @@
     "deploy": "cd dist && copy index.html 404.html && cd .. && gh-pages -d dist",
     "type-check": "vue-tsc --noEmit --skipLibCheck --allowJs",
     "lint-fix": "eslint --fix --ext .js,.vue src",
-    "test": "vitest"
+    "test": "vitest",
+    "visualize:tree": "vite-bundle-visualizer --template treemap",
+    "visualize:network": "vite-bundle-visualizer --template network",
+    "visualize:sunburst": "vite-bundle-visualizer --template sunburst"
   },
   "dependencies": {
     "@vueuse/core": "^10.7.0",
-    "canny-edge-detector": "^1.0.0",
     "flag-icons": "^7.1.0",
     "fuse.js": "^7.0.0",
     "i18n": "^0.15.1",
-    "image-js": "^0.35.5",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.0",
     "tesseract.js": "^5.0.3",
@@ -47,6 +48,7 @@
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
     "vite": "^5.0.8",
+    "vite-bundle-visualizer": "^1.0.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
     "vitest": "^1.0.4",
