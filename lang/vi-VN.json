@@ -72,7 +72,6 @@
   "hard-stages": "Hard Stages",
   "hidden-show": "Ẩn / Hiển thị",
   "if-images-take-too-long-to-process-or-fail-to-read-5-arcanists-consider-screenshotting-clearer-images": "Nếu hình ảnh {highlight1} để xử lý hoặc {highlight2} 5 {star} Arcanist, hãy chụp lại ảnh sao cho rõ ràng hơn.",
-  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "Nếu bạn gặp lỗi, hãy xác định vị trí của lỗi đó bằng cách sử dụng dấu thời gian Thiếu dữ liệu. \nChụp lại hình ảnh lỗi rõ ràng hơn, thực hiện một số sửa đổi như cắt xén và tải lại. \nNếu lỗi vẫn tiếp diễn, hãy mở F12 ‣ Bảng điều khiển ‣ Gửi văn bản và hình ảnh qua Báo cáo lỗi hoặc trực tiếp tới {discord}.",
   "image": "Hình ảnh",
   "images-must-be-clear-or-the-summon-tracker-may-fail-to-read": "Hình ảnh {highlight} hoặc Theo dõi triệu hồi có thể không đọc được.",
   "insight": "Insight",

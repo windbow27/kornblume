@@ -62,7 +62,6 @@
   "this-is-an-example-of-a-good-image": "다음 {highlight}를 좋은 예시로 참고하세요.",
   "image": "이미지",
   "bug-reports": "버그 처리",
-  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "버그가 발생하면 놓치는 정보 시간스탬프를 활용해서 그 위치를 정확히 파악해주세요. 오류가 발생한 이미지를 다시 캡처하고, 자르기 등을 통해 사진을 편집한 뒤 다시 붙여넣어주세요. 에러가 지속되면 F12 ‣ 개발자 설정 ‣ 사진과 글을 동봉한 버그 리포트 작성 혹은  {discord}로 연락주세요.",
   "processing-file-number-out-of-numbers-please-wait": "파일 처리 중: {current} / {total}... 잠시만 기다려주세요...",
   "total-summons": "전체 모집",
   "6-star-summons": "6 {star} 모집",

@@ -62,7 +62,6 @@
   "home": "ホーム",
   "if-images-take-too-long-to-process-or-fail-to-read-5-arcanists-consider-screenshotting-clearer-images": "もし画像が{highlight1}または{highlight2} 5 {star}のアルカニストである場合には、スクリーンショットをより鮮明にすることを考慮してください。",
   "if-you-encounter-any-unexpected-issues-with-the-site-you-can-reset-your-data-sorry-for-the-inconvenience": "予期せぬエラーが起こった場合、データをリセットすることができます。ご迷惑をお掛けして申し訳ありません。",
-  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "バグが発生した場合には、欠落情報のタイムスタンプを利用してバグが起きた箇所を特定できます。エラーが起きた画面にトリミングなどの加工を加えて再度インポートしてみてください。エラーが解決しない場合、文書と画像を添付した不具合報告を送信いただくか直接{discord}に連絡願います。",
   "image": "画像",
   "images-must-be-clear-or-the-summon-tracker-may-fail-to-read": "画像は{highlight}、でなければ召喚履歴は上手く読み込めない場合があります。",
   "import-data": "インポート",
@@ -167,5 +166,10 @@
   "you-can-export-or-import-your-data-here": "ここからデータのインポート/エクスポートができます。",
   "you-can-quickly-add-materials-from-jukeboxes-and-events-here": "ほえほえジュークボックスとイベント素材は一度に追加できます。",
   "you-should-add-once-only": "一度しか追加できません。",
-  "50-50-winrate": "6 {star}入手時PU率"
+  "50-50-winrate": "6 {star}入手時PU率",
+  "missing-information": "不足している情報",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. バグが発生した場合には、欠落情報のタイムスタンプを利用してバグが起きた箇所を特定できます。",
+  "import-the-error-images-again": "えて再度インポートしてみてください。",
+  "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. それでもうまくいかない場合は、画像を再キャプチャして、再度インポートします。",
+  "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. エラーが解決しない場合、文書と画像を添付した不具合報告を送信いただくか直接{discord}に連絡願います"
 }

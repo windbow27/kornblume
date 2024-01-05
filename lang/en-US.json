@@ -62,7 +62,6 @@
   "this-is-an-example-of-a-good-image": "This is an example of a good {highlight}.",
   "image": "Image",
   "bug-reports": "Bug Handling",
-  "if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow": "If you encounter a bug, pinpoint its location by using Missing information timestamps. Recapture the error images clearer, doing some modifications like cropping, and import again. If the error persist, open your F12 ‣ Console ‣ Send the text and images through Bug Reports or directly to {discord}.",
   "processing-file-number-out-of-numbers-please-wait": "Processing file {current} out of {total}... Please wait...",
   "total-summons": "Total Summons",
   "6-star-summons": "6 {star} Summons",
