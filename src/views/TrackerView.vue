@@ -453,18 +453,20 @@ watchEffect(() => {
             <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
         </h2>
         <div class="flex justify-between">
-            <div class="space-x-3">
+            <div class="flex flex-wrap space-x-3 space-y-2 items-center">
                 <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                     multiple />
                 <button @click="triggerFileInput" :disabled="isImporting"
                     class="bg-success hover:bg-green-600 text-white/90 font-bold py-2 px-4 rounded ml-2">
                     {{ $t('ocr-import') }} </button>
 
-                <button class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
-                    $t('tutorial') }}</button>
+                <div class="space-x-3">
+                    <button class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
+                        $t('tutorial') }}</button>
 
-                <button onclick="resetTracker.showModal()" class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
-                    $t('reset') }}</button>
+                    <button onclick="resetTracker.showModal()" class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                        $t('reset') }}</button>
+                </div>
             </div>
 
             <dialog id="tutorial" class="modal">
