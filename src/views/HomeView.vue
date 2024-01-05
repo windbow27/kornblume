@@ -130,7 +130,7 @@ onClickOutside(resourcesRef, closeResources)
                                 <p><span class="text-info"> Tiếng Việt </span> windbow </p>
                                 <p><span class="text-info"> Indonesia </span> </p>
                                 <p><span class="text-info"> 한국어 </span> CaptinRegulus </p>
-                                <p><span class="text-info"> 日本語 </span> </p>
+                                <p><span class="text-info"> 日本語 </span> yagochi </p>
                             </div>
                         </div>
                         <form method="dialog" class="modal-backdrop">
