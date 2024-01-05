@@ -43,7 +43,7 @@ onClickOutside(resourcesRef, closeResources)
             <p class="text-lg lg:text-xl text-gray-300">{{ $t('a-toolsite-and-cornflower-worship-place-for-reverse-1999') }}
             </p>
             <p class="text-md text-gray-300">{{ $t('any-help-sharing-this-tool-would-be-greated-appreciated') }}</p>
-            <p class="text-md text-gray-300">
+            <p class="text-md text-gray-300 visible md:invisible">
                 <i18n-t keypath="for-mobile-users-click-top-right-to-start">
                     <template #mobile>
                         <i class="fa-solid fa-mobile-screen-button"></i>
