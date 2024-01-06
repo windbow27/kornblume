@@ -182,7 +182,7 @@ onClickOutside(settingsRef, closeSettings)
         </div>
         <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
-        <div class="flex justify-between items-center mb-2 mt-2">
+        <div class="flex flex-wrap justify-between items-center mb-2 mt-2 gap-y-3">
             <button @click="openAddOverlay" class="btn btn-ghost btn-sm custom-gradient-button"><i
                     class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('add-arcanist') }}</button>
             <div class="flex space-x-2">
@@ -198,7 +198,7 @@ onClickOutside(settingsRef, closeSettings)
                     <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-box-archive"></i></button>
                 </div>
-                <div class="tooltip" :data-tip="$t('settings')">
+                <div class="tooltip tooltip-left" :data-tip="$t('settings')">
                     <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-gear"></i></button>
                 </div>

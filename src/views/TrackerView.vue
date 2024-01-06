@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
-import { GreyAlgorithm, Image } from 'image-js';
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 import Tesseract, { createWorker } from 'tesseract.js';
-import Fuse from 'fuse.js';
-import cannyEdgeDetector from 'canny-edge-detector';
+import Fuse, { FuseResult } from 'fuse.js';
 import TrackerBoard from '../components/tracker/TrackerBoard.vue';
 
 const fileInput = ref(null);
@@ -19,7 +17,7 @@ const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
 const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
 
-const bannerList: string = [
+const bannerList: string[] = [
     // limited
     'One Gram of Curiosity',
     'Clang of Sword & Armor',
@@ -36,27 +34,27 @@ const bannerList: string = [
     'Amongst the Lake',
     // thread
     'Invitation From the Water'
-].join('|');
+];
 
 const bannerRateUp: string[] = [
     'Sotheby',
     'A Knight',
     'Melania',
-    'Druvis',
+    'Druvis III',
     'Pickles',
     'Regulus',
     'Tooth Fairy',
     'Voyager',
-    'Changeling',
+    'Jessica',
     'Eternity',
     'An-an Lee'
 ]
 
-const specialNames = [
+const specialArcanists: string[] = [
     'The Golden Thread III',
     'The Golden Thread II',
     'The Golden Thread I'
-]
+];
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically
@@ -122,15 +120,16 @@ const limitedPulls = computed(() => {
 });
 
 const winrate = computed(() => {
-    const winAttempts = limitedPulls.value.filter(pull => {
-        const bannerIndex = bannerList.split('|').indexOf(pull.BannerType);
+    const totalRateUps = limitedPulls.value.filter(pull => {
+        const bannerIndex = bannerList.indexOf(pull.BannerType);
         const rateUpArcanist = bannerRateUp[bannerIndex];
-        // console.log(bannerIndex, rateUpArcanist, pull.ArcanistName)
         return pull.ArcanistName === rateUpArcanist && pull.Rarity === 6;
     }).length;
 
-    const totalAttempts = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
-    return Math.round(winAttempts / totalAttempts * 100);
+    const totalSixStars = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
+    const loseAttempts = totalSixStars - totalRateUps;
+    const winAttempts = totalSixStars - 2 * loseAttempts;
+    return Math.round(winAttempts / (winAttempts + loseAttempts) * 100);
 });
 
 watch(sortedPulls, (newVal) => {
@@ -146,42 +145,43 @@ watch(sortedPulls, (newVal) => {
     isError.value = wrongTimestamps.value.length > 0;
 });
 
-type cropOptions = {x: number, y: number, width:number, height: number};
-function getCropOptions (image: Image): cropOptions {
-    const edge: Image = cannyEdgeDetector(image);
-    const x_half: number = ~~((image.width - 1) / 2);
-    const y_half: number = ~~((image.height - 1) / 2);
-    const pixels: number[][] = edge.getPixelsArray();
+type cropOptions = { x: number, y: number, width: number, height: number };
+function getCropOptions (context: CanvasRenderingContext2D | null, width: number, height: number): cropOptions {
+    const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
+    if (!imageData) {
+        console.log('failed to obtain image data (getCropOptions)');
+        return { x: 0, y: 0, width: 0, height: 0 };
+    }
+    const pixels: Uint8ClampedArray = imageData?.data;
+    if (!pixels) {
+        console.log('failed to obtain pixel data (getCropOptions)');
+        return { x: 0, y: 0, width: 0, height: 0 };
+    }
+    const x_half: number = ~~((width - 1) / 2);
+    const y_half: number = ~~((height - 1) / 2);
 
     /* search for bottom of border, indicates corner y coordinate */
     let bottomRightY: number = 0;
-    for (let i: number = image.height - 1; i > y_half; i--) {
-        for (let j: number = x_half; j < x_half + (x_half / 2); j++) {
-            if (pixels[j + image.width * i][0] === 255) {
-                bottomRightY = i;
-                break;
-            }
+    for (let i: number = height - 1; i > y_half; i--) {
+        if (pixels[(x_half + width * i) * 4] === 255) {
+            bottomRightY = i;
+            break;
         }
-        if (bottomRightY > 0) break;
     }
 
     /* search for right side of border, indicates corner x coordinate */
     let bottomRightX: number = 0;
-    for (let i: number = image.width - 1; i > x_half; i--) {
-        for (let j: number = y_half; j < y_half + (y_half / 2); j++) {
-            if (pixels[i + image.width * j][0] === 255) {
-                bottomRightX = i;
-                break;
-            }
+    for (let i: number = width - 1; i > x_half; i--) {
+        if (pixels[(i + width * y_half) * 4] === 255) {
+            bottomRightX = i;
+            break;
         }
-        if (bottomRightX > 0) break;
     }
-
     /* original measurements needed to construct ratios */
     const og_width: number = 2408;
     const og_height: number = 1080;
-    const imageX_scale: number = image.width / og_width;
-    const imageY_scale: number = image.height / og_height;
+    const imageX_scale: number = width / og_width;
+    const imageY_scale: number = height / og_height;
 
     const og_bottomRightX: number = 2069;
     const og_bottomRightY: number = 977;
@@ -201,24 +201,69 @@ function getCropOptions (image: Image): cropOptions {
     };
 }
 
-async function preprocessImage (file: File) {
-    const imageData = await Image.load(await file.arrayBuffer());
-    const blurred = imageData.blurFilter({ radius: 1 });
-    const grey = blurred.grey({
-        algorithm: 'lightness' as GreyAlgorithm
-    });
-    const kernel = [
-        [0, -1, 0],
-        [-1, 5, -1],
-        [0, -1, 0]
-    ];
-    // Apply sharpening filter
-    const sharpened = grey.convolution(kernel);
-    const gaussian = sharpened.gaussianFilter({ radius: 1 });
+function binarize (context: CanvasRenderingContext2D | null, width: number, height: number): ImageData {
+    const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
+    if (!imageData) {
+        console.log('failed to obtain image data (binarize)');
+        return new ImageData(0, 0);
+    }
+    const pixels: Uint8ClampedArray = imageData?.data;
+    if (!pixels) {
+        console.log('failed to obtain pixel data (binarize)');
+        return new ImageData(0, 0);
+    }
+    const level: number = 0.6;
+    const thresh: number = Math.floor(level * 255);
+    for (let i = 0; i < pixels.length; i += 4) {
+        const r: number = pixels[i];
+        const g: number = pixels[i + 1];
+        const b: number = pixels[i + 2];
+        const grey: number = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        const val: number = grey >= thresh ? 255 : 0;
+        pixels[i] = pixels[i + 1] = pixels[i + 2] = val;
+    }
+    return imageData;
+}
 
-    const options: cropOptions = getCropOptions(gaussian);
-    const cropped: Image = gaussian.crop(options);
-    return cropped.getCanvas();
+async function preprocessImage (file: File): Promise<File> {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        let modifiedFile: File;
+        reader.onload = (event: ProgressEvent<FileReader>) => {
+            const img = document.createElement('img');
+            img.onload = () => {
+                const canvas: HTMLCanvasElement = document.createElement('canvas');
+                const context: CanvasRenderingContext2D | null = canvas.getContext('2d', { willReadFrequently: true });
+                if (!context) { reject(new Error('getContext failed (canvas, preprocessImage)')); }
+                canvas.width = img.width;
+                canvas.height = img.height;
+                context?.drawImage(img, 0, 0);
+
+                const newData: ImageData = binarize(context, canvas.width, canvas.height);
+                if (!newData) { reject(new Error('binarize failed (preprocessImage)')); }
+                context?.putImageData(newData, 0, 0);
+
+                const options: cropOptions = getCropOptions(context, canvas.width, canvas.height);
+                const cropped_canvas: HTMLCanvasElement = document.createElement('canvas');
+                const cropped_context: CanvasRenderingContext2D | null = cropped_canvas.getContext('2d');
+                if (!cropped_context) { reject(new Error('getContext failed (cropped_canvas, preprocessImage)')); }
+
+                cropped_canvas.width = options.width;
+                cropped_canvas.height = options.height;
+                cropped_context?.drawImage(canvas,
+                    options.x, options.y, options.width, options.height, /* src */
+                    0, 0, cropped_canvas.width, cropped_canvas.height /* dst */
+                );
+
+                cropped_canvas.toBlob((blob) => {
+                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
+                    resolve(modifiedFile);
+                }, file.type);
+            };
+            img.src = event.target?.result as string;
+        };
+        reader.readAsDataURL(file);
+    });
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -234,9 +279,11 @@ const ocr: clickHandler = (payload: Event): void => {
         return prev
     }, {});
 
-    const fuseSearchList = arcanists.map((arcanist) => arcanist.Name === 'Зима' ? '3uma' : arcanist.Name);
-    const fuse: Fuse<string> = new Fuse(fuseSearchList);
-    specialNames.forEach(name => fuse.add(name));
+    const bannerFuse: Fuse<string> = new Fuse(bannerList);
+
+    const arcanistList = arcanists.map((arcanist) => arcanist.Name === 'Зима' ? '3uma' : arcanist.Name);
+    const arcanistFuse: Fuse<string> = new Fuse(arcanistList);
+    specialArcanists.forEach((arcanist) => arcanistFuse.add(arcanist));
 
     if (fileList) {
         isImporting.value = true;
@@ -248,39 +295,44 @@ const ocr: clickHandler = (payload: Event): void => {
                 currentFileIndex.value = i + 1;
                 totalFiles.value = fileList.length;
                 if (file) {
-                    const modifiedImage: HTMLCanvasElement = await preprocessImage(file);
+                    const modifiedImage: File = await preprocessImage(file);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(modifiedImage);
                     text.value = ret.data.text;
-                    console.log(text.value);
-                    // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedFile);
+                    // console.log(text.value);
+                    // (document.getElementById('testing') as HTMLImageElement).src = modifiedImage.toDataURL(); /* if modifiedImage is canvas */
+                    // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedImage); /* if modifiedImage is file */
 
-                    const arcanistNameGroup = /(?<ArcanistName>^\w+\.?(?:\s\w+\.?)*)/;
-                    const parenGroup = /(?:\(?.*\)?)?\s+/;
-                    const bannerGroup = String.raw`(?<BannerType>${bannerList})\s+`;
-                    const dateGroup = /(?<Date>\d{4}-\d{2}-\d{2}\s*\d{2}:\d{2}:\d{2})/;
+                    const arcanistNameGroup: string = /^\W*(?<ArcanistName>[A-Za-z.3]+(?:\s[A-Za-z.]+)*)/.source;
+                    const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
+                    const bannerGroup: string = `(?<BannerType>${bannerList.join('|').replaceAll(/\s/g, '\\s?')}).*`;
+                    const dateGroup: string = /(?<Date>\d{4}-\d{2}-\d{2}\s*\d{2}:\d{2}:\d{2})/.source;
 
-                    const pattern = new RegExp(arcanistNameGroup.source + parenGroup.source + bannerGroup + dateGroup.source, 'i');
+                    const pattern = new RegExp(arcanistNameGroup + parenGroup + bannerGroup + dateGroup, 'i');
                     const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[] = [];
                     const currentPullsMapping = {}
 
                     // Extract information from each line
+                    const excludeLineInfo = /(?:<\s*)?(\d+)\s*\/\s*(\d+)(?:\s*>)?|(Name\sType\sSummon\sTime)/;
                     text.value.trim().split('\n').forEach((line) => {
                         const match = line.match(pattern);
-                        if (!match && line.length !== 0 && !line.match(String.raw`(?:<\s*)?(\d+)\s*\/\s*(\d+)(?:\s*>)?`)) { console.log(line); }
+                        if (!match && line.length !== 0 && !line.match(excludeLineInfo)) { console.log(line); }
                         if (match) {
                             const arcanistName: string = match.groups?.ArcanistName.trim() || '';
-                            const fuseResult = fuse.search(arcanistName);
+                            let fuseResult: FuseResult<string>[] = arcanistFuse.search(arcanistName);
                             if (fuseResult.length === 0) { console.log(`could not match fuzzy string ${arcanistName}`); return; }
+
                             const isGoldenThread: boolean = fuseResult[0].refIndex - arcanists.length + 1 > 0
                             const timestamp: number = new Date((match.groups?.Date || '').replace(/(\d{4}-\d{2}-\d{2})(\d{2}:\d{2}:\d{2})/, '$1 $2')).getTime();
 
                             // Create an object for each pull
-                            const pull: IPull = {
-                                ArcanistName: isGoldenThread ? fuseSearchList[fuseResult[0].refIndex] : arcanists[fuseResult[0].refIndex].Name,
-                                Rarity: isGoldenThread ? 6 : arcanists[fuseResult[0].refIndex].Rarity,
-                                BannerType: match.groups?.BannerType.trim() || '',
-                                Timestamp: timestamp
-                            };
+                            let pull: IPull = { ArcanistName: '', Rarity: 0, BannerType: '', Timestamp: 0 };
+                            pull = isGoldenThread
+                                ? { ...pull, ArcanistName: arcanistList[fuseResult[0].refIndex], Rarity: 6 }
+                                : { ...pull, ArcanistName: arcanists[fuseResult[0].refIndex].Name, Rarity: arcanists[fuseResult[0].refIndex].Rarity };
+
+                            fuseResult = bannerFuse.search(match.groups?.BannerType.trim() || '');
+                            pull.BannerType = fuseResult[0] ? bannerList[fuseResult[0].refIndex] : '';
+                            pull.Timestamp = timestamp;
                             currentPulls.push(pull);
 
                             if (currentPullsMapping[timestamp]) {
@@ -384,21 +436,24 @@ watchEffect(() => {
     <!-- <img id="testing" src=""/> -->
     <div class="responsive-spacer">
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
-            {{ $t('summon-tracker') }} <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
+            {{ $t('summon-tracker') }}
+            <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
         </h2>
         <div class="flex justify-between">
-            <div class="space-x-3">
+            <div class="flex flex-wrap space-x-3 gap-y-2 items-center">
                 <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                     multiple />
                 <button @click="triggerFileInput" :disabled="isImporting"
                     class="bg-success hover:bg-green-600 text-white/90 font-bold py-2 px-4 rounded ml-2">
                     {{ $t('ocr-import') }} </button>
 
-                <button class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
-                    $t('tutorial') }}</button>
+                <div class="space-x-3">
+                    <button class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
+                        $t('tutorial') }}</button>
 
-                <button onclick="resetTracker.showModal()" class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
-                    $t('reset') }}</button>
+                    <button onclick="resetTracker.showModal()" class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                        $t('reset') }}</button>
+                </div>
             </div>
 
             <dialog id="tutorial" class="modal">
@@ -462,13 +517,22 @@ watchEffect(() => {
                         </i18n-t>
                     </p>
                     <h3 class="font-bold text-lg pt-4 text-info">{{ $t('bug-reports') }}</h3>
-                    <p class="text-white">•
+                    <p class=" text-white">
                         <i18n-t
-                            keypath='if-you-encouter-a-bug-open-your-f12-console-send-the-text-through-bug-reports-or-directly-to-windbow'>
+                            keypath='if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps'>
+                            <template #missing>
+                                <span class="text-error">{{ $t('missing-information') }}</span>
+                            </template>
+                        </i18n-t>
+                        <span class=" text-white ml-1">{{ $t('import-the-error-images-again') }}</span>
+                    </p>
+                    <p class="text-white">{{ $t('if-that-doesnt-work-recapture-the-images-and-import-them-again') }}</p>
+                    <p class="text-white">
+                        <i18n-t
+                            keypath='if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord'>
                             <template #discord>@windbow</template>
                         </i18n-t>
                     </p>
-
                 </div>
                 <form method="dialog" class="modal-backdrop">
                     <button>close</button>
@@ -507,7 +571,7 @@ watchEffect(() => {
             </span>
         </div>
 
-        <div class="flex justify-center space-x-5 pb-5">
+        <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }" class=' text-white py-1 px-3'
                 @click="selectedBannerType = 'Limited'">{{ $t('limited') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }" class=' text-white py-1 px-3'

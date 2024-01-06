@@ -13,6 +13,8 @@ const closeOverlay = () => {
 
 const changelogs = [
     // Add more from top
+    { date: '6/1/2024', description: '• • Added Spanish translations thanks to mgeshagrath. \n Added Russian translations thanks to spun4ik and dagufz37. \n • Released 1.3 Arcanists.' },
+    { date: '5/1/2024', description: '• Big Summon Tracker Update. \n • Added Japanese translations thanks to yagochi.' },
     { date: '4/1/2024', description: '• Added Korean translations thanks to CaptinRegulus.\n • Added Banner Type for Tracker.' },
     { date: '3/1/2024', description: '• Improved i18n. \n • Improved Tracker OCR' },
     { date: '2/1/2024', description: '• Error log for Summon Tracker.' },

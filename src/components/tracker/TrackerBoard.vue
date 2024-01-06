@@ -155,7 +155,7 @@ defineExpose({
                 {{ props.winrate ? props.winrate : 0 }} %
             </div>
         </div>
-        <div class="flex justify-between">
+        <div v-if="props.text == $t('summary-limited') || $props.text == $t('summary-standard')" class="flex justify-between">
             <div class="text">
                 <i18n-t keypath='current-6-star-pity'>
                     <template #star>

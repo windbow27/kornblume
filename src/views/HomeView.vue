@@ -43,7 +43,7 @@ onClickOutside(resourcesRef, closeResources)
             <p class="text-lg lg:text-xl text-gray-300">{{ $t('a-toolsite-and-cornflower-worship-place-for-reverse-1999') }}
             </p>
             <p class="text-md text-gray-300">{{ $t('any-help-sharing-this-tool-would-be-greated-appreciated') }}</p>
-            <p class="text-md text-gray-300">
+            <p class="text-md text-gray-300 visible md:invisible">
                 <i18n-t keypath="for-mobile-users-click-top-right-to-start">
                     <template #mobile>
                         <i class="fa-solid fa-mobile-screen-button"></i>
@@ -124,13 +124,16 @@ onClickOutside(resourcesRef, closeResources)
                             </form>
                             <h2 class="pb-3 text-xl font-bold"> {{ $t('translators') }} </h2>
                             <div class="space-y-1">
+                                <p><span class="text-info"> Español </span> mgeshagrath </p>
+                                <p><span class="text-info"> Français </span> </p>
                                 <p><span class="text-info"> Deutsch </span> </p>
                                 <p><span class="text-info"> 简体中文 </span> fran </p>
                                 <p><span class="text-info"> 繁體中文 </span> fran </p>
                                 <p><span class="text-info"> Tiếng Việt </span> windbow </p>
                                 <p><span class="text-info"> Indonesia </span> </p>
                                 <p><span class="text-info"> 한국어 </span> CaptinRegulus </p>
-                                <p><span class="text-info"> 日本語 </span> </p>
+                                <p><span class="text-info"> 日本語 </span> yagochi </p>
+                                <p><span class="text-info"> Русский </span> spun4ik & dagufz37 </p>
                             </div>
                         </div>
                         <form method="dialog" class="modal-backdrop">

@@ -53,7 +53,7 @@ const resetTracker = () => {
             <p class="text-white">{{
                 $t('if-you-encounter-any-unexpected-issues-with-the-site-you-can-reset-your-data-sorry-for-the-inconvenience')
             }}</p>
-            <div class="flex justify-center items-center p-2 space-x-5">
+            <div class="flex flex-wrap justify-center items-center p-2 space-x-5 gap-y-5">
                 <button onclick="resetTracker.showModal()"
                     class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
                     {{ $t('reset-tracker') }} </button>
