@@ -546,7 +546,7 @@
   },
   {
     "Id": 10063,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Shamane",
     "Rarity": 6,
     "Afflatus": "Beast",
@@ -788,8 +788,8 @@
   },
   {
     "Id": 10061,
-    "IsReleased": false,
-    "Name": "Black Dwarf",
+    "IsReleased": true,
+    "Name": "Kaalaa Baunaa",
     "Rarity": 6,
     "Afflatus": "Mineral",
     "Insight": [
@@ -5392,7 +5392,7 @@
   },
   {
     "Id": 10062,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Kanjira",
     "Rarity": 5,
     "Afflatus": "Plant",
