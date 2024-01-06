@@ -125,6 +125,8 @@ onClickOutside(resourcesRef, closeResources)
                             <h2 class="pb-3 text-xl font-bold"> {{ $t('translators') }} </h2>
                             <div class="space-y-1">
                                 <p><span class="text-info"> Deutsch </span> </p>
+                                <p><span class="text-info"> Français </span> </p>
+                                <p><span class="text-info"> Spanish </span> mgeshagrath </p>
                                 <p><span class="text-info"> 简体中文 </span> fran </p>
                                 <p><span class="text-info"> 繁體中文 </span> fran </p>
                                 <p><span class="text-info"> Tiếng Việt </span> windbow </p>

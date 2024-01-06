@@ -2,7 +2,7 @@ import { createI18n } from 'vue-i18n'
 import messages from '@intlify/unplugin-vue-i18n/messages';
 
 // List of all supported lang codes, please update this list when new language is added
-export const supportedLangCodes = ['en-US', 'de-DE', 'zh-CN', 'zh-TW', 'vi-VN', 'id-ID', 'ko-KR', 'ja-JP', 'es-ES'];
+export const supportedLangCodes = ['en-US', 'de-DE', 'zh-CN', 'zh-TW', 'vi-VN', 'id-ID', 'ko-KR', 'ja-JP', 'es-ES', 'fr-FR'];
 
 export const langDropdownOptions = [
     {
@@ -11,9 +11,29 @@ export const langDropdownOptions = [
         icon: 'fi fi-us'
     },
     {
+        locale: 'es-ES',
+        text: 'Español',
+        icon: 'fi fi-es'
+    },
+    {
+        locale: 'fr-FR',
+        text: 'Français',
+        icon: 'fi fi-fr'
+    },
+    {
         locale: 'de-DE',
         text: 'Deutsch',
         icon: 'fi fi-de'
+    },
+    {
+        locale: 'ja-JP',
+        text: '日本語',
+        icon: 'fi fi-jp'
+    },
+    {
+        locale: 'ko-KR',
+        text: '한국어',
+        icon: 'fi fi-kr'
     },
     {
         locale: 'zh-CN',
@@ -34,21 +54,6 @@ export const langDropdownOptions = [
         locale: 'id-ID',
         text: 'Indonesia',
         icon: 'fi fi-id'
-    },
-    {
-        locale: 'ko-KR',
-        text: '한국어',
-        icon: 'fi fi-kr'
-    },
-    {
-        locale: 'ja-JP',
-        text: '日本語',
-        icon: 'fi fi-jp'
-    },
-    {
-        locale: 'es-ES',
-        text: 'Español',
-        icon: 'fi fi-es'
     }
 ]
 
