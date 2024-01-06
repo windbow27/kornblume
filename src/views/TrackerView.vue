@@ -571,7 +571,7 @@ watchEffect(() => {
             </span>
         </div>
 
-        <div class="flex justify-center space-x-5 pb-5">
+        <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }" class=' text-white py-1 px-3'
                 @click="selectedBannerType = 'Limited'">{{ $t('limited') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }" class=' text-white py-1 px-3'

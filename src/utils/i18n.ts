@@ -54,6 +54,16 @@ export const langDropdownOptions = [
         locale: 'id-ID',
         text: 'Indonesia',
         icon: 'fi fi-id'
+    },
+    {
+        locale: 'ru-RU',
+        text: 'Русский',
+        icon: 'fi fi-ru'
+    },
+    {
+        locale: 'th-TH',
+        text: 'ภาษาไทย',
+        icon: 'fi fi-th'
     }
 ]
 

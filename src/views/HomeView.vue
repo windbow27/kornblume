@@ -124,15 +124,16 @@ onClickOutside(resourcesRef, closeResources)
                             </form>
                             <h2 class="pb-3 text-xl font-bold"> {{ $t('translators') }} </h2>
                             <div class="space-y-1">
-                                <p><span class="text-info"> Deutsch </span> </p>
+                                <p><span class="text-info"> Español </span> mgeshagrath </p>
                                 <p><span class="text-info"> Français </span> </p>
-                                <p><span class="text-info"> Spanish </span> mgeshagrath </p>
+                                <p><span class="text-info"> Deutsch </span> </p>
                                 <p><span class="text-info"> 简体中文 </span> fran </p>
                                 <p><span class="text-info"> 繁體中文 </span> fran </p>
                                 <p><span class="text-info"> Tiếng Việt </span> windbow </p>
                                 <p><span class="text-info"> Indonesia </span> </p>
                                 <p><span class="text-info"> 한국어 </span> CaptinRegulus </p>
                                 <p><span class="text-info"> 日本語 </span> yagochi </p>
+                                <p><span class="text-info"> Русский </span> spun4ik & dagufz37 </p>
                             </div>
                         </div>
                         <form method="dialog" class="modal-backdrop">
