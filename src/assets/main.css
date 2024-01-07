@@ -90,6 +90,10 @@
     @apply bg-indigo-100 text-indigo-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400
 }
 
+.orange-badge {
+    @apply bg-orange-100 text-orange-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-orange-400 border border-orange-400
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 5px;

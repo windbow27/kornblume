@@ -1,7 +1,11 @@
 module.exports = {
     mode: 'jit',
     theme: {
-        extend: {}
+        extend: {
+            colors: {
+                'badge-yellow': '#D8AE2D'
+            }
+        }
     },
     variants: {
         extend: {}

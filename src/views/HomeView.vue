@@ -1,5 +1,5 @@
 <script setup lang="ts" name="HomeView">
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue';
 import { onClickOutside } from '@vueuse/core'
 import HomeChangelogs from '../components/home/HomeChangelogs.vue'
 import HomeResources from '../components/home/HomeResources.vue'
@@ -8,6 +8,7 @@ const isChangeLogs = ref(false)
 const isResources = ref(false)
 const changelogsRef = ref(null)
 const resourcesRef = ref(null)
+const isMediumScreen = ref(window.innerWidth >= 768);
 const carouselItems = [
     {
         link: 'https://www.pixiv.net/en/artworks/110046834',
@@ -31,6 +32,18 @@ const closeResources = () => {
     isResources.value = false
 }
 
+const updateScreenSize = () => {
+    isMediumScreen.value = window.innerWidth >= 768;
+};
+
+onMounted(() => {
+    window.addEventListener('resize', updateScreenSize);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateScreenSize);
+});
+
 onClickOutside(changelogsRef, closeChangelogs)
 onClickOutside(resourcesRef, closeResources)
 
@@ -43,7 +56,7 @@ onClickOutside(resourcesRef, closeResources)
             <p class="text-lg lg:text-xl text-gray-300">{{ $t('a-toolsite-and-cornflower-worship-place-for-reverse-1999') }}
             </p>
             <p class="text-md text-gray-300">{{ $t('any-help-sharing-this-tool-would-be-greated-appreciated') }}</p>
-            <p class="text-md text-gray-300 visible md:invisible">
+            <p class="text-md text-gray-300" v-if="!isMediumScreen">
                 <i18n-t keypath="for-mobile-users-click-top-right-to-start">
                     <template #mobile>
                         <i class="fa-solid fa-mobile-screen-button"></i>
