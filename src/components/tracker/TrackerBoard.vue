@@ -123,109 +123,111 @@ defineExpose({
 
 <template>
     <p class=" text-white font-bold text-xl text-center pt-4">{{ props.text }}</p>
-    <div class="flex flex-col text-white p-4 gap-2 max-w-sm mx-auto">
-        <div class="flex justify-between">
-            <div class="text">{{ $t('total-summons') }}</div>
-            <div class="number">{{ pulls.length }}</div>
+    <div class="flex flex-wrap justify-center">
+        <div class="flex flex-col text-white p-4 gap-2 max-w-sm w-1/2">
+            <div class="flex justify-between">
+                <div class="text">{{ $t('total-summons') }}</div>
+                <div class="number">{{ pulls.length }}</div>
+            </div>
+            <div class="flex justify-between">
+                <div class="text">
+                    <i18n-t keypath='6-star-summons'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-orange-300"></i>
+                        </template>
+                    </i18n-t>
+                </div>
+                <div class="number">{{ pulls.filter(p => p.Rarity === 6).length }}</div>
+            </div>
+            <div class="flex justify-between">
+                <div class="text">
+                    <i18n-t keypath='5-star-summons'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-yellow-100"></i>
+                        </template>
+                    </i18n-t>
+                </div>
+                <div class="number">{{ pulls.filter(p => p.Rarity === 5).length }}</div>
+            </div>
+            <div class="flex justify-between">
+                <div class="text">
+                    <i18n-t keypath='6-star-average'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-orange-300"></i>
+                        </template>
+                    </i18n-t>
+                </div>
+                <div class="number">
+                    {{ pulls.filter(p => p.Rarity === 6).length > 0 ? Math.floor((pulls.length - summonSinceLastSixStar) /
+                        pulls.filter(p => p.Rarity === 6).length) : 0 }}
+                </div>
+            </div>
+            <div class="flex justify-between">
+                <div class="text">
+                    <i18n-t keypath='5-star-average'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-yellow-100"></i>
+                        </template>
+                    </i18n-t>
+                </div>
+                <div class="number">
+                    {{ pulls.filter(p => p.Rarity === 5).length > 0 ? Math.floor(pulls.length /
+                        pulls.filter(p => p.Rarity === 5).length) : 0 }}
+                </div>
+            </div>
+            <div v-if="props.text == $t('summary-limited')" class="flex justify-between">
+                <div class="text">
+                    <i18n-t keypath='50-50-winrate'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-orange-300"></i>
+                        </template>
+                    </i18n-t>
+                </div>
+                <div class="number">
+                    {{ props.winrate ? props.winrate : 0 }} %
+                </div>
+            </div>
+            <div v-if="props.text == $t('summary-limited') || $props.text == $t('summary-standard')"
+                class="flex justify-between">
+                <div class="text">
+                    <i18n-t keypath='current-6-star-pity'>
+                        <template #star>
+                            <i class="fa-solid fa-star text-orange-300"></i>
+                        </template>
+                    </i18n-t>
+                </div>
+                <div class="number">{{ summonSinceLastSixStar }} / 70</div>
+            </div>
+            <div class="flex flex-col justify-between opacity-95" v-if="isError">
+                <div class=" text-error text-sm">{{ $t('import-error') }}</div>
+                <div class="text-error text-sm">
+                    <i18n-t keypath='wrong-timestamps'>
+                        <template #timestamps>
+                            <span class="number text-sm">{{ wrongTimestamps.map(formatDate).join(', ') }}</span>
+                        </template>
+                    </i18n-t>
+                </div>
+            </div>
         </div>
-        <div class="flex justify-between">
-            <div class="text">
-                <i18n-t keypath='6-star-summons'>
-                    <template #star>
-                        <i class="fa-solid fa-star text-orange-300"></i>
-                    </template>
-                </i18n-t>
-            </div>
-            <div class="number">{{ pulls.filter(p => p.Rarity === 6).length }}</div>
-        </div>
-        <div class="flex justify-between">
-            <div class="text">
-                <i18n-t keypath='5-star-summons'>
-                    <template #star>
-                        <i class="fa-solid fa-star text-yellow-100"></i>
-                    </template>
-                </i18n-t>
-            </div>
-            <div class="number">{{ pulls.filter(p => p.Rarity === 5).length }}</div>
-        </div>
-        <div class="flex justify-between">
-            <div class="text">
-                <i18n-t keypath='6-star-average'>
-                    <template #star>
-                        <i class="fa-solid fa-star text-orange-300"></i>
-                    </template>
-                </i18n-t>
-            </div>
-            <div class="number">
-                {{ pulls.filter(p => p.Rarity === 6).length > 0 ? Math.floor(pulls.length /
-                    pulls.filter(p => p.Rarity === 6).length) : 0 }}
-            </div>
-        </div>
-        <div class="flex justify-between">
-            <div class="text">
-                <i18n-t keypath='5-star-average'>
-                    <template #star>
-                        <i class="fa-solid fa-star text-yellow-100"></i>
-                    </template>
-                </i18n-t>
-            </div>
-            <div class="number">
-                {{ pulls.filter(p => p.Rarity === 5).length > 0 ? Math.floor(pulls.length /
-                    pulls.filter(p => p.Rarity === 5).length) : 0 }}
-            </div>
-        </div>
-        <div v-if="props.text == $t('summary-limited')" class="flex justify-between">
-            <div class="text">
-                <i18n-t keypath='50-50-winrate'>
-                    <template #star>
-                        <i class="fa-solid fa-star text-orange-300"></i>
-                    </template>
-                </i18n-t>
-            </div>
-            <div class="number">
-                {{ props.winrate ? props.winrate : 0 }} %
-            </div>
-        </div>
-        <div v-if="props.text == $t('summary-limited') || $props.text == $t('summary-standard')"
-            class="flex justify-between">
-            <div class="text">
-                <i18n-t keypath='current-6-star-pity'>
-                    <template #star>
-                        <i class="fa-solid fa-star text-orange-300"></i>
-                    </template>
-                </i18n-t>
-            </div>
-            <div class="number">{{ summonSinceLastSixStar }} / 70</div>
-        </div>
-        <div class="flex flex-col justify-between opacity-95" v-if="isError">
-            <div class=" text-error text-sm">{{ $t('import-error') }}</div>
-            <div class="text-error text-sm">
-                <i18n-t keypath='wrong-timestamps'>
-                    <template #timestamps>
-                        <span class="number text-sm">{{ wrongTimestamps.map(formatDate).join(', ') }}</span>
-                    </template>
-                </i18n-t>
-            </div>
-        </div>
-    </div>
 
-    <div class="w-full items-center custom-gradient-gray-blue rounded border border-blue-800 justify-center px-4 pt-4 pb-3">
-        <div class="text text-center pb-4">
-            <i18n-t keypath='recent-6-star-summons'>
-                <template #star>
-                    <i class="fa-solid fa-star text-orange-300"></i>
-                </template>
-            </i18n-t>
-        </div>
-        <div class="flex flex-wrap justify-center gap-x-10">
-            <!-- Fix the key later -->
-            <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)" :key="`${pull.Timestamp}-${pull.ArcanistName}`">
-                <TrackerArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)" class="py-2"
-                    :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) ?? {}"
-                    :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]"
-                    :indicator="indicators[pull.PullNumber]" />
-                <TrackerSpecialIcon v-else class="py-2" :name="pull.ArcanistName"
-                    :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
+        <div class="w-full items-center custom-gradient-gray-blue rounded border border-blue-800 justify-center px-4 pt-4 pb-3">
+            <div class="text text-center pb-4">
+                <i18n-t keypath='recent-6-star-summons'>
+                    <template #star>
+                        <i class="fa-solid fa-star text-orange-300"></i>
+                    </template>
+                </i18n-t>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-12">
+                <!-- Fix the key later -->
+                <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)" :key="`${pull.Timestamp}-${pull.ArcanistName}`">
+                    <TrackerArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)" class="py-2"
+                        :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) ?? {}"
+                        :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]"
+                        :indicator="indicators[pull.PullNumber]" />
+                    <TrackerSpecialIcon v-else class="py-2" :name="pull.ArcanistName"
+                        :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
+                </div>
             </div>
         </div>
     </div>
