@@ -217,7 +217,7 @@ defineExpose({
                 </template>
             </i18n-t>
         </div>
-        <div class="flex flex-wrap justify-center space-x-8">
+        <div class="flex flex-wrap justify-center gap-x-10">
             <!-- Fix the key later -->
             <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)" :key="`${pull.Timestamp}-${pull.ArcanistName}`">
                 <TrackerArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)" class="py-2"

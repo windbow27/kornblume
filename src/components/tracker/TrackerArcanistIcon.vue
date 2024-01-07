@@ -24,7 +24,7 @@ const getArcanistImagePath = (id: number) => {
 <template>
     <div class="tooltip" :data-tip="$t(props.arcanist.Name)">
         <div class="rounded-md">
-            <div class="avatar relative flex items-center justify-center mb-2">
+            <div class="avatar relative flex items-center justify-center mb-4">
                 <div class="w-16 rounded">
                     <img :src="getArcanistImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
                 </div>
