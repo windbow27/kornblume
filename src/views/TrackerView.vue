@@ -178,27 +178,22 @@ function getCropOptions (context: CanvasRenderingContext2D | null, width: number
         }
     }
     /* original measurements needed to construct ratios */
-    const og_width: number = 2408;
+    const og_width: number = 2400;
     const og_height: number = 1080;
-    const imageX_scale: number = width / og_width;
-    const imageY_scale: number = height / og_height;
-
-    const og_bottomRightX: number = 2069;
-    const og_bottomRightY: number = 977;
     const og_topLeftX: number = 775;
     const og_topLeftY: number = 240;
 
-    const target_width: number = og_bottomRightX - og_topLeftX;
-    const target_height: number = og_bottomRightY - og_topLeftY;
-    const targetX_scale: number = bottomRightX / og_bottomRightX;
-    const targetY_scale: number = bottomRightY / og_bottomRightY;
+    const imageX_scale: number = width / og_width;
+    const imageY_scale: number = height / og_height;
+    const target_width: number = bottomRightX - og_topLeftX * imageX_scale;
+    const target_height: number = bottomRightY - og_topLeftY * imageY_scale;
 
     return {
-        x: og_topLeftX * imageX_scale,
-        y: og_topLeftY * imageY_scale,
-        width: target_width * targetX_scale,
-        height: target_height * targetY_scale
-    };
+        x: ~~(og_topLeftX * imageX_scale),
+        y: ~~(og_topLeftY * imageY_scale),
+        width: ~~target_width,
+        height: ~~target_height
+    }
 }
 
 function binarize (context: CanvasRenderingContext2D | null, width: number, height: number): ImageData {
@@ -302,7 +297,7 @@ const ocr: clickHandler = (payload: Event): void => {
                     // (document.getElementById('testing') as HTMLImageElement).src = modifiedImage.toDataURL(); /* if modifiedImage is canvas */
                     // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedImage); /* if modifiedImage is file */
 
-                    const arcanistNameGroup: string = /^\W*(?<ArcanistName>[A-Za-z.3]+(?:\s[A-Za-z.]+)*)/.source;
+                    const arcanistNameGroup: string = /^\W*(?<ArcanistName>3?[A-Za-z.]+(?:\s[A-Za-z.]+)*)/.source;
                     const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
                     const bannerGroup: string = `(?<BannerType>${bannerList.join('|').replaceAll(/\s/g, '\\s?')}).*`;
                     const dateGroup: string = /(?<Date>\d{4}-\d{2}-\d{2}\s*\d{2}:\d{2}:\d{2})/.source;
