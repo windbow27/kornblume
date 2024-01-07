@@ -16,7 +16,7 @@ const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
-const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
+const pulls = ref<IPull[]>([]);
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically
@@ -259,10 +259,10 @@ const ocr: clickHandler = (payload: Event): void => {
                     // (document.getElementById('testing') as HTMLImageElement).src = modifiedImage.toDataURL(); /* if modifiedImage is canvas */
                     // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedImage); /* if modifiedImage is file */
 
-                    const arcanistNameGroup: string = /^\W*(?<ArcanistName>3?[A-Za-z.]+(?:\s[A-Za-z.]+)*)/.source;
+                    const arcanistNameGroup: string = /^\W*(?<ArcanistName>\d*[A-Za-z.,]+(?:\s[A-Za-z.,1]+)*)/.source;
                     const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
                     const bannerGroup: string = `(?<BannerType>${bannerList.join('|').replaceAll(/\s/g, '\\s?')}).*`;
-                    const dateGroup: string = /(?<Date>\d{4}-\d{2}-\d{2}\s*\d{2}:\d{2}:\d{2})/.source;
+                    const dateGroup: string = /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/.source;
 
                     const pattern = new RegExp(arcanistNameGroup + parenGroup + bannerGroup + dateGroup, 'i');
                     const currentPulls: { ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[] = [];
@@ -274,8 +274,8 @@ const ocr: clickHandler = (payload: Event): void => {
                         const match = line.match(pattern);
                         if (!match && line.length !== 0 && !line.match(excludeLineInfo)) { console.log(line); }
                         if (match) {
-                            const arcanistName: string = match.groups?.ArcanistName.trim() || '';
-                            let fuseResult: FuseResult<string>[] = arcanistFuse.search(arcanistName);
+                            const arcanistName: string = match.groups?.ArcanistName.trim().replaceAll('1', 'I') || '';
+                            let fuseResult: FuseResult<string>[] = arcanistFuse.search(arcanistName, { limit: 1 });
                             if (fuseResult.length === 0) { console.log(`could not match fuzzy string ${arcanistName}`); return; }
 
                             const isGoldenThread: boolean = fuseResult[0].refIndex - arcanists.length + 1 > 0
@@ -287,7 +287,7 @@ const ocr: clickHandler = (payload: Event): void => {
                                 ? { ...pull, ArcanistName: arcanistList[fuseResult[0].refIndex], Rarity: 6 }
                                 : { ...pull, ArcanistName: arcanists[fuseResult[0].refIndex].Name, Rarity: arcanists[fuseResult[0].refIndex].Rarity };
 
-                            fuseResult = bannerFuse.search(match.groups?.BannerType.trim() || '');
+                            fuseResult = bannerFuse.search(match.groups?.BannerType.trim() || '', { limit: 1 });
                             pull.BannerType = fuseResult[0] ? bannerList[fuseResult[0].refIndex] : '';
                             pull.Timestamp = timestamp;
                             currentPulls.push(pull);
