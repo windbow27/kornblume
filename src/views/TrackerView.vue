@@ -2,6 +2,7 @@
 import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
+import { bannerList, bannerRateUp, specialArcanists } from '@/utils/bannerData'
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
 import TrackerBoard from '../components/tracker/TrackerBoard.vue';
@@ -16,45 +17,6 @@ const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
 const pulls = ref<{ ArcanistName: string; Rarity: number; BannerType: string; Timestamp: number }[]>([]);
-
-const bannerList: string[] = [
-    // limited
-    'One Gram of Curiosity',
-    'Clang of Sword & Armor',
-    'Pop Is Everything',
-    'Whisper of the Woods',
-    'Thus Spoke the Border Collie',
-    'Swinging Freely',
-    'The Fairies Shining at Night',
-    'Where the Star Alighted',
-    'The Changeling Awaits',
-    'The Ever-flowing',
-    'Midnight Movie Party',
-    // standard
-    'Amongst the Lake',
-    // thread
-    'Invitation From the Water'
-];
-
-const bannerRateUp: string[] = [
-    'Sotheby',
-    'A Knight',
-    'Melania',
-    'Druvis III',
-    'Pickles',
-    'Regulus',
-    'Tooth Fairy',
-    'Voyager',
-    'Jessica',
-    'Eternity',
-    'An-an Lee'
-]
-
-const specialArcanists: string[] = [
-    'The Golden Thread III',
-    'The Golden Thread II',
-    'The Golden Thread I'
-];
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically

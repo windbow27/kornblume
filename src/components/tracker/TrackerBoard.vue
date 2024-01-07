@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useDataStore } from '@/stores/dataStore';
+import { bannerList, bannerRateUp } from '@/utils/bannerData'
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
 import TrackerArcanistIcon from './TrackerArcanistIcon.vue';
@@ -10,6 +11,7 @@ interface Pull {
     PullNumber: number;
     ArcanistName: string;
     Rarity: number;
+    BannerType: string;
     Timestamp: number;
 }
 
@@ -84,6 +86,31 @@ const summonSinceLastSixStar = computed(() => {
     }
 });
 
+const indicators = computed(() => {
+    const result: Record<number, string> = {};
+    let nextPullShouldBeG = false;
+
+    const reversedPulls = [...props.pulls].reverse();
+
+    for (const pull of reversedPulls) {
+        if (pull.Rarity === 6) {
+            if (nextPullShouldBeG) {
+                result[pull.PullNumber] = 'G';
+                nextPullShouldBeG = false;
+            } else {
+                const bannerIndex = bannerList.indexOf(pull.BannerType);
+                if (bannerIndex !== -1 && bannerRateUp[bannerIndex].includes(pull.ArcanistName)) {
+                    result[pull.PullNumber] = 'W';
+                } else {
+                    result[pull.PullNumber] = 'L';
+                    nextPullShouldBeG = true;
+                }
+            }
+        }
+    }
+    return result;
+});
+
 defineExpose({
     formatDate
 })
@@ -91,6 +118,7 @@ defineExpose({
 </script>
 
 <template>
+    {{ indicators }}
     <p class=" text-white font-bold text-xl text-center pt-4">{{ props.text }}</p>
     <div class="flex flex-col text-white p-4 gap-2 max-w-sm mx-auto">
         <div class="flex justify-between">
@@ -155,7 +183,8 @@ defineExpose({
                 {{ props.winrate ? props.winrate : 0 }} %
             </div>
         </div>
-        <div v-if="props.text == $t('summary-limited') || $props.text == $t('summary-standard')" class="flex justify-between">
+        <div v-if="props.text == $t('summary-limited') || $props.text == $t('summary-standard')"
+            class="flex justify-between">
             <div class="text">
                 <i18n-t keypath='current-6-star-pity'>
                     <template #star>
@@ -190,7 +219,8 @@ defineExpose({
             <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)" :key="`${pull.Timestamp}-${pull.ArcanistName}`">
                 <TrackerArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)" class="py-2"
                     :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) ?? {}"
-                    :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
+                    :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]"
+                    :indicator="indicators[pull.PullNumber]"  />
                 <TrackerSpecialIcon v-else class="py-2" :name="pull.ArcanistName"
                     :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]" />
             </div>
