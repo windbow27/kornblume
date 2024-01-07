@@ -1,4 +1,4 @@
-import{o as C}from"./index-u6VcjrXf.js";import{o,c as a,a as e,t,F as f,r as y,u as R,b as U,d as S,e as g,f as h,w as p,g as F,h as _,i as T,j,k as w,l as O}from"./index-7Oj9pNW0.js";const E=[{date:"07/01/2024",description:`• Added French translations thanks to я герой#3673. 
+import{o as C}from"./index-JcLyN6l0.js";import{o,c as a,a as e,t,F as f,r as y,u as R,b as U,d as S,e as g,f as h,w as p,g as F,h as _,i as T,j,k as w,l as O}from"./index-LrpL-AlQ.js";const E=[{date:"07/01/2024",description:`• Added French translations thanks to я герой#3673. 
  • Improved Japanese translations thanks to yagochi. 
  • Fixed X turning into 37 and crop problems. 
  • Added 50/50 win/lose indicator.`},{date:"06/01/2024",description:`• Added Spanish translations thanks to mgeshagrath. 
