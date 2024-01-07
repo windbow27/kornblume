@@ -3,7 +3,10 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'badge-yellow': '#D8AE2D'
+                'badge-yellow': '#807215',
+                'badge-green': '#15803D',
+                'badge-red': '#9E1E26',
+                'badge-black': '#374151'
             }
         }
     },
