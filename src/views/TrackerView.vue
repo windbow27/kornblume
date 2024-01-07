@@ -193,6 +193,7 @@ function getCropOptions (context: CanvasRenderingContext2D | null, width: number
         y: ~~(og_topLeftY * imageY_scale),
         width: ~~target_width,
         height: ~~target_height
+    }
 }
 
 function binarize (context: CanvasRenderingContext2D | null, width: number, height: number): ImageData {
