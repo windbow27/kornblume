@@ -129,7 +129,7 @@ const winrate = computed(() => {
     const totalSixStars = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
     const loseAttempts = totalSixStars - totalRateUps;
     const winAttempts = totalSixStars - 2 * loseAttempts;
-    return Math.round(winAttempts / (winAttempts + loseAttempts) * 100);
+    return Math.max(0, Math.round(winAttempts / (winAttempts + loseAttempts) * 100));
 });
 
 watch(sortedPulls, (newVal) => {
@@ -451,8 +451,9 @@ watchEffect(() => {
                     <button class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
                         $t('tutorial') }}</button>
 
-                    <button onclick="resetTracker.showModal()" class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
-                        $t('reset') }}</button>
+                    <button onclick="resetTracker.showModal()"
+                        class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                            $t('reset') }}</button>
                 </div>
             </div>
 
