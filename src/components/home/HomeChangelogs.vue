@@ -13,11 +13,12 @@ const closeOverlay = () => {
 
 const changelogs = [
     // Add more from top
-    { date: '6/1/2024', description: '• • Added Spanish translations thanks to mgeshagrath. \n Added Russian translations thanks to spun4ik and dagufz37. \n • Released 1.3 Arcanists.' },
-    { date: '5/1/2024', description: '• Big Summon Tracker Update. \n • Added Japanese translations thanks to yagochi.' },
-    { date: '4/1/2024', description: '• Added Korean translations thanks to CaptinRegulus.\n • Added Banner Type for Tracker.' },
-    { date: '3/1/2024', description: '• Improved i18n. \n • Improved Tracker OCR' },
-    { date: '2/1/2024', description: '• Error log for Summon Tracker.' },
+    { date: '07/01/2024', description: '• Added French translations thanks to я герой#3673.' },
+    { date: '06/01/2024', description: '• Added Spanish translations thanks to mgeshagrath. \n • Added Russian translations thanks to spun4ik and dagufz37. \n • Released 1.3 Arcanists.' },
+    { date: '05/01/2024', description: '• Big Summon Tracker Update. \n • Added Japanese translations thanks to yagochi.' },
+    { date: '04/01/2024', description: '• Added Korean translations thanks to CaptinRegulus.\n • Added Banner Type for Tracker.' },
+    { date: '03/01/2024', description: '• Improved i18n. \n • Improved Tracker OCR' },
+    { date: '02/01/2024', description: '• Error log for Summon Tracker.' },
     { date: '29/12/2023', description: '• Added more languages! vi-VN, zh-CN, zh-TW have been fully translated. We need your help!' },
     { date: '28/12/2023', description: '• Summon Tracker out of beta release. \n • Various UI updates.' },
     { date: '26/12/2023', description: '• Improved OCR for 5*. \n • Updated Stage Data and Greedy Method improvements. \n • Added Ezra Theodore and Desert Flanndel.' },
