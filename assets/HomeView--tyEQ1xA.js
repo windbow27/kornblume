@@ -1,4 +1,4 @@
-import{o as C}from"./index-7EP06Q4n.js";import{o,c as a,a as e,t,F as f,r as y,u as R,b as U,d as I,e as g,f as h,w as p,g as F,h as _,i as T,j as O,k as w,l as j}from"./index-hlZfuBNI.js";const E=[{date:"08/01/2024",description:`• Improved Golden Thread OCR.
+import{o as C}from"./index-EZFfGvLC.js";import{o,c as a,a as e,t,F as f,r as y,u as R,b as U,d as I,e as g,f as h,w as p,g as F,h as _,i as T,j as O,k as w,l as j}from"./index-2sq1q-Zq.js";const E=[{date:"08/01/2024",description:`• Improved Golden Thread OCR.
  • Tracker UI changes.
  `},{date:"07/01/2024",description:`• Added French translations thanks to я герой#3673. 
  • Improved Japanese translations thanks to yagochi. 
