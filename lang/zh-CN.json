@@ -171,5 +171,8 @@
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. 如果这不起作用，请重新截取图像并再次导入。",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. 如果错误仍然存在，请按 F12 ‣ Console ‣ 复制文字与图片并回报，可以通过首页的错误报告或是直接通过 Discord 联繫 {discord}。",
   "import-the-error-images-again": "重新导入错误图像。",
-  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. 如果遇到错误，请使用 {missing} 来查明其位置。"
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. 如果遇到错误，请使用 {missing} 来查明其位置。",
+  "guaranteed": "保证",
+  "lose": "失去 50 / 50",
+  "win": "赢 50 / 50"
 }
