@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useDataStore } from '../stores/dataStore';
+import { useGlobalStore } from '../stores/global';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,8 +43,20 @@ const router = createRouter({
 router.beforeEach(async (to) => {
     const dataStore = useDataStore();
     if (to.meta.requiredJson) {
+        to.meta.isNavigationPending = true
         await dataStore.checkDataLoaded([...to.meta.requiredJson as string[]]);
     }
 })
+
+router.beforeEach((to, from, next) => {
+    const globalStore = useGlobalStore();
+    globalStore.startLoading();
+    next();
+});
+
+router.afterEach(() => {
+    const globalStore = useGlobalStore();
+    globalStore.finishLoading();
+});
 
 export default router
