@@ -1,7 +1,7 @@
 {
   "home": "首页",
   "summon-tracker": "征集追踪",
-  "planner": "规划工具",
+  "planner": "育成规划",
   "profile": "个人档案",
   "a-toolsite-and-cornflower-worship-place-for-reverse-1999": "这是游戏「重返未来：1999」的工具箱，为矢车菊献上崇拜！",
   "any-help-sharing-this-tool-would-be-greated-appreciated": "欢迎分享这个工具，任何分享行为对我们来说是最棒的回馈",
@@ -92,7 +92,7 @@
   "goal": "目标",
   "total-goal-materials": "总目标材料",
   "left-click-to-edit-right-click-to-show-hide": "点击鼠标左键以编辑，点击鼠标右键以显示／隐藏",
-  "planner-calculation-explanation": "规划工具的计算说明",
+  "planner-calculation-explanation": "育成规划的计算说明",
   "resources": "资源",
   "insight": "洞察",
   "hard-stages": "厄险关卡",
@@ -172,7 +172,11 @@
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. 如果错误仍然存在，请按 F12 ‣ Console ‣ 复制文字与图片并回报，可以通过首页的错误报告或是直接通过 Discord 联繫 {discord}。",
   "import-the-error-images-again": "重新导入错误图像。",
   "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. 如果遇到错误，请使用 {missing} 来查明其位置。",
-  "guaranteed": "保证",
-  "lose": "失去 50 / 50",
-  "win": "赢 50 / 50"
+  "guaranteed": "保底",
+  "lose": "非本期 UP 角色",
+  "win": "本期 UP 角色",
+  "arcanist": "神祕学家",
+  "date": "日期",
+  "pity": "稀有度",
+  "pull": "抽取次数"
 }
