@@ -297,6 +297,7 @@ const ocr: clickHandler = (payload: Event): void => {
 
                             /* change digit back to roman numeral for proper display */
                             if (isGoldenThread) { fuseResult[0].item = convertGoldenThreadString(fuseResult[0].item, 'romanNumeral'); }
+                            if (fuseResult[0].item === '3uma') { fuseResult[0].item = 'Зима'; }
 
                             // Create an object for each pull
                             const dateString: string = (match.groups?.Date || '').replace(/(\d{4})[-\s]?(\d{2})[-\s](\d{2})\s*(\d{2})[:\s]?(\d{2})[:\s]?(\d{2})/, '$1-$2-$3 $4:$5:$6');
