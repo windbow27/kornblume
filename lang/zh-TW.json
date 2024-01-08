@@ -175,8 +175,8 @@
   "guaranteed": "保底",
   "lose": "非本期 UP 角色",
   "win": "本期 UP 角色",
-  "arcanist": "姓名",
-  "date": "徵集時間",
-  "pity": "稀有度",
-  "pull": "旋"
+  "arcanist": "名字",
+  "date": "時間",
+  "pity": "保底",
+  "pull": "次數"
 }

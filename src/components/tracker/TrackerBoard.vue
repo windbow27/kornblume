@@ -251,10 +251,10 @@ defineExpose({
         <table class="table-auto max-w-2xl w-full text-white lg:mx-auto">
             <thead>
                 <tr>
-                    <th class="text-center px-4">{{ $t('pull') }}</th>
-                    <th class="text-center px-4">{{ $t('arcanist') }}</th>
-                    <th class="text-center px-4">{{ $t('pity') }}</th>
-                    <th class="text-center px-4">{{ $t('date') }}</th>
+                    <th class="text-center mx-4">{{ $t('pull') }}</th>
+                    <th class="text-left pl-20">{{ $t('arcanist') }}</th>
+                    <th class="text-center mx-4">{{ $t('pity') }}</th>
+                    <th class="text-center mx-4">{{ $t('date') }}</th>
                 </tr>
             </thead>
             <tbody>
