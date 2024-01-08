@@ -32,7 +32,7 @@ export const bannerRateUp = [
 ];
 
 export const specialArcanists: string[] = [
-    'The Golden Thread III',
-    'The Golden Thread II',
-    'The Golden Thread I'
+    'The Golden Thread 3',
+    'The Golden Thread 2',
+    'The Golden Thread 1'
 ];

@@ -11,7 +11,7 @@ const props = defineProps({
     },
     indicator: {
         type: String,
-        required: true
+        required: false
     }
 });
 
