@@ -1,4 +1,4 @@
-import{o as C}from"./index-zycjmbLt.js";import{o,c as a,a as e,t,F as f,r as y,u as R,b as U,d as I,e as g,f as h,w as p,g as F,h as _,i as O,j as T,k as w,l as j}from"./index-LVHMD6yq.js";const E=[{date:"07/01/2024",description:`• Improved Golden thread OCR. 
+import{o as C}from"./index-bwWBjihQ.js";import{o,c as a,a as e,t,F as f,r as y,u as R,b as U,d as I,e as g,f as h,w as p,g as F,h as _,i as O,j as T,k as w,l as j}from"./index-CWMr-DEM.js";const E=[{date:"07/01/2024",description:`• Improved Golden thread OCR. 
 `},{date:"07/01/2024",description:`• Added French translations thanks to я герой#3673. 
  • Improved Japanese translations thanks to yagochi. 
  • Fixed X turning into 37 and crop problems. 
