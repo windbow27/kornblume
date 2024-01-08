@@ -174,5 +174,7 @@
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. Si eso no funciona, vuelve a capturar las imágenes e impórtalas nuevamente.",
   "guaranteed": "Garantizar",
   "lose": "Perder 50 / 50",
-  "win": "Ganar 50 / 50"
+  "win": "Ganar 50 / 50",
+  "arcanist": "Nombre",
+  "date": "Hora de invocar"
 }

@@ -174,5 +174,9 @@
   "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Nếu bạn gặp lỗi, hãy xác định vị trí của lỗi đó bằng cách sử dụng dấu thời gian {missing}.",
   "guaranteed": "Bảo đảm",
   "lose": "Thua 50 / 50",
-  "win": "Thắng 50 / 50"
+  "win": "Thắng 50 / 50",
+  "arcanist": "Tên",
+  "pull": "Luợt quay",
+  "date": "Thời gian triệu hồi",
+  "pity": "Bảo hiểm"
 }

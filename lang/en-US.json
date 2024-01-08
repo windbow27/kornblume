@@ -175,8 +175,8 @@
   "win": "Win Rate up",
   "lose": "Lose Rate Up",
   "guaranteed": "Guarantee",
-  "pull": "Pull",
-  "arcanist": "Arcanist",
+  "pull": "Spin",
+  "arcanist": "Name",
   "pity": "Pity",
-  "date": "Date"
+  "date": "Summon Time"
 }

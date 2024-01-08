@@ -267,7 +267,7 @@ defineExpose({
                         'text-green-200': pull.Rarity === 2
                     }">
                     <!-- Index -->
-                    <td class="text-center px-4">{{ pull.PullNumber }}</td>
+                    <td class="text-center px-4 whitespace-nowrap">{{ pull.PullNumber }}</td>
 
                     <!-- Arcanist -->
                     <td class="flex items-center px-4 gap-x-3 whitespace-nowrap">
@@ -291,7 +291,7 @@ defineExpose({
                     </td>
 
                     <!-- Pity -->
-                    <td class="text-center px-4">
+                    <td class="text-center px-4 whitespace-nowrap">
                         <span v-show="pull.Rarity === 6">
                             {{ sixStarsPullsList[sixStarsPullsList.length - 1 - index] }}
                         </span>

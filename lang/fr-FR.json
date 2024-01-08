@@ -169,5 +169,7 @@
   "images-must-be-clear-or-the-summon-tracker-may-fail-to-read": "Les images {highlight}, ou le Summon Tracker peut ne pas réussir à lire.",
   "please-note-that-we-do-not-know-exact-drop-rates-so-we-can-only-show-what-youre-expected-to-get-not-what-you-will-get-exactly-the-hard-stages-section-will-also-show-any-drop-that-you-may-get-rather-than-only-the-items-that-you-need-this-does-not-affect-the-results-of-the-farm-plan": "Veuillez noter que nous ne connaissons pas les taux d'obtention exacts, nous ne pouvons donc montrer que ce que vous êtes censé obtenir - et non ce que vous obtiendrez exactement. \nLa section {hardstages} affichera également {any} drop que vous pourriez obtenir - plutôt que uniquement les éléments dont vous avez besoin. \nCela n'affecte pas les résultats du plan agricole.",
   "ocr-import-only-works-with-english-text-consider-changing-your-language-into-english-to-screenshot": "L'importation OCR ne fonctionne qu'avec {highlight}, pensez à changer votre langue en anglais pour faire une capture d'écran.",
-  "reset-quantity-of-selected-categories": "Réinitialiser la quantité de catégories {highlight} ?"
+  "reset-quantity-of-selected-categories": "Réinitialiser la quantité de catégories {highlight} ?",
+  "arcanist": "Nom",
+  "date": "Heure d'invocation"
 }

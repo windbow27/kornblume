@@ -175,8 +175,8 @@
   "guaranteed": "保底",
   "lose": "非本期 UP 角色",
   "win": "本期 UP 角色",
-  "arcanist": "神祕学家",
-  "date": "日期",
+  "arcanist": "姓名",
+  "date": "征集时间",
   "pity": "稀有度",
-  "pull": "抽取次数"
+  "pull": "旋"
 }
