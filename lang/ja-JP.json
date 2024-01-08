@@ -103,7 +103,7 @@
   "please-read-tutorial": "チュートリアルを読んでください。",
   "prioritize-purple-materials-when-farming": "上級(紫)の素材を優先します",
   "privacy-policy": "プライバシーポリシー",
-  "processing-file-number-out-of-numbers-please-wait": "ファイル処理中{current}／{total}...お待ちください...",
+  "processing-file-number-out-of-numbers-please-wait": "ファイル処理中 {current}／{total}...お待ちください...",
   "profile": "プロフィール",
   "recent-6-star-summons": "最近の6 {star}召喚",
   "referred-to-arkplanner-s-farming-route-algorithm-enhanced-with-linear-programming-magic": "ArkPlannerの経路探索を参考に線形計画法を改良。",
