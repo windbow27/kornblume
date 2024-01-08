@@ -171,8 +171,5 @@
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. Если это не сработало, то переделайте изображение и импортируйте снова.",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. Если ошибка вас всё ещё беспокоит, то нажмите F12 ‣ Консоль ‣ Отправьте сообщение с изображением в Исправление Багов или напрямую нам в {discord}.",
   "import-the-error-images-again": "Импортируйте изображения опять.",
-  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Если вы наткнётесь на баг, укажите его расположение используя {missing} временные метки.",
-  "guaranteed": "Гарантия",
-  "lose": "Терять 50 / 50",
-  "win": "Победить 50 / 50"
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Если вы наткнётесь на баг, укажите его расположение используя {missing} временные метки."
 }
