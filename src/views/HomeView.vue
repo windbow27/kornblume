@@ -68,7 +68,7 @@ onClickOutside(resourcesRef, closeResources)
             </p>
         </div>
 
-        <div class="container mx-auto lg:w-2/3 px-4">
+        <div class="container mx-auto w-full lg:w-2/3 px-4 aspect-video">
             <div class="carousel w-full rounded-md">
                 <!-- Loop through carousel items -->
                 <div v-for="(item, index) in carouselItems" :key="index"
