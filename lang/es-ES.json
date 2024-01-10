@@ -172,9 +172,11 @@
   "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Si encuentras un error, identifica su ubicación utilizando las indicaciones de tiempo y las {missing}.",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. Si el error persiste, presiona F12 ‣ Consola ‣ Envía el texto y las imágenes a través de Reporte de Errores o directamente a {discord}.",
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. Si eso no funciona, vuelve a capturar las imágenes e impórtalas nuevamente.",
-  "guaranteed": "Garantizar",
-  "lose": "Perder 50 / 50",
-  "win": "Ganar 50 / 50",
+  "guaranteed": "Garantizado",
+  "lose": "50 / 50 perdido",
+  "win": "50 / 50 ganado",
   "arcanist": "Nombre",
-  "date": "Hora de invocar"
+  "date": "Hora de invocación",
+  "pity": "Pity",
+  "pull": "Girada"
 }
