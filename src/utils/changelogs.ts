@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '11/01/2024', description: '• Updated ES translations\n • Updated Jiu and previous missing data.' },
     { date: '10/01/2024', description: '• Updated KR translations\n • vertin wheel vertin wheel vertin wheel.' },
     { date: '08/01/2024', description: '• Improved Golden Thread OCR.\n • Tracker UI changes.' },
     { date: '07/01/2024', description: '• Added French translations thanks to я герой#3673. \n • Improved Japanese translations thanks to yagochi. \n • Fixed X turning into 37 and crop problems. \n • Added 50/50 win/lose indicator.' },
