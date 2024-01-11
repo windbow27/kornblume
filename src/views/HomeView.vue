@@ -131,7 +131,7 @@ onClickOutside(resourcesRef, closeResources)
                     <button class="btn btn-ghost btn-sm opacity-90" onclick="privacy.showModal()">{{ $t('privacy-policy')
                     }}</button>
                     <dialog id="translators" class="modal">
-                        <div class="modal-box custom-gradient-gray-blue">
+                        <div class="modal-box custom-border custom-gradient-gray-blue">
                             <form method="dialog">
                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                             </form>
@@ -154,7 +154,7 @@ onClickOutside(resourcesRef, closeResources)
                         </form>
                     </dialog>
                     <dialog id="privacy" class="modal">
-                        <div class="modal-box custom-gradient-gray-blue">
+                        <div class="modal-box custom-border custom-gradient-gray-blue">
                             <form method="dialog">
                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                             </form>

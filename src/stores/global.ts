@@ -10,6 +10,7 @@ interface IGlobalStore {
     neededRawMaterialsMapping: INeededMaterialsMapping,
     neededMaterialsMapping: INeededMaterialsMapping,
     isLoading: boolean, // added isLoading state
+    isChangelogsShown: boolean
 }
 
 // can set some global state here, but never let it persist
@@ -19,7 +20,8 @@ export const useGlobalStore = defineStore('global', {
         isEditingMaterial: '',
         neededRawMaterialsMapping: {}, // return quantity for raw materials
         neededMaterialsMapping: {}, // consider in-process crafting needs
-        isLoading: false // loading screen
+        isLoading: false, // loading screen
+        isChangelogsShown: false // changelogs
     }),
     actions: {
         setIsEditingWarehouse (isEditing: boolean) {

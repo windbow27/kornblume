@@ -230,7 +230,7 @@ defineExpose({
         </div>
     </div>
 
-    <div class="flex flex-col overflow-x-scroll hidden-scrollbar">
+    <div class="flex flex-col overflow-x-auto hidden-scrollbar">
         <!-- Summon History -->
         <div class="text text-center text-xl pb-4 pt-10">{{ $t('summon-history') }}</div>
 

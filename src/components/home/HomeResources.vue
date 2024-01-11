@@ -29,23 +29,24 @@ const resources = [
 
 <template>
     <div class="list-overlay">
-        <div class="custom-modal-small h-2/3 overflow-y-scroll hidden-scrollbar">
-            <button @click="closeOverlay" class="absolute top-2 right-2 text-white">
-                <i class="fas fa-times"></i>
-            </button>
+        <div class="custom-modal-big h-2/3 lg:h-1/2 relative">
+            <div class="absolute top-0 left-0 right-0 p-4 custom-gradient-gray-blue">
+                <button @click="closeOverlay" class="absolute top-5 right-7 text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h1 class="text-white font-bold text-2xl p-2">{{ $t('credits') }}</h1>
+            </div>
 
-            <h1 class="text-white font-bold text-2xl pb-2">{{ $t('credits') }}</h1>
-
-            <ul class="text-white space-y-5">
+            <ul class="text-white space-y-5 pt-12 overflow-y-auto h-full">
                 <li v-for="(resource, index) in resources" :key="index">
                     <a :href="resource.link" target="_blank" class="text-sky-300 text-lg"> <i class="fa-solid fa-link"></i>
-                        {{
-                            resource.name }} </a>
+                        {{ resource.name }} </a>
                     <span class="text-sm pl-1">
                         <i18n-t keypath="by-author">
                             <template #author>
                                 <span class="text-sm">{{ resource.author }}</span>
-                            </template></i18n-t>
+                            </template>
+                        </i18n-t>
                     </span>
                     <p class="text-sm"> {{ resource.comment }}</p>
                 </li>

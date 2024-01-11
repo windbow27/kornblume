@@ -62,7 +62,7 @@ const resetTracker = () => {
             </div>
 
             <dialog id="resetTracker" class="modal">
-                <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
+                <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
@@ -78,7 +78,7 @@ const resetTracker = () => {
             </dialog>
 
             <dialog id="resetAll" class="modal">
-                <div class="modal-box custom-gradient-gray-blue flex flex-col justify-center items-center">
+                <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
