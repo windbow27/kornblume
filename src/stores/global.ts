@@ -14,16 +14,21 @@ interface IGlobalStore {
 }
 
 interface IChangelogsStore {
-    lastChangelogs: string
+    lastChangelogs: string,
+    isOpenTutorial: boolean
 }
 
 export const useChangelogsStore = defineStore('changelogs', {
     state: (): IChangelogsStore => ({
-        lastChangelogs: ''
+        lastChangelogs: '',
+        isOpenTutorial: false // i don't know where to put this
     }),
     actions: {
         setLastChangelogs (lastChangelogs: string) {
             this.lastChangelogs = lastChangelogs
+        },
+        setIsOpenTutorial (isOpenTutorial: boolean) {
+            this.isOpenTutorial = isOpenTutorial
         }
     },
     persist: true

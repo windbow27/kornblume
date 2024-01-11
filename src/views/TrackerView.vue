@@ -3,6 +3,7 @@ import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 import { bannerList, bannerRateUp, specialArcanists } from '@/utils/bannerData'
+import { useChangelogsStore } from '@/stores/global';
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
 import TrackerBoard from '../components/tracker/TrackerBoard.vue';
@@ -17,6 +18,8 @@ const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
 const pulls = ref<IPull[]>([]);
+const changelogsStore = useChangelogsStore();
+const tutorialButton = ref(null);
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically
@@ -398,6 +401,13 @@ onMounted(() => {
     if (usePullsRecordStore().data.length > 0) {
         pulls.value = [...usePullsRecordStore().data]
     }
+    if (!changelogsStore.isOpenTutorial) {
+        console.log(tutorialButton.value);
+        if (tutorialButton.value) {
+            (tutorialButton.value as unknown as HTMLButtonElement).click();
+        }
+        changelogsStore.setIsOpenTutorial(true)
+    }
 })
 
 watchEffect(() => {
@@ -424,7 +434,7 @@ watchEffect(() => {
                     {{ $t('ocr-import') }} </button>
 
                 <div class="space-x-3">
-                    <button id="tutorial-button" class="btn btn-ghost custom-gradient-button btn-sm text-white"
+                    <button id="tutorial-button" ref="tutorialButton" class="btn btn-ghost custom-gradient-button btn-sm text-white"
                         onclick="tutorial.showModal()">{{
                             $t('tutorial') }}</button>
 
