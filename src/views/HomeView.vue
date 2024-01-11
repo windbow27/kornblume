@@ -1,9 +1,12 @@
 <script setup lang="ts" name="HomeView">
 import { onMounted, onUnmounted, ref } from 'vue';
 import { onClickOutside } from '@vueuse/core'
+import { useChangelogsStore } from '@/stores/global';
+import { changelogs } from '@/utils/changelogs';
 import HomeChangelogs from '../components/home/HomeChangelogs.vue'
 import HomeResources from '../components/home/HomeResources.vue'
 
+const changelogsStore = useChangelogsStore()
 const isChangeLogs = ref(false)
 const isResources = ref(false)
 const changelogsRef = ref(null)
@@ -38,6 +41,10 @@ const updateScreenSize = () => {
 
 onMounted(() => {
     window.addEventListener('resize', updateScreenSize);
+    if (changelogs[0].date !== changelogsStore.lastChangelogs) {
+        openChangelogs()
+        changelogsStore.setLastChangelogs(changelogs[0].date)
+    }
 });
 
 onUnmounted(() => {

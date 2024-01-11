@@ -13,6 +13,22 @@ interface IGlobalStore {
     isChangelogsShown: boolean
 }
 
+interface IChangelogsStore {
+    lastChangelogs: string
+}
+
+export const useChangelogsStore = defineStore('changelogs', {
+    state: (): IChangelogsStore => ({
+        lastChangelogs: ''
+    }),
+    actions: {
+        setLastChangelogs (lastChangelogs: string) {
+            this.lastChangelogs = lastChangelogs
+        }
+    },
+    persist: true
+})
+
 // can set some global state here, but never let it persist
 export const useGlobalStore = defineStore('global', {
     state: (): IGlobalStore => ({
