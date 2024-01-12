@@ -1,4 +1,4 @@
-import{o as I}from"./index-5C819Hui.js";import{o as a,c as n,a as e,t,F as f,r as y,u as F,b as T,d as R,e as _,f as p,w as u,g as O,h as j,i as g,j as E,k as z,l as k,m as V}from"./index-70Z_AfjP.js";const x=[{date:"11/01/2024",description:`• Updated ES translations
+import{o as I}from"./index-MGvvcCvl.js";import{o as a,c as n,a as e,t,F as f,r as y,u as F,b as T,d as R,e as _,f as p,w as u,g as O,h as j,i as g,j as E,k as z,l as k,m as V}from"./index-q8uIW6q3.js";const x=[{date:"12/01/2024",description:"• Fixed a bug where pity count in summon history is displayed incorrectly when other rarities are present."},{date:"11/01/2024",description:`• Updated ES translations
  • Added Jiu Niangzi, Енисе́й and updated previous missing data.`},{date:"10/01/2024",description:`• Updated KR translations
  • vertin wheel vertin wheel vertin wheel.`},{date:"08/01/2024",description:`• Improved Golden Thread OCR.
  • Tracker UI changes.`},{date:"07/01/2024",description:`• Added French translations thanks to я герой#3673. 
