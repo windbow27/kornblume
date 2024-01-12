@@ -79,6 +79,20 @@ const sixStarsPullsList = computed(() => {
     return sixStarPulls.map((pullNumber, index) => index === 0 ? pullNumber : pullNumber - sixStarPulls[index - 1]);
 });
 
+const sixStarsPullsIndex = computed(() => {
+    const sixStarPulls = (props.pulls)
+        .filter(pull => pull.Rarity === 6)
+        .sort((a, b) => a.PullNumber - b.PullNumber)
+        .map(pull => pull.PullNumber);
+
+    const indexBasedOnPullNumber = {};
+    sixStarPulls.forEach((pullNumber, index) => {
+        indexBasedOnPullNumber[pullNumber] = index === 0 ? pullNumber : pullNumber - sixStarPulls[index - 1];
+    });
+
+    return indexBasedOnPullNumber;
+});
+
 const summonSinceLastSixStar = computed(() => {
     const lastSixStarPull = props.pulls.find(pull => pull.Rarity === 6);
     if (lastSixStarPull) {
@@ -293,7 +307,7 @@ defineExpose({
                     <!-- Pity -->
                     <td class="text-center px-4 whitespace-nowrap">
                         <span v-show="pull.Rarity === 6">
-                            {{ sixStarsPullsList[sixStarsPullsList.length - 1 - index] }}
+                            {{ sixStarsPullsIndex[pull.PullNumber] }}
                         </span>
                     </td>
                     <!-- Date -->
