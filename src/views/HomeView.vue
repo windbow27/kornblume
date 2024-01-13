@@ -58,12 +58,12 @@ onClickOutside(resourcesRef, closeResources)
 
 <template>
     <div class="responsive-spacer overflow-x-hidden">
-        <div class="text-center p-10">
-            <h1 class="text-5xl lg:text-6xl font-bold text-white">Kornblume</h1>
-            <p class="text-lg lg:text-xl text-gray-300">{{ $t('a-toolsite-and-cornflower-worship-place-for-reverse-1999') }}
+        <div class="text-center p-2">
+            <h1 class="text-5xl lg:text-6xl font-bold text-white pt-2">Kornblume</h1>
+            <p class="text-sm sm:text-lg text-gray-300">{{ $t('a-toolsite-and-cornflower-worship-place-for-reverse-1999') }}
             </p>
-            <p class="text-md text-gray-300">{{ $t('any-help-sharing-this-tool-would-be-greated-appreciated') }}</p>
-            <p class="text-md text-gray-300" v-if="!isMediumScreen">
+            <p class="text-xs sm:text-base text-gray-300">{{ $t('any-help-sharing-this-tool-would-be-greated-appreciated') }}</p>
+            <p class="text-xs sm:text-base text-gray-300" v-if="!isMediumScreen">
                 <i18n-t keypath="for-mobile-users-click-top-right-to-start">
                     <template #mobile>
                         <i class="fa-solid fa-mobile-screen-button"></i>
@@ -75,7 +75,7 @@ onClickOutside(resourcesRef, closeResources)
             </p>
         </div>
 
-        <div class="container mx-auto w-full lg:w-2/3 px-4 aspect-video">
+        <div class="container mx-auto w-full xl:w-1/2 px-4 aspect-video">
             <div class="carousel w-full rounded-md">
                 <!-- Loop through carousel items -->
                 <div v-for="(item, index) in carouselItems" :key="index"
@@ -89,21 +89,21 @@ onClickOutside(resourcesRef, closeResources)
             </div>
         </div>
 
-        <footer class="text-white py-8">
+        <footer class="text-white">
             <div class="container mx-auto flex flex-col items-center space">
-                <div class="flex mb-4 space-x-4">
+                <div class="flex flex-wrap justify-center items-center mb-4 gap-x-4 gap-y-4">
                     <button @click="openChangelogs" class="btn btn-ghost btn-md custom-gradient-button"><i
                             class="fa-solid fa-book"></i> {{ $t('changelogs') }} </button>
                     <button @click="openResources" class="btn btn-ghost btn-md custom-gradient-button"><i
                             class="fa-solid fa-book"></i> {{ $t('credits') }} </button>
+                    <a href="https://forms.gle/vfapSjQmRNn7ChPe8" target="_blank"
+                        class="btn btn-ghost btn-md custom-gradient-button">
+                        <i class="fa-solid fa-rectangle-list"></i> {{ $t('comments-bug-reports') }}
+                    </a>
                 </div>
-                <a href="https://forms.gle/vfapSjQmRNn7ChPe8" target="_blank"
-                    class="btn btn-ghost btn-md custom-gradient-button">
-                    <i class="fa-solid fa-rectangle-list"></i> {{ $t('comments-bug-reports') }}
-                </a>
 
                 <a href="https://github.com/windbow27/Kornblume" target="_blank"
-                    class="text-3xl text-gray-400 hover:text-white pt-5">
+                    class="text-2xl lg:text-3xl text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>
                 </a>
                 <p class="text-xs opacity-80 mb-2 text-center">
@@ -115,7 +115,7 @@ onClickOutside(resourcesRef, closeResources)
                     </i18n-t>
                 </p>
 
-                <p class="text-xs opacity-80 mb-2 text-center">
+                <!-- <p class="text-xs opacity-80 mb-2 text-center">
                     <i18n-t
                         keypath="we-are-translating-the-site-into-other-languages-please-help-us-out-you-could-reach-out-to-us-through-windbow-in-discord">
                         <template #link>
@@ -126,13 +126,13 @@ onClickOutside(resourcesRef, closeResources)
                             @windbow
                         </template>
                     </i18n-t>
-                </p>
+                </p> -->
 
                 <div class="mb-4 text-center">
                     <p class="text-xs opacity-80">{{
                         $t('kornblume-is-not-affilated-with-bluepoch-all-images-and-data-belongs-to-their-respective-owners')
                     }}</p>
-                    <p class="text-md opacity-90 mx-2 mt-2">{{ $t('developed-by-windbow-joined-by-zero-day-and-fran') }}</p>
+                    <p class="text-xs sm:text-base opacity-90 mx-2 mt-2">{{ $t('developed-by-windbow-joined-by-zero-day-and-fran') }}</p>
                     <button class="btn btn-ghost btn-sm opacity-90" onclick="translators.showModal()">{{ $t('translators')
                     }}</button>
                     <button class="btn btn-ghost btn-sm opacity-90" onclick="privacy.showModal()">{{ $t('privacy-policy')
@@ -190,4 +190,5 @@ onClickOutside(resourcesRef, closeResources)
     <div></div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '14/01/2024', description: '• Home UI improvements.' },
     { date: '13/01/2024', description: '• The algorithm for image preprocessing has been modified, requiring observation for evaluation.' },
     { date: '12/01/2024', description: '• Fixed a bug where pity count in summon history is displayed incorrectly when other rarities are present.' },
     { date: '11/01/2024', description: '• Updated ES translations\n • Added Jiu Niangzi, Енисе́й and updated previous missing data.' },
