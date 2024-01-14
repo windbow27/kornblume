@@ -1,5 +1,10 @@
-// Switch the data source for resources needed for level-up from a store to a constant in the code base
-// The reason is that we do not need to frequently update this data to address version updates
+// Crystal Casket related
+export const CrystalCasketMaterials = [
+    'Sinuous Howl',
+    'Interlaced Shudder',
+    'Hypocritical Murmur',
+    'Hoarse Echo'
+];
 
 // TODO: Reorganize the data structure
 export const levelUpResources = [

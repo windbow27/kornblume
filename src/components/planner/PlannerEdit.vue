@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
 import { useDataStore } from '../../stores/dataStore';
-import { levelUpResources } from '../../constants';
+import { levelUpResources, CrystalCasketMaterials } from '../../constants';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
 import ArcanistLevelUp from '../arcanist/ArcanistLevelUp.vue'
@@ -126,7 +126,9 @@ const isWarehouseSufficient = computed(() => {
         return false;
     }
     return materialRequirement.value.filter((matl) => {
-        if (useWarehouseStore().getItemQuantity(matl.Material) < matl.Quantity) {
+        if (CrystalCasketMaterials.includes(matl.Material)) {
+            return useWarehouseStore().getItemQuantity('Crystal Casket') < matl.Quantity
+        } else if (useWarehouseStore().getItemQuantity(matl.Material) < matl.Quantity) {
             return true
         } else {
             return false
@@ -138,7 +140,11 @@ const levelUpArcanist = () => {
     if (checkIfCurrentAndGoalAreTheSame()) return;
     if (isWarehouseSufficient.value) {
         materialRequirement.value.forEach((matl) => {
-            useWarehouseStore().reduceItem(matl.Material, matl.Quantity)
+            if (CrystalCasketMaterials.includes(matl.Material)) {
+                useWarehouseStore().reduceItem('Crystal Casket', matl.Quantity)
+            } else {
+                useWarehouseStore().reduceItem(matl.Material, matl.Quantity)
+            }
         })
         selectedCurrentLevel.value = selectedGoalLevel.value
         selectedCurrentInsight.value = selectedGoalInsight.value
