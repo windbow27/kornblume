@@ -4,7 +4,10 @@ import { useDataStore } from '../../stores/dataStore';
 import { levelUpResources } from '../../constants';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
+import ArcanistLevelUp from '../arcanist/ArcanistLevelUp.vue'
 import SelectList from '../common/SelectList.vue';
+import { useCalculation } from '../../composables/CalculateMaterials';
+import { useWarehouseStore } from '../../stores/warehouseStore';
 
 const props = defineProps({
     selectedArcanist: {
@@ -76,10 +79,14 @@ const checkIfCurrentAndGoalAreTheSame = () => {
     isTheSame.value = false;
 };
 
+const indexInArcanistsList = computed(() => {
+    return selectedArcanists.value.findIndex(arc => Number(arc.Id) === Number(editingArcanist.value.Id))
+})
+
 const addArcanist = () => {
     if (checkIfCurrentAndGoalAreTheSame()) return;
     // console.log(selectedArcanists.value);
-    const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.Id) === Number(editingArcanist.value.Id));
+    const existingIndex = indexInArcanistsList.value;
     // console.log(existingIndex);
 
     if (existingIndex !== -1) {
@@ -108,6 +115,35 @@ const removeArcanist = () => {
         selectedArcanists.value.splice(existingIndex, 1);
     }
     closeOverlay();
+};
+
+const materialRequirement = computed(() => {
+    return editingArcanist.value ? useCalculation(editingArcanist.value) : [];
+});
+
+const isWarehouseSufficient = computed(() => {
+    if (useWarehouseStore().data?.length === 0) {
+        return false;
+    }
+    return materialRequirement.value.filter((matl) => {
+        if (useWarehouseStore().getItemQuantity(matl.Material) < matl.Quantity) {
+            return true
+        } else {
+            return false
+        }
+    }).length === 0
+})
+
+const levelUpArcanist = () => {
+    if (checkIfCurrentAndGoalAreTheSame()) return;
+    if (isWarehouseSufficient.value) {
+        materialRequirement.value.forEach((matl) => {
+            useWarehouseStore().reduceItem(matl.Material, matl.Quantity)
+        })
+        selectedCurrentLevel.value = selectedGoalLevel.value
+        selectedCurrentInsight.value = selectedGoalInsight.value
+        selectedCurrentResonance.value = selectedGoalResonance.value
+    }
 };
 
 const closeOverlay = () => {
@@ -324,6 +360,23 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <!-- Save -->
             <div class="flex justify-center space-x-4">
+                <button :disabled="materialRequirement.length === 0" v-if="indexInArcanistsList >= 0" onclick="level_up_container.showModal()" class="btn btn-info">{{ $t('level-up') }}</button>
+                <dialog id="level_up_container" class="modal">
+                    <div class="modal-box custom-gradient-gray-blue custom-border">
+                        <form method="dialog">
+                            <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
+                        </form>
+                        <p class="py-4 text-base text-white text-center">{{
+                            $t('level-up-will-automatically-update-the-arcanists-current-status-and-consume-your-warehouse-inventory') }}</p>
+                        <p class="py-4 text-base text-white text-center">{{
+                            $t('are-you-sure-you-want-to-proceed-with-leveling-up') }}</p>
+                        <ArcanistLevelUp :arcanist="editingArcanist" />
+                        <form method="dialog" class="flex justify-center">
+                            <button :disabled="!isWarehouseSufficient" class="btn btn-sm btn-success text-black" @click="levelUpArcanist">{{ $t('level-up') }}</button>
+                        </form>
+                    </div>
+                    <form method="dialog" class="modal-backdrop"></form>
+                </dialog>
                 <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
                 <div v-if="isTheSame" class="toast toast-middle toast-center">
                     <div class="-translate-x-3 alert alert-info bg-red-300">
