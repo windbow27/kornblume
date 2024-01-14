@@ -1,12 +1,13 @@
-<script setup>
+<script setup lang="ts" name="PannerSelector">
 import { ref, computed } from 'vue';
 import { useCalculation, mergeResults, formatResultsWithCasket } from '../../composables/CalculateMaterials';
 import ArcanistIconToggle from '../arcanist/ArcanistIconToggle.vue';
 import ItemGoalIcon from '../item/ItemGoalIcon.vue';
+import { ISelectedArcanist } from '@/types';
 
 const props = defineProps({
     selectedArcanists: {
-        type: Array,
+        type: Array<ISelectedArcanist>,
         required: true
     }
 });
@@ -23,6 +24,10 @@ const handleRightClick = (arcanist) => {
     // console.log('right clicked');
     arcanist.isVisible = !arcanist.isVisible;
 };
+
+const arcanistsLength = computed(() => {
+    return arcanists.value?.length || 0;
+})
 
 const totalMaterials = computed(() => {
     const result = arcanists.value.map(arc => {
@@ -42,7 +47,7 @@ const totalMaterials = computed(() => {
             <ArcanistIconToggle v-for="arcanist in arcanists" :key="arcanist.Id" :arcanist="arcanist.Id"
                 :visible="arcanist.isVisible" @click="handleLeftClick(arcanist)"
                 @contextmenu.prevent="handleRightClick(arcanist)" class="mb-2" />
-            <div class="flex justify-center items-center">
+            <div class="flex justify-center items-center" v-show="arcanistsLength > 0">
                 <button class="btn btn-ghost custom-gradient-button btn-sm text-white"
                     onclick="goalMaterials.showModal()">{{ $t('goal') }}</button>
                 <dialog id="goalMaterials" class="modal">
@@ -66,7 +71,14 @@ const totalMaterials = computed(() => {
             </div>
         </div>
 
-        <p class="text-center text-slate-300 text-sm opacity-70">{{ $t('left-click-to-edit-right-click-to-show-hide') }}</p>
+        <p v-if="arcanistsLength > 0" class="text-center text-slate-300 text-sm opacity-70">{{ $t('left-click-to-edit-right-click-to-show-hide') }}</p>
+        <p v-else class="text-center text-slate-300 text-sm opacity-70">
+            <i18n-t keypath='please-click-on-add-arcanist-button-to-start-your-plan'>
+                <template #button>
+                    <span>{{ $t('add-arcanist') }}</span>
+                </template>
+            </i18n-t>
+        </p>
     </div>
 </template>
 

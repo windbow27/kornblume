@@ -178,5 +178,6 @@
   "arcanist": "名字",
   "date": "時間",
   "pity": "保底",
-  "pull": "次數"
+  "pull": "次數",
+  "please-click-on-add-arcanist-button-to-start-your-plan": "請點擊「{button}」以開始你的規劃"
 }

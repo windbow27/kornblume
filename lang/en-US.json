@@ -178,5 +178,6 @@
   "pull": "Spin",
   "arcanist": "Name",
   "pity": "Pity",
-  "date": "Summon Time"
+  "date": "Summon Time",
+  "please-click-on-add-arcanist-button-to-start-your-plan": "Please click on \"{button}\" to start your plan."
 }
