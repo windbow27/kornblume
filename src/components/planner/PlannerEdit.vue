@@ -369,23 +369,27 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
                     onclick="level_up_container.showModal()" class="btn btn-info">{{ $t('level-up') }}</button>
                 <dialog id="level_up_container" class="modal">
-                    <div class="modal-box custom-gradient-gray-blue custom-border relative h-5/6 sm:h-3/5">
+                    <div class="modal-box custom-gradient-gray-blue custom-border h-5/6 relative sm:h-1/2">
                         <form method="dialog">
                             <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
                         </form>
-                        <p class="py-4 text-white text-center">{{
-                            $t('level-up-will-automatically-update-the-arcanists-current-status-and-consume-your-warehouse-inventory')
-                        }}</p>
-                        <p class="py-2 text-white text-center">{{
-                            $t('are-you-sure-you-want-to-proceed-with-leveling-up') }}</p>
-                        <div class="h-2/3 overflow-y-auto">
+                        <div class="h-1/4 overflow-y-auto hidden-scrollbar flex items-center justify-center flex-col">
+                            <p class="pt-4 text-white text-center">{{
+                                $t('level-up-will-automatically-update-the-arcanists-current-status-and-consume-your-warehouse-inventory')
+                            }}</p>
+                            <p class="text-white text-center">{{
+                                $t('are-you-sure-you-want-to-proceed-with-leveling-up') }}</p>
+                        </div>
+                        <div class="h-3/5 overflow-y-auto">
                             <ArcanistLevelUp :arcanist="editingArcanist" />
                         </div>
-                        <form method="dialog" class="flex justify-center pt-4">
-                            <button v-if="isWarehouseSufficient" class="btn btn-sm btn-success text-black"
-                                @click="levelUpArcanist">{{ $t('level-up') }}</button>
-                            <p v-else class="text-error"> {{ $t('not-enough-materials') }}</p>
-                        </form>
+                        <div class="h-1/6 overflow-y-auto">
+                            <form method="dialog" class="flex justify-center pt-4">
+                                <button v-if="isWarehouseSufficient" class="btn btn-sm btn-success text-black"
+                                    @click="levelUpArcanist">{{ $t('level-up') }}</button>
+                                <p v-else class="text-error"> {{ $t('not-enough-materials') }}</p>
+                            </form>
+                        </div>
                     </div>
                     <form method="dialog" class="modal-backdrop">
                         <button>close</button>
