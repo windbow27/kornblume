@@ -73,7 +73,7 @@ const checkIfCurrentAndGoalAreTheSame = () => {
         isTheSame.value = true;
         setTimeout(() => {
             isTheSame.value = false;
-        }, 1000);
+        }, 1200);
         return true;
     }
     isTheSame.value = false;
@@ -359,30 +359,36 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                     :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
             </div>
             <!-- Save -->
-            <div class="flex justify-center space-x-4">
-                <button :disabled="materialRequirement.length === 0" v-if="indexInArcanistsList >= 0" onclick="level_up_container.showModal()" class="btn btn-info">{{ $t('level-up') }}</button>
+            <div class="flex justify-center space-x-4 pt-2">
+                <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
+                    onclick="level_up_container.showModal()" class="btn btn-info">{{ $t('level-up') }}</button>
                 <dialog id="level_up_container" class="modal">
-                    <div class="modal-box custom-gradient-gray-blue custom-border">
+                    <div class="modal-box custom-gradient-gray-blue custom-border relative h-5/6 sm:h-3/5">
                         <form method="dialog">
                             <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
                         </form>
-                        <p class="py-4 text-base text-white text-center">{{
-                            $t('level-up-will-automatically-update-the-arcanists-current-status-and-consume-your-warehouse-inventory') }}</p>
-                        <p class="py-4 text-base text-white text-center">{{
+                        <p class="py-4 text-white text-center">{{
+                            $t('level-up-will-automatically-update-the-arcanists-current-status-and-consume-your-warehouse-inventory')
+                        }}</p>
+                        <p class="py-2 text-white text-center">{{
                             $t('are-you-sure-you-want-to-proceed-with-leveling-up') }}</p>
-                        <ArcanistLevelUp :arcanist="editingArcanist" />
-                        <form method="dialog" class="flex justify-center">
-                            <button :disabled="!isWarehouseSufficient" class="btn btn-sm btn-success text-black" @click="levelUpArcanist">{{ $t('level-up') }}</button>
+                        <div class="h-2/3 overflow-y-auto">
+                            <ArcanistLevelUp :arcanist="editingArcanist" />
+                        </div>
+                        <form method="dialog" class="flex justify-center pt-4">
+                            <button v-if="isWarehouseSufficient" class="btn btn-sm btn-success text-black"
+                                @click="levelUpArcanist">{{ $t('level-up') }}</button>
+                            <p v-else class="text-error"> {{ $t('not-enough-materials') }}</p>
                         </form>
                     </div>
-                    <form method="dialog" class="modal-backdrop"></form>
+                    <form method="dialog" class="modal-backdrop">
+                        <button>close</button>
+                    </form>
                 </dialog>
-                <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
-                <div v-if="isTheSame" class="toast toast-middle toast-center">
-                    <div class="-translate-x-3 alert alert-info bg-red-300">
-                        <span>{{ $t('current-and-goal-are-the-same') }}</span>
-                    </div>
+                <div v-if="isTheSame">
+                    <div class="text-error font-bold py-3">{{ $t('current-and-goal-are-the-same') }}</div>
                 </div>
+                <button v-else @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
             </div>
             <!-- Materials -->
             <ArcanistCalculate :arcanist="editingArcanist" />
@@ -390,4 +396,8 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.modal-box {
+    overflow-y: unset;
+}
+</style>

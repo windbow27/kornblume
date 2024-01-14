@@ -182,5 +182,6 @@
   "please-click-on-add-arcanist-button-to-start-your-plan": "Please click on \"{button}\" to start your plan.",
   "level-up": "Level Up",
   "level-up-will-automatically-update-the-arcanists-current-status-and-consume-your-warehouse-inventory": "Level-up will automatically update the arcanist's current status and consume your warehouse inventory.",
-  "are-you-sure-you-want-to-proceed-with-leveling-up": "Are you sure you want to proceed with leveling up?"
+  "are-you-sure-you-want-to-proceed-with-leveling-up": "Are you sure you want to proceed with leveling up?",
+  "not-enough-materials": "You don't have enough Materials."
 }
