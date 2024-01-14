@@ -8,6 +8,7 @@ import ArcanistLevelUp from '../arcanist/ArcanistLevelUp.vue'
 import SelectList from '../common/SelectList.vue';
 import { useCalculation } from '../../composables/CalculateMaterials';
 import { useWarehouseStore } from '../../stores/warehouseStore';
+import { useGlobalStore } from '../../stores/global';
 
 const props = defineProps({
     selectedArcanist: {
@@ -139,6 +140,7 @@ const isWarehouseSufficient = computed(() => {
 const levelUpArcanist = () => {
     if (checkIfCurrentAndGoalAreTheSame()) return;
     if (isWarehouseSufficient.value) {
+        useGlobalStore().setIsEditingWarehouse(true);
         materialRequirement.value.forEach((matl) => {
             if (CrystalCasketMaterials.includes(matl.Material)) {
                 useWarehouseStore().reduceItem('Crystal Casket', matl.Quantity)
@@ -149,6 +151,7 @@ const levelUpArcanist = () => {
         selectedCurrentLevel.value = selectedGoalLevel.value
         selectedCurrentInsight.value = selectedGoalInsight.value
         selectedCurrentResonance.value = selectedGoalResonance.value
+        useGlobalStore().setIsEditingWarehouse(false);
     }
 };
 
