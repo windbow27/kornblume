@@ -368,36 +368,34 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <div class="flex justify-center space-x-4 pt-2">
                 <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
                     onclick="level_up_container.showModal()" class="btn btn-info">{{ $t('level-up') }}</button>
-                <dialog id="level_up_container" class="modal">
-                    <div class="modal-box custom-gradient-gray-blue custom-border relative h-5/6 2xl:h-1/2">
-                        <form method="dialog">
-                            <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
-                        </form>
-                        <div class="h-1/4 overflow-y-auto hidden-scrollbar flex items-center justify-center flex-col">
-                            <p class="pt-4 text-white text-center">{{
-                                $t('leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed')
-                            }}</p>
-                        </div>
-                        <div class="h-3/5 overflow-y-auto">
-                            <ArcanistLevelUp :arcanist="editingArcanist" />
-                        </div>
-                        <div class="h-1/6 overflow-y-auto">
-                            <form method="dialog" class="flex justify-center pt-4">
-                                <button v-if="isWarehouseSufficient" class="btn btn-sm btn-success text-black"
-                                    @click="levelUpArcanist">{{ $t('level-up') }}</button>
-                                <p v-else class="text-error"> {{ $t('not-enough-materials') }}</p>
-                            </form>
-                        </div>
-                    </div>
-                    <form method="dialog" class="modal-backdrop">
-                        <button>close</button>
-                    </form>
-                </dialog>
                 <div v-if="isTheSame">
                     <div class="text-error font-bold py-3">{{ $t('current-and-goal-are-the-same') }}</div>
                 </div>
                 <button v-else @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
             </div>
+            <dialog id="level_up_container" class="modal">
+                <div class="modal-box custom-gradient-gray-blue custom-border relative flex flex-col min-h-[calc(30dvh)] max-h-[calc(85dvh)] sm:max-h-[calc(75dvh)] gap-4">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
+                    </form>
+                    <div class="flex items-center justify-center flex-col">
+                        <p class="pt-4 text-white text-center">{{
+                            $t('leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed')
+                        }}</p>
+                    </div>
+                    <div class="overflow-y-auto shrink">
+                        <ArcanistLevelUp :arcanist="editingArcanist" />
+                    </div>
+                    <form method="dialog" class="flex justify-center">
+                        <button v-if="isWarehouseSufficient" class="btn btn-sm btn-success text-black"
+                            @click="levelUpArcanist">{{ $t('level-up') }}</button>
+                        <p v-else class="text-error"> {{ $t('not-enough-materials') }}</p>
+                    </form>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
             <!-- Materials -->
             <ArcanistCalculate :arcanist="editingArcanist" />
         </div>
