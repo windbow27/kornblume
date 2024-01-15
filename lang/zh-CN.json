@@ -178,5 +178,9 @@
   "arcanist": "名字",
   "date": "时间",
   "pity": "保底",
-  "pull": "次数"
+  "pull": "次数",
+  "click-add-arcanist-button-to-start-planning": "点击「{button}」以开始规划",
+  "level-up": "升级",
+  "not-enough-materials": "你没有足够的素材",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "升级的同时将会自动更新神秘学家的当前状态，并自动消耗仓库中的库存。确定要进行升级吗？"
 }

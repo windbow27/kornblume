@@ -1,10 +1,14 @@
 <script setup>
 import { ref, watch, computed } from 'vue';
 import { useDataStore } from '../../stores/dataStore';
-import { levelUpResources } from '../../constants';
+import { levelUpResources, CrystalCasketMaterials } from '../../constants';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
+import ArcanistLevelUp from '../arcanist/ArcanistLevelUp.vue'
 import SelectList from '../common/SelectList.vue';
+import { useCalculation } from '../../composables/CalculateMaterials';
+import { useWarehouseStore } from '../../stores/warehouseStore';
+import { useGlobalStore } from '../../stores/global';
 
 const props = defineProps({
     selectedArcanist: {
@@ -70,16 +74,20 @@ const checkIfCurrentAndGoalAreTheSame = () => {
         isTheSame.value = true;
         setTimeout(() => {
             isTheSame.value = false;
-        }, 1000);
+        }, 1200);
         return true;
     }
     isTheSame.value = false;
 };
 
+const indexInArcanistsList = computed(() => {
+    return selectedArcanists.value.findIndex(arc => Number(arc.Id) === Number(editingArcanist.value.Id))
+})
+
 const addArcanist = () => {
     if (checkIfCurrentAndGoalAreTheSame()) return;
     // console.log(selectedArcanists.value);
-    const existingIndex = selectedArcanists.value.findIndex(arc => Number(arc.Id) === Number(editingArcanist.value.Id));
+    const existingIndex = indexInArcanistsList.value;
     // console.log(existingIndex);
 
     if (existingIndex !== -1) {
@@ -108,6 +116,43 @@ const removeArcanist = () => {
         selectedArcanists.value.splice(existingIndex, 1);
     }
     closeOverlay();
+};
+
+const materialRequirement = computed(() => {
+    return editingArcanist.value ? useCalculation(editingArcanist.value) : [];
+});
+
+const isWarehouseSufficient = computed(() => {
+    if (useWarehouseStore().data?.length === 0) {
+        return false;
+    }
+    return materialRequirement.value.filter((matl) => {
+        if (CrystalCasketMaterials.includes(matl.Material)) {
+            return useWarehouseStore().getItemQuantity('Crystal Casket') < matl.Quantity
+        } else if (useWarehouseStore().getItemQuantity(matl.Material) < matl.Quantity) {
+            return true
+        } else {
+            return false
+        }
+    }).length === 0
+})
+
+const levelUpArcanist = () => {
+    if (checkIfCurrentAndGoalAreTheSame()) return;
+    if (isWarehouseSufficient.value) {
+        useGlobalStore().setIsEditingWarehouse(true);
+        materialRequirement.value.forEach((matl) => {
+            if (CrystalCasketMaterials.includes(matl.Material)) {
+                useWarehouseStore().reduceItem('Crystal Casket', matl.Quantity)
+            } else {
+                useWarehouseStore().reduceItem(matl.Material, matl.Quantity)
+            }
+        })
+        selectedCurrentLevel.value = selectedGoalLevel.value
+        selectedCurrentInsight.value = selectedGoalInsight.value
+        selectedCurrentResonance.value = selectedGoalResonance.value
+        useGlobalStore().setIsEditingWarehouse(false);
+    }
 };
 
 const closeOverlay = () => {
@@ -323,18 +368,45 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                     :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
             </div>
             <!-- Save -->
-            <div class="flex justify-center space-x-4">
-                <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
-                <div v-if="isTheSame" class="toast toast-middle toast-center">
-                    <div class="-translate-x-3 alert alert-info bg-red-300">
-                        <span>{{ $t('current-and-goal-are-the-same') }}</span>
-                    </div>
+            <div class="flex justify-center space-x-4 pt-2">
+                <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
+                    onclick="level_up_container.showModal()" class="btn btn-info">{{ $t('level-up') }}</button>
+                <div v-if="isTheSame">
+                    <div class="text-error font-bold py-3">{{ $t('current-and-goal-are-the-same') }}</div>
                 </div>
+                <button v-else @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
             </div>
+            <dialog id="level_up_container" class="modal">
+                <div class="modal-box custom-gradient-gray-blue custom-border relative flex flex-col min-h-[calc(30dvh)] max-h-[calc(85dvh)] sm:max-h-[calc(75dvh)] gap-4">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
+                    </form>
+                    <div class="flex items-center justify-center flex-col">
+                        <p class="pt-4 text-white text-center">{{
+                            $t('leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed')
+                        }}</p>
+                    </div>
+                    <div class="overflow-y-auto shrink">
+                        <ArcanistLevelUp :arcanist="editingArcanist" />
+                    </div>
+                    <form method="dialog" class="flex justify-center">
+                        <button v-if="isWarehouseSufficient" class="btn btn-sm btn-success text-black"
+                            @click="levelUpArcanist">{{ $t('level-up') }}</button>
+                        <p v-else class="text-error"> {{ $t('not-enough-materials') }}</p>
+                    </form>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
             <!-- Materials -->
             <ArcanistCalculate :arcanist="editingArcanist" />
         </div>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.modal-box {
+    overflow-y: unset;
+}
+</style>

@@ -178,5 +178,9 @@
   "arcanist": "名字",
   "date": "時間",
   "pity": "保底",
-  "pull": "次數"
+  "pull": "次數",
+  "click-add-arcanist-button-to-start-planning": "點擊「{button}」以開始規劃",
+  "level-up": "升級",
+  "not-enough-materials": "你沒有足夠的素材",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "升級的同時將會自動更新神祕學家的當前狀態，並自動消耗倉庫中的庫存。確定要進行升級嗎？"
 }

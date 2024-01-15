@@ -178,5 +178,9 @@
   "pull": "Spin",
   "arcanist": "Name",
   "pity": "Pity",
-  "date": "Summon Time"
+  "date": "Summon Time",
+  "click-add-arcanist-button-to-start-planning": "Click '{button}' to start planning.",
+  "level-up": "Level Up",
+  "not-enough-materials": "You don't have enough Materials.",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Leveling up will update the arcanist's current status and consume your warehouse inventory. Proceed?"
 }

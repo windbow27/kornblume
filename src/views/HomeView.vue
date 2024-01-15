@@ -58,7 +58,7 @@ onClickOutside(resourcesRef, closeResources)
 
 <template>
     <div class="responsive-spacer overflow-x-hidden">
-        <div class="text-center p-2">
+        <div class="text-center p-2 mb-1">
             <h1 class="text-5xl lg:text-6xl font-bold text-white pt-2">Kornblume</h1>
             <p class="text-sm sm:text-lg text-gray-300">{{ $t('a-toolsite-and-cornflower-worship-place-for-reverse-1999') }}
             </p>
