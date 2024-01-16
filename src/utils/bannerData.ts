@@ -12,10 +12,12 @@ export const bannerList = [
     'The Ever-flowing',
     'Midnight Movie Party',
     'Focus of the Lights',
+    'That Steady Evening Star',
+    'Another Spring Thaw',
     // standard
-    'Amongst the Lake',
+    'Amongst the Lake'
     // thread
-    'Invitation From the Water'
+    // 'Invitation From the Water'
 ];
 
 export const bannerRateUp = [
@@ -30,11 +32,13 @@ export const bannerRateUp = [
     'Jessica',
     'Eternity',
     'An-an Lee',
-    'Centurion'
+    'Centurion',
+    'Kaalaa Baunaa',
+    'Shamane'
 ];
 
-export const specialArcanists: string[] = [
-    'The Golden Thread 3',
-    'The Golden Thread 2',
-    'The Golden Thread 1'
-];
+// export const specialArcanists: string[] = [
+//     'The Golden Thread 3',
+//     'The Golden Thread 2',
+//     'The Golden Thread 1'
+// ];

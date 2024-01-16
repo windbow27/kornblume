@@ -2,7 +2,7 @@
 import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
-import { bannerList, bannerRateUp, specialArcanists } from '@/utils/bannerData'
+import { bannerList, bannerRateUp } from '@/utils/bannerData'
 import { useChangelogsStore } from '@/stores/global';
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
@@ -198,10 +198,8 @@ async function preprocessImage (file: File): Promise<File> {
                 canvas.width = img.width;
                 canvas.height = img.height;
 
-                if (context) {
-                    context.filter = 'contrast(2) saturate(0)';
-                    context.drawImage(img, 0, 0);
-                }
+                context!.filter = 'contrast(2) saturate(0)';
+                context!.drawImage(img, 0, 0);
 
                 // debugging
                 // const link = document.createElement('a');
@@ -236,17 +234,17 @@ async function preprocessImage (file: File): Promise<File> {
     });
 }
 
-function convertGoldenThreadString (goldenThread: string, value: 'digit' | 'romanNumeral'): string {
-    const tempArray: string[] = goldenThread.split(' ');
-    const numberPart: string = tempArray[tempArray.length - 1];
-    if (value === 'digit') {
-        return goldenThread.replace(numberPart, String(numberPart.length));
-    } else if (value === 'romanNumeral') {
-        return goldenThread.replace(numberPart, 'I'.repeat(parseInt(numberPart)));
-    }
-    console.log('error converting golden thread string');
-    return '';
-}
+// function convertGoldenThreadString (goldenThread: string, value: 'digit' | 'romanNumeral'): string {
+//     const tempArray: string[] = goldenThread.split(' ');
+//     const numberPart: string = tempArray[tempArray.length - 1];
+//     if (value === 'digit') {
+//         return goldenThread.replace(numberPart, String(numberPart.length));
+//     } else if (value === 'romanNumeral') {
+//         return goldenThread.replace(numberPart, 'I'.repeat(parseInt(numberPart)));
+//     }
+//     console.log('error converting golden thread string');
+//     return '';
+// }
 
 type clickHandler = (payload: Event) => void | undefined;
 const ocr: clickHandler = (payload: Event): void => {
@@ -265,7 +263,7 @@ const ocr: clickHandler = (payload: Event): void => {
 
     const arcanistList = arcanists.map((arcanist) => arcanist.Name === 'Зима' ? '3uma' : arcanist.Name);
     const arcanistFuse: Fuse<string> = new Fuse(arcanistList);
-    specialArcanists.forEach((arcanist) => arcanistFuse.add(arcanist));
+    // specialArcanists.forEach((arcanist) => arcanistFuse.add(arcanist));
 
     if (fileList) {
         isImporting.value = true;
@@ -299,24 +297,28 @@ const ocr: clickHandler = (payload: Event): void => {
                         const match = line.match(pattern);
                         if (!match && line.length !== 0 && !line.match(excludeLineInfo)) { console.log(line); }
                         if (match) {
-                            let arcanistName: string = match.groups?.ArcanistName.trim() || '';
+                            const arcanistName: string = match.groups?.ArcanistName.trim() || '';
 
                             /* change roman numeral to digit for better fuzzy string matching */
-                            if (arcanistName.includes('Golden')) { arcanistName = convertGoldenThreadString(arcanistName, 'digit'); }
+                            // if (arcanistName.includes('Golden')) { arcanistName = convertGoldenThreadString(arcanistName, 'digit'); }
 
                             let fuseResult: FuseResult<string>[] = arcanistFuse.search(arcanistName, { limit: 1 });
                             if (fuseResult.length === 0) { console.log(`could not match fuzzy string ${arcanistName}`); return; }
-                            const isGoldenThread: boolean = fuseResult[0].item.includes('The Golden Thread');
+                            // const isGoldenThread: boolean = fuseResult[0].item.includes('The Golden Thread');
 
                             /* change digit back to roman numeral for proper display */
-                            if (isGoldenThread) { fuseResult[0].item = convertGoldenThreadString(fuseResult[0].item, 'romanNumeral'); }
+                            // if (isGoldenThread) { fuseResult[0].item = convertGoldenThreadString(fuseResult[0].item, 'romanNumeral'); }
                             if (fuseResult[0].item === '3uma') { fuseResult[0].item = 'Зима'; }
 
                             // Create an object for each pull
                             const dateString: string = (match.groups?.Date || '').replace(/(\d{4})[-\s]?(\d{2})[-\s](\d{2})\s*(\d{2})[:\s]?(\d{2})[:\s]?(\d{2})/, '$1-$2-$3 $4:$5:$6');
                             const timestamp: number = new Date(dateString).getTime();
-                            const pull: IPull = { ArcanistName: fuseResult[0].item, Rarity: 0, BannerType: '', Timestamp: timestamp };
-                            pull.Rarity = isGoldenThread ? 6 : arcanists[fuseResult[0].refIndex].Rarity;
+                            const pull: IPull = {
+                                ArcanistName: fuseResult[0].item,
+                                Rarity: arcanists[fuseResult[0].refIndex].Rarity,
+                                BannerType: '',
+                                Timestamp: timestamp
+                            };
 
                             /* fuzzy match banner capture */
                             fuseResult = bannerFuse.search(match.groups?.BannerType.trim() || '', { limit: 1 });
