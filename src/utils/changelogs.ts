@@ -1,5 +1,7 @@
 export const changelogs = [
     // Add more from top
+    { date: '16/01/2024', description: '• Added Centurion banner.' },
+    { date: '15/01/2024', description: '• Added "Level Up" function where you can consume your warehouse materials to update arcanist to goal status. Try it out by left clicking an arcanist.' },
     { date: '14/01/2024', description: '• Home UI improvements.' },
     { date: '13/01/2024', description: '• The algorithm for image preprocessing has been modified, requiring observation for evaluation.' },
     { date: '12/01/2024', description: '• Fixed a bug where pity count in summon history is displayed incorrectly when other rarities are present.' },

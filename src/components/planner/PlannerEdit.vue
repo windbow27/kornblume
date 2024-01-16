@@ -40,7 +40,6 @@ const emit = defineEmits({
 });
 
 const arcanists = useDataStore().arcanists;
-const isTheSame = ref(false);
 const updateKey = ref(0);
 const calculations = levelUpResources;
 const selectedArcanist = ref(arcanists.find(arc => Number(arc.Id) === Number(props.selectedArcanist.Id)));
@@ -67,25 +66,11 @@ const compareLevels = (currentInsightSelect, currentLevelSelect, goalInsightSele
     }
 };
 
-const checkIfCurrentAndGoalAreTheSame = () => {
-    if (selectedCurrentInsight.value === selectedGoalInsight.value &&
-        selectedCurrentLevel.value === selectedGoalLevel.value &&
-        selectedCurrentResonance.value === selectedGoalResonance.value) {
-        isTheSame.value = true;
-        setTimeout(() => {
-            isTheSame.value = false;
-        }, 1200);
-        return true;
-    }
-    isTheSame.value = false;
-};
-
 const indexInArcanistsList = computed(() => {
     return selectedArcanists.value.findIndex(arc => Number(arc.Id) === Number(editingArcanist.value.Id))
 })
 
 const addArcanist = () => {
-    if (checkIfCurrentAndGoalAreTheSame()) return;
     // console.log(selectedArcanists.value);
     const existingIndex = indexInArcanistsList.value;
     // console.log(existingIndex);
@@ -138,7 +123,6 @@ const isWarehouseSufficient = computed(() => {
 })
 
 const levelUpArcanist = () => {
-    if (checkIfCurrentAndGoalAreTheSame()) return;
     if (isWarehouseSufficient.value) {
         useGlobalStore().setIsEditingWarehouse(true);
         materialRequirement.value.forEach((matl) => {
@@ -152,6 +136,7 @@ const levelUpArcanist = () => {
         selectedCurrentInsight.value = selectedGoalInsight.value
         selectedCurrentResonance.value = selectedGoalResonance.value
         useGlobalStore().setIsEditingWarehouse(false);
+        addArcanist();
     }
 };
 
@@ -371,10 +356,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <div class="flex justify-center space-x-4 pt-2">
                 <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
                     onclick="level_up_container.showModal()" class="btn btn-info">{{ $t('level-up') }}</button>
-                <div v-if="isTheSame">
-                    <div class="text-error font-bold py-3">{{ $t('current-and-goal-are-the-same') }}</div>
-                </div>
-                <button v-else @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
+                <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
             </div>
             <dialog id="level_up_container" class="modal">
                 <div class="modal-box custom-gradient-gray-blue custom-border relative flex flex-col min-h-[calc(30dvh)] max-h-[calc(85dvh)] sm:max-h-[calc(75dvh)] gap-4">
