@@ -178,5 +178,9 @@
   "arcanist": "Nombre",
   "date": "Hora de invocación",
   "pity": "Pity",
-  "pull": "Girada"
+  "pull": "Girada",
+  "click-add-arcanist-button-to-start-planning": "Haz clic en '{button}' para comenzar a planificar.",
+  "level-up": "Subir de Nivel",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Subir de nivel actualizará el estado actual del arcanista y consumirá objetos de su almacén. ¿Proceder?",
+  "not-enough-materials": "No tienes suficientes materiales."
 }
