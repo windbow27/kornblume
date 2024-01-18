@@ -161,29 +161,29 @@ function getCropOptions (context: CanvasRenderingContext2D | null, width: number
     };
 }
 
-// function binarize (context: CanvasRenderingContext2D | null, width: number, height: number): ImageData {
-//     const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
-//     if (!imageData) {
-//         console.log('failed to obtain image data (binarize)');
-//         return new ImageData(0, 0);
-//     }
-//     const pixels: Uint8ClampedArray = imageData?.data;
-//     if (!pixels) {
-//         console.log('failed to obtain pixel data (binarize)');
-//         return new ImageData(0, 0);
-//     }
-//     const level: number = 0.6;
-//     const thresh: number = Math.floor(level * 255);
-//     for (let i = 0; i < pixels.length; i += 4) {
-//         const r: number = pixels[i];
-//         const g: number = pixels[i + 1];
-//         const b: number = pixels[i + 2];
-//         const grey: number = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-//         const val: number = grey >= thresh ? 255 : 0;
-//         pixels[i] = pixels[i + 1] = pixels[i + 2] = val;
-//     }
-//     return imageData;
-// }
+function binarize (context: CanvasRenderingContext2D | null, width: number, height: number): ImageData {
+    const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
+    if (!imageData) {
+        console.log('failed to obtain image data (binarize)');
+        return new ImageData(0, 0);
+    }
+    const pixels: Uint8ClampedArray = imageData?.data;
+    if (!pixels) {
+        console.log('failed to obtain pixel data (binarize)');
+        return new ImageData(0, 0);
+    }
+    const level: number = 0.6;
+    const thresh: number = Math.floor(level * 255);
+    for (let i = 0; i < pixels.length; i += 4) {
+        const r: number = pixels[i];
+        const g: number = pixels[i + 1];
+        const b: number = pixels[i + 2];
+        const grey: number = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        const val: number = grey >= thresh ? 255 : 0;
+        pixels[i] = pixels[i + 1] = pixels[i + 2] = val;
+    }
+    return imageData;
+}
 
 async function preprocessImage (file: File): Promise<File> {
     return new Promise((resolve, reject) => {
@@ -198,10 +198,10 @@ async function preprocessImage (file: File): Promise<File> {
                 canvas.width = img.width;
                 canvas.height = img.height;
 
-                if (context) {
-                    context.filter = 'contrast(2) saturate(0)';
-                    context.drawImage(img, 0, 0);
-                }
+                // if (context) {
+                //     context.filter = 'contrast(2) saturate(0)';
+                //     context.drawImage(img, 0, 0);
+                // }
 
                 // debugging
                 // const link = document.createElement('a');
@@ -209,9 +209,9 @@ async function preprocessImage (file: File): Promise<File> {
                 // link.href = canvas.toDataURL();
                 // link.click();
 
-                // const newData: ImageData = binarize(context, canvas.width, canvas.height);
-                // if (!newData) { reject(new Error('binarize failed (preprocessImage)')); }
-                // context?.putImageData(newData, 0, 0);
+                const newData: ImageData = binarize(context, canvas.width, canvas.height);
+                if (!newData) { reject(new Error('binarize failed (preprocessImage)')); }
+                context?.putImageData(newData, 0, 0);
 
                 const options: cropOptions = getCropOptions(context, canvas.width, canvas.height);
                 const cropped_canvas: HTMLCanvasElement = document.createElement('canvas');
