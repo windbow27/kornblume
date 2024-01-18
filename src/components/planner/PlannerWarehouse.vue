@@ -139,8 +139,8 @@ onMounted(() => {
                   :type="$t('event-shop')" />
                 <EventShopButton version="1.31" :text="$t('event-shop-button', { version: '1.3', number: '1' })"
                   :type="$t('event-shop')" />
-                <EventShopButton version="1.32" :text="$t('event-shop-button', { version: '1.3', number: '2' })"
-                  :type="$t('event-shop')" />
+                <!-- <EventShopButton version="1.32" :text="$t('event-shop-button', { version: '1.3', number: '2' })"
+                  :type="$t('event-shop')" /> -->
               </div>
               <form method="dialog" class="flex justify-center">
                 <button class="btn btn-sm btn-success text-black">{{ $t('close') }}</button>
