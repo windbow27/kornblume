@@ -12,6 +12,8 @@ export const bannerList = [
     'The Ever-flowing',
     'Midnight Movie Party',
     'Focus of the Lights',
+    'That Steady Evening Star',
+    'Another Spring Thaw',
     // standard
     'Amongst the Lake',
     // thread
@@ -30,7 +32,9 @@ export const bannerRateUp = [
     'Jessica',
     'Eternity',
     'An-an Lee',
-    'Centurion'
+    'Centurion',
+    'Kaalaa Baunaa',
+    'Shamane'
 ];
 
 export const specialArcanists: string[] = [
