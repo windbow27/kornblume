@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '18/01/2024', description: '• Fixed iOS unable to import images.' },
     { date: '17/01/2024', description: '• Added Kaalaa Baunaa and Shamane banners.\n • Updated 1.3 part 1 Event Shop.' },
     { date: '16/01/2024', description: '• Added Centurion banner.' },
     { date: '15/01/2024', description: '• Added "Level Up" function where you can consume your warehouse materials to update arcanist to goal status. Try it out by left clicking an arcanist.' },
