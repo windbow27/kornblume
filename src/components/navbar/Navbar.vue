@@ -74,6 +74,13 @@ watchEffect(() => {
     </div>
 
     <div class="ml-auto flex items-center">
+    <!-- Ko-fi Icon-->
+    <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
+      <a href="https://ko-fi.com/windbow" target="_blank" rel="noopener noreferrer">
+        <img src="/images/items/common/kofi.png" alt="kofi" class="h-4 m-auto" />
+      </a>
+    </div>
+    <!-- Language Dropdown -->
       <Popper arrow placement="top" offsetDistance="2">
         <button class="btn btn-ghost btn-sm text-white"> <span :class="currentFlag"></span> {{ currentLanguage }}
         </button>

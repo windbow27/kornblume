@@ -40,7 +40,7 @@
   "please-be-certain": "Please be certain.",
   "once-you-delete-your-data-there-is-no-going-back": "Once you delete your data, there is no going back.",
   "reset-all": "Reset All",
-  "please-read-tutorial": "Please read Tutorial. iOS issue has been fixed.",
+  "please-read-tutorial": "Please read Tutorial.",
   "ocr-import": "Import Images",
   "tutorial": "Tutorial",
   "reset": "Reset",
@@ -186,5 +186,6 @@
   "after-your-first-import": "After your first import, you only need to import the new images.",
   "tips": "Tips",
   "example-of-incomplete-10x": "Example of incomplete 10x image:",
-  "incomplete-10x": "10x"
+  "incomplete-10x": "10x",
+  "ko-fi": "Buy us a Coffee"
 }
