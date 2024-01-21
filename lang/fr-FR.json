@@ -171,5 +171,9 @@
   "ocr-import-only-works-with-english-text-consider-changing-your-language-into-english-to-screenshot": "L'importation OCR ne fonctionne qu'avec {highlight}, pensez à changer votre langue en anglais pour faire une capture d'écran.",
   "reset-quantity-of-selected-categories": "Réinitialiser la quantité de catégories {highlight} ?",
   "arcanist": "Nom",
-  "date": "Heure d'invocation"
+  "date": "Heure d'invocation",
+  "after-your-first-import": "Après votre première importation, il vous suffit d'importer les nouvelles images.",
+  "example-of-incomplete-10x": "Exemple d'image 10x incomplète :",
+  "incomplete-10x": "10x",
+  "tips": "Conseils"
 }

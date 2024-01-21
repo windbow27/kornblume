@@ -182,5 +182,9 @@
   "click-add-arcanist-button-to-start-planning": "Click '{button}' to start planning.",
   "level-up": "Level Up",
   "not-enough-materials": "You don't have enough Materials.",
-  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Leveling up will update the arcanist's current status and consume your warehouse inventory. Proceed?"
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Leveling up will update the arcanist's current status and consume your warehouse inventory. Proceed?",
+  "after-your-first-import": "After your first import, you only need to import the new images.",
+  "tips": "Tips",
+  "example-of-incomplete-10x": "Example of incomplete 10x image:",
+  "incomplete-10x": "10x"
 }

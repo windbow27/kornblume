@@ -182,5 +182,9 @@
   "click-add-arcanist-button-to-start-planning": "点击「{button}」以开始规划",
   "level-up": "升级",
   "not-enough-materials": "你没有足够的素材",
-  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "升级的同时将会自动更新神秘学家的当前状态，并自动消耗仓库中的库存。确定要进行升级吗？"
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "升级的同时将会自动更新神秘学家的当前状态，并自动消耗仓库中的库存。确定要进行升级吗？",
+  "after-your-first-import": "首次导入后，您只需导入新图像。",
+  "example-of-incomplete-10x": "不完整的 10 倍图像示例：",
+  "incomplete-10x": "10x",
+  "tips": "尖端"
 }

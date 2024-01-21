@@ -173,5 +173,9 @@
   "import-the-error-images-again": "Импортируйте изображения опять.",
   "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Если вы наткнётесь на баг, укажите его расположение используя {missing} временные метки.",
   "arcanist": "Имя",
-  "date": "Время призыва"
+  "date": "Время призыва",
+  "after-your-first-import": "После первого импорта вам нужно будет импортировать только новые изображения.",
+  "example-of-incomplete-10x": "Пример неполного изображения в 10-кратном увеличении:",
+  "incomplete-10x": "10x",
+  "tips": "Советы"
 }

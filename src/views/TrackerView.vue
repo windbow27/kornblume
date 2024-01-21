@@ -172,7 +172,7 @@ function binarize (context: CanvasRenderingContext2D | null, width: number, heig
         console.log('failed to obtain pixel data (binarize)');
         return new ImageData(0, 0);
     }
-    const level: number = 0.6;
+    const level: number = 0.61875;
     const thresh: number = Math.floor(level * 255);
     for (let i = 0; i < pixels.length; i += 4) {
         const r: number = pixels[i];
@@ -197,17 +197,7 @@ async function preprocessImage (file: File): Promise<File> {
                 if (!context) { reject(new Error('getContext failed (canvas, preprocessImage)')); }
                 canvas.width = img.width;
                 canvas.height = img.height;
-
-                if (context) {
-                    // context.filter = 'contrast(2) saturate(0)';
-                    context.drawImage(img, 0, 0);
-                }
-
-                // debugging
-                // const link = document.createElement('a');
-                // link.download = 'image.png';
-                // link.href = canvas.toDataURL();
-                // link.click();
+                context?.drawImage(img, 0, 0);
 
                 const newData: ImageData = binarize(context, canvas.width, canvas.height);
                 if (!newData) { reject(new Error('binarize failed (preprocessImage)')); }
@@ -444,8 +434,8 @@ watchEffect(() => {
                     {{ $t('ocr-import') }} </button>
 
                 <div class="space-x-3">
-                    <button id="tutorial-button" ref="tutorialButton" class="btn btn-ghost custom-gradient-button btn-sm text-white"
-                        onclick="tutorial.showModal()">{{
+                    <button id="tutorial-button" ref="tutorialButton"
+                        class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
                             $t('tutorial') }}</button>
 
                     <button onclick="resetTracker.showModal()"
@@ -480,7 +470,14 @@ watchEffect(() => {
                         <p class=" text-white">3. {{
                             $t('the-summon-tracker-will-automatically-extract-display-and-save-the-information-from-the-screenshots')
                         }}</p>
-                        <p class=" text-white">4. {{ $t('it-is-advised-to-save-your-screenshots-for-future-usages') }}</p>
+                        <h3 class="font-bold text-lg pt-4 text-info">{{ $t('tips') }}</h3>
+                        <p class=" text-white">1. {{ $t('it-is-advised-to-save-your-screenshots-for-future-usages') }}</p>
+                        <p class=" text-white">2. {{ $t('after-your-first-import') }}</p>
+                        <p class=" text-white">3. {{ $t('example-of-incomplete-10x') }}
+                            <a href="https://imgur.com/a/6kXTVZz" target="_blank"
+                                class="text-blue-500 hover:text-blue-700">{{
+                                    $t('incomplete-10x') }}</a>
+                        </p>
                         <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
                         <p class="text-white">•
                             <i18n-t

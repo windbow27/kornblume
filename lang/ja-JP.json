@@ -178,5 +178,9 @@
   "arcanist": "名前",
   "pity": "天井カウント",
   "date": "時間",
-  "pull": "回数"
+  "pull": "回数",
+  "after-your-first-import": "最初のインポート後は、新しいイメージをインポートするだけで済みます。",
+  "example-of-incomplete-10x": "不完全な 10 倍画像の例:",
+  "incomplete-10x": "10x",
+  "tips": "チップ"
 }

@@ -175,5 +175,9 @@
   "arcanist": "항목",
   "date": "시간",
   "pity": "천장",
-  "pull": "회차"
+  "pull": "회차",
+  "after-your-first-import": "처음 가져온 후에는 새 이미지만 가져오면 됩니다.",
+  "example-of-incomplete-10x": "불완전한 10x 이미지의 예:",
+  "incomplete-10x": "10x",
+  "tips": "팁"
 }

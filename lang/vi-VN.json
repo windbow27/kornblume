@@ -178,5 +178,13 @@
   "arcanist": "Tên",
   "pull": "Luợt quay",
   "date": "Thời gian triệu hồi",
-  "pity": "Bảo hiểm"
+  "pity": "Bảo hiểm",
+  "after-your-first-import": "Sau lần nhập đầu tiên, bạn chỉ cần nhập hình ảnh mới.",
+  "example-of-incomplete-10x": "Ví dụ về hình ảnh 10x không đầy đủ:",
+  "incomplete-10x": "10x",
+  "not-enough-materials": "Bạn không có đủ vật phẩm.",
+  "tips": "Lời khuyên",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Việc tăng cấp sẽ cập nhật trạng thái hiện tại của arcanist và tiêu thụ vật phẩm trong kho của bạn. \nTiếp tục?",
+  "click-add-arcanist-button-to-start-planning": "Nhấp vào '{button}' để bắt đầu lập kế hoạch.",
+  "level-up": "Tăng cấp"
 }
