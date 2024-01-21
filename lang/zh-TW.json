@@ -183,8 +183,8 @@
   "level-up": "升級",
   "not-enough-materials": "你沒有足夠的素材",
   "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "升級的同時將會自動更新神祕學家的當前狀態，並自動消耗倉庫中的庫存。確定要進行升級嗎？",
-  "after-your-first-import": "首次匯入後，您只需匯入新影像。",
-  "example-of-incomplete-10x": "不完整的 10 倍影像範例：",
-  "incomplete-10x": "10x",
-  "tips": "尖端"
+  "after-your-first-import": "首次導入以後，未來你只需要導入新抽的徵集回顧的截圖即可。",
+  "example-of-incomplete-10x": "不完整的 10 連抽的截圖範例：",
+  "incomplete-10x": "不完整的 10 連抽",
+  "tips": "注意"
 }
