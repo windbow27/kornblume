@@ -179,8 +179,12 @@
   "pity": "天井カウント",
   "date": "時間",
   "pull": "回数",
-  "after-your-first-import": "最初のインポート後は、新しいイメージをインポートするだけで済みます。",
-  "example-of-incomplete-10x": "不完全な 10 倍画像の例:",
-  "incomplete-10x": "10x",
+  "click-add-arcanist-button-to-start-planning": "「{button}」をクリックして計画を始める",
+  "level-up": "レベルアップ",
+  "not-enough-materials": "素材が足りません",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "レベルアップすると、自動的に神秘学者の現在の状態が更新され、倉庫の在庫が消費されます。本当にレベルアップしますか？",
+  "after-your-first-import": "最初のインポート後は、新しい結果のみをアップロードすれば、以前のスクショと重複する部分は自動で省略されます。",
+  "example-of-incomplete-10x": "不完全な10連の画像例：",
+  "incomplete-10x": "不完全な10連",
   "tips": "チップ"
 }

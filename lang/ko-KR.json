@@ -176,8 +176,12 @@
   "date": "시간",
   "pity": "천장",
   "pull": "회차",
-  "after-your-first-import": "처음 가져온 후에는 새 이미지만 가져오면 됩니다.",
-  "example-of-incomplete-10x": "불완전한 10x 이미지의 예:",
-  "incomplete-10x": "10x",
+  "click-add-arcanist-button-to-start-planning": "「{button}」을 클릭하여 계획을 시작하세요",
+  "level-up": "레벨 업",
+  "not-enough-materials": "재료가 부족합니다",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "레벨 업하면 자동으로 신비주의자의 현재 상태가 업데이트되고, 창고 재고가 소모됩니다. 정말로 레벨 업하시겠습니까?",
+  "after-your-first-import": "최초의 임포트 후에는 새로운 결과만 업로드하면 되며, 이전 스크린샷과 중복되는 부분은 자동으로 생략됩니다.",
+  "example-of-incomplete-10x": "불완전한 10연차 이미지 예시:",
+  "incomplete-10x": "불완전한 10연차",
   "tips": "팁"
 }
