@@ -20,7 +20,7 @@
   "please-help-us-out": "Làm ơn hãy đóng góp",
   "very-detailed-most-of-the-data-is-from-this-wiki": "Rất chi tiết. \nHầu hết dữ liệu đều lấy từ wiki này.",
   "the-drop-rates-of-farming-stages-are-provided-by-this-sheet": "Tỷ lệ rơi của vật phẩm được cung cấp bởi bảng này.",
-  "referred-to-arkplanner-s-farming-route-algorithm-enhanced-with-linear-programming-magic": "Tham khảo thuật toán lộ trình farm của ArkPlanner, được cải tiến bằng lập trình tuyến tính (LP)",
+  "referred-to-arkplanner-s-farming-route-algorithm-enhanced-with-linear-programming-magic": "Tham khảo thuật toán lộ trình farm của ArkPlanner, được cải tiến bằng lập trình tuyến tính. (LP)",
   "spreadsheet-for-a-lot-of-things-insight-iii-levels-are-taken-here": "Spreadsheet cho nhiều thứ. \nCấp độ Insight III được lấy từ đây.",
   "ever-wonder-why-this-looks-like-seelie": "Bạn có bao giờ tự hỏi cái này trông giông giống Seelie không?",
   "summon-tracker-ideas": "Ý tưởng cho Theo dõi triệu hồi.",
@@ -186,5 +186,8 @@
   "tips": "Lời khuyên",
   "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Việc tăng cấp sẽ cập nhật trạng thái hiện tại của arcanist và tiêu thụ vật phẩm trong kho của bạn. \nTiếp tục?",
   "click-add-arcanist-button-to-start-planning": "Nhấp vào '{button}' để bắt đầu lập kế hoạch.",
-  "level-up": "Tăng cấp"
+  "level-up": "Tăng cấp",
+  "homescreen-image": "Hình ảnh màn hình chính. Tác phẩm rất đẹp.",
+  "loading-indicator-vertin-wheel-vertin-wheel-vertin-wheel": "Chỉ báo đang tải. Cảm ơn tác giả đã đồng ý và gửi trực tiếp PSD của hình ảnh cho chúng tôi!",
+  "ko-fi": "Mua cho chúng tôi một cốc cà phê"
 }

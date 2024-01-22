@@ -20,6 +20,8 @@ const resources = [
     { name: '必要的记录', author: 'Chinese community', comment: t('the-drop-rates-of-farming-stages-are-provided-by-this-sheet'), link: 'https://www.kdocs.cn/l/cd5MWeCl5bKw' },
     { name: 'ArkPlanner', author: 'Penguine Statistics', comment: t('referred-to-arkplanner-s-farming-route-algorithm-enhanced-with-linear-programming-magic'), link: 'https://penguin-stats.io/planner' },
     { name: 'Vanity Cake Reverse 1999', author: 'Vanity & Cake', comment: t('spreadsheet-for-a-lot-of-things-insight-iii-levels-are-taken-here'), link: 'https://docs.google.com/spreadsheets/d/1qQinxxU_e0-YXwPj5WAd2PgTFksyLwIaHXwEcosUxU0/edit#gid=470385843' },
+    { name: 'Vertin Wheel', author: 'PG小老弟', comment: t('loading-indicator-vertin-wheel-vertin-wheel-vertin-wheel'), link: 'https://weibo.com/1851315674/N36YRc9zw?pagetype=viewer' },
+    { name: '柏林以东', author: '早餐奶猹', comment: t('homescreen-image'), link: 'https://www.pixiv.net/en/artworks/110046834' },
     { name: 'Seelie', author: 'Gabriel', comment: t('ever-wonder-why-this-looks-like-seelie'), link: 'https://hsr.seelie.me/' },
     { name: 'Star Rail Station', author: 'Star Rail Station', comment: t('summon-tracker-ideas'), link: 'https://starrailstation.com/' },
     { name: 'Schale', author: 'lonqie', comment: 'cunny uwooghh', link: 'https://schale.gg/' }
