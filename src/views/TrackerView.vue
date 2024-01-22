@@ -559,7 +559,8 @@ watchEffect(() => {
         </div>
 
         <div class="p-3 flex items-center ">
-            <img v-show="isImporting" src="/images/items/common/vertin-wheel.apng" alt="Loading" class="w-12">
+            <a :href="'https://weibo.com/1851315674/N36YRc9zw?pagetype=viewer'"> <img v-show="isImporting"
+                    src="/images/items/common/vertin-wheel.apng" alt="Loading" class="w-12"></a>
             <span v-show="isImporting" class="text-white text-base pl-1">
                 <i18n-t keypath='processing-file-number-out-of-numbers-please-wait'>
                     <template #current>
