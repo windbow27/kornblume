@@ -183,8 +183,11 @@
   "level-up": "Subir de Nivel",
   "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Subir de nivel actualizará el estado actual del arcanista y consumirá objetos de su almacén. ¿Proceder?",
   "not-enough-materials": "No tienes suficientes materiales.",
-  "after-your-first-import": "Después de su primera importación, solo necesita importar las nuevas imágenes.",
-  "example-of-incomplete-10x": "Ejemplo de imagen 10x incompleta:",
+  "after-your-first-import": "Después de importar las imágenes primera vez, solo necesitas importar las imágenes nuevas.",
+  "example-of-incomplete-10x": "Ejemplo de una imagen con la información de la girada x10 incompleta:",
   "incomplete-10x": "10x",
-  "tips": "Consejos"
+  "tips": "Consejos",
+  "ko-fi": "Cómpranos un Café",
+  "homescreen-image": "Imagen de la pantalla de inicio. Hermoso trabajo.",
+  "loading-indicator-vertin-wheel-vertin-wheel-vertin-wheel": "Indicador de carga. ¡Gracias por darnos tu consentimiento y enviarnos el PSD de la imagen directamente!"
 }
