@@ -574,11 +574,11 @@ watchEffect(() => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }" class=' text-white py-1 px-3'
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }" class=' text-white py-1 px-3 hover:bg-info rounded-md'
                 @click="selectedBannerType = 'Limited'">{{ $t('limited') }}</button>
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }" class=' text-white py-1 px-3'
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }" class=' text-white py-1 px-3 hover:bg-info rounded-md'
                 @click="selectedBannerType = 'Standard'">{{ $t('standard') }}</button>
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }" class=' text-white py-1 px-3'
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }" class=' text-white py-1 px-3 hover:bg-info rounded-md'
                 @click="selectedBannerType = 'Thread'">{{ $t('thread') }}</button>
         </div>
 
@@ -592,10 +592,6 @@ watchEffect(() => {
 </template>
 
 <style scoped>
-.border-button {
-    @apply border-2 border-info rounded-md
-}
-
 .modal-box {
     overflow-y: unset;
 }

@@ -41,7 +41,7 @@ onMounted(() => {
 
 watchEffect(() => {
     const handleResize = () => {
-        isSmallScreen.value = window.innerWidth <= 768;
+        isSmallScreen.value = window.innerWidth <= 1024;
         if (!isSmallScreen.value) {
             showDropdown.value = false;
         }
@@ -65,22 +65,24 @@ watchEffect(() => {
     <div v-if="!isSmallScreen" class="flex space-x-2">
       <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i>
         {{ $t('home') }} </router-link>
+      <router-link to="/arcanists" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i
+          class="fa-solid fa-user"></i> {{ $t('arcanists') }} </router-link>
       <router-link to="/tracker" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i
           class="fa-brands fa-galactic-republic"></i> {{ $t('summon-tracker') }} </router-link>
       <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i
           class="fas fa-tasks"></i> {{ $t('planner') }} </router-link>
       <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i
-          class="fa-solid fa-user-plus"></i> {{ $t('profile') }} </router-link>
+          class="fa-regular fa-address-card"></i> {{ $t('profile') }} </router-link>
     </div>
 
     <div class="ml-auto flex items-center">
-    <!-- Ko-fi Icon-->
-    <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
-      <a href="https://ko-fi.com/windbow" target="_blank" rel="noopener noreferrer">
-        <img src="/images/items/common/kofi.png" alt="kofi" class="h-4 m-auto" />
-      </a>
-    </div>
-    <!-- Language Dropdown -->
+      <!-- Ko-fi Icon-->
+      <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
+        <a href="https://ko-fi.com/windbow" target="_blank" rel="noopener noreferrer">
+          <img src="/images/items/common/kofi.png" alt="kofi" class="h-4 m-auto" />
+        </a>
+      </div>
+      <!-- Language Dropdown -->
       <Popper arrow placement="top" offsetDistance="2">
         <button class="btn btn-ghost btn-sm text-white"> <span :class="currentFlag"></span> {{ currentLanguage }}
         </button>
@@ -112,6 +114,10 @@ watchEffect(() => {
               <router-link @click="toggleDropdown" to="/" class="nav-button block"
                 :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> {{ $t('home') }}
               </router-link>
+              <router-link @click="toggleDropdown" to="/arcanists" class="nav-button block"
+                :class="{ 'active': $route.path === '/tracker' }"><i class="fa-solid fa-user"></i> {{
+                  $t('arcanists') }}
+              </router-link>
               <router-link @click="toggleDropdown" to="/tracker" class="nav-button block"
                 :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> {{
                   $t('summon-tracker') }} </router-link>
@@ -119,7 +125,8 @@ watchEffect(() => {
                 :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> {{ $t('planner') }}
               </router-link>
               <router-link @click="toggleDropdown" to="/profile" class="nav-button block"
-                :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> {{ $t('profile')
+                :class="{ 'active': $route.path === '/profile' }"><i class="fa-regular fa-address-card"></i> {{
+                  $t('profile')
                 }}
               </router-link>
             </div>

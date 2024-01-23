@@ -7,6 +7,7 @@
     @apply pt-4 pb-4 pr-4 pl-4 sm:pr-8 sm:pl-8 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 md:pr-16 md:pl-16
 }
 
+
 /*Custom common*/
 .custom-line {
     @apply bg-gray-500 opacity-25 rounded-full w-full h-1 mt-4 mb-4 mx-1;
@@ -22,6 +23,14 @@
 
 .custom-border {
     @apply border-2 border-blue-800;
+}
+
+.border-button {
+    @apply border-2 border-info rounded-md;
+}
+
+.range-slider {
+    @apply h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-info
 }
 
 .gradient-blue {
@@ -54,6 +63,10 @@
 
 .custom-item-list {
     @apply flex flex-wrap justify-center overflow-y-auto overflow-x-hidden
+}
+
+.custom-card {
+    @apply bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden my-4;
 }
 
 /*Badges*/

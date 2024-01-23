@@ -14,6 +14,14 @@ const router = createRouter({
             }
         },
         {
+            path: '/arcanists',
+            name: 'arcanists',
+            component: () => import('../views/ArcanistsView.vue'),
+            meta: {
+                requiredJson: ['arcanists', 'items', 'shops', 'formulas', 'stages', 'stages1_4', 'stages_greedy', 'stages1_4_greedy']
+            }
+        },
+        {
             path: '/tracker',
             name: 'tracker',
             component: () => import('../views/TrackerView.vue'),
