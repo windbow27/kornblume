@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Text from '@/components/arcanist/info/img/Text.vue';
+
 const props = defineProps({
     arcanist: {
         type: Object,
@@ -13,6 +15,7 @@ const props = defineProps({
 const getArcanistUltPath = (id: string, ult: number) => {
     return `images/arcanists/skill/${id}/${ult}.png`;
 };
+
 </script>
 
 <template>
@@ -21,11 +24,9 @@ const getArcanistUltPath = (id: string, ult: number) => {
             <img class="w-full" src="/images/arcanists/misc/bg-ult.png" alt="">
             <img class="ult" :src="getArcanistUltPath(props.arcanist.Id, 3)" alt="">
         </div>
-        <div class="w-4/5 flex flex-wrap items-center">
-            <p class="skill-text">
-                1-target attack. Deals 550% Reality DMG and inflicts [Seal] for 3 rounds.
-                If the target is immune to [Seal], Moxie -2 to the target instead.
-            </p>
+        <div class="w-4/5 flex flex-col pl-4 justify-center">
+            <p class="text-blue-400/90 font-bold"> {{ props.arcanist.Ultimate.Name }}</p>
+            <Text :effect="props.arcanist.Ultimate.Effect" />
         </div>
     </div>
 </template>
@@ -33,8 +34,5 @@ const getArcanistUltPath = (id: string, ult: number) => {
 <style scoped>
 .ult {
     @apply w-[calc(80%)] absolute bottom-[5%] left-[9%] rounded-t-full;
-}
-.skill-text {
-    @apply pl-4 text-white text-xs sm:text-sm xl:text-base;
 }
 </style>

@@ -9257,12 +9257,10 @@
         "Type": "Debuff"
       }
     ],
-    "Ultimate": [
-      {
-        "Name": "Uninvited Reviewer",
-        "Effect": "1-target attack. Deals 550% Reality DMG and inflicts [Seal] for 3 rounds. If the target is immune to [Seal], Moxie -2 for the target instead."
-      }
-    ],
+    "Ultimate": {
+      "Name": "Uninvited Reviewer",
+      "Effect": "1-target attack. Deals 550% Reality DMG and inflicts [Seal] for 3 rounds. If the target is immune to [Seal], Moxie -2 for the target instead."
+    },
     "Psychube1": "Brave New World",
     "Psychube2": "Luxurious Leisure",
     "Resonance1": "Balanced",

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Text from '@/components/arcanist/info/img/Text.vue';
+
 const props = defineProps({
     arcanist: {
         type: Object,
@@ -18,9 +20,6 @@ const getArcanistSkillPath = (id: string, skill: number) => {
     return `images/arcanists/skill/${id}/${skill}.png`;
 };
 
-const getSkillEffect = () => {
-    return props.arcanist.Skills[3 * (props.id - 1) + props.star - 1].Effect;
-};
 </script>
 
 <template>
@@ -31,10 +30,9 @@ const getSkillEffect = () => {
             <img class="attribute" src="/images/arcanists/misc/card-attribute.png" alt="">
             <img class="attribute" src="/images/arcanists/misc/card-attack.png" alt="">
         </div>
-        <div class="w-4/5 flex items-center">
-            <p class="skill-text">
-                {{ getSkillEffect() }}
-            </p>
+        <div class="w-4/5 flex flex-col pl-4 justify-center">
+            <p class="text-blue-400/90 font-bold"> {{ props.arcanist.Skills[3 * (props.id - 1) + props.star - 1].Name }}</p>
+            <Text :effect="props.arcanist.Skills[3 * (props.id - 1) + props.star - 1].Effect"/>
         </div>
     </div>
 </template>
@@ -43,10 +41,8 @@ const getSkillEffect = () => {
 .skill {
     @apply w-[calc(97.5%)] bottom-[2.25%] left-[1%] absolute;
 }
+
 .attribute {
     @apply w-[calc(98.5%)] bottom-[1.5%] absolute;
-}
-.skill-text {
-    @apply pl-4 text-white text-xs sm:text-sm xl:text-base;
 }
 </style>

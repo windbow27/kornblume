@@ -20,7 +20,7 @@ const psychube2 = psychubes.find((p) => p.Name === props.arcanist.Psychube2);
 <template>
     <div class="px-2">
         <h2 class=" text-white text-2xl font-bold">Builds</h2>
-        <p class=" text-white px-2 pt-2">Recommended Psychubes</p>
+        <p class=" text-white p-2">Recommended Psychubes</p>
         <div class="grid grid-cols-2">
             <div class="flex justify-center items-center">
                 <Psychube :psychube="psychube1 ?? {}" />
@@ -29,8 +29,8 @@ const psychube2 = psychubes.find((p) => p.Name === props.arcanist.Psychube2);
                 <Psychube :psychube="psychube2 ?? {}" />
             </div>
         </div>
-        <p class=" text-white px-2 pt-2">Recommended Resonance 10 builds</p>
-        <div class="grid grid-cols-2 gap-x-8 p-5">
+        <p class=" text-white p-2">Recommended Resonance 10 builds</p>
+        <div class="grid grid-cols-2 gap-x-8 p-4">
             <div class="flex justify-center items-center">
                 <Resonance :arcanist="arcanist ?? {}" :number="1" />
             </div>

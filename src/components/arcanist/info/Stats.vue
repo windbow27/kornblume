@@ -55,11 +55,11 @@ const editingArcanist = computed(() => ({
             </div>
             <input id="level" type="range" min="0" max="4" class="range-slider" step="1" v-model="selected">
             <div class="w-full text-white flex justify-between text-xs 3xl:text-base">
-                <span>&nbsp;Lv 1&nbsp;</span>
-                <span>Lv 30</span>
-                <span>Lv 40</span>
-                <span>Lv 50</span>
-                <span>Lv 60</span>
+                <span>&nbsp;Lv. 1&nbsp;</span>
+                <span>Lv. 30</span>
+                <span>Lv. 40</span>
+                <span>Lv. 50</span>
+                <span>Lv. 60</span>
             </div>
         </div>
         <div class="pt-2.5">
