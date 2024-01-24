@@ -3,7 +3,9 @@ import { ref } from 'vue';
 import { useDataStore } from '@/stores/dataStore';
 import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
+import Upgrades from '@/components/arcanist/info/Upgrades.vue';
 import Skills from '@/components/arcanist/info/Skills.vue';
+import Builds from '@/components/arcanist/info/Builds.vue';
 
 const { arcanists } = useDataStore();
 
@@ -22,7 +24,7 @@ const getArcanistDmgTypePath = (dmgType: string) => {
     return `images/arcanists/misc/dmg-type-${dmgType}.png`;
 };
 
-const buttons = ['Stats', 'Skills', 'Psychubes', 'Portraits', 'Resonances', 'Profile'];
+const buttons = ['Stats', 'Upgrades', 'Skills', 'Builds'];
 const selectedButton = ref(buttons[0]);
 
 </script>
@@ -35,7 +37,7 @@ const selectedButton = ref(buttons[0]);
         </div>
 
         <!--Infomation-->
-        <div class="flex flex-col md:w-1/2 p-4 gap-y-4 max-w-2xl">
+        <div class="flex flex-col md:w-1/2 p-4 gap-y-4 max-w-xl 2xl:max-w-2xl">
             <!--Name and Selectors-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <div class="flex flex-wrap items-center space-x-2">
@@ -51,7 +53,7 @@ const selectedButton = ref(buttons[0]);
                     <img class="inline-block w-10" :src="getArcanistAfflatusPath(arcanist?.Afflatus ?? '')" alt="">
                     <img class="inline-block w-8 pb-2" :src="getArcanistDmgTypePath('1')" alt="">
                 </div>
-                <div class="flex flex-wrap space-x-3 gap-y-3 pt-2">
+                <div class="flex flex-wrap sm:gap-x-2 gap-y-2 pt-2">
                     <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
                         :class="['hover:bg-info rounded-md text py-1 px-3', selectedButton === button ? 'border-button' : '']">
                         {{ button }}
@@ -61,10 +63,9 @@ const selectedButton = ref(buttons[0]);
             <!--Info Cards-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <Stats :arcanist="arcanist" v-if="selectedButton === 'Stats'" />
-                <Skills :arcanist="arcanist" v-else-if="selectedButton === 'Skills'" />
-                <!-- <Psychubes :arcanist="arcanist" v-else-if="selectedButton === 'Psychubes'" />
-                    <Portrait :arcanist="arcanist" v-else-if="selectedButton === 'Portraits'" />
-                    <Resonance :arcanist="arcanist" v-else-if="selectedButton === 'Resonances'" /> -->
+                <Upgrades :arcanist="arcanist ?? {}" v-else-if="selectedButton === 'Upgrades'" />
+                <Skills :arcanist="arcanist ?? {}" v-else-if="selectedButton === 'Skills'" />
+                <Builds :arcanist="arcanist ?? {}" v-else-if="selectedButton === 'Builds'" />
             </div>
         </div>
     </div>

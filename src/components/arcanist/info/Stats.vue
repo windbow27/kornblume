@@ -19,7 +19,7 @@ const attributes = ref([
     'Crit. DMG'
 ]);
 
-const selected = ref(0);
+const selected = ref(4);
 
 const nodes = ref([
     { insight: 0, level: 1 },
@@ -45,7 +45,7 @@ const editingArcanist = computed(() => ({
 <template>
     <div class="px-2">
         <h2 class=" text-white text-2xl font-bold">Stats</h2>
-        <div class="px-8 py-2">
+        <div class="px-8 lg:px-16 py-2">
             <div class="w-full text-white flex justify-between text-xs 3xl:text-base">
                 <span class="pl-1"><i class="fa-solid fa-o"></i></span>
                 <span class="w-7 pl-3"><i class="fa-solid fa-o"></i></span>
