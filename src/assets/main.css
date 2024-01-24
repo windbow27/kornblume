@@ -12,6 +12,10 @@
     @apply bg-gray-500 opacity-25 rounded-full w-full h-1 mt-4 mb-4 mx-1;
 }
 
+.custom-gradient-gray-blue-dark {
+    @apply bg-gradient-to-r from-gray-900 to-blue-950;
+}
+
 .custom-gradient-gray-blue {
     @apply bg-gradient-to-r from-gray-800 to-blue-950;
 }

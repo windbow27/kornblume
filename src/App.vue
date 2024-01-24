@@ -9,11 +9,11 @@ const globalStore = useGlobalStore()
 </script>
 
 <template>
-  <div class="custom-gradient-gray-blue">
+  <div class="bg-gradient-to-r from-gray-900 to-blue-950">
     <header>
       <Navbar />
     </header>
-    <main class="z-0 min-h-screen bg-gradient-to-r from-gray-900 to-blue-950 flex flex-col pt-14">
+    <main class="z-0 min-h-screen flex flex-col pt-14">
       <LoadingScreen v-if="globalStore.isLoading"></LoadingScreen>
       <RouterView v-else></RouterView>
     </main>
