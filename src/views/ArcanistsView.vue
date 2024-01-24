@@ -30,9 +30,9 @@ const selectedButton = ref(buttons[0]);
 </script>
 
 <template>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap justify-center gap-x-20">
         <!--I2 Portrait-->
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-[calc(40%)]">
             <img class="pt-5" :src="getArcanistImagePath(arcanist?.Id.toString() ?? '')" alt="">
         </div>
 
