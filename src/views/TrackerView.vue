@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
+import { ref, computed, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 import { bannerList, bannerRateUp, specialArcanists } from '@/utils/bannerData'
@@ -8,7 +8,7 @@ import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
 import TrackerBoard from '../components/tracker/TrackerBoard.vue';
 
-const fileInput = ref(null);
+const fileInput = ref<HTMLElement>(null!);
 const isImporting = ref(false);
 const currentFileIndex = ref(0);
 const totalFiles = ref(0);
@@ -19,11 +19,11 @@ const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
-const tutorialButton = ref(null);
+const tutorialButton = ref<HTMLButtonElement>(null!);
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically
-    (fileInput as Ref<HTMLElement | null>).value?.click()
+    fileInput.value.click()
 }
 
 const isEqualPull = (pull1, pull2) => {
@@ -404,7 +404,7 @@ onMounted(() => {
     if (!changelogsStore.isOpenTutorial) {
         console.log(tutorialButton.value);
         if (tutorialButton.value) {
-            (tutorialButton.value as unknown as HTMLButtonElement).click();
+            tutorialButton.value.click();
         }
         changelogsStore.setIsOpenTutorial(true)
     }

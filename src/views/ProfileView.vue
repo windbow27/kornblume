@@ -1,9 +1,9 @@
 <script setup lang="ts" name="ProfileView">
-import { ref, Ref } from 'vue'
+import { ref } from 'vue'
 import { exportKornblumeData, importKornblumeData, resetKornblumeData } from '@/utils';
 import { usePullsRecordStore } from '@/stores/pullsRecordStore';
 
-const fileInput = ref(null)
+const fileInput = ref<HTMLElement>(null!)
 
 const exportStores = () => {
     exportKornblumeData()
@@ -11,7 +11,7 @@ const exportStores = () => {
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically
-    (fileInput as Ref<HTMLElement | null>).value?.click()
+    fileInput.value.click()
 }
 
 const importStores = (event) => {
