@@ -65,7 +65,7 @@ watchEffect(() => {
     <div v-if="!isSmallScreen" class="flex space-x-2">
       <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i>
         {{ $t('home') }} </router-link>
-      <router-link to="/arcanists" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i
+      <router-link to="/arcanists" class="nav-button" :class="{ 'active': $route.path === '/arcanists' }"><i
           class="fa-solid fa-user"></i> {{ $t('arcanists') }} </router-link>
       <router-link to="/tracker" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i
           class="fa-brands fa-galactic-republic"></i> {{ $t('summon-tracker') }} </router-link>
