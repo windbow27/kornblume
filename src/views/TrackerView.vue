@@ -430,17 +430,26 @@ watchEffect(() => {
                 <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                     multiple />
                 <button id="import-button" @click="triggerFileInput" :disabled="isImporting"
-                    class="bg-success hover:bg-green-600 text-white/90 font-bold py-2 px-4 rounded ml-2">
+                    class="bg-success bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
                     {{ $t('ocr-import') }} </button>
 
                 <div class="space-x-3">
-                    <button id="tutorial-button" ref="tutorialButton"
-                        class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
-                            $t('tutorial') }}</button>
+                    <div class="tooltip" :data-tip="$t('tutorial')">
+                        <button id="tutorial-button" ref="tutorialButton"
+                            class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
+                                $t('tutorial') }}</button>
+                    </div>
 
-                    <button onclick="resetTracker.showModal()"
-                        class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
-                            $t('reset') }}</button>
+                    <div class="tooltip" :data-tip="$t('reset')">
+                        <button onclick="resetTracker.showModal()"
+                            class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                                $t('reset') }}</button>
+                    </div>
+                    <div class="tooltip" :data-tip="$t('exploshe')">
+                        <button
+                            class="btn btn-ghost bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 btn-sm text-white">
+                            exploshe </button>
+                    </div>
                 </div>
             </div>
 
