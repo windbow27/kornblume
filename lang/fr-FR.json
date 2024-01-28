@@ -175,5 +175,6 @@
   "after-your-first-import": "Après votre première importation, il vous suffit d'importer les nouvelles images.",
   "example-of-incomplete-10x": "Exemple d'image 10x incomplète :",
   "incomplete-10x": "10x",
-  "tips": "Conseils"
+  "tips": "Conseils",
+  "P{portrait}": "P{portrait}"
 }
