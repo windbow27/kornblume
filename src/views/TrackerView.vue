@@ -445,11 +445,11 @@ watchEffect(() => {
                             class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
                                 $t('reset') }}</button>
                     </div>
-                    <div class="tooltip" :data-tip="$t('exploshe')">
+                    <!-- <div class="tooltip" :data-tip="$t('exploshe')">
                         <button
                             class="btn btn-ghost bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 btn-sm text-white">
                             exploshe </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
