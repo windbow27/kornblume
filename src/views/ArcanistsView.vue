@@ -90,7 +90,7 @@ watchEffect(() => {
         </div>
         <div class="flex flex-wrap p-4 gap-x-4 justify-center">
             <input v-model="searchQuery" type="text" :placeholder="$t('search-arcanists')"
-        class="w-full lg:w-auto bg-gray-800 text-white p-2 rounded-md focus:outline-none">
+                class="w-full lg:w-auto bg-gray-800 text-white p-2 rounded-md focus:outline-none">
             <!-- Rarity select -->
             <div class="flex justify-center space-x-2">
                 <button v-for="i in [2, 3, 4, 5, 6]" :key="i"
@@ -115,8 +115,10 @@ watchEffect(() => {
             </div>
         </div>
         <div class="flex flex-wrap items-center justify-center">
-            <ArcanistPortrait v-for="arcanist in filteredArcanists" :key="arcanist.Id" :arcanist="arcanist"
-                :count="portraitCounts.find(pc => pc.ArcanistName === arcanist.Name)?.count ?? -1" />
+            <router-link v-for="arcanist in filteredArcanists" :key="arcanist.Id" :to="`/${arcanist.Name}`">
+                <ArcanistPortrait :arcanist="arcanist"
+                    :count="portraitCounts.find(pc => pc.ArcanistName === arcanist.Name)?.count ?? -1" />
+            </router-link>
         </div>
     </div>
 </template>

@@ -115,7 +115,7 @@ watchEffect(() => {
                 :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> {{ $t('home') }}
               </router-link>
               <router-link @click="toggleDropdown" to="/arcanists" class="nav-button block"
-                :class="{ 'active': $route.path === '/tracker' }"><i class="fa-solid fa-user"></i> {{
+                :class="{ 'active': $route.path === '/arcanists' }"><i class="fa-solid fa-user"></i> {{
                   $t('arcanists') }}
               </router-link>
               <router-link @click="toggleDropdown" to="/tracker" class="nav-button block"

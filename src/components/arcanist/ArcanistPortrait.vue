@@ -31,18 +31,18 @@ const getArcanistAfflatusPath = (afflatus: string) => {
             <img class="w-16 sm:w-20 rounded-b-full scale-105 transform transition-transform duration-500 group-hover:scale-125"
                 :src="getArcanistImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
             <span v-if="count >= 0"
-                class="absolute top-2 left-1 w-6 text-center text-sm font-bold text-white/90 bg-opacity-50 rounded-md bg-black">
+                class="absolute top-0.5 right-1.5 w-auto px-1 text-center text-sm font-bold text-white/90 bg-opacity-50 rounded-md bg-black">
                 <i18n-t keypath='P{portrait}'>
                     <template #portrait>
                         <span> {{ props.count }}</span>
                     </template>
                 </i18n-t>
             </span>
-            <img class="absolute top-2 right-1 w-4 rounded-md opacity-90"
+            <img class="absolute top-0 left-1 w-4 opacity-90"
                 :src="getArcanistAfflatusPath(props.arcanist.Afflatus)" alt="">
             <img class="absolute bottom-0 w-16 sm:w-20 rounded-md" :src="getArcanistFramePath(props.arcanist.Rarity)"
                 alt="">
-            <span class="absolute bottom-0 w-16 sm:w-20 text-center text-sm text-white/90 bg-opacity-20 py-2 bg-black"> {{
+            <span class="absolute bottom-0 w-16 sm:w-20 text-center text-sm text-white/90 bg-opacity-10 py-2.5 bg-black"> {{
                 props.arcanist.Name }} </span>
         </div>
     </div>
