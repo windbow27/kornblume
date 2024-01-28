@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '28/01/2024', description: '• Added Medicine Pocket banner.' },
     { date: '19/01/2024', description: '• OCR improvements. Added notice for incomplete 10x in Tutorial' },
     { date: '18/01/2024', description: '• Fixed iOS unable to import images.' },
     { date: '17/01/2024', description: '• Added Kaalaa Baunaa and Shamane banners.\n • Updated 1.3 part 1 Event Shop.' },
