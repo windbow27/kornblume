@@ -133,10 +133,6 @@ onMounted(() => {
               <div class="grid grid-cols-2 gap-2 p-2">
                 <EventShopButton version="jb1" :text="$t('jukebox-normal')" :type="$t('jukebox')" />
                 <EventShopButton version="jb2" :text="$t('jukebox-collector')" :type="$t('jukebox')" />
-                <EventShopButton version="1.21" :text="$t('event-shop-button', { version: '1.2', number: '1' })"
-                  :type="$t('event-shop')" />
-                <EventShopButton version="1.22" :text="$t('event-shop-button', { version: '1.2', number: '2' })"
-                  :type="$t('event-shop')" />
                 <EventShopButton version="1.31" :text="$t('event-shop-button', { version: '1.3', number: '1' })"
                   :type="$t('event-shop')" />
                 <!-- <EventShopButton version="1.32" :text="$t('event-shop-button', { version: '1.3', number: '2' })"
