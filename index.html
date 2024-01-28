@@ -25,7 +25,9 @@
 
     function gtag() {
       // check if it's localhost or ga-disabled mode
-      if (window.location.hostname.includes('localhost') || localStorage.getItem('ga-disabled'))
+      const urlParams = new URLSearchParams(window.location.search);
+      const hostname = window.location.hostname
+      if (hostname.includes('localhost') || urlParams.has('debug'))
         return;
       dataLayer.push(arguments);
     }
