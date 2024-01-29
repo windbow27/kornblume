@@ -22,13 +22,21 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZGZTN93BC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      // check if it's localhost or ga-disabled mode
+      const urlParams = new URLSearchParams(window.location.search);
+      const hostname = window.location.hostname
+      if (hostname.includes('localhost') || urlParams.has('debug'))
+        return;
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'G-YZGZTN93BC');
   </script>
-  <script type="module" crossorigin src="/Kornblume/assets/index-1zNc1gA3.js"></script>
-  <link rel="stylesheet" crossorigin href="/Kornblume/assets/index-5Q4HWeR8.css">
+  <script type="module" crossorigin src="/Kornblume/assets/index-70N0Kj_2.js"></script>
+  <link rel="stylesheet" crossorigin href="/Kornblume/assets/index-BWlz7k84.css">
 </head>
 
 <body>
