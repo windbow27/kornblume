@@ -22,7 +22,15 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZGZTN93BC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      // check if it's localhost or ga-disabled mode
+      const urlParams = new URLSearchParams(window.location.search);
+      const hostname = window.location.hostname
+      if (hostname.includes('localhost') || urlParams.has('debug'))
+        return;
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'G-YZGZTN93BC');
