@@ -55,9 +55,9 @@ const resetTracker = () => {
             }}</p>
             <div class="flex flex-wrap justify-center items-center p-2 space-x-5 gap-y-5">
                 <button onclick="resetTracker.showModal()"
-                    class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/90 text-black font-bold py-2 px-4 rounded ml-2">
+                    class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/50 text-black font-bold py-2 px-4 rounded ml-2">
                     {{ $t('reset-tracker') }} </button>
-                <button onclick="resetAll.showModal()" class="btn btn-error hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/90 text-black font-bold py-2 px-4 rounded ml-2">
+                <button onclick="resetAll.showModal()" class="btn btn-error custom-button-error text-black font-bold py-2 px-4 rounded ml-2">
                     {{ $t('reset-data') }} </button>
             </div>
 
@@ -69,7 +69,7 @@ const resetTracker = () => {
                     <p class="pb-4 text-white text-center">{{
                         $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}</p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetTracker" class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
+                    <button @click="resetTracker" class="btn btn-error custom-button-error text-black font-bold py-2 px-4 rounded ml-2">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">
@@ -84,7 +84,7 @@ const resetTracker = () => {
                     </form>
                     <p class="pb-4 text-white text-center">{{ $t('once-you-delete-your-data-there-is-no-going-back') }}</p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetStores" class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
+                    <button @click="resetStores" class="btn btn-error custom-button-error text-black font-bold py-2 px-4 rounded ml-2">
                         {{ $t('reset-all') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">

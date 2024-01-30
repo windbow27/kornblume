@@ -294,7 +294,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
 <template>
     <div class="edit-overlay">
         <div
-            class="fixed p-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 custom-gradient-gray-blue custom-border rounded-md w-11/12 sm:max-w-2xl lg:h-auto">
+            class="fixed p-4 custom-modal-big custom-border rounded-md w-11/12 sm:max-w-2xl lg:h-auto">
             <!-- Header -->
             <div class="flex items-center p-2 mb-3 shadow-border-b">
                 <div class="flex items-center justify-center mr-2 space-x-3">

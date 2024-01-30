@@ -28,7 +28,7 @@ const getArcanistAfflatusPath = (afflatus: string) => {
 <template>
     <div class="p-2.5 relative overflow-hidden group">
         <div class="transform transition-transform duration-500 overflow-hidden">
-            <img class="w-16 sm:w-20 rounded-b-full scale-105 transform transition-transform duration-500 group-hover:scale-125"
+            <img class="w-16 sm:w-20 rounded-b-full scale-[1.025] transform transition-transform duration-300 group-hover:scale-125"
                 :src="getArcanistImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
             <span v-if="count >= 0"
                 class="absolute top-0.5 right-1.5 w-auto px-1 text-center text-sm font-bold text-white/90 bg-opacity-50 rounded-md bg-black">
