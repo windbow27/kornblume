@@ -34,6 +34,7 @@
                     <a href="https://imgur.com/a/6kXTVZz" target="_blank" class="text-blue-500 hover:text-blue-700">{{
                         $t('incomplete-10x') }}</a>
                 </p>
+                <p class="text-white">4. {{ $t('try-legacy') }}</p>
                 <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
                 <p class="text-white">•
                     <i18n-t

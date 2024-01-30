@@ -4,7 +4,7 @@ import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 import { bannerList, bannerRateUp, specialArcanists } from '@/utils/bannerData'
 import { useChangelogsStore } from '@/stores/global';
-import { convertGoldenThreadString, preprocessImage } from '@/utils/preprocess';
+import { convertGoldenThreadString, preprocess, preprocess1, preprocess2 } from '@/utils/preprocess';
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
 import TrackerBoard from '../components/tracker/TrackerBoard.vue';
@@ -22,10 +22,13 @@ const selectedBannerType = ref('Limited');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
+const currentPreprocess = ref('Default');
 
-const triggerFileInput = () => {
+const triggerFileInput = (version: string) => {
     // Trigger the file input programmatically
-    fileInput.value.click()
+    // check the clicked button id and set the currentPreprocess
+    currentPreprocess.value = version;
+    fileInput.value.click();
 }
 
 const isEqualPull = (pull1, pull2) => {
@@ -112,6 +115,19 @@ watch(sortedPulls, (newVal) => {
     isError.value = wrongTimestamps.value.length > 0;
 });
 
+async function preprocessImage (file: File, version: string): Promise<File> {
+    switch (version) {
+    case 'Default':
+        return preprocess(file);
+    case 'Version1':
+        return preprocess1(file);
+    case 'Version2':
+        return preprocess2(file);
+    default:
+        throw new Error('Unknown button clicked');
+    }
+}
+
 type clickHandler = (payload: Event) => void | undefined;
 const ocr: clickHandler = (payload: Event): void => {
     const fileList: FileList | null = (payload.target as HTMLInputElement).files;
@@ -141,7 +157,7 @@ const ocr: clickHandler = (payload: Event): void => {
                 currentFileIndex.value = i + 1;
                 totalFiles.value = fileList.length;
                 if (file) {
-                    const modifiedImage: File = await preprocessImage(file);
+                    const modifiedImage: File = await preprocessImage(file, currentPreprocess.value);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(modifiedImage);
                     text.value = ret.data.text;
                     // console.log(text.value);
@@ -304,50 +320,77 @@ watchEffect(() => {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="text-sm lg:text-base"> Tracker algorithm was modified. Please let us know if it's working properly via
-                    Comments/Bug Reports </span>
+                <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} </span>
             </div>
         </h2>
         <div class="flex justify-between">
-            <div class="flex flex-wrap space-x-3 gap-y-2 items-center">
+            <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-2 items-center">
                 <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                     multiple />
-                <button id="import-button" @click="triggerFileInput" :disabled="isImporting"
-                    class="bg-success bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                <button @click="triggerFileInput('Default')" :disabled="isImporting"
+                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
                     {{ $t('ocr-import') }} </button>
 
-                <div class="space-x-3">
-                    <div class="tooltip" :data-tip="$t('tutorial')">
-                        <button id="tutorial-button" ref="tutorialButton"
-                            class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
-                                $t('tutorial') }}</button>
-                    </div>
-
-                    <div class="tooltip" :data-tip="$t('reset')">
-                        <button onclick="resetTracker.showModal()"
-                            class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
-                                $t('reset') }}</button>
-                    </div>
-                    <!-- <div class="tooltip" :data-tip="$t('exploshe')">
-                        <button
-                            class="btn btn-ghost bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 btn-sm text-white">
-                            exploshe </button>
-                    </div> -->
+                <div class="space-x-1.5 sm:space-x-2">
+                    <button id="tutorial-button" ref="tutorialButton"
+                        class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
+                            $t('tutorial') }}</button>
+                    <button onclick="legacyButtons.showModal()"
+                        class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                            $t('legacy') }}</button>
+                    <button onclick="resetTracker.showModal()"
+                        class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                            $t('reset') }}</button>
                 </div>
             </div>
 
             <TrackerTutorial />
+
+            <dialog id="legacyButtons" class="modal">
+                <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    </form>
+                    <p class="p-2 text-white text-center">{{
+                        $t('legacy-notice') }}
+                    </p>
+                    <div class="flex gap-x-10 p-2">
+                        <form method="dialog">>
+                            <div class="tooltip" data-tip="Stable. Works on all OS.">
+                                <button @click="triggerFileInput('Version1')" :disabled="isImporting"
+                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                                    Version 1 </button>
+                            </div>
+                        </form>
+                        <form method="dialog">>
+                            <div class="tooltip" data-tip="Better. Doesn't support iOS">
+                                <button @click="triggerFileInput('Version2')" :disabled="isImporting"
+                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                                    Version 2 </button>
+                            </div>
+                        </form>
+                        <!-- <div class="tooltip" :data-tip="$t('exploshe')">
+                        <button
+                            class="btn btn-ghost bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 btn-sm text-white">
+                            exploshe </button>
+                    </div> -->
+                    </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                    <button>close</button>
+                </form>
+            </dialog>
 
             <dialog id="resetTracker" class="modal">
                 <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
-                    <p class="pb-4 text-white text-center">{{
+                    <p class="p-2 text-white text-center">{{
                         $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetTracker" class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
+                    <button @click="resetTracker" class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/90 text-black font-bold py-2 px-4 rounded ml-2">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">

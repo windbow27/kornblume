@@ -51,32 +51,45 @@ function getCropOptions (context: CanvasRenderingContext2D | null, width: number
     };
 }
 
-// function binarize (context: CanvasRenderingContext2D | null, width: number, height: number): ImageData {
-//     const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
-//     if (!imageData) {
-//         console.log('failed to obtain image data (binarize)');
-//         return new ImageData(0, 0);
-//     }
-//     const pixels: Uint8ClampedArray = imageData?.data;
-//     if (!pixels) {
-//         console.log('failed to obtain pixel data (binarize)');
-//         return new ImageData(0, 0);
-//     }
-//     const level: number = 0.61875;
-//     const thresh: number = Math.floor(level * 255);
-//     for (let i = 0; i < pixels.length; i += 4) {
-//         const r: number = pixels[i];
-//         const g: number = pixels[i + 1];
-//         const b: number = pixels[i + 2];
-//         const grey: number = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-//         const val: number = grey >= thresh ? 255 : 0;
-//         pixels[i] = pixels[i + 1] = pixels[i + 2] = val;
-//     }
-//     return imageData;
-// }
+function binarize (context: CanvasRenderingContext2D | null, width: number, height: number): ImageData {
+    const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
+    if (!imageData) {
+        console.log('failed to obtain image data (binarize)');
+        return new ImageData(0, 0);
+    }
+    const pixels: Uint8ClampedArray = imageData?.data;
+    if (!pixels) {
+        console.log('failed to obtain pixel data (binarize)');
+        return new ImageData(0, 0);
+    }
+    const level: number = 0.61875;
+    const thresh: number = Math.floor(level * 255);
+    for (let i = 0; i < pixels.length; i += 4) {
+        const r: number = pixels[i];
+        const g: number = pixels[i + 1];
+        const b: number = pixels[i + 2];
+        const grey: number = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        const val: number = grey >= thresh ? 255 : 0;
+        pixels[i] = pixels[i + 1] = pixels[i + 2] = val;
+    }
+    return imageData;
+}
 
-export async function preprocessImage (file: File): Promise<File> {
+export function convertGoldenThreadString (goldenThread: string, value: 'digit' | 'romanNumeral'): string {
+    const tempArray: string[] = goldenThread.split(' ');
+    const numberPart: string = tempArray[tempArray.length - 1];
+    if (value === 'digit') {
+        return goldenThread.replace(numberPart, String(numberPart.length));
+    } else if (value === 'romanNumeral') {
+        return goldenThread.replace(numberPart, 'I'.repeat(parseInt(numberPart)));
+    }
+    console.log('error converting golden thread string');
+    return '';
+}
+
+export async function preprocess (file: File): Promise<File> {
     return new Promise((resolve, reject) => {
+        console.log('Using default preprocess');
         const reader = new FileReader();
         let modifiedFile: File;
         reader.onload = (event: ProgressEvent<FileReader>) => {
@@ -143,14 +156,86 @@ export async function preprocessImage (file: File): Promise<File> {
     });
 }
 
-export function convertGoldenThreadString (goldenThread: string, value: 'digit' | 'romanNumeral'): string {
-    const tempArray: string[] = goldenThread.split(' ');
-    const numberPart: string = tempArray[tempArray.length - 1];
-    if (value === 'digit') {
-        return goldenThread.replace(numberPart, String(numberPart.length));
-    } else if (value === 'romanNumeral') {
-        return goldenThread.replace(numberPart, 'I'.repeat(parseInt(numberPart)));
-    }
-    console.log('error converting golden thread string');
-    return '';
+export async function preprocess1 (file: File): Promise<File> {
+    return new Promise((resolve, reject) => {
+        console.log('Using preprocess 1');
+        const reader = new FileReader();
+        let modifiedFile: File;
+        reader.onload = (event: ProgressEvent<FileReader>) => {
+            const img = document.createElement('img');
+            img.onload = () => {
+                const canvas: HTMLCanvasElement = document.createElement('canvas');
+                const context: CanvasRenderingContext2D | null = canvas.getContext('2d', { willReadFrequently: true });
+                if (!context) { reject(new Error('getContext failed (canvas, preprocessImage)')); }
+                canvas.width = img.width;
+                canvas.height = img.height;
+                context?.drawImage(img, 0, 0);
+
+                const newData: ImageData = binarize(context, canvas.width, canvas.height);
+                if (!newData) { reject(new Error('binarize failed (preprocessImage)')); }
+                context?.putImageData(newData, 0, 0);
+
+                const options: cropOptions = getCropOptions(context, canvas.width, canvas.height);
+                const cropped_canvas: HTMLCanvasElement = document.createElement('canvas');
+                const cropped_context: CanvasRenderingContext2D | null = cropped_canvas.getContext('2d');
+                if (!cropped_context) { reject(new Error('getContext failed (cropped_canvas, preprocessImage)')); }
+
+                cropped_canvas.width = options.width;
+                cropped_canvas.height = options.height;
+                cropped_context?.drawImage(canvas,
+                    options.x, options.y, options.width, options.height, /* src */
+                    0, 0, cropped_canvas.width, cropped_canvas.height /* dst */
+                );
+
+                cropped_canvas.toBlob((blob) => {
+                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
+                    resolve(modifiedFile);
+                }, file.type);
+            };
+            img.src = event.target?.result as string;
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+export async function preprocess2 (file: File): Promise<File> {
+    return new Promise((resolve, reject) => {
+        console.log('Using preprocess 2');
+        const reader = new FileReader();
+        let modifiedFile: File;
+        reader.onload = (event: ProgressEvent<FileReader>) => {
+            const img = document.createElement('img');
+            img.onload = () => {
+                const canvas: HTMLCanvasElement = document.createElement('canvas');
+                const context: CanvasRenderingContext2D | null = canvas.getContext('2d', { willReadFrequently: true });
+                if (!context) { reject(new Error('getContext failed (canvas, preprocessImage)')); }
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                if (context) {
+                    context.filter = 'contrast(2) saturate(0)';
+                    context.drawImage(img, 0, 0);
+                }
+
+                const options: cropOptions = getCropOptions(context, canvas.width, canvas.height);
+                const cropped_canvas: HTMLCanvasElement = document.createElement('canvas');
+                const cropped_context: CanvasRenderingContext2D | null = cropped_canvas.getContext('2d');
+                if (!cropped_context) { reject(new Error('getContext failed (cropped_canvas, preprocessImage)')); }
+
+                cropped_canvas.width = options.width;
+                cropped_canvas.height = options.height;
+                cropped_context?.drawImage(canvas,
+                    options.x, options.y, options.width, options.height, /* src */
+                    0, 0, cropped_canvas.width, cropped_canvas.height /* dst */
+                );
+
+                cropped_canvas.toBlob((blob) => {
+                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
+                    resolve(modifiedFile);
+                }, file.type);
+            };
+            img.src = event.target?.result as string;
+        };
+        reader.readAsDataURL(file);
+    });
 }

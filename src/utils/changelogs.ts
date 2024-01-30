@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '30/01/2024', description: '• Added Legacy methods to Tracker' },
     { date: '29/01/2024', description: '• Tracker algorithm was modified. Please let us know if it\'s working via Comments/Bug Reports' },
     { date: '28/01/2024', description: '• Added Medicine Pocket banner.' },
     { date: '19/01/2024', description: '• OCR improvements. Added notice for incomplete 10x in Tutorial' },
