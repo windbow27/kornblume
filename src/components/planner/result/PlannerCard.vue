@@ -91,8 +91,8 @@ watch(shouldHideScrollbar, (newVal) => {
 </template>
 
 <style scoped>
-.scrollbar {
-    scrollbar-width: thin;
+.hidden-scrollbar::-webkit-scrollbar {
+    height: 6px;
 }
 
 .scrollbar::-webkit-scrollbar {
