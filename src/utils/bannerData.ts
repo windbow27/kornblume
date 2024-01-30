@@ -14,7 +14,7 @@ export const bannerList = [
     'Focus of the Lights',
     'That Steady Evening Star',
     'Another Spring Thaw',
-    'Level Seven Bitter',
+    'Level Seven Biter',
     // standard
     'Amongst the Lake',
     // thread
