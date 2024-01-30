@@ -106,7 +106,7 @@ export async function preprocessImage (file: File): Promise<File> {
                         scaleY: scaleFactor
                     });
 
-                    fabricImage.filters.push(new fabric.Image.filters.Contrast({ contrast: 0.69 })); // nice
+                    fabricImage.filters.push(new fabric.Image.filters.Contrast({ contrast: 0.625 })); // this needs improvement, but works for now
                     fabricImage.filters.push(new fabric.Image.filters.Grayscale());
                     fabricImage.applyFilters();
 
