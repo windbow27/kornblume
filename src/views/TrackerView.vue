@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import { ref, computed, Ref, watchEffect, onMounted, watch } from 'vue'
+import { ref, computed, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
 import { bannerList, bannerRateUp, specialArcanists } from '@/utils/bannerData'
 import { useChangelogsStore } from '@/stores/global';
+import { convertGoldenThreadString, preprocess, preprocess1, preprocess2 } from '@/utils/preprocess';
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
 import TrackerBoard from '../components/tracker/TrackerBoard.vue';
+import TrackerTutorial from '@/components/tracker/TrackerTutorial.vue';
 
-const fileInput = ref(null);
+const fileInput = ref<HTMLElement>(null!);
 const isImporting = ref(false);
 const currentFileIndex = ref(0);
 const totalFiles = ref(0);
@@ -19,11 +21,14 @@ const wrongTimestamps = ref<number[]>([]);
 const selectedBannerType = ref('Limited');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
-const tutorialButton = ref(null);
+const tutorialButton = ref<HTMLButtonElement>(null!);
+const currentPreprocess = ref('Default');
 
-const triggerFileInput = () => {
+const triggerFileInput = (version: string) => {
     // Trigger the file input programmatically
-    (fileInput as Ref<HTMLElement | null>).value?.click()
+    // check the clicked button id and set the currentPreprocess
+    currentPreprocess.value = version;
+    fileInput.value.click();
 }
 
 const isEqualPull = (pull1, pull2) => {
@@ -110,132 +115,17 @@ watch(sortedPulls, (newVal) => {
     isError.value = wrongTimestamps.value.length > 0;
 });
 
-type cropOptions = { x: number, y: number, width: number, height: number };
-function getCropOptions (context: CanvasRenderingContext2D | null, width: number, height: number): cropOptions {
-    const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
-    if (!imageData) {
-        console.log('failed to obtain image data (getCropOptions)');
-        return { x: 0, y: 0, width: 0, height: 0 };
+async function preprocessImage (file: File, version: string): Promise<File> {
+    switch (version) {
+    case 'Default':
+        return preprocess(file);
+    case 'Version1':
+        return preprocess1(file);
+    case 'Version2':
+        return preprocess2(file);
+    default:
+        throw new Error('Unknown button clicked');
     }
-    const pixels: Uint8ClampedArray = imageData?.data;
-    if (!pixels) {
-        console.log('failed to obtain pixel data (getCropOptions)');
-        return { x: 0, y: 0, width: 0, height: 0 };
-    }
-    const x_half: number = ~~((width - 1) / 2);
-    const y_half: number = ~~((height - 1) / 2);
-
-    /* search for bottom of border, indicates corner y coordinate */
-    let bottomRightY: number = 0;
-    for (let i: number = height - 1; i > y_half; i--) {
-        if (pixels[(x_half + width * i) * 4] === 255) {
-            bottomRightY = i;
-            break;
-        }
-    }
-
-    /* search for right side of border, indicates corner x coordinate */
-    let bottomRightX: number = 0;
-    for (let i: number = width - 1; i > x_half; i--) {
-        if (pixels[(i + width * y_half) * 4] === 255) {
-            bottomRightX = i;
-            break;
-        }
-    }
-    /* original measurements needed to construct ratios */
-    const og_width: number = 2400;
-    const og_height: number = 1080;
-    const og_topLeftX: number = 775;
-    const og_topLeftY: number = 240;
-
-    const imageX_scale: number = width / og_width;
-    const imageY_scale: number = height / og_height;
-    const target_width: number = bottomRightX - og_topLeftX * imageX_scale;
-    const target_height: number = bottomRightY - og_topLeftY * imageY_scale;
-
-    return {
-        x: ~~(og_topLeftX * imageX_scale),
-        y: ~~(og_topLeftY * imageY_scale),
-        width: ~~target_width,
-        height: ~~target_height
-    };
-}
-
-function binarize (context: CanvasRenderingContext2D | null, width: number, height: number): ImageData {
-    const imageData: ImageData | undefined = context?.getImageData(0, 0, width, height);
-    if (!imageData) {
-        console.log('failed to obtain image data (binarize)');
-        return new ImageData(0, 0);
-    }
-    const pixels: Uint8ClampedArray = imageData?.data;
-    if (!pixels) {
-        console.log('failed to obtain pixel data (binarize)');
-        return new ImageData(0, 0);
-    }
-    const level: number = 0.61875;
-    const thresh: number = Math.floor(level * 255);
-    for (let i = 0; i < pixels.length; i += 4) {
-        const r: number = pixels[i];
-        const g: number = pixels[i + 1];
-        const b: number = pixels[i + 2];
-        const grey: number = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-        const val: number = grey >= thresh ? 255 : 0;
-        pixels[i] = pixels[i + 1] = pixels[i + 2] = val;
-    }
-    return imageData;
-}
-
-async function preprocessImage (file: File): Promise<File> {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        let modifiedFile: File;
-        reader.onload = (event: ProgressEvent<FileReader>) => {
-            const img = document.createElement('img');
-            img.onload = () => {
-                const canvas: HTMLCanvasElement = document.createElement('canvas');
-                const context: CanvasRenderingContext2D | null = canvas.getContext('2d', { willReadFrequently: true });
-                if (!context) { reject(new Error('getContext failed (canvas, preprocessImage)')); }
-                canvas.width = img.width;
-                canvas.height = img.height;
-                context?.drawImage(img, 0, 0);
-
-                const newData: ImageData = binarize(context, canvas.width, canvas.height);
-                if (!newData) { reject(new Error('binarize failed (preprocessImage)')); }
-                context?.putImageData(newData, 0, 0);
-
-                const options: cropOptions = getCropOptions(context, canvas.width, canvas.height);
-                const cropped_canvas: HTMLCanvasElement = document.createElement('canvas');
-                const cropped_context: CanvasRenderingContext2D | null = cropped_canvas.getContext('2d');
-                if (!cropped_context) { reject(new Error('getContext failed (cropped_canvas, preprocessImage)')); }
-
-                cropped_canvas.width = options.width;
-                cropped_canvas.height = options.height;
-                cropped_context?.drawImage(canvas,
-                    options.x, options.y, options.width, options.height, /* src */
-                    0, 0, cropped_canvas.width, cropped_canvas.height /* dst */
-                );
-
-                cropped_canvas.toBlob((blob) => {
-                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
-                    resolve(modifiedFile);
-                }, file.type);
-            };
-            img.src = event.target?.result as string;
-        };
-        reader.readAsDataURL(file);
-    });
-}
-
-function convertGoldenThreadString (goldenThread: string, value: 'digit' | 'romanNumeral'): string {
-    const tempArray: string[] = goldenThread.split(' ');
-    const numberPart: string = tempArray[tempArray.length - 1];
-    if (value === 'digit') {
-        return goldenThread.replace(numberPart, String(numberPart.length));
-    } else if (value === 'romanNumeral') {
-        return goldenThread.replace(numberPart, 'I'.repeat(parseInt(numberPart)));
-    }
-    console.log('error converting golden thread string');
-    return '';
 }
 
 type clickHandler = (payload: Event) => void | undefined;
@@ -267,7 +157,7 @@ const ocr: clickHandler = (payload: Event): void => {
                 currentFileIndex.value = i + 1;
                 totalFiles.value = fileList.length;
                 if (file) {
-                    const modifiedImage: File = await preprocessImage(file);
+                    const modifiedImage: File = await preprocessImage(file, currentPreprocess.value);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(modifiedImage);
                     text.value = ret.data.text;
                     // console.log(text.value);
@@ -404,7 +294,7 @@ onMounted(() => {
     if (!changelogsStore.isOpenTutorial) {
         console.log(tutorialButton.value);
         if (tutorialButton.value) {
-            (tutorialButton.value as unknown as HTMLButtonElement).click();
+            tutorialButton.value.click();
         }
         changelogsStore.setIsOpenTutorial(true)
     }
@@ -424,115 +314,66 @@ watchEffect(() => {
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
             {{ $t('summon-tracker') }}
             <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
+            <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="stroke-current shrink-0 w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} </span>
+            </div>
         </h2>
         <div class="flex justify-between">
-            <div class="flex flex-wrap space-x-3 gap-y-2 items-center">
+            <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-2 items-center">
                 <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                     multiple />
-                <button id="import-button" @click="triggerFileInput" :disabled="isImporting"
-                    class="bg-success hover:bg-green-600 text-white/90 font-bold py-2 px-4 rounded ml-2">
+                <button @click="triggerFileInput('Default')" :disabled="isImporting"
+                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
                     {{ $t('ocr-import') }} </button>
 
-                <div class="space-x-3">
+                <div class="space-x-1.5 sm:space-x-2">
                     <button id="tutorial-button" ref="tutorialButton"
                         class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
                             $t('tutorial') }}</button>
-
+                    <button onclick="legacyButtons.showModal()"
+                        class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                            $t('legacy') }}</button>
                     <button onclick="resetTracker.showModal()"
                         class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
                             $t('reset') }}</button>
                 </div>
             </div>
 
-            <dialog id="tutorial" class="modal">
-                <div class="modal-box custom-gradient-gray-blue custom-border relative h-2/3">
-                    <div class="absolute top-0 left-0 right-0 p-4 custom-gradient-gray-blue rounded-2xl">
-                        <form method="dialog">
-                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2.5 top-4 text-white">✕</button>
-                        </form>
-                        <h3 class="font-bold text-lg text-info p-2">{{ $t('tutorial') }}</h3>
-                    </div>
+            <TrackerTutorial />
 
-                    <div class="text-white overflow-y-auto h-full pt-10">
-                        <p class="py-4 text-white">{{ $t('video-demonstration-tutorial') }} <a
-                                href="https://youtu.be/CNsZ4rGWtyY" target="_blank"
-                                class="text-blue-500 hover:text-blue-700">{{
-                                    $t('summon-tracker-demo') }}</a></p>
-                        <p class=" text-white">1. {{ $t('take-screenshots-of-your-summon-history') }}</p>
-                        <p class=" text-white">2.
-                            <i18n-t
-                                keypath="upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once">
-                                <template #highlight>
-                                    <span class="text-error">{{ $t('multiple-images') }}</span>
-                                </template>
-                            </i18n-t>
-                        </p>
-                        <p class=" text-white">3. {{
-                            $t('the-summon-tracker-will-automatically-extract-display-and-save-the-information-from-the-screenshots')
-                        }}</p>
-                        <h3 class="font-bold text-lg pt-4 text-info">{{ $t('tips') }}</h3>
-                        <p class=" text-white">1. {{ $t('it-is-advised-to-save-your-screenshots-for-future-usages') }}</p>
-                        <p class=" text-white">2. {{ $t('after-your-first-import') }}</p>
-                        <p class=" text-white">3. {{ $t('example-of-incomplete-10x') }}
-                            <a href="https://imgur.com/a/6kXTVZz" target="_blank"
-                                class="text-blue-500 hover:text-blue-700">{{
-                                    $t('incomplete-10x') }}</a>
-                        </p>
-                        <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
-                        <p class="text-white">•
-                            <i18n-t
-                                keypath="ocr-import-only-works-with-english-text-consider-changing-your-language-into-english-to-screenshot">
-                                <template #highlight>
-                                    <span class="text-error">{{ $t('english-text') }}</span>
-                                </template>
-                            </i18n-t>
-                        </p>
-                        <p class="text-white">•
-                            <i18n-t keypath="images-must-be-clear-or-the-summon-tracker-may-fail-to-read">
-                                <template #highlight>
-                                    <span class="text-error">{{ $t('must-be-clear') }}</span>
-                                </template>
-                            </i18n-t>
-                        </p>
-                        <p class="text-white">•
-                            <i18n-t
-                                keypath='if-images-take-too-long-to-process-or-fail-to-read-5-arcanists-consider-screenshotting-clearer-images'>
-                                <template #highlight1>
-                                    <span class="text-error">{{ $t('take-too-long') }}</span>
-                                </template>
-                                <template #highlight2>
-                                    <span class="text-error">{{ $t('fail-to-read') }}</span>
-                                </template>
-                                <template #star>
-                                    <i class="fa-solid fa-star text-yellow-100"></i>
-                                </template>
-                            </i18n-t>
-                        </p>
-                        <p class="text-white">•
-                            <i18n-t keypath='this-is-an-example-of-a-good-image'>
-                                <template #highlight>
-                                    <a href="https://i.imgur.com/NgspD1g.png" target="_blank"
-                                        class="text-blue-500 hover:text-blue-700">{{ $t('image') }}</a>
-                                </template>
-                            </i18n-t>
-                        </p>
-                        <h3 class="font-bold text-lg pt-4 text-info">{{ $t('bug-reports') }}</h3>
-                        <p class=" text-white">
-                            <i18n-t
-                                keypath='if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps'>
-                                <template #missing>
-                                    <span class="text-error">{{ $t('missing-information') }}</span>
-                                </template>
-                            </i18n-t>
-                            <span class=" text-white ml-1">{{ $t('import-the-error-images-again') }}</span>
-                        </p>
-                        <p class="text-white">{{ $t('if-that-doesnt-work-recapture-the-images-and-import-them-again') }}</p>
-                        <p class="text-white">
-                            <i18n-t
-                                keypath='if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord'>
-                                <template #discord>@windbow</template>
-                            </i18n-t>
-                        </p>
+            <dialog id="legacyButtons" class="modal">
+                <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
+                    <form method="dialog">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    </form>
+                    <p class="p-2 text-white text-center">{{
+                        $t('legacy-notice') }}
+                    </p>
+                    <div class="flex gap-x-10 p-2">
+                        <form method="dialog">>
+                            <div class="tooltip" data-tip="Stable. Works on all OS.">
+                                <button @click="triggerFileInput('Version1')" :disabled="isImporting"
+                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                                    Version 1 </button>
+                            </div>
+                        </form>
+                        <form method="dialog">>
+                            <div class="tooltip" data-tip="Better. Doesn't support iOS">
+                                <button @click="triggerFileInput('Version2')" :disabled="isImporting"
+                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                                    Version 2 </button>
+                            </div>
+                        </form>
+                        <!-- <div class="tooltip" :data-tip="$t('exploshe')">
+                        <button
+                            class="btn btn-ghost bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 btn-sm text-white">
+                            exploshe </button>
+                    </div> -->
                     </div>
                 </div>
                 <form method="dialog" class="modal-backdrop">
@@ -545,11 +386,11 @@ watchEffect(() => {
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
-                    <p class="pb-4 text-white text-center">{{
+                    <p class="p-2 text-white text-center">{{
                         $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetTracker" class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
+                    <button @click="resetTracker" class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/90 text-black font-bold py-2 px-4 rounded ml-2">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">

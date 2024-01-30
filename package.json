@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.7.0",
+    "fabric": "^5.3.0",
     "flag-icons": "^7.1.0",
     "fuse.js": "^7.0.0",
     "i18n": "^0.15.1",

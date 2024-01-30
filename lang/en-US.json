@@ -41,7 +41,7 @@
   "once-you-delete-your-data-there-is-no-going-back": "Once you delete your data, there is no going back.",
   "reset-all": "Reset All",
   "please-read-tutorial": "Please read Tutorial.",
-  "ocr-import": "Import Images",
+  "ocr-import": "Import",
   "tutorial": "Tutorial",
   "reset": "Reset",
   "video-demonstration-tutorial": "Video demonstration/ tutorial:",
@@ -191,5 +191,9 @@
   "loading-indicator-vertin-wheel-vertin-wheel-vertin-wheel": "Loading indicator. Thank you for consenting and sending us the PSD of the image directly!",
   "homescreen-image": "Homescreen image. Beautiful work.",
   "arcanists": "Arcanists",
-  "P{portrait}": "P{portrait}"
+  "P{portrait}": "P{portrait}",
+  "exploshe": "Also try exploshe!",
+  "legacy": "Legacy",
+  "legacy-notice": "If current import doesn't work, try these methods. Hover to see more details.",
+  "try-legacy": "If current import doesn't work, open legacy methods and try them."
 }

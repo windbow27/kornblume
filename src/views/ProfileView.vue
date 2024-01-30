@@ -1,9 +1,9 @@
 <script setup lang="ts" name="ProfileView">
-import { ref, Ref } from 'vue'
+import { ref } from 'vue'
 import { exportKornblumeData, importKornblumeData, resetKornblumeData } from '@/utils';
 import { usePullsRecordStore } from '@/stores/pullsRecordStore';
 
-const fileInput = ref(null)
+const fileInput = ref<HTMLElement>(null!)
 
 const exportStores = () => {
     exportKornblumeData()
@@ -11,7 +11,7 @@ const exportStores = () => {
 
 const triggerFileInput = () => {
     // Trigger the file input programmatically
-    (fileInput as Ref<HTMLElement | null>).value?.click()
+    fileInput.value.click()
 }
 
 const importStores = (event) => {
@@ -38,12 +38,12 @@ const resetTracker = () => {
             <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4">{{ $t('profile') }}</h2>
             <p class="text-white"> {{ $t('you-can-export-or-import-your-data-here') }}</p>
             <div class="flex justify-center items-center p-2 space-x-5">
-                <button @click="exportStores" class="btn btn-info text-black font-bold py-2 px-4 rounded">
+                <button @click="exportStores" class="btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-black font-bold py-2 px-4 rounded">
                     {{ $t('export-data') }} </button>
 
                 <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4"
                     style="display: none;" />
-                <button @click="triggerFileInput" class="btn btn-success text-black font-bold py-2 px-4 rounded ml-2">
+                <button @click="triggerFileInput" class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2">
                     {{ $t('import-data') }} </button>
             </div>
         </div>
@@ -55,9 +55,9 @@ const resetTracker = () => {
             }}</p>
             <div class="flex flex-wrap justify-center items-center p-2 space-x-5 gap-y-5">
                 <button onclick="resetTracker.showModal()"
-                    class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
+                    class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/90 text-black font-bold py-2 px-4 rounded ml-2">
                     {{ $t('reset-tracker') }} </button>
-                <button onclick="resetAll.showModal()" class="btn btn-error text-black font-bold py-2 px-4 rounded ml-2">
+                <button onclick="resetAll.showModal()" class="btn btn-error hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/90 text-black font-bold py-2 px-4 rounded ml-2">
                     {{ $t('reset-data') }} </button>
             </div>
 

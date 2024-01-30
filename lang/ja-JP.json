@@ -89,7 +89,7 @@
   "numbers-expected-to-be-crafted": "予測される合成数：{numbers}",
   "numbers-expected-to-drop": "予測されるドロップ数：{numbers}",
   "numbers-needed-to-complete-the-goal": "目標までに必要な数：{numbers}",
-  "ocr-import": "画像インポート",
+  "ocr-import": "インポート",
   "ocr-import-only-works-with-english-text-consider-changing-your-language-into-english-to-screenshot": "インポートされた画像は{highlight}しか認識できません。言語を英語に切り替えてください。",
   "once-you-delete-your-data-there-is-no-going-back": "データを消去した場合、元に戻すことはできません。",
   "once-you-delete-your-summon-tracker-data-there-is-no-going-back": "一度召喚履歴データを消去した場合、元に戻すことはできません。",

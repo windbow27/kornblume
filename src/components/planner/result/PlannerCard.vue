@@ -16,7 +16,7 @@ const props = defineProps({
 });
 
 const { t } = useI18n()
-const scrollDiv = ref(null);
+const scrollDiv = ref<HTMLDivElement | null>(null);
 
 const shouldHideScrollbar = computed(() => {
     return props.card.materials.length < 4;
@@ -33,7 +33,7 @@ const toolTipText = computed(() => {
 
 watch(shouldHideScrollbar, (newVal) => {
     if (newVal && scrollDiv.value) {
-        (scrollDiv.value as HTMLDivElement).scrollLeft = 0;
+        scrollDiv.value.scrollLeft = 0;
     }
 });
 

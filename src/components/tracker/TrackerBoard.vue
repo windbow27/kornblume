@@ -53,7 +53,8 @@ const formatDate = (timestamp: number): string => {
     const formattedTime: string = date.toLocaleTimeString('en-GB', {
         hour12: false,
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+        second: '2-digit'
     });
     return `${formattedDate} ${formattedTime}`;
 }
