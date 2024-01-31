@@ -355,15 +355,15 @@ watchEffect(() => {
                         $t('legacy-notice') }}
                     </p>
                     <div class="flex gap-x-10 p-2">
-                        <form method="dialog">>
+                        <form method="dialog">
                             <div class="tooltip" data-tip="Stable. Works on all OS.">
                                 <button @click="triggerFileInput('Version1')" :disabled="isImporting"
                                     class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
                                     Version 1 </button>
                             </div>
                         </form>
-                        <form method="dialog">>
-                            <div class="tooltip" data-tip="Better. Doesn't support iOS">
+                        <form method="dialog">
+                            <div class="tooltip" data-tip="Better. Doesn't support iOS.">
                                 <button @click="triggerFileInput('Version2')" :disabled="isImporting"
                                     class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
                                     Version 2 </button>
@@ -390,7 +390,8 @@ watchEffect(() => {
                         $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetTracker" class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/90 text-black font-bold py-2 px-4 rounded ml-2">
+                    <button @click="resetTracker"
+                        class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/90 text-black font-bold py-2 px-4 rounded ml-2">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">
