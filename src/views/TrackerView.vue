@@ -320,11 +320,13 @@ watchEffect(() => {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} </span>
+                <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} <a href="https://timekeeper.top"
+                        class=" text-purple-400 hover:text-purple-500" target="_blank">
+                        {{ $t('exploshe') }} </a> </span>
             </div>
         </h2>
         <div class="flex justify-between">
-            <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-2 items-center">
+            <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center">
                 <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                     multiple />
                 <button @click="triggerFileInput('Default')" :disabled="isImporting"
@@ -354,26 +356,26 @@ watchEffect(() => {
                     <p class="p-2 text-white text-center">{{
                         $t('legacy-notice') }}
                     </p>
-                    <div class="flex gap-x-10 p-2">
+                    <div class="flex flex-wrap gap-x-10 gap-y-6 p-2 justify-center items-center">
                         <form method="dialog">
                             <div class="tooltip" data-tip="Stable. Works on all OS.">
                                 <button @click="triggerFileInput('Version1')" :disabled="isImporting"
-                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
                                     Version 1 </button>
                             </div>
                         </form>
                         <form method="dialog">
                             <div class="tooltip" data-tip="Better. Doesn't support iOS.">
                                 <button @click="triggerFileInput('Version2')" :disabled="isImporting"
-                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
                                     Version 2 </button>
                             </div>
                         </form>
-                        <!-- <div class="tooltip" :data-tip="$t('exploshe')">
-                        <button
-                            class="btn btn-ghost bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 btn-sm text-white">
-                            exploshe </button>
-                    </div> -->
+                        <div class="tooltip" :data-tip="$t('exploshe')">
+                            <a href="https://timekeeper.top" target="_blank"
+                                class="bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 py-2 px-4 rounded text-white">
+                                timekeeper </a>
+                        </div>
                     </div>
                 </div>
                 <form method="dialog" class="modal-backdrop">
