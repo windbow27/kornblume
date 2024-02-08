@@ -14,7 +14,7 @@
         },
         {
             "Material": "Moment of Dissonance",
-            "Quantity": 20
+            "Quantity": 30
         },
         {
             "Material": "Sonorous Knell",
@@ -230,5 +230,61 @@
         }
     ],
     "1.32": [
+        {
+            "Material": "Crystal Casket",
+            "Quantity": 1
+        },
+        {
+            "Material": "Sonorous Knell",
+            "Quantity": 3
+        },
+        {
+            "Material": "Tome of Beastly Thirst",
+            "Quantity": 6
+        },
+        {
+            "Material": "Bifurcated Skeleton",
+            "Quantity": 5
+        },
+        {
+            "Material": "Prophetic Bird",
+            "Quantity": 5
+        },
+        {
+            "Material": "Brief Cacophony",
+            "Quantity": 5
+        },
+        {
+            "Material": "Scroll of Beastly Thirst",
+            "Quantity": 6
+        },
+        {
+            "Material": "Rough Silver Ingot",
+            "Quantity": 10
+        },
+        {
+            "Material": "Esoteric Bones",
+            "Quantity": 10
+        },
+        {
+            "Material": "Moment of Dissonance",
+            "Quantity": 10
+        },
+        {
+            "Material": "Page of Beastly Thirst",
+            "Quantity": 6
+        },
+        {
+            "Material": "Magnesia Crystal",
+            "Quantity": 15
+        },
+        {
+            "Material": "Dust",
+            "Quantity": 75000
+        },
+        {
+            "Material": "Sharpodonty",
+            "Quantity": 125000
+        }
     ]
 }
