@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '08/02/2024', description: '• Added 1.3 pt2 shop, Shamane banner. Fixed jukebox rewards.' },
     { date: '02/02/2024', description: '• Added a link to timekeeper.top, also try them.' },
     { date: '30/01/2024', description: '• Added Substitute methods to Tracker' },
     { date: '29/01/2024', description: '• Tracker algorithm was modified. Please let us know if it\'s working via Comments/Bug Reports' },
