@@ -150,7 +150,7 @@ onClickOutside(resourcesRef, closeResources)
                                 <p><span class="text-info"> 简体中文 </span> fran </p>
                                 <p><span class="text-info"> 繁體中文 </span> fran </p>
                                 <p><span class="text-info"> Tiếng Việt </span> windbow </p>
-                                <p><span class="text-info"> Indonesia </span> </p>
+                                <p><span class="text-info"> Indonesia </span> ArieKee </p>
                                 <p><span class="text-info"> 한국어 </span> CaptinRegulus </p>
                                 <p><span class="text-info"> 日本語 </span> yagochi </p>
                                 <p><span class="text-info"> Русский </span> spun4ik & dagufz37 </p>
