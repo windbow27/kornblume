@@ -79,10 +79,10 @@ export function getSolve (materials) {
     const dropMapping = {};
     for (const stage in drops) {
         const stageInfo = drops[stage];
-        const { count: times, cost, drops: dropCount } = stageInfo;
+        const { cost, drops: dropCount } = stageInfo;
         dropMapping[stage] = { cost };
         for (const matlName in dropCount) {
-            dropMapping[stage][matlName] = dropCount[matlName] / times;
+            dropMapping[stage][matlName] = dropCount[matlName];
         }
     }
 
