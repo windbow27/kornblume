@@ -292,7 +292,6 @@ onMounted(() => {
         pulls.value = [...usePullsRecordStore().data]
     }
     if (!changelogsStore.isOpenTutorial) {
-        console.log(tutorialButton.value);
         if (tutorialButton.value) {
             tutorialButton.value.click();
         }
