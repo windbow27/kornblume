@@ -313,7 +313,9 @@ watchEffect(() => {
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
             {{ $t('summon-tracker') }}
             <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
-            <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
+
+            <!-- Notification -->
+            <!-- <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -322,7 +324,8 @@ watchEffect(() => {
                 <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} <a href="https://timekeeper.top"
                         class=" text-purple-400 hover:text-purple-500" target="_blank">
                         {{ $t('exploshe') }} </a> </span>
-            </div>
+            </div> -->
+
         </h2>
         <div class="flex justify-between">
             <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center">

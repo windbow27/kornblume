@@ -17,6 +17,7 @@ const closeOverlay = () => {
 // { name: '', author:'', comment:'', link: '' },
 const resources = [
     { name: 'Huji wiki', author: 'Huji wiki team', comment: t('very-detailed-most-of-the-data-is-from-this-wiki'), link: 'https://res1999.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5' },
+    { name: 'Reverse: 1999 Materials', author: 'Shiroi Negai', comment: t('another-drop-rates'), link: 'https://docs.google.com/spreadsheets/d/1GZMH5rJIqIUIh--MW9ahWCn2ExNvttjWGhT1lP1d4XM/edit#gid=2075797160' },
     { name: '必要的记录', author: 'Chinese community', comment: t('the-drop-rates-of-farming-stages-are-provided-by-this-sheet'), link: 'https://www.kdocs.cn/l/cd5MWeCl5bKw' },
     { name: 'ArkPlanner', author: 'Penguine Statistics', comment: t('referred-to-arkplanner-s-farming-route-algorithm-enhanced-with-linear-programming-magic'), link: 'https://penguin-stats.io/planner' },
     { name: 'Vanity Cake Reverse 1999', author: 'Vanity & Cake', comment: t('spreadsheet-for-a-lot-of-things-insight-iii-levels-are-taken-here'), link: 'https://docs.google.com/spreadsheets/d/1qQinxxU_e0-YXwPj5WAd2PgTFksyLwIaHXwEcosUxU0/edit#gid=470385843' },
