@@ -2,7 +2,7 @@
 import { ref, computed, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
-import { bannerList, bannerRateUp, specialArcanists } from '@/utils/bannerData'
+import { bannerList, specialArcanists } from '@/utils/bannerData'
 import { useChangelogsStore } from '@/stores/global';
 import { convertGoldenThreadString, preprocess, preprocess1, preprocess2 } from '@/utils/preprocess';
 import Tesseract, { createWorker } from 'tesseract.js';
@@ -87,19 +87,6 @@ const limitedPulls = computed(() => {
             Timestamp: pull.Timestamp
         }
     });
-});
-
-const winrate = computed(() => {
-    const totalRateUps = limitedPulls.value.filter(pull => {
-        const bannerIndex = bannerList.indexOf(pull.BannerType);
-        const rateUpArcanist = bannerRateUp[bannerIndex];
-        return pull.ArcanistName === rateUpArcanist && pull.Rarity === 6;
-    }).length;
-
-    const totalSixStars = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
-    const loseAttempts = totalSixStars - totalRateUps;
-    const winAttempts = totalSixStars - 2 * loseAttempts;
-    return Math.max(0, Math.round(winAttempts / (winAttempts + loseAttempts) * 100));
 });
 
 watch(sortedPulls, (newVal) => {
@@ -429,7 +416,7 @@ watchEffect(() => {
         </div>
 
         <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
-            :isError="isError" :wrongTimestamps="wrongTimestamps" :winrate="winrate" />
+            :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Standard'" :text="$t('summary-standard')" :pulls="standardPulls"
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls"
