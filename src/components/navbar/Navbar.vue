@@ -75,7 +75,7 @@ watchEffect(() => {
           class="fa-regular fa-address-card"></i> {{ $t('profile') }} </router-link>
     </div>
 
-    <div class="ml-auto flex items-center">
+    <div class="ml-auto flex items-center gap-1.5">
       <!-- Ko-fi Icon-->
       <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
         <a href="https://ko-fi.com/windbow" target="_blank" rel="noopener noreferrer">

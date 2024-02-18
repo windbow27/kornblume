@@ -15,6 +15,7 @@ export const bannerList = [
     'That Steady Evening Star',
     'Another Spring Thaw',
     'Level Seven Biter',
+    'The Era of Great Speech',
     // standard
     'Amongst the Lake',
     // thread
@@ -36,7 +37,8 @@ export const bannerRateUp = [
     'Centurion',
     'Kaalaa Baunaa',
     'Shamane',
-    'Medicine Pocket'
+    'Medicine Pocket',
+    'Ms. New Babel'
 ];
 
 export const specialArcanists: string[] = [

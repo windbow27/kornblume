@@ -2,7 +2,7 @@
 import { ref, computed, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
-import { bannerList, bannerRateUp, specialArcanists } from '@/utils/bannerData'
+import { bannerList, specialArcanists } from '@/utils/bannerData'
 import { useChangelogsStore } from '@/stores/global';
 import { convertGoldenThreadString, preprocess, preprocess1, preprocess2 } from '@/utils/preprocess';
 import Tesseract, { createWorker } from 'tesseract.js';
@@ -87,19 +87,6 @@ const limitedPulls = computed(() => {
             Timestamp: pull.Timestamp
         }
     });
-});
-
-const winrate = computed(() => {
-    const totalRateUps = limitedPulls.value.filter(pull => {
-        const bannerIndex = bannerList.indexOf(pull.BannerType);
-        const rateUpArcanist = bannerRateUp[bannerIndex];
-        return pull.ArcanistName === rateUpArcanist && pull.Rarity === 6;
-    }).length;
-
-    const totalSixStars = limitedPulls.value.filter(pull => pull.Rarity === 6).length;
-    const loseAttempts = totalSixStars - totalRateUps;
-    const winAttempts = totalSixStars - 2 * loseAttempts;
-    return Math.max(0, Math.round(winAttempts / (winAttempts + loseAttempts) * 100));
 });
 
 watch(sortedPulls, (newVal) => {
@@ -292,7 +279,6 @@ onMounted(() => {
         pulls.value = [...usePullsRecordStore().data]
     }
     if (!changelogsStore.isOpenTutorial) {
-        console.log(tutorialButton.value);
         if (tutorialButton.value) {
             tutorialButton.value.click();
         }
@@ -314,17 +300,22 @@ watchEffect(() => {
         <h2 class="text-2xl text-white font-bold mb-4 lg:mb-6">
             {{ $t('summon-tracker') }}
             <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
-            <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
+
+            <!-- Notification -->
+            <!-- <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} </span>
-            </div>
+                <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} <a href="https://timekeeper.top"
+                        class=" text-purple-400 hover:text-purple-500" target="_blank">
+                        {{ $t('exploshe') }} </a> </span>
+            </div> -->
+
         </h2>
         <div class="flex justify-between">
-            <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-2 items-center">
+            <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center">
                 <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
                     multiple />
                 <button @click="triggerFileInput('Default')" :disabled="isImporting"
@@ -354,26 +345,26 @@ watchEffect(() => {
                     <p class="p-2 text-white text-center">{{
                         $t('legacy-notice') }}
                     </p>
-                    <div class="flex gap-x-10 p-2">
-                        <form method="dialog">>
+                    <div class="flex flex-wrap gap-x-10 gap-y-6 p-2 justify-center items-center">
+                        <form method="dialog">
                             <div class="tooltip" data-tip="Stable. Works on all OS.">
                                 <button @click="triggerFileInput('Version1')" :disabled="isImporting"
-                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
                                     Version 1 </button>
                             </div>
                         </form>
-                        <form method="dialog">>
-                            <div class="tooltip" data-tip="Better. Doesn't support iOS">
+                        <form method="dialog">
+                            <div class="tooltip" data-tip="Better. Doesn't support iOS.">
                                 <button @click="triggerFileInput('Version2')" :disabled="isImporting"
-                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
                                     Version 2 </button>
                             </div>
                         </form>
-                        <!-- <div class="tooltip" :data-tip="$t('exploshe')">
-                        <button
-                            class="btn btn-ghost bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 btn-sm text-white">
-                            exploshe </button>
-                    </div> -->
+                        <div class="tooltip" :data-tip="$t('exploshe')">
+                            <a href="https://timekeeper.top" target="_blank"
+                                class="bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 py-2 px-4 rounded text-white">
+                                timekeeper </a>
+                        </div>
                     </div>
                 </div>
                 <form method="dialog" class="modal-backdrop">
@@ -390,7 +381,8 @@ watchEffect(() => {
                         $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetTracker" class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/50 text-black font-bold py-2 px-4 rounded ml-2">
+                    <button @click="resetTracker"
+                        class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/50 text-black font-bold py-2 px-4 rounded ml-2">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">
@@ -424,7 +416,7 @@ watchEffect(() => {
         </div>
 
         <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
-            :isError="isError" :wrongTimestamps="wrongTimestamps" :winrate="winrate" />
+            :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Standard'" :text="$t('summary-standard')" :pulls="standardPulls"
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls"

@@ -79,10 +79,11 @@ export function getSolve (materials) {
     const dropMapping = {};
     for (const stage in drops) {
         const stageInfo = drops[stage];
-        const { count: times, cost, drops: dropCount } = stageInfo;
+        const { cost, drops: dropCount, count: times } = stageInfo;
         dropMapping[stage] = { cost };
         for (const matlName in dropCount) {
-            dropMapping[stage][matlName] = dropCount[matlName] / times;
+            // migrating data between kdoc and shiroi
+            dropMapping[stage][matlName] = times ? (dropCount[matlName] / times) : dropCount[matlName];
         }
     }
 

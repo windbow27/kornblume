@@ -32,10 +32,6 @@ const props = defineProps({
     text: {
         type: String,
         required: true
-    },
-    winrate: {
-        type: Number,
-        required: false
     }
 });
 
@@ -130,6 +126,13 @@ const indicators = computed(() => {
     return result;
 });
 
+const winrate = computed(() => {
+    const indicatorsArray = Object.values(indicators.value);
+    const winCount = indicatorsArray.filter(i => i === 'W').length;
+    const loseCount = indicatorsArray.filter(i => i === 'L').length;
+    return Math.round((winCount / (winCount + loseCount)) * 100);
+});
+
 defineExpose({
     formatDate
 })
@@ -198,7 +201,7 @@ defineExpose({
                 </i18n-t>
             </div>
             <div class="number">
-                {{ props.winrate ? props.winrate : 0 }} %
+                {{ winrate ? winrate : 0 }} %
             </div>
         </div>
         <div v-if="props.text == $t('summary-limited') || $props.text == $t('summary-standard')"

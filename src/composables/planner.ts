@@ -199,8 +199,9 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
             const activity = Math.ceil(runs * stageInfo.cost);
             const days = Number((activity / useActivityStore().settings.activity).toFixed(1));
             let materials = Object.entries(stageInfo.drops).map(([matlName, count]) => {
-                let quantity = (count / stageInfo.count) * runs;
-                quantity = (quantity % 1 >= 0.9) ? Math.ceil(quantity) : Math.floor(quantity); // flooring, takes 0.99 for now
+                const times: number = stageInfo?.count; // migrating data between kdoc and shiroi
+                let quantity: number = times ? (count / times) * runs : (count * runs);
+                quantity = (quantity % 1 >= 0.9) ? Math.ceil(quantity) : Math.floor(quantity);
                 return {
                     Material: matlName,
                     Quantity: quantity
