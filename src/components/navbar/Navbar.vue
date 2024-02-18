@@ -74,7 +74,7 @@ watchEffect(() => {
       <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i
           class="fas fa-tasks"></i> {{ $t('planner') }} </router-link>
       <router-link to="/stages" class="nav-button" :class="{ 'active': $route.path === '/stages' }"><i
-          class="fa-solid fa-shield-halved"></i> {{ $t('stages') }} </router-link>
+          class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('stages') }} </router-link>
       <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i
           class="fa-regular fa-address-card"></i> {{ $t('profile') }} </router-link>
     </div>
