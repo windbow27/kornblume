@@ -7,6 +7,12 @@ export interface INormalizedMaterial {
     borderImagePath: string,
 }
 
+export interface IBaseMaterial {
+    material: string,
+    itemImagePath: string,
+    borderImagePath: string,
+}
+
 export function formatQuantity (quantity: number): string {
     if (quantity >= 1000000) {
         return `${(quantity / 1000000).toFixed(1)}m`;
@@ -23,6 +29,15 @@ export function normalizeDisplayMaterial (unprocessedMaterial): INormalizedMater
         quantity: formatQuantity(unprocessedMaterial.Quantity),
         itemImagePath: getItemImagePathByMatl(unprocessedMaterial.Material),
         borderImagePath: getBorderImagePathByMatl(unprocessedMaterial.Material)
+    };
+    return result;
+}
+
+export function baseDisplayMaterial (unprocessedMaterial): IBaseMaterial {
+    const result = {
+        material: unprocessedMaterial.Name,
+        itemImagePath: getItemImagePathByMatl(unprocessedMaterial.Name),
+        borderImagePath: getBorderImagePathByMatl(unprocessedMaterial.Name)
     };
     return result;
 }

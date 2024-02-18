@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { IMaterialUnit } from '@/types'
 
 interface INeededMaterialsMapping {
     [materialName: string]: number,
@@ -10,7 +11,8 @@ interface IGlobalStore {
     neededRawMaterialsMapping: INeededMaterialsMapping,
     neededMaterialsMapping: INeededMaterialsMapping,
     isLoading: boolean, // added isLoading state
-    isChangelogsShown: boolean
+    isChangelogsShown: boolean,
+    selectedMaterial: IMaterialUnit
 }
 
 interface IChangelogsStore {
@@ -42,7 +44,8 @@ export const useGlobalStore = defineStore('global', {
         neededRawMaterialsMapping: {}, // return quantity for raw materials
         neededMaterialsMapping: {}, // consider in-process crafting needs
         isLoading: false, // loading screen
-        isChangelogsShown: false // changelogs
+        isChangelogsShown: false, // changelogs
+        selectedMaterial: { Material: '', Quantity: 0 }
     }),
     actions: {
         setIsEditingWarehouse (isEditing: boolean) {
@@ -75,6 +78,9 @@ export const useGlobalStore = defineStore('global', {
         },
         finishLoading () {
             this.setLoading(false)
+        },
+        setSelectedMaterial (material) {
+            this.selectedMaterial = material
         }
     }
 })

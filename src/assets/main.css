@@ -96,6 +96,10 @@
     @apply bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden my-4;
 }
 
+.custom-box {
+    @apply p-4 rounded shadow w-full;
+}
+
 /*Badges*/
 
 .blue-badge {

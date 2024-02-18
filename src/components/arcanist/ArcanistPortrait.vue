@@ -30,6 +30,10 @@ const getArcanistAfflatusPath = (afflatus: string) => {
         <div class="transform transition-transform duration-500 overflow-hidden">
             <img class="w-16 sm:w-20 rounded-b-full scale-[1.025] transform transition-transform duration-300 group-hover:scale-125"
                 :src="getArcanistImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
+            <!-- Overlay -->
+            <div
+                class="overlay absolute inset-0 bg-gray-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
+            </div>
             <span v-if="count >= 0"
                 class="absolute top-0.5 right-1.5 w-auto px-1 text-center text-sm font-bold text-white/90 bg-opacity-50 rounded-md bg-black">
                 <i18n-t keypath='P{portrait}'>
@@ -38,11 +42,11 @@ const getArcanistAfflatusPath = (afflatus: string) => {
                     </template>
                 </i18n-t>
             </span>
-            <img class="absolute top-0 left-1 w-4 opacity-90"
-                :src="getArcanistAfflatusPath(props.arcanist.Afflatus)" alt="">
+            <img class="absolute top-0 left-1 w-4 opacity-90" :src="getArcanistAfflatusPath(props.arcanist.Afflatus)"
+                alt="">
             <img class="absolute bottom-0 w-16 sm:w-20 rounded-md" :src="getArcanistFramePath(props.arcanist.Rarity)"
                 alt="">
-            <span class="absolute bottom-0 w-16 sm:w-20 text-center text-sm text-white/90 bg-opacity-10 py-2.5 bg-black"> {{
+            <span class="absolute bottom-0 w-16 sm:w-20 text-center text-white/90 py-2.5 text-shadow font-bold opacity-95"> {{
                 props.arcanist.Name }} </span>
         </div>
     </div>
@@ -54,8 +58,12 @@ const getArcanistAfflatusPath = (afflatus: string) => {
     box-sizing: border-box;
 }
 
-.transform:hover {
-    border-color: rgb(30, 58, 158);
-    border-radius: 0.375rem;
+.overlay {
+    pointer-events: none;
+}
+.text-shadow {
+    font-size: 0.825rem;
+    line-height: 1rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 </style>

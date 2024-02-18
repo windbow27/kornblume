@@ -67,10 +67,14 @@ watchEffect(() => {
         {{ $t('home') }} </router-link>
       <router-link to="/arcanists" class="nav-button" :class="{ 'active': $route.path === '/arcanists' }"><i
           class="fa-solid fa-user"></i> {{ $t('arcanists') }} </router-link>
+      <router-link to="/items" class="nav-button" :class="{ 'active': $route.path === '/items' }"><i
+          class="fa-solid fa-box-archive"></i> {{ $t('items') }} </router-link>
       <router-link to="/tracker" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i
           class="fa-brands fa-galactic-republic"></i> {{ $t('summon-tracker') }} </router-link>
       <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i
           class="fas fa-tasks"></i> {{ $t('planner') }} </router-link>
+      <router-link to="/stages" class="nav-button" :class="{ 'active': $route.path === '/stages' }"><i
+          class="fa-solid fa-shield-halved"></i> {{ $t('stages') }} </router-link>
       <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i
           class="fa-regular fa-address-card"></i> {{ $t('profile') }} </router-link>
     </div>

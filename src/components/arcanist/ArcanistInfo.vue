@@ -38,7 +38,8 @@ onBeforeMount(() => {
     <div class="pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center">
         <!--I2 Portrait-->
         <div class="w-full md:w-[calc(45%)] relative">
-            <img class="h-[80vh] object-cover object-right" :src="getArcanistImagePath(arcanist?.Id.toString() ?? '')" alt="">
+            <img class="h-[80vh] object-cover object-right" :src="getArcanistImagePath(arcanist?.Id.toString() ?? '')"
+                alt="">
         </div>
 
         <!--Infomation-->
@@ -47,7 +48,7 @@ onBeforeMount(() => {
             <div class="p-4 rounded shadow custom-border w-full">
                 <div class="flex flex-wrap items-center space-x-2">
                     <ArcanistIcon :arcanist="arcanist ?? {}" />
-                    <h2 class="text text-xl lg:text-3xl font-bold"> {{ arcanist?.Name }} </h2>
+                    <h2 class="text-white text-xl lg:text-3xl font-bold"> {{ arcanist?.Name }} </h2>
                     <p class="pt-1" :class="{
                         'text-orange-300': arcanist?.Rarity === 6,
                         'text-yellow-100': arcanist?.Rarity === 5,
@@ -58,9 +59,10 @@ onBeforeMount(() => {
                     <img class="inline-block w-10" :src="getArcanistAfflatusPath(arcanist?.Afflatus ?? '')" alt="">
                     <img class="inline-block w-8 pb-2" :src="getArcanistDmgTypePath('1')" alt="">
                 </div>
-                <div class="flex flex-wrap sm:gap-x-2 gap-y-2 pt-2">
+                <div class="flex flex-wrap gap-x-2 gap-y-2 pt-2">
                     <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
-                        :class="['hover:bg-info rounded-md text py-1 px-3', selectedButton === button ? 'border-button' : '']">
+                        :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']"
+                        :disabled="index !== 0">
                         {{ button }}
                     </button>
                 </div>
@@ -77,7 +79,7 @@ onBeforeMount(() => {
 </template>
 
 <style scoped>
-.text {
-    @apply text-white
+button:disabled {
+    opacity: 0.25;
 }
 </style>

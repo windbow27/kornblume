@@ -22,6 +22,14 @@ const router = createRouter({
             }
         },
         {
+            path: '/items',
+            name: 'items',
+            component: () => import('../views/ItemsView.vue'),
+            meta: {
+                requiredJson: ['arcanists', 'items', 'psychubes', 'formulas']
+            }
+        },
+        {
             path: '/tracker',
             name: 'tracker',
             component: () => import('../views/TrackerView.vue'),
@@ -38,6 +46,14 @@ const router = createRouter({
             }
         },
         {
+            path: '/stages',
+            name: 'stages',
+            component: () => import('../views/StagesView.vue'),
+            meta: {
+                requiredJson: ['stages']
+            }
+        },
+        {
             path: '/profile',
             name: 'profile',
             component: () => import('../views/ProfileView.vue'),
@@ -51,6 +67,14 @@ const router = createRouter({
             component: () => import('../components/arcanist/ArcanistInfo.vue'),
             meta: {
                 requiredJson: ['arcanists', 'items']
+            }
+        },
+        {
+            path: '/:name',
+            name: 'material',
+            component: () => import('../components/item/material/MaterialDisplay.vue'),
+            meta: {
+                requiredJson: ['arcanists', 'items', 'psychubes', 'formulas']
             }
         }
     ]

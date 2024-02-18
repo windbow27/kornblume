@@ -19,9 +19,9 @@ const attributes = ref([
     'Crit. DMG'
 ]);
 
-const selected = ref(4);
+const selected = ref(props.arcanist.rarity >= 5 ? 4 : 3);
 
-const nodes = ref([
+const nodesHighRarity = ref([
     { insight: 0, level: 1 },
     { insight: 0, level: 30 },
     { insight: 1, level: 40 },
@@ -29,13 +29,20 @@ const nodes = ref([
     { insight: 3, level: 60 }
 ]);
 
+const nodesLowRarity = ref([
+    { insight: 0, level: 1 },
+    { insight: 0, level: 30 },
+    { insight: 1, level: 40 },
+    { insight: 2, level: 50 }
+]);
+
 const editingArcanist = computed(() => ({
     Id: props.arcanist.Id,
     isVisible: true,
     currentInsight: 0,
     currentLevel: 1,
-    goalInsight: nodes.value[selected.value].insight,
-    goalLevel: nodes.value[selected.value].level,
+    goalInsight: (props.arcanist.rarity >= 5 ? nodesHighRarity : nodesLowRarity).value[selected.value].insight,
+    goalLevel: (props.arcanist.rarity >= 5 ? nodesHighRarity : nodesLowRarity).value[selected.value].level,
     currentResonance: 0,
     goalResonance: 0
 }))
@@ -51,15 +58,16 @@ const editingArcanist = computed(() => ({
                 <span class="w-7 pl-3"><i class="fa-solid fa-o"></i></span>
                 <span><img class="w-5" src="/images/items/common/insight1.png"></span>
                 <span><img class="w-5" src="/images/items/common/insight2.png"></span>
-                <span><img class="w-5" src="/images/items/common/insight3.png"></span>
+                <span v-if="props.arcanist.rarity >= 5"><img class="w-5" src="/images/items/common/insight3.png"></span>
             </div>
-            <input id="level" type="range" min="0" max="4" class="range-slider" step="1" v-model="selected">
+            <input id="level" type="range" min="0" :max="props.arcanist.rarity >= 5 ? 4 : 3" class="range-slider" step="1"
+                v-model="selected">
             <div class="w-full text-white flex justify-between text-xs 3xl:text-base">
                 <span>&nbsp;Lv. 1&nbsp;</span>
                 <span>Lv. 30</span>
                 <span>Lv. 40</span>
                 <span>Lv. 50</span>
-                <span>Lv. 60</span>
+                <span v-if="props.arcanist.rarity >= 5">Lv. 60</span>
             </div>
         </div>
         <div class="pt-2.5">
@@ -70,7 +78,7 @@ const editingArcanist = computed(() => ({
                 </tr>
             </table>
         </div>
-        <ArcanistCalculate :arcanist="editingArcanist"/>
+        <ArcanistCalculate :arcanist="editingArcanist" />
     </div>
 </template>
 
