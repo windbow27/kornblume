@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue';
+import { ref, watchEffect, onMounted } from 'vue';
 import { IItem } from '@/types';
 import { useDataStore } from '@/stores/dataStore';
 import { useGlobalStore } from '@/stores/global';
+import { sortCategoryMaterials } from '@/composables/materials';
 import MaterialSelectionIcon from '@/components/item/material/MaterialSelectionIcon.vue';
 import MaterialDisplay from '@/components/item/material/MaterialDisplay.vue';
 import MaterialFilter from '@/components/item/material/MaterialFilter.vue';
@@ -12,8 +13,8 @@ const buttons = ['Materials', 'Psychubes'];
 const selectedButton = ref(buttons[0]);
 
 const itemStore = useDataStore().items;
-const listItems = ref(itemStore);
-const filteredItems = ref(itemStore);
+const listItems = ref<IItem[]>([]);
+const filteredItems = ref<IItem[]>([]);
 const globalStore = useGlobalStore();
 const selectedMaterial = ref<IItem | null>();
 
@@ -33,23 +34,17 @@ watchEffect(() => {
         item.IsReleased
     )
 
-    listItems.value.sort((a: IItem, b: IItem) => {
-        // Category
-        const categoryA = categories.indexOf(a.Category);
-        const categoryB = categories.indexOf(b.Category);
-        if (categoryA !== categoryB) {
-            return categoryA - categoryB;
-        }
-
-        // Rarity
-        const rarityComparison = b.Rarity - a.Rarity
-        if (rarityComparison !== 0) {
-            return rarityComparison
-        }
-
-        return a.Id - b.Id;
-    })
+    sortCategoryMaterials(listItems.value, categories);
 })
+
+onMounted(() => {
+    filteredItems.value = itemStore.filter((item: IItem) =>
+        item.IsReleased
+    )
+    sortCategoryMaterials(filteredItems.value, categories);
+})
+
+// this is so stupid i cant
 
 </script>
 

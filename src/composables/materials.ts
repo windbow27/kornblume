@@ -49,3 +49,22 @@ export function baseDisplayMaterial (unprocessedMaterial: IItem): IBaseMaterial 
     };
     return result;
 }
+
+export function sortCategoryMaterials (materials: IItem[], categories: string | string[]) {
+    // Category
+    materials.sort((a: IItem, b: IItem) => {
+        const categoryA = categories.indexOf(a.Category);
+        const categoryB = categories.indexOf(b.Category);
+        if (categoryA !== categoryB) {
+            return categoryA - categoryB;
+        }
+
+        // Rarity
+        const rarityComparison = b.Rarity - a.Rarity
+        if (rarityComparison !== 0) {
+            return rarityComparison
+        }
+
+        return a.Id - b.Id;
+    })
+}
