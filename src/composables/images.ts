@@ -43,3 +43,28 @@ export function getActivityImagePathByStage (stage: string) {
 export function getStageImagePathByStage (stage: number | string) {
     return `images/items/stage/${getStageBackGroundId(stage)}.webp`
 }
+
+export function getArcanistIconImagePath (id: number | string) {
+    return `images/arcanists/icon/${id}.webp`;
+}
+
+export function getArcanistI0ImagePath (id: number | string) {
+    return `images/arcanists/i0/${id}.webp`;
+}
+
+export function getArcanistI2ImagePath (id: number | string) {
+    return `images/arcanists/i2/${id}.webp`;
+}
+
+export function getArcanistAfflatusPath (afflatus: string) {
+    afflatus = afflatus.toLowerCase();
+    return `images/arcanists/misc/logo-${afflatus}.webp`;
+}
+
+export function getArcanistDmgTypePath (dmgType: string) {
+    return `images/arcanists/misc/dmg-type-${dmgType}.webp`;
+}
+
+export function getArcanistFramePath (rarity: number) {
+    return `images/arcanists/misc/bg${rarity}.webp`;
+}

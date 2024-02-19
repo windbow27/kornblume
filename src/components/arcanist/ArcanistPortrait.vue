@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { getArcanistI0ImagePath, getArcanistFramePath, getArcanistAfflatusPath } from '@/composables/images';
+
 const props = defineProps({
     arcanist: {
         type: Object,
@@ -10,26 +12,13 @@ const props = defineProps({
     }
 });
 
-const getArcanistImagePath = (id: string) => {
-    return `images/arcanists/i0/${id}.webp`;
-};
-
-const getArcanistFramePath = (rarity: number) => {
-    return `images/arcanists/misc/bg${rarity}.webp`;
-};
-
-const getArcanistAfflatusPath = (afflatus: string) => {
-    afflatus = afflatus.toLowerCase();
-    return `images/arcanists/misc/${afflatus}.webp`;
-};
-
 </script>
 
 <template>
     <div class="p-2.5 relative overflow-hidden group">
         <div class="transform transition-transform duration-500 overflow-hidden">
             <img class="w-16 sm:w-20 rounded-b-full scale-[1.025] transform transition-transform duration-300 group-hover:scale-125"
-                :src="getArcanistImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
+                :src="getArcanistI0ImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
             <!-- Overlay -->
             <div
                 class="overlay absolute inset-0 bg-gray-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300">

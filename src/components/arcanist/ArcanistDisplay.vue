@@ -3,6 +3,7 @@ import { ref, onBeforeMount } from 'vue';
 import { useRoute } from 'vue-router';
 import { useDataStore } from '@/stores/dataStore';
 import { IArcanist } from '@/types'
+import { getArcanistI2ImagePath, getArcanistAfflatusPath, getArcanistDmgTypePath } from '@/composables/images';
 import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
 import Upgrades from '@/components/arcanist/info/Upgrades.vue';
@@ -15,19 +16,6 @@ const arcanist = ref<IArcanist>();
 const buttons = ['Stats', 'Upgrades', 'Skills'];
 const selectedButton = ref(buttons[0]);
 
-const getArcanistImagePath = (id: string) => {
-    return `images/arcanists/i2/${id}.webp`;
-};
-
-const getArcanistAfflatusPath = (afflatus: string) => {
-    afflatus = afflatus.toLowerCase();
-    return `images/arcanists/misc/logo-${afflatus}.webp`;
-};
-
-const getArcanistDmgTypePath = (dmgType: string) => {
-    return `images/arcanists/misc/dmg-type-${dmgType}.webp`;
-};
-
 onBeforeMount(() => {
     arcanist.value = arcanistStore.find(arc => arc.Name === route.params.name) ?? undefined;
 });
@@ -38,7 +26,7 @@ onBeforeMount(() => {
     <div class="pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center">
         <!--I2 Portrait-->
         <div class="w-full md:w-[calc(45%)] relative">
-            <img class="h-[80vh] object-cover object-right text-2xl text-white font-bold" :src="getArcanistImagePath(arcanist?.Id.toString() ?? '')"
+            <img class="h-[80vh] object-cover object-right text-2xl text-white font-bold" :src="getArcanistI2ImagePath(arcanist?.Id.toString() ?? '')"
                 alt="Work in progress">
         </div>
 

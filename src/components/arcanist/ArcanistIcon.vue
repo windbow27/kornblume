@@ -1,4 +1,5 @@
 <script setup lang="ts" name="ArcanistIcon">
+import { getArcanistIconImagePath } from '@/composables/images';
 
 const props = defineProps({
     arcanist: {
@@ -6,10 +7,6 @@ const props = defineProps({
         required: true
     }
 });
-
-const getArcanistImagePath = (id: string) => {
-    return `images/arcanists/icon/${id}.webp`;
-};
 
 </script>
 
@@ -25,7 +22,7 @@ const getArcanistImagePath = (id: string) => {
                         'bg-sky-200': props.arcanist.Rarity === 3,
                         'bg-green-200': props.arcanist.Rarity === 2
                     }">
-                        <img :src="getArcanistImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
+                        <img :src="getArcanistIconImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
                     </div>
                 </div>
             </div>
