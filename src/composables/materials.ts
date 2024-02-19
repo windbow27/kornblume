@@ -1,4 +1,5 @@
 import { getItemImagePathByMatl, getBorderImagePathByMatl } from './images'
+import { IMaterialUnit, IItem } from '@/types'
 
 export interface INormalizedMaterial {
     material: string,
@@ -13,7 +14,14 @@ export interface IBaseMaterial {
     borderImagePath: string,
 }
 
+export function convertToPercentage (value: number): string {
+    return `${(value * 100).toFixed(1)}%`;
+}
+
 export function formatQuantity (quantity: number): string {
+    if (!Number.isInteger(quantity)) {
+        return convertToPercentage(quantity);
+    }
     if (quantity >= 1000000) {
         return `${(quantity / 1000000).toFixed(1)}m`;
     }
@@ -23,7 +31,7 @@ export function formatQuantity (quantity: number): string {
     return quantity.toString();
 }
 
-export function normalizeDisplayMaterial (unprocessedMaterial): INormalizedMaterial {
+export function normalizeDisplayMaterial (unprocessedMaterial: IMaterialUnit): INormalizedMaterial {
     const result = {
         material: unprocessedMaterial.Material,
         quantity: formatQuantity(unprocessedMaterial.Quantity),
@@ -33,7 +41,7 @@ export function normalizeDisplayMaterial (unprocessedMaterial): INormalizedMater
     return result;
 }
 
-export function baseDisplayMaterial (unprocessedMaterial): IBaseMaterial {
+export function baseDisplayMaterial (unprocessedMaterial: IItem): IBaseMaterial {
     const result = {
         material: unprocessedMaterial.Name,
         itemImagePath: getItemImagePathByMatl(unprocessedMaterial.Name),

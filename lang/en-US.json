@@ -200,5 +200,9 @@
   "items": "Items",
   "stages": "Stages",
   "search-by-name": "Search by name",
-  "cost": "Cost"
+  "cost": "Cost",
+  "wishing-spring-formula": "Wishing Spring formula",
+  "used-by-the-following-arcanists": "Used by the following arcanists",
+  "possible-drops": "Possible material drops",
+  "obtained-from-the-following-stages": "Obtained from the following stages"
 }

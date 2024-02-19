@@ -58,12 +58,12 @@ watchEffect(() => {
 </script>
 
 <template>
-    <div class="pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center">
+    <div class="wrapper">
         <div class="container">
 
             <!--Item Selection Card-->
             <div class="card custom-border">
-                <div class="flex flex-wrap justify-between pl-2 gap-y-2">
+                <div class="flex flex-wrap justify-center lg:justify-between pl-2 gap-y-2">
                     <div class="flex space-x-2 gap-y-2 py-1.5">
                         <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
                             :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']">
@@ -77,7 +77,7 @@ watchEffect(() => {
                     </div>
                 </div>
             </div>
-            <div class="card custom-border h-[calc(70vh)] ">
+            <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
                 <div v-if="selectedButton === 'Materials'" class="custom-item-list">
                     <MaterialSelectionIcon v-for="material in filteredMaterials" :key="material.Id" :material="material"
                         @click="selectMaterial(material)" />
@@ -95,7 +95,7 @@ watchEffect(() => {
 
 <style scoped>
 .container {
-    @apply flex flex-col w-1/2 p-4 gap-y-4 max-w-2xl;
+    @apply w-full lg:w-1/2 flex flex-col p-4 gap-y-4 max-w-2xl;
 }
 
 .card {

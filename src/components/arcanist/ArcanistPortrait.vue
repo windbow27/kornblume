@@ -66,4 +66,8 @@ const getArcanistAfflatusPath = (afflatus: string) => {
     line-height: 1rem;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+.transform:hover {
+    border-color: white;
+    border-radius: 0.5rem;
+}
 </style>

@@ -293,10 +293,12 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
 
 <template>
     <div class="edit-overlay">
-        <div
-            class="fixed p-4 custom-modal-big custom-border rounded-md w-11/12 sm:max-w-2xl lg:h-auto">
+        <div class="fixed p-4 custom-modal-big custom-border rounded-md w-11/12 sm:max-w-2xl lg:h-auto">
+            <button @click="closeOverlay" class="text-white absolute top-2 right-4">
+                <i class="fas fa-times"></i>
+            </button>
             <!-- Header -->
-            <div class="flex items-center p-2 mb-3 shadow-border-b">
+            <div class="flex flex-wrap items-center p-2 mb-3 shadow-border-b">
                 <div class="flex items-center justify-center mr-2 space-x-3">
                     <ArcanistIcon class="ml-2" :arcanist="selectedArcanist" />
                     <h2 class="text-1xl md:text-2xl text-white font-bold">{{ $t(selectedArcanist.Name) }}</h2>
@@ -309,19 +311,16 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                             'text-green-200': rarity === 2
                         }"></i>
                     </label>
-                    <div class="tooltip" :data-tip="$t('remove-arcanist')"><i @click="removeArcanist"
-                            class="fas fa-trash-alt text-gray-500"></i></div>
                 </div>
                 <div class="ml-auto flex items-center space-x-3">
+                    <div class="tooltip" :data-tip="$t('remove-arcanist')"><i @click="removeArcanist"
+                            class="fas fa-trash-alt text-gray-500"></i></div>
                     <div class="tooltip" :data-tip="$t('hidden-show')">
                         <div @click="selectedVisible = !selectedVisible" class="badge badge-ghost"
                             :class="selectedVisible ? 'green-badge' : 'red-badge'">
                             <i :class="selectedVisible ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i>
                         </div>
                     </div>
-                    <button @click="closeOverlay" class="text-white">
-                        <i class="fas fa-times"></i>
-                    </button>
                 </div>
             </div>
             <div class="custom-line"></div>
@@ -359,7 +358,8 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
             </div>
             <dialog id="level_up_container" class="modal">
-                <div class="modal-box custom-gradient-gray-blue custom-border relative flex flex-col min-h-[calc(30dvh)] max-h-[calc(85dvh)] sm:max-h-[calc(75dvh)] gap-4">
+                <div
+                    class="modal-box custom-gradient-gray-blue custom-border relative flex flex-col min-h-[calc(30dvh)] max-h-[calc(85dvh)] sm:max-h-[calc(75dvh)] gap-4">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
                     </form>

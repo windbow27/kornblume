@@ -8,6 +8,7 @@ import { useWildernessStore } from '../stores/wildernessStore'
 import { usePlannerSettingsStore } from '../stores/plannerSettingsStore'
 import { useDataStore } from '../stores/dataStore'
 import { IArcanist, ISelectedArcanist } from '@/types'
+import { sortArcanists } from '@/composables/arcanists'
 
 import ArcanistList from '../components/arcanist/ArcanistList.vue'
 import PlannerEdit from '../components/planner/PlannerEdit.vue'
@@ -153,16 +154,7 @@ watchEffect(() => {
         (settingsStore.settings.showUnreleasedArcanists ? true : arcanist.IsReleased)
     )
 
-    listArcanists.value.sort((a: IArcanist, b: IArcanist) => {
-        const rarityComparison = b.Rarity - a.Rarity
-
-        if (rarityComparison !== 0) {
-            return rarityComparison
-        }
-
-        // If rarity is the same, compare by name alphabetically
-        return a.Name.localeCompare(b.Name)
-    })
+    sortArcanists(listArcanists.value);
 })
 
 onClickOutside(activityRef, closeActivity)

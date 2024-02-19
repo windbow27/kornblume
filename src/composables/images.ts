@@ -2,12 +2,12 @@ import { useDataStore } from '../stores/dataStore'
 
 const items = useDataStore().items;
 
-const getId = (material) => {
+const getId = (material: string) => {
     const item = items.find(item => item.Name === material);
     return item ? item.Id : null;
 };
 
-const getRarity = (material) => {
+const getRarity = (material: string) => {
     const item = items.find(item => item.Name === material);
     return item ? item.Rarity : null;
 };
@@ -20,12 +20,12 @@ const getStageBackGroundId = (id) => {
     return 5;
 }
 
-export const getItemImagePathByMatl = (material) => {
+export const getItemImagePathByMatl = (material: string) => {
     const id = getId(material);
     return id ? `images/items/icon/${id}.png` : '';
 };
 
-export const getBorderImagePathByMatl = (material) => {
+export const getBorderImagePathByMatl = (material: string) => {
     const rarity = getRarity(material);
     return rarity ? `images/items/border/${rarity}.png` : '';
 };

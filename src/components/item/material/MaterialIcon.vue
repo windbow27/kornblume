@@ -1,12 +1,13 @@
 <script setup lang="ts" name="ItemIcon">
 import { computed } from 'vue';
+import { IMaterialUnit } from '@/types';
 import { useRouter } from 'vue-router';
 import { normalizeDisplayMaterial } from '@/composables/materials';
 import { useGlobalStore } from '@/stores/global';
 
 const props = defineProps({
     material: {
-        type: Object,
+        type: Object as () => IMaterialUnit,
         required: true
     }
 });

@@ -4,6 +4,7 @@ import { IArcanist } from '@/types'
 import { useI18n } from 'vue-i18n';
 import { useDataStore } from '@/stores/dataStore'
 import { usePullsRecordStore, IPull } from '@/stores/pullsRecordStore'
+import { sortArcanists } from '@/composables/arcanists';
 import ArcanistPortrait from '@/components/arcanist/ArcanistPortrait.vue';
 
 const { locale, t } = useI18n()
@@ -69,16 +70,7 @@ watchEffect(() => {
         arcanist.IsReleased
     )
 
-    listArcanists.value.sort((a: IArcanist, b: IArcanist) => {
-        const rarityComparison = b.Rarity - a.Rarity
-
-        if (rarityComparison !== 0) {
-            return rarityComparison
-        }
-
-        // If rarity is the same, compare by name alphabetically
-        return a.Name.localeCompare(b.Name)
-    })
+    sortArcanists(listArcanists.value)
 })
 
 </script>

@@ -1,10 +1,11 @@
 <script setup lang="ts" name="StageIcon">
 import { computed } from 'vue';
+import { IStage } from '@/types';
 import { normalizeDisplayStage } from '@/composables/stages';
 
 const props = defineProps({
     stage: {
-        type: Object,
+        type: Object as () => IStage,
         required: true
     },
     stageName: {
@@ -21,13 +22,15 @@ const normalizedStage = computed(() => {
 </script>
 
 <template>
-    <div class="tooltip" :data-tip="$t(normalizedStage.stage)">
-        <div class="relative inline-block">
-            <!-- {{ console.log(normalizedStage.stage) }} -->
-            <img :src="normalizedStage.stageImagePath" alt="Border Image" class="w-32 rounded" />
-            <div class="absolute text-white bottom-0.5 right-0.5 rounded bg-gray-700 rounded-tl px-1 py-px text-sm"
-                :style="{ maxWidth: '120px' }" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+    <div class="tooltip relative overflow-hidden group" :data-tip="$t(normalizedStage.stage)">
+        <div class="transform transition-transform duration-500 overflow-hidden relative inline-block custom-border-white">
+            <img :src="normalizedStage.stageImagePath" alt="Border Image" class="w-32 lg:w-40 rounded transform transition-transform duration-300 group-hover:scale-110" />
+            <div
+                class="absolute text-white bottom-0.5 right-0.5 rounded bg-gray-700 rounded-tl px-1 py-px text-xs max-w-[7.775rem] lg:max-w-[9.775rem] whitespace-nowrap overflow-hidden overflow-ellipsis">
                 {{ $t(normalizedStage.stage) }}
+            </div>
+            <div
+                class="overlay absolute inset-0 bg-gray-500 opacity-0 group-hover:opacity-50 transition-opacity duration-300">
             </div>
         </div>
     </div>

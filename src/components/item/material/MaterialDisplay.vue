@@ -2,8 +2,10 @@
 import { computed } from 'vue';
 import { getItemImagePathByMatl } from '@/composables/images';
 import { useDataStore } from '@/stores/dataStore';
+import { formatQuantity } from '@/composables/materials';
 import MaterialIcon from './MaterialIcon.vue';
-import ArcanistIcon from '../../arcanist/ArcanistIcon.vue';
+import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
+import StageIcon from '@/components/stage/StageIcon.vue';
 
 const props = defineProps({
     selectedMaterial: {
@@ -18,6 +20,7 @@ const props = defineProps({
 
 const formulaStore = useDataStore().formulas;
 const arcanistStore = useDataStore().arcanists;
+const stageStore = useDataStore().stages;
 
 const formulaItemList = computed(() => {
     const formula = formulaStore.find(formula => formula.Name === props.selectedMaterial.Name);
@@ -36,9 +39,30 @@ const arcanistIconList = computed(() => {
     if (props.selectedMaterial.Name === 'Dust') return arcanistStore;
     const arcanists = arcanistStore.filter(arcanist => {
         return arcanist.Insight.some(insight => insight.Material.includes(props.selectedMaterial.Name)) ||
-               arcanist.Resonance.some(resonance => resonance.Material.includes(props.selectedMaterial.Name));
+            arcanist.Resonance.some(resonance => resonance.Material.includes(props.selectedMaterial.Name));
     });
     return arcanists;
+});
+
+const stageList = computed(() => {
+    console.log('selectedMaterial:', props.selectedMaterial);
+
+    const stages = Object.entries(stageStore)
+        .filter(([, stage]) => {
+            return props.selectedMaterial.Name in stage.drops;
+        })
+        .map(([name, stage]) => ({
+            name,
+            stage,
+            dropRate: stage.drops[props.selectedMaterial.Name] as number
+        }))
+        .sort((a, b) => b.dropRate - a.dropRate)
+        .map(stage => ({
+            ...stage,
+            dropRate: formatQuantity(stage.dropRate)
+        }));
+
+    return stages;
 });
 
 </script>
@@ -69,8 +93,8 @@ const arcanistIconList = computed(() => {
     </div>
 
     <!-- Crafting -->
-    <div v-if="props.selectedMaterial.Category === categories[1] && props.selectedMaterial.Rarity > 2" class="custom-box custom-border">
-        <h2 class="text-white">Wishing Spring Formula</h2>
+    <div v-if="formulaItemList.length > 0" class="custom-box custom-border">
+        <h2 class="text-white">{{ $t('wishing-spring-formula') }}</h2>
         <div class="flex flex-wrap gap-x-2 gap-y-1 items-center justify-center">
             <div v-for="material in formulaItemList" :key="material.Material" class="flex flex-wrap gap-x-2 gap-y-2">
                 <MaterialIcon :material="material" />
@@ -78,13 +102,20 @@ const arcanistIconList = computed(() => {
         </div>
     </div>
 
+    <!-- Drop Stages-->
+    <div v-if="stageList.length > 0" class="custom-box custom-border">
+        <h2 class="text-white">{{ $t('obtained-from-the-following-stages') }}</h2>
+        <div class="custom-item-list max-h-[calc(33vh)]">
+            <StageIcon v-for="stage in stageList" :key="stage.name" :selectedStage="stage.stage" :stageName="stage.name"
+                :dropRate="stage.dropRate" class="px-2 py-1" />
+        </div>
+    </div>
+
     <!-- Used by -->
     <div v-if="arcanistIconList.length > 0" class="custom-box custom-border">
-        <h2 class="text-white">Used by the following arcanists</h2>
-        <div class="flex flex-wrap gap-x-2 gap-y-1 p-2 items-center justify-center">
-            <div v-for="arcanist in arcanistIconList" :key="arcanist.Id" class="flex flex-wrap">
-                <ArcanistIcon :arcanist="arcanist" />
-            </div>
+        <h2 class="text-white">{{ $t('used-by-the-following-arcanists') }}</h2>
+        <div class="custom-item-list max-h-[calc(33vh)]">
+            <ArcanistIcon v-for="arcanist in arcanistIconList" :key="arcanist.Name" :arcanist="arcanist" class="px-2 py-1"/>
         </div>
     </div>
 </template>

@@ -7,6 +7,10 @@
     @apply p-4 sm:px-8 md:px-16
 }
 
+.wrapper {
+    @apply pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center
+}
+
 /*Custom common*/
 .custom-line {
     @apply bg-gray-500 opacity-25 rounded-full w-full h-1 mt-4 mb-4 mx-1;
@@ -26,6 +30,10 @@
 
 .custom-border {
     @apply border-2 border-blue-800;
+}
+
+.custom-border-white {
+    @apply border-2 border-transparent box-border hover:border-white hover:rounded-lg
 }
 
 .border-button {
@@ -57,7 +65,7 @@
 }
 
 .custom-modal-big {
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2;
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2 max-h-[95vh] overflow-y-hidden overflow-x-hidden;
 }
 
 .custom-button-error {

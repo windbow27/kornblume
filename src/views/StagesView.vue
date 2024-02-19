@@ -8,7 +8,7 @@ import StageDisplay from '@/components/stage/StageDisplay.vue';
 
 const buttons = ['Story', 'Hard', 'Resource', 'Insight'];
 const selectedButton = ref(buttons[0]);
-const selectedStage = ref<IStage | null>();
+const selectedStage = ref<IStage>();
 const selectedStageName = ref<string>('1-1');
 const stageStore = useDataStore().stages;
 const globalStore = useGlobalStore();
@@ -22,16 +22,10 @@ const filteredStages = computed(() => {
     const filteredStageStore = Object.keys(stageStore).reduce((result, key) => {
         if (stageStore[key].category === selectedButton.value) {
             result[key] = stageStore[key];
-            console.log(result[key])
         }
         return result;
     }, {});
-    console.log(filteredStageStore);
     return filteredStageStore;
-
-    // const filteredStageStore = Object.values(stageStore).filter(stage => stage.category === selectedButton.value);
-    // console.log(filteredStageStore);
-    // return filteredStageStore;
 });
 
 watchEffect(() => {
@@ -42,12 +36,12 @@ watchEffect(() => {
 </script>
 
 <template>
-    <div class="pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center">
+    <div class="wrapper">
         <div class="container">
 
             <!--Item Selection Card-->
             <div class="card custom-border">
-                <div class="flex flex-wrap justify-between pl-2 gap-y-2">
+                <div class="flex flex-wrap justify-center gap-y-2">
                     <div class="flex space-x-2 gap-y-2 py-1.5">
                         <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
                             :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']">
@@ -56,10 +50,9 @@ watchEffect(() => {
                     </div>
                 </div>
             </div>
-            <div class="card custom-border h-[calc(70vh)] ">
+            <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)] ">
                 <div class="custom-item-list">
                     <div class="flex flex-wrap justify-center gap-x-5 gap-y-2">
-                        <!-- {{ console.log(filteredStages) }} -->
                         <StageSelectionIcon v-for="(stage, stageName) in filteredStages" :key="stage" :stage="stage"
                             :stageName="stageName" @click="selectStage(stage, stageName)" />
                     </div>
@@ -69,7 +62,7 @@ watchEffect(() => {
 
         <!--Item Display Card-->
         <div class="container">
-            <StageDisplay :selectedStage="selectedStage || {}" :stageName="selectedStageName" />
+            <StageDisplay :selectedStage="selectedStage ?? stageStore[0]" :stageName="selectedStageName" />
         </div>
 
     </div>
@@ -77,7 +70,7 @@ watchEffect(() => {
 
 <style scoped>
 .container {
-    @apply flex flex-col w-1/2 p-4 gap-y-4 max-w-2xl;
+    @apply w-full lg:w-1/2 flex flex-col p-4 gap-y-4 max-w-2xl;
 }
 
 .card {
