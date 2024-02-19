@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { ref, computed, watchEffect } from 'vue';
+import { ref, watchEffect } from 'vue';
 import { IItem } from '@/types';
 import { useDataStore } from '@/stores/dataStore';
 import { useGlobalStore } from '@/stores/global';
 import MaterialSelectionIcon from '@/components/item/material/MaterialSelectionIcon.vue';
 import MaterialDisplay from '@/components/item/material/MaterialDisplay.vue';
+import MaterialFilter from '@/components/item/material/MaterialFilter.vue';
 
 const categories = ['Base Item', 'Build Material', 'Insight Material', 'Resonate Material', 'Ascension Material'];
 const buttons = ['Materials', 'Psychubes'];
 const selectedButton = ref(buttons[0]);
-const searchQuery = ref('');
+
 const itemStore = useDataStore().items;
-const listItems = ref<IItem[]>([]);
+const listItems = ref(itemStore);
+const filteredItems = ref(itemStore);
 const globalStore = useGlobalStore();
 const selectedMaterial = ref<IItem | null>();
 
@@ -19,22 +21,16 @@ const selectMaterial = (material: IItem) => {
     selectedMaterial.value = material;
 };
 
-const filteredMaterials = computed(() => {
-    let filtered = listItems.value;
-
-    if (searchQuery.value.length > 0) {
-        filtered = filtered.filter(item => item.Name.toLowerCase().includes(searchQuery.value.toLowerCase()));
-    }
-
-    return filtered;
-});
+const handleFilteredMaterials = (filteredMaterials: IItem[]) => {
+    filteredItems.value = filteredMaterials;
+};
 
 watchEffect(() => {
     const foundMaterial = itemStore.find(item => item.Name === globalStore.selectedMaterial.Material);
     selectedMaterial.value = foundMaterial || itemStore[49];
 
-    listItems.value = itemStore.filter((arcanist: IItem) =>
-        arcanist.IsReleased
+    listItems.value = itemStore.filter((item: IItem) =>
+        item.IsReleased
     )
 
     listItems.value.sort((a: IItem, b: IItem) => {
@@ -71,16 +67,13 @@ watchEffect(() => {
                             {{ button }}
                         </button>
                     </div>
-                    <div class="flex gap-y-2 items-center">
-                        <input v-model="searchQuery" type="text" :placeholder="$t('search-by-name')"
-                            class="input input-sm w-full lg:w-auto bg-gray-800 text-white p-2 rounded-md focus:outline-none">
-                        <button class="btn btn-ghost text-white"> <i class="fa-solid fa-filter"></i></button>
-                    </div>
+                    <!-- Filters -->
+                    <MaterialFilter :listItems="listItems" :categories="categories" @filtered="handleFilteredMaterials" />
                 </div>
             </div>
             <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
                 <div v-if="selectedButton === 'Materials'" class="custom-item-list">
-                    <MaterialSelectionIcon v-for="material in filteredMaterials" :key="material.Id" :material="material"
+                    <MaterialSelectionIcon v-for="material in filteredItems" :key="material.Id" :material="material"
                         @click="selectMaterial(material)"
                         :class="selectedMaterial?.Name === material.Name ? 'custom-border-white' : 'custom-border-transparent'" />
                 </div>

@@ -174,7 +174,7 @@ onClickOutside(settingsRef, closeSettings)
         </div>
 
         <!-- Notification -->
-        <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
+        <!-- <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -183,7 +183,7 @@ onClickOutside(settingsRef, closeSettings)
                     href="https://docs.google.com/spreadsheets/d/1GZMH5rJIqIUIh--MW9ahWCn2ExNvttjWGhT1lP1d4XM/edit#gid=0"
                     class=" text-purple-400 hover:text-purple-500" target="_blank">
                     shiroinegai </a> </span>
-        </div>
+        </div> -->
 
         <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
 
