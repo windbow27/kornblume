@@ -35,7 +35,7 @@ const selectStage = () => {
 </script>
 
 <template>
-    <div @click="selectStage">
+    <div @click="selectStage" class="cursor-pointer">
         <div class="tooltip" :data-tip="$t(normalizedStage.stage)">
             <div class="relative inline-block">
                 <img :src="normalizedStage.stageImagePath" alt="Border Image" class="w-32 lg:w-40 rounded" />

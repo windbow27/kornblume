@@ -22,7 +22,7 @@ const normalizedStage = computed(() => {
 </script>
 
 <template>
-    <div class="tooltip relative overflow-hidden group" :data-tip="$t(normalizedStage.stage)">
+    <div class="tooltip relative overflow-hidden group cursor-pointer" :data-tip="$t(normalizedStage.stage)">
         <div class="transform transition-transform duration-500 overflow-hidden relative">
             <img :src="normalizedStage.stageImagePath" alt="Border Image" class="w-32 lg:w-40 rounded transform transition-transform duration-300 group-hover:scale-110" />
             <div

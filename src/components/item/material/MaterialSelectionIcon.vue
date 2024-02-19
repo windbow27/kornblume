@@ -17,7 +17,7 @@ const normalizedMaterial = computed(() => {
 
 </script>
 <template>
-    <div class="tooltip relative overflow-hidden group" :data-tip="$t(normalizedMaterial.material)">
+    <div class="tooltip relative overflow-hidden group cursor-pointer" :data-tip="$t(normalizedMaterial.material)">
         <div class="transform transition-transform duration-500 overflow-hidden relative">
             <img :src="normalizedMaterial.itemImagePath" alt="Material Image"
                 class="w-20 h-20 absolute transform transition-transform duration-300 group-hover:scale-125" />

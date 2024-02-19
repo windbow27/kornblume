@@ -28,7 +28,7 @@ const selectMaterial = () => {
 </script>
 
 <template>
-    <div @click="selectMaterial">
+    <div @click="selectMaterial" class="cursor-pointer">
         <div class="tooltip" :data-tip="$t(normalizedMaterial.material)">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
