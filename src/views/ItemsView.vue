@@ -3,7 +3,7 @@ import { ref, computed, watchEffect } from 'vue';
 import { IItem } from '@/types';
 import { useDataStore } from '@/stores/dataStore';
 import { useGlobalStore } from '@/stores/global';
-import MaterialIcon from '@/components/item/material/MaterialIcon.vue';
+import MaterialSelectionIcon from '@/components/item/material/MaterialSelectionIcon.vue';
 import MaterialDisplay from '@/components/item/material/MaterialDisplay.vue';
 
 const categories = ['Base Item', 'Build Material', 'Insight Material', 'Resonate Material', 'Ascension Material'];
@@ -30,12 +30,12 @@ const filteredMaterials = computed(() => {
 });
 
 watchEffect(() => {
+    const foundMaterial = itemStore.find(item => item.Name === globalStore.selectedMaterial.Material);
+    selectedMaterial.value = foundMaterial || itemStore[49];
+
     listItems.value = itemStore.filter((arcanist: IItem) =>
         arcanist.IsReleased
     )
-
-    const selectedItem = itemStore.find(item => item.Name === globalStore.selectedMaterial.Material);
-    selectedMaterial.value = selectedItem || itemStore[49];
 
     listItems.value.sort((a: IItem, b: IItem) => {
         // Category
@@ -79,7 +79,7 @@ watchEffect(() => {
             </div>
             <div class="card custom-border h-[calc(70vh)] ">
                 <div v-if="selectedButton === 'Materials'" class="custom-item-list">
-                    <MaterialIcon v-for="material in filteredMaterials" :key="material.Id" :material="material"
+                    <MaterialSelectionIcon v-for="material in filteredMaterials" :key="material.Id" :material="material"
                         @click="selectMaterial(material)" />
                 </div>
             </div>

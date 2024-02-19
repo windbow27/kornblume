@@ -122,11 +122,19 @@ watchEffect(() => {
                 :class="{ 'active': $route.path === '/arcanists' }"><i class="fa-solid fa-user"></i> {{
                   $t('arcanists') }}
               </router-link>
+              <router-link @click="toggleDropdown" to="/items" class="nav-button block"
+                :class="{ 'active': $route.path === '/items' }"><i class="fa-solid fa-box-archive"></i> {{
+                  $t('items') }}
+              </router-link>
               <router-link @click="toggleDropdown" to="/tracker" class="nav-button block"
                 :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> {{
                   $t('summon-tracker') }} </router-link>
               <router-link @click="toggleDropdown" to="/planner" class="nav-button block"
                 :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> {{ $t('planner') }}
+              </router-link>
+              <router-link @click="toggleDropdown" to="/stages" class="nav-button block"
+                :class="{ 'active': $route.path === '/stages' }"><i class="fa-solid fa-wand-magic-sparkles"></i> {{
+                  $t('stages') }}
               </router-link>
               <router-link @click="toggleDropdown" to="/profile" class="nav-button block"
                 :class="{ 'active': $route.path === '/profile' }"><i class="fa-regular fa-address-card"></i> {{

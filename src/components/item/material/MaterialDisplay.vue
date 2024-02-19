@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { getItemImagePathByMatl } from '@/composables/images';
 import { useDataStore } from '@/stores/dataStore';
-import MaterialFormulaIcon from './MaterialFormulaIcon.vue';
+import MaterialIcon from './MaterialIcon.vue';
 import ArcanistIcon from '../../arcanist/ArcanistIcon.vue';
 
 const props = defineProps({
@@ -44,8 +44,8 @@ const arcanistIconList = computed(() => {
 </script>
 
 <template>
-    <div class="custom-box custom-border">
-        <div v-if="props.selectedMaterial" class="space-y-1">
+    <div v-if="props.selectedMaterial" class="custom-box custom-border">
+        <div class="space-y-1">
             <h2 class="text-white text-2xl font-bold py-1">{{ props.selectedMaterial.Name }}</h2>
             <p class="" :class="{
                 'text-error': props.selectedMaterial.Category === categories[0],
@@ -69,11 +69,11 @@ const arcanistIconList = computed(() => {
     </div>
 
     <!-- Crafting -->
-    <div v-if="props.selectedMaterial.Category === categories[1]" class="custom-box custom-border">
+    <div v-if="props.selectedMaterial.Category === categories[1] && props.selectedMaterial.Rarity > 2" class="custom-box custom-border">
         <h2 class="text-white">Wishing Spring Formula</h2>
         <div class="flex flex-wrap gap-x-2 gap-y-1 items-center justify-center">
             <div v-for="material in formulaItemList" :key="material.Material" class="flex flex-wrap gap-x-2 gap-y-2">
-                <MaterialFormulaIcon :material="material" />
+                <MaterialIcon :material="material" />
             </div>
         </div>
     </div>

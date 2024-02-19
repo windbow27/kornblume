@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { IMaterialUnit } from '@/types'
+import { IMaterialUnit, IStage } from '@/types'
 
 interface INeededMaterialsMapping {
     [materialName: string]: number,
@@ -12,7 +12,8 @@ interface IGlobalStore {
     neededMaterialsMapping: INeededMaterialsMapping,
     isLoading: boolean, // added isLoading state
     isChangelogsShown: boolean,
-    selectedMaterial: IMaterialUnit
+    selectedMaterial: IMaterialUnit,
+    selectedStage: IStage
 }
 
 interface IChangelogsStore {
@@ -45,7 +46,14 @@ export const useGlobalStore = defineStore('global', {
         neededMaterialsMapping: {}, // consider in-process crafting needs
         isLoading: false, // loading screen
         isChangelogsShown: false, // changelogs
-        selectedMaterial: { Material: '', Quantity: 0 }
+        selectedMaterial: { Material: '', Quantity: 0 },
+        selectedStage: {
+            id: 0,
+            category: '',
+            cost: 0,
+            count: 0,
+            drops: {}
+        }
     }),
     actions: {
         setIsEditingWarehouse (isEditing: boolean) {
@@ -54,18 +62,18 @@ export const useGlobalStore = defineStore('global', {
         setIsEditingMaterial (editingMaterial?: string) {
             this.isEditingMaterial = editingMaterial || ''
         },
-        getNeededRawMaterialsQuantity (materialName) {
+        getNeededRawMaterialsQuantity (materialName: string) {
             return this.neededRawMaterialsMapping[materialName] || 0
         },
-        updateNeededRawMaterialsMapping (mapping) {
+        updateNeededRawMaterialsMapping (mapping: INeededMaterialsMapping) {
             this.neededRawMaterialsMapping = {
                 ...mapping
             }
         },
-        getNeededMaterialsQuantity (materialName) {
+        getNeededMaterialsQuantity (materialName: string) {
             return this.neededMaterialsMapping[materialName] || 0
         },
-        updateNeededMaterialsMapping (mapping) {
+        updateNeededMaterialsMapping (mapping: INeededMaterialsMapping) {
             this.neededMaterialsMapping = {
                 ...mapping
             }
@@ -79,8 +87,11 @@ export const useGlobalStore = defineStore('global', {
         finishLoading () {
             this.setLoading(false)
         },
-        setSelectedMaterial (material) {
+        setSelectedMaterial (material: IMaterialUnit) {
             this.selectedMaterial = material
+        },
+        setSelectedStage (stage: IStage) {
+            this.selectedStage = stage
         }
     }
 })

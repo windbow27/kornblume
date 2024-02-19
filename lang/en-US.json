@@ -199,5 +199,6 @@
   "another-drop-rates": "Another drop rates sheet by shiroinegai. Currently using this instead of kdoc.",
   "items": "Items",
   "stages": "Stages",
-  "search-by-name": "Search by name"
+  "search-by-name": "Search by name",
+  "cost": "Cost"
 }
