@@ -36,7 +36,7 @@ const selectOption = (option) => {
     isOptionsVisible.value = false;
 };
 
-const getImageSource = (option) => `images/items/common/insight${option}.png`;
+const getImageSource = (option) => `images/items/common/insight${option}.webp`;
 
 onClickOutside(containerRef, closeOptions);
 

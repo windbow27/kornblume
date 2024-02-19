@@ -45,7 +45,7 @@ const arcanistIconList = computed(() => {
 });
 
 const stageList = computed(() => {
-    console.log('selectedMaterial:', props.selectedMaterial);
+    // console.log('selectedMaterial:', props.selectedMaterial);
 
     const stages = Object.entries(stageStore)
         .filter(([, stage]) => {

@@ -17,7 +17,7 @@ const props = defineProps({
 });
 
 const getArcanistSkillPath = (id: string, skill: number) => {
-    return `images/arcanists/skill/${id}/${skill}.png`;
+    return `images/arcanists/skill/${id}/${skill}.webp`;
 };
 
 </script>
@@ -25,10 +25,10 @@ const getArcanistSkillPath = (id: string, skill: number) => {
 <template>
     <div class="flex">
         <div class="relative w-1/5 flex items-end">
-            <img class="w-full" src="/images/arcanists/misc/bg-skill.png" alt="">
+            <img class="w-full" src="/images/arcanists/misc/bg-skill.webp" alt="">
             <img class="skill" :src="getArcanistSkillPath(props.arcanist.Id, id)" alt="">
-            <img class="attribute" src="/images/arcanists/misc/card-attribute.png" alt="">
-            <img class="attribute" src="/images/arcanists/misc/card-attack.png" alt="">
+            <img class="attribute" src="/images/arcanists/misc/card-attribute.webp" alt="">
+            <img class="attribute" src="/images/arcanists/misc/card-attack.webp" alt="">
         </div>
         <div class="w-4/5 flex flex-col pl-4 justify-center">
             <p class="text-blue-400/90 font-bold"> {{ props.arcanist.Skills[3 * (props.id - 1) + props.star - 1].Name }}</p>

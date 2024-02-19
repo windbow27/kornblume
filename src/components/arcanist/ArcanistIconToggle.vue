@@ -15,7 +15,7 @@ const props = defineProps({
 const arcInfo = useDataStore().arcanists.find(arc => arc.Id === props.arcanist);
 
 const getArcanistImagePath = (id: number) => {
-    return `images/arcanists/icon/${id}.png`;
+    return `images/arcanists/icon/${id}.webp`;
 };
 
 </script>

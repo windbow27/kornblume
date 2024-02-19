@@ -4,7 +4,6 @@ import eslintPlugin from 'vite-plugin-eslint'
 import { fileURLToPath, URL } from 'node:url'
 import { resolve, dirname } from 'node:path'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
-import vsharp from 'vite-plugin-vsharp'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,9 +15,6 @@ export default defineConfig({
             include: resolve(dirname(fileURLToPath(import.meta.url)), './lang/**'),
             runtimeOnly: false,
             strictMessage: false
-        }),
-        vsharp({
-            width: 80 // max width
         }),
         eslintPlugin({ cache: false })
     ],

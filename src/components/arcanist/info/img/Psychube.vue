@@ -8,7 +8,7 @@ const props = defineProps({
 });
 
 const getArcanistPsychubePath = (id: number) => {
-    return `images/psychubes/icons/${id}.png`;
+    return `images/psychubes/icons/${id}.webp`;
 };
 
 </script>

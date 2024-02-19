@@ -206,7 +206,7 @@ export function processSharpoAndDust (generatedCards: ICard[]) {
 
     const sharpoCard = {
         stage: 'Mintage Aesthetics VI',
-        activityImagePath: 'images/items/common/0.png',
+        activityImagePath: 'images/items/common/0.webp',
         runs: sharpoRuns,
         activity: 25 * sharpoRuns,
         days: getDaysFromActivity(25 * sharpoRuns),
@@ -217,7 +217,7 @@ export function processSharpoAndDust (generatedCards: ICard[]) {
     }
     const dustCard = {
         stage: 'The Poussiere VI',
-        activityImagePath: 'images/items/common/0.png',
+        activityImagePath: 'images/items/common/0.webp',
         runs: dustRuns,
         activity: 25 * dustRuns,
         days: getDaysFromActivity(25 * dustRuns),

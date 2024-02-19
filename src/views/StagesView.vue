@@ -54,7 +54,8 @@ watchEffect(() => {
                 <div class="custom-item-list">
                     <div class="flex flex-wrap justify-center gap-x-5 gap-y-2">
                         <StageSelectionIcon v-for="(stage, stageName) in filteredStages" :key="stage" :stage="stage"
-                            :stageName="stageName" @click="selectStage(stage, stageName)" />
+                            :stageName="stageName" @click="selectStage(stage, stageName)"
+                            :class="selectedStageName === stageName ? 'custom-border-white' : 'custom-border-transparent'" />
                     </div>
                 </div>
             </div>

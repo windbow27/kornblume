@@ -12,7 +12,7 @@ const props = defineProps({
 });
 
 const getArcanistResonancePath = (id: number) => {
-    return `images/arcanists/resonance/${props.arcanist.Id}/${id}.png`;
+    return `images/arcanists/resonance/${props.arcanist.Id}/${id}.webp`;
 };
 
 </script>

@@ -16,16 +16,16 @@ const buttons = ['Stats', 'Upgrades', 'Skills'];
 const selectedButton = ref(buttons[0]);
 
 const getArcanistImagePath = (id: string) => {
-    return `images/arcanists/i2/${id}.png`;
+    return `images/arcanists/i2/${id}.webp`;
 };
 
 const getArcanistAfflatusPath = (afflatus: string) => {
     afflatus = afflatus.toLowerCase();
-    return `images/arcanists/misc/logo-${afflatus}.png`;
+    return `images/arcanists/misc/logo-${afflatus}.webp`;
 };
 
 const getArcanistDmgTypePath = (dmgType: string) => {
-    return `images/arcanists/misc/dmg-type-${dmgType}.png`;
+    return `images/arcanists/misc/dmg-type-${dmgType}.webp`;
 };
 
 onBeforeMount(() => {

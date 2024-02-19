@@ -33,7 +33,11 @@
 }
 
 .custom-border-white {
-    @apply border-2 border-transparent box-border hover:border-white hover:rounded-lg
+    @apply border-2 border-transparent box-border border-white rounded-lg
+}
+
+.custom-border-transparent {
+    @apply border-2 border-transparent box-border rounded-lg
 }
 
 .border-button {

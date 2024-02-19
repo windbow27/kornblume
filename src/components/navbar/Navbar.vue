@@ -59,7 +59,7 @@ watchEffect(() => {
 
 <template>
   <nav class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4 z-50">
-    <img src="/images/items/common/logo.png" alt="logo" class="w-8 h-8 mt-1 mr-4" />
+    <img src="/images/items/common/logo.webp" alt="logo" class="w-8 h-8 mt-1 mr-4" />
 
     <!-- Navigation Links for Large Screens -->
     <div v-if="!isSmallScreen" class="flex space-x-2">
@@ -83,7 +83,7 @@ watchEffect(() => {
       <!-- Ko-fi Icon-->
       <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
         <a href="https://ko-fi.com/windbow" target="_blank" rel="noopener noreferrer">
-          <img src="/images/items/common/kofi.png" alt="kofi" class="h-4 m-auto" />
+          <img src="/images/items/common/kofi.webp" alt="kofi" class="h-4 m-auto" />
         </a>
       </div>
       <!-- Language Dropdown -->

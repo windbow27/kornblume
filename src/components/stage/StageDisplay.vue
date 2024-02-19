@@ -30,7 +30,7 @@ const props = defineProps({
             <div class="flex items-center">
                 <p class="text-white text-lg font-bold"> {{ props.selectedStage.cost }} </p>
                 <div class="w-9 rounded pb-0.5">
-                    <img src="/images/items/common/0.png" alt="avatar" />
+                    <img src="/images/items/common/0.webp" alt="avatar" />
                 </div>
             </div>
             <div class="flex justify-center">

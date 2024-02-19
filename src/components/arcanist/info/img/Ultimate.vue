@@ -13,7 +13,7 @@ const props = defineProps({
 });
 
 const getArcanistUltPath = (id: string, ult: number) => {
-    return `images/arcanists/skill/${id}/${ult}.png`;
+    return `images/arcanists/skill/${id}/${ult}.webp`;
 };
 
 </script>
@@ -21,7 +21,7 @@ const getArcanistUltPath = (id: string, ult: number) => {
 <template>
     <div class="flex">
         <div class="relative w-1/5 flex items-end">
-            <img class="w-full" src="/images/arcanists/misc/bg-ult.png" alt="">
+            <img class="w-full" src="/images/arcanists/misc/bg-ult.webp" alt="">
             <img class="ult" :src="getArcanistUltPath(props.arcanist.Id, 3)" alt="">
         </div>
         <div class="w-4/5 flex flex-col pl-4 justify-center">

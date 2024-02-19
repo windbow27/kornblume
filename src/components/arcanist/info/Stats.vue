@@ -56,9 +56,9 @@ const editingArcanist = computed(() => ({
             <div class="w-full text-white flex justify-between text-xs 3xl:text-base">
                 <span class="pl-1"><i class="fa-solid fa-o"></i></span>
                 <span class="w-7 pl-3"><i class="fa-solid fa-o"></i></span>
-                <span><img class="w-5" src="/images/items/common/insight1.png"></span>
-                <span><img class="w-5" src="/images/items/common/insight2.png"></span>
-                <span v-if="props.arcanist.rarity >= 5"><img class="w-5" src="/images/items/common/insight3.png"></span>
+                <span><img class="w-5" src="/images/items/common/insight1.webp"></span>
+                <span><img class="w-5" src="/images/items/common/insight2.webp"></span>
+                <span v-if="props.arcanist.rarity >= 5"><img class="w-5" src="/images/items/common/insight3.webp"></span>
             </div>
             <input id="level" type="range" min="0" :max="props.arcanist.rarity >= 5 ? 4 : 3" class="range-slider" step="1"
                 v-model="selected">

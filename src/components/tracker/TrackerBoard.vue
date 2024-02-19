@@ -294,16 +294,16 @@ defineExpose({
                         <SpecialIcon v-else :name="pull.ArcanistName" />
                         {{ $t(pull.ArcanistName) }}
                         <span v-if="indicators[pull.PullNumber] === 'L'" class="badge-indicator ">
-                            <div class='tooltip' :data-tip="$t('lose')"><img src="/images/items/common/red-badge.png" />
+                            <div class='tooltip' :data-tip="$t('lose')"><img src="/images/items/common/red-badge.webp" />
                             </div>
                         </span>
                         <span v-else-if="indicators[pull.PullNumber] === 'W'" class="badge-indicator ">
-                            <div class='tooltip' :data-tip="$t('win')"><img src="/images/items/common/green-badge.png" />
+                            <div class='tooltip' :data-tip="$t('win')"><img src="/images/items/common/green-badge.webp" />
                             </div>
                         </span>
                         <span v-else-if="indicators[pull.PullNumber] === 'G'" class="badge-indicator ">
                             <div class='tooltip' :data-tip="$t('guaranteed')"><img
-                                    src="/images/items/common/yellow-badge.png" />
+                                    src="/images/items/common/yellow-badge.webp" />
                             </div>
                         </span>
                     </td>

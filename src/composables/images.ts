@@ -17,21 +17,27 @@ const getStageBackGroundId = (id) => {
     if (id <= 46) return 2;
     if (id <= 64) return 3;
     if (id <= 86) return 4;
-    return 5;
+    if (id === 87) return 5;
+    if (id === 88) return 6;
+    if (id <= 91) return 7;
+    if (id <= 94) return 8;
+    if (id <= 97) return 9;
+    if (id <= 100) return 10;
+    return 1;
 }
 
 export const getItemImagePathByMatl = (material: string) => {
     const id = getId(material);
-    return id ? `images/items/icon/${id}.png` : '';
+    return id ? `images/items/icon/${id}.webp` : '';
 };
 
 export const getBorderImagePathByMatl = (material: string) => {
     const rarity = getRarity(material);
-    return rarity ? `images/items/border/${rarity}.png` : '';
+    return rarity ? `images/items/border/${rarity}.webp` : '';
 };
 
 export function getActivityImagePathByStage (stage: string) {
-    return `images/items/common/${stage === 'Oneiric Shop' ? 1 : 0}.png`
+    return `images/items/common/${stage === 'Oneiric Shop' ? 1 : 0}.webp`
 }
 
 export function getStageImagePathByStage (stage: number | string) {

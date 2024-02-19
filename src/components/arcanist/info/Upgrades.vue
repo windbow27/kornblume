@@ -17,15 +17,15 @@ const props = defineProps({
             <p class="text-white"> {{ props.arcanist.InsightEffects.Name }}</p>
             <table>
                 <tr>
-                    <td><img class="p-2" src="/images/items/common/insight1.png"></td>
+                    <td><img class="p-2" src="/images/items/common/insight1.webp"></td>
                     <td><Text :effect="props.arcanist.InsightEffects.Effect1" /></td>
                 </tr>
                 <tr>
-                    <td><img class="p-2" src="/images/items/common/insight2.png"></td>
+                    <td><img class="p-2" src="/images/items/common/insight2.webp"></td>
                     <td><Text :effect="props.arcanist.InsightEffects.Effect2" /></td>
                 </tr>
                 <tr>
-                    <td><img class="p-2" src="/images/items/common/insight3.png"></td>
+                    <td><img class="p-2" src="/images/items/common/insight3.webp"></td>
                     <td><Text :effect="props.arcanist.InsightEffects.Effect3" /></td>
                 </tr>
                 </table>

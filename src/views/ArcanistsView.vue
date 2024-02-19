@@ -102,7 +102,7 @@ watchEffect(() => {
                 <button v-for="afflatus in ['Beast', 'Mineral', 'Plant', 'Star', 'Intellect', 'Spirit']" :key="afflatus"
                     :class="{ 'border-2 border-info': activeAfflatus.includes(afflatus), 'border-2 border-transparent': !activeAfflatus.includes(afflatus) }"
                     @click="selectedAfflatus(afflatus)" class="p-2 rounded-md">
-                    <img class="w-4" :src="`images/arcanists/misc/${afflatus.toLowerCase()}.png`" alt="">
+                    <img class="w-4" :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`" alt="">
                 </button>
             </div>
         </div>

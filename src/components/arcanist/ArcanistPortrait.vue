@@ -11,16 +11,16 @@ const props = defineProps({
 });
 
 const getArcanistImagePath = (id: string) => {
-    return `images/arcanists/i0/${id}.png`;
+    return `images/arcanists/i0/${id}.webp`;
 };
 
 const getArcanistFramePath = (rarity: number) => {
-    return `images/arcanists/misc/bg${rarity}.png`;
+    return `images/arcanists/misc/bg${rarity}.webp`;
 };
 
 const getArcanistAfflatusPath = (afflatus: string) => {
     afflatus = afflatus.toLowerCase();
-    return `images/arcanists/misc/${afflatus}.png`;
+    return `images/arcanists/misc/${afflatus}.webp`;
 };
 
 </script>
@@ -66,8 +66,8 @@ const getArcanistAfflatusPath = (afflatus: string) => {
     line-height: 1rem;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-.transform:hover {
+/* .transform:hover {
     border-color: white;
     border-radius: 0.5rem;
-}
+} */
 </style>
