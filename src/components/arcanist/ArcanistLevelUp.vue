@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useCalculation } from '../../composables/CalculateMaterials';
-import { CrystalCasketMaterials } from '../../constants';
-import ItemGoalIcon from '../item/ItemGoalIcon.vue';
+import { useCalculation } from '@/composables/CalculateMaterials';
+import { CrystalCasketMaterials } from '@/constants';
+import { ISelectedArcanist } from '@/types';
+import ItemGoalIcon from '@/components/item/ItemGoalIcon.vue';
 
 const props = defineProps({
     arcanist: {
-        type: Object,
+        type: Object as () => ISelectedArcanist,
         required: true
     }
 });
@@ -25,7 +26,7 @@ const materialRequirement = computed(() => {
 
 <template>
     <div class="mb-8 hidden-scrollbar custom-item-list">
-        <ItemGoalIcon class="py-2" v-for="material in materialRequirement" :key="material" :material="material" />
+        <ItemGoalIcon class="py-2" v-for="material in materialRequirement" :key="material.Material" :material="material" />
     </div>
 </template>
 

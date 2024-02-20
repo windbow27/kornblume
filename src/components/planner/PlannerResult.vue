@@ -1,11 +1,11 @@
 <script setup lang="ts" name="PannerResult">
 import { ref, watchEffect } from 'vue';
-import { useCalculation, mergeResults } from '../../composables/CalculateMaterials';
-import { getTotalActivityAndDays, getPlan, IPlanCards } from '../../composables/planner';
-import { useGlobalStore } from '../../stores/global';
-import { usePlannerStore } from '../../stores/plannerStore';
+import { useCalculation, mergeResults } from '@/composables/CalculateMaterials';
+import { getTotalActivityAndDays, getPlan, IPlanCards } from '@/composables/planner';
+import { useGlobalStore } from '@/stores/global';
+import { usePlannerStore } from '@/stores/plannerStore';
 import { IMaterialUnit } from '@/types';
-import PlannerLayer from './result/PlannerLayer.vue';
+import PlannerLayer from '@/components/planner/result/PlannerLayer.vue';
 
 const emits = defineEmits([
     'update:totalActivityAndDays'
@@ -17,7 +17,7 @@ watchEffect(() => {
     if (!useGlobalStore().isEditingWarehouse) {
         const result = usePlannerStore().selectedArcanists.map(arc => {
             if (!arc.isVisible) return [];
-            const arcResult: IMaterialUnit = useCalculation(arc);
+            const arcResult: IMaterialUnit[] = useCalculation(arc);
             return arcResult;
         });
 
