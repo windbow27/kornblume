@@ -194,5 +194,15 @@
   "try-legacy": "Si la importación no funciona, abre los métodos de legado y prueba con ellos.",
   "legacy": "Legado",
   "legacy-notice": "Si la importación no funciona, prueba estos métodos. Pasa el cursor para ver más detalles.",
-  "exploshe": "¡Prueba también timekeeper.top!"
+  "exploshe": "¡Prueba también timekeeper.top!",
+  "another-drop-rates": "Otra hoja de probabilidad de obtención de materiales proporcionada por shiroinegai. Actualmente estamos usando esta en lugar de kdoc.",
+  "arcanists": "Arcanistas",
+  "cost": "Costo",
+  "obtained-from-the-following-stages": "Obtenido en los siguientes escenarios",
+  "items": "Objetos",
+  "possible-drops": "Probabilidad de drop por material",
+  "search-by-name": "Buscar por nombre",
+  "stages": "Escenario",
+  "used-by-the-following-arcanists": "Utilizado por los siguientes arcanistas",
+  "wishing-spring-formula": "Fórmula en la Wishing Spring"
 }
