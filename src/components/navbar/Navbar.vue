@@ -41,7 +41,7 @@ onMounted(() => {
 
 watchEffect(() => {
     const handleResize = () => {
-        isSmallScreen.value = window.innerWidth <= 768;
+        isSmallScreen.value = window.innerWidth <= 1024;
         if (!isSmallScreen.value) {
             showDropdown.value = false;
         }
@@ -59,28 +59,34 @@ watchEffect(() => {
 
 <template>
   <nav class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4 z-50">
-    <img src="/images/items/common/logo.png" alt="logo" class="w-8 h-8 mt-1 mr-4" />
+    <img src="/images/items/common/logo.webp" alt="logo" class="w-8 h-8 mt-1 mr-4" />
 
     <!-- Navigation Links for Large Screens -->
     <div v-if="!isSmallScreen" class="flex space-x-2">
       <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i>
         {{ $t('home') }} </router-link>
+      <router-link to="/arcanists" class="nav-button" :class="{ 'active': $route.path === '/arcanists' }"><i
+          class="fa-solid fa-user"></i> {{ $t('arcanists') }} </router-link>
+      <router-link to="/items" class="nav-button" :class="{ 'active': $route.path === '/items' }"><i
+          class="fa-solid fa-box-archive"></i> {{ $t('items') }} </router-link>
       <router-link to="/tracker" class="nav-button" :class="{ 'active': $route.path === '/tracker' }"><i
           class="fa-brands fa-galactic-republic"></i> {{ $t('summon-tracker') }} </router-link>
       <router-link to="/planner" class="nav-button" :class="{ 'active': $route.path === '/planner' }"><i
           class="fas fa-tasks"></i> {{ $t('planner') }} </router-link>
+      <router-link to="/stages" class="nav-button" :class="{ 'active': $route.path === '/stages' }"><i
+          class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('stages') }} </router-link>
       <router-link to="/profile" class="nav-button" :class="{ 'active': $route.path === '/profile' }"><i
-          class="fa-solid fa-user-plus"></i> {{ $t('profile') }} </router-link>
+          class="fa-regular fa-address-card"></i> {{ $t('profile') }} </router-link>
     </div>
 
     <div class="ml-auto flex items-center gap-1.5">
-    <!-- Ko-fi Icon-->
-    <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
-      <a href="https://ko-fi.com/windbow" target="_blank" rel="noopener noreferrer">
-        <img src="/images/items/common/kofi.png" alt="kofi" class="h-4 m-auto" />
-      </a>
-    </div>
-    <!-- Language Dropdown -->
+      <!-- Ko-fi Icon-->
+      <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
+        <a href="https://ko-fi.com/windbow" target="_blank" rel="noopener noreferrer">
+          <img src="/images/items/common/kofi.webp" alt="kofi" class="h-4 m-auto" />
+        </a>
+      </div>
+      <!-- Language Dropdown -->
       <Popper arrow placement="top" offsetDistance="2">
         <button class="btn btn-ghost btn-sm text-white"> <span :class="currentFlag"></span> {{ currentLanguage }}
         </button>
@@ -112,14 +118,27 @@ watchEffect(() => {
               <router-link @click="toggleDropdown" to="/" class="nav-button block"
                 :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i> {{ $t('home') }}
               </router-link>
+              <router-link @click="toggleDropdown" to="/arcanists" class="nav-button block"
+                :class="{ 'active': $route.path === '/arcanists' }"><i class="fa-solid fa-user"></i> {{
+                  $t('arcanists') }}
+              </router-link>
+              <router-link @click="toggleDropdown" to="/items" class="nav-button block"
+                :class="{ 'active': $route.path === '/items' }"><i class="fa-solid fa-box-archive"></i> {{
+                  $t('items') }}
+              </router-link>
               <router-link @click="toggleDropdown" to="/tracker" class="nav-button block"
                 :class="{ 'active': $route.path === '/tracker' }"><i class="fa-brands fa-galactic-republic"></i> {{
                   $t('summon-tracker') }} </router-link>
               <router-link @click="toggleDropdown" to="/planner" class="nav-button block"
                 :class="{ 'active': $route.path === '/planner' }"><i class="fas fa-tasks"></i> {{ $t('planner') }}
               </router-link>
+              <router-link @click="toggleDropdown" to="/stages" class="nav-button block"
+                :class="{ 'active': $route.path === '/stages' }"><i class="fa-solid fa-wand-magic-sparkles"></i> {{
+                  $t('stages') }}
+              </router-link>
               <router-link @click="toggleDropdown" to="/profile" class="nav-button block"
-                :class="{ 'active': $route.path === '/profile' }"><i class="fa-solid fa-user-plus"></i> {{ $t('profile')
+                :class="{ 'active': $route.path === '/profile' }"><i class="fa-regular fa-address-card"></i> {{
+                  $t('profile')
                 }}
               </router-link>
             </div>

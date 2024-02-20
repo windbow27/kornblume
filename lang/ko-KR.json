@@ -183,5 +183,6 @@
   "after-your-first-import": "최초의 임포트 후에는 새로운 결과만 업로드하면 되며, 이전 스크린샷과 중복되는 부분은 자동으로 생략됩니다.",
   "example-of-incomplete-10x": "불완전한 10연차 이미지 예시:",
   "incomplete-10x": "불완전한 10연차",
-  "tips": "팁"
+  "tips": "팁",
+  "P{portrait}": "{portrait}돌"
 }

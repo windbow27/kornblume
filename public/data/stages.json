@@ -1,6 +1,7 @@
 {
   "1-1": {
     "id": 0,
+    "category": "Story",
     "cost": 8,
     "drops": {
       "Spell of Banishing": 0.312,
@@ -12,6 +13,7 @@
   },
   "1-4": {
     "id": 1,
+    "category": "Story",
     "cost": 8,
     "drops": {
       "Spell of Banishing": 0.321,
@@ -23,6 +25,7 @@
   },
   "1-5": {
     "id": 2,
+    "category": "Story",
     "cost": 8,
     "drops": {
       "Spell of Banishing": 0.361,
@@ -34,6 +37,7 @@
   },
   "1-6": {
     "id": 3,
+    "category": "Story",
     "cost": 8,
     "drops": {
       "Spell of Banishing": 0.342,
@@ -45,6 +49,7 @@
   },
   "1-7": {
     "id": 4,
+    "category": "Story",
     "cost": 10,
     "drops": {
       "Spell of Banishing": 0.361,
@@ -56,6 +61,7 @@
   },
   "1-8": {
     "id": 5,
+    "category": "Story",
     "cost": 10,
     "drops": {
       "Spell of Banishing": 0.335,
@@ -67,6 +73,7 @@
   },
   "1-11": {
     "id": 6,
+    "category": "Story",
     "cost": 10,
     "drops": {
       "Spell of Banishing": 0.312,
@@ -78,6 +85,7 @@
   },
   "1-12": {
     "id": 7,
+    "category": "Story",
     "cost": 10,
     "drops": {
       "Spell of Banishing": 0.353,
@@ -89,6 +97,7 @@
   },
   "1-14": {
     "id": 8,
+    "category": "Story",
     "cost": 10,
     "drops": {
       "Spell of Banishing": 0.325,
@@ -100,6 +109,7 @@
   },
   "1-15": {
     "id": 9,
+    "category": "Story",
     "cost": 10,
     "drops": {
       "Spell of Banishing": 0.317,
@@ -111,6 +121,7 @@
   },
   "1-16": {
     "id": 10,
+    "category": "Story",
     "cost": 10,
     "drops": {
       "Spell of Banishing": 1.005,
@@ -122,6 +133,7 @@
   },
   "1-1H": {
     "id": 11,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Spell of Banishing": 0.217,
@@ -133,6 +145,7 @@
   },
   "1-4H": {
     "id": 12,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Spell of Banishing": 2.187,
@@ -144,6 +157,7 @@
   },
   "1-5H": {
     "id": 13,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Spell of Banishing": 0.216,
@@ -155,6 +169,7 @@
   },
   "1-6H": {
     "id": 14,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Spell of Banishing": 0.194,
@@ -166,6 +181,7 @@
   },
   "1-7H": {
     "id": 15,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Spell of Fortune": 0.79,
@@ -178,6 +194,7 @@
   },
   "1-8H": {
     "id": 16,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Rough Silver Ingot": 0.807,
@@ -190,6 +207,7 @@
   },
   "1-11H": {
     "id": 17,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Esoteric Bones": 0.746,
@@ -202,6 +220,7 @@
   },
   "1-12H": {
     "id": 18,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Milled Magnesia": 0.733,
@@ -214,6 +233,7 @@
   },
   "1-14H": {
     "id": 19,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Liquefied Terror": 0.64,
@@ -226,6 +246,7 @@
   },
   "1-15H": {
     "id": 20,
+    "category": "Hard",
     "cost": 12,
     "drops": {
       "Solidus": 0.352,
@@ -238,6 +259,7 @@
   },
   "1-16H": {
     "id": 21,
+    "category": "Hard",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.161,
@@ -254,6 +276,7 @@
   },
   "2-1": {
     "id": 29,
+    "category": "Story",
     "cost": 12,
     "drops": {
       "Spell of Fortune": 0.052,
@@ -270,6 +293,7 @@
   },
   "2-3": {
     "id": 23,
+    "category": "Story",
     "cost": 10,
     "drops": {
       "Spell of Banishing": 0.305,
@@ -281,6 +305,7 @@
   },
   "2-4": {
     "id": 24,
+    "category": "Story",
     "cost": 12,
     "drops": {
       "Spell of Banishing": 0.197,
@@ -292,6 +317,7 @@
   },
   "2-5": {
     "id": 25,
+    "category": "Story",
     "cost": 12,
     "drops": {
       "Spell of Banishing": 0.318,
@@ -303,6 +329,7 @@
   },
   "2-6": {
     "id": 26,
+    "category": "Story",
     "cost": 12,
     "drops": {
       "Spell of Banishing": 0.326,
@@ -314,6 +341,7 @@
   },
   "2-8": {
     "id": 27,
+    "category": "Story",
     "cost": 12,
     "drops": {
       "Spell of Fortune": 0.168,
@@ -330,6 +358,7 @@
   },
   "2-9": {
     "id": 28,
+    "category": "Story",
     "cost": 12,
     "drops": {
       "Spell of Fortune": 0.06,
@@ -346,6 +375,7 @@
   },
   "2-11": {
     "id": 30,
+    "category": "Story",
     "cost": 12,
     "drops": {
       "Spell of Fortune": 0.057,
@@ -362,6 +392,7 @@
   },
   "2-12": {
     "id": 31,
+    "category": "Story",
     "cost": 12,
     "drops": {
       "Solidus": 0.239,
@@ -379,6 +410,7 @@
   },
   "2-13": {
     "id": 32,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.169,
@@ -395,6 +427,7 @@
   },
   "2-14": {
     "id": 33,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.163,
@@ -411,6 +444,7 @@
   },
   "2-1H": {
     "id": 34,
+    "category": "Hard",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.175,
@@ -427,6 +461,7 @@
   },
   "2-3H": {
     "id": 35,
+    "category": "Hard",
     "cost": 16,
     "drops": {
       "Holy Silver": 0.35,
@@ -440,6 +475,7 @@
   },
   "2-4H": {
     "id": 36,
+    "category": "Hard",
     "cost": 16,
     "drops": {
       "Rough Silver Ingot": 0.489,
@@ -453,6 +489,7 @@
   },
   "2-5H": {
     "id": 37,
+    "category": "Hard",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.688,
@@ -466,6 +503,7 @@
   },
   "2-6H": {
     "id": 38,
+    "category": "Hard",
     "cost": 16,
     "drops": {
       "Prophetic Bird": 0.464,
@@ -479,6 +517,7 @@
   },
   "2-8H": {
     "id": 39,
+    "category": "Hard",
     "cost": 16,
     "drops": {
       "Bifurcated Skeleton": 0.291,
@@ -492,6 +531,7 @@
   },
   "2-9H": {
     "id": 40,
+    "category": "Hard",
     "cost": 16,
     "drops": {
       "Salted Mandrake": 0.274,
@@ -502,6 +542,7 @@
   },
   "2-10H": {
     "id": 41,
+    "category": "Hard",
     "cost": 16,
     "drops": {
       "Esoteric Bones": 0.395,
@@ -515,6 +556,7 @@
   },
   "2-11H": {
     "id": 42,
+    "category": "Hard",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 1.257,
@@ -531,6 +573,7 @@
   },
   "2-12H": {
     "id": 43,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Biting Box": 0.283,
@@ -544,6 +587,7 @@
   },
   "2-13H": {
     "id": 44,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Milled Magnesia": 0.515,
@@ -557,6 +601,7 @@
   },
   "2-14H": {
     "id": 45,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Spell of Fortune": 0.268,
@@ -573,6 +618,7 @@
   },
   "3-3": {
     "id": 46,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.106,
@@ -589,6 +635,7 @@
   },
   "3-5": {
     "id": 47,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.557,
@@ -605,6 +652,7 @@
   },
   "3-6": {
     "id": 48,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.106,
@@ -621,6 +669,7 @@
   },
   "3-7": {
     "id": 49,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Solidus": 0.231,
@@ -638,6 +687,7 @@
   },
   "3-8": {
     "id": 50,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.104,
@@ -654,6 +704,7 @@
   },
   "3-9": {
     "id": 51,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.105,
@@ -670,6 +721,7 @@
   },
   "3-11": {
     "id": 52,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.123,
@@ -686,6 +738,7 @@
   },
   "3-13": {
     "id": 53,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.127,
@@ -702,6 +755,7 @@
   },
   "3-15": {
     "id": 54,
+    "category": "Story",
     "cost": 14,
     "drops": {
       "Spell of Fortune": 0.115,
@@ -718,6 +772,7 @@
   },
   "3-3H": {
     "id": 55,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Clawed Pendulum": 0.242,
@@ -728,6 +783,7 @@
   },
   "3-5H": {
     "id": 56,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Solidus": 0.424,
@@ -741,6 +797,7 @@
   },
   "3-6H": {
     "id": 57,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Spell of Fortune": 0.063,
@@ -757,6 +814,7 @@
   },
   "3-7H": {
     "id": 58,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Bifurcated Skeleton": 0.338,
@@ -767,6 +825,7 @@
   },
   "3-8H": {
     "id": 59,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Holy Silver": 0.354,
@@ -777,6 +836,7 @@
   },
   "3-9H": {
     "id": 60,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Prophetic Bird": 0.453,
@@ -790,6 +850,7 @@
   },
   "3-11H": {
     "id": 61,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Clawed Pendulum": 0.303,
@@ -800,6 +861,7 @@
   },
   "3-13H": {
     "id": 62,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Murmur of Insanity": 0.017,
@@ -810,6 +872,7 @@
   },
   "3-15H": {
     "id": 63,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Spell of Fortune": 0.152,
@@ -826,6 +889,7 @@
   },
   "4-3": {
     "id": 64,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.185,
@@ -842,6 +906,7 @@
   },
   "4-4": {
     "id": 65,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.251,
@@ -853,6 +918,7 @@
   },
   "4-5": {
     "id": 66,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.608,
@@ -864,6 +930,7 @@
   },
   "4-6": {
     "id": 67,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.172,
@@ -880,6 +947,7 @@
   },
   "4-1": {
     "id": 68,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.169,
@@ -891,6 +959,7 @@
   },
   "4-11": {
     "id": 69,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.195,
@@ -903,6 +972,7 @@
   },
   "4-13": {
     "id": 70,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Esoteric Bones": 0.126,
@@ -916,6 +986,7 @@
   },
   "4-16": {
     "id": 71,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.238,
@@ -927,6 +998,7 @@
   },
   "4-18": {
     "id": 72,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.227,
@@ -938,6 +1010,7 @@
   },
   "4-2": {
     "id": 73,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Spell of Fortune": 0.168,
@@ -954,6 +1027,7 @@
   },
   "4-21": {
     "id": 74,
+    "category": "Story",
     "cost": 16,
     "drops": {
       "Solidus": 0.458,
@@ -963,6 +1037,7 @@
   },
   "4-3H": {
     "id": 75,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Spell of Fortune": 0.344,
@@ -974,6 +1049,7 @@
   },
   "4-4H": {
     "id": 76,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Spell of Fortune": 0.846,
@@ -983,6 +1059,7 @@
   },
   "4-5H": {
     "id": 77,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Rough Silver Ingot": 0.564,
@@ -995,6 +1072,7 @@
   },
   "4-6H": {
     "id": 78,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Spell of Fortune": 0.356,
@@ -1006,6 +1084,7 @@
   },
   "4-10H": {
     "id": 79,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Biting Box": 0.277,
@@ -1019,6 +1098,7 @@
   },
   "4-11H": {
     "id": 80,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Prophetic Bird": 0.432,
@@ -1029,6 +1109,7 @@
   },
   "4-13H": {
     "id": 81,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Holy Silver": 0.347,
@@ -1039,6 +1120,7 @@
   },
   "4-16H": {
     "id": 82,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Spell of Fortune": 2.044,
@@ -1050,6 +1132,7 @@
   },
   "4-18H": {
     "id": 83,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Spell of Fortune": 0.355,
@@ -1061,6 +1144,7 @@
   },
   "4-20H": {
     "id": 84,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Bifurcated Skeleton": 0.338,
@@ -1072,6 +1156,7 @@
   },
   "4-21H": {
     "id": 85,
+    "category": "Hard",
     "cost": 18,
     "drops": {
       "Salted Mandrake": 0.309,
@@ -1082,6 +1167,7 @@
   },
   "The Poussiere VI": {
     "id": 86,
+    "category": "Resource",
     "cost": 25,
     "drops": {
       "Dust": 12000,
@@ -1090,6 +1176,7 @@
   },
   "Mintage Aesthetics VI": {
     "id": 87,
+    "category": "Resource",
     "cost": 25,
     "drops": {
       "Sharpodonty": 9000
@@ -1097,6 +1184,7 @@
   },
   "Mountain Echoes II": {
     "id": 88,
+    "category": "Insight",
     "cost": 18,
     "drops": {
       "Page of Mineral Wealth": 2
@@ -1104,6 +1192,7 @@
   },
   "Mountain Echoes IV": {
     "id": 89,
+    "category": "Insight",
     "cost": 24,
     "drops": {
       "Scroll of Mineral Wealth": 2
@@ -1111,6 +1200,7 @@
   },
   "Mountain Echoes VI": {
     "id": 90,
+    "category": "Insight",
     "cost": 30,
     "drops": {
       "Tome of Mineral Wealth": 2
@@ -1118,6 +1208,7 @@
   },
   "Starfall Locale II": {
     "id": 91,
+    "category": "Insight",
     "cost": 18,
     "drops": {
       "Page of Starlit Ascent": 2
@@ -1125,6 +1216,7 @@
   },
   "Starfall Locale IV": {
     "id": 92,
+    "category": "Insight",
     "cost": 24,
     "drops": {
       "Scroll of Starlit Ascent": 2
@@ -1132,6 +1224,7 @@
   },
   "Starfall Locale VI": {
     "id": 93,
+    "category": "Insight",
     "cost": 30,
     "drops": {
       "Tome of Starlit Ascent": 2
@@ -1139,6 +1232,7 @@
   },
   "Sylvanus Shape II": {
     "id": 94,
+    "category": "Insight",
     "cost": 18,
     "drops": {
       "Page of Plantal Vimen": 2
@@ -1146,6 +1240,7 @@
   },
   "Sylvanus Shape IV": {
     "id": 95,
+    "category": "Insight",
     "cost": 24,
     "drops": {
       "Scroll of Plantal Vimen": 2
@@ -1153,6 +1248,7 @@
   },
   "Sylvanus Shape VI": {
     "id": 96,
+    "category": "Insight",
     "cost": 30,
     "drops": {
       "Tome of Plantal Vimen": 2
@@ -1160,6 +1256,7 @@
   },
   "Brutes Wilds II": {
     "id": 97,
+    "category": "Insight",
     "cost": 18,
     "drops": {
       "Page of Beastly Thirst": 2
@@ -1167,6 +1264,7 @@
   },
   "Brutes Wilds IV": {
     "id": 98,
+    "category": "Insight",
     "cost": 24,
     "drops": {
       "Scroll of Beastly Thirst": 2
@@ -1174,6 +1272,7 @@
   },
   "Brutes Wilds VI": {
     "id": 99,
+    "category": "Insight",
     "cost": 30,
     "drops": {
       "Tome of Beastly Thirst": 2

@@ -9211,7 +9211,60 @@
           4
         ]
       }
-    ]
+    ],
+    "InsightEffects": {
+      "Name": "Reverse Flow",
+      "Effect1": "When the enemy is in [Stats Down], [Neg Status] or [Control] statuses, DMG Dealt +20% to the enemy.",
+      "Effect2": "ATK +5% when the caster enters battle.",
+      "Effect3": "When the caster is attacked by an enemy in [Stats Down], [Neg Status] or [Control] statuses, DMG Taken -20%."
+    },
+    "PortraitEffects": {
+      "Effect1": "Uninvited Reviewer's effect changes to: deals 625% Reality DMG.",
+      "Effect2": "Watch Your Sleeves's effect changes to: at 1/2/3 stars, additionally deals 45/65/100% Reality DMG to enemies in [Stats Down], [Neg Status] or [Control] statuses.",
+      "Effect3": "Uninvited Reviewer's effect changes to: deals 675% Reality DMG.",
+      "Effect4": "Uninvited Reviewer's effect changes to: deals 750% Reality DMG.",
+      "Effect5": "Uninvited Reviewer's effect changes to: deals 800% Reality DMG."
+    },
+    "Skills": [
+      {
+        "Name": "Watch Her Sleeves",
+        "Effect": "Mass attack. Deals 135% Reality DMG to 2 enemies. If the target is in [Stats Down], [Neg Status], or [Control] statuses, this attack deals 30% more Reality DMG.",
+        "Type": "Attack"
+      },
+      {
+        "Name": "Watch Her Sleeves",
+        "Effect": "Mass attack. Deals 200% Reality DMG to 2 enemies. If the target is in [Stats Down], [Neg Status], or [Control] statuses, this attack deals 45% more Reality DMG.",
+        "Type": "Attack"
+      },
+      {
+        "Name": "Watch Her Sleeves",
+        "Effect": "Mass attack. Deals 335% Reality DMG to 2 enemies. If the target is in [Stats Down], [Neg Status], or [Control] statuses, this attack deals 75% more Reality DMG.",
+        "Type": "Attack"
+      },
+      {
+        "Name": "Prying Ear",
+        "Effect": "Mass debuff. All enemies suffer Reality DEF -15% and DMG Taken +15%. Lasts 2 rounds.",
+        "Type": "Debuff"
+      },
+      {
+        "Name": "Prying Ear",
+        "Effect": "Mass debuff. All enemies suffer Reality DEF -20% and DMG Taken +20%. Lasts 2 rounds.",
+        "Type": "Debuff"
+      },
+      {
+        "Name": "Prying Ear",
+        "Effect": "Mass debuff. All enemies suffer Reality DEF -25% and DMG Taken +25%. Lasts 3 rounds.",
+        "Type": "Debuff"
+      }
+    ],
+    "Ultimate": {
+      "Name": "Uninvited Reviewer",
+      "Effect": "1-target attack. Deals 550% Reality DMG and inflicts [Seal] for 3 rounds. If the target is immune to [Seal], Moxie -2 for the target instead."
+    },
+    "Psychube1": "Brave New World",
+    "Psychube2": "Luxurious Leisure",
+    "Resonance1": "Balanced",
+    "Resonance2": "Offensive"
   },
   {
     "Id": 10014,

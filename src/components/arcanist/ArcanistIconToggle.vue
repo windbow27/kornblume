@@ -1,5 +1,6 @@
 <script setup lang="ts" name="ArcanistIconToggle">
 import { useDataStore } from '../../stores/dataStore';
+import { getArcanistIconImagePath } from '@/composables/images';
 
 const props = defineProps({
     arcanist: {
@@ -13,10 +14,6 @@ const props = defineProps({
 });
 
 const arcInfo = useDataStore().arcanists.find(arc => arc.Id === props.arcanist);
-
-const getArcanistImagePath = (id: number) => {
-    return `images/arcanists/icon/${id}.png`;
-};
 
 </script>
 
@@ -32,7 +29,7 @@ const getArcanistImagePath = (id: number) => {
                     'bg-sky-200': arcInfo?.Rarity === 3,
                     'bg-green-200': arcInfo?.Rarity === 2
                 }">
-                    <img :src="getArcanistImagePath(arcInfo?.Id ?? 10024)" :alt="arcInfo?.Name" />
+                    <img :src="getArcanistIconImagePath(arcInfo?.Id ?? 10024)" :alt="arcInfo?.Name" />
                 </div>
             </div>
         </div>

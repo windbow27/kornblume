@@ -74,14 +74,14 @@ watch(shouldHideScrollbar, (newVal) => {
         </div>
 
         <div v-if="card.stage === 'Unreleased'" ref="scrollDiv" :class="{ 'hidden-scrollbar': shouldHideScrollbar }"
-            class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">
+            class="flex overflow-y-hidden overflow-x-auto m-auto">
             <div v-for="(material, materialIndex) in card.materials.filter((matl) => useGlobalStore().neededRawMaterialsMapping[matl.Material] > 0)"
                 :key="materialIndex" class="flex-shrink-0">
                 <MaterialItem :material="{ ...material, Quantity: 0 }" :layerId="layerId" />
             </div>
         </div>
         <div v-else ref="scrollDiv" :class="{ 'hidden-scrollbar': shouldHideScrollbar }"
-            class="flex overflow-y-hidden overflow-x-auto scrollbar m-auto">
+            class="flex overflow-y-hidden overflow-x-auto m-auto scrollbar">
             <div v-for="(material, materialIndex) in card.materials" :key="materialIndex" class="flex-shrink-0">
                 <MaterialItem :material="material" :layerId="layerId" />
             </div>
@@ -94,7 +94,7 @@ watch(shouldHideScrollbar, (newVal) => {
 .hidden-scrollbar::-webkit-scrollbar {
     height: 6px;
 }
-
 .scrollbar::-webkit-scrollbar {
     height: 6px;
-}</style>
+}
+</style>

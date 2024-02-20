@@ -82,6 +82,8 @@ const i18n = createI18n({
     legacy: false, // to enable Composition API
     locale: 'en-US',
     fallbackLocale: 'en-US',
+    missingWarn: false,
+    fallbackWarn: false,
     globalInjection: true,
     messageResolver,
     messages

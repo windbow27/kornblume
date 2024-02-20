@@ -186,5 +186,6 @@
   "after-your-first-import": "最初のインポート後は、新しい結果のみをアップロードすれば、以前のスクショと重複する部分は自動で省略されます。",
   "example-of-incomplete-10x": "不完全な10連の画像例：",
   "incomplete-10x": "不完全な10連",
-  "tips": "チップ"
+  "tips": "チップ",
+  "P{portrait}": "{portrait}凸"
 }

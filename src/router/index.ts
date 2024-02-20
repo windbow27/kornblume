@@ -14,6 +14,22 @@ const router = createRouter({
             }
         },
         {
+            path: '/arcanists',
+            name: 'arcanists',
+            component: () => import('../views/ArcanistsView.vue'),
+            meta: {
+                requiredJson: ['arcanists', 'items', 'psychubes']
+            }
+        },
+        {
+            path: '/items',
+            name: 'items',
+            component: () => import('../views/ItemsView.vue'),
+            meta: {
+                requiredJson: ['arcanists', 'items', 'psychubes', 'formulas', 'stages']
+            }
+        },
+        {
             path: '/tracker',
             name: 'tracker',
             component: () => import('../views/TrackerView.vue'),
@@ -30,11 +46,27 @@ const router = createRouter({
             }
         },
         {
+            path: '/stages',
+            name: 'stages',
+            component: () => import('../views/StagesView.vue'),
+            meta: {
+                requiredJson: ['stages']
+            }
+        },
+        {
             path: '/profile',
             name: 'profile',
             component: () => import('../views/ProfileView.vue'),
             meta: {
                 requiredJson: []
+            }
+        },
+        {
+            path: '/:name',
+            name: 'arcanist',
+            component: () => import('../components/arcanist/ArcanistDisplay.vue'),
+            meta: {
+                requiredJson: ['arcanists', 'items']
             }
         }
     ]

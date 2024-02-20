@@ -4,12 +4,20 @@
 @tailwind utilities;
 
 .responsive-spacer {
-    @apply pt-4 pb-4 pr-4 pl-4 sm:pr-8 sm:pl-8 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 md:pr-16 md:pl-16
+    @apply p-4 sm:px-8 md:px-16
+}
+
+.wrapper {
+    @apply pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center
 }
 
 /*Custom common*/
 .custom-line {
     @apply bg-gray-500 opacity-25 rounded-full w-full h-1 mt-4 mb-4 mx-1;
+}
+
+.custom-gradient-gray-blue-dark {
+    @apply bg-gradient-to-r from-gray-900 to-blue-950;
 }
 
 .custom-gradient-gray-blue {
@@ -22,6 +30,22 @@
 
 .custom-border {
     @apply border-2 border-blue-800;
+}
+
+.custom-border-white {
+    @apply border-2 border-transparent box-border border-white rounded-lg
+}
+
+.custom-border-transparent {
+    @apply border-2 border-transparent box-border rounded-lg
+}
+
+.border-button {
+    @apply border-2 border-info rounded-md;
+}
+
+.range-slider {
+    @apply h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-info
 }
 
 .gradient-blue {
@@ -45,7 +69,11 @@
 }
 
 .custom-modal-big {
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2;
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2 max-h-[95vh] overflow-y-hidden overflow-x-hidden;
+}
+
+.custom-button-error {
+    @apply hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/50
 }
 
 @keyframes fadeIn {
@@ -74,6 +102,14 @@
 
 .custom-item-list {
     @apply flex flex-wrap justify-center overflow-y-auto overflow-x-hidden
+}
+
+.custom-card {
+    @apply bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden my-4;
+}
+
+.custom-box {
+    @apply p-4 rounded shadow w-full;
 }
 
 /*Badges*/

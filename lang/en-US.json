@@ -190,9 +190,19 @@
   "ko-fi": "Buy us a Coffee",
   "loading-indicator-vertin-wheel-vertin-wheel-vertin-wheel": "Loading indicator. Thank you for consenting and sending us the PSD of the image directly!",
   "homescreen-image": "Homescreen image. Beautiful work.",
+  "arcanists": "Arcanists",
+  "P{portrait}": "P{portrait}",
   "exploshe": "Also try timekeeper.top!",
   "legacy": "Substitute",
   "legacy-notice": "If current import doesn't work, try these methods. Hover to see more details.",
   "try-legacy": "If current import doesn't work, open substitute methods and use them.",
-  "another-drop-rates": "Another drop rates sheet by shiroinegai. Currently using this instead of kdoc."
+  "another-drop-rates": "Another drop rates sheet by shiroinegai. Currently using this instead of kdoc.",
+  "items": "Items",
+  "stages": "Stages",
+  "search-by-name": "Search by name",
+  "cost": "Cost",
+  "wishing-spring-formula": "Wishing Spring formula",
+  "used-by-the-following-arcanists": "Used by the following arcanists",
+  "possible-drops": "Possible material drops",
+  "obtained-from-the-following-stages": "Obtained from the following stages"
 }

@@ -3,10 +3,10 @@ import { IArcanists, IFormulas, IItems, IPsychubes, IShops, IStages } from '@/ty
 
 interface IDataStore {
     arcanists: IArcanists,
-    stages: IStages | null,
-    stages1_4: IStages | null,
-    stages_greedy: IStages | null,
-    stages1_4_greedy: IStages | null,
+    stages: IStages,
+    stages1_4: IStages,
+    stages_greedy: IStages,
+    stages1_4_greedy: IStages,
     formulas: IFormulas,
     items: IItems,
     psychubes: IPsychubes,
@@ -23,10 +23,10 @@ const getDataSize = data => {
 export const useDataStore = defineStore('dataStore', {
     state: (): IDataStore => ({
         arcanists: [],
-        stages: null,
-        stages1_4: null,
-        stages_greedy: null,
-        stages1_4_greedy: null,
+        stages: {},
+        stages1_4: {},
+        stages_greedy: {},
+        stages1_4_greedy: {},
         formulas: [],
         items: [],
         psychubes: [],

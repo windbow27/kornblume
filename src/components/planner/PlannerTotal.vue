@@ -27,7 +27,7 @@ const activityStore = useActivityStore();
             <div class="text">{{ totalActivityAndDays?.[0] }}</div>
             <div class="avatar">
                 <div class="w-8 rounded">
-                    <img src="/images/items/common/0.png" alt="avatar" />
+                    <img src="/images/items/common/0.webp" alt="avatar" />
                 </div>
             </div>
             <div class="text pr-3">
@@ -39,7 +39,7 @@ const activityStore = useActivityStore();
         </div>
         <div v-if="activityStore.settings.cost > 0" class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/51.png" alt="avatar" />
+                <img src="/images/items/icon/51.webp" alt="avatar" />
             </div>
         </div>
         <div class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
@@ -48,7 +48,7 @@ const activityStore = useActivityStore();
         </div>
         <div class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/55.png" alt="avatar" />
+                <img src="/images/items/icon/55.webp" alt="avatar" />
             </div>
         </div>
         <div class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
@@ -57,7 +57,7 @@ const activityStore = useActivityStore();
         </div>
         <div class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/54.png" alt="avatar" />
+                <img src="/images/items/icon/54.webp" alt="avatar" />
             </div>
         </div>
     </div>

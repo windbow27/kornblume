@@ -12,7 +12,7 @@ const props = defineProps({
 });
 
 const getImagePath = (name: string) => {
-    return `images/items/common/${name}.png`;
+    return `images/items/common/${name}.webp`;
 };
 
 </script>
