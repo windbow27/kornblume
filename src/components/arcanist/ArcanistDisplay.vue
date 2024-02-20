@@ -25,13 +25,13 @@ onBeforeMount(() => {
 <template>
     <div class="pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center">
         <!--I2 Portrait-->
-        <div class="w-full md:w-[calc(45%)] relative">
+        <div class="w-full md:w-[calc(45%)] relative p-4">
             <img class="h-[80vh] object-cover object-right text-2xl text-white font-bold" :src="getArcanistI2ImagePath(arcanist?.Id.toString() ?? '')"
                 alt="Work in progress">
         </div>
 
         <!--Infomation-->
-        <div class="flex flex-col md:w-1/2 p-4 gap-y-4 max-w-xl 2xl:max-w-2xl">
+        <div class="flex flex-col md:w-1/2 gap-y-4 max-w-xl 2xl:max-w-2xl p-4">
             <!--Name and Selectors-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <div class="flex flex-wrap items-center space-x-2">
