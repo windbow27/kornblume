@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useDataStore } from '../stores/dataStore';
-import { useGlobalStore } from '../stores/global';
+import { useDataStore } from '@/stores/dataStore';
+import { useGlobalStore } from '@/stores/global';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +8,7 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: () => import('../views/HomeView.vue'),
+            component: () => import('@/views/HomeView.vue'),
             meta: {
                 requiredJson: []
             }
@@ -16,7 +16,7 @@ const router = createRouter({
         {
             path: '/arcanists',
             name: 'arcanists',
-            component: () => import('../views/ArcanistsView.vue'),
+            component: () => import('@/views/ArcanistsView.vue'),
             meta: {
                 requiredJson: ['arcanists', 'items', 'psychubes']
             }
@@ -24,7 +24,7 @@ const router = createRouter({
         {
             path: '/items',
             name: 'items',
-            component: () => import('../views/ItemsView.vue'),
+            component: () => import('@/views/ItemsView.vue'),
             meta: {
                 requiredJson: ['arcanists', 'items', 'psychubes', 'formulas', 'stages']
             }
@@ -32,7 +32,7 @@ const router = createRouter({
         {
             path: '/tracker',
             name: 'tracker',
-            component: () => import('../views/TrackerView.vue'),
+            component: () => import('@/views/TrackerView.vue'),
             meta: {
                 requiredJson: ['arcanists']
             }
@@ -40,7 +40,7 @@ const router = createRouter({
         {
             path: '/planner',
             name: 'planner',
-            component: () => import('../views/PlannerView.vue'),
+            component: () => import('@/views/PlannerView.vue'),
             meta: {
                 requiredJson: ['arcanists', 'items', 'shops', 'formulas', 'stages', 'stages1_4', 'stages_greedy', 'stages1_4_greedy']
             }
@@ -48,7 +48,7 @@ const router = createRouter({
         {
             path: '/stages',
             name: 'stages',
-            component: () => import('../views/StagesView.vue'),
+            component: () => import('@/views/StagesView.vue'),
             meta: {
                 requiredJson: ['stages']
             }
@@ -56,7 +56,7 @@ const router = createRouter({
         {
             path: '/profile',
             name: 'profile',
-            component: () => import('../views/ProfileView.vue'),
+            component: () => import('@/views/ProfileView.vue'),
             meta: {
                 requiredJson: []
             }
@@ -80,7 +80,7 @@ router.beforeEach(async (to) => {
     }
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((_to, _from, next) => {
     const globalStore = useGlobalStore();
     globalStore.startLoading();
     next();
