@@ -1,6 +1,7 @@
 {
   "1-1": {
     "id": 0,
+    "name": "1-1",
     "category": "Story",
     "cost": 8,
     "drops": {
@@ -13,6 +14,7 @@
   },
   "1-4": {
     "id": 1,
+    "name": "1-4",
     "category": "Story",
     "cost": 8,
     "drops": {
@@ -25,6 +27,7 @@
   },
   "1-5": {
     "id": 2,
+    "name": "1-5",
     "category": "Story",
     "cost": 8,
     "drops": {
@@ -37,6 +40,7 @@
   },
   "1-6": {
     "id": 3,
+    "name": "1-6",
     "category": "Story",
     "cost": 8,
     "drops": {
@@ -49,6 +53,7 @@
   },
   "1-7": {
     "id": 4,
+    "name": "1-7",
     "category": "Story",
     "cost": 10,
     "drops": {
@@ -61,6 +66,7 @@
   },
   "1-8": {
     "id": 5,
+    "name": "1-8",
     "category": "Story",
     "cost": 10,
     "drops": {
@@ -73,6 +79,7 @@
   },
   "1-11": {
     "id": 6,
+    "name": "1-11",
     "category": "Story",
     "cost": 10,
     "drops": {
@@ -85,6 +92,7 @@
   },
   "1-12": {
     "id": 7,
+    "name": "1-12",
     "category": "Story",
     "cost": 10,
     "drops": {
@@ -97,6 +105,7 @@
   },
   "1-14": {
     "id": 8,
+    "name": "1-14",
     "category": "Story",
     "cost": 10,
     "drops": {
@@ -109,6 +118,7 @@
   },
   "1-15": {
     "id": 9,
+    "name": "1-15",
     "category": "Story",
     "cost": 10,
     "drops": {
@@ -121,6 +131,7 @@
   },
   "1-16": {
     "id": 10,
+    "name": "1-16",
     "category": "Story",
     "cost": 10,
     "drops": {
@@ -133,6 +144,7 @@
   },
   "1-1H": {
     "id": 11,
+    "name": "1-1H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -145,6 +157,7 @@
   },
   "1-4H": {
     "id": 12,
+    "name": "1-4H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -157,6 +170,7 @@
   },
   "1-5H": {
     "id": 13,
+    "name": "1-5H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -169,6 +183,7 @@
   },
   "1-6H": {
     "id": 14,
+    "name": "1-6H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -181,6 +196,7 @@
   },
   "1-7H": {
     "id": 15,
+    "name": "1-7H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -194,6 +210,7 @@
   },
   "1-8H": {
     "id": 16,
+    "name": "1-8H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -207,6 +224,7 @@
   },
   "1-11H": {
     "id": 17,
+    "name": "1-11H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -220,6 +238,7 @@
   },
   "1-12H": {
     "id": 18,
+    "name": "1-12H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -233,6 +252,7 @@
   },
   "1-14H": {
     "id": 19,
+    "name": "1-14H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -246,6 +266,7 @@
   },
   "1-15H": {
     "id": 20,
+    "name": "1-15H",
     "category": "Hard",
     "cost": 12,
     "drops": {
@@ -259,6 +280,7 @@
   },
   "1-16H": {
     "id": 21,
+    "name": "1-16H",
     "category": "Hard",
     "cost": 14,
     "drops": {
@@ -276,6 +298,7 @@
   },
   "2-1": {
     "id": 29,
+    "name": "2-1",
     "category": "Story",
     "cost": 12,
     "drops": {
@@ -293,6 +316,7 @@
   },
   "2-3": {
     "id": 23,
+    "name": "2-3",
     "category": "Story",
     "cost": 10,
     "drops": {
@@ -305,6 +329,7 @@
   },
   "2-4": {
     "id": 24,
+    "name": "2-4",
     "category": "Story",
     "cost": 12,
     "drops": {
@@ -317,6 +342,7 @@
   },
   "2-5": {
     "id": 25,
+    "name": "2-5",
     "category": "Story",
     "cost": 12,
     "drops": {
@@ -329,6 +355,7 @@
   },
   "2-6": {
     "id": 26,
+    "name": "2-6",
     "category": "Story",
     "cost": 12,
     "drops": {
@@ -341,6 +368,7 @@
   },
   "2-8": {
     "id": 27,
+    "name": "2-8",
     "category": "Story",
     "cost": 12,
     "drops": {
@@ -358,6 +386,7 @@
   },
   "2-9": {
     "id": 28,
+    "name": "2-9",
     "category": "Story",
     "cost": 12,
     "drops": {
@@ -375,6 +404,7 @@
   },
   "2-11": {
     "id": 30,
+    "name": "2-11",
     "category": "Story",
     "cost": 12,
     "drops": {
@@ -392,6 +422,7 @@
   },
   "2-12": {
     "id": 31,
+    "name": "2-12",
     "category": "Story",
     "cost": 12,
     "drops": {
@@ -410,6 +441,7 @@
   },
   "2-13": {
     "id": 32,
+    "name": "2-13",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -427,6 +459,7 @@
   },
   "2-14": {
     "id": 33,
+    "name": "2-14",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -444,6 +477,7 @@
   },
   "2-1H": {
     "id": 34,
+    "name": "2-1H",
     "category": "Hard",
     "cost": 14,
     "drops": {
@@ -461,6 +495,7 @@
   },
   "2-3H": {
     "id": 35,
+    "name": "2-3H",
     "category": "Hard",
     "cost": 16,
     "drops": {
@@ -475,6 +510,7 @@
   },
   "2-4H": {
     "id": 36,
+    "name": "2-4H",
     "category": "Hard",
     "cost": 16,
     "drops": {
@@ -489,6 +525,7 @@
   },
   "2-5H": {
     "id": 37,
+    "name": "2-5H",
     "category": "Hard",
     "cost": 16,
     "drops": {
@@ -503,6 +540,7 @@
   },
   "2-6H": {
     "id": 38,
+    "name": "2-6H",
     "category": "Hard",
     "cost": 16,
     "drops": {
@@ -517,6 +555,7 @@
   },
   "2-8H": {
     "id": 39,
+    "name": "2-8H",
     "category": "Hard",
     "cost": 16,
     "drops": {
@@ -531,6 +570,7 @@
   },
   "2-9H": {
     "id": 40,
+    "name": "2-9H",
     "category": "Hard",
     "cost": 16,
     "drops": {
@@ -542,6 +582,7 @@
   },
   "2-10H": {
     "id": 41,
+    "name": "2-10H",
     "category": "Hard",
     "cost": 16,
     "drops": {
@@ -556,6 +597,7 @@
   },
   "2-11H": {
     "id": 42,
+    "name": "2-11H",
     "category": "Hard",
     "cost": 16,
     "drops": {
@@ -573,6 +615,7 @@
   },
   "2-12H": {
     "id": 43,
+    "name": "2-12H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -587,6 +630,7 @@
   },
   "2-13H": {
     "id": 44,
+    "name": "2-13H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -601,6 +645,7 @@
   },
   "2-14H": {
     "id": 45,
+    "name": "2-14H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -618,6 +663,7 @@
   },
   "3-3": {
     "id": 46,
+    "name": "3-3",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -635,6 +681,7 @@
   },
   "3-5": {
     "id": 47,
+    "name": "3-5",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -652,6 +699,7 @@
   },
   "3-6": {
     "id": 48,
+    "name": "3-6",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -669,6 +717,7 @@
   },
   "3-7": {
     "id": 49,
+    "name": "3-7",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -687,6 +736,7 @@
   },
   "3-8": {
     "id": 50,
+    "name": "3-8",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -704,6 +754,7 @@
   },
   "3-9": {
     "id": 51,
+    "name": "3-9",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -721,6 +772,7 @@
   },
   "3-11": {
     "id": 52,
+    "name": "3-11",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -738,6 +790,7 @@
   },
   "3-13": {
     "id": 53,
+    "name": "3-13",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -755,6 +808,7 @@
   },
   "3-15": {
     "id": 54,
+    "name": "3-15",
     "category": "Story",
     "cost": 14,
     "drops": {
@@ -772,6 +826,7 @@
   },
   "3-3H": {
     "id": 55,
+    "name": "3-3H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -783,6 +838,7 @@
   },
   "3-5H": {
     "id": 56,
+    "name": "3-5H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -797,6 +853,7 @@
   },
   "3-6H": {
     "id": 57,
+    "name": "3-6H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -814,6 +871,7 @@
   },
   "3-7H": {
     "id": 58,
+    "name": "3-7H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -825,6 +883,7 @@
   },
   "3-8H": {
     "id": 59,
+    "name": "3-8H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -836,6 +895,7 @@
   },
   "3-9H": {
     "id": 60,
+    "name": "3-9H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -850,6 +910,7 @@
   },
   "3-11H": {
     "id": 61,
+    "name": "3-11H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -861,6 +922,7 @@
   },
   "3-13H": {
     "id": 62,
+    "name": "3-13H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -872,6 +934,7 @@
   },
   "3-15H": {
     "id": 63,
+    "name": "3-15H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -889,6 +952,7 @@
   },
   "4-3": {
     "id": 64,
+    "name": "4-3",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -906,6 +970,7 @@
   },
   "4-4": {
     "id": 65,
+    "name": "4-4",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -918,6 +983,7 @@
   },
   "4-5": {
     "id": 66,
+    "name": "4-5",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -930,6 +996,7 @@
   },
   "4-6": {
     "id": 67,
+    "name": "4-6",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -947,6 +1014,7 @@
   },
   "4-1": {
     "id": 68,
+    "name": "4-1",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -959,6 +1027,7 @@
   },
   "4-11": {
     "id": 69,
+    "name": "4-11",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -972,6 +1041,7 @@
   },
   "4-13": {
     "id": 70,
+    "name": "4-13",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -986,6 +1056,7 @@
   },
   "4-16": {
     "id": 71,
+    "name": "4-16",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -998,6 +1069,7 @@
   },
   "4-18": {
     "id": 72,
+    "name": "4-18",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -1010,6 +1082,7 @@
   },
   "4-2": {
     "id": 73,
+    "name": "4-2",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -1027,6 +1100,7 @@
   },
   "4-21": {
     "id": 74,
+    "name": "4-21",
     "category": "Story",
     "cost": 16,
     "drops": {
@@ -1037,6 +1111,7 @@
   },
   "4-3H": {
     "id": 75,
+    "name": "4-3H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1049,6 +1124,7 @@
   },
   "4-4H": {
     "id": 76,
+    "name": "4-4H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1059,6 +1135,7 @@
   },
   "4-5H": {
     "id": 77,
+    "name": "4-5H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1072,6 +1149,7 @@
   },
   "4-6H": {
     "id": 78,
+    "name": "4-6H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1084,6 +1162,7 @@
   },
   "4-10H": {
     "id": 79,
+    "name": "4-10H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1098,6 +1177,7 @@
   },
   "4-11H": {
     "id": 80,
+    "name": "4-11H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1109,6 +1189,7 @@
   },
   "4-13H": {
     "id": 81,
+    "name": "4-13H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1120,6 +1201,7 @@
   },
   "4-16H": {
     "id": 82,
+    "name": "4-16H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1132,6 +1214,7 @@
   },
   "4-18H": {
     "id": 83,
+    "name": "4-18H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1144,6 +1227,7 @@
   },
   "4-20H": {
     "id": 84,
+    "name": "4-20H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1156,6 +1240,7 @@
   },
   "4-21H": {
     "id": 85,
+    "name": "4-21H",
     "category": "Hard",
     "cost": 18,
     "drops": {
@@ -1167,6 +1252,7 @@
   },
   "The Poussiere VI": {
     "id": 86,
+    "name": "The Poussiere VI",
     "category": "Resource",
     "cost": 25,
     "drops": {
@@ -1176,6 +1262,7 @@
   },
   "Mintage Aesthetics VI": {
     "id": 87,
+    "name": "Mintage Aesthetics VI",
     "category": "Resource",
     "cost": 25,
     "drops": {
@@ -1184,6 +1271,7 @@
   },
   "Mountain Echoes II": {
     "id": 88,
+    "name": "Mountain Echoes II",
     "category": "Insight",
     "cost": 18,
     "drops": {
@@ -1192,6 +1280,7 @@
   },
   "Mountain Echoes IV": {
     "id": 89,
+    "name": "Mountain Echoes IV",
     "category": "Insight",
     "cost": 24,
     "drops": {
@@ -1200,6 +1289,7 @@
   },
   "Mountain Echoes VI": {
     "id": 90,
+    "name": "Mountain Echoes VI",
     "category": "Insight",
     "cost": 30,
     "drops": {
@@ -1208,6 +1298,7 @@
   },
   "Starfall Locale II": {
     "id": 91,
+    "name": "Starfall Locale II",
     "category": "Insight",
     "cost": 18,
     "drops": {
@@ -1216,6 +1307,7 @@
   },
   "Starfall Locale IV": {
     "id": 92,
+    "name": "Starfall Locale IV",
     "category": "Insight",
     "cost": 24,
     "drops": {
@@ -1224,6 +1316,7 @@
   },
   "Starfall Locale VI": {
     "id": 93,
+    "name": "Starfall Locale VI",
     "category": "Insight",
     "cost": 30,
     "drops": {
@@ -1232,6 +1325,7 @@
   },
   "Sylvanus Shape II": {
     "id": 94,
+    "name": "Sylvanus Shape II",
     "category": "Insight",
     "cost": 18,
     "drops": {
@@ -1240,6 +1334,7 @@
   },
   "Sylvanus Shape IV": {
     "id": 95,
+    "name": "Sylvanus Shape IV",
     "category": "Insight",
     "cost": 24,
     "drops": {
@@ -1248,6 +1343,7 @@
   },
   "Sylvanus Shape VI": {
     "id": 96,
+    "name": "Sylvanus Shape VI",
     "category": "Insight",
     "cost": 30,
     "drops": {
@@ -1256,6 +1352,7 @@
   },
   "Brutes Wilds II": {
     "id": 97,
+    "name": "Brutes Wilds II",
     "category": "Insight",
     "cost": 18,
     "drops": {
@@ -1264,6 +1361,7 @@
   },
   "Brutes Wilds IV": {
     "id": 98,
+    "name": "Brutes Wilds IV",
     "category": "Insight",
     "cost": 24,
     "drops": {
@@ -1272,6 +1370,7 @@
   },
   "Brutes Wilds VI": {
     "id": 99,
+    "name": "Brutes Wilds VI",
     "category": "Insight",
     "cost": 30,
     "drops": {
@@ -1280,6 +1379,7 @@
   },
   "Unreleased": {
     "id": 100,
+    "name": "Unreleased",
     "cost": 0,
     "drops": {
       "Caduceus": 1,

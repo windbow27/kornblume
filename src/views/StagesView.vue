@@ -8,14 +8,12 @@ import StageDisplay from '@/components/stage/StageDisplay.vue';
 
 const buttons = ['Story', 'Hard', 'Resource', 'Insight'];
 const selectedButton = ref(buttons[0]);
-const selectedStage = ref<IStage>();
-const selectedStageName = ref<string>('1-1');
+const selectedStage = ref<IStage>(useGlobalStore().selectedStage);
 const stageStore = useDataStore().stages;
 const globalStore = useGlobalStore();
 
-const selectStage = (stage: IStage, stageName: string) => {
+const selectStage = (stage: IStage) => {
     selectedStage.value = stage;
-    selectedStageName.value = stageName;
 };
 
 const filteredStages = computed(() => {
@@ -25,7 +23,7 @@ const filteredStages = computed(() => {
         }
         return result;
     }, {});
-    return filteredStageStore;
+    return filteredStageStore as Record<string, IStage>;
 });
 
 watchEffect(() => {
@@ -53,9 +51,9 @@ watchEffect(() => {
             <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)] ">
                 <div class="custom-item-list">
                     <div class="flex flex-wrap justify-center gap-x-5 gap-y-2">
-                        <StageSelectionIcon v-for="(stage, stageName) in filteredStages" :key="stage" :stage="stage"
-                            :stageName="stageName" @click="selectStage(stage, stageName)"
-                            :class="selectedStageName === stageName ? 'custom-border-white' : 'custom-border-transparent'" />
+                        <StageSelectionIcon v-for="stage in filteredStages" :key="stage.name" :stage="stage"
+                            :stageName="stage.name" @click="selectStage(stage)"
+                            :class="selectedStage?.name === stage.name ? 'custom-border-white' : 'custom-border-transparent'" />
                     </div>
                 </div>
             </div>
@@ -63,7 +61,7 @@ watchEffect(() => {
 
         <!--Item Display Card-->
         <div class="container">
-            <StageDisplay :selectedStage="selectedStage ?? stageStore[0]" :stageName="selectedStageName" />
+            <StageDisplay :selectedStage="selectedStage" :stageName="selectedStage.name" />
         </div>
 
     </div>

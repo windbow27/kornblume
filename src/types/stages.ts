@@ -1,5 +1,6 @@
 export interface IStage {
     id: number,
+    name: string,
     category: string,
     cost: number,
     count: number, // runs
