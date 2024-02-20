@@ -1,10 +1,11 @@
 <script setup lang="ts" name="ItemIcon">
 import { computed } from 'vue';
 import { normalizeDisplayMaterial } from '../../composables/materials';
+import { IMaterialUnit } from '@/types';
 
 const props = defineProps({
     material: {
-        type: Object,
+        type: Object as () => IMaterialUnit,
         required: true
     }
 });

@@ -3,10 +3,11 @@ import { computed } from 'vue';
 import { normalizeDisplayMaterial } from '../../../composables/materials';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { storeToRefs } from 'pinia'
+import { IMaterialUnit } from '@/types';
 
 const props = defineProps({
     material: {
-        type: Object,
+        type: Object as () => IMaterialUnit,
         required: true
     }
 });

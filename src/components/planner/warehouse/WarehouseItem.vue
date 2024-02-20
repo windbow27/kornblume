@@ -1,10 +1,11 @@
 <script setup lang="ts" name="WarehouseItem">
 import { ref, computed, watch } from 'vue';
+import { IMaterialUnit } from '@/types';
 import { normalizeDisplayMaterial } from '../../../composables/materials';
 
 const props = defineProps({
     material: {
-        type: Object,
+        type: Object as () => IMaterialUnit,
         required: true
     }
 });

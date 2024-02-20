@@ -5,13 +5,14 @@ import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { useDataStore } from '@/stores/dataStore';
 import { storeToRefs } from 'pinia'
+import { IMaterialUnit } from '@/types';
 import WarehouseItemEditor from './WarehouseItemEditor.vue';
 import MaterialCraftingRecipe from './MaterialCraftingRecipe.vue'
 import Popper from 'vue3-popper';
 
 const props = defineProps({
     material: {
-        type: Object,
+        type: Object as () => IMaterialUnit,
         required: true
     },
     layerId: {
