@@ -1,4 +1,4 @@
-<script setup lang="ts" name="ArcanistIcon">
+<script setup lang="ts" name="SpecialIcon">
 
 const props = defineProps({
     name: {

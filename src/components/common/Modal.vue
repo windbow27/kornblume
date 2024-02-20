@@ -1,11 +1,6 @@
-<script setup>
+<script setup lang="ts">
 
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    }
-});
+const emit = defineEmits(['closeOverlay']);
 
 const closeOverlay = () => {
     emit('closeOverlay');

@@ -1,9 +1,9 @@
 <script setup lang="ts" name="PannerSelector">
 import { ref, computed } from 'vue';
-import { useCalculation, mergeResults, formatResultsWithCasket } from '../../composables/CalculateMaterials';
-import ArcanistIconToggle from '../arcanist/ArcanistIconToggle.vue';
-import ItemGoalIcon from '../item/ItemGoalIcon.vue';
+import { useCalculation, mergeResults, formatResultsWithCasket } from '@/composables/CalculateMaterials';
 import { ISelectedArcanist } from '@/types';
+import ArcanistIconToggle from '@/components/arcanist/ArcanistIconToggle.vue';
+import ItemGoalIcon from '@/components/item/ItemGoalIcon.vue';
 
 const props = defineProps({
     selectedArcanists: {
@@ -57,8 +57,7 @@ const totalMaterials = computed(() => {
                         </form>
                         <h3 class="font-bold text-lg text-white text-center">{{ $t('total-goal-materials') }}</h3>
                         <div class="hidden-scrollbar pt-9 custom-item-list">
-                            <ItemGoalIcon class="py-2" v-for="material in totalMaterials" :key="material"
-                                :material="material" />
+                            <ItemGoalIcon class="py-2" v-for="material in totalMaterials" :key="material.Material.toString()" :material="material" />
                         </div>
                         <form method="dialog" class="flex justify-center pt-5">
                             <button class="btn btn-sm btn-success text-black">{{ $t('close') }}</button>

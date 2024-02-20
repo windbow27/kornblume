@@ -1,12 +1,7 @@
-<script setup>
+<script setup lang="ts">
 import { useI18n } from 'vue-i18n';
 
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    }
-});
+const emit = defineEmits(['closeOverlay']);
 
 const { t } = useI18n()
 

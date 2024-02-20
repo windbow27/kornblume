@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue';
 import SelectList from '../common/SelectList.vue';
 
@@ -9,16 +9,7 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    },
-    saveActivitySettings: {
-        type: Function,
-        required: true
-    }
-});
+const emit = defineEmits(['closeOverlay', 'saveActivitySettings']);
 
 const options = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const refillsCost = [0, 60, 90, 120, 120, 150, 150, 200, 200];

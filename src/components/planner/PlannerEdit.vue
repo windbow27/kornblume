@@ -1,48 +1,37 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch, computed } from 'vue';
-import { useDataStore } from '../../stores/dataStore';
-import { levelUpResources, CrystalCasketMaterials } from '../../constants';
-import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
-import ArcanistCalculate from '../arcanist/ArcanistCalculate.vue'
-import ArcanistLevelUp from '../arcanist/ArcanistLevelUp.vue'
-import SelectList from '../common/SelectList.vue';
-import { useCalculation } from '../../composables/CalculateMaterials';
-import { useWarehouseStore } from '../../stores/warehouseStore';
-import { useGlobalStore } from '../../stores/global';
+import { useDataStore } from '@/stores/dataStore';
+import { levelUpResources, CrystalCasketMaterials } from '@/constants';
+import { useCalculation } from '@/composables/CalculateMaterials';
+import { useWarehouseStore } from '@/stores/warehouseStore';
+import { useGlobalStore } from '@/stores/global';
+import { IArcanist, ISelectedArcanist } from '@/types';
+import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
+import SelectList from '@/components/common/SelectList.vue';
+import ArcanistLevelUp from '@/components/arcanist/ArcanistLevelUp.vue';
+import ArcanistCalculate from '@/components/arcanist/ArcanistCalculate.vue';
 
 const props = defineProps({
     selectedArcanist: {
-        type: Object,
+        type: Object as () => ISelectedArcanist,
         required: true
     },
     selectedArcanists: {
-        type: Array,
+        type: Array as () => ISelectedArcanist[],
         required: true
     },
     listArcanists: {
-        type: Array,
+        type: Array as () => IArcanist[],
         required: true
     }
 });
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    },
-    updateSelectedArcanists: {
-        type: Function,
-        required: true
-    },
-    updateListArcanists: {
-        type: Function,
-        required: true
-    }
-});
+
+const emit = defineEmits(['closeOverlay', 'updateSelectedArcanists', 'updateListArcanists']);
 
 const arcanists = useDataStore().arcanists;
 const updateKey = ref(0);
 const calculations = levelUpResources;
-const selectedArcanist = ref(arcanists.find(arc => Number(arc.Id) === Number(props.selectedArcanist.Id)));
+const selectedArcanist = ref(arcanists.find(arc => Number(arc.Id) === Number(props.selectedArcanist.Id)) || {} as IArcanist);
 const selectedArcanists = ref(props.selectedArcanists);
 const listArcanists = ref(props.listArcanists);
 const selectedCurrentInsight = ref(props.selectedArcanist.currentInsight);
@@ -53,7 +42,7 @@ const selectedGoalLevel = ref(props.selectedArcanist.goalLevel);
 const selectedGoalResonance = ref(props.selectedArcanist.goalResonance);
 const selectedVisible = ref(props.selectedArcanist.isVisible);
 
-const compareLevels = (currentInsightSelect, currentLevelSelect, goalInsightSelect, goalLevelSelect) => {
+const compareLevels = (currentInsightSelect: number, currentLevelSelect: number, goalInsightSelect: number, goalLevelSelect: number) => {
     if (Number(currentInsightSelect) > Number(goalInsightSelect)) {
         // If current insight is higher, consider it as "lower" regardless of levels
         return true;
@@ -188,7 +177,7 @@ const rarity = computed(() => {
 });
 
 const currentInsightOptions = computed(() => {
-    return [0, ...selectedArcanist.value.Insight.map((insight) => insight.Id)];
+    return [0, ...(selectedArcanist.value.Insight ?? []).map((insight) => insight.Id)];
 });
 
 const goalInsightOptions = computed(() => {
@@ -236,8 +225,8 @@ const currentResonanceOptions = computed(() => {
     if (insightValue === 0) {
         // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedCurrentResonance.value = null;
-        return null;
+        selectedCurrentResonance.value = 0;
+        return [];
     }
     const upperLimit = insightValue * 5;
     return Array.from({ length: upperLimit }, (_, index) => Number(index + 1));
@@ -256,8 +245,8 @@ const goalResonanceOptions = computed(() => {
     if (insightValue === 0) {
         // FIXME:
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedGoalResonance.value = null;
-        return null;
+        selectedGoalResonance.value = 0;
+        return [];
     }
     const lowerLimit = currentResonance || 1; // Start from selectedCurrentResonance or 1 if not set
     const upperLimit = insightValue * 5;

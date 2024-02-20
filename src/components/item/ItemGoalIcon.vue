@@ -1,11 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue';
 import { normalizeDisplayMaterial, formatQuantity } from '../../composables/materials';
-import { useWarehouseStore } from '../../stores/warehouseStore.ts';
+import { useWarehouseStore } from '@/stores/warehouseStore';
+import { IMaterialUnit } from '@/types';
 
 const props = defineProps({
     material: {
-        type: Object,
+        type: Object as () => IMaterialUnit,
         required: true
     }
 });

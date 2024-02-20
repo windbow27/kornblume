@@ -1,26 +1,18 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { usePlannerSettingsStore } from '../../stores/plannerSettingsStore';
+import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
+import { IArcanist } from '@/types';
 import ArcanistIcon from './ArcanistIcon.vue';
 
 const props = defineProps({
     arcanists: {
-        type: Array,
+        type: Array as () => IArcanist[],
         required: true
     }
 });
 
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    },
-    selectArcanist: {
-        type: Function,
-        required: true
-    }
-});
+const emit = defineEmits(['closeOverlay', 'selectArcanist']);
 
 const { locale, t } = useI18n()
 const searchQuery = ref('');
@@ -60,7 +52,8 @@ const filteredArcanists = computed(() => {
         <div class="form-control">
           <label class="cursor-pointer label justify-center space-x-5">
             <span class="label-text text-white text-md">{{ $t('show-unreleased-arcanists') }}</span>
-            <input v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists" type="checkbox" class="checkbox checkbox-info" />
+            <input v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists" type="checkbox"
+              class="checkbox checkbox-info" />
           </label>
         </div>
       </div>

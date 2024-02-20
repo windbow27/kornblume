@@ -1,5 +1,5 @@
-<script setup>
-import { ref, onMounted } from 'vue';
+<script setup lang="ts">
+import { ref, onMounted, PropType } from 'vue';
 import { onClickOutside } from '@vueuse/core';
 
 const props = defineProps({
@@ -8,7 +8,7 @@ const props = defineProps({
         required: true
     },
     options: { // List of options
-        type: Array,
+        type: Array as PropType<number[]>,
         required: true
     },
     selected: { // Selected option
@@ -42,7 +42,7 @@ onClickOutside(containerRef, closeOptions);
 
 onMounted(() => {
     if (props.selected === undefined) {
-        selected.value = props.options[0];
+        selected.value = props.options[0] as number;
         emits('update:selected', props.options[0], props.label);
     } else {
         selected.value = props.selected;

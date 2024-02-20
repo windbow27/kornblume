@@ -1,6 +1,7 @@
-import { useDataStore } from '../stores/dataStore';
-import { useGlobalStore } from '../stores/global';
-import { levelUpResources } from '../constants';
+import { useDataStore } from '@/stores/dataStore';
+import { useGlobalStore } from '@/stores/global';
+import { levelUpResources } from '@/constants';
+import { IMaterialUnit, IArcanist, ISelectedArcanist } from '@/types';
 
 const calculations = levelUpResources;
 const items = useDataStore().items;
@@ -13,7 +14,7 @@ const categoryPriority = {
     'Build Material': 2 // insight/build material have same priority, should be arranged according to rarity
 }
 
-function sortMaterials (array) {
+function sortMaterials (array: IMaterialUnit[]) {
     array.sort((matA, matB) => {
         // Find corresponding item based on material name
         const itemIndexA = items.findIndex(item => item.Name === matA.Material);
@@ -39,7 +40,7 @@ function sortMaterials (array) {
     });
 }
 
-export function mergeResults (resultsArray) {
+export function mergeResults (resultsArray: IMaterialUnit[][]) {
     const merged = {};
 
     resultsArray.forEach((results) => {
@@ -79,7 +80,7 @@ export function mergeResults (resultsArray) {
     return arrayMerged;
 }
 
-export function formatResults (result) {
+export function formatResults (result: IMaterialUnit[]) {
     sortMaterials(result);
 
     // Check if Dust and Sharpodonty quantities are both zero
@@ -95,7 +96,7 @@ export function formatResults (result) {
     return result;
 }
 
-export function formatResultsWithCasket (result) {
+export function formatResultsWithCasket (result: IMaterialUnit[]) {
     // Check if Dust and Sharpodonty quantities are both zero
     const dustQuantity = result.find(item => item.Material === 'Dust')?.Quantity || 0;
     const sharpodontyQuantity = result.find(item => item.Material === 'Sharpodonty')?.Quantity || 0;
@@ -123,9 +124,9 @@ export function formatResultsWithCasket (result) {
     return filteredResult;
 }
 
-export function useCalculation (arc) {
-    const arcInfo = arcanists.find((arcanist) => arcanist.Id === arc.Id);
-    const calculateExp = (arc) => {
+export function useCalculation (arc: ISelectedArcanist) {
+    const arcInfo = arcanists.find((arcanist) => arcanist.Id === arc.Id) || {} as IArcanist;
+    const calculateExp = (arc: ISelectedArcanist) => {
         const total = { Dust: 0, Sharpodonty: 0 };
 
         // Same level insight calculation
@@ -133,13 +134,12 @@ export function useCalculation (arc) {
             const { Dust, Sharpodonty } = sumExp(arc.currentLevel, arc.goalLevel, arc, arc.currentInsight);
             total.Dust += Dust;
             total.Sharpodonty += Sharpodonty;
-            return total;
         }
 
         // Different level insight calculation
         for (let insight = arc.currentInsight; insight <= arc.goalInsight; insight++) {
             if (insight < arc.goalInsight) {
-                const currentCalc = getLevelsInfo(arc, insight);
+                const currentCalc = getLevelsInfo(arc, insight) || { Total: { Dust: 0, Sharpodonty: 0 } };
                 total.Dust += currentCalc.Total.Dust;
                 total.Sharpodonty += currentCalc.Total.Sharpodonty;
 
@@ -155,7 +155,7 @@ export function useCalculation (arc) {
             }
         }
 
-        const result = [
+        const result: IMaterialUnit[] = [
             { Material: 'Dust', Quantity: total.Dust },
             { Material: 'Sharpodonty', Quantity: total.Sharpodonty }
         ];
@@ -163,7 +163,7 @@ export function useCalculation (arc) {
         return result;
     };
 
-    const calculateMaterials = (currentType, goalType, type) => {
+    const calculateMaterials = (currentType: number, goalType: number, type) => {
         const materialsCount = {};
         if (currentType === goalType) return null;
         // Iterate over insights between currentInsight and goalInsight (inclusive)
@@ -171,7 +171,7 @@ export function useCalculation (arc) {
             const data = type.find(obj => obj.Id === current);
             if (data) {
                 // console.log(data);
-                data.Material.forEach((material, index) => {
+                data.Material.forEach((material: string | number, index: string | number) => {
                     const quantity = data.Quantity[index];
 
                     // Accumulate materials and quantities
@@ -192,7 +192,7 @@ export function useCalculation (arc) {
         return result;
     };
 
-    const getLevelsInfo = (arc, insight) => {
+    const getLevelsInfo = (arc: ISelectedArcanist, insight) => {
         const currentCalc = calculations.find((calc) =>
             calc.Rarity.includes(arcInfo.Rarity) &&
             calc.Insight === insight
@@ -200,13 +200,13 @@ export function useCalculation (arc) {
         return currentCalc;
     };
 
-    const sumExp = (startLevel, endlevel, arc, insight) => {
+    const sumExp = (startLevel: number, endlevel: number, arc: ISelectedArcanist, insight: number) => {
         const total = { Dust: 0, Sharpodonty: 0 };
 
         for (let level = Number(++startLevel); level <= Number(endlevel); level++) {
             const currentCalc = getLevelsInfo(arc, insight);
             const levelKey = level.toString();
-            const material = currentCalc.Levels[levelKey];
+            const material = currentCalc?.Levels[levelKey];
 
             if (material) {
                 total.Dust += material.Dust;
@@ -217,8 +217,8 @@ export function useCalculation (arc) {
         return total;
     };
     // Get the results from calculateInsight, calculateResonance, and calculateExp
-    const insightResults = calculateMaterials(arc.currentInsight, arc.goalInsight, arcInfo.Insight);
-    const resonanceResults = calculateMaterials(arc.currentResonance, arc.goalResonance, arcInfo.Resonance);
+    const insightResults = calculateMaterials(arc.currentInsight, arc.goalInsight, arcInfo.Insight) || [];
+    const resonanceResults = calculateMaterials(arc.currentResonance, arc.goalResonance, arcInfo.Resonance) || [];
     const expResults = calculateExp(arc);
     // Merge all results into a single object
     const mergedResults = mergeResults([insightResults, resonanceResults, expResults]);

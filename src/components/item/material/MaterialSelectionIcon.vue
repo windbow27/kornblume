@@ -1,4 +1,4 @@
-<script setup lang="ts" name="ItemIcon">
+<script setup lang="ts">
 import { computed } from 'vue';
 import { IItem } from '@/types';
 import { baseDisplayMaterial } from '@/composables/materials';

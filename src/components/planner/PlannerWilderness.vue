@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue';
 import SelectList from '../common/SelectList.vue';
 
@@ -9,16 +9,7 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    },
-    saveWildernessSettings: {
-        type: Function,
-        required: true
-    }
-});
+const emit = defineEmits(['closeOverlay', 'saveWildernessSettings']);
 
 const selectedDust1 = ref(props.settings.dust1);
 const selectedDust2 = ref(props.settings.dust2);
@@ -96,7 +87,7 @@ const saveWildernessSettings = () => {
 const wildernessOutput = computed(() => {
     const valueDust = dustMultiplier[selectedDust1.value] + dustMultiplier[selectedDust2.value] + dustMultiplier[selectedDust3.value];
     const valueGold = goldMultiplier[selectedGold1.value] + goldMultiplier[selectedGold2.value] + goldMultiplier[selectedGold3.value];
-    const valueVigor = vigor.value ? parseFloat(vigor.value / 100) : 0;
+    const valueVigor = vigor.value ? parseFloat(vigor.value.toString()) / 100 : 0;
     const valueLazyModo = lazyModo.value ? 20 : 24;
     const resultDust = Math.ceil(valueDust * (1 + valueVigor) * valueLazyModo);
     const resultGold = Math.ceil(valueGold * (1 + valueVigor) * valueLazyModo);

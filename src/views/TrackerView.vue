@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref, computed, watchEffect, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
-import { IPull, usePullsRecordStore } from '../stores/pullsRecordStore'
+import { IPull, usePullsRecordStore } from '@/stores/pullsRecordStore'
 import { bannerList, specialArcanists } from '@/utils/bannerData'
 import { useChangelogsStore } from '@/stores/global';
 import { convertGoldenThreadString, preprocess, preprocess1, preprocess2 } from '@/utils/preprocess';
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
-import TrackerBoard from '../components/tracker/TrackerBoard.vue';
+import TrackerBoard from '@/components/tracker/TrackerBoard.vue';
 import TrackerTutorial from '@/components/tracker/TrackerTutorial.vue';
 
 const fileInput = ref<HTMLElement>(null!);
@@ -407,12 +407,15 @@ watchEffect(() => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }" class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                @click="selectedBannerType = 'Limited'">{{ $t('limited') }}</button>
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }" class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                @click="selectedBannerType = 'Standard'">{{ $t('standard') }}</button>
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }" class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                @click="selectedBannerType = 'Thread'">{{ $t('thread') }}</button>
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Limited'">{{
+                    $t('limited') }}</button>
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }"
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Standard'">{{
+                    $t('standard') }}</button>
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }"
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Thread'">{{
+                    $t('thread') }}</button>
         </div>
 
         <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
@@ -427,5 +430,4 @@ watchEffect(() => {
 <style scoped>
 .modal-box {
     overflow-y: unset;
-}
-</style>
+}</style>

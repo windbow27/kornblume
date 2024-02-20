@@ -1,4 +1,4 @@
-<script setup lang="ts" name="ArcanistCalculate">
+<script setup lang="ts">
 import { computed } from 'vue';
 import { useCalculation } from '../../composables/CalculateMaterials';
 import { CrystalCasketMaterials } from '../../constants';

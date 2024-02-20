@@ -1,12 +1,7 @@
-<script setup>
-import { changelogs } from '@/utils/changelogs.ts';
+<script setup lang="ts">
+import { changelogs } from '@/utils/changelogs';
 
-const emit = defineEmits({
-    closeOverlay: {
-        type: Function,
-        required: true
-    }
-});
+const emit = defineEmits(['closeOverlay']);
 
 const closeOverlay = () => {
     emit('closeOverlay');
