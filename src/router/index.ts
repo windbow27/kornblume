@@ -62,7 +62,7 @@ const router = createRouter({
             }
         },
         {
-            path: '/:name',
+            path: '/arcanist-:id',
             name: 'arcanist',
             component: () => import('../components/arcanist/ArcanistDisplay.vue'),
             meta: {

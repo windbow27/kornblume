@@ -107,7 +107,7 @@ watchEffect(() => {
             </div>
         </div>
         <div class="flex flex-wrap items-center justify-center">
-            <router-link v-for="arcanist in filteredArcanists" :key="arcanist.Id" :to="`/${arcanist.Name}`">
+            <router-link v-for="arcanist in filteredArcanists" :key="arcanist.Id" :to="`/arcanist-${arcanist.Id}`">
                 <ArcanistPortrait :arcanist="arcanist"
                     :count="portraitCounts.find(pc => pc.ArcanistName === arcanist.Name)?.count ?? -1" />
             </router-link>

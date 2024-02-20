@@ -17,7 +17,7 @@ const buttons = ['Stats', 'Upgrades', 'Skills'];
 const selectedButton = ref(buttons[0]);
 
 onBeforeMount(() => {
-    arcanist.value = arcanistStore.find(arc => arc.Name === route.params.name) ?? undefined;
+    arcanist.value = arcanistStore.find(arc => arc.Id === Number(route.params.id)) ?? arcanistStore[0] as IArcanist;
 });
 
 </script>
