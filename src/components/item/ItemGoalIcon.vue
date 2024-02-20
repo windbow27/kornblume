@@ -30,7 +30,7 @@ const normalizedMaterial = computed(() => {
         <div class="relative inline-block">
             <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute"
                 :class="{ 'w-36': checkQuantity() }" />
-            <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20"
+            <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 avatar"
                 :class="{ 'mx-5': checkQuantity() }" />
             <div class="flex items-center justify-center small-text text-white absolute -bottom-3 left-3 input input-xs rounded-t-none"
                 :class="{

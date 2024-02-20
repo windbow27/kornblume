@@ -29,7 +29,7 @@ const warehouseQuantity = computed(() => {
 <template>
     <div class="relative inline-block">
         <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
-        <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+        <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 avatar" />
         <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs">
             {{ warehouseQuantity >= 1000 ? normalizedMaterial.quantity :
                 `${warehouseQuantity}/${normalizedMaterial.quantity}` }}

@@ -112,7 +112,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
         <div class="cursor-pointer" :class="isReachGoal ? 'opacity-40' : ''">
             <div class="relative inline-block">
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
-                <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20" />
+                <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 avatar" />
                 <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs cursor-default">
                     {{ normalizedMaterial.quantity }}
                 </div>
