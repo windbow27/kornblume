@@ -26,7 +26,7 @@ onBeforeMount(() => {
     <div class="pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center">
         <!--I2 Portrait-->
         <div class="w-full md:w-[calc(45%)] relative p-4">
-            <img class="h-[80vh] object-cover object-right text-2xl text-white font-bold" :src="getArcanistI2ImagePath(arcanist?.Id.toString() ?? '')"
+            <img class="h-[80vh] object-cover object-center text-2xl text-white font-bold" :src="getArcanistI2ImagePath(arcanist?.Id.toString() ?? '')"
                 alt="Work in progress">
         </div>
 
