@@ -1,4 +1,4 @@
-<script setup lang="ts" name="PannerSelector">
+<script setup lang="ts" name="PlannerSelector">
 import { ref, computed } from 'vue';
 import { useCalculation, mergeResults, formatResultsWithCasket } from '@/composables/CalculateMaterials';
 import { ISelectedArcanist } from '@/types';

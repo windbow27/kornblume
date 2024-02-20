@@ -1,11 +1,11 @@
-import { useDataStore } from '../stores/dataStore'
-import { useWarehouseStore } from '../stores/warehouseStore'
-import { useActivityStore } from '../stores/activityStore';
-import { usePlannerSettingsStore } from '../stores/plannerSettingsStore'
+import { useDataStore } from '@/stores/dataStore'
+import { useWarehouseStore } from '@/stores/warehouseStore'
+import { useActivityStore } from '@/stores/activityStore';
+import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore'
+import { IMaterialUnit, IStages } from '@/types';
+import { useGlobalStore } from '@/stores/global';
 import { getSolve, processSharpoAndDust } from './solver';
 import { getActivityImagePathByStage } from './images'
-import { IMaterialUnit, IStages } from '@/types';
-import { useGlobalStore } from '../stores/global';
 
 const items = useDataStore().items;
 const formulas = useDataStore().formulas;
@@ -24,7 +24,7 @@ interface IPlanCard {
     cards: ICard[]
 }
 
-function calculateOneiric (matlInfo) {
+function calculateOneiric (matlInfo: IMaterialUnit) {
     const item = items.find(item => item.Name === matlInfo.Material);
     if (item) {
         const rarity = item.Rarity;
@@ -260,15 +260,15 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
     return cardLayers;
 }
 
-export function getTotalActivityAndDays (cardLayers) {
+export function getTotalActivityAndDays (cardLayers: { cards: ICard[] }[]) {
     let totalActivity = 0;
     let totalDays = 0;
 
-    cardLayers.forEach((layer) => {
-        layer.cards.forEach((card) => {
+    cardLayers.forEach((layer: { cards: ICard[] }) => {
+        layer.cards.forEach((card: { days: string | number; activity: number; }) => {
             if (card.days !== 0) {
                 totalActivity += card.activity;
-                totalDays += parseFloat(card.days);
+                totalDays += parseFloat(card.days.toString());
             }
         });
     });

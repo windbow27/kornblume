@@ -1,4 +1,4 @@
-import Tesseract, { createWorker } from 'tesseract.js';
+import { fabric } from 'fabric';
 
 type cropOptions = { x: number, y: number, width: number, height: number };
 function getCropOptions (context: CanvasRenderingContext2D | null, width: number, height: number): cropOptions {
@@ -36,7 +36,7 @@ function getCropOptions (context: CanvasRenderingContext2D | null, width: number
     const og_width: number = 2400;
     const og_height: number = 1080;
     const og_topLeftX: number = 775;
-    const og_topLeftY: number = 315;
+    const og_topLeftY: number = 240;
 
     const imageX_scale: number = width / og_width;
     const imageY_scale: number = height / og_height;
@@ -62,7 +62,7 @@ function binarize (context: CanvasRenderingContext2D | null, width: number, heig
         console.log('failed to obtain pixel data (binarize)');
         return new ImageData(0, 0);
     }
-    const level: number = 0.6;
+    const level: number = 0.61875;
     const thresh: number = Math.floor(level * 255);
     for (let i = 0; i < pixels.length; i += 4) {
         const r: number = pixels[i];
@@ -75,43 +75,93 @@ function binarize (context: CanvasRenderingContext2D | null, width: number, heig
     return imageData;
 }
 
-async function debugLineByLineOCR (pullIndex: number, source: string, result: string): Promise<void> {
-    const img: HTMLElement | null = document.getElementById('testing');
-    if (!img) console.log('uncomment img w/ testing id in template below');
-    (img as HTMLImageElement).src = source;
-    console.log('pull index: ', pullIndex + 1, '\nocr result:', result);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+export function convertGoldenThreadString (goldenThread: string, value: 'digit' | 'romanNumeral'): string {
+    const tempArray: string[] = goldenThread.split(' ');
+    const numberPart: string = tempArray[tempArray.length - 1];
+    if (value === 'digit') {
+        return goldenThread.replace(numberPart, String(numberPart.length));
+    } else if (value === 'romanNumeral') {
+        return goldenThread.replace(numberPart, 'I'.repeat(parseInt(numberPart)));
+    }
+    console.log('error converting golden thread string');
+    return '';
 }
 
-export async function lineByLineOCR (preprocessCanvas: HTMLCanvasElement, debug?: boolean): Promise<string> {
+export async function preprocess (file: File): Promise<File> {
     return new Promise((resolve, reject) => {
-        let output: string = '';
-        const pullCanvas: HTMLCanvasElement = document.createElement('canvas');
-        const pullContext: CanvasRenderingContext2D | null = pullCanvas.getContext('2d');
-        if (!pullContext) { reject(new Error('getContext failed (splitImage)')); }
-        pullCanvas.width = preprocessCanvas.width;
-        pullCanvas.height = ~~(preprocessCanvas.height / 11); /* divide by number of rows in image */
+        console.log('Using default preprocess');
+        const reader = new FileReader();
+        let modifiedFile: File;
+        reader.onload = (event: ProgressEvent<FileReader>) => {
+            const img = document.createElement('img');
+            img.onload = () => {
+                const canvas: HTMLCanvasElement = document.createElement('canvas');
+                const context: CanvasRenderingContext2D | null = canvas.getContext('2d', { willReadFrequently: true });
+                if (!context) { reject(new Error('getContext failed (canvas, preprocessImage)')); }
 
-        (async (): Promise<void> => {
-            const worker: Tesseract.Worker = await createWorker('eng');
-            for (let pullIndex = 0; pullIndex < 10; pullIndex++) {
-                pullContext?.drawImage(preprocessCanvas,
-                    0, pullCanvas.height * pullIndex, preprocessCanvas.width, pullCanvas.height, /* src */
-                    0, 0, pullCanvas.width, pullCanvas.height /* dst */
+                // Calculate the scale factor and new height
+                const scaleFactor = img.width > 1920 ? 1920 / img.width : 1;
+                const newWidth = img.width * scaleFactor;
+                const newHeight = img.height * scaleFactor;
+
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+
+                if (context) {
+                    context.drawImage(img, 0, 0, newWidth, newHeight);
+
+                    const fabricImage = new fabric.Image(canvas, {
+                        left: 0,
+                        top: 0,
+                        angle: 0,
+                        opacity: 1,
+                        scaleX: scaleFactor,
+                        scaleY: scaleFactor
+                    });
+
+                    fabricImage.filters = fabricImage.filters || [];
+                    fabricImage.filters.push(new fabric.Image.filters.Contrast({ contrast: 0.625 })); // this needs improvement, but works for now
+                    fabricImage.filters.push(new fabric.Image.filters.Grayscale());
+                    fabricImage.applyFilters();
+
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.drawImage(fabricImage.getElement(), 0, 0, newWidth, newHeight);
+
+                    // download
+                    // const a = document.createElement('a');
+                    // a.href = canvas.toDataURL('image/png');
+                    // a.download = file.name;
+                    // a.click();
+                }
+
+                const options: cropOptions = getCropOptions(context, canvas.width, canvas.height);
+                const cropped_canvas: HTMLCanvasElement = document.createElement('canvas');
+                const cropped_context: CanvasRenderingContext2D | null = cropped_canvas.getContext('2d');
+                if (!cropped_context) { reject(new Error('getContext failed (cropped_canvas, preprocessImage)')); }
+
+                cropped_canvas.width = options.width;
+                cropped_canvas.height = options.height;
+                cropped_context?.drawImage(canvas,
+                    options.x, options.y, options.width, options.height, /* src */
+                    0, 0, cropped_canvas.width, cropped_canvas.height /* dst */
                 );
-                const ret: Tesseract.RecognizeResult = await worker.recognize(pullCanvas.toDataURL());
-                output += ret.data.text;
-                if (debug) { await debugLineByLineOCR(pullIndex, pullCanvas.toDataURL(), ret.data.text); }
-            }
-            await worker.terminate();
-            resolve(output);
-        })();
+
+                cropped_canvas.toBlob((blob) => {
+                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
+                    resolve(modifiedFile);
+                }, file.type);
+            };
+            img.src = event.target?.result as string;
+        };
+        reader.readAsDataURL(file);
     });
 }
 
-export async function preprocessImage (file: File): Promise<HTMLCanvasElement> {
+export async function preprocess1 (file: File): Promise<File> {
     return new Promise((resolve, reject) => {
-        const reader: FileReader = new FileReader();
+        console.log('Using preprocess 1');
+        const reader = new FileReader();
+        let modifiedFile: File;
         reader.onload = (event: ProgressEvent<FileReader>) => {
             const img = document.createElement('img');
             img.onload = () => {
@@ -138,7 +188,10 @@ export async function preprocessImage (file: File): Promise<HTMLCanvasElement> {
                     0, 0, cropped_canvas.width, cropped_canvas.height /* dst */
                 );
 
-                resolve(cropped_canvas);
+                cropped_canvas.toBlob((blob) => {
+                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
+                    resolve(modifiedFile);
+                }, file.type);
             };
             img.src = event.target?.result as string;
         };
@@ -146,14 +199,44 @@ export async function preprocessImage (file: File): Promise<HTMLCanvasElement> {
     });
 }
 
-export function convertGoldenThreadString (goldenThread: string, value: 'digit' | 'romanNumeral'): string {
-    const tempArray: string[] = goldenThread.split(' ');
-    const numberPart: string = tempArray[tempArray.length - 1];
-    if (value === 'digit') {
-        return goldenThread.replace(numberPart, String(numberPart.length));
-    } else if (value === 'romanNumeral') {
-        return goldenThread.replace(numberPart, 'I'.repeat(parseInt(numberPart)));
-    }
-    console.log('error converting golden thread string');
-    return '';
+export async function preprocess2 (file: File): Promise<File> {
+    return new Promise((resolve, reject) => {
+        console.log('Using preprocess 2');
+        const reader = new FileReader();
+        let modifiedFile: File;
+        reader.onload = (event: ProgressEvent<FileReader>) => {
+            const img = document.createElement('img');
+            img.onload = () => {
+                const canvas: HTMLCanvasElement = document.createElement('canvas');
+                const context: CanvasRenderingContext2D | null = canvas.getContext('2d', { willReadFrequently: true });
+                if (!context) { reject(new Error('getContext failed (canvas, preprocessImage)')); }
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                if (context) {
+                    context.filter = 'contrast(2) saturate(0)';
+                    context.drawImage(img, 0, 0);
+                }
+
+                const options: cropOptions = getCropOptions(context, canvas.width, canvas.height);
+                const cropped_canvas: HTMLCanvasElement = document.createElement('canvas');
+                const cropped_context: CanvasRenderingContext2D | null = cropped_canvas.getContext('2d');
+                if (!cropped_context) { reject(new Error('getContext failed (cropped_canvas, preprocessImage)')); }
+
+                cropped_canvas.width = options.width;
+                cropped_canvas.height = options.height;
+                cropped_context?.drawImage(canvas,
+                    options.x, options.y, options.width, options.height, /* src */
+                    0, 0, cropped_canvas.width, cropped_canvas.height /* dst */
+                );
+
+                cropped_canvas.toBlob((blob) => {
+                    modifiedFile = new File([blob as Blob], file.name, { type: file.type });
+                    resolve(modifiedFile);
+                }, file.type);
+            };
+            img.src = event.target?.result as string;
+        };
+        reader.readAsDataURL(file);
+    });
 }

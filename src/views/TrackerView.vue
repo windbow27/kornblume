@@ -4,7 +4,7 @@ import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '@/stores/pullsRecordStore'
 import { bannerList, specialArcanists } from '@/utils/bannerData'
 import { useChangelogsStore } from '@/stores/global';
-import { convertGoldenThreadString, preprocess, preprocess1, preprocess2 } from '@/utils/preprocess';
+import { convertGoldenThreadString, preprocess, preprocess1, preprocess2 } from '@/composables/preprocess';
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
 import TrackerBoard from '@/components/tracker/TrackerBoard.vue';
@@ -431,3 +431,4 @@ watchEffect(() => {
 .modal-box {
     overflow-y: unset;
 }</style>
+@/composables/preprocess

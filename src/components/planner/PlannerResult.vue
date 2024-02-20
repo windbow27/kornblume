@@ -1,4 +1,4 @@
-<script setup lang="ts" name="PannerResult">
+<script setup lang="ts" name="PlannerResult">
 import { ref, watchEffect } from 'vue';
 import { useCalculation, mergeResults } from '@/composables/CalculateMaterials';
 import { getTotalActivityAndDays, getPlan, IPlanCards } from '@/composables/planner';
