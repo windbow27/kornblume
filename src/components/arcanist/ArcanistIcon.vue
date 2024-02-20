@@ -12,7 +12,7 @@ const props = defineProps({
 
 <template>
     <div class="tooltip" :data-tip="$t(props.arcanist.Name)">
-        <router-link :to="`/${arcanist.Name}`">
+        <router-link :to="`/arcanist-${arcanist.Id}`">
             <div class="rounded-md overflow-hidden">
                 <div class="avatar">
                     <div class="w-10 rounded" :class="{
