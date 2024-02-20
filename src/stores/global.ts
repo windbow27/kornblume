@@ -49,7 +49,8 @@ export const useGlobalStore = defineStore('global', {
         selectedMaterial: { Material: '', Quantity: 0 },
         selectedStage: {
             id: 0,
-            category: '',
+            name: '',
+            category: 'Story',
             cost: 0,
             count: 0,
             drops: {}

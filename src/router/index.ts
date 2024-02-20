@@ -50,7 +50,7 @@ const router = createRouter({
             name: 'stages',
             component: () => import('@/views/StagesView.vue'),
             meta: {
-                requiredJson: ['stages']
+                requiredJson: ['stages', 'items']
             }
         },
         {

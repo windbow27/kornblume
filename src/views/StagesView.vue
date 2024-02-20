@@ -7,8 +7,8 @@ import StageSelectionIcon from '@/components/stage/StageSelectionIcon.vue';
 import StageDisplay from '@/components/stage/StageDisplay.vue';
 
 const buttons = ['Story', 'Hard', 'Resource', 'Insight'];
-const selectedButton = ref(buttons[0]);
 const selectedStage = ref<IStage>(useGlobalStore().selectedStage);
+const selectedButton = ref(useGlobalStore().selectedStage.category);
 const stageStore = useDataStore().stages;
 const globalStore = useGlobalStore();
 
