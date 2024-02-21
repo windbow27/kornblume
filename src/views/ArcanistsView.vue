@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { ref, watchEffect, computed, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { IArcanist } from '@/types'
 import { useI18n } from 'vue-i18n';
 import { useDataStore } from '@/stores/dataStore'
 import { usePullsRecordStore, IPull } from '@/stores/pullsRecordStore'
-import { sortArcanists } from '@/composables/arcanists';
+import { formatArcanists } from '@/composables/arcanists';
+import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 import ArcanistPortrait from '@/components/arcanist/ArcanistPortrait.vue';
 
 const { locale, t } = useI18n()
 const arcanistStore = useDataStore().arcanists;
-const listArcanists = ref<IArcanist[]>([]);
+const listArcanists = ref<IArcanist[]>(arcanistStore);
 const searchQuery = ref('');
 const pulls = ref<IPull[]>([]);
 const activeRarities = ref<number[]>([]);
@@ -39,7 +40,7 @@ const portraitCounts = computed(() => {
 });
 
 const filteredArcanists = computed(() => {
-    // Filter arcanists based on the searchQuery and the selected rarities
+    // Filter arcanists based on the searchQuery, the selected rarities, and the showUnreleasedArcanists setting
     let filtered = listArcanists.value;
 
     if (locale.value === 'en-US') {
@@ -56,6 +57,9 @@ const filteredArcanists = computed(() => {
         filtered = filtered.filter(arc => activeAfflatus.value.includes(arc.Afflatus));
     }
 
+    // Filter based on the showUnreleasedArcanists setting
+    filtered = formatArcanists(filtered);
+
     return filtered;
 });
 
@@ -65,14 +69,6 @@ onMounted(() => {
     }
 })
 
-watchEffect(() => {
-    listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
-        arcanist.IsReleased
-    )
-
-    sortArcanists(listArcanists.value)
-})
-
 </script>
 
 <template>
@@ -80,30 +76,42 @@ watchEffect(() => {
         <div class="flex pb-4">
             <h2 class="text-2xl text-white font-bold">{{ $t('arcanists') }}</h2>
         </div>
-        <div class="flex flex-wrap p-4 gap-x-4 justify-center items-center">
-            <input v-model="searchQuery" type="text" :placeholder="$t('search-arcanists')"
-                class="input input-sm w-full lg:w-auto bg-gray-800 text-white p-2 rounded-md focus:outline-none">
+        <div class="flex flex-wrap p-4 gap-x-4 justify-between items-center">
+            <!--Search bar and unreleased filter-->
+           <div class="flex flex-wrap gap-x-10 justify-center">
+                <input v-model="searchQuery" type="text" :placeholder="$t('search-arcanists')"
+                    class="input input-sm w-full sm:w-auto bg-gray-800 text-white py-2 px-4 rounded-md focus:outline-none">
+                <div class="form-control">
+                    <label class="cursor-pointer label justify-center space-x-5">
+                        <span class="label-text text-white text-md">{{ $t('show-unreleased-arcanists') }}</span>
+                        <input v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists" type="checkbox"
+                            class="checkbox checkbox-info"/>
+                    </label>
+                </div>
+           </div>
             <!-- Rarity select -->
-            <div class="flex justify-center space-x-2">
-                <button v-for="i in [2, 3, 4, 5, 6]" :key="i"
-                    :class="{ 'border-2 border-info': activeRarities.includes(i), 'border-2 border-transparent': !activeRarities.includes(i) }"
-                    @click="selectedRarities(i)" class="p-2 rounded-md">
-                    <i class="fa-solid fa-star" :class="{
-                        'text-orange-300': i === 6,
-                        'text-yellow-100': i === 5,
-                        'text-purple-400': i === 4,
-                        'text-sky-200': i === 3,
-                        'text-green-200': i === 2
-                    }"></i>
-                </button>
-            </div>
-            <!-- Afflatus select -->
-            <div class="flex justify-center space-x-2">
-                <button v-for="afflatus in ['Beast', 'Mineral', 'Plant', 'Star', 'Intellect', 'Spirit']" :key="afflatus"
-                    :class="{ 'border-2 border-info': activeAfflatus.includes(afflatus), 'border-2 border-transparent': !activeAfflatus.includes(afflatus) }"
-                    @click="selectedAfflatus(afflatus)" class="p-2 rounded-md">
-                    <img class="w-4" :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`" alt="">
-                </button>
+            <div class="flex flex-wrap gap-x-10 justify-center">
+                <div class="flex justify-center space-x-2">
+                    <button v-for="i in [2, 3, 4, 5, 6]" :key="i"
+                        :class="{ 'border-2 border-info': activeRarities.includes(i), 'border-2 border-transparent': !activeRarities.includes(i) }"
+                        @click="selectedRarities(i)" class="p-2 rounded-md">
+                        <i class="fa-solid fa-star" :class="{
+                            'text-orange-300': i === 6,
+                            'text-yellow-100': i === 5,
+                            'text-purple-400': i === 4,
+                            'text-sky-200': i === 3,
+                            'text-green-200': i === 2
+                        }"></i>
+                    </button>
+                </div>
+                <!-- Afflatus select -->
+                <div class="flex justify-center space-x-2">
+                    <button v-for="afflatus in ['Beast', 'Mineral', 'Plant', 'Star', 'Intellect', 'Spirit']" :key="afflatus"
+                        :class="{ 'border-2 border-info': activeAfflatus.includes(afflatus), 'border-2 border-transparent': !activeAfflatus.includes(afflatus) }"
+                        @click="selectedAfflatus(afflatus)" class="p-2 rounded-md">
+                        <img class="w-4" :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`" alt="">
+                    </button>
+                </div>
             </div>
         </div>
         <div class="flex flex-wrap items-center justify-center">

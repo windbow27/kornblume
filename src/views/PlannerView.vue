@@ -8,7 +8,7 @@ import { useWildernessStore } from '@/stores/wildernessStore'
 import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore'
 import { useDataStore } from '@/stores/dataStore'
 import { IArcanist, ISelectedArcanist } from '@/types'
-import { sortArcanists } from '@/composables/arcanists'
+import { formatArcanists } from '@/composables/arcanists'
 
 import PlannerSelector from '@/components/planner/PlannerSelector.vue'
 import PlannerEdit from '@/components/planner/PlannerEdit.vue'
@@ -150,11 +150,9 @@ const handleSaveSettings = (result) => {
 
 watchEffect(() => {
     listArcanists.value = arcanistStore.filter((arcanist: IArcanist) =>
-        !selectedArcanistIds.value.includes(arcanist.Id) &&
-        (settingsStore.settings.showUnreleasedArcanists ? true : arcanist.IsReleased)
+        !selectedArcanistIds.value.includes(arcanist.Id)
     )
-
-    sortArcanists(listArcanists.value);
+    listArcanists.value = formatArcanists(listArcanists.value);
 })
 
 onClickOutside(activityRef, closeActivity)

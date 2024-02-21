@@ -3,7 +3,7 @@ import { computed } from 'vue';
 import { getItemImagePathByMatl } from '@/composables/images';
 import { useDataStore } from '@/stores/dataStore';
 import { formatQuantity } from '@/composables/materials';
-import { sortArcanists } from '@/composables/arcanists';
+import { formatArcanists } from '@/composables/arcanists';
 import MaterialIcon from './MaterialIcon.vue';
 import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import StageIcon from '@/components/stage/StageIcon.vue';
@@ -38,15 +38,14 @@ const formulaItemList = computed(() => {
 
 const arcanistIconList = computed(() => {
     if (props.selectedMaterial.Name === 'Dust') {
-        const arcanists = arcanistStore;
-        sortArcanists(arcanists);
+        const arcanists = formatArcanists(arcanistStore);
         return arcanists;
     }
-    const arcanists = arcanistStore.filter(arcanist => {
+    let arcanists = arcanistStore.filter(arcanist => {
         return arcanist.Insight.some(insight => insight.Material.includes(props.selectedMaterial.Name)) ||
             arcanist.Resonance.some(resonance => resonance.Material.includes(props.selectedMaterial.Name));
     });
-    sortArcanists(arcanists);
+    arcanists = formatArcanists(arcanists);
     return arcanists;
 });
 
