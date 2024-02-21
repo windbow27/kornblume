@@ -12,7 +12,7 @@ const props = defineProps({
 
 <template>
     <div class="px-2">
-        <h2 class=" text-white text-2xl font-bold">Upgrades</h2>
+        <h2 class=" text-white text-2xl font-bold">{{ $t('Upgrades') }}</h2>
         <div class="p-2">
             <p class="text-white"> {{ props.arcanist.InsightEffects.Name }}</p>
             <table>

@@ -51,7 +51,7 @@ onBeforeMount(() => {
                     <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
                         :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']"
                         :disabled="index !== 0">
-                        {{ button }}
+                        {{ $t(button) }}
                     </button>
                 </div>
             </div>

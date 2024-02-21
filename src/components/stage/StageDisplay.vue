@@ -26,7 +26,7 @@ const props = defineProps({
                 'text-purple-400': props.selectedStage.category === 'Hard',
                 'text-indigo-400': props.selectedStage.category === 'Insight',
                 'text-yellow-400': props.selectedStage.category === 'Resource',
-            }"> {{ props.selectedStage.category }} </p>
+            }"> {{ $t(props.selectedStage.category) }} </p>
             <div class="flex items-center">
                 <p class="text-white text-lg font-bold"> {{ props.selectedStage.cost }} </p>
                 <div class="w-9 rounded pb-0.5">

@@ -37,7 +37,11 @@ const formulaItemList = computed(() => {
 });
 
 const arcanistIconList = computed(() => {
-    if (props.selectedMaterial.Name === 'Dust') return arcanistStore;
+    if (props.selectedMaterial.Name === 'Dust') {
+        const arcanists = arcanistStore;
+        sortArcanists(arcanists);
+        return arcanists;
+    }
     const arcanists = arcanistStore.filter(arcanist => {
         return arcanist.Insight.some(insight => insight.Material.includes(props.selectedMaterial.Name)) ||
             arcanist.Resonance.some(resonance => resonance.Material.includes(props.selectedMaterial.Name));

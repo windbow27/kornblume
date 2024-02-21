@@ -11,7 +11,7 @@
 
 <template>
     <div class="px-2">
-        <h2 class=" text-white text-2xl font-bold">Profile</h2>
+        <!-- <h2 class=" text-white text-2xl font-bold">{{ $t('Profile') }}</h2> -->
     </div>
 </template>
 

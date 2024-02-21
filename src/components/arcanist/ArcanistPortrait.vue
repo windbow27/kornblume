@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getArcanistI0ImagePath, getArcanistFramePath, getArcanistAfflatusPath } from '@/composables/images';
+import { getArcanistI0ImagePath, getArcanistFramePath, getArcanistAfflatusIconPath } from '@/composables/images';
 import { IArcanist } from '@/types';
 
 const props = defineProps({
@@ -32,7 +32,7 @@ const props = defineProps({
                     </template>
                 </i18n-t>
             </span>
-            <img class="absolute top-0 left-1 w-4 opacity-90" :src="getArcanistAfflatusPath(props.arcanist.Afflatus)"
+            <img class="absolute top-0 left-0 w-4 opacity-90" :src="getArcanistAfflatusIconPath(props.arcanist.Afflatus)"
                 alt="">
             <img class="absolute bottom-0 w-16 sm:w-20 rounded-md" :src="getArcanistFramePath(props.arcanist.Rarity)"
                 alt="">

@@ -61,6 +61,11 @@ export function getArcanistAfflatusPath (afflatus: string) {
     return `images/arcanists/misc/logo-${afflatus}.webp`;
 }
 
+export function getArcanistAfflatusIconPath (afflatus: string) {
+    afflatus = afflatus.toLowerCase();
+    return `images/arcanists/misc/${afflatus}.webp`;
+}
+
 export function getArcanistDmgTypePath (dmgType: string) {
     return `images/arcanists/misc/dmg-type-${dmgType}.webp`;
 }

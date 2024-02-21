@@ -17,7 +17,7 @@ const selectedAsNumber = computed(() => Number(selected.value));
 
 <template>
     <div class="px-2">
-        <h2 class=" text-white text-2xl font-bold">Skills</h2>
+        <h2 class=" text-white text-2xl font-bold">{{ $t('Skills') }}</h2>
 
         <!--Slider-->
         <div class="px-8 lg:px-16 py-2">

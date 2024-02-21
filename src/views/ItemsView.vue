@@ -55,11 +55,11 @@ onMounted(() => {
             <!--Item Selection Card-->
             <div class="card custom-border">
                 <div class="flex flex-wrap justify-center sm:justify-between pl-2 gap-y-2">
-                    <div class="flex space-x-2 gap-y-2 py-1.5">
+                    <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
                         <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
                             :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']"
                             :disabled="index !== 0">
-                            {{ button }}
+                            {{ $t(button) }}
                         </button>
                     </div>
                     <!-- Filters -->
