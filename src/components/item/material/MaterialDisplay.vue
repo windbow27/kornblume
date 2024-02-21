@@ -4,7 +4,7 @@ import { getItemImagePathByMatl } from '@/composables/images';
 import { useDataStore } from '@/stores/dataStore';
 import { formatQuantity } from '@/composables/materials';
 import MaterialIcon from './MaterialIcon.vue';
-import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
+import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import StageIcon from '@/components/stage/StageIcon.vue';
 
 const props = defineProps({
@@ -104,7 +104,7 @@ const stageList = computed(() => {
 
     <!-- Drop Stages-->
     <div v-if="stageList.length > 0" class="custom-box custom-border">
-        <h2 class="text-white">{{ $t('obtained-from-the-following-stages') }}</h2>
+        <h2 class="text-white pb-2">{{ $t('obtained-from-the-following-stages') }}</h2>
         <div class="custom-item-list max-h-[calc(33vh)]">
             <StageIcon v-for="stage in stageList" :key="stage.name" :selectedStage="stage.stage" :stageName="stage.name"
                 :dropRate="stage.dropRate" class="px-2 py-1" />
@@ -113,10 +113,9 @@ const stageList = computed(() => {
 
     <!-- Used by -->
     <div v-if="arcanistIconList.length > 0" class="custom-box custom-border">
-        <h2 class="text-white">{{ $t('used-by-the-following-arcanists') }}</h2>
-        <div class="custom-item-list max-h-[calc(33vh)]">
-            <ArcanistIcon v-for="arcanist in arcanistIconList" :key="arcanist.Name" :arcanist="arcanist"
-                class="px-2 py-1" />
+        <h2 class="text-white pb-2">{{ $t('used-by-the-following-arcanists') }}</h2>
+        <div class="custom-item-list gap-x-2 gap-y-1 max-h-[calc(33vh)]">
+            <ArcanistIconDisplay v-for="arcanist in arcanistIconList" :key="arcanist.Name" :arcanist="arcanist"/>
         </div>
     </div>
 </template>

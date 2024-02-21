@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import { useDataStore } from '@/stores/dataStore';
 import { IArcanist } from '@/types'
 import { getArcanistI2ImagePath, getArcanistAfflatusPath, getArcanistDmgTypePath } from '@/composables/images';
-import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
+import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
 import Upgrades from '@/components/arcanist/info/Upgrades.vue';
 import Skills from '@/components/arcanist/info/Skills.vue';
@@ -35,7 +35,7 @@ onBeforeMount(() => {
             <!--Name and Selectors-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <div class="flex flex-wrap items-center space-x-2">
-                    <ArcanistIcon :arcanist="arcanist" />
+                    <ArcanistIconDisplay :arcanist="arcanist" />
                     <h2 class="text-white text-xl lg:text-3xl font-bold"> {{ arcanist?.Name }} </h2>
                     <p class="pt-1" :class="{
                         'text-orange-300': arcanist?.Rarity === 6,
@@ -58,7 +58,7 @@ onBeforeMount(() => {
             <!--Info Cards-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <Stats :arcanist="arcanist ?? {}" v-if="selectedButton === 'Stats'" />
-                <Upgrades :arcanist="arcanist ?? {}" v-else-if="selectedButton === 'Upgrades'" />
+                <Upgrades :arcanist="arcanist ?? {}" v-if="selectedButton === 'Upgrades'" />
                 <Skills :arcanist="arcanist ?? {}" v-else-if="selectedButton === 'Skills'" />
                 <Builds :arcanist="arcanist ?? {}" v-else-if="selectedButton === 'Builds'" />
             </div>
