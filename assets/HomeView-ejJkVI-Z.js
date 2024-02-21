@@ -1,4 +1,4 @@
-import{o as R}from"./index-uLJq3Xw8.js";import{d as x,o as a,c as n,a as e,t,F as g,r as w,u as F,b as O,e as U,f as b,g as m,w as v,h as W,i as u,j,k as M,l as y,m as z}from"./index-IaBwOWBg.js";const k=[{date:"21/02/2024",description:`♪ It took me ♪ 10 days ♪ to get this feature to be done ♪ 
+import{o as R}from"./index-VwVixsVr.js";import{d as x,o as a,c as n,a as e,t,F as g,r as w,u as F,b as O,e as U,f as b,g as m,w as v,h as W,i as u,j,k as M,l as y,m as z}from"./index-wt9bXwNZ.js";const k=[{date:"21/02/2024",description:`♪ It took me ♪ 10 days ♪ to get this feature to be done ♪ 
  ♪ I realize ♪ it broke down ♪ in 2 seconds ♪ 
  ♪ THAT'S ABOUT IT ♪`},{date:"20/02/2024",description:`• Added Arcanists page, work in progress.
  • Added Items page. See the information, its droprate and usages here. 
