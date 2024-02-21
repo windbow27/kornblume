@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import Skill from '@/components/arcanist/info/img/Skill.vue';
-import Ultimate from '@/components/arcanist/info/img/Ultimate.vue';
+import Skill from '@/components/arcanist/img/Skill.vue';
+import Ultimate from '@/components/arcanist/img/Ultimate.vue';
 
 const props = defineProps({
     arcanist: {

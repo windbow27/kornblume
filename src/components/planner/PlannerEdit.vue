@@ -2,7 +2,7 @@
 import { ref, watch, computed } from 'vue';
 import { useDataStore } from '@/stores/dataStore';
 import { levelUpResources, CrystalCasketMaterials } from '@/constants';
-import { useCalculation } from '@/composables/CalculateMaterials';
+import { useCalculation } from '@/composables/calculations';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { IArcanist, ISelectedArcanist } from '@/types';

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Text from '@/components/arcanist/info/img/Text.vue';
+import Text from '@/components/arcanist/img/Text.vue';
 
 const props = defineProps({
     arcanist: {

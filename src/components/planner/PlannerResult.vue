@@ -1,6 +1,6 @@
 <script setup lang="ts" name="PlannerResult">
 import { ref, watchEffect } from 'vue';
-import { useCalculation, mergeResults } from '@/composables/CalculateMaterials';
+import { useCalculation, mergeResults } from '@/composables/calculations';
 import { getTotalActivityAndDays, getPlan, IPlanCards } from '@/composables/planner';
 import { useGlobalStore } from '@/stores/global';
 import { usePlannerStore } from '@/stores/plannerStore';

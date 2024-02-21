@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useCalculation } from '@/composables/CalculateMaterials';
+import { useCalculation } from '@/composables/calculations';
 import { CrystalCasketMaterials } from '@/constants';
 import { ISelectedArcanist } from '@/types';
 import ItemGoalIcon from '@/components/item/ItemGoalIcon.vue';

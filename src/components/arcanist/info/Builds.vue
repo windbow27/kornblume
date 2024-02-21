@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useDataStore } from '@/stores/dataStore';
-import Psychube from '@/components/arcanist/info/img/Psychube.vue';
-import Resonance from '@/components/arcanist/info/img/Resonance.vue';
+import Psychube from '@/components/arcanist/img/Psychube.vue';
+import Resonance from '@/components/arcanist/img/Resonance.vue';
 
 const psychubes = useDataStore().psychubes;
 

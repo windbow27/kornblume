@@ -1,6 +1,6 @@
 <script setup lang="ts" name="PlannerSelector">
 import { ref, computed } from 'vue';
-import { useCalculation, mergeResults, formatResultsWithCasket } from '@/composables/CalculateMaterials';
+import { useCalculation, mergeResults, formatResultsWithCasket } from '@/composables/calculations';
 import { ISelectedArcanist } from '@/types';
 import ArcanistIconToggle from '@/components/arcanist/ArcanistIconToggle.vue';
 import ItemGoalIcon from '@/components/item/ItemGoalIcon.vue';

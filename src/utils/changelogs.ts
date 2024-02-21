@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '21/02/2024', description: '♪ It took me ♪ 10 days ♪ to get this feature to be done ♪ \n ♪ I realize ♪ it broke down ♪ in 2 seconds ♪ \n ♪ THAT\'S ABOUT IT ♪' },
     { date: '20/02/2024', description: '• Added Arcanists page, work in progress.\n • Added Items page. See the information, its droprate and usages here. \n • Added Stages page to look up stages material drops.' },
     { date: '17/02/2024', description: '• Fixed 50/50 Win Rate displayed incorrectly when last pull is a Lose Rate Up.' },
     { date: '13/02/2024', description: '• We have switched to using data provided by shiroinegai. Thank you for your hard work.' },

@@ -14,7 +14,6 @@ const props = defineProps({
 </script>
 
 <template>
-    {{ console.log('this is ArcanistIconDisplay') }}
     <div class="tooltip" :data-tip="$t(props.arcanist.Name)">
         <div class="rounded-md overflow-hidden">
             <div class="avatar">

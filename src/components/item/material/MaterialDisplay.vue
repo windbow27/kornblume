@@ -3,6 +3,7 @@ import { computed } from 'vue';
 import { getItemImagePathByMatl } from '@/composables/images';
 import { useDataStore } from '@/stores/dataStore';
 import { formatQuantity } from '@/composables/materials';
+import { sortArcanists } from '@/composables/arcanists';
 import MaterialIcon from './MaterialIcon.vue';
 import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import StageIcon from '@/components/stage/StageIcon.vue';
@@ -41,6 +42,7 @@ const arcanistIconList = computed(() => {
         return arcanist.Insight.some(insight => insight.Material.includes(props.selectedMaterial.Name)) ||
             arcanist.Resonance.some(resonance => resonance.Material.includes(props.selectedMaterial.Name));
     });
+    sortArcanists(arcanists);
     return arcanists;
 });
 
@@ -95,7 +97,7 @@ const stageList = computed(() => {
     <!-- Crafting -->
     <div v-if="formulaItemList.length > 0" class="custom-box custom-border">
         <h2 class="text-white">{{ $t('wishing-spring-formula') }}</h2>
-        <div class="flex flex-wrap gap-x-2 gap-y-1 items-center justify-center">
+        <div class="flex flex-wrap gap-x-2 gap-y-1 items-center justify-center pt-4">
             <div v-for="material in formulaItemList" :key="material.Material" class="flex flex-wrap gap-x-2 gap-y-2">
                 <MaterialIcon :material="material" />
             </div>
@@ -104,8 +106,8 @@ const stageList = computed(() => {
 
     <!-- Drop Stages-->
     <div v-if="stageList.length > 0" class="custom-box custom-border">
-        <h2 class="text-white pb-2">{{ $t('obtained-from-the-following-stages') }}</h2>
-        <div class="custom-item-list max-h-[calc(33vh)]">
+        <h2 class="text-white">{{ $t('obtained-from-the-following-stages') }}</h2>
+        <div class="custom-item-list max-h-[calc(33vh)] pt-8">
             <StageIcon v-for="stage in stageList" :key="stage.name" :selectedStage="stage.stage" :stageName="stage.name"
                 :dropRate="stage.dropRate" class="px-2 py-1" />
         </div>
@@ -113,9 +115,9 @@ const stageList = computed(() => {
 
     <!-- Used by -->
     <div v-if="arcanistIconList.length > 0" class="custom-box custom-border">
-        <h2 class="text-white pb-2">{{ $t('used-by-the-following-arcanists') }}</h2>
-        <div class="custom-item-list gap-x-2 gap-y-1 max-h-[calc(33vh)]">
-            <ArcanistIconDisplay v-for="arcanist in arcanistIconList" :key="arcanist.Name" :arcanist="arcanist"/>
+        <h2 class="text-white">{{ $t('used-by-the-following-arcanists') }}</h2>
+        <div class="custom-item-list gap-x-2 gap-y-1 max-h-[calc(33vh)] pt-8">
+            <ArcanistIconDisplay v-for="arcanist in arcanistIconList" :key="arcanist.Name" :arcanist="arcanist" />
         </div>
     </div>
 </template>

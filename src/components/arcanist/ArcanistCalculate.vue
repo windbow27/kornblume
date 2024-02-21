@@ -1,6 +1,6 @@
 <script setup lang="ts" name="ArcanistCalculate">
 import { computed } from 'vue';
-import { useCalculation } from '@/composables/CalculateMaterials';
+import { useCalculation } from '@/composables/calculations';
 import { ISelectedArcanist } from '@/types';
 import ItemList from '@/components/item/ItemList.vue'
 
