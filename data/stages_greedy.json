@@ -3,13 +3,13 @@
     "id": 0,
     "cost": 16,
     "drops": {
-      "Holy Silver": 0.3465909091,
-      "Spell of Fortune": 0.06590909091,
-      "Rough Silver Ingot": 0.05,
-      "Esoteric Bones": 0.03977272727,
-      "Milled Magnesia": 0.02386363636,
-      "Liquefied Terror": 0.02840909091,
-      "Silver Ore": 1.718181818
+      "Holy Silver": 0.35,
+      "Spell of Fortune": 0.065,
+      "Rough Silver Ingot": 0.051,
+      "Esoteric Bones": 0.042,
+      "Milled Magnesia": 0.024,
+      "Liquefied Terror": 0.03,
+      "Silver Ore": 1.715
     }
   },
   "2-6H": {
@@ -29,66 +29,66 @@
     "id": 2,
     "cost": 18,
     "drops": {
-      "Bifurcated Skeleton": 0.3387755102,
-      "Liquefied Terror": 0.2091836735,
-      "Shattered Bones": 0.662244898,
-      "Trembling Tooth": 0.5979591837
+      "Bifurcated Skeleton": 0.338,
+      "Liquefied Terror": 0.208,
+      "Shattered Bones": 0.663,
+      "Trembling Tooth": 0.603
     }
   },
   "3-8H": {
     "id": 3,
     "cost": 18,
     "drops": {
-      "Holy Silver": 0.3537735849,
-      "Esoteric Bones": 0.2641509434,
-      "Silver Ore": 0.6477987421,
-      "Shattered Bones": 1.224842767
+      "Holy Silver": 0.354,
+      "Esoteric Bones": 0.274,
+      "Silver Ore": 0.647,
+      "Shattered Bones": 1.225
     }
   },
   "3-9H": {
     "id": 4,
     "cost": 18,
     "drops": {
-      "Prophetic Bird": 0.4611650485,
-      "Spell of Fortune": 0.05582524272,
-      "Rough Silver Ingot": 0.5861650485,
-      "Esoteric Bones": 0.03640776699,
-      "Milled Magnesia": 0.02912621359,
-      "Liquefied Terror": 0.02548543689,
-      "Spell of Banishing": 0.5388349515
+      "Prophetic Bird": 0.453,
+      "Spell of Fortune": 0.058,
+      "Rough Silver Ingot": 0.584,
+      "Esoteric Bones": 0.034,
+      "Milled Magnesia": 0.026,
+      "Liquefied Terror": 0.026,
+      "Spell of Banishing": 0.547
     }
   },
   "3-11H": {
     "id": 5,
     "cost": 18,
     "drops": {
-      "Clawed Pendulum": 0.3021276596,
-      "Milled Magnesia": 0.1085106383,
-      "Spell of Banishing": 0.6957446809,
-      "Magnesia Crystal": 0.3755319149
+      "Clawed Pendulum": 0.303,
+      "Milled Magnesia": 0.114,
+      "Spell of Banishing": 0.695,
+      "Magnesia Crystal": 0.377
     }
   },
   "3-13H": {
     "id": 6,
     "cost": 18,
     "drops": {
-      "Murmur of Insanity": 0.01470588235,
-      "Salted Mandrake": 0.3392857143,
-      "Milled Magnesia": 0.106092437,
-      "Magnesia Crystal": 0.7027310924
+      "Murmur of Insanity": 0.017,
+      "Salted Mandrake": 0.339,
+      "Milled Magnesia": 0.107,
+      "Magnesia Crystal": 0.703
     }
   },
   "4-10H": {
     "id": 7,
     "cost": 18,
     "drops": {
-      "Biting Box": 0.281496063,
-      "Spell of Fortune": 0.0531496063,
-      "Rough Silver Ingot": 0.5511811024,
-      "Esoteric Bones": 0.03937007874,
-      "Milled Magnesia": 0.04724409449,
-      "Liquefied Terror": 0.01968503937,
-      "Silver Ore": 0.718503937
+      "Biting Box": 0.277,
+      "Spell of Fortune": 0.051,
+      "Rough Silver Ingot": 0.558,
+      "Esoteric Bones": 0.043,
+      "Milled Magnesia": 0.039,
+      "Liquefied Terror": 0.018,
+      "Silver Ore": 0.723
     }
   },
   "4-11H": {
