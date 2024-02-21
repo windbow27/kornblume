@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, watchEffect } from 'vue';
+import { ref, watchEffect, computed } from 'vue';
 import { useDataStore } from '@/stores/dataStore';
 import { IStage } from '@/types';
 import { useGlobalStore } from '@/stores/global';

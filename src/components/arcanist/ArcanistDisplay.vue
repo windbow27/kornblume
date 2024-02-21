@@ -12,12 +12,12 @@ import Builds from '@/components/arcanist/info/Builds.vue';
 
 const route = useRoute();
 const arcanistStore = useDataStore().arcanists;
-const arcanist = ref<IArcanist>();
+const arcanist = ref<IArcanist>(arcanistStore[0]);
 const buttons = ['Stats', 'Upgrades', 'Skills'];
 const selectedButton = ref(buttons[0]);
 
 onBeforeMount(() => {
-    arcanist.value = arcanistStore.find(arc => arc.Id === Number(route.params.id)) ?? arcanistStore[0] as IArcanist;
+    arcanist.value = arcanistStore.find(arc => arc.Id === Number(route.params.id)) || arcanistStore[0];
 });
 
 </script>
@@ -26,8 +26,8 @@ onBeforeMount(() => {
     <div class="sm:pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center">
         <!--I2 Portrait-->
         <div class="w-full md:w-[calc(45%)] relative p-4">
-            <img class="h-[80vh] object-cover object-center text-2xl text-white font-bold" :src="getArcanistI2ImagePath(arcanist?.Id.toString() ?? '')"
-                alt="Work in progress">
+            <img class="h-[80vh] object-cover object-center text-2xl text-white font-bold"
+                :src="getArcanistI2ImagePath(arcanist?.Id.toString() ?? '')" alt="Work in progress">
         </div>
 
         <!--Infomation-->
@@ -35,7 +35,7 @@ onBeforeMount(() => {
             <!--Name and Selectors-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <div class="flex flex-wrap items-center space-x-2">
-                    <ArcanistIcon :arcanist="arcanist ?? {}" />
+                    <ArcanistIcon :arcanist="arcanist" />
                     <h2 class="text-white text-xl lg:text-3xl font-bold"> {{ arcanist?.Name }} </h2>
                     <p class="pt-1" :class="{
                         'text-orange-300': arcanist?.Rarity === 6,

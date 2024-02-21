@@ -60,15 +60,15 @@ const router = createRouter({
             meta: {
                 requiredJson: []
             }
-        },
-        {
-            path: '/arcanist-:id',
-            name: 'arcanist',
-            component: () => import('../components/arcanist/ArcanistDisplay.vue'),
-            meta: {
-                requiredJson: ['arcanists', 'items']
-            }
         }
+        // {
+        //     path: '/arcanist-:id',
+        //     name: 'arcanist',
+        //     component: () => import('@/components/arcanist/ArcanistDisplay.vue'),
+        //     meta: {
+        //         requiredJson: ['arcanists', 'items']
+        //     }
+        // }
     ]
 })
 

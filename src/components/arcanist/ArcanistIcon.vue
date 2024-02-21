@@ -1,9 +1,10 @@
-<script setup lang="ts" name="ArcanistIcon">
+<script setup lang="ts">
 import { getArcanistIconImagePath } from '@/composables/images';
+import { IArcanist } from '@/types';
 
 const props = defineProps({
     arcanist: {
-        type: Object,
+        type: Object as () => IArcanist,
         required: true
     }
 });

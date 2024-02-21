@@ -115,7 +115,8 @@ const stageList = computed(() => {
     <div v-if="arcanistIconList.length > 0" class="custom-box custom-border">
         <h2 class="text-white">{{ $t('used-by-the-following-arcanists') }}</h2>
         <div class="custom-item-list max-h-[calc(33vh)]">
-            <ArcanistIcon v-for="arcanist in arcanistIconList" :key="arcanist.Name" :arcanist="arcanist" class="px-2 py-1"/>
+            <ArcanistIcon v-for="arcanist in arcanistIconList" :key="arcanist.Name" :arcanist="arcanist"
+                class="px-2 py-1" />
         </div>
     </div>
 </template>

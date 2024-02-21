@@ -1,6 +1,5 @@
-<script setup lang="ts" name="ItemIcon">
-import { computed } from 'vue';
-import { normalizeDisplayMaterial } from '../../composables/materials';
+<script setup lang="ts">
+import { normalizeDisplayMaterial } from '@/composables/materials';
 import { IMaterialUnit } from '@/types';
 
 const props = defineProps({
@@ -10,20 +9,19 @@ const props = defineProps({
     }
 });
 
-const normalizedMaterial = computed(() => {
-    const result = normalizeDisplayMaterial(props.material);
-    return result;
-});
+const getNormalizedMaterial = () => {
+    return normalizeDisplayMaterial(props.material);
+};
 
 </script>
 
 <template>
-    <div class="tooltip" :data-tip="$t(normalizedMaterial.material)">
+    <div class="tooltip" :data-tip="$t(getNormalizedMaterial().material)">
         <div class="relative inline-block">
-            <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
-            <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 avatar" />
+            <img :src="getNormalizedMaterial().borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
+            <img :src="getNormalizedMaterial().itemImagePath" alt="Material Image" class="w-20 h-20 avatar" />
             <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs">
-                {{ normalizedMaterial.quantity }}
+                {{ getNormalizedMaterial().quantity }}
             </div>
         </div>
     </div>

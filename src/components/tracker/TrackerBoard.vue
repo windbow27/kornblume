@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import { useDataStore } from '@/stores/dataStore';
 import { bannerList, bannerRateUp } from '@/utils/bannerData'
 import { useI18n } from 'vue-i18n';
+import { IArcanist } from '@/types';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
 import TrackerArcanistIcon from './TrackerArcanistIcon.vue';
@@ -290,7 +291,7 @@ defineExpose({
                     <!-- Arcanist -->
                     <td class="flex items-center px-4 gap-x-3 whitespace-nowrap">
                         <ArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)"
-                            :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as Record<string, any>" />
+                            :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist" />
                         <SpecialIcon v-else :name="pull.ArcanistName" />
                         {{ $t(pull.ArcanistName) }}
                         <span v-if="indicators[pull.PullNumber] === 'L'" class="badge-indicator ">
