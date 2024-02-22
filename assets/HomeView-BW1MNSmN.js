@@ -1,6 +1,7 @@
-import{o as U}from"./index-4-2S9R9o.js";import{d as x,o as a,c as n,a as e,t,F as g,r as y,u as F,b as O,e as R,f as b,g as m,w as v,h as W,i as u,j,k as M,l as w,m as z}from"./index-qPkCHrVS.js";const k=[{date:"22/02/2024",description:`• UI improvements. 
+import{o as U}from"./index-sYslEdmF.js";import{d as x,o as a,c as n,a as e,t,F as g,r as y,u as F,b as O,e as R,f as b,g as m,w as v,h as W,i as u,j,k as M,l as w,m as z}from"./index-2TtW3HdY.js";const k=[{date:"22/02/2024",description:`• UI improvements. 
  • Updated French translations by sillight. 
  • Updated Spanish translations by mgeshagrath. 
+ • Updated Indonesia translations by ArieKee. 
  • Updated Viet translations.`},{date:"21/02/2024",description:`♪ It took me ♪ 10 days ♪ to get this feature to be done ♪ 
  ♪ I realized ♪ it broke down ♪ in 2 seconds ♪ 
  ♪ THAT'S ABOUT IT ♪`},{date:"20/02/2024",description:`• Added Arcanists page, work in progress.
