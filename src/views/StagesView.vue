@@ -34,42 +34,47 @@ watchEffect(() => {
 </script>
 
 <template>
-    <div class="wrapper">
-        <div class="container">
+    <div class="responsive-spacer ">
+        <div class="flex pb-4">
+            <h2 class="text-2xl text-white font-bold">{{ $t('stages') }}</h2>
+        </div>
+        <div class="wrapper">
+            <div class="container">
 
-            <!--Item Selection Card-->
-            <div class="card custom-border">
-                <div class="flex flex-wrap justify-center gap-y-2">
-                    <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
-                        <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
-                            :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']">
-                            {{ $t(button) }}
-                        </button>
+                <!--Item Selection Card-->
+                <div class="card custom-border">
+                    <div class="flex flex-wrap justify-center gap-y-2">
+                        <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
+                            <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
+                                :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']">
+                                {{ $t(button) }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)] ">
+                    <div class="custom-item-list">
+                        <div class="flex flex-wrap justify-center gap-x-5 gap-y-2">
+                            <StageSelectionIcon v-for="stage in filteredStages" :key="stage.name" :stage="stage"
+                                :stageName="stage.name" @click="selectStage(stage)"
+                                :class="selectedStage?.name === stage.name ? 'custom-border-white' : 'custom-border-transparent'" />
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)] ">
-                <div class="custom-item-list">
-                    <div class="flex flex-wrap justify-center gap-x-5 gap-y-2">
-                        <StageSelectionIcon v-for="stage in filteredStages" :key="stage.name" :stage="stage"
-                            :stageName="stage.name" @click="selectStage(stage)"
-                            :class="selectedStage?.name === stage.name ? 'custom-border-white' : 'custom-border-transparent'" />
-                    </div>
-                </div>
+
+            <!--Item Display Card-->
+            <div class="container">
+                <StageDisplay :selectedStage="selectedStage" :stageName="selectedStage.name" />
             </div>
-        </div>
 
-        <!--Item Display Card-->
-        <div class="container">
-            <StageDisplay :selectedStage="selectedStage" :stageName="selectedStage.name" />
         </div>
-
     </div>
 </template>
 
 <style scoped>
 .container {
-    @apply w-full lg:w-1/2 flex flex-col p-4 gap-y-4 max-w-2xl;
+    @apply w-full lg:w-1/2 flex flex-col p-4 gap-y-4 2xl:px-8 max-w-3xl;
 }
 
 .card {

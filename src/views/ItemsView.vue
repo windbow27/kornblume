@@ -49,37 +49,43 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="wrapper">
-        <div class="container">
+    <div class="responsive-spacer ">
+        <div class="flex pb-4">
+            <h2 class="text-2xl text-white font-bold">{{ $t('items') }}</h2>
+        </div>
+        <div class="wrapper">
+            <div class="container">
 
-            <!--Item Selection Card-->
-            <div class="card custom-border">
-                <div class="flex flex-wrap justify-center sm:justify-between pl-2 gap-y-2">
-                    <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
-                        <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
-                            :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']"
-                            :disabled="index !== 0">
-                            {{ $t(button) }}
-                        </button>
+                <!--Item Selection Card-->
+                <div class="card custom-border">
+                    <div class="flex flex-wrap justify-center sm:justify-between pl-2 gap-y-2">
+                        <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
+                            <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
+                                :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']"
+                                :disabled="index !== 0">
+                                {{ $t(button) }}
+                            </button>
+                        </div>
+                        <!-- Filters -->
+                        <MaterialFilter :listItems="listItems" :categories="categories"
+                            @filtered="handleFilteredMaterials" />
                     </div>
-                    <!-- Filters -->
-                    <MaterialFilter :listItems="listItems" :categories="categories" @filtered="handleFilteredMaterials" />
+                </div>
+                <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
+                    <div v-if="selectedButton === 'Materials'" class="custom-item-list">
+                        <MaterialSelectionIcon v-for="material in filteredItems" :key="material.Id" :material="material"
+                            @click="selectMaterial(material)"
+                            :class="selectedMaterial?.Name === material.Name ? 'custom-border-white' : 'custom-border-transparent'" />
+                    </div>
                 </div>
             </div>
-            <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
-                <div v-if="selectedButton === 'Materials'" class="custom-item-list">
-                    <MaterialSelectionIcon v-for="material in filteredItems" :key="material.Id" :material="material"
-                        @click="selectMaterial(material)"
-                        :class="selectedMaterial?.Name === material.Name ? 'custom-border-white' : 'custom-border-transparent'" />
-                </div>
+
+            <!--Item Display Card-->
+            <div class="container">
+                <MaterialDisplay :selectedMaterial="selectedMaterial || {}" :categories="categories" />
             </div>
-        </div>
 
-        <!--Item Display Card-->
-        <div class="container">
-            <MaterialDisplay :selectedMaterial="selectedMaterial || {}" :categories="categories" />
         </div>
-
     </div>
 </template>
 
@@ -89,7 +95,7 @@ button:disabled {
 }
 
 .container {
-    @apply w-full lg:w-1/2 flex flex-col p-4 gap-y-4 max-w-2xl;
+    @apply w-full lg:w-1/2 flex flex-col p-4 gap-y-4 2xl:px-8 max-w-3xl;
 }
 
 .card {

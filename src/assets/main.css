@@ -8,7 +8,7 @@
 }
 
 .wrapper {
-    @apply pt-4 sm:px-8 md:px-16 flex flex-wrap justify-center
+    @apply sm:px-8 md:px-16 flex flex-wrap justify-center
 }
 
 /*Custom common*/
