@@ -129,6 +129,18 @@ const levelUpArcanist = () => {
     }
 };
 
+const quickGoal = () => {
+    if (selectedArcanist.value.Rarity >= 5) {
+        selectedGoalInsight.value = 3;
+        selectedGoalLevel.value = 30;
+        selectedGoalResonance.value = 10;
+        return;
+    }
+    selectedGoalInsight.value = 2;
+    selectedGoalLevel.value = 50;
+    selectedGoalResonance.value = 10;
+};
+
 const closeOverlay = () => {
     emit('closeOverlay');
 };
@@ -342,9 +354,14 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <!-- Save -->
             <div class="flex justify-center space-x-4 pt-2">
-                <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
-                    onclick="level_up_container.showModal()" class="btn btn-info">{{ $t('level-up') }}</button>
+                <div class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal" class="btn btn-info"><i
+                            class="fa-solid fa-angles-right"></i></button></div>
                 <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
+                <div class="tooltip" :data-tip="$t('level-up')">
+                    <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
+                        onclick="level_up_container.showModal()" class="btn btn-info"><i
+                            class="fa-solid fa-angles-up"></i></button>
+                </div>
             </div>
             <dialog id="level_up_container" class="modal">
                 <div
@@ -353,7 +370,8 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                         <button class="btn btn-sm btn-circle btn-ghost text-white absolute right-2 top-2 ">✕</button>
                     </form>
                     <div class="flex items-center justify-center flex-col">
-                        <p class="pt-4 text-white text-center">{{
+                        <p class="text-white text-xl font-bold"> {{ $t('level-up') }}</p>
+                        <p class=" text-white text-center">{{
                             $t('leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed')
                         }}</p>
                     </div>

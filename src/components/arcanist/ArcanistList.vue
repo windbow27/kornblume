@@ -3,7 +3,7 @@ import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 import { IArcanist } from '@/types';
-import ArcanistIcon from './ArcanistIcon.vue';
+import ArcanistIconDisplay from './ArcanistIconDisplay.vue';
 
 const props = defineProps({
     arcanists: {
@@ -62,7 +62,7 @@ const filteredArcanists = computed(() => {
       <div class="p-2 overflow-y-auto h-5/6">
         <div v-for="arc in filteredArcanists" :key="arc.Id" @click="selectArcanist(arc)"
           class="p-4 flex items-center cursor-pointer hover:bg-gray-700 transition-colors">
-          <ArcanistIcon :arcanist="arc" />
+          <ArcanistIconDisplay :arcanist="arc" />
           <span class="text-white ml-8">{{ $t(arc.Name) }} </span>
         </div>
       </div>
