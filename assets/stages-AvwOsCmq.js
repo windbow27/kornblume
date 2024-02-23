@@ -1,1 +1,0 @@
-import{f as e}from"./images-WDhu9W8v.js";function s(t,a){return{stage:a,stageImagePath:e(t.id)}}function o(t){return t.drops?Object.entries(t.drops).map(([a,r])=>({Material:a,Quantity:r})):[]}export{o as a,s as n};
