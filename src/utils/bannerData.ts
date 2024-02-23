@@ -38,7 +38,7 @@ export const bannerRateUp = [
     'Kaalaa Baunaa',
     'Shamane',
     'Medicine Pocket',
-    'Ms. New Babel'
+    'Ms. NewBabel'
 ];
 
 export const specialArcanists: string[] = [

@@ -1,12 +1,13 @@
 export const changelogs = [
     // Add more from top
+    { date: '22/02/2024', description: '• UI improvements. \n • Updated Korean translations by CaptinRegulus.' },
     { date: '22/02/2024', description: '• UI improvements. \n • Updated French translations by sillight. \n • Updated Spanish translations by mgeshagrath. \n • Updated Indonesia translations by ArieKee. \n • Updated Viet translations.' },
     { date: '21/02/2024', description: '♪ It took me ♪ 10 days ♪ to get this feature to be done ♪ \n ♪ I realized ♪ it broke down ♪ in 2 seconds ♪ \n ♪ THAT\'S ABOUT IT ♪' },
     { date: '20/02/2024', description: '• Added Arcanists page, work in progress.\n • Added Items page. See the information, its droprate and usages here. \n • Added Stages page to look up stages material drops.' },
     { date: '17/02/2024', description: '• Fixed 50/50 Win Rate displayed incorrectly when last pull is a Lose Rate Up.' },
     { date: '13/02/2024', description: '• We have switched to using data provided by shiroinegai. Thank you for your hard work.' },
     { date: '12/02/2024', description: '• Added Indonesia translation by ArieKee.' },
-    { date: '11/02/2024', description: '• Added Ms. New Babel banner, good luck rolling her ;) \n • Happy Lunar new year.' },
+    { date: '11/02/2024', description: '• Added Ms. NewBabel banner, good luck rolling her ;) \n • Happy Lunar new year.' },
     { date: '08/02/2024', description: '• Added 1.3 pt2 shop, Shamane banner. Fixed jukebox rewards.' },
     { date: '02/02/2024', description: '• Added a link to timekeeper.top, also try them.' },
     { date: '30/01/2024', description: '• Added Substitute methods to Tracker' },
