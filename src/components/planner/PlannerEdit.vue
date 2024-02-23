@@ -360,7 +360,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <div class="tooltip" :data-tip="$t('level-up')">
                     <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
                         onclick="level_up_container.showModal()" class="btn btn-info"><i
-                            class="fa-solid fa-angles-up"></i></button>
+                            class="fa-solid fa-arrow-up-from-bracket"></i></button>
                 </div>
             </div>
             <dialog id="level_up_container" class="modal">

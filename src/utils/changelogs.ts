@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '24/02/2024', description: '• Added 37 and 6 as released. \n • Added Getian and Isolde as unreleased. \n • Added Quick Goal button (i3 lv30 r10 for 5-6* and i2 lv50 r10 otherwise) \n • There were a lot of updates recently, you guys better go spread the words :gun: \n • And as always, please let me know if there are bugs.' },
     { date: '23/02/2024', description: '• UI improvements. If UI looks funky with your device, please let me know. \n • Updated Korean translations by CaptinRegulus.' },
     { date: '22/02/2024', description: '• UI improvements. \n • Updated French translations by sillight. \n • Updated Spanish translations by mgeshagrath. \n • Updated Indonesia translations by ArieKee. \n • Updated Viet translations.' },
     { date: '21/02/2024', description: '♪ It took me ♪ 10 days ♪ to get this feature to be done ♪ \n ♪ I realized ♪ it broke down ♪ in 2 seconds ♪ \n ♪ THAT\'S ABOUT IT ♪' },
