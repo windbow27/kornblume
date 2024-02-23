@@ -14346,7 +14346,7 @@
   },
   {
     "Id": 10071,
-    "IsReleased": true,
+    "IsReleased": false,
     "Name": "Getian",
     "Rarity": 6,
     "Afflatus": "Beast",
