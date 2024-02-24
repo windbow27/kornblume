@@ -1,4 +1,4 @@
-import { IArcanist } from '@/types';
+import { IArcanist, ISelectedArcanist } from '@/types';
 import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 
 const settingsStore = usePlannerSettingsStore()
@@ -19,6 +19,26 @@ function sortArcanists (arcanists: IArcanist[]) {
 
         // If rarity is the same, compare by name alphabetically
         return a.Name.localeCompare(b.Name)
+    })
+}
+
+export function sortSelectedArcanists (selectedArcanists: ISelectedArcanist[], arcanists: IArcanist[]) {
+    selectedArcanists.sort((a: ISelectedArcanist, b: ISelectedArcanist) => {
+        const aArcanist = arcanists.find((arcanist: IArcanist) => arcanist.Id === a.Id);
+        const bArcanist = arcanists.find((arcanist: IArcanist) => arcanist.Id === b.Id);
+
+        if (aArcanist && bArcanist) {
+            const rarityComparison = bArcanist.Rarity - aArcanist.Rarity
+
+            if (rarityComparison !== 0) {
+                return rarityComparison
+            }
+
+            // If rarity is the same, compare by name alphabetically
+            return aArcanist.Name.localeCompare(bArcanist.Name)
+        }
+
+        return 0;
     })
 }
 

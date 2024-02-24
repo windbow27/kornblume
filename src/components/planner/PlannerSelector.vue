@@ -16,11 +16,11 @@ const emit = defineEmits(['open-edit-overlay']);
 
 const arcanists = ref(props.selectedArcanists);
 
-const handleLeftClick = (arcanist) => {
+const handleLeftClick = (arcanist: ISelectedArcanist) => {
     emit('open-edit-overlay', arcanist);
 };
 
-const handleRightClick = (arcanist) => {
+const handleRightClick = (arcanist: ISelectedArcanist) => {
     // console.log('right clicked');
     arcanist.isVisible = !arcanist.isVisible;
 };

@@ -1,3 +1,5 @@
+<!-- eslint-disable no-unused-vars -->
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
 import { ref, onBeforeMount } from 'vue';
 import { useRoute } from 'vue-router';
@@ -45,7 +47,7 @@ onBeforeMount(() => {
                         'text-green-200': arcanist?.Rarity === 2
                     }"> {{ arcanist?.Rarity }} <i class="fa-solid fa-star"></i> </p>
                     <img class="inline-block w-10" :src="getArcanistAfflatusPath(arcanist?.Afflatus ?? '')" alt="">
-                    <img class="inline-block w-8 pb-2" :src="getArcanistDmgTypePath('1')" alt="">
+                    <!-- <img class="inline-block w-8 pb-2" :src="getArcanistDmgTypePath('1')" alt=""> -->
                 </div>
                 <div class="flex flex-wrap gap-x-2 gap-y-2 pt-2">
                     <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"

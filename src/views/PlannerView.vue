@@ -8,7 +8,7 @@ import { useWildernessStore } from '@/stores/wildernessStore'
 import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore'
 import { useDataStore } from '@/stores/dataStore'
 import { IArcanist, ISelectedArcanist } from '@/types'
-import { formatArcanists } from '@/composables/arcanists'
+import { formatArcanists, sortSelectedArcanists } from '@/composables/arcanists'
 
 import PlannerSelector from '@/components/planner/PlannerSelector.vue'
 import PlannerEdit from '@/components/planner/PlannerEdit.vue'
@@ -120,6 +120,7 @@ const handleSelectArcanist = (arcanist: IArcanist) => {
 }
 
 const handleUpdateSelectedArcanists = (updateSelectedArcanists) => {
+    sortSelectedArcanists(updateSelectedArcanists, arcanistStore)
     plannerStore.selectedArcanists = updateSelectedArcanists
     // console.log(selectedArcanists.value);
     closeEditOverlay()
