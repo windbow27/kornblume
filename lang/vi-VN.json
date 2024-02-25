@@ -214,5 +214,6 @@
   "try-legacy": "Nếu quá trình nhập hiện tại không hoạt động, hãy mở các phương thức thay thế và sử dụng chúng.",
   "used-by-the-following-arcanists": "Được sử dụng bởi các arcanists sau đây",
   "wishing-spring-formula": "Công thức Giếng uớc",
-  "quick-goal": "Đặt mục tiêu nhanh"
+  "quick-goal": "Đặt mục tiêu nhanh",
+  "ignore-low-opacity-materials": "Bỏ qua vật liệu bị mờ"
 }

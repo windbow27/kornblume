@@ -214,5 +214,6 @@
   "Hard": "Hard",
   "Insight": "Insight",
   "Resource": "Resource",
-  "quick-goal": "Quick Goal"
+  "quick-goal": "Quick Goal",
+  "ignore-low-opacity-materials": "Ignore low opacity Materials"
 }

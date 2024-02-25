@@ -16,6 +16,7 @@ export const bannerList = [
     'Another Spring Thaw',
     'Level Seven Biter',
     'The Era of Great Speech',
+    'The Arrow Breaks Through The Air',
     // standard
     'Amongst the Lake',
     // thread
@@ -38,7 +39,8 @@ export const bannerRateUp = [
     'Kaalaa Baunaa',
     'Shamane',
     'Medicine Pocket',
-    'Ms. NewBabel'
+    'Ms. NewBabel',
+    'Lilya'
 ];
 
 export const specialArcanists: string[] = [
