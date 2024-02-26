@@ -1,4 +1,4 @@
-import{o as U}from"./index-03cCFZNz.js";import{d as x,o as a,c as n,a as e,t,F as g,r as y,u as F,b as W,e as R,f as b,g as m,w as v,h as O,i as u,j,k as M,l as w,m as z}from"./index-yJzYJvqg.js";const k=[{date:"25/02/2024",description:`• Added Lilya banner. 
+import{o as U}from"./index-N_hvV4d9.js";import{d as x,o as a,c as n,a as e,t,F as g,r as y,u as F,b as W,e as R,f as b,g as m,w as v,h as O,i as u,j,k as M,l as w,m as z}from"./index-ehEE7hx-.js";const k=[{date:"25/02/2024",description:`• Added Lilya banner. 
  • Added a warning to ignore low opacity materials in planner crafting section.`},{date:"24/02/2024",description:`• Added 37 and 6 as released. 
  • Added Getian and Isolde as unreleased. 
  • Added Quick Goal button (i3 lv30 r10 for 5-6* and i2 lv50 r10 otherwise) 
