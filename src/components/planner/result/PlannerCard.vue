@@ -58,11 +58,11 @@ watch(shouldHideScrollbar, (newVal) => {
 
                 <p class="pl-2" v-if="card.activity !== 0">{{ card.activity }}</p>
                 <p v-else-if="layerId === 3">
-                    <span class="block md:inline md:border-blue-700/90 md:border-r pr-3">{{
+                    <span class="block md:inline md:border-blue-700/90 md:border-r pr-3 text-xs md:text-base">{{
                         $t('crafted-from-available-materials') }}</span>
-                    <span class="block md:inline pl-3 md:border-blue-700/90 md:border-r pr-3">{{
+                    <span class="block md:inline pl-3 md:border-blue-700/90 md:border-r pr-3 text-xs md:text-base">{{
                         $t('list-includes-dependencies') }}</span>
-                    <span class="block md:inline pl-3">{{ $t('ignore-low-opacity-materials') }}</span>
+                    <span class="block md:inline pl-3 text-xs md:text-base">{{ $t('ignore-low-opacity-materials') }}</span>
                 </p>
 
                 <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image"
@@ -77,7 +77,7 @@ watch(shouldHideScrollbar, (newVal) => {
         </div>
 
         <div v-if="card.stage === 'Unreleased'" ref="scrollDiv" :class="{ 'hidden-scrollbar': shouldHideScrollbar }"
-            class="flex overflow-y-hidden overflow-x-auto m-auto">
+            class="flex overflow-y-hidden overflow-x-auto m-auto scrollbar">
             <div v-for="(material, materialIndex) in card.materials.filter((matl) => useGlobalStore().neededRawMaterialsMapping[matl.Material] > 0)"
                 :key="materialIndex" class="flex-shrink-0">
                 <MaterialItem :material="{ ...material, Quantity: 0 }" :layerId="layerId" />
@@ -94,10 +94,6 @@ watch(shouldHideScrollbar, (newVal) => {
 </template>
 
 <style scoped>
-.hidden-scrollbar::-webkit-scrollbar {
-    height: 6px;
-}
-
 .scrollbar::-webkit-scrollbar {
     height: 6px;
 }</style>

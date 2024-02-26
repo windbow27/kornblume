@@ -215,5 +215,5 @@
   "Insight": "Insight",
   "Resource": "Resource",
   "quick-goal": "Quick Goal",
-  "ignore-low-opacity-materials": "Ignore low opacity Materials"
+  "ignore-low-opacity-materials": "Ignore low opacity Materials or turn off Greedy Mode in Settings"
 }
