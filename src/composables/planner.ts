@@ -197,7 +197,7 @@ export function getDrops () {
         enabledUnreleasedStages
     } = usePlannerSettingsStore().settings;
     const dataStore = useDataStore();
-    return dataStore[enabledUnreleasedStages ? 'stages1_4' : 'stages'] || {}
+    return dataStore[enabledUnreleasedStages ? 'stages' : 'stages1_4'] || {}
 }
 
 export function getPlan (materials: IMaterialUnit[]): IPlanCards {
