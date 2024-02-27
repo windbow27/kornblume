@@ -191,7 +191,7 @@
   "loading-indicator-vertin-wheel-vertin-wheel-vertin-wheel": "Indikator Loading. Terimakasih karena telah mengirimkan PSD dari gambar secara langsung!",
   "homescreen-image": " Gambar homescreen. Beautiful Work.",
   "arcanists": "Arcanists",
-  "P{portrait}": "P{portray}",
+  "P{portrait}": "P{portrait}",
   "exploshe": "Coba juga timekeeper.top!",
   "legacy": "Ganti",
   "legacy-notice": "Jika import saat ini tidak berfungsi, coba metode-metode ini. Arahkan cursor untuk melihat detail lebih lanjut.",
@@ -213,5 +213,10 @@
   "Story": "Story",
   "Hard": "Hard",
   "Insight": "Insight",
-  "Resource": "Resource"
+  "Resource": "Resource",
+  "quick-goal": "Auto Objektif",
+  "show-cards": "Perlihatkan stage tidak penting",
+  "hide-cards": "Sembunyikan stage tidak penting",
+  "disabled-wilderness": "Nonaktifkan Wilderness",
+  "enabled-wilderness": "Nyalakan Wilderness"
 }

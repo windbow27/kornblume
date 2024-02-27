@@ -82,7 +82,7 @@ const getContainerClass = computed(() => {
             <div v-if="isBadge" class="badge badge-lg badge-ghost mt-2 mb-2 w-32" :class="getBadgeType">{{ getBadgeContent
             }}
             </div>
-            <div v-if="props.layer.id === 0">
+            <div v-if="props.layer.id === 0 && isBadge">
                 <div class="tooltip" :data-tip="plannerSettingsStore.settings.enableWilderness ? $t('enabled-wilderness') : $t('disabled-wilderness')">
                     <button class=" btn btn-xs"
                     :class=" plannerSettingsStore.settings.enableWilderness ? ' btn-success bg-green-100' : 'btn-error bg-red-100' "
@@ -92,7 +92,7 @@ const getContainerClass = computed(() => {
                     </button>
                 </div>
             </div>
-            <div v-if=" props.layer.id === 2 ">
+            <div v-if=" props.layer.id === 2 && isBadge">
                 <button class="btn btn-xs" :class=" plannerSettingsStore.settings.enableLowRunCards ? 'btn-success bg-green-100 text-green-800' : 'btn-error bg-red-100 text-red-800' "
                     @click=" toggleHideLowRunCards ">
                     {{ plannerSettingsStore.settings.enableLowRunCards ? $t('show-cards') : $t('hide-cards') }}
