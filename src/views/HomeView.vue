@@ -147,7 +147,7 @@ onClickOutside(resourcesRef, closeResources)
                                 <p><span class="text-info"> Español </span> mgeshagrath </p>
                                 <p><span class="text-info"> Français </span> я герой#3673 & sillight</p>
                                 <p><span class="text-info"> Deutsch </span> </p>
-                                <p><span class="text-info"> 简体中文 </span> fran </p>
+                                <p><span class="text-info"> 简体中文 </span> fran & ryle798</p>
                                 <p><span class="text-info"> 繁體中文 </span> fran </p>
                                 <p><span class="text-info"> Tiếng Việt </span> windbow </p>
                                 <p><span class="text-info"> Indonesia </span> ArieKee </p>

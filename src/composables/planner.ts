@@ -21,7 +21,29 @@ interface ICard {
 
 interface IPlanCard {
     id: number,
-    cards: ICard[]
+    cards
+    : ICard[]
+}
+
+function sortMaterials (array: IMaterialUnit[]) {
+    array.sort((matA, matB) => {
+        // Find corresponding item based on material name
+        const itemIndexA = items.findIndex(item => item.Name === matA.Material);
+        const itemIndexB = items.findIndex(item => item.Name === matB.Material);
+        const itemA = items[itemIndexA];
+        const itemB = items[itemIndexB];
+
+        if (itemA && itemB) {
+            if (itemB.Rarity !== itemA.Rarity) {
+                return itemB.Rarity - itemA.Rarity;
+            }
+            //  If there is no difference in rarity and category priority, arrange in the original order in Items
+            return itemIndexA - itemIndexB;
+        } else {
+            // If it does not exist, arrange it towards the back
+            return itemIndexB - itemIndexA;
+        }
+    });
 }
 
 function calculateOneiric (matlInfo: IMaterialUnit) {
@@ -246,7 +268,7 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
             ['Wilderness Wishing Spring'].includes(card.stage) && card.materials.length > 0
     );
 
-    // console.log(cardsFourthLayer);
+    sortMaterials(cardsFourthLayer[0].materials);
     const cardLayers = [
         { id: 0, cards: sortLayer(cardsFirstLayer, drops) },
         { id: 1, cards: sortLayer(cardsSecondLayer, drops) },
