@@ -23,7 +23,8 @@ const saveSettings = () => {
         showUnreleasedArcanists: props.settings.showUnreleasedArcanists,
         enabledUnreleasedStages: enabledUnreleasedStages.value,
         enableGreedyMethod: enableGreedyMethod.value,
-        enableWilderness: props.settings.enableWilderness
+        enableWilderness: props.settings.enableWilderness,
+        enableLowRunCards: props.settings.enableLowRunCards
     };
     emit('saveSettings', updatedSettings);
     closeOverlay();

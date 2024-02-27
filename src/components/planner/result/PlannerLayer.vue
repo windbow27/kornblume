@@ -1,5 +1,5 @@
 <script setup lang="ts" name="PlannerLayer">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n';
 import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 import PlannerCard from './PlannerCard.vue';
@@ -13,10 +13,9 @@ const props = defineProps({
 
 const { t } = useI18n();
 const plannerSettingsStore = usePlannerSettingsStore();
-const hideLowRunCards = ref(true);
 
 const toggleHideLowRunCards = () => {
-    hideLowRunCards.value = !hideLowRunCards.value;
+    plannerSettingsStore.settings.enableLowRunCards = !plannerSettingsStore.settings.enableLowRunCards;
 };
 
 const toggleWilderness = () => {
@@ -28,8 +27,8 @@ const isBadge = computed(() => {
 });
 
 const filteredCards = computed(() => {
-    if (hideLowRunCards.value) {
-        return props.layer.cards.filter((card) => card.runs > 10);
+    if (plannerSettingsStore.settings.enableLowRunCards) {
+        return props.layer.cards.filter((card) => card.runs > 5);
     }
     return props.layer.cards;
 });
@@ -94,10 +93,10 @@ const getContainerClass = computed(() => {
                 </div>
             </div>
             <div v-if=" props.layer.id === 2 ">
-                <button class="btn btn-xs" :class=" hideLowRunCards ? 'btn-success bg-green-100 text-green-800' : 'btn-error bg-red-100 text-red-800' "
+                <button class="btn btn-xs" :class=" plannerSettingsStore.settings.enableLowRunCards ? 'btn-success bg-green-100 text-green-800' : 'btn-error bg-red-100 text-red-800' "
                     @click=" toggleHideLowRunCards ">
-                    {{ hideLowRunCards ? $t('show-cards') : $t('hide-cards') }}
-                    <i :class=" hideLowRunCards ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up' "></i>
+                    {{ plannerSettingsStore.settings.enableLowRunCards ? $t('show-cards') : $t('hide-cards') }}
+                    <i :class=" plannerSettingsStore.settings.enableLowRunCards ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up' "></i>
 
                 </button>
             </div>
