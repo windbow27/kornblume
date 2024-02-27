@@ -58,11 +58,10 @@ watch(shouldHideScrollbar, (newVal) => {
 
                 <p class="pl-2" v-if="card.activity !== 0">{{ card.activity }}</p>
                 <p v-else-if="layerId === 3">
-                    <span class="block md:inline md:border-blue-700/90 md:border-r pr-3 text-xs md:text-base">{{
+                    <span class="block md:inline md:border-blue-700/90 md:border-r pr-3 text-sm md:text-base">{{
                         $t('crafted-from-available-materials') }}</span>
-                    <span class="block md:inline pl-3 md:border-blue-700/90 md:border-r pr-3 text-xs md:text-base">{{
+                    <span class="block md:inline pl-3 md:border-blue-700/90 md:border-r pr-3 text-sm md:text-base">{{
                         $t('list-includes-dependencies') }}</span>
-                    <span class="block md:inline pl-3 text-xs md:text-base">{{ $t('ignore-low-opacity-materials') }}</span>
                 </p>
 
                 <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image"

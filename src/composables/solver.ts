@@ -6,6 +6,7 @@ import { useActivityStore } from '../stores/activityStore';
 import { useWildernessStore } from '../stores/wildernessStore';
 import { IMaterialUnit } from '@/types';
 import { useGlobalStore } from '../stores/global';
+import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 
 const formulas = useDataStore().formulas;
 
@@ -164,7 +165,7 @@ export function processSharpoAndDust (generatedCards: ICard[]) {
     const warehouseSharpo = useWarehouseStore().data.find((matl) => matl.Material === 'Sharpodonty')?.Quantity || 0
     const warehouseDust = useWarehouseStore().data.find((matl) => matl.Material === 'Dust')?.Quantity || 0
 
-    const wildernessDailyProduct = useWildernessStore().settings.wildernessOutput;
+    const wildernessDailyProduct = usePlannerSettingsStore().settings.enableWilderness ? useWildernessStore().settings.wildernessOutput : { dust: 0, gold: 0 };
     const remainingSharpo = Math.max(sharpoForGoal - wildernessDailyProduct.gold * daysForOthers - warehouseSharpo, 0);
     const remainingDust = Math.max(dustForGoal - wildernessDailyProduct.dust * daysForOthers - warehouseDust, 0);
 

@@ -4,6 +4,7 @@ export interface IPlannerSettings {
     showUnreleasedArcanists: boolean,
     enabledUnreleasedStages: boolean,
     enableGreedyMethod: boolean,
+    enableWilderness: boolean
 }
 
 interface IPlannerSettingsStore {
@@ -15,7 +16,8 @@ export const usePlannerSettingsStore = defineStore('plannerSettings', {
         settings: {
             showUnreleasedArcanists: false,
             enabledUnreleasedStages: false,
-            enableGreedyMethod: true
+            enableGreedyMethod: true,
+            enableWilderness: true
         }
     }),
     persist: true

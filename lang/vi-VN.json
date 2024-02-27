@@ -126,7 +126,7 @@
   "total-summons": "Tổng số lần triệu hồi",
   "tutorial": "Hướng dẫn",
   "upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once": "Tải ảnh chụp màn hình lên Theo dõi triệu tập (Bạn có thể tải {highlight} lên cùng một lúc).",
-  "use-1-4-stage-data-experimental": "Sử dụng dữ liệu 1.4 (Thử nghiệm)",
+  "use-1-4-stage-data-experimental": "Sử dụng dữ liệu 1.4",
   "video-demonstration-tutorial": "Video hướng dẫn:",
   "uppercase-days": "Ngày",
   "vigor": "Sức sống",
@@ -215,5 +215,8 @@
   "used-by-the-following-arcanists": "Được sử dụng bởi các arcanists sau đây",
   "wishing-spring-formula": "Công thức Giếng uớc",
   "quick-goal": "Đặt mục tiêu nhanh",
-  "ignore-low-opacity-materials": "Bỏ qua vật liệu bị mờ hoặc tắt chế độ Tham lam trong Cài đặt"
+  "disabled-wilderness": "Đã tắt vùng hoang dã",
+  "enabled-wilderness": "Đã kích hoạt vùng hoang dã",
+  "hide-cards": "Ẩn các màn sử dụng ít",
+  "show-cards": "Hiện các màn sử dụng ít"
 }

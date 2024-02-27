@@ -92,7 +92,7 @@
   "build-material": "Build Material",
   "base-item": "Base Item",
   "warehouse-auto-save": "Warehouse (Auto-save)",
-  "use-1-4-stage-data-experimental": "Use 1.4 Stage Data (Experimental)",
+  "use-1-4-stage-data-experimental": "Use 1.4 Stage Data",
   "enable-greedy-method": "Enable Greedy Method",
   "goal": "Goal",
   "total-goal-materials": "Total Goal Materials",
@@ -215,5 +215,8 @@
   "Insight": "Insight",
   "Resource": "Resource",
   "quick-goal": "Quick Goal",
-  "ignore-low-opacity-materials": "Ignore low opacity Materials or turn off Greedy Mode in Settings"
+  "show-cards": "Display minor stages",
+  "hide-cards": "Hide minor stages",
+  "disabled-wilderness": "Disabled wilderness",
+  "enabled-wilderness": "Enabled wilderness"
 }

@@ -22,7 +22,8 @@ const saveSettings = () => {
     const updatedSettings = {
         showUnreleasedArcanists: props.settings.showUnreleasedArcanists,
         enabledUnreleasedStages: enabledUnreleasedStages.value,
-        enableGreedyMethod: enableGreedyMethod.value
+        enableGreedyMethod: enableGreedyMethod.value,
+        enableWilderness: props.settings.enableWilderness
     };
     emit('saveSettings', updatedSettings);
     closeOverlay();
@@ -37,16 +38,16 @@ const saveSettings = () => {
                 <i class="fas fa-times"></i>
             </button>
             <div class="form-control">
-                <div class="tooltip" :data-tip="$t('prioritize-purple-materials-when-farming')">
+                <!-- <div class="tooltip" :data-tip="$t('prioritize-purple-materials-when-farming')">
                     <label class="cursor-pointer label justify-center space-x-5 text-center">
                         <span class="label-text text-white text-md">{{ $t('enable-greedy-method') }}</span>
                         <input v-model="enableGreedyMethod" type="checkbox" class="checkbox checkbox-info" />
                     </label>
-                </div>
+                </div> -->
             </div>
             <div class="form-control">
                 <label class="cursor-pointer label justify-center space-x-5 text-center">
-                    <span class="label-text text-white text-md">{{ $t('use-1-4-stage-data-experimental') }}</span>
+                    <span class="label-text text-white text-md whitespace-nowrap">{{ $t('use-1-4-stage-data-experimental') }}</span>
                     <input v-model="enabledUnreleasedStages" type="checkbox" class="checkbox checkbox-info" />
                 </label>
             </div>

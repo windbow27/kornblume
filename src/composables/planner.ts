@@ -172,13 +172,9 @@ export interface IPlanCards extends Array<IPlanCard> { }
 
 export function getDrops () {
     const {
-        enableGreedyMethod,
         enabledUnreleasedStages
     } = usePlannerSettingsStore().settings;
     const dataStore = useDataStore();
-    if (enableGreedyMethod) {
-        return dataStore[enabledUnreleasedStages ? 'stages1_4_greedy' : 'stages_greedy'] || {}
-    }
     return dataStore[enabledUnreleasedStages ? 'stages1_4' : 'stages'] || {}
 }
 

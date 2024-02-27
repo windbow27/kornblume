@@ -87,7 +87,7 @@
   "build-material": "通用材料",
   "base-item": "基础材料",
   "warehouse-auto-save": "仓库",
-  "use-1-4-stage-data-experimental": "启用 1.4 掉落数据（实验性功能）",
+  "use-1-4-stage-data-experimental": "启用 1.4 掉落数据",
   "enable-greedy-method": "启用贪婪算法",
   "goal": "目标",
   "total-goal-materials": "总目标材料",
