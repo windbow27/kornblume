@@ -1,4 +1,4 @@
-import{o as U}from"./index--bwSKMzn.js";import{d as x,o as a,c as n,a as e,t,F as g,r as y,u as F,b as W,e as R,f as _,g as m,w as v,h as M,i as u,j as O,k as j,l as w,m as z}from"./index-pAEpJW7c.js";const k=[{date:"27/02/2024",description:`• UI improvements. 
+import{o as U}from"./index-xDZIMsGp.js";import{d as x,o as a,c as n,a as e,t,F as g,r as y,u as F,b as W,e as R,f as _,g as m,w as v,h as M,i as u,j as O,k as j,l as w,m as z}from"./index-1Vnql5uV.js";const k=[{date:"27/02/2024",description:`• UI improvements. 
  • Removed Greedy (experimental). 
  • 1.4 drop data will be enabled on 11 A.M 29/02/2024.`},{date:"25/02/2024",description:`• Added Lilya banner. 
  • Added a warning to ignore low opacity materials in planner crafting section.`},{date:"24/02/2024",description:`• Added 37 and 6 as released. 
