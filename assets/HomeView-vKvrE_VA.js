@@ -1,4 +1,4 @@
-import{o as S}from"./index-_QwWDZSj.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as m,w as y,h as M,i as u,j as O,k as j,l as w,m as z}from"./index-M20HaJGE.js";const k=[{date:"29/02/2024",description:`• Deployed 1.4 update. 
+import{o as S}from"./index-Muy4IXJO.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as m,w as y,h as M,i as u,j as O,k as j,l as w,m as z}from"./index-pZncsxys.js";const k=[{date:"29/02/2024",description:`• Deployed 1.4 update. 
  • Added 37 banner.`},{date:"27/02/2024",description:`• UI improvements. 
  • Removed Greedy (experimental). 
  • 1.4 drop data will be enabled on 11 A.M 29/02/2024. 
