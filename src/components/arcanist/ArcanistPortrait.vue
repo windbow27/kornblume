@@ -37,7 +37,7 @@ const props = defineProps({
             <img class="absolute bottom-0 w-16 sm:w-20 rounded-md" :src="getArcanistFramePath(props.arcanist.Rarity)"
                 alt="">
             <span class="absolute bottom-0 w-16 sm:w-20 text-center text-white/90 py-2.5 text-shadow font-bold opacity-95"> {{
-                props.arcanist.Name }} </span>
+                $t(props.arcanist.Name) }} </span>
         </div>
     </div>
 </template>

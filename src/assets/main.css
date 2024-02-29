@@ -77,24 +77,40 @@
 }
 
 @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
-}  /* Doesn't work */
+    0% {
+        opacity: 1;
+    }
 
-.custom-modal-small, .custom-modal-big {
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Doesn't work */
+
+.custom-modal-small,
+.custom-modal-big {
     animation-name: fadeIn;
     animation-duration: 0.5s;
 }
 
-.custom-modal-small.hide, .custom-modal-big.hide {
+.custom-modal-small.hide,
+.custom-modal-big.hide {
     animation-name: fadeOut;
     animation-duration: 0.5s;
-}  /* Doesn't work */
+}
+
+/* Doesn't work */
 
 .custom-gradient-button {
     @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 bg-clip-padding
@@ -105,7 +121,7 @@
 }
 
 .custom-card {
-    @apply bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden my-4;
+    @apply bg-white shadow-lg rounded-lg overflow-hidden my-4;
 }
 
 .custom-box {
@@ -115,39 +131,39 @@
 /*Badges*/
 
 .blue-badge {
-    @apply bg-blue-100 text-blue-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400
+    @apply bg-blue-100 text-blue-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-blue-400
 }
 
 .black-badge {
-    @apply bg-gray-100 text-gray-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-400 border border-gray-500
+    @apply bg-gray-100 text-gray-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-gray-500
 }
 
 .red-badge {
-    @apply bg-red-100 text-red-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-red-400 border border-red-400
+    @apply bg-red-100 text-red-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-red-400
 }
 
 .green-badge {
-    @apply bg-green-100 text-green-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-green-400 border border-green-400
+    @apply bg-green-100 text-green-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-green-400
 }
 
 .yellow-badge {
-    @apply bg-yellow-100 text-yellow-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-yellow-400 border border-yellow-400
+    @apply bg-yellow-100 text-yellow-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-yellow-400
 }
 
 .purple-badge {
-    @apply bg-purple-100 text-purple-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-purple-400 border border-purple-400
+    @apply bg-purple-100 text-purple-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-purple-400
 }
 
 .pink-badge {
-    @apply bg-pink-100 text-pink-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-pink-400 border border-pink-400
+    @apply bg-pink-100 text-pink-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-pink-400
 }
 
 .indigo-badge {
-    @apply bg-indigo-100 text-indigo-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400
+    @apply bg-indigo-100 text-indigo-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded  border border-indigo-400
 }
 
 .orange-badge {
-    @apply bg-orange-100 text-orange-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-orange-400 border border-orange-400
+    @apply bg-orange-100 text-orange-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-orange-400
 }
 
 /* width */
@@ -157,7 +173,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background:#323f5f;
+    background: #323f5f;
     border-radius: 5px;
 }
 

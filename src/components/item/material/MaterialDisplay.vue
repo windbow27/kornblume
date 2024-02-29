@@ -75,14 +75,14 @@ const stageList = computed(() => {
 <template>
     <div v-if="props.selectedMaterial" class="custom-box custom-border">
         <div class="space-y-1">
-            <h2 class="text-white text-2xl font-bold py-1">{{ props.selectedMaterial.Name }}</h2>
+            <h2 class="text-white text-2xl font-bold py-1">{{ $t(props.selectedMaterial.Name) }}</h2>
             <p class="" :class="{
                 'text-error': props.selectedMaterial.Category === categories[0],
                 'text-info': props.selectedMaterial.Category === categories[1],
                 'text-success': props.selectedMaterial.Category === categories[2],
                 'text-warning': props.selectedMaterial.Category === categories[3],
                 'text-secondary': props.selectedMaterial.Category === categories[4]
-            }"> {{ props.selectedMaterial.Category }} </p>
+            }"> {{ $t(props.selectedMaterial.Category) }} </p>
             <p class="" :class="{
                 'text-orange-300': props.selectedMaterial.Rarity === 6,
                 'text-yellow-100': props.selectedMaterial.Rarity === 5,

@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '29/02/2024', description: '• Deployed 1.4 update. \n • Added 37 banner.' },
     { date: '27/02/2024', description: '• UI improvements. \n • Removed Greedy (experimental). \n • 1.4 drop data will be enabled on 11 A.M 29/02/2024. \n • Updated Indonesia translations by ArieKee. \n • Updated zh Chinese translations by ryle798.' },
     { date: '25/02/2024', description: '• Added Lilya banner. \n • Added a warning to ignore low opacity materials in planner crafting section.' },
     { date: '24/02/2024', description: '• Added 37 and 6 as released. \n • Added Getian and Isolde as unreleased. \n • Added Quick Goal button (i3 lv30 r10 for 5-6* and i2 lv50 r10 otherwise) \n • There were a lot of updates recently, you guys better go spread the words :gun: \n • And as always, please let me know if there are bugs.' },

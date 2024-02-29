@@ -268,7 +268,7 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
             ['Wilderness Wishing Spring'].includes(card.stage) && card.materials.length > 0
     );
 
-    sortMaterials(cardsFourthLayer[0].materials);
+    if (cardsFourthLayer.length > 0) sortMaterials(cardsFourthLayer[0].materials);
     const cardLayers = [
         { id: 0, cards: sortLayer(cardsFirstLayer, drops) },
         { id: 1, cards: sortLayer(cardsSecondLayer, drops) },

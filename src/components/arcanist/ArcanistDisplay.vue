@@ -38,7 +38,7 @@ onBeforeMount(() => {
             <div class="p-4 rounded shadow custom-border w-full">
                 <div class="flex flex-wrap items-center space-x-2">
                     <ArcanistIconDisplay :arcanist="arcanist" />
-                    <h2 class="text-white text-xl lg:text-3xl font-bold"> {{ arcanist?.Name }} </h2>
+                    <h2 class="text-white text-xl lg:text-3xl font-bold"> {{ $t(arcanist?.Name) }} </h2>
                     <p class="pt-1" :class="{
                         'text-orange-300': arcanist?.Rarity === 6,
                         'text-yellow-100': arcanist?.Rarity === 5,

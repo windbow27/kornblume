@@ -78,32 +78,33 @@ const getContainerClass = computed(() => {
 
 <template>
     <div class="w-full mb-4 flex flex-col">
-        <div class="flex flex-warp gap-x-2 items-center">
+        <div class="flex flex-warp items-center">
             <div v-if="isBadge" class="badge badge-lg badge-ghost mt-2 mb-2 w-32" :class="getBadgeType">{{ getBadgeContent
             }}
             </div>
             <div v-if="props.layer.id === 0 && isBadge">
-                <div class="tooltip" :data-tip="plannerSettingsStore.settings.enableWilderness ? $t('enabled-wilderness') : $t('disabled-wilderness')">
-                    <button class=" btn btn-xs"
-                    :class=" plannerSettingsStore.settings.enableWilderness ? ' btn-success bg-green-100' : 'btn-error bg-red-100' "
-                    @click=" toggleWilderness ">
-                    <i class="fa-solid fa-tree"
-                        :class=" plannerSettingsStore.settings.enableWilderness ? 'text-green-800' : 'text-red-800' "></i>
+                <div class="tooltip"
+                    :data-tip="plannerSettingsStore.settings.enableWilderness ? $t('enabled-wilderness') : $t('disabled-wilderness')">
+                    <button class=" btn btn-xs btn-warning bg-yellow-100 text-yellow-800"
+                        :class="plannerSettingsStore.settings.enableWilderness ? '  ' : ' opacity-50'"
+                        @click="toggleWilderness">
+                        <i class="fa-solid fa-tree" :class="plannerSettingsStore.settings.enableWilderness"></i>
                     </button>
                 </div>
             </div>
-            <div v-if=" props.layer.id === 2 && isBadge">
-                <button class="btn btn-xs" :class=" plannerSettingsStore.settings.enableLowRunCards ? 'btn-success bg-green-100 text-green-800' : 'btn-error bg-red-100 text-red-800' "
-                    @click=" toggleHideLowRunCards ">
+            <div v-if="props.layer.id === 2 && isBadge">
+                <button class="btn btn-xs bg-purple-100 text-purple-800 border-purple-800 border hover:bg-purple-400"
+                    :class="plannerSettingsStore.settings.enableLowRunCards ? '' : 'opacity-50'"
+                    @click="toggleHideLowRunCards">
                     {{ plannerSettingsStore.settings.enableLowRunCards ? $t('show-cards') : $t('hide-cards') }}
-                    <i :class=" plannerSettingsStore.settings.enableLowRunCards ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up' "></i>
-
+                    <i
+                        :class="plannerSettingsStore.settings.enableLowRunCards ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'"></i>
                 </button>
             </div>
         </div>
-        <div :class=" getContainerClass ">
-            <PlannerCard v-for="( card, index ) in  (props.layer.id === 2 ? filteredCards : props.layer.cards) " :key=" index "
-                :card=" card " :layerId=" props.layer.id " />
+        <div :class="getContainerClass">
+            <PlannerCard v-for="( card, index ) in  (props.layer.id === 2 ? filteredCards : props.layer.cards) "
+                :key="index" :card="card" :layerId="props.layer.id" />
         </div>
     </div>
 </template>
