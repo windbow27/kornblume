@@ -1,4 +1,4 @@
-import{o as $}from"./index-X0Kc7g77.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as m,w as y,h as M,i as u,j as O,k as j,l as w,m as z}from"./index-dhU-6u32.js";const k=[{date:"30/02/2024",description:`• Updated Items and Stages to use 1.4 drop rates. 
+import{o as $}from"./index-FEyPVutm.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as m,w as y,h as M,i as u,j as O,k as j,l as w,m as z}from"./index-2Q1PPoV8.js";const k=[{date:"01/03/2024",description:`• Updated Items and Stages to use 1.4 drop rates. 
  • Corrected some item names and descriptions.`},{date:"29/02/2024",description:`• Deployed 1.4 update. 
  • Added 37 banner.`},{date:"27/02/2024",description:`• UI improvements. 
  • Removed Greedy (experimental). 
