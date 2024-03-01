@@ -93,12 +93,13 @@ const getContainerClass = computed(() => {
                 </div>
             </div>
             <div v-if="props.layer.id === 2 && isBadge">
-                <button class="btn btn-xs bg-purple-100 text-purple-800 border-purple-800 border hover:bg-purple-400"
-                    :class="plannerSettingsStore.settings.enableLowRunCards ? '' : 'opacity-50'"
+                <button
+                    class="btn btn-xs bg-purple-100 text-purple-800 border-purple-800 border hover:bg-purple-400 hover:border-purple-800"
+                    :class="plannerSettingsStore.settings.enableLowRunCards ? 'opacity-50' : ''"
                     @click="toggleHideLowRunCards">
-                    {{ plannerSettingsStore.settings.enableLowRunCards ? $t('show-cards') : $t('hide-cards') }}
+                    {{ plannerSettingsStore.settings.enableLowRunCards ? $t('hide-cards') : $t('show-cards') }}
                     <i
-                        :class="plannerSettingsStore.settings.enableLowRunCards ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up'"></i>
+                        :class="plannerSettingsStore.settings.enableLowRunCards ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down'"></i>
                 </button>
             </div>
         </div>

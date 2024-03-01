@@ -1,6 +1,6 @@
 export const changelogs = [
     // Add more from top
-    { date: '30/02/2024', description: '• Updated Items and Stages to use 1.4 drop rates. \n • Corrected some item names and descriptions.' },
+    { date: '01/03/2024', description: '• Updated Items and Stages to use 1.4 drop rates. \n • Corrected some item names and descriptions.' },
     { date: '29/02/2024', description: '• Deployed 1.4 update. \n • Added 37 banner.' },
     { date: '27/02/2024', description: '• UI improvements. \n • Removed Greedy (experimental). \n • 1.4 drop data will be enabled on 11 A.M 29/02/2024. \n • Updated Indonesia translations by ArieKee. \n • Updated zh Chinese translations by ryle798.' },
     { date: '25/02/2024', description: '• Added Lilya banner. \n • Added a warning to ignore low opacity materials in planner crafting section.' },
