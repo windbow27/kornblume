@@ -60,7 +60,7 @@ onMounted(() => {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <p class="text-sm lg:text-base"> 1.4 drop rates will be updated to display later. Note that Planner is currently using 1.4 data.</p>
+                <p class="text-sm lg:text-base"> 1.4 drop rates have been displayed. </p>
             </div>
         </div>
         <div class="wrapper">

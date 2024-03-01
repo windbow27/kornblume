@@ -1,6 +1,8 @@
 {
   "1-11H": {
     "id": 17,
+    "name": "1-11H",
+    "category": "Hard",
     "cost": 12,
     "count": 144,
     "drops": {
@@ -14,6 +16,8 @@
   },
   "1-12H": {
     "id": 18,
+    "name": "1-12H",
+    "category": "Hard",
     "cost": 12,
     "count": 90,
     "drops": {
@@ -27,6 +31,8 @@
   },
   "1-14H": {
     "id": 19,
+    "name": "1-14H",
+    "category": "Hard",
     "cost": 12,
     "count": 195,
     "drops": {
@@ -40,6 +46,8 @@
   },
   "2-4H": {
     "id": 28,
+    "name": "2-4H",
+    "category": "Hard",
     "cost": 16,
     "count": 81,
     "drops": {
@@ -54,6 +62,8 @@
   },
   "2-9H": {
     "id": 30,
+    "name": "2-9H",
+    "category": "Hard",
     "cost": 16,
     "count": 173,
     "drops": {
@@ -63,8 +73,10 @@
       "Magnesia Crystal": 173
     }
   },
-  "2-9S": {
+  "2-9": {
     "id": 35,
+    "name": "2-9",
+    "category": "Story",
     "cost": 12,
     "count": 100,
     "drops": {
@@ -76,8 +88,10 @@
       "Liquefied Terror": 3
     }
   },
-  "2-10S": {
+  "2-10": {
     "id": 36,
+    "name": "2-10",
+    "category": "Story",
     "cost": 12,
     "count": 138,
     "drops": {
@@ -92,6 +106,8 @@
   },
   "2-3H": {
     "id": 41,
+    "name": "2-3H",
+    "category": "Hard",
     "cost": 16,
     "count": 3330,
     "drops": {
@@ -108,6 +124,8 @@
   },
   "2-6H": {
     "id": 42,
+    "name": "2-6H",
+    "category": "Hard",
     "cost": 16,
     "count": 932,
     "drops": {
@@ -124,6 +142,8 @@
   },
   "2-8H": {
     "id": 43,
+    "name": "2-8H",
+    "category": "Hard",
     "cost": 16,
     "count": 118,
     "drops": {
@@ -140,6 +160,8 @@
   },
   "3-3H": {
     "id": 47,
+    "name": "3-3H",
+    "category": "Hard",
     "cost": 18,
     "count": 491,
     "drops": {
@@ -151,6 +173,8 @@
   },
   "3-5H": {
     "id": 48,
+    "name": "3-5H",
+    "category": "Hard",
     "cost": 18,
     "count": 159,
     "drops": {
@@ -165,6 +189,8 @@
   },
   "3-7H": {
     "id": 49,
+    "name": "3-7H",
+    "category": "Hard",
     "cost": 18,
     "count": 1393,
     "drops": {
@@ -176,6 +202,8 @@
   },
   "3-8H": {
     "id": 50,
+    "name": "3-8H",
+    "category": "Hard",
     "cost": 18,
     "count": 1182,
     "drops": {
@@ -187,6 +215,8 @@
   },
   "3-11H": {
     "id": 51,
+    "name": "3-11H",
+    "category": "Hard",
     "cost": 18,
     "count": 2351,
     "drops": {
@@ -198,6 +228,8 @@
   },
   "3-13H": {
     "id": 52,
+    "name": "3-13H",
+    "category": "Hard",
     "cost": 18,
     "count": 3032,
     "drops": {
@@ -207,8 +239,10 @@
       "Magnesia Crystal": 2068
     }
   },
-  "3-3S": {
+  "3-3": {
     "id": 53,
+    "name": "3-3",
+    "category": "Story",
     "cost": 14,
     "count": 693,
     "drops": {
@@ -223,8 +257,10 @@
       "Silver Ore": 513
     }
   },
-  "3-9S": {
+  "3-9": {
     "id": 58,
+    "name": "3-9",
+    "category": "Story",
     "cost": 14,
     "count": 364,
     "drops": {
@@ -239,8 +275,10 @@
       "Spell of Banishing": 270
     }
   },
-  "3-15S": {
+  "3-15": {
     "id": 61,
+    "name": "3-15",
+    "category": "Story",
     "cost": 14,
     "count": 1008,
     "drops": {
@@ -257,6 +295,8 @@
   },
   "3-9H": {
     "id": 63,
+    "name": "3-9H",
+    "category": "Hard",
     "cost": 18,
     "count": 443,
     "drops": {
@@ -273,6 +313,8 @@
   },
   "4-4H": {
     "id": 67,
+    "name": "4-4H",
+    "category": "Hard",
     "cost": 18,
     "count": 104,
     "drops": {
@@ -283,6 +325,8 @@
   },
   "4-5H": {
     "id": 68,
+    "name": "4-5H",
+    "category": "Hard",
     "cost": 18,
     "count": 105,
     "drops": {
@@ -294,6 +338,8 @@
   },
   "4-11H": {
     "id": 69,
+    "name": "4-11H",
+    "category": "Hard",
     "cost": 18,
     "count": 420,
     "drops": {
@@ -305,6 +351,8 @@
   },
   "4-13H": {
     "id": 70,
+    "name": "4-13H",
+    "category": "Hard",
     "cost": 18,
     "count": 436,
     "drops": {
@@ -316,6 +364,8 @@
   },
   "4-20H": {
     "id": 71,
+    "name": "4-20H",
+    "category": "Hard",
     "cost": 18,
     "count": 3423,
     "drops": {
@@ -327,6 +377,8 @@
   },
   "4-21H": {
     "id": 72,
+    "name": "4-21H",
+    "category": "Hard",
     "cost": 18,
     "count": 435,
     "drops": {
@@ -336,8 +388,10 @@
       "Trembling Tooth": 264
     }
   },
-  "4-6S": {
+  "4-6": {
     "id": 76,
+    "name": "4-6",
+    "category": "Story",
     "cost": 16,
     "count": 139,
     "drops": {
@@ -346,8 +400,10 @@
       "Spell of Banishing": 196
     }
   },
-  "4-18S": {
+  "4-18": {
     "id": 80,
+    "name": "4-18",
+    "category": "Story",
     "cost": 16,
     "count": 691,
     "drops": {
@@ -359,6 +415,8 @@
   },
   "4-10H": {
     "id": 84,
+    "name": "4-10H",
+    "category": "Hard",
     "cost": 18,
     "count": 439,
     "drops": {
@@ -375,6 +433,8 @@
   },
   "4-18H": {
     "id": 86,
+    "name": "4-18H",
+    "category": "Hard",
     "cost": 18,
     "count": 94,
     "drops": {
@@ -387,8 +447,10 @@
       "Liquefied Terror": 4
     }
   },
-  "5-4S": {
+  "5-4": {
     "id": 89,
+    "name": "5-4",
+    "category": "Story",
     "cost": 18,
     "count": 699,
     "drops": {
@@ -402,6 +464,8 @@
   },
   "5-3H": {
     "id": 102,
+    "name": "5-3H",
+    "category": "Hard",
     "cost": 18,
     "count": 761,
     "drops": {
@@ -413,6 +477,8 @@
   },
   "5-4H": {
     "id": 103,
+    "name": "5-4H",
+    "category": "Hard",
     "cost": 18,
     "count": 1954,
     "drops": {
@@ -429,6 +495,8 @@
   },
   "5-5H": {
     "id": 104,
+    "name": "5-5H",
+    "category": "Hard",
     "cost": 18,
     "count": 681,
     "drops": {
@@ -440,6 +508,8 @@
   },
   "5-7H": {
     "id": 106,
+    "name": "5-7H",
+    "category": "Hard",
     "cost": 18,
     "count": 382,
     "drops": {
@@ -450,6 +520,8 @@
   },
   "5-8H": {
     "id": 107,
+    "name": "5-8H",
+    "category": "Hard",
     "cost": 18,
     "count": 208,
     "drops": {
@@ -461,6 +533,8 @@
   },
   "5-9H": {
     "id": 108,
+    "name": "5-9H",
+    "category": "Hard",
     "cost": 18,
     "count": 234,
     "drops": {
@@ -477,6 +551,8 @@
   },
   "5-14H": {
     "id": 111,
+    "name": "5-14H",
+    "category": "Hard",
     "cost": 18,
     "count": 634,
     "drops": {
@@ -486,9 +562,25 @@
       "Silver Ore": 434
     }
   },
+  "5-19H": {
+    "id": 113,
+    "name": "5-19H",
+    "category": "Hard",
+    "cost": 18,
+    "count": 2024,
+    "drops": {
+      "Silver Bullet": 40,
+      "Biting Box": 646,
+      "Liquefied Terror": 208,
+      "Silver Ore": 1420
+    }
+  },
   "The Poussiere VI": {
     "id": 115,
+    "name": "The Poussiere VI",
+    "category": "Resource",
     "cost": 25,
+    "count": 1,
     "drops": {
       "Dust": 12000,
       "Sharpodonty": 250
@@ -496,91 +588,130 @@
   },
   "Mintage Aesthetics VI": {
     "id": 116,
+    "name": "Mintage Aesthetics VI",
+    "category": "Resource",
     "cost": 25,
+    "count": 1,
     "drops": {
       "Sharpodonty": 9000
     }
   },
   "Mountain Echoes II": {
     "id": 117,
+    "name": "Mountain Echoes II",
+    "category": "Insight",
     "cost": 18,
+    "count": 1,
     "drops": {
       "Page of Mineral Wealth": 2
     }
   },
   "Mountain Echoes IV": {
     "id": 118,
+    "name": "Mountain Echoes IV",
+    "category": "Insight",
     "cost": 24,
+    "count": 1,
     "drops": {
       "Scroll of Mineral Wealth": 2
     }
   },
   "Mountain Echoes VI": {
     "id": 119,
+    "name": "Mountain Echoes VI",
+    "category": "Insight",
     "cost": 30,
+    "count": 1,
     "drops": {
       "Tome of Mineral Wealth": 2
     }
   },
   "Starfall Locale II": {
     "id": 120,
+    "name": "Starfall Locale II",
+    "category": "Insight",
     "cost": 18,
+    "count": 1,
     "drops": {
       "Page of Starlit Ascent": 2
     }
   },
   "Starfall Locale IV": {
     "id": 121,
+    "name": "Starfall Locale IV",
+    "category": "Insight",
     "cost": 24,
+    "count": 1,
     "drops": {
       "Scroll of Starlit Ascent": 2
     }
   },
   "Starfall Locale VI": {
     "id": 122,
+    "name": "Starfall Locale VI",
+    "category": "Insight",
     "cost": 30,
+    "count": 1,
     "drops": {
       "Tome of Starlit Ascent": 2
     }
   },
   "Sylvanus Shape II": {
     "id": 123,
+    "name": "Sylvanus Shape II",
+    "category": "Insight",
     "cost": 18,
+    "count": 1,
     "drops": {
       "Page of Plantal Vimen": 2
     }
   },
   "Sylvanus Shape IV": {
     "id": 124,
+    "name": "Sylvanus Shape IV",
+    "category": "Insight",
     "cost": 24,
+    "count": 1,
     "drops": {
       "Scroll of Plantal Vimen": 2
     }
   },
   "Sylvanus Shape VI": {
     "id": 125,
+    "name": "Sylvanus Shape VI",
+    "category": "Insight",
     "cost": 30,
+    "count": 1,
     "drops": {
       "Tome of Plantal Vimen": 2
     }
   },
   "Brutes Wilds II": {
     "id": 126,
+    "name": "Brutes Wilds II",
+    "category": "Insight",
     "cost": 18,
+    "count": 1,
     "drops": {
       "Page of Beastly Thirst": 2
     }
   },
   "Brutes Wilds IV": {
     "id": 127,
+    "name": "Brutes Wilds IV",
+    "category": "Insight",
     "cost": 24,
+    "count": 1,
     "drops": {
       "Scroll of Beastly Thirst": 2
     }
   },
   "Brutes Wilds VI": {
     "id": 128,
+    "name": "Brutes Wilds VI",
+    "category": "Insight",
     "cost": 30,
+    "count": 1,
     "drops": {
       "Tome of Beastly Thirst": 2
     }

@@ -21,7 +21,7 @@ const props = defineProps({
 
 const formulaStore = useDataStore().formulas;
 const arcanistStore = useDataStore().arcanists;
-const stageStore = useDataStore().stages;
+const stageStore = useDataStore().stages1_4;
 
 const formulaItemList = computed(() => {
     const formula = formulaStore.find(formula => formula.Name === props.selectedMaterial.Name);
@@ -59,14 +59,14 @@ const stageList = computed(() => {
         .map(([name, stage]) => ({
             name,
             stage,
-            dropRate: stage.drops[props.selectedMaterial.Name] as number
+            dropRate: (stage.drops[props.selectedMaterial.Name] / stage.count) as number // kdoc data
+            // dropRate: stage.drops[props.selectedMaterial.Name] as number // pending shiroi
         }))
         .sort((a, b) => b.dropRate - a.dropRate)
         .map(stage => ({
             ...stage,
             dropRate: formatQuantity(stage.dropRate)
         }));
-
     return stages;
 });
 

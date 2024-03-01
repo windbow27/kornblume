@@ -14,6 +14,21 @@ export function normalizeDisplayStage (unprocessedStage: IStage, stageName: stri
     return result;
 }
 
+// export function normalizeDrops (unprocessedStage: IStage): IMaterialUnit[] {
+//     if (!unprocessedStage.drops) {
+//         return [];
+//     }
+
+//     return Object.entries(unprocessedStage.drops).map(([Material, Quantity]) => {
+//         const materialUnit: IMaterialUnit = {
+//             Material,
+//             Quantity: Quantity as number
+//         };
+
+//         return materialUnit;
+//     });
+// }
+
 export function normalizeDrops (unprocessedStage: IStage): IMaterialUnit[] {
     if (!unprocessedStage.drops) {
         return [];
@@ -22,7 +37,7 @@ export function normalizeDrops (unprocessedStage: IStage): IMaterialUnit[] {
     return Object.entries(unprocessedStage.drops).map(([Material, Quantity]) => {
         const materialUnit: IMaterialUnit = {
             Material,
-            Quantity: Quantity as number
+            Quantity: (Quantity / unprocessedStage.count) as number
         };
 
         return materialUnit;
