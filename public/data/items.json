@@ -245,7 +245,7 @@
         "IsReleased": true,
         "Name": "Bifurcated Skeleton",
         "Rarity": 4,
-        "Description": "What did the humans say again? Oh, what a poor, deformed little thing! But guess what the arcanists say. Oh my, look at these sublime features only evIdent in the noblest of all blood lines!",
+        "Description": "What did the humans say again? Oh, what a poor, deformed little thing! But guess what the arcanists say. Oh my, look at these sublime features only evident in the noblest of all blood lines!",
         "Source": "Craft in the Wilderness, Pawnshop",
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
     },
@@ -365,7 +365,7 @@
         "IsReleased": true,
         "Name": "Magnesia Crystal",
         "Rarity": 2,
-        "Description": "It's not quite useful in high-level rituals. The seller promised that the part that looks like a human face was but a coincIdence created by nature.",
+        "Description": "It's not quite useful in high-level rituals. The seller promised that the part that looks like a human face was but a coincidence created by nature.",
         "Source": "Pawnshop, Story",
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
     },
@@ -605,7 +605,7 @@
         "IsReleased": true,
         "Name": "Caduceus",
         "Rarity": 6,
-        "Description": "",
+        "Description": "Mediating peace between those in dispute and hostility.",
         "Source": "",
         "Usage": ""
     },
@@ -615,7 +615,7 @@
         "IsReleased": true,
         "Name": "Glimmering Mothwing Lamp",
         "Rarity": 5,
-        "Description": "",
+        "Description": "Please do not stimulate the light source at its tail. Handle gently to avoid burning.",
         "Source": "",
         "Usage": ""
     },
@@ -625,7 +625,7 @@
         "IsReleased": true,
         "Name": "Wheel and Axle Core",
         "Rarity": 5,
-        "Description": "",
+        "Description": "Through polishing, inlaying, and fine carving, one can obtain a lively \"heart\".",
         "Source": "",
         "Usage": ""
     },
@@ -635,7 +635,7 @@
         "IsReleased": true,
         "Name": "Crimson Gold Compass",
         "Rarity": 5,
-        "Description": "",
+        "Description": "It will remove the wrong paths for you.",
         "Source": "",
         "Usage": ""
     },
@@ -645,7 +645,7 @@
         "IsReleased": true,
         "Name": "Winged Key",
         "Rarity": 4,
-        "Description": "",
+        "Description": "Find an open space, hold the key handle firmly, and mentally recite your destination. It will lead you to the keyhole, in the form of a bird.",
         "Source": "",
         "Usage": ""
     },
@@ -655,7 +655,7 @@
         "IsReleased": true,
         "Name": "Curved Goose Neck",
         "Rarity": 4,
-        "Description": "",
+        "Description": "It bends its neck to take up the balance spring of the clock, take up precision, take up time itself.",
         "Source": "",
         "Usage": ""
     },
@@ -665,7 +665,7 @@
         "IsReleased": true,
         "Name": "Gold Dust Beetle",
         "Rarity": 4,
-        "Description": "",
+        "Description": "They discern directions through the moisture of the soil and the change of light, looking forward to their moment of maturation.",
         "Source": "",
         "Usage": ""
     },
@@ -675,7 +675,7 @@
         "IsReleased": true,
         "Name": "Dried Cicada Wing",
         "Rarity": 3,
-        "Description": "",
+        "Description": "Please store the wings away from the body, preferably in a cool place. Occasional trembling is normal; just wait for it to dry completely.",
         "Source": "",
         "Usage": ""
     },
@@ -685,7 +685,7 @@
         "IsReleased": true,
         "Name": "Ceaseless Wheel",
         "Rarity": 3,
-        "Description": "",
+        "Description": "All the secrets of time are hidden in the ceaseless turning of the gears.",
         "Source": "",
         "Usage": ""
     },
@@ -695,7 +695,7 @@
         "IsReleased": true,
         "Name": "Crystal Casket",
         "Rarity": 6,
-        "Description": "",
+        "Description": "The whispers inside are overflowing. Seize the opportunity when you get to hear them.",
         "Source": "",
         "Usage": ""
     }
