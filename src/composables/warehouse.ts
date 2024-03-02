@@ -42,14 +42,14 @@ export const initializeWarehouse = () => {
     console.log('Initialize warehouse');
     useDataStore().items.forEach((item) => {
         if (item.IsReleased || unreleasedDropsEnabled) {
-            if (checkItem(item)) {
+            if (isValidWarehouseItem(item)) {
                 useWarehouseStore().initItem(item.Name, item.Category);
             }
         }
     });
 }
 
-function checkItem (item) {
+function isValidWarehouseItem (item) {
     if (
         item.Category === 'Build Material' ||
         item.Category === 'Insight Material' ||
@@ -62,14 +62,15 @@ function checkItem (item) {
 }
 
 export function checkWarehouse () {
+    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
     useDataStore().items.forEach((item) => {
         if (
             !useWarehouseStore().hasItem(item.Name) &&
-            (item.Name === 'Crystal Casket' || item.IsReleased) && checkItem(item)
+            (item.Name === 'Crystal Casket' || item.IsReleased || unreleasedDropsEnabled) && isValidWarehouseItem(item)
         ) {
             console.log('Adding', item.Name, 'to warehouse')
             useWarehouseStore().initItem(item.Name, item.Category);
-        } else if (!item.IsReleased || !checkItem(item)) {
+        } else if (!item.IsReleased || !isValidWarehouseItem(item)) {
             // console.log('Removing', item.Name, 'from warehouse')
             useWarehouseStore().removeItem(item.Name);
         }
