@@ -26,7 +26,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Mineral Wealth",
-          "Ceaseless Wheel",
+          "Perpetual Cog",
           "Biting Box"
         ],
         "Quantity": [
@@ -155,7 +155,7 @@
           "Sinuous Howl",
           "Sonorous Knell",
           "Biting Box",
-          "Curved Goose Neck"
+          "Goose Neck"
         ],
         "Quantity": [
           1,
@@ -214,8 +214,8 @@
         "Material": [
           "Sinuous Howl",
           "Sonorous Knell",
-          "Caduceus",
-          "Wheel and Axle Core"
+          "Serpent Scepter",
+          "Watch Core"
         ],
         "Quantity": [
           1,
@@ -255,7 +255,7 @@
           "Page of Mineral Wealth",
           "Page of Starlit Ascent",
           "Shattered Bones",
-          "Ceaseless Wheel"
+          "Perpetual Cog"
         ],
         "Quantity": [
           18000,
@@ -288,7 +288,7 @@
           "Sharpodonty",
           "Tome of Mineral Wealth",
           "Tome of Starlit Ascent",
-          "Wheel and Axle Core",
+          "Watch Core",
           "Golden Fleece"
         ],
         "Quantity": [
@@ -339,7 +339,7 @@
         "Material": [
           "Brief Cacophony",
           "Liquefied Terror",
-          "Ceaseless Wheel"
+          "Perpetual Cog"
         ],
         "Quantity": [
           5,
@@ -352,7 +352,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "Gold Dust Beetle"
+          "Golden Beetle"
         ],
         "Quantity": [
           30000,
@@ -402,7 +402,7 @@
         "Material": [
           "Sinuous Howl",
           "Sonorous Knell",
-          "Curved Goose Neck",
+          "Goose Neck",
           "Biting Box"
         ],
         "Quantity": [
@@ -418,7 +418,7 @@
           "Sinuous Howl",
           "Sharpodonty",
           "Sonorous Knell",
-          "Crimson Gold Compass"
+          "Golden Compass"
         ],
         "Quantity": [
           1,
@@ -432,7 +432,7 @@
         "Material": [
           "Sinuous Howl",
           "Sonorous Knell",
-          "Glimmering Mothwing Lamp",
+          "Glowing Mothwing",
           "Prophetic Bird"
         ],
         "Quantity": [
@@ -462,7 +462,7 @@
         "Material": [
           "Sinuous Howl",
           "Sonorous Knell",
-          "Caduceus",
+          "Serpent Scepter",
           "Murmur of Insanity"
         ],
         "Quantity": [
@@ -531,7 +531,7 @@
         "Material": [
           "Sharpodonty",
           "Tome of Starlit Ascent",
-          "Glimmering Mothwing Lamp",
+          "Glowing Mothwing",
           "Fruit of Good and Evil"
         ],
         "Quantity": [
@@ -580,7 +580,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Ceaseless Wheel",
+          "Perpetual Cog",
           "Spell of Fortune"
         ],
         "Quantity": [
@@ -594,7 +594,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "Gold Dust Beetle"
+          "Golden Beetle"
         ],
         "Quantity": [
           30000,
@@ -645,7 +645,7 @@
           "Interlaced Shudder",
           "Sonorous Knell",
           "Prophetic Bird",
-          "Curved Goose Neck"
+          "Goose Neck"
         ],
         "Quantity": [
           1,
@@ -660,7 +660,7 @@
           "Interlaced Shudder",
           "Sharpodonty",
           "Sonorous Knell",
-          "Crimson Gold Compass"
+          "Golden Compass"
         ],
         "Quantity": [
           1,
@@ -689,7 +689,7 @@
         "Material": [
           "Interlaced Shudder",
           "Sonorous Knell",
-          "Wheel and Axle Core",
+          "Watch Core",
           "Prophetic Bird"
         ],
         "Quantity": [
@@ -719,7 +719,7 @@
         "Material": [
           "Interlaced Shudder",
           "Sonorous Knell",
-          "Caduceus",
+          "Serpent Scepter",
           "Wyrmling Skeleton"
         ],
         "Quantity": [
@@ -758,7 +758,7 @@
         "Material": [
           "Sharpodonty",
           "Scroll of Beastly Thirst",
-          "Dried Cicada Wing",
+          "Cicada Wings",
           "Bifurcated Skeleton"
         ],
         "Quantity": [
@@ -823,7 +823,7 @@
         "Material": [
           "Brief Cacophony",
           "Esoteric Bones",
-          "Dried Cicada Wing"
+          "Cicada Wings"
         ],
         "Quantity": [
           5,
@@ -836,7 +836,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "Gold Dust Beetle"
+          "Golden Beetle"
         ],
         "Quantity": [
           30000,
@@ -872,7 +872,7 @@
         "Id": 9,
         "Material": [
           "Brief Cacophony",
-          "Curved Goose Neck",
+          "Goose Neck",
           "Rough Silver Ingot"
         ],
         "Quantity": [
@@ -902,7 +902,7 @@
           "Hypocritical Murmur",
           "Sharpodonty",
           "Sonorous Knell",
-          "Crimson Gold Compass"
+          "Golden Compass"
         ],
         "Quantity": [
           1,
@@ -947,7 +947,7 @@
           "Hypocritical Murmur",
           "Sonorous Knell",
           "Mistilteinn",
-          "Glimmering Mothwing Lamp"
+          "Glowing Mothwing"
         ],
         "Quantity": [
           1,
@@ -962,7 +962,7 @@
           "Hypocritical Murmur",
           "Sonorous Knell",
           "Golden Fleece",
-          "Wheel and Axle Core"
+          "Watch Core"
         ],
         "Quantity": [
           1,
@@ -1500,7 +1500,7 @@
           "Sharpodonty",
           "Tome of Starlit Ascent",
           "Bogeyman",
-          "Caduceus"
+          "Serpent Scepter"
         ],
         "Quantity": [
           200000,
@@ -1562,7 +1562,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "Gold Dust Beetle"
+          "Golden Beetle"
         ],
         "Quantity": [
           30000,
@@ -1599,7 +1599,7 @@
         "Material": [
           "Brief Cacophony",
           "Salted Mandrake",
-          "Dried Cicada Wing"
+          "Cicada Wings"
         ],
         "Quantity": [
           8,
@@ -1628,7 +1628,7 @@
           "Interlaced Shudder",
           "Sharpodonty",
           "Sonorous Knell",
-          "Crimson Gold Compass"
+          "Golden Compass"
         ],
         "Quantity": [
           1,
@@ -1673,7 +1673,7 @@
           "Interlaced Shudder",
           "Sonorous Knell",
           "Golden Fleece",
-          "Wheel and Axle Core"
+          "Watch Core"
         ],
         "Quantity": [
           1,
@@ -1687,7 +1687,7 @@
         "Material": [
           "Interlaced Shudder",
           "Sonorous Knell",
-          "Caduceus",
+          "Serpent Scepter",
           "Bogeyman"
         ],
         "Quantity": [
@@ -5682,7 +5682,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "Gold Dust Beetle"
+          "Golden Beetle"
         ],
         "Quantity": [
           25000,
@@ -5719,7 +5719,7 @@
         "Material": [
           "Brief Cacophony",
           "Salted Mandrake",
-          "Dried Cicada Wing"
+          "Cicada Wings"
         ],
         "Quantity": [
           6,
@@ -5748,7 +5748,7 @@
           "Hypocritical Murmur",
           "Sharpodonty",
           "Sonorous Knell",
-          "Crimson Gold Compass"
+          "Golden Compass"
         ],
         "Quantity": [
           1,
@@ -5793,7 +5793,7 @@
           "Hypocritical Murmur",
           "Sonorous Knell",
           "Golden Fleece",
-          "Wheel and Axle Core"
+          "Watch Core"
         ],
         "Quantity": [
           1,
@@ -5807,7 +5807,7 @@
         "Material": [
           "Hypocritical Murmur",
           "Sonorous Knell",
-          "Caduceus",
+          "Serpent Scepter",
           "Bogeyman"
         ],
         "Quantity": [
@@ -5862,7 +5862,7 @@
           "Sharpodonty",
           "Tome of Beastly Thirst",
           "Bogeyman",
-          "Caduceus"
+          "Serpent Scepter"
         ],
         "Quantity": [
           120000,
@@ -14372,7 +14372,7 @@
           "Sharpodonty",
           "Scroll of Beastly Thirst",
           "Esoteric Bones",
-          "Curved Goose Neck"
+          "Goose Neck"
         ],
         "Quantity": [
           40000,
@@ -14387,7 +14387,7 @@
           "Sharpodonty",
           "Tome of Beastly Thirst",
           "Platinum Ouija",
-          "Caduceus"
+          "Serpent Scepter"
         ],
         "Quantity": [
           200000,
@@ -14435,7 +14435,7 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Dried Cicada Wing",
+          "Cicada Wings",
           "Spell of Fortune"
         ],
         "Quantity": [
@@ -14449,7 +14449,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "Gold Dust Beetle"
+          "Golden Beetle"
         ],
         "Quantity": [
           30000,
@@ -14486,7 +14486,7 @@
         "Material": [
           "Brief Cacophony",
           "Prophetic Bird",
-          "Ceaseless Wheel"
+          "Perpetual Cog"
         ],
         "Quantity": [
           8,
@@ -14515,7 +14515,7 @@
           "Hypocritical Murmur",
           "Sharpodonty",
           "Sonorous Knell",
-          "Crimson Gold Compass"
+          "Golden Compass"
         ],
         "Quantity": [
           1,
@@ -14544,8 +14544,8 @@
         "Material": [
           "Hypocritical Murmur",
           "Sonorous Knell",
-          "Glimmering Mothwing Lamp",
-          "Curved Goose Neck"
+          "Glowing Mothwing",
+          "Goose Neck"
         ],
         "Quantity": [
           1,
@@ -14617,7 +14617,7 @@
           "Scroll of Plantal Vimen",
           "Scroll of Beastly Thirst",
           "Esoteric Bones",
-          "Gold Dust Beetle"
+          "Golden Beetle"
         ],
         "Quantity": [
           40000,
@@ -14634,7 +14634,7 @@
           "Tome of Plantal Vimen",
           "Tome of Beastly Thirst",
           "Murmur of Insanity",
-          "Caduceus"
+          "Serpent Scepter"
         ],
         "Quantity": [
           200000,
@@ -14697,7 +14697,7 @@
         "Material": [
           "Sharpodonty",
           "Brief Cacophony",
-          "Gold Dust Beetle"
+          "Golden Beetle"
         ],
         "Quantity": [
           30000,
@@ -14721,7 +14721,7 @@
         "Material": [
           "Brief Cacophony",
           "Holy Silver",
-          "Dried Cicada Wing"
+          "Cicada Wings"
         ],
         "Quantity": [
           6,
@@ -14763,7 +14763,7 @@
           "Sinuous Howl",
           "Sharpodonty",
           "Sonorous Knell",
-          "Crimson Gold Compass"
+          "Golden Compass"
         ],
         "Quantity": [
           1,
@@ -14823,7 +14823,7 @@
           "Sinuous Howl",
           "Sonorous Knell",
           "Golden Fleece",
-          "Wheel and Axle Core"
+          "Watch Core"
         ],
         "Quantity": [
           1,

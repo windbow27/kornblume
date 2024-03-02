@@ -1382,15 +1382,15 @@
     "name": "Unreleased",
     "cost": 0,
     "drops": {
-      "Caduceus": 1,
-      "Glimmering Mothwing Lamp": 1,
-      "Wheel and Axle Core": 1,
-      "Crimson Gold Compass": 1,
+      "Serpent Scepter": 1,
+      "Glowing Mothwing": 1,
+      "Watch Core": 1,
+      "Golden Compass": 1,
       "Winged Key": 1,
-      "Curved Goose Neck": 1,
-      "Gold Dust Beetle": 1,
-      "Dried Cicada Wing": 1,
-      "Ceaseless Wheel": 1
+      "Goose Neck": 1,
+      "Golden Beetle": 1,
+      "Cicada Wings": 1,
+      "Perpetual Cog": 1
     }
   }
 }

@@ -1,10 +1,64 @@
 <script lang="ts" setup name="App">
+import { onMounted } from 'vue';
 import { RouterView } from 'vue-router'
 import { useGlobalStore } from './stores/global'
 import Navbar from './components/navbar/Navbar.vue'
 import LoadingScreen from './components/navbar/LoadingScreen.vue'
 
 const globalStore = useGlobalStore()
+
+function getLocalStorageDataByKey (key) {
+    return JSON.parse(localStorage.getItem(key) as string);
+}
+
+function setLocalStorageDataByKey (key, data) {
+    localStorage.setItem(key, JSON.stringify(data))
+}
+
+// PLEASE CAREFULLY MODIFY THE FUNCTION HERE
+// otherwise, it may lead to data incompatibility and potentially break users' data
+function clearLegacyData () {
+    const plannerSettingsStoreKey = 'plannerSettings'
+    const plannerSettingsStoreData = getLocalStorageDataByKey(plannerSettingsStoreKey)
+    if (plannerSettingsStoreData) { // only do this if there's data already stored in users' devices
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { settings: { enableGreedyMethod, enabledUnreleasedStages, ...restSettings } } = plannerSettingsStoreData
+        // remove the legacy data keys: enableGreedyMethod and enabledUnreleasedStages
+        const newPlannerSettingsStoreData = { ...plannerSettingsStoreData, settings: restSettings };
+        setLocalStorageDataByKey(plannerSettingsStoreKey, newPlannerSettingsStoreData)
+    }
+
+    const warehouseStoreKey = 'warehouse'
+    const warehouseStoreData = getLocalStorageDataByKey(warehouseStoreKey)
+    if (warehouseStoreData) { // only do this if there's data already stored in users' devices
+        const { data: warehouseData } = warehouseStoreData
+        const legacyMatlNameMapping = {
+            Caduceus: 'Serpent Scepter',
+            'Crimson Gold Compass': 'Golden Compass',
+            'Glimmering Mothwing Lamp': 'Glowing Mothwing',
+            'Curved Goose Neck': 'Goose Neck',
+            'Gold Dust Beetle': 'Golden Beetle',
+            'Winged Key': 'Winged Key',
+            'Ceaseless Wheel': 'Perpetual Cog',
+            'Dried Cicada Wing': 'Cicada Wings',
+            'Wheel and Axle Core': 'Watch Core'
+        }
+        const newWarehouseData = warehouseData.map((matlInfo) => {
+            const newMatlName = legacyMatlNameMapping[matlInfo.Material] || matlInfo.Material;
+            return {
+                ...matlInfo,
+                Material: newMatlName
+            }
+        })
+        const newWarehouseStoreData = {
+            ...warehouseStoreData,
+            data: newWarehouseData
+        }
+        setLocalStorageDataByKey(warehouseStoreKey, newWarehouseStoreData)
+    }
+}
+
+onMounted(clearLegacyData);
 
 </script>
 

@@ -38,7 +38,7 @@ export function removeEventShopMaterialsFromWarehouse (version: string) {
 }
 
 export const initializeWarehouse = () => {
-    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
+    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_7;
     console.log('Initialize warehouse');
     useDataStore().items.forEach((item) => {
         if (item.IsReleased || unreleasedDropsEnabled) {
@@ -62,7 +62,7 @@ function isValidWarehouseItem (item) {
 }
 
 export function checkWarehouse () {
-    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
+    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_7;
     useDataStore().items.forEach((item) => {
         if (
             !useWarehouseStore().hasItem(item.Name) &&
