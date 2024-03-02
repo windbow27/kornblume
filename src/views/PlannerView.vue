@@ -96,13 +96,13 @@ const closeWarehouse = () => {
     useGlobalStore().setIsEditingWarehouse(false);
 }
 
-// const openSettings = () => {
-//     isSettings.value = true
-// }
+const openSettings = () => {
+    isSettings.value = true
+}
 
-// const closeSettings = () => {
-//     isSettings.value = false
-// }
+const closeSettings = () => {
+    isSettings.value = false
+}
 
 const handleSelectArcanist = (arcanist: IArcanist) => {
     selectedArcanist.value = {
@@ -206,10 +206,11 @@ onClickOutside(warehouseRef, closeWarehouse)
                     <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-box-archive"></i></button>
                 </div>
-                <!-- <div class="tooltip tooltip-left" :data-tip="$t('settings')">
+                <!-- Hide this settings button till we actually have some settings that allow them to make changes -->
+                <div v-if="false" class="tooltip tooltip-left" :data-tip="$t('settings')">
                     <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-gear"></i></button>
-                </div> -->
+                </div>
             </div>
         </div>
 
