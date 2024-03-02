@@ -22,12 +22,14 @@ const toggleWilderness = () => {
     plannerSettingsStore.settings.enableWilderness = !plannerSettingsStore.settings.enableWilderness;
 };
 
+const isEnabledLowRunCards = computed(() => plannerSettingsStore.settings.enableLowRunCards)
+
 const isBadge = computed(() => {
     return props.layer.cards && props.layer.cards.length > 0;
 });
 
 const filteredCards = computed(() => {
-    if (plannerSettingsStore.settings.enableLowRunCards) {
+    if (!isEnabledLowRunCards.value) {
         return props.layer.cards.filter((card) => card.runs > 5);
     }
     return props.layer.cards;
@@ -84,7 +86,7 @@ const getContainerClass = computed(() => {
             </div>
             <div v-if="props.layer.id === 0 && isBadge">
                 <div class="tooltip"
-                    :data-tip="plannerSettingsStore.settings.enableWilderness ? $t('enabled-wilderness') : $t('disabled-wilderness')">
+                    :data-tip="plannerSettingsStore.settings.enableWilderness ? $t('disable-wilderness'): $t('enable-wilderness')">
                     <button class=" btn btn-xs btn-warning bg-yellow-100 text-yellow-800"
                         :class="plannerSettingsStore.settings.enableWilderness ? '  ' : ' opacity-50'"
                         @click="toggleWilderness">
@@ -93,14 +95,17 @@ const getContainerClass = computed(() => {
                 </div>
             </div>
             <div v-if="props.layer.id === 2 && isBadge">
-                <button
-                    class="btn btn-xs bg-purple-100 text-purple-800 border-purple-800 border hover:bg-purple-400 hover:border-purple-800"
-                    :class="plannerSettingsStore.settings.enableLowRunCards ? 'opacity-50' : ''"
-                    @click="toggleHideLowRunCards">
-                    {{ plannerSettingsStore.settings.enableLowRunCards ? $t('hide-cards') : $t('show-cards') }}
-                    <i
-                        :class="plannerSettingsStore.settings.enableLowRunCards ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down'"></i>
-                </button>
+                <div class="tooltip"
+                    :data-tip="isEnabledLowRunCards ? $t('hide-cards'): $t('show-cards')">
+                    <button
+                        class="btn btn-xs bg-purple-100 text-purple-800 border-purple-800 border hover:bg-purple-400 hover:border-purple-800"
+                        :class="isEnabledLowRunCards ? '' : 'opacity-50'"
+                        @click="toggleHideLowRunCards">
+                        {{ isEnabledLowRunCards ? $t('enabled-minor-cards'): $t('disabled-minor-cards') }}
+                        <i
+                            :class="isEnabledLowRunCards ? 'fa-solid fa-chevron-down': 'fa-solid fa-chevron-up'"></i>
+                    </button>
+                </div>
             </div>
         </div>
         <div :class="getContainerClass">

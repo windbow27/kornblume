@@ -215,9 +215,9 @@
   "used-by-the-following-arcanists": "Được sử dụng bởi các arcanists sau đây",
   "wishing-spring-formula": "Công thức Giếng uớc",
   "quick-goal": "Đặt mục tiêu nhanh",
-  "disabled-wilderness": "Đã tắt vùng hoang dã",
-  "enabled-wilderness": "Đã kích hoạt vùng hoang dã",
-  "hide-cards": "Ẩn các màn sử dụng ít",
+  "disable-wilderness": "Đã tắt vùng hoang dã",
+  "enable-wilderness": "Đã kích hoạt vùng hoang dã",
   "show-cards": "Hiện các màn sử dụng ít",
+  "hide-cards": "Ẩn các màn sử dụng ít",
   "ascension-material": "Vật liệu Ascension"
 }

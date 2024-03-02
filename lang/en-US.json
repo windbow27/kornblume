@@ -215,9 +215,11 @@
   "Insight": "Insight",
   "Resource": "Resource",
   "quick-goal": "Quick Goal",
-  "show-cards": "Displayed minor stages",
-  "hide-cards": "Hid minor stages",
-  "disabled-wilderness": "Disabled wilderness",
-  "enabled-wilderness": "Enabled wilderness",
+  "enabled-minor-cards": "Displayed minor stages",
+  "disabled-minor-cards": "Hid minor stages",
+  "show-cards": "Display minor stages",
+  "hide-cards": "Hide minor stages",
+  "disable-wilderness": "Disable wilderness",
+  "enable-wilderness": "Enable wilderness",
   "ascension-material": "Ascension Material"
 }
