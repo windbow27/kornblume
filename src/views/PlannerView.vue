@@ -202,7 +202,7 @@ onClickOutside(settingsRef, closeSettings)
                     <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-tree"></i></button>
                 </div>
-                <div class="tooltip" :data-tip="$t('manage-warehouse')">
+                <div class="tooltip tooltip-left" :data-tip="$t('manage-warehouse')">
                     <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-box-archive"></i></button>
                 </div>

@@ -101,7 +101,8 @@ const getContainerClass = computed(() => {
                         class="btn btn-xs bg-purple-100 text-purple-800 border-purple-800 border hover:bg-purple-400 hover:border-purple-800"
                         :class="isEnabledLowRunCards ? '' : 'opacity-50'"
                         @click="toggleHideLowRunCards">
-                        {{ isEnabledLowRunCards ? $t('enabled-minor-cards'): $t('disabled-minor-cards') }}
+                        <!-- {{ isEnabledLowRunCards ? $t('enabled-minor-cards'): $t('disabled-minor-cards') }} -->
+                        <i :class="isEnabledLowRunCards ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'"></i>
                         <i
                             :class="isEnabledLowRunCards ? 'fa-solid fa-chevron-down': 'fa-solid fa-chevron-up'"></i>
                     </button>
