@@ -42,29 +42,35 @@ export const initializeWarehouse = () => {
     console.log('Initialize warehouse');
     useDataStore().items.forEach((item) => {
         if (item.IsReleased || unreleasedDropsEnabled) {
-            if (
-                item.Category === 'Build Material' ||
-                item.Category === 'Insight Material' ||
-                (item.Category === 'Resonate Material' && item.Rarity < 6) ||
-                item.Name === 'Dust' ||
-                item.Name === 'Sharpodonty' ||
-                item.Name === 'Crystal Casket'
-            ) {
+            if (checkItem(item)) {
                 useWarehouseStore().initItem(item.Name, item.Category);
             }
         }
     });
 }
 
-export const checkWarehouse = () => {
-    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
+function checkItem (item) {
+    if (
+        item.Category === 'Build Material' ||
+        item.Category === 'Insight Material' ||
+        (item.Category === 'Resonate Material' && item.Rarity < 6) ||
+        item.Name === 'Dust' ||
+        item.Name === 'Sharpodonty' ||
+        item.Name === 'Crystal Casket'
+    ) return true;
+    return false;
+}
+
+export function checkWarehouse () {
     useDataStore().items.forEach((item) => {
         if (
             !useWarehouseStore().hasItem(item.Name) &&
-            (item.Name === 'Crystal Casket' || (!item.IsReleased && unreleasedDropsEnabled))
+            (item.Name === 'Crystal Casket' || item.IsReleased) && checkItem(item)
         ) {
+            console.log('Adding', item.Name, 'to warehouse')
             useWarehouseStore().initItem(item.Name, item.Category);
-        } else if (!item.IsReleased && !unreleasedDropsEnabled) {
+        } else if (!item.IsReleased || !checkItem(item)) {
+            // console.log('Removing', item.Name, 'from warehouse')
             useWarehouseStore().removeItem(item.Name);
         }
     });
