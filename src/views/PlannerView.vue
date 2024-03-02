@@ -161,7 +161,7 @@ onClickOutside(arcanistListRef, closeAddOverlay)
 onClickOutside(plannerEditRef, closeEditOverlay)
 onClickOutside(wildernessRef, closeWilderness)
 onClickOutside(warehouseRef, closeWarehouse)
-// onClickOutside(settingsRef, closeSettings)
+onClickOutside(settingsRef, closeSettings)
 
 </script>
 
