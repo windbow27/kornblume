@@ -1,7 +1,7 @@
 import { useDataStore } from '@/stores/dataStore'
 import { useWarehouseStore } from '@/stores/warehouseStore'
 import { useActivityStore } from '@/stores/activityStore';
-// import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore'
+import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore'
 import { IMaterialUnit, IStages } from '@/types';
 import { useGlobalStore } from '@/stores/global';
 import { getSolve, processSharpoAndDust } from './solver';
@@ -193,12 +193,12 @@ function updateCraftingMaterialsForGlobalStore (stages) {
 export interface IPlanCards extends Array<IPlanCard> { }
 
 export function getDrops () {
-    // const {
-    //     enabledUnreleasedStages
-    // } = usePlannerSettingsStore().settings;
+    const {
+        enabledUnreleasedStages_v1_7
+    } = usePlannerSettingsStore().settings;
     const dataStore = useDataStore();
-    // return dataStore[enabledUnreleasedStages ? 'stages' : 'stages1_4'] || {}
-    return dataStore.stages1_4 || {}
+    // TODO: change stages1_4 to new stages data when we ready
+    return dataStore[enabledUnreleasedStages_v1_7 ? 'stages1_4' : 'stages1_4'] || {}
 }
 
 export function getPlan (materials: IMaterialUnit[]): IPlanCards {

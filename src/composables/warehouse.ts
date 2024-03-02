@@ -1,6 +1,6 @@
 import { useDataStore } from '../stores/dataStore';
 import { useWarehouseStore, IItem as IWarehouseItem } from '../stores/warehouseStore';
-// import { usePlannerSettingsStore } from '../stores/plannerSettingsStore';
+import { usePlannerSettingsStore } from '../stores/plannerSettingsStore';
 
 const categoryPriority = {
     'Base Item': 0,
@@ -38,11 +38,10 @@ export function removeEventShopMaterialsFromWarehouse (version: string) {
 }
 
 export const initializeWarehouse = () => {
-    // const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
+    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_7;
     console.log('Initialize warehouse');
     useDataStore().items.forEach((item) => {
-        // if (item.IsReleased || unreleasedDropsEnabled) {
-        if (item.IsReleased) {
+        if (item.IsReleased || unreleasedDropsEnabled) {
             if (isValidWarehouseItem(item)) {
                 useWarehouseStore().initItem(item.Name, item.Category);
             }
@@ -63,12 +62,11 @@ function isValidWarehouseItem (item) {
 }
 
 export function checkWarehouse () {
-    // const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages;
+    const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_7;
     useDataStore().items.forEach((item) => {
         if (
             !useWarehouseStore().hasItem(item.Name) &&
-            // (item.Name === 'Crystal Casket' || item.IsReleased || unreleasedDropsEnabled) && isValidWarehouseItem(item)
-            (item.Name === 'Crystal Casket' || item.IsReleased) && isValidWarehouseItem(item)
+            (item.Name === 'Crystal Casket' || item.IsReleased || unreleasedDropsEnabled) && isValidWarehouseItem(item)
         ) {
             console.log('Adding', item.Name, 'to warehouse')
             useWarehouseStore().initItem(item.Name, item.Category);
