@@ -217,7 +217,7 @@
   "quick-goal": "Auto Objektif",
   "show-cards": "Perlihatkan stage tidak penting",
   "hide-cards": "Sembunyikan stage tidak penting",
-  "disabled-wilderness": "Nonaktifkan Wilderness",
-  "enabled-wilderness": "Nyalakan Wilderness",
+  "disable-wilderness": "Nonaktifkan Wilderness",
+  "enable-wilderness": "Nyalakan Wilderness",
   "ascension-material": "Bahan Ascension"
 }

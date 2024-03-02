@@ -84,7 +84,7 @@ const getContainerClass = computed(() => {
             </div>
             <div v-if="props.layer.id === 0 && isBadge">
                 <div class="tooltip"
-                    :data-tip="plannerSettingsStore.settings.enableWilderness ? $t('enabled-wilderness') : $t('disabled-wilderness')">
+                    :data-tip="plannerSettingsStore.settings.enableWilderness ? $t('disable-wilderness'): $t('enable-wilderness')">
                     <button class=" btn btn-xs btn-warning bg-yellow-100 text-yellow-800"
                         :class="plannerSettingsStore.settings.enableWilderness ? '  ' : ' opacity-50'"
                         @click="toggleWilderness">

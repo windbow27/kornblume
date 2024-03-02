@@ -217,7 +217,7 @@
   "quick-goal": "Quick Goal",
   "show-cards": "Displayed minor stages",
   "hide-cards": "Hid minor stages",
-  "disabled-wilderness": "Disabled wilderness",
-  "enabled-wilderness": "Enabled wilderness",
+  "disable-wilderness": "Disable wilderness",
+  "enable-wilderness": "Enable wilderness",
   "ascension-material": "Ascension Material"
 }
