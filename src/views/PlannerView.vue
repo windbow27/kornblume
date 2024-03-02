@@ -96,13 +96,13 @@ const closeWarehouse = () => {
     useGlobalStore().setIsEditingWarehouse(false);
 }
 
-const openSettings = () => {
-    isSettings.value = true
-}
+// const openSettings = () => {
+//     isSettings.value = true
+// }
 
-const closeSettings = () => {
-    isSettings.value = false
-}
+// const closeSettings = () => {
+//     isSettings.value = false
+// }
 
 const handleSelectArcanist = (arcanist: IArcanist) => {
     selectedArcanist.value = {
@@ -161,7 +161,7 @@ onClickOutside(arcanistListRef, closeAddOverlay)
 onClickOutside(plannerEditRef, closeEditOverlay)
 onClickOutside(wildernessRef, closeWilderness)
 onClickOutside(warehouseRef, closeWarehouse)
-onClickOutside(settingsRef, closeSettings)
+// onClickOutside(settingsRef, closeSettings)
 
 </script>
 
@@ -206,10 +206,10 @@ onClickOutside(settingsRef, closeSettings)
                     <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-box-archive"></i></button>
                 </div>
-                <div class="tooltip tooltip-left" :data-tip="$t('settings')">
+                <!-- <div class="tooltip tooltip-left" :data-tip="$t('settings')">
                     <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-gear"></i></button>
-                </div>
+                </div> -->
             </div>
         </div>
 
