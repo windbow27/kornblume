@@ -1,5 +1,15 @@
 [
     {
+        "Id": 61,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Caduceus",
+        "Rarity": 6,
+        "Description": "Mediating peace between those in dispute and hostility.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
         "Id": 3,
         "Category": "Build Material",
         "IsReleased": true,
@@ -150,6 +160,16 @@
         "Usage": "The ritual of Mineral Insight III."
     },
     {
+        "Id": 64,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Crimson Gold Compass",
+        "Rarity": 5,
+        "Description": "It will remove the wrong paths for you.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
         "Id": 5,
         "Category": "Build Material",
         "IsReleased": true,
@@ -158,6 +178,26 @@
         "Description": "It shall purge things that lead you astray.",
         "Source": "Craft in the Wilderness, Pawnshop",
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 63,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Wheel and Axle Core",
+        "Rarity": 5,
+        "Description": "Through polishing, inlaying, and fine carving, one can obtain a lively \"heart\".",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 62,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Glimmering Mothwing Lamp",
+        "Rarity": 5,
+        "Description": "Please do not stimulate the light source at its tail. Handle gently to avoid burning.",
+        "Source": "",
+        "Usage": ""
     },
     {
         "Id": 4,
@@ -220,6 +260,36 @@
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
     },
     {
+        "Id": 66,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Curved Goose Neck",
+        "Rarity": 4,
+        "Description": "It bends its neck to take up the balance spring of the clock, take up precision, take up time itself.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 67,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Gold Dust Beetle",
+        "Rarity": 4,
+        "Description": "They discern directions through the moisture of the soil and the change of light, looking forward to their moment of maturation.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 65,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Winged Key",
+        "Rarity": 4,
+        "Description": "Find an open space, hold the key handle firmly, and mentally recite your destination. It will lead you to the keyhole, in the form of a bird.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
         "Id": 12,
         "Category": "Build Material", 
         "IsReleased": true,
@@ -278,6 +348,26 @@
         "Description": "Embark on a journey, or wait plainly.",
         "Source": "Craft in the Wilderness, Pawnshop, Story",
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 69,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Ceaseless Wheel",
+        "Rarity": 3,
+        "Description": "All the secrets of time are hidden in the ceaseless turning of the gears.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 68,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Dried Cicada Wing",
+        "Rarity": 3,
+        "Description": "Please store the wings away from the body, preferably in a cool place. Occasional trembling is normal; just wait for it to dry completely.",
+        "Source": "",
+        "Usage": ""
     },
     {
         "Id": 21,
@@ -598,96 +688,6 @@
         "Description": "Snowflakes crushed by the wheels, pasture grass rustling in the wind, waves shattered against distant cliffs. Such sounds are insignificant but are recorded nonetheless. Again and again, till the very end.",
         "Source": "Artificial Somnambulism",
         "Usage": "Can be exchanged for items in the [Oneiric Shop] in the Bank."
-    },
-    {
-        "Id": 61,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Caduceus",
-        "Rarity": 6,
-        "Description": "Mediating peace between those in dispute and hostility.",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 62,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Glimmering Mothwing Lamp",
-        "Rarity": 5,
-        "Description": "Please do not stimulate the light source at its tail. Handle gently to avoid burning.",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 63,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Wheel and Axle Core",
-        "Rarity": 5,
-        "Description": "Through polishing, inlaying, and fine carving, one can obtain a lively \"heart\".",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 64,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Crimson Gold Compass",
-        "Rarity": 5,
-        "Description": "It will remove the wrong paths for you.",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 65,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Winged Key",
-        "Rarity": 4,
-        "Description": "Find an open space, hold the key handle firmly, and mentally recite your destination. It will lead you to the keyhole, in the form of a bird.",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 66,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Curved Goose Neck",
-        "Rarity": 4,
-        "Description": "It bends its neck to take up the balance spring of the clock, take up precision, take up time itself.",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 67,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Gold Dust Beetle",
-        "Rarity": 4,
-        "Description": "They discern directions through the moisture of the soil and the change of light, looking forward to their moment of maturation.",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 68,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Dried Cicada Wing",
-        "Rarity": 3,
-        "Description": "Please store the wings away from the body, preferably in a cool place. Occasional trembling is normal; just wait for it to dry completely.",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 69,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Ceaseless Wheel",
-        "Rarity": 3,
-        "Description": "All the secrets of time are hidden in the ceaseless turning of the gears.",
-        "Source": "",
-        "Usage": ""
     },
     {
         "Id": 70,
