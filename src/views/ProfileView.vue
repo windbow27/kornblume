@@ -2,6 +2,12 @@
 import { ref } from 'vue'
 import { exportKornblumeData, importKornblumeData, resetKornblumeData } from '@/utils';
 import { usePullsRecordStore } from '@/stores/pullsRecordStore';
+import {
+    useTokenClient,
+    type AuthCodeFlowSuccessResponse,
+    type AuthCodeFlowErrorResponse
+} from 'vue3-google-signin';
+import { GApiSvc } from '@/composables/gApi';
 
 const fileInput = ref<HTMLElement>(null!)
 
@@ -30,6 +36,32 @@ const resetTracker = () => {
     window.location.reload()
 }
 
+const isGapiReady = ref(false);
+GApiSvc.init().then(() => {
+    isGapiReady.value = true;
+});
+
+const handleOnSuccess = async (response: AuthCodeFlowSuccessResponse) => {
+    console.log('Access Token: ' + response.access_token);
+
+    const result = await GApiSvc.listFiles();
+    console.log(result)
+};
+
+const handleOnError = (errorResponse: AuthCodeFlowErrorResponse) => {
+    console.log('Error: ', errorResponse);
+};
+
+const { isReady, login } = useTokenClient({
+    scope: 'https://www.googleapis.com/auth/drive',
+    onSuccess: handleOnSuccess,
+    onError: handleOnError
+});
+
+const importDataFromGoogleDrive = () => {
+    login();
+}
+
 </script>
 
 <template>
@@ -40,11 +72,17 @@ const resetTracker = () => {
             <div class="flex justify-center items-center p-2 space-x-5">
                 <button @click="exportStores" class="btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-black font-bold py-2 px-4 rounded">
                     {{ $t('export-data') }} </button>
+                <!-- <button @click="exportDataToGoogleDrive" class="btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-black font-bold py-2 px-4 rounded">
+                    Export Data from Google Drive </button> -->
 
                 <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4"
                     style="display: none;" />
                 <button @click="triggerFileInput" class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2">
                     {{ $t('import-data') }} </button>
+
+                <button :disabled="!isReady"  @click="importDataFromGoogleDrive" class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2">
+                    Import Data From Google Drive </button>
+
             </div>
         </div>
 
