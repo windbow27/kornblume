@@ -1,4 +1,5 @@
 import { onMounted, onUnmounted, readonly, ref, watch, watchEffect } from 'vue';
+import { gapi } from 'gapi-script';
 
 const loaded = ref(false);
 const isLoading = ref(false);
@@ -53,7 +54,7 @@ export function useGapi () {
 
 export class GApiSvc {
     // TODO: update this API_KEY
-    private static API_KEY: string = 'YOUR API KEY';
+    private static API_KEY: string = 'AIzaSyB3Il_b5zhWtAymdnZNK_od2ZZEh5lb6do';
 
     static init () {
         const { scriptLoaded } = useGapi();
@@ -90,7 +91,7 @@ export class GApiSvc {
                 fields: 'nextPageToken, files(id, name)'
             });
         } catch (err) {
-            alert(err.message);
+            alert((err as Error).message);
             return [];
         }
 
@@ -100,5 +101,83 @@ export class GApiSvc {
             return [];
         }
         return files;
+    }
+
+    static async createFile (filename, content) {
+        const boundary = '-------314159265358979323846';
+        const delimiter = '\r\n--' + boundary + '\r\n';
+        const close_delim = '\r\n--' + boundary + '--';
+
+        const contentType = 'application/json';
+        const metadata = {
+            name: filename,
+            mimeType: contentType
+        };
+
+        const multipartRequestBody =
+          delimiter +
+          'Content-Type: application/json\r\n\r\n' +
+          JSON.stringify(metadata) +
+          delimiter +
+          'Content-Type: ' + contentType + '\r\n\r\n' +
+          content +
+          close_delim;
+
+        const request = gapi.client.request({
+            path: '/upload/drive/v3/files',
+            method: 'POST',
+            params: { uploadType: 'multipart' },
+            headers: {
+                'Content-Type': 'multipart/related; boundary="' + boundary + '"'
+            },
+            body: multipartRequestBody
+        });
+
+        return await request.execute();
+    }
+
+    static async downloadFile (fileId) {
+        try {
+            const response = await gapi.client.drive.files.get({
+                fileId,
+                alt: 'media'
+            });
+            return JSON.parse(response.body); // assuming the file content is JSON
+        } catch (err) {
+            alert((err as Error).message);
+            return null;
+        }
+    }
+
+    static async updateFile (fileId, newContent) {
+        const boundary = '-------314159265358979323846';
+        const delimiter = '\r\n--' + boundary + '\r\n';
+        const close_delim = '\r\n--' + boundary + '--';
+
+        const contentType = 'application/json';
+        const metadata = {
+            mimeType: contentType
+        };
+
+        const multipartRequestBody =
+            delimiter +
+            'Content-Type: application/json\r\n\r\n' +
+            JSON.stringify(metadata) +
+            delimiter +
+            'Content-Type: ' + contentType + '\r\n\r\n' +
+            newContent +
+            close_delim;
+
+        const request = gapi.client.request({
+            path: '/upload/drive/v3/files/' + fileId,
+            method: 'PATCH',
+            params: { uploadType: 'multipart' },
+            headers: {
+                'Content-Type': 'multipart/related; boundary="' + boundary + '"'
+            },
+            body: multipartRequestBody
+        });
+
+        return await request.execute();
     }
 }

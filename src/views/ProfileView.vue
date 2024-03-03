@@ -1,3 +1,4 @@
+<!-- eslint-disable no-unused-vars -->
 <script setup lang="ts" name="ProfileView">
 import { ref } from 'vue'
 import { exportKornblumeData, importKornblumeData, resetKornblumeData } from '@/utils';
@@ -52,14 +53,41 @@ const handleOnError = (errorResponse: AuthCodeFlowErrorResponse) => {
     console.log('Error: ', errorResponse);
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { isReady, login } = useTokenClient({
     scope: 'https://www.googleapis.com/auth/drive',
     onSuccess: handleOnSuccess,
     onError: handleOnError
 });
 
-const importDataFromGoogleDrive = () => {
+const syncDataFromGoogleDrive = async () => {
+    // Login to Google Drive
     login();
+
+    // Check if 'kornblume.json' exists
+    const files = await GApiSvc.listFiles();
+    const file = files.find(file => file.name === 'kornblume.json');
+    console.log(file)
+
+    if (!file) {
+    // If 'kornblume.json' doesn't exist, create it with the data from localStorage
+        await GApiSvc.createFile('kornblume.json', JSON.stringify(localStorage));
+        console.log('File created');
+    } else {
+    // If 'kornblume.json' does exist, download it
+        console.log('File exists')
+        const fileData = await GApiSvc.downloadFile(file.id);
+
+        // Compare the timestamp with the data in localStorage
+        const localData = JSON.parse(localStorage.getItem('kornblume'));
+        if (new Date(fileData.timestamp) > new Date(localData.timestamp)) {
+            // If the Google Drive data is newer, update localStorage
+            localStorage.setItem('kornblume', JSON.stringify(fileData));
+        } else {
+            // If the localStorage data is newer, update the file in Google Drive
+            await GApiSvc.updateFile(file.id, JSON.stringify(localData));
+        }
+    }
 }
 
 </script>
@@ -80,9 +108,10 @@ const importDataFromGoogleDrive = () => {
                 <button @click="triggerFileInput" class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2">
                     {{ $t('import-data') }} </button>
 
-                <button :disabled="!isReady"  @click="importDataFromGoogleDrive" class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2">
-                    Import Data From Google Drive </button>
-
+                <!-- <button :disabled="!isReady"  @click="importDataFromGoogleDrive" class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2">
+                    Import Data From Google Drive </button> -->
+                <button :disabled="!isGapiReady" @click="syncDataFromGoogleDrive" class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2">
+                    Sync Data From Google Drive </button>
             </div>
         </div>
 
