@@ -14,7 +14,7 @@ app.use(i18n)
 
 app.use(GoogleSignInPlugin, {
     // TODO: update client id
-    clientId: 'YOUR CLIENT ID'
+    clientId: '176012115931-8i98bnce4j9si9jt1bf5v6il5sha3atd.apps.googleusercontent.com'
 });
 
 app.mount('#app')
