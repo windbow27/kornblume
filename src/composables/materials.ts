@@ -1,4 +1,4 @@
-import { getItemImagePathByMatl, getBorderImagePathByMatl } from './images'
+import { getItemImageIconPathByMatl, getBorderImageIconPathByMatl } from './images'
 import { IMaterialUnit, IItem } from '@/types'
 
 export interface INormalizedMaterial {
@@ -35,8 +35,8 @@ export function normalizeDisplayMaterial (unprocessedMaterial: IMaterialUnit): I
     const result = {
         material: unprocessedMaterial.Material,
         quantity: formatQuantity(unprocessedMaterial.Quantity),
-        itemImagePath: getItemImagePathByMatl(unprocessedMaterial.Material),
-        borderImagePath: getBorderImagePathByMatl(unprocessedMaterial.Material)
+        itemImagePath: getItemImageIconPathByMatl(unprocessedMaterial.Material),
+        borderImagePath: getBorderImageIconPathByMatl(unprocessedMaterial.Material)
     };
     return result;
 }
@@ -44,8 +44,8 @@ export function normalizeDisplayMaterial (unprocessedMaterial: IMaterialUnit): I
 export function baseDisplayMaterial (unprocessedMaterial: IItem): IBaseMaterial {
     const result = {
         material: unprocessedMaterial.Name,
-        itemImagePath: getItemImagePathByMatl(unprocessedMaterial.Name),
-        borderImagePath: getBorderImagePathByMatl(unprocessedMaterial.Name)
+        itemImagePath: getItemImageIconPathByMatl(unprocessedMaterial.Name),
+        borderImagePath: getBorderImageIconPathByMatl(unprocessedMaterial.Name)
     };
     return result;
 }
