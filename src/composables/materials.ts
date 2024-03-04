@@ -1,3 +1,4 @@
+import { useDataStore } from '@/stores/dataStore';
 import { getItemImageIconPathByMatl, getBorderImageIconPathByMatl } from './images'
 import { IMaterialUnit, IItem } from '@/types'
 
@@ -51,8 +52,11 @@ export function baseDisplayMaterial (unprocessedMaterial: IItem): IBaseMaterial 
 }
 
 export function sortCategoryMaterials (materials: IItem[], categories: string | string[]) {
+    const itemsData = useDataStore().items;
     // Category
     materials.sort((a: IItem, b: IItem) => {
+        const itemIndexA = itemsData.findIndex((item) => item.Name === a.Name);
+        const itemIndexB = itemsData.findIndex((item) => item.Name === b.Name);
         const categoryA = categories.indexOf(a.Category);
         const categoryB = categories.indexOf(b.Category);
         if (categoryA !== categoryB) {
@@ -65,6 +69,6 @@ export function sortCategoryMaterials (materials: IItem[], categories: string | 
             return rarityComparison
         }
 
-        return a.Id - b.Id;
+        return itemIndexA - itemIndexB;
     })
 }

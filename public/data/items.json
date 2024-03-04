@@ -250,6 +250,16 @@
         "Usage": "Insight or Resonate rituals of characters."
     },
     {
+        "Id": 67,
+        "Category": "Build Material", 
+        "IsReleased": true,
+        "Name": "Golden Beetle",
+        "Rarity": 4,
+        "Description": "They discern directions through the moisture of the soil and the change of light, looking forward to their moment of maturation.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
         "Id": 13,
         "Category": "Build Material", 
         "IsReleased": true,
@@ -266,16 +276,6 @@
         "Name": "Goose Neck",
         "Rarity": 4,
         "Description": "It bends its neck to take up the balance spring of the clock, take up precision, take up time itself.",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 67,
-        "Category": "Build Material", 
-        "IsReleased": true,
-        "Name": "Golden Beetle",
-        "Rarity": 4,
-        "Description": "They discern directions through the moisture of the soil and the change of light, looking forward to their moment of maturation.",
         "Source": "",
         "Usage": ""
     },
