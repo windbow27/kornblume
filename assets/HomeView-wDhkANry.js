@@ -1,4 +1,4 @@
-import{o as $}from"./index-3Qz1_nkh.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as m,w as y,h as j,i as u,j as M,k as O,l as w,m as z}from"./index-sW4mIkIV.js";const k=[{date:"04/03/2024",description:`• Cleaning up item names in json and bug fixes. 
+import{o as $}from"./index-XBJWqZCN.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as m,w as y,h as j,i as u,j as M,k as O,l as w,m as z}from"./index-UQRhgk_I.js";const k=[{date:"04/03/2024",description:`• Cleaning up item names in json and bug fixes. 
  • Added automatic Greedy mode. 
  • Updated zh Chinese translations by ryle798.`},{date:"02/03/2024",description:`• Fixed 1.4 items not being added to Warehouse. 
  • Updated warehouse order to match ingame.  
