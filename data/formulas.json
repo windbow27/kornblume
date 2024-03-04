@@ -352,11 +352,11 @@
   },
   {
     "Id": 29,
-    "Name": "Caduceus",
+    "Name": "Serpent Scepter",
     "Rarity": 6,
     "Material": [
-      "Glimmering Mothwing Lamp",
-      "Crimson Gold Compass",
+      "Glowing Mothwing",
+      "Golden Compass",
       "Salted Mandrake",
       "Sharpodonty"
     ],
@@ -369,7 +369,7 @@
   },
   {
     "Id": 30,
-    "Name": "Glimmering Mothwing Lamp",
+    "Name": "Glowing Mothwing",
     "Rarity": 5,
     "Material": [
       "Winged Key",
@@ -384,10 +384,10 @@
   },
   {
     "Id": 31,
-    "Name": "Wheel and Axle Core",
+    "Name": "Watch Core",
     "Rarity": 5,
     "Material": [
-      "Curved Goose Neck",
+      "Goose Neck",
       "Holy Silver",
       "Biting Box",
       "Sharpodonty"
@@ -401,10 +401,10 @@
   },
   {
     "Id": 32,
-    "Name": "Crimson Gold Compass",
+    "Name": "Golden Compass",
     "Rarity": 5,
     "Material": [
-      "Gold Dust Beetle",
+      "Golden Beetle",
       "Bifurcated Skeleton",
       "Sharpodonty"
     ],
@@ -419,7 +419,7 @@
     "Name": "Winged Key",
     "Rarity": 4,
     "Material": [
-      "Dried Cicada Wing",
+      "Cicada Wings",
       "Milled Magnesia",
       "Sharpodonty"
     ],
@@ -431,10 +431,10 @@
   },
   {
     "Id": 34,
-    "Name": "Curved Goose Neck",
+    "Name": "Goose Neck",
     "Rarity": 4,
     "Material": [
-      "Ceaseless Wheel",
+      "Perpetual Cog",
       "Spell of Fortune",
       "Sharpodonty"
     ],
@@ -446,7 +446,7 @@
   },
   {
     "Id": 35,
-    "Name": "Gold Dust Beetle",
+    "Name": "Golden Beetle",
     "Rarity": 4,
     "Material": [
       "Solidus",
@@ -461,14 +461,14 @@
   },
   {
     "Id": 36,
-    "Name": "Dried Cicada Wing",
+    "Name": "Cicada Wings",
     "Rarity": 3,
     "Material": [],
     "Quantity": []
   },
   {
     "Id": 37,
-    "Name": "Ceaseless Wheel",
+    "Name": "Perpetual Cog",
     "Rarity": 3,
     "Material": [],
     "Quantity": []
