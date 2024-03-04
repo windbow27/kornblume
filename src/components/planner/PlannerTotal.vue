@@ -38,7 +38,7 @@ const activityStore = useActivityStore();
         </div>
         <div v-if="activityStore.settings.cost > 0" class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/51.webp" alt="avatar" />
+                <img src="/images/items/icon/thumbnails/51.webp" alt="avatar" />
             </div>
         </div>
         <div class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
@@ -48,7 +48,7 @@ const activityStore = useActivityStore();
         </div>
         <div class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/55.webp" alt="avatar" />
+                <img src="/images/items/icon/thumbnails/55.webp" alt="avatar" />
             </div>
         </div>
         <div class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
@@ -58,7 +58,7 @@ const activityStore = useActivityStore();
         </div>
         <div class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/54.webp" alt="avatar" />
+                <img src="/images/items/icon/thumbnails/54.webp" alt="avatar" />
             </div>
         </div>
     </div>

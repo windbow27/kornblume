@@ -48,9 +48,14 @@ export const getItemImagePathByMatl = (material: string) => {
     return id ? `images/items/icon/${id}.webp` : '';
 };
 
-export const getBorderImagePathByMatl = (material: string) => {
+export const getItemImageIconPathByMatl = (material: string) => {
+    const id = getId(material);
+    return id ? `images/items/icon/thumbnails/${id}.webp` : '';
+};
+
+export const getBorderImageIconPathByMatl = (material: string) => {
     const rarity = getRarity(material);
-    return rarity ? `images/items/border/${rarity}.webp` : '';
+    return rarity ? `images/items/border/thumbnails/${rarity}.webp` : '';
 };
 
 export function getActivityImagePathByStage (stage: string) {
@@ -62,7 +67,7 @@ export function getStageImagePathByStage (stage: number) {
 }
 
 export function getArcanistIconImagePath (id: number | string) {
-    return `images/arcanists/icon/${id}.webp`;
+    return `images/arcanists/icon/thumbnails/${id}.webp`;
 }
 
 export function getArcanistI0ImagePath (id: number | string) {
