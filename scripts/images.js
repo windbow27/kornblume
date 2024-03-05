@@ -9,13 +9,13 @@ const itemsBorderDirectory = './public/images/items/border';
 // Define config
 const settingConfigs = {
     [arcanistsIconDirectory]: {
-        maxWidth: 64, quality: 90
+        maxWidth: 64, lossless: true, nearLossless: false
     },
     [itemsIconDirectory]: {
-        maxWidth: 96, quality: 90
+        maxWidth: 96, lossless: false, nearLossless: true
     },
     [itemsBorderDirectory]: {
-        maxWidth: 96, quality: 90
+        maxWidth: 96, lossless: false, nearLossless: true
     }
 }
 
@@ -40,7 +40,7 @@ async function processImagesInDirectory (input) {
             // Resize and optimize the image
             await image
                 .resize({ width: config.maxWidth })
-                .webp({ quality: config.quality })
+                .webp({ lossless: config.lossless, nearLossless: config.nearLossless })
                 .toFile(`${outputFolder}/${file}`);
         }
     }
