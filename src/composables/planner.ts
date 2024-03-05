@@ -1,10 +1,9 @@
 import { useDataStore } from '@/stores/dataStore'
 import { useWarehouseStore } from '@/stores/warehouseStore'
 import { useActivityStore } from '@/stores/activityStore';
-// import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore'
 import { IMaterialUnit, IStages } from '@/types';
 import { useGlobalStore } from '@/stores/global';
-import { getSolve, processSharpoAndDust } from './solver';
+import { getSolve, processSharpoAndDust } from './glpkSolver'
 import { getActivityImagePathByStage } from './images'
 
 const items = useDataStore().items;
@@ -205,20 +204,20 @@ export function getDrops () {
     return dataStore[enableGreedy ? 'stages1_4_greedy' : 'stages1_4'] || {}
 }
 
-export function getPlan (materials: IMaterialUnit[]): IPlanCards {
+export async function getPlan (materials: IMaterialUnit[], isEnableWilderness: boolean): Promise<IPlanCards> {
     const generatedCards: ICard[] = [];
     const drops = getDrops();
 
     processResonanceMaterials(materials, generatedCards);
 
-    const plan = getSolve(materials);
+    const plan = await getSolve(materials);
 
     updateCraftingMaterialsForGlobalStore(plan.variables);
 
     plan.variables.forEach((stage) => {
         const stageInfo = drops[stage[0]];
         if (stageInfo) {
-            const runs = Math.ceil(stage[1]);
+            const runs = Math.ceil(Number(stage[1]));
             const activity = Math.ceil(runs * stageInfo.cost);
             const days = Number((activity / useActivityStore().settings.activity).toFixed(1));
             let materials = Object.entries(stageInfo.drops).map(([matlName, count]) => {
@@ -231,23 +230,23 @@ export function getPlan (materials: IMaterialUnit[]): IPlanCards {
                 };
             });
             materials = materials.filter((matl) => matl.Quantity > 0);
-            const card = generateCard(stage[0], runs, activity, days, materials);
+            const card = generateCard(stage[0] as string, runs, activity, days, materials);
             generatedCards.push(card);
         } else { // handle crafting
-            const splitString = stage[0].split('-');
+            const splitString = (stage[0] as string).split('-');
             const matName = splitString[1].trim();
             const material = {
                 Material: matName,
                 Quantity: stage[1]
             }
             const crafting = getCardByStage('Wilderness Wishing Spring', generatedCards);
-            crafting.materials.push(material);
+            crafting.materials.push(material as IMaterialUnit);
         }
     });
 
-    const generatedCardsConsideringWilderness = processSharpoAndDust(generatedCards)
+    const generatedCardsConsideringWilderness = isEnableWilderness ? await processSharpoAndDust(generatedCards) : generatedCards;
 
-    // console.log(generatedCards);
+    // console.log(generatedCardsConsideringWilderness);
 
     const cardsFirstLayer = generatedCardsConsideringWilderness.filter(
         (card) =>

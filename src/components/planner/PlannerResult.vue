@@ -4,6 +4,7 @@ import { useCalculation, mergeResults } from '@/composables/calculations';
 import { getTotalActivityAndDays, getPlan, IPlanCards } from '@/composables/planner';
 import { useGlobalStore } from '@/stores/global';
 import { usePlannerStore } from '@/stores/plannerStore';
+import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 import { IMaterialUnit } from '@/types';
 import PlannerLayer from '@/components/planner/result/PlannerLayer.vue';
 
@@ -13,8 +14,8 @@ const emits = defineEmits([
 
 const calculateCards = ref<IPlanCards>([]);
 
-watchEffect(() => {
-    if (!useGlobalStore().isEditingWarehouse) {
+watchEffect(async () => {
+    if (!useGlobalStore().isEditingPlanner) {
         const result = usePlannerStore().selectedArcanists.map(arc => {
             if (!arc.isVisible) return [];
             const arcResult: IMaterialUnit[] = useCalculation(arc);
@@ -23,7 +24,9 @@ watchEffect(() => {
 
         const mergedResult: IMaterialUnit[] = mergeResults(result);
 
-        const normalizedCards = getPlan(mergedResult);
+        const isEnableWilderness = usePlannerSettingsStore().settings.enableWilderness;
+
+        const normalizedCards = await getPlan(mergedResult, isEnableWilderness);
 
         emits('update:totalActivityAndDays', getTotalActivityAndDays(normalizedCards));
 
