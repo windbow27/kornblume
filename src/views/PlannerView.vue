@@ -51,14 +51,17 @@ const settingsRef = ref(null)
 
 const openAddOverlay = () => {
     isAddingArcanist.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeAddOverlay = () => {
     isAddingArcanist.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openEditOverlay = () => {
     isEditingArcanist.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const editEditOverlay = (arcanist) => {
@@ -69,39 +72,47 @@ const editEditOverlay = (arcanist) => {
 
 const closeEditOverlay = () => {
     isEditingArcanist.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openActivity = () => {
     isActivity.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeActivity = () => {
     isActivity.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openWilderness = () => {
     isWilderness.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeWilderness = () => {
     isWilderness.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openWarehouse = () => {
     isWarehouse.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeWarehouse = () => {
     isWarehouse.value = false
-    useGlobalStore().setIsEditingWarehouse(false);
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openSettings = () => {
     isSettings.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeSettings = () => {
     isSettings.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const handleSelectArcanist = (arcanist: IArcanist) => {

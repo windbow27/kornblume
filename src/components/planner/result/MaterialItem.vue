@@ -91,12 +91,12 @@ const openPopover = () => {
     originalWarehouseQuantity.value = warehouseMaterial.value ? warehouseMaterial.value?.Quantity : 0;
     warehouseQuantityShift.value = 0;
     // reset the shift
-    useGlobalStore().setIsEditingWarehouse(true)
+    useGlobalStore().setIsEditingPlanner(true)
     useGlobalStore().setIsEditingMaterial(props.material.Material)
 }
 
 const closePopover = () => {
-    useGlobalStore().setIsEditingWarehouse(false)
+    useGlobalStore().setIsEditingPlanner(false)
     useGlobalStore().setIsEditingMaterial()
     // reset the shift
     originalWarehouseQuantity.value = warehouseMaterial.value ? warehouseMaterial.value?.Quantity : 0;

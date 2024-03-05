@@ -3,7 +3,10 @@ const localStorageKeys = [
     'planner',
     'wilderness',
     'warehouse',
-    'pulls'
+    'pulls',
+    'activity',
+    'changelogs',
+    'locale'
 ];
 
 function getDateTimeString (): {

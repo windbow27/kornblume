@@ -1,12 +1,66 @@
+import GLPK, { LP as GLPKModel } from 'glpk.js'
 import { useDataStore } from '../stores/dataStore'
 import { useWarehouseStore } from '../stores/warehouseStore'
-import { solve, Model } from 'yalps';
 import { getDrops } from './planner';
 import { useActivityStore } from '../stores/activityStore';
 import { useWildernessStore } from '../stores/wildernessStore';
 import { IMaterialUnit } from '@/types';
 import { useGlobalStore } from '../stores/global';
-import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let glpk = null as any
+
+const getGLPKModel = (yalpsModel) => {
+    const model = {
+        ...yalpsModel,
+        binaries: [],
+        constraints: Object.keys(yalpsModel.constraints).map(
+            constraintName => ([constraintName, yalpsModel.constraints[constraintName]])
+        ),
+        variables: Object.keys(yalpsModel.variables).map(
+            variableName => ([variableName, Object.keys(yalpsModel.variables[variableName]).map(
+                coefs => ([coefs, yalpsModel.variables[variableName][coefs]])
+            )]
+            ))
+    }
+
+    const constraints = new Map<string, GLPKModel['subjectTo'][0]>()
+    for (const [name, { equal, min, max }] of model.constraints) {
+        // prettier-ignore
+        const bnds =
+        equal != null
+            ? { type: glpk.GLP_FX, ub: 0.0, lb: equal }
+            : min != null && max != null
+                ? { type: glpk.GLP_DB, ub: max, lb: min }
+                : min != null
+                    ? { type: glpk.GLP_LO, ub: 0.0, lb: min }
+                    : max != null
+                        ? { type: glpk.GLP_UP, ub: max, lb: 0.0 }
+                        : { type: glpk.GLP_FR, ub: 0.0, lb: 0.0 }
+
+        constraints.set(name, { name, vars: [], bnds })
+    }
+
+    const objective: GLPKModel['objective']['vars'] = []
+    for (const [name, variable] of model.variables) {
+        for (const [key, coef] of variable) {
+            if (model.objective === key) objective.push({ name, coef })
+            constraints.get(key)?.vars.push({ name, coef })
+        }
+    }
+
+    return {
+        name: 'GLPK',
+        objective: {
+            direction: model.direction === 'minimize' ? glpk.GLP_MIN : glpk.GLP_MAX,
+            name: model.objective ?? '',
+            vars: objective
+        },
+        subjectTo: Array.from(constraints.values()),
+        binaries: Array.from(model.binaries),
+        generals: Array.from(model.integers)
+    }
+}
 
 const formulas = useDataStore().formulas;
 
@@ -24,7 +78,11 @@ function getDaysFromActivity (activity): number {
     return Number((activity / dailyActivity).toFixed(1));
 }
 
-export function getSolve (materials) {
+export async function getSolve (materials) {
+    if (!glpk) {
+        glpk = await GLPK()
+    }
+
     const drops = getDrops();
     const warehouse = useWarehouseStore().data;
 
@@ -124,21 +182,23 @@ export function getSolve (materials) {
         integers
     };
 
-    const options = {
-        maxIterations: 1048576,
-        tolerance: 0.25
-    }
+    const glpkModel = getGLPKModel(model)
+    const glpkSolver = await glpk.solve(glpkModel as GLPKModel);
 
-    const solver = solve(model as Model, options)
-    if (solver.status !== 'optimal') {
-        console.log(`%cStatus: ${solver.status}`, 'background-color: yellow; color: black;');
+    if (glpkSolver.result.status !== 5) { // fulfill
+        console.log(`%cStatus: ${glpkSolver.result.status}`, 'background-color: yellow; color: black;');
         console.log('constraints: ', constraints)
         console.log('variables: ', variables)
     }
-    return solver
+    const glpkResult = {
+        status: glpkSolver.result.status,
+        variables: Object.keys(glpkSolver.result.vars).map(variableName => ([variableName, glpkSolver.result.vars[variableName]])).filter(variable => variable[1] !== 0)
+    }
+
+    return glpkResult
 }
 
-export function processSharpoAndDust (generatedCards: ICard[]) {
+export async function processSharpoAndDust (generatedCards: ICard[]) {
     let sharpoForCrafting = 0
     const craftingCard = generatedCards.find((card) => card.stage === 'Wilderness Wishing Spring')
     if (craftingCard) {
@@ -165,7 +225,7 @@ export function processSharpoAndDust (generatedCards: ICard[]) {
     const warehouseSharpo = useWarehouseStore().data.find((matl) => matl.Material === 'Sharpodonty')?.Quantity || 0
     const warehouseDust = useWarehouseStore().data.find((matl) => matl.Material === 'Dust')?.Quantity || 0
 
-    const wildernessDailyProduct = usePlannerSettingsStore().settings.enableWilderness ? useWildernessStore().settings.wildernessOutput : { dust: 0, gold: 0 };
+    const wildernessDailyProduct = useWildernessStore().settings.wildernessOutput;
     const remainingSharpo = Math.max(sharpoForGoal - wildernessDailyProduct.gold * daysForOthers - warehouseSharpo, 0);
     const remainingDust = Math.max(dustForGoal - wildernessDailyProduct.dust * daysForOthers - warehouseDust, 0);
 
@@ -191,17 +251,23 @@ export function processSharpoAndDust (generatedCards: ICard[]) {
         direction: 'minimize',
         constraints,
         variables,
-        integers: true
+        integers: Object.keys(variables)
     };
 
-    const solver = solve(model as Model)
+    const glpkModel = getGLPKModel(model)
+    const glpkSolver = await glpk.solve(glpkModel as GLPKModel);
+    const glpkResult = {
+        status: glpkSolver.result.status,
+        variables: Object.keys(glpkSolver.result.vars).map(variableName => ([variableName, glpkSolver.result.vars[variableName]])).filter(variable => variable[1] !== 0)
+    }
+
     let sharpoRuns = 0
     let dustRuns = 0
-    solver.variables.forEach(([stage, run]) => {
+    glpkResult.variables.forEach(([stage, run]) => {
         if (stage === 'Mintage Aesthetics VI') {
-            sharpoRuns = run
+            sharpoRuns = Number(run)
         } else {
-            dustRuns = run
+            dustRuns = Number(run)
         }
     })
 
