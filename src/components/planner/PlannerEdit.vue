@@ -113,7 +113,7 @@ const isWarehouseSufficient = computed(() => {
 
 const levelUpArcanist = () => {
     if (isWarehouseSufficient.value) {
-        useGlobalStore().setIsEditingWarehouse(true);
+        useGlobalStore().setIsEditingPlanner(true);
         materialRequirement.value.forEach((matl) => {
             if (CrystalCasketMaterials.includes(matl.Material)) {
                 useWarehouseStore().reduceItem('Crystal Casket', matl.Quantity)
@@ -124,7 +124,7 @@ const levelUpArcanist = () => {
         selectedCurrentLevel.value = selectedGoalLevel.value
         selectedCurrentInsight.value = selectedGoalInsight.value
         selectedCurrentResonance.value = selectedGoalResonance.value
-        useGlobalStore().setIsEditingWarehouse(false);
+        useGlobalStore().setIsEditingPlanner(false);
         addArcanist();
     }
 };
