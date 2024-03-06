@@ -51,14 +51,17 @@ const settingsRef = ref(null)
 
 const openAddOverlay = () => {
     isAddingArcanist.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeAddOverlay = () => {
     isAddingArcanist.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openEditOverlay = () => {
     isEditingArcanist.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const editEditOverlay = (arcanist) => {
@@ -69,39 +72,47 @@ const editEditOverlay = (arcanist) => {
 
 const closeEditOverlay = () => {
     isEditingArcanist.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openActivity = () => {
     isActivity.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeActivity = () => {
     isActivity.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openWilderness = () => {
     isWilderness.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeWilderness = () => {
     isWilderness.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openWarehouse = () => {
     isWarehouse.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeWarehouse = () => {
     isWarehouse.value = false
-    useGlobalStore().setIsEditingWarehouse(false);
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const openSettings = () => {
     isSettings.value = true
+    useGlobalStore().setIsEditingPlanner(true);
 }
 
 const closeSettings = () => {
     isSettings.value = false
+    useGlobalStore().setIsEditingPlanner(false);
 }
 
 const handleSelectArcanist = (arcanist: IArcanist) => {
@@ -181,9 +192,10 @@ onClickOutside(settingsRef, closeSettings)
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-sm lg:text-base"> Fixed 1.4 items not being added to Warehouse. </p>
+                    <!-- <p class="text-sm lg:text-base"> Fixed 1.4 items not being added to Warehouse. </p>
                     <p class="text-sm lg:text-base"> If you see low opacity materials in Crafting section, ignore it. The issue
-                        will be fixed once the data is fully gathered. </p>
+                        will be fixed once the data is fully gathered. </p> -->
+                        <p class="text-sm lg:text-base"> Planner has been modified and upgraded. Enjoy almost lag free planning experience. </p>
                 </div>
             </div>
         </div>
@@ -202,7 +214,7 @@ onClickOutside(settingsRef, closeSettings)
                     <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-tree"></i></button>
                 </div>
-                <div class="tooltip" :data-tip="$t('manage-warehouse')">
+                <div class="tooltip tooltip-left" :data-tip="$t('manage-warehouse')">
                     <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-box-archive"></i></button>
                 </div>

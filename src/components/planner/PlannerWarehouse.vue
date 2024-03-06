@@ -48,7 +48,7 @@ const resetCheckedCategories = () => {
 };
 
 const closeWarehouseOverlay = () => {
-    useGlobalStore().setIsEditingWarehouse(false);
+    useGlobalStore().setIsEditingPlanner(false);
     emit('closeOverlay');
 };
 
@@ -69,7 +69,7 @@ const filteredWarehouse = computed(() => {
 });
 
 onMounted(() => {
-    useGlobalStore().setIsEditingWarehouse(true);
+    useGlobalStore().setIsEditingPlanner(true);
     setupWarehouse();
 });
 </script>

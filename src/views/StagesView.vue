@@ -38,7 +38,7 @@ watchEffect(() => {
         <div class="flex pb-4">
             <h2 class="text-2xl text-white font-bold">{{ $t('stages') }}</h2>
         </div>
-        <div class="pb-4">
+        <!-- <div class="pb-4">
             <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
@@ -47,7 +47,7 @@ watchEffect(() => {
                 </svg>
                 <p class="text-sm lg:text-base"> 1.4 drop rates have been displayed. </p>
             </div>
-        </div>
+        </div> -->
         <div class="wrapper">
             <div class="container">
 

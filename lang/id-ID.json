@@ -215,9 +215,9 @@
   "Insight": "Insight",
   "Resource": "Resource",
   "quick-goal": "Auto Objektif",
-  "enabled-minor-cards": "Perlihatkan stage tidak penting",
-  "disabled-minor-cards": "Sembunyikan stage tidak penting",
-  "disable-wilderness": "Nonaktifkan Wilderness",
-  "enable-wilderness": "Nyalakan Wilderness",
+  "show-cards": "Perlihatkan stage tidak penting",
+  "hide-cards": "Sembunyikan stage tidak penting",
+  "disabled-wilderness": "Nonaktifkan Wilderness",
+  "enabled-wilderness": "Nyalakan Wilderness",
   "ascension-material": "Bahan Ascension"
 }

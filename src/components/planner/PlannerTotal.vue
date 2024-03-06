@@ -23,14 +23,14 @@ const activityStore = useActivityStore();
         class="flex flex-wrap custom-gradient-gray-blue-light px-2 py-2 md:px-4 lg:px-6 rounded-md items-center justify-center">
         <i class="fa-solid fa-calculator text-white mr-3"></i>
         <div class="tooltip flex items-center" :data-tip="$t('estimated-total-activities-and-days')">
-            <div class="text">{{ props.totalActivityAndDays?.[0] }}</div>
+            <div class="text">{{ props.totalActivityAndDays?.[0] || 0 }}</div>
             <div class="avatar">
                 <div class="w-8 rounded">
                     <img src="/images/items/common/0.webp" alt="avatar" />
                 </div>
             </div>
             <div class="text pr-3">
-                {{ props.totalActivityAndDays?.[1] }} {{ props.totalActivityAndDays[1] > 1 ? $t("days") : $t("day") }}</div>
+                {{ props.totalActivityAndDays?.[1] || 0 }} {{ props.totalActivityAndDays[1] > 1 ? $t("days") : $t("day") }}</div>
         </div>
         <div v-if="activityStore.settings.cost > 0" class="tooltip" :data-tip="$t('drops-cost')">
             <div class="text"> {{ Number(formatQuantity(activityStore.settings.cost)) * props.totalActivityAndDays[1] }}
@@ -38,27 +38,27 @@ const activityStore = useActivityStore();
         </div>
         <div v-if="activityStore.settings.cost > 0" class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/51.webp" alt="avatar" />
+                <img src="/images/items/icon/thumbnails/51.webp" alt="avatar" />
             </div>
         </div>
         <div class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
             <div class="text"> {{ formatQuantity(props.wildernessSettings.wildernessOutput.dust *
-                props.totalActivityAndDays[1]) }}
+                props.totalActivityAndDays[1] || 0) }}
             </div>
         </div>
         <div class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/55.webp" alt="avatar" />
+                <img src="/images/items/icon/thumbnails/55.webp" alt="avatar" />
             </div>
         </div>
         <div class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
             <div class="text"> {{ formatQuantity(props.wildernessSettings.wildernessOutput.gold *
-                props.totalActivityAndDays[1]) }}
+                props.totalActivityAndDays[1] || 0) }}
             </div>
         </div>
         <div class="avatar">
             <div class="w-8 rounded">
-                <img src="/images/items/icon/54.webp" alt="avatar" />
+                <img src="/images/items/icon/thumbnails/54.webp" alt="avatar" />
             </div>
         </div>
     </div>
