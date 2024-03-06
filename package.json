@@ -30,8 +30,7 @@
     "vue": "^3.3.11",
     "vue-i18n": "^9.8.0",
     "vue-router": "^4.2.5",
-    "vue3-popper": "^1.5.0",
-    "yalps": "^0.5.5"
+    "vue3-popper": "^1.5.0"
   },
   "devDependencies": {
     "@img/sharp-win32-x64": "^0.33.2",
