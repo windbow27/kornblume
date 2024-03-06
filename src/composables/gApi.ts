@@ -53,9 +53,6 @@ export function useGapi () {
 }
 
 export class GApiSvc {
-    // TODO: update this API_KEY
-    private static API_KEY: string = 'AIzaSyB3Il_b5zhWtAymdnZNK_od2ZZEh5lb6do';
-
     static init () {
         const { scriptLoaded } = useGapi();
         console.log('init scriptLoaded:' + scriptLoaded.value);
@@ -70,10 +67,12 @@ export class GApiSvc {
                 gapi.load('client', async () => {
                     // eslint-disable-next-line no-undef
                     await gapi.client.init({
-                        apiKey: this.API_KEY,
+                        apiKey: process.env.VITE_GOOGLE_API_KEY,
+                        clientId: process.env.VITE_GOOGLE_CLIENT_ID,
                         discoveryDocs: [
                             'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'
-                        ]
+                        ],
+                        scope: 'https://www.googleapis.com/auth/drive'
                     });
                     resolve();
                 });
@@ -81,26 +80,25 @@ export class GApiSvc {
         });
     }
 
-    static async listFiles () {
-        console.log('listFiles');
-        let response;
+    static async signIn () {
+        return gapi.auth2.getAuthInstance().signIn();
+    }
+
+    static async isSignedIn () {
+        return gapi.auth2.getAuthInstance().isSignedIn.get();
+    }
+
+    static async getFiles () {
         try {
-            // eslint-disable-next-line no-undef
-            response = await gapi.client.drive.files.list({
+            const response = await gapi.client.drive.files.list({
                 pageSize: 10,
                 fields: 'nextPageToken, files(id, name)'
             });
+            return response.result.files;
         } catch (err) {
-            alert((err as Error).message);
-            return [];
+            // alert((err as Error).message);
+            return null;
         }
-
-        const files = response.result.files;
-        if (!files || files.length === 0) {
-            alert('No files found.');
-            return [];
-        }
-        return files;
     }
 
     static async createFile (filename, content) {
