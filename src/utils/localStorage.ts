@@ -1,3 +1,12 @@
+import { watch } from 'vue';
+import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
+import { usePlannerStore } from '@/stores/plannerStore';
+import { useWildernessStore } from '@/stores/wildernessStore';
+import { useWarehouseStore } from '@/stores/warehouseStore';
+import { usePullsRecordStore } from '@/stores/pullsRecordStore';
+import { useActivityStore } from '@/stores/activityStore';
+import { useChangelogsStore } from '@/stores/global';
+
 const localStorageKeys = [
     'plannerSettings',
     'planner',
@@ -8,6 +17,32 @@ const localStorageKeys = [
     'changelogs',
     'locale'
 ];
+
+export function setGlobalLastModifiedTimestamp () {
+    const changelogsStore = useChangelogsStore();
+    const plannerStore = usePlannerStore();
+    const plannerSettingsStore = usePlannerSettingsStore();
+    const wildernessStore = useWildernessStore();
+    const warehouseStore = useWarehouseStore();
+    const pullsStore = usePullsRecordStore();
+    const activityStore = useActivityStore();
+
+    const updateTimestamp = () => {
+        localStorage.setItem('lastModified', new Date().toISOString());
+    };
+
+    watch(() => changelogsStore.$state, updateTimestamp, { deep: true });
+    watch(() => plannerStore.$state, updateTimestamp, { deep: true });
+    watch(() => plannerSettingsStore.$state, updateTimestamp, { deep: true });
+    watch(() => wildernessStore.$state, updateTimestamp, { deep: true });
+    watch(() => warehouseStore.$state, updateTimestamp, { deep: true });
+    watch(() => pullsStore.$state, updateTimestamp, { deep: true });
+    watch(() => activityStore.$state, updateTimestamp, { deep: true });
+}
+
+export function getGlobalLastModifiedTimestamp () {
+    return localStorage.getItem('lastModified');
+}
 
 function getDateTimeString (): {
     date: string,
@@ -53,15 +88,11 @@ export function getKornblumeData () {
     localStorageKeys.forEach((localStorageKey: string) => {
         exportingData[localStorageKey] = localStorage.getItem(localStorageKey) ?? '';
     });
-
-    // Add a timestamp
-    exportingData.timestamp = new Date().toISOString();
-
     try {
-        const jsonDataString = JSON.stringify(exportingData, null, 2);
-        return jsonDataString;
+        return exportingData;
     } catch (error) {
         console.error('Error exporting data:', error);
+        return {};
     }
 }
 

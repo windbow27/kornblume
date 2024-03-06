@@ -13,7 +13,7 @@ app.use(router)
 app.use(i18n)
 
 app.use(GoogleSignInPlugin, {
-    clientId: process.env.VITE_GOOGLE_CLIENT_ID
+    clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID
 });
 
 app.mount('#app')

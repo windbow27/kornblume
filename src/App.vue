@@ -2,6 +2,8 @@
 import { onMounted } from 'vue';
 import { RouterView } from 'vue-router'
 import { useGlobalStore } from './stores/global'
+import { setGlobalLastModifiedTimestamp } from '@/utils/localStorage';
+
 import Navbar from './components/navbar/Navbar.vue'
 import LoadingScreen from './components/navbar/LoadingScreen.vue'
 
@@ -21,7 +23,7 @@ function clearLegacyData () {
     const plannerSettingsStoreKey = 'plannerSettings'
     const plannerSettingsStoreData = getLocalStorageDataByKey(plannerSettingsStoreKey)
     if (plannerSettingsStoreData) { // only do this if there's data already stored in users' devices
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { settings: { enableGreedyMethod, enabledUnreleasedStages, ...restSettings } } = plannerSettingsStoreData
         // remove the legacy data keys: enableGreedyMethod and enabledUnreleasedStages
         const newPlannerSettingsStoreData = { ...plannerSettingsStoreData, settings: restSettings };
@@ -58,7 +60,10 @@ function clearLegacyData () {
     }
 }
 
-onMounted(clearLegacyData);
+onMounted(() => {
+    clearLegacyData();
+    setGlobalLastModifiedTimestamp();
+})
 
 </script>
 

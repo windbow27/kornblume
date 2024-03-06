@@ -57,25 +57,22 @@ export class GApiSvc {
         const { scriptLoaded } = useGapi();
         console.log('init scriptLoaded:' + scriptLoaded.value);
 
-        return new Promise<void>((resolve) => {
-            watchEffect(async () => {
-                if (!scriptLoaded.value) {
-                    resolve();
-                    return;
-                }
-                // eslint-disable-next-line no-undef
-                gapi.load('client', async () => {
+        return new Promise<void>((resolve, reject) => {
+            watchEffect(() => {
+                if (scriptLoaded.value) { // Check if the script is loaded
                     // eslint-disable-next-line no-undef
-                    await gapi.client.init({
-                        apiKey: process.env.VITE_GOOGLE_API_KEY,
-                        clientId: process.env.VITE_GOOGLE_CLIENT_ID,
-                        discoveryDocs: [
-                            'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'
-                        ],
-                        scope: 'https://www.googleapis.com/auth/drive'
+                    gapi.load('client:auth2', () => {
+                        // eslint-disable-next-line no-undef
+                        gapi.client.init({
+                            apiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+                            clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+                            discoveryDocs: [
+                                'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'
+                            ],
+                            scope: 'https://www.googleapis.com/auth/drive'
+                        }).then(resolve).catch(reject);
                     });
-                    resolve();
-                });
+                }
             });
         });
     }
@@ -84,7 +81,15 @@ export class GApiSvc {
         return gapi.auth2.getAuthInstance().signIn();
     }
 
+    static async signOut () {
+        return gapi.auth2.getAuthInstance().signOut();
+    }
+
     static async isSignedIn () {
+        return gapi.auth2.getAuthInstance().isSignedIn.get();
+    }
+
+    static isLogged () {
         return gapi.auth2.getAuthInstance().isSignedIn.get();
     }
 
@@ -113,13 +118,13 @@ export class GApiSvc {
         };
 
         const multipartRequestBody =
-          delimiter +
-          'Content-Type: application/json\r\n\r\n' +
-          JSON.stringify(metadata) +
-          delimiter +
-          'Content-Type: ' + contentType + '\r\n\r\n' +
-          content +
-          close_delim;
+            delimiter +
+            'Content-Type: application/json\r\n\r\n' +
+            JSON.stringify(metadata) +
+            delimiter +
+            'Content-Type: ' + contentType + '\r\n\r\n' +
+            content +
+            close_delim;
 
         const request = gapi.client.request({
             path: '/upload/drive/v3/files',
@@ -147,7 +152,7 @@ export class GApiSvc {
         }
     }
 
-    static async updateFile (fileId, newContent) {
+    static async updateFile (fileId: string, newContent: string) {
         const boundary = '-------314159265358979323846';
         const delimiter = '\r\n--' + boundary + '\r\n';
         const close_delim = '\r\n--' + boundary + '--';
