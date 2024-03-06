@@ -3,19 +3,27 @@ const sharp = require('sharp');
 
 // Define the input directory
 const arcanistsIconDirectory = './public/images/arcanists/icon';
+const arcanistI0PortraitDirectory = './public/images/arcanists/i0';
 const itemsIconDirectory = './public/images/items/icon';
 const itemsBorderDirectory = './public/images/items/border';
+const stagesIconDirectory = './public/images/items/stage';
 
 // Define config
 const settingConfigs = {
     [arcanistsIconDirectory]: {
         maxWidth: 64, lossless: true, nearLossless: false
     },
+    [arcanistI0PortraitDirectory]: {
+        maxWidth: 114, lossless: false, nearLossless: true
+    },
     [itemsIconDirectory]: {
         maxWidth: 96, lossless: false, nearLossless: true
     },
     [itemsBorderDirectory]: {
         maxWidth: 96, lossless: false, nearLossless: true
+    },
+    [stagesIconDirectory]: {
+        maxWidth: 192, lossless: false, nearLossless: true
     }
 }
 
@@ -49,8 +57,10 @@ async function processImagesInDirectory (input) {
 // Main function to process all images
 async function processAllImages () {
     await processImagesInDirectory(arcanistsIconDirectory)
+    await processImagesInDirectory(arcanistI0PortraitDirectory)
     await processImagesInDirectory(itemsIconDirectory)
     await processImagesInDirectory(itemsBorderDirectory)
+    await processImagesInDirectory(stagesIconDirectory)
 }
 
 // Start the image processing

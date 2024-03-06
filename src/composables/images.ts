@@ -63,7 +63,7 @@ export function getActivityImagePathByStage (stage: string) {
 }
 
 export function getStageImagePathByStage (stage: number) {
-    return `images/items/stage/${getStageBackgroundId(stage)}.webp`
+    return `images/items/stage/thumbnails/${getStageBackgroundId(stage)}.webp`
 }
 
 export function getArcanistImagePath (id: number | string) {
@@ -75,7 +75,7 @@ export function getArcanistIconImagePath (id: number | string) {
 }
 
 export function getArcanistI0ImagePath (id: number | string) {
-    return `images/arcanists/i0/${id}.webp`;
+    return `images/arcanists/i0/thumbnails/${id}.webp`;
 }
 
 export function getArcanistI2ImagePath (id: number | string) {
