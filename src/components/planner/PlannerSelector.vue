@@ -60,7 +60,7 @@ const totalMaterials = computed(() => {
                             <ItemGoalIcon class="py-2" v-for="material in totalMaterials" :key="material.Material.toString()" :material="material" />
                         </div>
                         <form method="dialog" class="flex justify-center pt-5">
-                            <button class="btn btn-sm btn-success text-black">{{ $t('close') }}</button>
+                            <button class="green-button-small">{{ $t('close') }}</button>
                         </form>
                     </div>
                     <form method="dialog" class="modal-backdrop">

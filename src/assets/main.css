@@ -72,8 +72,28 @@
     @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2 max-h-[95vh] overflow-y-hidden overflow-x-hidden;
 }
 
-.custom-button-error {
-    @apply hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/50
+.red-button {
+    @apply btn btn-error hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/40 text-white/90 py-2 px-4 rounded-2xl
+}
+
+.red-button-small {
+    @apply btn btn-error btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/40 text-white/90 py-1 px-2 rounded-xl
+}
+
+.green-button {
+    @apply btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-white/90 py-2 px-4 rounded-2xl
+}
+
+.green-button-small {
+    @apply btn btn-success btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-white/90 py-1 px-2 rounded-xl
+}
+
+.blue-button {
+    @apply btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-white/90 py-2 px-4 rounded-2xl
+}
+
+.blue-button-small {
+    @apply btn btn-info btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-white/90 py-1 px-2 rounded-xl
 }
 
 @keyframes fadeIn {

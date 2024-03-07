@@ -1,13 +1,13 @@
 <script setup lang="ts" name="ProfileView">
 import { ref } from 'vue'
-import { exportKornblumeData, importKornblumeData, resetKornblumeData, setKornblumeData, getKornblumeData } from '@/utils';
+import { exportKornblumeData, importKornblumeData, resetKornblumeData, setKornblumeData } from '@/utils';
 import { usePullsRecordStore } from '@/stores/pullsRecordStore';
-import { GApiSvc } from '@/composables/gApi';
+import { GApiSvc, syncDrive } from '@/composables/gApi';
 
 const fileInput = ref<HTMLElement>(null!);
 const isGapiReady = ref(false);
-
-// const isSignedIn = ref(GApiSvc.isSignedIn);
+const isSignedIn = ref(false);
+const showEmail = ref(false);
 
 const exportStores = () => {
     exportKornblumeData()
@@ -37,7 +37,7 @@ const resetTracker = () => {
 const loginGoogleDrive = async () => {
     // Login to Google Drive
     await GApiSvc.signIn();
-    console.log(GApiSvc.isSignedIn());
+    isSignedIn.value = true;
     const files = await GApiSvc.getFiles();
     const file = files.find((file: { name: string; }) => file.name === 'kornblume.json');
 
@@ -55,32 +55,13 @@ const loginGoogleDrive = async () => {
 
 const signOutGoogleDrive = () => {
     GApiSvc.signOut();
+    isSignedIn.value = false;
 }
 
 GApiSvc.init().then(async () => {
     isGapiReady.value = true;
-    if (GApiSvc.isLogged()) {
-        console.log(GApiSvc.isSignedIn());
-        const files = await GApiSvc.getFiles();
-        console.log(files);
-        const file = files.find((file: { name: string; }) => file.name === 'kornblume.json');
-        if (!file) {
-        // If 'kornblume.json' doesn't exist, create it with the data from localStorage
-            GApiSvc.createFile('kornblume.json', JSON.stringify(localStorage));
-        } else {
-        // If 'kornblume.json' does exist, download it
-            const localData = getKornblumeData();
-            const driveData = GApiSvc.downloadFile(file.id);
-            const actualDriveData = await driveData;
-            if (localData.lastModified < actualDriveData.lastModified) {
-                console.log('drive is newer. updating local data')
-                setKornblumeData(driveData);
-            } else {
-                console.log('local is newer. updating drive data')
-                GApiSvc.updateFile(file.id, JSON.stringify(localStorage));
-            }
-        }
-    }
+    isSignedIn.value = await GApiSvc.isSignedIn();
+    syncDrive();
 });
 
 </script>
@@ -92,13 +73,13 @@ GApiSvc.init().then(async () => {
             <p class="text-white"> {{ $t('you-can-export-or-import-your-data-here') }}</p>
             <div class="flex justify-center items-center p-2 space-x-5">
                 <button @click="exportStores"
-                    class="btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-black font-bold py-2 px-4 rounded">
+                    class="blue-button">
                     {{ $t('export-data') }} </button>
 
                 <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4"
                     style="display: none;" />
                 <button @click="triggerFileInput"
-                    class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2">
+                    class="green-button">
                     {{ $t('import-data') }} </button>
             </div>
         </div>
@@ -108,12 +89,25 @@ GApiSvc.init().then(async () => {
             <p class="text-white"> You can use Google Drive and let Kornblume save and sync data between devices. We
                 only read and write files that Kornblume created.</p>
             <div class="flex justify-center items-center p-2 space-x-5">
-                <button :disabled="!isGapiReady"
-                    class="btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-black font-bold py-2 px-4 rounded ml-2"
+                <button :disabled="!isGapiReady" v-if="!isSignedIn"
+                    class="green-button"
                     @click="loginGoogleDrive">Login Google Drive <i class="fa-brands fa-google-drive"></i> </button>
-                <button :disabled="!isGapiReady"
-                    class="btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-black font-bold py-2 px-4 rounded"
-                    @click="signOutGoogleDrive">Sign out Google Drive <i class="fa-brands fa-google-drive"></i></button>
+                <div class="flex flex-col justify-center items-center" v-else>
+                    <button :disabled="!isGapiReady"
+                        class="blue-button"
+                        @click="signOutGoogleDrive">Sign out Google Drive <i class="fa-brands fa-google-drive"></i>
+                    </button>
+                    <div v-if="showEmail" class="text-white opacity-90 mt-2">
+                        <p>{{ GApiSvc.getEmail() }}</p>
+                    </div>
+                    <button v-else @click="showEmail = true" class="btn btn-ghost btn-sm mt-2">
+                        Click to show email
+                    </button>
+                    <div class="flex space-x-1 items-center">
+                        <p class="text-success text-base">•</p>
+                        <p class="text-white text-sm opacity-90">Synced</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -124,10 +118,10 @@ GApiSvc.init().then(async () => {
             }}</p>
             <div class="flex flex-wrap justify-center items-center p-2 space-x-5 gap-y-5">
                 <button onclick="resetTracker.showModal()"
-                    class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/50 text-black font-bold py-2 px-4 rounded ml-2">
+                    class="red-button">
                     {{ $t('reset-tracker') }} </button>
                 <button onclick="resetAll.showModal()"
-                    class="btn btn-error custom-button-error text-black font-bold py-2 px-4 rounded ml-2">
+                    class="red-button">
                     {{ $t('reset-data') }} </button>
             </div>
 
@@ -141,7 +135,7 @@ GApiSvc.init().then(async () => {
                 $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}</p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
                     <button @click="resetTracker"
-                        class="btn btn-error custom-button-error text-black font-bold py-2 px-4 rounded ml-2">
+                        class="red-button">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">
@@ -159,7 +153,7 @@ GApiSvc.init().then(async () => {
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
                     <button @click="resetStores"
-                        class="btn btn-error custom-button-error text-black font-bold py-2 px-4 rounded ml-2">
+                        class="red-button">
                         {{ $t('reset-all') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">

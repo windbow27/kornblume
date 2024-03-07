@@ -5,6 +5,7 @@ import { IPull, usePullsRecordStore } from '@/stores/pullsRecordStore'
 import { bannerList, specialArcanists } from '@/utils/bannerData'
 import { useChangelogsStore } from '@/stores/global';
 import { convertGoldenThreadString, preprocess, preprocess1, preprocess2 } from '@/composables/preprocess';
+import { GApiSvc, syncDrive } from '@/composables/gApi';
 import Tesseract, { createWorker } from 'tesseract.js';
 import Fuse, { FuseResult } from 'fuse.js';
 import TrackerBoard from '@/components/tracker/TrackerBoard.vue';
@@ -292,6 +293,10 @@ watchEffect(() => {
     }
 });
 
+GApiSvc.init().then(async () => {
+    syncDrive();
+});
+
 </script>
 
 <template>
@@ -382,7 +387,7 @@ watchEffect(() => {
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
                     <button @click="resetTracker"
-                        class="btn btn-error bg-gradient-to-br hover:bg-gradient-to-bl from-error to-red-500/50 text-black font-bold py-2 px-4 rounded ml-2">
+                        class="red-button">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">

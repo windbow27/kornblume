@@ -9,6 +9,7 @@ import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore'
 import { useDataStore } from '@/stores/dataStore'
 import { IArcanist, ISelectedArcanist } from '@/types'
 import { formatArcanists, sortSelectedArcanists } from '@/composables/arcanists'
+import { GApiSvc, syncDrive } from '@/composables/gApi'
 
 import PlannerSelector from '@/components/planner/PlannerSelector.vue'
 import PlannerEdit from '@/components/planner/PlannerEdit.vue'
@@ -174,6 +175,9 @@ onClickOutside(wildernessRef, closeWilderness)
 onClickOutside(warehouseRef, closeWarehouse)
 onClickOutside(settingsRef, closeSettings)
 
+GApiSvc.init().then(async () => {
+    syncDrive();
+});
 </script>
 
 <template>

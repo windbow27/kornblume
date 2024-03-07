@@ -1,4 +1,5 @@
 import { onMounted, onUnmounted, readonly, ref, watch, watchEffect } from 'vue';
+import { setKornblumeData, getKornblumeData } from '@/utils';
 import { gapi } from 'gapi-script';
 
 const loaded = ref(false);
@@ -89,8 +90,8 @@ export class GApiSvc {
         return gapi.auth2.getAuthInstance().isSignedIn.get();
     }
 
-    static isLogged () {
-        return gapi.auth2.getAuthInstance().isSignedIn.get();
+    static getEmail () {
+        return gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail();
     }
 
     static async getFiles () {
@@ -182,5 +183,30 @@ export class GApiSvc {
         });
 
         return await request.execute();
+    }
+}
+
+export async function syncDrive () {
+    if (await GApiSvc.isSignedIn()) {
+        console.log(GApiSvc.isSignedIn());
+        const files = await GApiSvc.getFiles();
+        // console.log(files);
+        const file = files.find((file: { name: string; }) => file.name === 'kornblume.json');
+        if (!file) {
+        // If 'kornblume.json' doesn't exist, create it with the data from localStorage
+            GApiSvc.createFile('kornblume.json', JSON.stringify(localStorage));
+        } else {
+        // If 'kornblume.json' does exist, download it
+            const localData = getKornblumeData();
+            const driveData = GApiSvc.downloadFile(file.id);
+            const actualDriveData = await driveData;
+            if (localData.lastModified < actualDriveData.lastModified) {
+                console.log('drive is newer. updating local data')
+                setKornblumeData(driveData);
+            } else {
+                console.log('local is newer. updating drive data')
+                GApiSvc.updateFile(file.id, JSON.stringify(localStorage));
+            }
+        }
     }
 }

@@ -354,12 +354,12 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </div>
             <!-- Save -->
             <div class="flex justify-center space-x-4 pt-2">
-                <div class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal" class="btn btn-info"><i
+                <div class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal" class="blue-button"><i
                             class="fa-solid fa-angles-right"></i></button></div>
-                <button @click="addArcanist" class="btn btn-success">{{ $t('save') }}</button>
+                <button @click="addArcanist" class="green-button">{{ $t('save') }}</button>
                 <div class="tooltip" :data-tip="$t('level-up')">
                     <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
-                        onclick="level_up_container.showModal()" class="btn btn-info"><i
+                        onclick="level_up_container.showModal()" class="blue-button"><i
                             class="fa-solid fa-arrow-up-from-bracket"></i></button>
                 </div>
             </div>
@@ -379,7 +379,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                         <ArcanistLevelUp :arcanist="editingArcanist" />
                     </div>
                     <form method="dialog" class="flex justify-center">
-                        <button v-if="isWarehouseSufficient" class="btn btn-sm btn-success text-black"
+                        <button v-if="isWarehouseSufficient" class="green-button"
                             @click="levelUpArcanist">{{ $t('level-up') }}</button>
                         <p v-else class="text-error"> {{ $t('not-enough-materials') }}</p>
                     </form>

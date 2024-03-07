@@ -32,7 +32,7 @@ const closeDialog = () => dialog.value?.close()
 
 <template>
     <div class="tooltip" :data-tip="type">
-        <button class="btn btn-info btn-sm" @click="showDialog"> {{ text }} </button>
+        <button class="blue-button-small" @click="showDialog"> {{ text }} </button>
     </div>
     <dialog ref="dialog" class="modal">
         <div class="modal-box custom-gradient-gray-blue custom-border">
@@ -42,8 +42,8 @@ const closeDialog = () => dialog.value?.close()
             <p class="py-4 text-lg text-white text-center">{{ $t('add-materials-from-text', [text]) }}</p>
             <p class="py-4 text-md text-white text-center"> {{ $t('you-should-add-once-only') }}</p>
             <div class="flex justify-center space-x-5">
-                <button class="btn btn-success btn-md mr-2" @click="addItems">{{ $t('add') }}</button>
-                <button class="btn btn-error btn-md" @click="removeItems">{{ $t('remove') }}</button>
+                <button class="green-button" @click="addItems">{{ $t('add') }}</button>
+                <button class="red-button" @click="removeItems">{{ $t('remove') }}</button>
             </div>
         </div>
         <form method="dialog" class="modal-backdrop">

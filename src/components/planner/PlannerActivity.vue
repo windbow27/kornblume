@@ -112,7 +112,7 @@ const cost = computed(() => {
             </div>
 
             <div class="flex justify-center pt-3">
-                <button @click="saveActivitySettings" class="btn btn-success">{{ $t('save') }}</button>
+                <button @click="saveActivitySettings" class="green-button">{{ $t('save') }}</button>
             </div>
         </div>
     </div>

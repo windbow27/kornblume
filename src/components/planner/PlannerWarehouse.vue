@@ -122,7 +122,7 @@ onMounted(() => {
       <div class="flex space-x-10">
         <!-- shops -->
         <div class="flex space-x-3">
-          <button class="btn btn-sm btn-success" onclick="shop_container.showModal()">{{ $t('event-materials') }}</button>
+          <button class="green-button-small" onclick="shop_container.showModal()">{{ $t('event-materials') }}</button>
           <dialog id="shop_container" class="modal">
             <div class="modal-box custom-gradient-gray-blue custom-border">
               <form method="dialog">
@@ -135,7 +135,7 @@ onMounted(() => {
                 <EventShopButton version="jb2" :text="$t('jukebox-collector')" :type="$t('jukebox')" />
               </div>
               <form method="dialog" class="flex justify-center">
-                <button class="btn btn-sm btn-success text-black">{{ $t('close') }}</button>
+                <button class="red-button-small">{{ $t('close') }}</button>
               </form>
             </div>
             <form method="dialog" class="modal-backdrop">
@@ -145,7 +145,7 @@ onMounted(() => {
         </div>
 
         <!-- reset -->
-        <button class="btn btn-error btn-sm" @click="showDialog">{{ $t('reset') }}</button>
+        <button class="red-button-small" @click="showDialog">{{ $t('reset') }}</button>
         <dialog ref="dialog" class="modal">
           <div class="modal-box custom-gradient-gray-blue custom-border">
             <p class="py-4 text-lg text-white text-center">
@@ -156,9 +156,9 @@ onMounted(() => {
               </i18n-t>
             </p>
             <p class="py-4 text-md text-white text-center"> {{ $t('click-the-buttons-at-the-top-to-select') }}</p>
-            <div class="flex justify-center">
-              <button class="btn btn-success btn-md mr-2" @click="resetCheckedCategories">{{ $t('yes') }}</button>
-              <button class="btn btn-error btn-md" @click="closeDialog">{{ $t('no') }}</button>
+            <div class="flex justify-center space-x-5">
+              <button class="green-button" @click="resetCheckedCategories">{{ $t('yes') }}</button>
+              <button class="red-button" @click="closeDialog">{{ $t('no') }}</button>
             </div>
           </div>
           <form method="dialog" class="modal-backdrop">

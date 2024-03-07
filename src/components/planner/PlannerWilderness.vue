@@ -156,7 +156,7 @@ const wildernessOutput = computed(() => {
       <!-- <p class="text-yellow-100 text-sm text-center p-2">{{ $t('wilderness-output-will-be-considered-for-calculations') }}
       </p> -->
       <div class="flex justify-center">
-        <button @click="saveWildernessSettings" class="btn btn-success">{{ $t('save') }}</button>
+        <button @click="saveWildernessSettings" class="green-button">{{ $t('save') }}</button>
       </div>
     </div>
   </div>
