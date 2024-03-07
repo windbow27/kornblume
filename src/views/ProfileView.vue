@@ -50,6 +50,7 @@ const loginGoogleDrive = async () => {
         console.log('kornblume.json exists. importing data...')
         const fileData = await GApiSvc.downloadFile(file.id);
         setKornblumeData(fileData);
+        setTimeout(() => window.location.reload());
     }
 }
 

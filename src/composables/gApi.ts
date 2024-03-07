@@ -1,5 +1,5 @@
 import { onMounted, onUnmounted, readonly, ref, watch, watchEffect } from 'vue';
-import { setKornblumeData, getKornblumeData } from '@/utils';
+import { setKornblumeData } from '@/utils';
 import { gapi } from 'gapi-script';
 
 const loaded = ref(false);
@@ -197,12 +197,15 @@ export async function syncDrive () {
             GApiSvc.createFile('kornblume.json', JSON.stringify(localStorage));
         } else {
         // If 'kornblume.json' does exist, download it
-            const localData = getKornblumeData();
             const driveData = GApiSvc.downloadFile(file.id);
             const actualDriveData = await driveData;
-            if (localData.lastModified < actualDriveData.lastModified) {
+            const localDataLastModified = new Date(localStorage.getItem('lastModified') ?? '0');
+            const actualDriveDataLastModified = new Date(actualDriveData.lastModified);
+            if (localDataLastModified < actualDriveDataLastModified) {
                 console.log('drive is newer. updating local data')
-                setKornblumeData(driveData);
+                setKornblumeData(actualDriveData);
+                localStorage.setItem('lastModified', actualDriveData.lastModified);
+                setTimeout(() => window.location.reload());
             } else {
                 console.log('local is newer. updating drive data')
                 GApiSvc.updateFile(file.id, JSON.stringify(localStorage));
