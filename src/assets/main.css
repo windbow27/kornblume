@@ -33,11 +33,11 @@
 }
 
 .custom-border-white {
-    @apply border-2 border-transparent box-border border-white rounded-lg
+    @apply border-2 border-transparent box-border border-white rounded
 }
 
 .custom-border-transparent {
-    @apply border-2 border-transparent box-border rounded-lg
+    @apply border-2 border-transparent box-border rounded
 }
 
 .border-button {
@@ -45,7 +45,7 @@
 }
 
 .range-slider {
-    @apply h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-info
+    @apply h-1.5 w-full cursor-pointer appearance-none rounded border-transparent bg-info
 }
 
 .gradient-blue {
@@ -133,7 +133,7 @@
 /* Doesn't work */
 
 .custom-gradient-button {
-    @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 bg-clip-padding
+    @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 bg-clip-padding rounded-2xl
 }
 
 .custom-item-list {
@@ -141,7 +141,7 @@
 }
 
 .custom-card {
-    @apply bg-white shadow-lg rounded-lg overflow-hidden my-4;
+    @apply bg-white shadow-lg rounded overflow-hidden my-4;
 }
 
 .custom-box {

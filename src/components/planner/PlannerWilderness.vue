@@ -143,12 +143,12 @@ const wildernessOutput = computed(() => {
       <div class="custom-label text-yellow-100">{{ $t('output') }}</div>
       <div class="grid grid-cols-2 p-2">
         <div class="tooltip" :data-tip="$t('Dust')">
-          <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
+          <label class="flex items-center justify-center gradient-blue text-center rounded mx-5 lg:mx-2 h-8">
             {{ wildernessOutput.dust }}
           </label>
         </div>
         <div class="tooltip" :data-tip="$t('Sharpodonty')">
-          <label class="flex items-center justify-center gradient-blue text-center rounded-xl mx-5 lg:mx-2 h-8">
+          <label class="flex items-center justify-center gradient-blue text-center rounded mx-5 lg:mx-2 h-8">
             {{ wildernessOutput.gold }}
           </label>
         </div>
