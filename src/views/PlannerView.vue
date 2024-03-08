@@ -136,6 +136,7 @@ const handleUpdateSelectedArcanists = (updateSelectedArcanists) => {
     plannerStore.selectedArcanists = updateSelectedArcanists
     // console.log(selectedArcanists.value);
     closeEditOverlay()
+    syncDrive();
 }
 
 const handleUpdateListArcanists = (updateListArcanists) => {

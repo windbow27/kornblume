@@ -13,28 +13,36 @@
             </div>
 
             <div class="text-white overflow-y-auto h-full pt-10">
-                <p class="py-4 text-white">{{ $t('video-demonstration-tutorial') }} <a href="https://youtu.be/CNsZ4rGWtyY"
-                        target="_blank" class="text-blue-500 hover:text-blue-700">{{
-                            $t('summon-tracker-demo') }}</a></p>
+                <p class="py-4 text-white">{{ $t('video-demonstration-tutorial') }} <a
+                        href="https://youtu.be/CNsZ4rGWtyY" target="_blank" class="text-blue-500 hover:text-blue-700">{{
+                    $t('summon-tracker-demo') }}</a></p>
                 <p class=" text-white">1. {{ $t('take-screenshots-of-your-summon-history') }}</p>
                 <p class=" text-white">2.
-                    <i18n-t keypath="upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once">
+                    <i18n-t
+                        keypath="upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once">
                         <template #highlight>
                             <span class="text-error">{{ $t('multiple-images') }}</span>
                         </template>
                     </i18n-t>
                 </p>
-                <p class=" text-white">3. {{
+                <p class=" text-white">• {{
                     $t('the-summon-tracker-will-automatically-extract-display-and-save-the-information-from-the-screenshots')
                 }}</p>
                 <h3 class="font-bold text-lg pt-4 text-info">{{ $t('tips') }}</h3>
-                <p class=" text-white">1. {{ $t('it-is-advised-to-save-your-screenshots-for-future-usages') }}</p>
-                <p class=" text-white">2. {{ $t('after-your-first-import') }}</p>
-                <p class=" text-white">3. {{ $t('example-of-incomplete-10x') }}
-                    <a href="https://imgur.com/a/6kXTVZz" target="_blank" class="text-blue-500 hover:text-blue-700">{{
-                        $t('incomplete-10x') }}</a>
+                <p class=" text-white">• {{ $t('it-is-advised-to-save-your-screenshots-for-future-usages') }}</p>
+                <p class=" text-white">• {{ $t('after-your-first-import') }}</p>
+                <p class="text-white">•
+                    <i18n-t keypath='this-is-an-example-of-a-good-image'>
+                        <template #highlight>
+                            <a href="https://i.imgur.com/NgspD1g.webp" target="_blank"
+                                class="text-blue-500 hover:text-blue-700">{{ $t('image') }}</a>
+                        </template>
+                    </i18n-t>
                 </p>
-                <p class="text-white">4. {{ $t('try-legacy') }}</p>
+                <p class=" text-white">• {{ $t('example-of-incomplete-10x') }}
+                    <a href="https://imgur.com/a/6kXTVZz" target="_blank" class="text-blue-500 hover:text-blue-700">{{
+                    $t('incomplete-10x') }}</a>
+                </p>
                 <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
                 <p class="text-white">•
                     <i18n-t
@@ -44,7 +52,7 @@
                         </template>
                     </i18n-t>
                 </p>
-                <p class="text-white">•
+                <!-- <p class="text-white">•
                     <i18n-t keypath="images-must-be-clear-or-the-summon-tracker-may-fail-to-read">
                         <template #highlight>
                             <span class="text-error">{{ $t('must-be-clear') }}</span>
@@ -64,31 +72,26 @@
                             <i class="fa-solid fa-star text-yellow-100"></i>
                         </template>
                     </i18n-t>
-                </p>
-                <p class="text-white">•
-                    <i18n-t keypath='this-is-an-example-of-a-good-image'>
-                        <template #highlight>
-                            <a href="https://i.imgur.com/NgspD1g.webp" target="_blank"
-                                class="text-blue-500 hover:text-blue-700">{{ $t('image') }}</a>
-                        </template>
-                    </i18n-t>
-                </p>
+                </p> -->
                 <h3 class="font-bold text-lg pt-4 text-info">{{ $t('bug-reports') }}</h3>
-                <p class=" text-white">
-                    <i18n-t keypath='if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps'>
+                <p class="text-white">• {{ $t('try-legacy') }}</p>
+                <p class=" text-white">•
+                    <i18n-t
+                        keypath='if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps'>
                         <template #missing>
                             <span class="text-error">{{ $t('missing-information') }}</span>
                         </template>
                     </i18n-t>
                     <span class=" text-white ml-1">{{ $t('import-the-error-images-again') }}</span>
                 </p>
-                <p class="text-white">{{ $t('if-that-doesnt-work-recapture-the-images-and-import-them-again') }}</p>
+                <!-- <p class="text-white">{{ $t('if-that-doesnt-work-recapture-the-images-and-import-them-again') }}</p>
                 <p class="text-white">
                     <i18n-t
                         keypath='if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord'>
                         <template #discord>@windbow</template>
                     </i18n-t>
-                </p>
+                </p> -->
+                <p class="text-white">• Whip @windbow so he adds manual editing faster.</p>
             </div>
         </div>
         <form method="dialog" class="modal-backdrop">

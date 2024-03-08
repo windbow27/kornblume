@@ -171,7 +171,7 @@
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. 그래도 문제가 해결되지 않으면 이미지를 다시 캡처해서 가져오세요.",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. 에러가 지속되면 F12 ‣ 개발자 설정 ‣ 사진과 글을 동봉한 버그 리포트를 작성하거나 {discord}로 연락주세요.",
   "import-the-error-images-again": "오류가 발생한 이미지를 다시 캡처해 넣어주세요.",
-  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. 버그가 발생하면 {missing} 일시를 보고 누락된 곳을 발견할 수 있습니다.",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "버그가 발생하면 {missing} 일시를 보고 누락된 곳을 발견할 수 있습니다.",
   "win": "반천장 성공",
   "lose": "픽뚫",
   "guaranteed": "확정",

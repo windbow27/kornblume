@@ -162,7 +162,7 @@
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. Si cela ne fonctionne pas, refaites les captures d'écrans et tentez de les importer à nouveau.",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. Si l'erreur persiste, appuyez sur F12 ‣ Console ‣ Envoyer le texte et les images grâce à l'option Signalement de Bugs ou directement sur {discord}.",
   "import-the-error-images-again": "Importer les images érronées de nouveau",
-  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Si vous rencontrez un bug, identifier sa localisation en utilisant l'horodatage {missing}.",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "Si vous rencontrez un bug, identifier sa localisation en utilisant l'horodatage {missing}.",
   "add": "Ajouter",
   "remove": "Retirer",
   "event-shop-button": "{version} pièce {number}",

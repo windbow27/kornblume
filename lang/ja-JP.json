@@ -168,7 +168,7 @@
   "you-should-add-once-only": "一度しか追加できません。",
   "50-50-winrate": "6 {star}入手時PU率",
   "missing-information": "不足している情報",
-  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. バグが発生した場合には、欠落情報のタイムスタンプを利用してバグが起きた箇所を特定できます。",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "バグが発生した場合には、欠落情報のタイムスタンプを利用してバグが起きた箇所を特定できます。",
   "import-the-error-images-again": "えて再度インポートしてみてください。",
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. それでもうまくいかない場合は、画像を再キャプチャして、再度インポートします。",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. エラーが解決しない場合、文書と画像を添付した不具合報告を送信いただくか直接{discord}に連絡願います",

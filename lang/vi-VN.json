@@ -171,7 +171,7 @@
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. Nếu cách đó không hiệu quả, hãy chụp lại ảnh và tải lại chúng.",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. Nếu lỗi vẫn tiếp diễn, hãy mở F12 ‣ Bảng điều khiển ‣ Gửi văn bản và hình ảnh qua Báo cáo lỗi hoặc trực tiếp đến {discord}.",
   "import-the-error-images-again": "Tải lại hình ảnh lỗi.",
-  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Nếu bạn gặp lỗi, hãy xác định vị trí của lỗi đó bằng cách sử dụng dấu thời gian {missing}.",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "Nếu bạn gặp lỗi, hãy xác định vị trí của lỗi đó bằng cách sử dụng dấu thời gian {missing}.",
   "guaranteed": "Bảo đảm",
   "lose": "Thua 50 / 50",
   "win": "Thắng 50 / 50",

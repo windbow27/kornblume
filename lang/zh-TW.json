@@ -171,7 +171,7 @@
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. 如果這不起作用，請重新擷取影像並再次匯入。",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. 如果錯誤仍然發生，請按 F12 ‣ Console ‣ 複製文字訊息並回報，可以透過首頁的錯誤回報或是直接透過 Discord 聯繫 {discord}。",
   "import-the-error-images-again": "重新匯入錯誤影像。",
-  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. 如果遇到錯誤，請使用 {missing} 來找出其位置。",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "如果遇到錯誤，請使用 {missing} 來找出其位置。",
   "guaranteed": "保底",
   "lose": "非本期 UP 角色",
   "win": "本期 UP 角色",

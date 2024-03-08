@@ -171,7 +171,7 @@
   "if-that-doesnt-work-recapture-the-images-and-import-them-again": "2. Jika itu tidak berfungsi, ambil ulang gambar dan import lagi.",
   "if-the-error-persists-open-your-f12-console-send-the-text-and-images-through-bug-reports-or-directly-to-discord": "3. jika eror terus berlanjut, buka F12 ‣ Console ‣ Kirim text dan gambar melalui Bug Reports atau langsung di {discord}.",
   "import-the-error-images-again": "Import gambar yang eror lagi.",
-  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "1. Jika kamu menemukan Bug, tentukan lokasinya dengan menggunakan {missing} timestamps.",
+  "if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps": "Jika kamu menemukan Bug, tentukan lokasinya dengan menggunakan {missing} timestamps.",
   "win": "Win Rate up",
   "lose": "Lose Rate Up",
   "guaranteed": "Guarantee",
