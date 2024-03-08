@@ -201,7 +201,7 @@ GApiSvc.init().then(async () => {
                     <p class="text-sm lg:text-base"> If you see low opacity materials in Crafting section, ignore it. The issue
                         will be fixed once the data is fully gathered. </p> -->
                     <!-- <p class="text-sm lg:text-base"> Planner has been modified and upgraded. Enjoy almost lag free planning experience. </p> -->
-                    <p class="text-sm lg:text-base"> Google Drive Save has been added. Head to Profile to try it out.</p>
+                    <p class="text-sm lg:text-base"> Google Drive Sync has been added. Head to Profile to try it out.</p>
                 </div>
             </div>
         </div>

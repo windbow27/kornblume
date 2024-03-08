@@ -1,6 +1,6 @@
 export const changelogs = [
     // Add more from top
-    { date: '08/03/2024', description: '• Added Google Drive Save. \n • Added The First Milestone banner.' },
+    { date: '08/03/2024', description: '• Added Google Drive Sync. \n • Added The First Milestone banner.' },
     { date: '05/03/2024', description: '• Planner has been modified and upgraded. Enjoy almost lag free planning experience.' },
     { date: '04/03/2024', description: '• Cleaning up item names in json and bug fixes. \n • Added automatic Greedy mode. \n • Optimized images for faster load time. \n • Updated zh Chinese translations by ryle798.' },
     { date: '02/03/2024', description: '• Fixed 1.4 items not being added to Warehouse. \n • Updated warehouse order to match ingame.  \n • Updated Indonesia translations by ArieKee.' },

@@ -70,7 +70,7 @@ export class GApiSvc {
                             discoveryDocs: [
                                 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'
                             ],
-                            scope: 'https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.appfolder'
+                            scope: 'https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.appfolder https://www.googleapis.com/auth/drive.install https://www.googleapis.com/auth/drive.file'
                         }).then(resolve).catch(reject);
                     });
                 }
