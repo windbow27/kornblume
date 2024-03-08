@@ -207,8 +207,6 @@
   "disable-wilderness": "不考慮荒野產出",
   "enable-wilderness": "考慮荒野產出",
   "exploshe": "你也可以試著使用 timekeeper.top！",
-  "enabled-minor-cards": "顯示完整的建議關卡",
-  "disabled-minor-cards": "不顯示次數過低的建議關卡",
   "hide-cards": "不顯示次數過低的建議關卡",
   "show-cards": "顯示完整的建議關卡",
   "items": "素材物品",

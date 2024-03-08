@@ -205,7 +205,7 @@ defineExpose({
                 {{ winrate ? winrate : 0 }} %
             </div>
         </div>
-        <div v-if="props.text == $t('summary-limited') || $props.text == $t('summary-standard')"
+        <div v-if="props.text !== $t('summary-thread')"
             class="flex justify-between">
             <div class="text">
                 <i18n-t keypath='current-6-star-pity'>

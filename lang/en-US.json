@@ -215,11 +215,17 @@
   "Insight": "Insight",
   "Resource": "Resource",
   "quick-goal": "Quick Goal",
-  "enabled-minor-cards": "Displayed minor stages",
-  "disabled-minor-cards": "Hid minor stages",
   "show-cards": "Display minor stages",
   "hide-cards": "Hide minor stages",
   "disable-wilderness": "Disable wilderness",
   "enable-wilderness": "Enable wilderness",
-  "ascension-material": "Ascension Material"
+  "ascension-material": "Ascension Material",
+  "water": "Milestone",
+  "summary-water": "The First Milestone Summary",
+  "google-drive-save": "Google Drive Save",
+  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "You can use Google Drive and let Kornblume save and sync data between devices. We only read and write files that Kornblume created.",
+  "login-google-drive": "Sign in Google Drive",
+  "sign-out-google-drive": "Sign out Google Drive",
+  "click-to-show-email": "Click to show email",
+  "synced": "Synced"
 }

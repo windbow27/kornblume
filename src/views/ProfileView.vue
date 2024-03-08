@@ -86,27 +86,36 @@ GApiSvc.init().then(async () => {
         </div>
 
         <div class="pb-6">
-            <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4"> Google Drive Save </h2>
-            <p class="text-white"> You can use Google Drive and let Kornblume save and sync data between devices. We
-                only read and write files that Kornblume created.</p>
+            <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4"> {{ $t('google-drive-save') }} </h2>
+            <p class="text-white"> {{ $t('you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created') }}.</p>
+            <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white mt-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="stroke-current shrink-0 w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <!-- <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} <a href="https://timekeeper.top"
+                        class=" text-purple-400 hover:text-purple-500" target="_blank">
+                        {{ $t('exploshe') }} </a> </span> -->
+                <p class="text-sm lg:text-base"> Experimental. It is heavily advised to Export Backup first and use a dummy Gmail.</p>
+            </div>
             <div class="flex justify-center items-center p-2 space-x-5">
                 <button :disabled="!isGapiReady" v-if="!isSignedIn"
                     class="green-button"
-                    @click="loginGoogleDrive">Login Google Drive <i class="fa-brands fa-google-drive"></i> </button>
+                    @click="loginGoogleDrive">{{ $t('login-google-drive') }} <i class="fa-brands fa-google-drive"></i> </button>
                 <div class="flex flex-col justify-center items-center" v-else>
                     <button :disabled="!isGapiReady"
                         class="blue-button"
-                        @click="signOutGoogleDrive">Sign out Google Drive <i class="fa-brands fa-google-drive"></i>
+                        @click="signOutGoogleDrive">{{ $t('sign-out-google-drive') }} <i class="fa-brands fa-google-drive"></i>
                     </button>
                     <div v-if="showEmail" class="text-white opacity-90 mt-2">
                         <p>{{ GApiSvc.getEmail() }}</p>
                     </div>
-                    <button v-else @click="showEmail = true" class="btn btn-ghost btn-sm mt-2">
-                        Click to show email
-                    </button>
+                    <button v-else @click="showEmail = true" class="btn btn-ghost btn-sm mt-2 text-white/90 opacity-90">
+                        {{ $t('click-to-show-email') }} </button>
                     <div class="flex space-x-1 items-center">
                         <p class="text-success text-base">•</p>
-                        <p class="text-white text-sm opacity-90">Synced</p>
+                        <p class="text-white text-sm opacity-90">{{ $t('synced') }}</p>
                     </div>
                 </div>
             </div>

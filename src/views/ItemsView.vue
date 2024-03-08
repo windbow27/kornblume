@@ -28,7 +28,7 @@ const handleFilteredMaterials = (filteredMaterials: IItem[]) => {
 
 watchEffect(() => {
     const foundMaterial = itemStore.find(item => item.Name === globalStore.selectedMaterial.Material);
-    selectedMaterial.value = foundMaterial || itemStore[49];
+    selectedMaterial.value = foundMaterial || itemStore.find(item => item.Name === 'Crystal Drop');
 
     listItems.value = itemStore.filter((item: IItem) =>
         item.IsReleased

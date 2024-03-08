@@ -206,8 +206,6 @@
   "disable-wilderness": "不考虑荒原产出",
   "enable-wilderness": "考虑荒原产出",
   "exploshe": "你也可以试着使用 timekeeper.top！",
-  "enabled-minor-cards": "显示完整的建议关卡",
-  "disabled-minor-cards": "不显示次数过低的建议关卡",
   "hide-cards": "不显示次数过低的建议关卡",
   "show-cards": "显示完整的建议关卡",
   "legacy": "替代方案设定",
@@ -221,7 +219,5 @@
   "wishing-spring-formula": "不休荒原合成配方",
   "Story": "故事",
   "stages": "关卡章节",
-  "items": "素材物品",
-  "disabled-wilderness": "不考虑荒原产出",
-  "enabled-wilderness": "考虑荒原产出"
+  "items": "素材物品"
 }

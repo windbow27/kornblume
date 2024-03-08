@@ -21,7 +21,9 @@ export const bannerList = [
     // standard
     'Amongst the Lake',
     // thread
-    'Invitation From the Water'
+    'Invitation From the Water',
+    // water
+    'Abundance of the Water:'
 ];
 
 export const bannerRateUp = [

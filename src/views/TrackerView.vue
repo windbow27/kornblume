@@ -51,6 +51,19 @@ const sortedPulls = computed(() => {
     return pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
 });
 
+const waterPulls = computed(() => {
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Abundance of the Water:');
+    return filteredPulls.map((pull, index) => {
+        return {
+            PullNumber: filteredPulls.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
+            Timestamp: pull.Timestamp
+        }
+    });
+});
+
 const threadPulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Invitation From the Water');
     return filteredPulls.map((pull, index) => {
@@ -78,7 +91,7 @@ const standardPulls = computed(() => {
 });
 
 const limitedPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType !== 'Amongst the Lake' && pull.BannerType !== 'Invitation From the Water');
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType !== 'Amongst the Lake' && pull.BannerType !== 'Invitation From the Water' && pull.BannerType !== 'Abundance of the Water:');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -307,16 +320,17 @@ GApiSvc.init().then(async () => {
             <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
 
             <!-- Notification -->
-            <!-- <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
+            <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white mt-4">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} <a href="https://timekeeper.top"
+                <!-- <span class="text-sm lg:text-base"> {{ $t('try-legacy') }} <a href="https://timekeeper.top"
                         class=" text-purple-400 hover:text-purple-500" target="_blank">
-                        {{ $t('exploshe') }} </a> </span>
-            </div> -->
+                        {{ $t('exploshe') }} </a> </span> -->
+                <p class="text-sm lg:text-base"> Google Drive Save has been added. Head to Profile to try it out.</p>
+            </div>
 
         </h2>
         <div class="flex justify-between">
@@ -330,25 +344,26 @@ GApiSvc.init().then(async () => {
                 <div class="space-x-1.5 sm:space-x-2">
                     <button id="tutorial-button" ref="tutorialButton"
                         class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
-                            $t('tutorial') }}</button>
+                $t('tutorial') }}</button>
                     <button onclick="legacyButtons.showModal()"
                         class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
-                            $t('legacy') }}</button>
+                $t('legacy') }}</button>
                     <button onclick="resetTracker.showModal()"
                         class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
-                            $t('reset') }}</button>
+                $t('reset') }}</button>
                 </div>
             </div>
 
             <TrackerTutorial />
 
             <dialog id="legacyButtons" class="modal">
-                <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
+                <div
+                    class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
                     <p class="p-2 text-white text-center">{{
-                        $t('legacy-notice') }}
+                $t('legacy-notice') }}
                     </p>
                     <div class="flex flex-wrap gap-x-10 gap-y-6 p-2 justify-center items-center">
                         <form method="dialog">
@@ -378,16 +393,16 @@ GApiSvc.init().then(async () => {
             </dialog>
 
             <dialog id="resetTracker" class="modal">
-                <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
+                <div
+                    class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
                     <form method="dialog">
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                     </form>
                     <p class="p-2 text-white text-center">{{
-                        $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
+                $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetTracker"
-                        class="red-button">
+                    <button @click="resetTracker" class="red-button">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">
@@ -414,13 +429,16 @@ GApiSvc.init().then(async () => {
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Limited'">{{
-                    $t('limited') }}</button>
+                $t('limited') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Standard'">{{
-                    $t('standard') }}</button>
+                $t('standard') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Thread'">{{
-                    $t('thread') }}</button>
+                $t('thread') }}</button>
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Water' }"
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Water'">{{
+                $t('water') }}</button>
         </div>
 
         <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
@@ -429,11 +447,14 @@ GApiSvc.init().then(async () => {
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls"
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Water'" :text="$t('summary-water')" :pulls="waterPulls"
+            :isError="isError" :wrongTimestamps="wrongTimestamps" />
     </div>
 </template>
 
 <style scoped>
 .modal-box {
     overflow-y: unset;
-}</style>
+}
+</style>
 @/composables/preprocess
