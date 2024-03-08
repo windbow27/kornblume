@@ -213,7 +213,7 @@ GApiSvc.init().then(async () => {
                     class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('add-arcanist') }}</button>
             <div class="flex space-x-2">
                 <div class="tooltip" :data-tip="$t('activity-settings')">
-                    <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i
+                    <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button rounded"><i
                             class="fa-solid fa-bolt"></i></button>
                 </div>
                 <div class="tooltip" :data-tip="$t('wilderness-settings')">

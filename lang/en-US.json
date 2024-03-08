@@ -227,5 +227,6 @@
   "login-google-drive": "Sign in Google Drive",
   "sign-out-google-drive": "Sign out Google Drive",
   "click-to-show-email": "Click to show email",
-  "synced": "Synced"
+  "synced": "Synced",
+  "banner": "Type"
 }

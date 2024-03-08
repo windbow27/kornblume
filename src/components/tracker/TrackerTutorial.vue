@@ -5,7 +5,7 @@
 <template>
     <dialog id="tutorial" class="modal">
         <div class="modal-box custom-gradient-gray-blue custom-border relative h-2/3">
-            <div class="absolute top-0 left-0 right-0 p-4 custom-gradient-gray-blue rounded-2xl">
+            <div class="absolute top-0 left-0 right-0 p-4 custom-gradient-gray-blue rounded-xl">
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2.5 top-4 text-white">✕</button>
                 </form>
