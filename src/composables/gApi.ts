@@ -70,7 +70,7 @@ export class GApiSvc {
                             discoveryDocs: [
                                 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'
                             ],
-                            scope: 'https://www.googleapis.com/auth/drive'
+                            scope: 'https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.appfolder'
                         }).then(resolve).catch(reject);
                     });
                 }
@@ -193,10 +193,10 @@ export async function syncDrive () {
         // console.log(files);
         const file = files.find((file: { name: string; }) => file.name === 'kornblume.json');
         if (!file) {
-        // If 'kornblume.json' doesn't exist, create it with the data from localStorage
+            // If 'kornblume.json' doesn't exist, create it with the data from localStorage
             GApiSvc.createFile('kornblume.json', JSON.stringify(localStorage));
         } else {
-        // If 'kornblume.json' does exist, download it
+            // If 'kornblume.json' does exist, download it
             const driveData = GApiSvc.downloadFile(file.id);
             const actualDriveData = await driveData;
             const localDataLastModified = new Date(localStorage.getItem('lastModified') ?? '0');
