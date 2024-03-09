@@ -219,5 +219,13 @@
   "wishing-spring-formula": "不休荒原合成配方",
   "Story": "故事",
   "stages": "关卡章节",
-  "items": "素材物品"
+  "items": "素材物品",
+  "click-to-show-email": "点击显示邮箱",
+  "google-drive-save": "Google 云端硬盘同步",
+  "login-google-drive": "登录 Google 云端硬盘",
+  "sign-out-google-drive": "退出 Google 云端硬盘",
+  "summary-water": "湖的丰饶",
+  "synced": "已同步",
+  "water": "湖的丰饶",
+  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "您可以使用 Google 云端硬盘让 Kornblume 在不同设备间保存和同步数据。\n我们只能读取和写入 Kornblume 创建的文件。"
 }
