@@ -4,23 +4,17 @@ import { useDataStore } from '@/stores/dataStore';
 import { bannerList, bannerRateUp } from '@/utils/bannerData'
 import { useI18n } from 'vue-i18n';
 import { IArcanist } from '@/types';
+import { formatDate } from '@/composables/editor';
+import { IPullNumber } from '@/stores/pullsRecordStore';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
 import TrackerArcanistIcon from './TrackerArcanistIcon.vue';
 import TrackerSpecialIcon from './TrackerSpecialIcon.vue';
 import TrackerEditor from './TrackerEditor.vue';
 
-interface Pull {
-    PullNumber: number;
-    ArcanistName: string;
-    Rarity: number;
-    BannerType: string;
-    Timestamp: number;
-}
-
 const props = defineProps({
     pulls: {
-        type: Array as () => Pull[],
+        type: Array as () => IPullNumber[],
         required: true
     },
     isError: {
@@ -41,22 +35,6 @@ const arcanists = useDataStore().arcanists;
 const activeRarities = ref<number[]>([6]);
 const isEditing = ref(false);
 const { t } = useI18n();
-
-const formatDate = (timestamp: number): string => {
-    const date: Date = new Date(timestamp);
-    const formattedDate: string = date.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
-    const formattedTime: string = date.toLocaleTimeString('en-GB', {
-        hour12: false,
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    });
-    return `${formattedDate} ${formattedTime}`;
-}
 
 const selectedRarities = (rarity: number) => {
     if (activeRarities.value.includes(rarity)) {
@@ -135,10 +113,6 @@ const winrate = computed(() => {
     const loseCount = indicatorsArray.filter(i => i === 'L').length;
     return Math.round((winCount / (winCount + loseCount)) * 100);
 });
-
-defineExpose({
-    formatDate
-})
 
 </script>
 
@@ -258,13 +232,13 @@ defineExpose({
             {{ isEditing ? 'Summon Editor' : $t('summon-history') }}
         </div>
         <div class="flex justify-center items-center space-x-2 pt-4">
-            <span class="text-white"><i class="fa-solid fa-eye"></i></span>
-            <input type="checkbox" class="toggle toggle-info" v-model="isEditing" />
-            <span class="text-white"><i class="fa-solid fa-pen"></i></span>
+            <span :class="{ 'opacity-50': isEditing, 'text-white': true }"><i class="fa-solid fa-eye"></i></span>
+            <input type="checkbox" class="toggle toggle-info [--tglbg:#121b31]" v-model="isEditing" />
+            <span :class="{ 'opacity-50': !isEditing, 'text-white': true }"><i class="fa-solid fa-pen"></i></span>
         </div>
     </div>
 
-    <TrackerEditor v-if="isEditing" :pulls="props.pulls" :arcanists="arcanists" />
+    <TrackerEditor v-if="isEditing" :pulls="props.pulls"/>
     <div v-if="!isEditing" class="flex flex-col overflow-x-auto hidden-scrollbar">
         <!-- Rarity select -->
         <div class="flex justify-center space-x-2 pb-4">
@@ -284,11 +258,11 @@ defineExpose({
         <table class="table-auto max-w-2xl w-full text-white lg:mx-auto">
             <thead>
                 <tr>
-                    <th class="text-center mx-4">{{ $t('pull') }}</th>
-                    <th class="text-left pl-20">{{ $t('arcanist') }}</th>
-                    <th class="text-center mx-4">{{ $t('pity') }}</th>
-                    <th class="text-center mx-4">{{ $t('banner') }}</th>
-                    <th class="text-center mx-4">{{ $t('date') }}</th>
+                    <th class="text-center">{{ $t('pull') }}</th>
+                    <th class="text-center">{{ $t('arcanist') }}</th>
+                    <th class="text-center">{{ $t('pity') }}</th>
+                    <th class="text-center">{{ $t('banner') }}</th>
+                    <th class="text-center">{{ $t('date') }}</th>
                 </tr>
             </thead>
             <tbody>
