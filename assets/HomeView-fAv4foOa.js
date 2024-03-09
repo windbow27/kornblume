@@ -1,4 +1,4 @@
-import{o as $}from"./index-kfjvHqPD.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as u,w as y,h as j,i as m,j as M,k as O,l as w,m as z}from"./index-2_GuO1x0.js";const k=[{date:"08/03/2024",description:`• Added Google Drive Sync. 
+import{o as $}from"./index-NVPx1xek.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as u,w as y,h as j,i as m,j as M,k as O,l as w,m as z}from"./index-yFC4qPP5.js";const k=[{date:"09/03/2024",description:"• Added Tracker Editor."},{date:"08/03/2024",description:`• Added Google Drive Sync. 
  • Added The First Milestone banner.`},{date:"05/03/2024",description:"• Planner has been modified and upgraded. Enjoy almost lag free planning experience."},{date:"04/03/2024",description:`• Cleaning up item names in json and bug fixes. 
  • Added automatic Greedy mode. 
  • Optimized images for faster load time. 
