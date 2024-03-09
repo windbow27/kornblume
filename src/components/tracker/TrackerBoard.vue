@@ -233,7 +233,9 @@ const winrate = computed(() => {
         </div>
         <div class="flex justify-center items-center space-x-2 pt-4">
             <span :class="{ 'opacity-50': isEditing, 'text-white': true }"><i class="fa-solid fa-eye"></i></span>
-            <input type="checkbox" class="toggle toggle-info [--tglbg:#121b31]" v-model="isEditing" />
+            <div class="tooltip" :data-tip="isEditing ? $t('summon-history') : $t('summon-editor')">
+                <input type="checkbox" class="toggle toggle-info [--tglbg:#121b31]" v-model="isEditing" />
+            </div>
             <span :class="{ 'opacity-50': !isEditing, 'text-white': true }"><i class="fa-solid fa-pen"></i></span>
         </div>
     </div>

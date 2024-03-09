@@ -38,10 +38,10 @@ const addPull = () => {
         BannerType: newBannerType.value,
         Timestamp: newPullDate.value.getTime()
     };
-    localPulls.push(newPull);
-    arcanistNames.push(newArcanistName.value);
-    bannerTypes.push(newBannerType.value);
-    localPullDates.push(newPullDate.value);
+    localPulls.unshift(newPull);
+    arcanistNames.unshift(newArcanistName.value);
+    bannerTypes.unshift(newBannerType.value);
+    localPullDates.unshift(newPullDate.value);
     newArcanistName.value = '';
     newBannerType.value = '';
     newPullDate.value = new Date();
@@ -72,6 +72,18 @@ const reload = () => {
     window.location.reload();
 };
 
+const format = (date) => {
+    const day = ('0' + date.getDate()).slice(-2);
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const year = date.getFullYear();
+
+    const hours = ('0' + date.getHours()).slice(-2);
+    const minutes = ('0' + date.getMinutes()).slice(-2);
+    const seconds = ('0' + date.getSeconds()).slice(-2);
+
+    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+}
+
 </script>
 
 <template>
@@ -80,7 +92,7 @@ const reload = () => {
         <button class="blue-button" onclick="addPull.showModal()">{{ $t('add-pull') }}</button>
         <dialog id="addPull" class="modal">
             <div
-                class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center overflow-hidden">
+                class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center overflow-auto hidden-scrollbar">
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                 </form>
@@ -107,14 +119,14 @@ const reload = () => {
                         </template>
                     </Popper>
                     <VueDatePicker v-model="newPullDate" enable-seconds />
-                   <div class="flex justify-center space-x-5">
+                    <div class="flex justify-center space-x-5">
                         <form method="dialog">
                             <button class="green-button" @click="addPull">{{ $t('add') }}</button>
                         </form>
                         <form method="dialog">
                             <button class="red-button" onclick="addPull.close()">{{ $t('cancel') }}</button>
                         </form>
-                   </div>
+                    </div>
                 </div>
             </div>
             <form method="dialog" class="modal-backdrop">
@@ -151,7 +163,11 @@ const reload = () => {
                         <SpecialIcon v-else :name="pull.ArcanistName" />
 
                         <Popper arrow placement="bottom" offsetDistance="2">
-                            <input class="custom-input w-52" type="text" v-model="arcanistNames[index]" />
+                            <div class="relative">
+                                <input class="custom-input w-36" type="text" v-model="arcanistNames[index]" />
+                                <button @click="arcanistNames[index] = ''"
+                                        class="absolute inset-y-0 right-0 pr-3 text-white text-sm">✕</button>
+                            </div>
                             <template #content>
                                 <div class="custom-item-list"
                                     v-for="(arcanist, i) in arcanists.filter(a => a.Name.includes(arcanistNames[index]))"
@@ -164,7 +180,11 @@ const reload = () => {
                     </td>
                     <td class="text-center whitespace-nowrap px-2">
                         <Popper arrow placement="bottom" offsetDistance="2">
-                            <input class="custom-input w-52" type="text" v-model="bannerTypes[index]" />
+                            <div class="relative">
+                                <input class="custom-input w-56 pl-3 pr-8" type="text" v-model="bannerTypes[index]" />
+                                <button @click="bannerTypes[index] = ''"
+                                    class="absolute inset-y-0 right-0 pr-3 text-white text-sm">✕</button>
+                            </div>
                             <template #content>
                                 <div class="custom-item-list"
                                     v-for="(banner, i) in bannerList.filter(b => b.includes(bannerTypes[index]))"
@@ -174,8 +194,8 @@ const reload = () => {
                             </template>
                         </Popper>
                     </td>
-                    <td class="text-center whitespace-nowrap px-2">
-                        <VueDatePicker v-model="localPullDates[index]" enable-seconds />
+                    <td class="text-center whitespace-nowrap w-56 px-2">
+                        <VueDatePicker v-model="localPullDates[index]" enable-seconds :format="format" :is-24="true"/>
                     </td>
                     <td class="text-center whitespace-nowrap px-2">
                         <button class="btn btn-sm btn-circle btn-ghost" @click="localPulls.splice(index, 1)">✕</button>
