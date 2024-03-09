@@ -229,7 +229,7 @@ const winrate = computed(() => {
     <div class="pt-10 pb-4">
         <!-- Summon History -->
         <div class="text text-center text-xl">
-            {{ isEditing ? 'Summon Editor' : $t('summon-history') }}
+            {{ isEditing ? $t('summon-editor') : $t('summon-history') }}
         </div>
         <div class="flex justify-center items-center space-x-2 pt-4">
             <span :class="{ 'opacity-50': isEditing, 'text-white': true }"><i class="fa-solid fa-eye"></i></span>

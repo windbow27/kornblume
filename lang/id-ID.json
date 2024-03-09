@@ -152,7 +152,7 @@
   "search-arcanists": "Cari arcanists",
   "show-unreleased-arcanists": "Perlihatkan arcanists yang belum rilis",
   "help-us-translate": "Help us translate!",
-  "import-error": " error terjadi ketika import gambar, antara gagal dalam membaca atau gambar kurang jelas dari user. Tolong baca tutorial untuk informasi lebih lanjut",
+  "import-error": " error terjadi ketika import gambar. Tolong baca tutorial untuk informasi lebih lanjut",
   "wrong-timestamps": "data timestamps yang hilang: {timestamps}",
   "unreleased": "Belum rilis",
   "wilderness-wishing-spring": "Wilderness Crafting",
