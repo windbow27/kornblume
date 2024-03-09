@@ -74,7 +74,7 @@ const editingArcanist = computed(() => ({
             <table class="table table-xs">
                 <tr v-for="(attribute, index) in attributes" :key="index">
                     <td class="text-white text-center">{{ attribute }}</td>
-                    <td class="text-white"> 69 </td>
+                    <td class="text-white"> {{ props.arcanist.Stats[editingArcanist.goalInsight + "-" + editingArcanist.goalLevel][index] + (index >=5 ? "%" : "") }} </td>
                 </tr>
             </table>
         </div>
