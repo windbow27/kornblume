@@ -8,6 +8,11 @@ export function formatArcanists (arcanists: IArcanist[]) {
     return filterUnreleasedArcanists(arcanists);
 }
 
+export function formatNoSpoilerArcanists (arcanists: IArcanist[]) {
+    sortArcanists(arcanists);
+    return hideUnreleasedArcanists(arcanists);
+}
+
 function sortArcanists (arcanists: IArcanist[]) {
     filterUnreleasedArcanists(arcanists)
     arcanists.sort((a: IArcanist, b: IArcanist) => {
@@ -46,4 +51,8 @@ function filterUnreleasedArcanists (arcanists: IArcanist[]): IArcanist[] {
     return arcanists.filter((arcanist: IArcanist) =>
         (settingsStore.settings.showUnreleasedArcanists ? true : arcanist.IsReleased)
     );
+}
+
+function hideUnreleasedArcanists (arcanists: IArcanist[]): IArcanist[] {
+    return arcanists.filter((arcanist: IArcanist) => arcanist.IsReleased);
 }

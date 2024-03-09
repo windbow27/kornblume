@@ -152,7 +152,7 @@
   "search-arcanists": "마도학자 찾기",
   "show-unreleased-arcanists": "미출시된 마도학자 보기",
   "help-us-translate": "번역 도와줘요!",
-  "import-error": "이미지 삽입에 오류가 발생했습니다, 이미지 읽기에 실패했거나 누락되었습니다. 더 많은 정보를 보기 위해서는 튜토리얼을 읽어주세요.",
+  "import-error": "이미지 삽입에 오류가 발생했습니다. 더 많은 정보를 보기 위해서는 튜토리얼을 읽어주세요.",
   "wrong-timestamps": "누락된 데이터의 일시: {timestamps}",
   "unreleased": "미출시",
   "wilderness-wishing-spring": "황무지 -소원의 샘",

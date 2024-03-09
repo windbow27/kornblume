@@ -19,7 +19,7 @@ import PlannerWarehouse from '@/components/planner/PlannerWarehouse.vue'
 import PlannerSettings from '@/components/planner/PlannerSettings.vue'
 import PlannerTotal from '@/components/planner/PlannerTotal.vue'
 import PlannerResult from '@/components/planner/PlannerResult.vue'
-import ArcanistList from '@/components/arcanist/ArcanistList.vue'
+import ArcanistAddArcanistList from '@/components/arcanist/ArcanistAddArcanistList.vue'
 
 const plannerStore = usePlannerStore()
 const activityStore = useActivityStore()
@@ -213,7 +213,7 @@ GApiSvc.init().then(async () => {
                     class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('add-arcanist') }}</button>
             <div class="flex space-x-2">
                 <div class="tooltip" :data-tip="$t('activity-settings')">
-                    <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button"><i
+                    <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button rounded"><i
                             class="fa-solid fa-bolt"></i></button>
                 </div>
                 <div class="tooltip" :data-tip="$t('wilderness-settings')">
@@ -240,7 +240,7 @@ GApiSvc.init().then(async () => {
 
         <!-- Add Arcanist Overlay -->
         <div v-if="isAddingArcanist" class="overlay">
-            <ArcanistList ref="arcanistListRef" :arcanists="listArcanists" @closeOverlay="closeAddOverlay"
+            <ArcanistAddArcanistList ref="arcanistListRef" :arcanists="listArcanists" @closeOverlay="closeAddOverlay"
                 @selectArcanist="handleSelectArcanist" />
         </div>
 

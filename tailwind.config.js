@@ -6,7 +6,8 @@ module.exports = {
                 'badge-yellow': '#807215',
                 'badge-green': '#15803D',
                 'badge-red': '#9E1E26',
-                'badge-black': '#374151'
+                'badge-black': '#374151',
+                'badge-blue': '#202941'
             }
         }
     },

@@ -73,7 +73,7 @@
 }
 
 .red-button {
-    @apply btn btn-error hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/40 text-white/90 py-2 px-4 rounded-2xl
+    @apply btn btn-error hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/40 text-white/90 py-2 px-4 rounded-xl
 }
 
 .red-button-small {
@@ -81,7 +81,7 @@
 }
 
 .green-button {
-    @apply btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-white/90 py-2 px-4 rounded-2xl
+    @apply btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-white/90 py-2 px-4 rounded-xl
 }
 
 .green-button-small {
@@ -89,7 +89,7 @@
 }
 
 .blue-button {
-    @apply btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-white/90 py-2 px-4 rounded-2xl
+    @apply btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-white/90 py-2 px-4 rounded-xl
 }
 
 .blue-button-small {
@@ -133,7 +133,7 @@
 /* Doesn't work */
 
 .custom-gradient-button {
-    @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 bg-clip-padding rounded-2xl
+    @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 bg-clip-padding rounded-xl
 }
 
 .custom-item-list {

@@ -65,7 +65,7 @@
   "image": "画像",
   "images-must-be-clear-or-the-summon-tracker-may-fail-to-read": "画像は{highlight}、でなければ召喚履歴は上手く読み込めない場合があります。",
   "import-data": "インポート",
-  "import-error": "画像の読み込みでエラーが発生した場合、画像が鮮明であるか、画像ファイルは確かに存在しているか確認ください。チュートリアルにさらに詳しい情報が載っています。",
+  "import-error": "画像の読み込みでエラーが発生した場合。チュートリアルにさらに詳しい情報が載っています。",
   "insight": "洞察",
   "insight-material": "洞察素材",
   "it-is-advised-to-save-your-screenshots-for-future-usages": "今後の利用のためにスクリーンショットを保存しておくことを推奨します。",

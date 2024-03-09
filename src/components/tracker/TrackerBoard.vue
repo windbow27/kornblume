@@ -4,22 +4,17 @@ import { useDataStore } from '@/stores/dataStore';
 import { bannerList, bannerRateUp } from '@/utils/bannerData'
 import { useI18n } from 'vue-i18n';
 import { IArcanist } from '@/types';
+import { formatDate } from '@/composables/editor';
+import { IPullNumber } from '@/stores/pullsRecordStore';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
 import TrackerArcanistIcon from './TrackerArcanistIcon.vue';
 import TrackerSpecialIcon from './TrackerSpecialIcon.vue';
-
-interface Pull {
-    PullNumber: number;
-    ArcanistName: string;
-    Rarity: number;
-    BannerType: string;
-    Timestamp: number;
-}
+import TrackerEditor from './TrackerEditor.vue';
 
 const props = defineProps({
     pulls: {
-        type: Array as () => Pull[],
+        type: Array as () => IPullNumber[],
         required: true
     },
     isError: {
@@ -38,23 +33,8 @@ const props = defineProps({
 
 const arcanists = useDataStore().arcanists;
 const activeRarities = ref<number[]>([6]);
+const isEditing = ref(false);
 const { t } = useI18n();
-
-const formatDate = (timestamp: number): string => {
-    const date: Date = new Date(timestamp);
-    const formattedDate: string = date.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
-    const formattedTime: string = date.toLocaleTimeString('en-GB', {
-        hour12: false,
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    });
-    return `${formattedDate} ${formattedTime}`;
-}
 
 const selectedRarities = (rarity: number) => {
     if (activeRarities.value.includes(rarity)) {
@@ -134,10 +114,6 @@ const winrate = computed(() => {
     return Math.round((winCount / (winCount + loseCount)) * 100);
 });
 
-defineExpose({
-    formatDate
-})
-
 </script>
 
 <template>
@@ -177,7 +153,7 @@ defineExpose({
             </div>
             <div class="number">
                 {{ pulls.filter(p => p.Rarity === 6).length > 0 ? Math.floor((pulls.length - summonSinceLastSixStar) /
-                    pulls.filter(p => p.Rarity === 6).length) : 0 }}
+        pulls.filter(p => p.Rarity === 6).length) : 0 }}
             </div>
         </div>
         <div class="flex justify-between">
@@ -190,7 +166,7 @@ defineExpose({
             </div>
             <div class="number">
                 {{ pulls.filter(p => p.Rarity === 5).length > 0 ? Math.floor(pulls.length /
-                    pulls.filter(p => p.Rarity === 5).length) : 0 }}
+        pulls.filter(p => p.Rarity === 5).length) : 0 }}
             </div>
         </div>
         <div v-if="props.text == $t('summary-limited')" class="flex justify-between">
@@ -205,8 +181,7 @@ defineExpose({
                 {{ winrate ? winrate : 0 }} %
             </div>
         </div>
-        <div v-if="props.text !== $t('summary-thread')"
-            class="flex justify-between">
+        <div v-if="props.text !== $t('summary-thread')" class="flex justify-between">
             <div class="text">
                 <i18n-t keypath='current-6-star-pity'>
                     <template #star>
@@ -228,7 +203,8 @@ defineExpose({
         </div>
     </div>
 
-    <div class="w-full items-center custom-gradient-gray-blue rounded border border-blue-800 justify-center px-4 pt-4 pb-3">
+    <div
+        class="w-full items-center custom-gradient-gray-blue rounded border border-blue-800 justify-center px-4 pt-4 pb-3">
         <div class="text text-center pb-4">
             <i18n-t keypath='recent-6-star-summons'>
                 <template #star>
@@ -238,7 +214,8 @@ defineExpose({
         </div>
         <div class="flex flex-wrap justify-center gap-x-10">
             <!-- Fix the key later -->
-            <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)" :key="`${pull.Timestamp}-${pull.ArcanistName}`">
+            <div v-for="(pull, index) in pulls.filter(p => p.Rarity === 6)"
+                :key="`${pull.Timestamp}-${pull.ArcanistName}`">
                 <TrackerArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)" class="py-2"
                     :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) ?? {}"
                     :pity="sixStarsPullsList[sixStarsPullsList.length - 1 - index]"
@@ -249,42 +226,56 @@ defineExpose({
         </div>
     </div>
 
-    <div class="flex flex-col overflow-x-auto hidden-scrollbar">
+    <div class="pt-10 pb-4">
         <!-- Summon History -->
-        <div class="text text-center text-xl pb-4 pt-10">{{ $t('summon-history') }}</div>
+        <div class="text text-center text-xl">
+            {{ isEditing ? $t('summon-editor') : $t('summon-history') }}
+        </div>
+        <div class="flex justify-center items-center space-x-2 pt-4">
+            <span :class="{ 'opacity-50': isEditing, 'text-white': true }"><i class="fa-solid fa-eye"></i></span>
+            <div class="tooltip" :data-tip="isEditing ? $t('summon-history') : $t('summon-editor')">
+                <input type="checkbox" class="toggle toggle-info [--tglbg:#121b31]" v-model="isEditing" />
+            </div>
+            <span :class="{ 'opacity-50': !isEditing, 'text-white': true }"><i class="fa-solid fa-pen"></i></span>
+        </div>
+    </div>
 
+    <TrackerEditor v-if="isEditing" :pulls="props.pulls" />
+    <div v-if="!isEditing" class="flex flex-col overflow-x-auto hidden-scrollbar">
         <!-- Rarity select -->
-        <div class="flex justify-center space-x-2 mb-4">
-            <button v-for="i in [2, 3, 4, 5, 6]" :key="i" :class="{ 'border-2 border-info': activeRarities.includes(i) }"
-                @click="selectedRarities(i)" class="p-2 rounded-md">
+        <div class="flex justify-center space-x-2 pb-4">
+            <button v-for="i in [2, 3, 4, 5, 6]" :key="i"
+                :class="{ 'border-2 border-info': activeRarities.includes(i) }" @click="selectedRarities(i)"
+                class="p-2 rounded-md">
                 <i class="fa-solid fa-star" :class="{
-                    'text-orange-300': i === 6,
-                    'text-yellow-100': i === 5,
-                    'text-purple-400': i === 4,
-                    'text-sky-200': i === 3,
-                    'text-green-200': i === 2
-                }"></i>
+        'text-orange-300': i === 6,
+        'text-yellow-100': i === 5,
+        'text-purple-400': i === 4,
+        'text-sky-200': i === 3,
+        'text-green-200': i === 2
+    }"></i>
             </button>
         </div>
 
         <table class="table-auto max-w-2xl w-full text-white lg:mx-auto">
             <thead>
                 <tr>
-                    <th class="text-center mx-4">{{ $t('pull') }}</th>
-                    <th class="text-left pl-20">{{ $t('arcanist') }}</th>
-                    <th class="text-center mx-4">{{ $t('pity') }}</th>
-                    <th class="text-center mx-4">{{ $t('date') }}</th>
+                    <th class="text-center">{{ $t('pull') }}</th>
+                    <th class="text-center">{{ $t('arcanist') }}</th>
+                    <th class="text-center">{{ $t('pity') }}</th>
+                    <th class="text-center">{{ $t('banner') }}</th>
+                    <th class="text-center">{{ $t('date') }}</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(pull, index) in filteredRarityPulls" :key="`${pull.Timestamp}-${pull.ArcanistName}-${index}`"
-                    :class="{
-                        'text-orange-300': pull.Rarity === 6,
-                        'text-yellow-100': pull.Rarity === 5,
-                        'text-purple-400': pull.Rarity === 4,
-                        'text-sky-200': pull.Rarity === 3,
-                        'text-green-200': pull.Rarity === 2
-                    }">
+                <tr v-for="(pull, index) in filteredRarityPulls"
+                    :key="`${pull.Timestamp}-${pull.ArcanistName}-${index}`" :class="{
+        'text-orange-300': pull.Rarity === 6,
+        'text-yellow-100': pull.Rarity === 5,
+        'text-purple-400': pull.Rarity === 4,
+        'text-sky-200': pull.Rarity === 3,
+        'text-green-200': pull.Rarity === 2
+    }">
                     <!-- Index -->
                     <td class="text-center px-4 whitespace-nowrap">{{ pull.PullNumber }}</td>
 
@@ -293,13 +284,15 @@ defineExpose({
                         <ArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)"
                             :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist" />
                         <SpecialIcon v-else :name="pull.ArcanistName" />
-                        {{ $t(pull.ArcanistName) }}
+                        <div class="text-sm">{{ $t(pull.ArcanistName) }}</div>
                         <span v-if="indicators[pull.PullNumber] === 'L'" class="badge-indicator ">
-                            <div class='tooltip' :data-tip="$t('lose')"><img src="/images/items/common/red-badge.webp" />
+                            <div class='tooltip' :data-tip="$t('lose')"><img
+                                    src="/images/items/common/red-badge.webp" />
                             </div>
                         </span>
                         <span v-else-if="indicators[pull.PullNumber] === 'W'" class="badge-indicator ">
-                            <div class='tooltip' :data-tip="$t('win')"><img src="/images/items/common/green-badge.webp" />
+                            <div class='tooltip' :data-tip="$t('win')"><img
+                                    src="/images/items/common/green-badge.webp" />
                             </div>
                         </span>
                         <span v-else-if="indicators[pull.PullNumber] === 'G'" class="badge-indicator ">
@@ -311,12 +304,20 @@ defineExpose({
 
                     <!-- Pity -->
                     <td class="text-center px-4 whitespace-nowrap">
-                        <span v-show="pull.Rarity === 6">
+                        <span class="text-sme" v-show="pull.Rarity === 6">
                             {{ sixStarsPullsIndex[pull.PullNumber] }}
                         </span>
                     </td>
+
+                    <!-- Banner -->
+                    <td class="text-center px-4 whitespace-nowrap">
+                        <span class="text-sm">{{ pull.BannerType }}</span>
+                    </td>
+
                     <!-- Date -->
-                    <td class="text-center px-4 whitespace-nowrap">{{ formatDate(pull.Timestamp) }}</td>
+                    <td class="text-center px-4 whitespace-nowrap">
+                        <span class="text-sm">{{ formatDate(pull.Timestamp) }}</span>
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -5,7 +5,7 @@
 <template>
     <dialog id="tutorial" class="modal">
         <div class="modal-box custom-gradient-gray-blue custom-border relative h-2/3">
-            <div class="absolute top-0 left-0 right-0 p-4 custom-gradient-gray-blue rounded-2xl">
+            <div class="absolute top-0 left-0 right-0 p-4 custom-gradient-gray-blue rounded-xl">
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2.5 top-4 text-white">✕</button>
                 </form>
@@ -91,7 +91,15 @@
                         <template #discord>@windbow</template>
                     </i18n-t>
                 </p> -->
-                <p class="text-white">• Whip @windbow so he adds manual editing faster.</p>
+                <p class="text-white">• {{ $t('solution-1')}}</p>
+                <p class="text-white">
+                    <i18n-t keypath='solution-1'>
+                        <template #editor>
+                           <span class="text-error">{{ $t('summon-editor') }}</span>
+                        </template>
+                    </i18n-t>
+                </p>
+                <p class="text-white">• {{ $t('solution-2')}}</p>
             </div>
         </div>
         <form method="dialog" class="modal-backdrop">

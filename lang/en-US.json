@@ -152,7 +152,7 @@
   "search-arcanists": "Search arcanists",
   "show-unreleased-arcanists": "Show unreleased arcanists",
   "help-us-translate": "Help us translate!",
-  "import-error": " An error has occurred while importing images, either due to a failure in reading or incomplete 10x images from the user. Please read the tutorial for more information.",
+  "import-error": " An error has occurred while importing images. Please read Bug Handling in Tutorial for more information.",
   "wrong-timestamps": "Missing data timestamps: {timestamps}",
   "unreleased": "Unreleased",
   "wilderness-wishing-spring": "Wilderness Wishing Spring",
@@ -227,5 +227,11 @@
   "login-google-drive": "Sign in Google Drive",
   "sign-out-google-drive": "Sign out Google Drive",
   "click-to-show-email": "Click to show email",
-  "synced": "Synced"
+  "synced": "Synced",
+  "banner": "Type",
+  "add-pull": "Add Pull",
+  "cancel": "Cancel",
+  "summon-editor": "Summon Editor",
+  "solution-1": "If Summon Tracker fails to read correctly, use the {editor} to manually input or correct the data.",
+  "solution-2": "If there's missing 10x because of old pulls, either delete them or add the missing pulls."
 }

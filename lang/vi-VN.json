@@ -152,7 +152,7 @@
   "search-arcanists": "Tìm arcanist",
   "show-unreleased-arcanists": "Hiện arcanist chưa ra mắt",
   "help-us-translate": "Giúp chúng tôi dịch!",
-  "import-error": "Đã xảy ra lỗi khi tải ảnh. \nHãy đảm bảo rằng tất cả các hình ảnh đều rõ ràng và không có hình ảnh nào bị thiếu. \nĐọc hướng dẫn để biết thêm thông tin. ",
+  "import-error": "Đã xảy ra lỗi khi tải ảnh. Đọc hướng dẫn để biết thêm thông tin. ",
   "wrong-timestamps": "Thiếu dữ liệu tại: {timestamps}",
   "oneiric-shop": "Cửa hàng Oneiric",
   "unreleased": "Chưa ra mắt",
