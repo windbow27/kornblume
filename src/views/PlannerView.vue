@@ -197,10 +197,6 @@ GApiSvc.init().then(async () => {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <!-- <p class="text-sm lg:text-base"> Fixed 1.4 items not being added to Warehouse. </p>
-                    <p class="text-sm lg:text-base"> If you see low opacity materials in Crafting section, ignore it. The issue
-                        will be fixed once the data is fully gathered. </p> -->
-                    <!-- <p class="text-sm lg:text-base"> Planner has been modified and upgraded. Enjoy almost lag free planning experience. </p> -->
                     <p class="text-sm lg:text-base"> Google Drive Sync has been added. Head to Profile to try it out.</p>
                 </div>
             </div>

@@ -76,19 +76,32 @@ onMounted(() => {
         <div class="flex pb-4">
             <h2 class="text-2xl text-white font-bold">{{ $t('arcanists') }}</h2>
         </div>
+
+        <!-- Notification -->
+        <div class="pb-4">
+            <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="stroke-current shrink-0 w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <p class="text-sm lg:text-base"> Released arcanists stats have been updated by Heightweight.</p>
+            </div>
+        </div>
+
         <div class="flex flex-wrap p-4 gap-x-4 justify-between items-center">
             <!--Search bar and unreleased filter-->
-           <div class="flex flex-wrap gap-x-10 justify-center">
+            <div class="flex flex-wrap gap-x-10 justify-center">
                 <input v-model="searchQuery" type="text" :placeholder="$t('search-arcanists')"
                     class="input input-sm w-full sm:w-auto bg-gray-800 text-white py-2 px-4 rounded-md focus:outline-none">
                 <div class="form-control">
                     <label class="cursor-pointer label justify-center space-x-5">
                         <span class="label-text text-white text-md">{{ $t('show-unreleased-arcanists') }}</span>
                         <input v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists" type="checkbox"
-                            class="checkbox checkbox-info"/>
+                            class="checkbox checkbox-info" />
                     </label>
                 </div>
-           </div>
+            </div>
             <!-- Rarity select -->
             <div class="flex flex-wrap gap-x-10 justify-center">
                 <div class="flex justify-center space-x-2">
@@ -96,17 +109,18 @@ onMounted(() => {
                         :class="{ 'border-2 border-info': activeRarities.includes(i), 'border-2 border-transparent': !activeRarities.includes(i) }"
                         @click="selectedRarities(i)" class="p-2 rounded-md">
                         <i class="fa-solid fa-star" :class="{
-                            'text-orange-300': i === 6,
-                            'text-yellow-100': i === 5,
-                            'text-purple-400': i === 4,
-                            'text-sky-200': i === 3,
-                            'text-green-200': i === 2
-                        }"></i>
+                'text-orange-300': i === 6,
+                'text-yellow-100': i === 5,
+                'text-purple-400': i === 4,
+                'text-sky-200': i === 3,
+                'text-green-200': i === 2
+            }"></i>
                     </button>
                 </div>
                 <!-- Afflatus select -->
                 <div class="flex justify-center space-x-2">
-                    <button v-for="afflatus in ['Beast', 'Mineral', 'Plant', 'Star', 'Intellect', 'Spirit']" :key="afflatus"
+                    <button v-for="afflatus in ['Beast', 'Mineral', 'Plant', 'Star', 'Intellect', 'Spirit']"
+                        :key="afflatus"
                         :class="{ 'border-2 border-info': activeAfflatus.includes(afflatus), 'border-2 border-transparent': !activeAfflatus.includes(afflatus) }"
                         @click="selectedAfflatus(afflatus)" class="p-2 rounded-md">
                         <img class="w-4" :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`" alt="">

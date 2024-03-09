@@ -323,6 +323,7 @@ GApiSvc.init().then(async () => {
             </h2>
 
         </div>
+
         <!-- Notification -->
         <div class="pb-4">
             <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
