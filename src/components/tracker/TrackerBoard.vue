@@ -238,7 +238,7 @@ const winrate = computed(() => {
         </div>
     </div>
 
-    <TrackerEditor v-if="isEditing" :pulls="props.pulls"/>
+    <TrackerEditor v-if="isEditing" :pulls="props.pulls" />
     <div v-if="!isEditing" class="flex flex-col overflow-x-auto hidden-scrollbar">
         <!-- Rarity select -->
         <div class="flex justify-center space-x-2 pb-4">
@@ -282,7 +282,7 @@ const winrate = computed(() => {
                         <ArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)"
                             :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist" />
                         <SpecialIcon v-else :name="pull.ArcanistName" />
-                        {{ $t(pull.ArcanistName) }}
+                        <div class="text-sm">{{ $t(pull.ArcanistName) }}</div>
                         <span v-if="indicators[pull.PullNumber] === 'L'" class="badge-indicator ">
                             <div class='tooltip' :data-tip="$t('lose')"><img
                                     src="/images/items/common/red-badge.webp" />
@@ -302,16 +302,20 @@ const winrate = computed(() => {
 
                     <!-- Pity -->
                     <td class="text-center px-4 whitespace-nowrap">
-                        <span v-show="pull.Rarity === 6">
+                        <span class="text-sme" v-show="pull.Rarity === 6">
                             {{ sixStarsPullsIndex[pull.PullNumber] }}
                         </span>
                     </td>
 
                     <!-- Banner -->
-                    <td class="text-center px-4 whitespace-nowrap">{{ pull.BannerType }}</td>
+                    <td class="text-center px-4 whitespace-nowrap">
+                        <span class="text-sm">{{ pull.BannerType }}</span>
+                    </td>
 
                     <!-- Date -->
-                    <td class="text-center px-4 whitespace-nowrap">{{ formatDate(pull.Timestamp) }}</td>
+                    <td class="text-center px-4 whitespace-nowrap">
+                        <span class="text-sm">{{ formatDate(pull.Timestamp) }}</span>
+                    </td>
                 </tr>
             </tbody>
         </table>

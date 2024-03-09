@@ -19,7 +19,7 @@ import PlannerWarehouse from '@/components/planner/PlannerWarehouse.vue'
 import PlannerSettings from '@/components/planner/PlannerSettings.vue'
 import PlannerTotal from '@/components/planner/PlannerTotal.vue'
 import PlannerResult from '@/components/planner/PlannerResult.vue'
-import ArcanistList from '@/components/arcanist/ArcanistList.vue'
+import ArcanistAddArcanistList from '@/components/arcanist/ArcanistAddArcanistList.vue'
 
 const plannerStore = usePlannerStore()
 const activityStore = useActivityStore()
@@ -240,7 +240,7 @@ GApiSvc.init().then(async () => {
 
         <!-- Add Arcanist Overlay -->
         <div v-if="isAddingArcanist" class="overlay">
-            <ArcanistList ref="arcanistListRef" :arcanists="listArcanists" @closeOverlay="closeAddOverlay"
+            <ArcanistAddArcanistList ref="arcanistListRef" :arcanists="listArcanists" @closeOverlay="closeAddOverlay"
                 @selectArcanist="handleSelectArcanist" />
         </div>
 
