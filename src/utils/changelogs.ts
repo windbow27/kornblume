@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '10/03/2024', description: '• UI "fixes". \n • Let me know if anything looks funky.' },
     { date: '09/03/2024', description: '• Added Tracker Editor. \n • Updated stats for released arcanists by Heightweight.' },
     { date: '08/03/2024', description: '• Added Google Drive Sync. \n • Added The First Milestone banner.' },
     { date: '05/03/2024', description: '• Planner has been modified and upgraded. Enjoy almost lag free planning experience.' },
