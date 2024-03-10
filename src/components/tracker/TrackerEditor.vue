@@ -4,11 +4,11 @@ import { IPullNumber, IPull, usePullsRecordStore } from '@/stores/pullsRecordSto
 import { IArcanist } from '@/types';
 import { useDataStore } from '@/stores/dataStore';
 import { formatNoSpoilerArcanists } from '@/composables/arcanists';
+import { bannerList } from '@/utils/bannerData';
 import Popper from 'vue3-popper';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
-import { bannerList } from '@/utils/bannerData';
 import '@vuepic/vue-datepicker/dist/main.css'
 
 const props = defineProps({
