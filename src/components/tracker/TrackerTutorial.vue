@@ -91,7 +91,6 @@
                         <template #discord>@windbow</template>
                     </i18n-t>
                 </p> -->
-                <p class="text-white">• {{ $t('solution-1')}}</p>
                 <p class="text-white">
                     <i18n-t keypath='solution-1'>
                         <template #editor>

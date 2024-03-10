@@ -33,7 +33,7 @@ onBeforeMount(() => {
         </div>
 
         <!--Infomation-->
-        <div class="flex flex-col lg:w-1/2 gap-y-4 max-w-xl 2xl:max-w-2xl p-4">
+        <div class="flex flex-col w-full lg:w-1/2 gap-y-4 max-w-xl 2xl:max-w-2xl p-4">
             <!--Name and Selectors-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <div class="flex flex-wrap items-center space-x-2">
