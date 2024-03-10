@@ -33,3 +33,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Create .env file
+```sh
+VITE_GOOGLE_API_KEY = ''
+VITE_GOOGLE_CLIENT_ID = ''
+```
