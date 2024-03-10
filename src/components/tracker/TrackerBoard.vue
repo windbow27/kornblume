@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, defineAsyncComponent, watch } from 'vue';
 import { useDataStore } from '@/stores/dataStore';
 import { bannerList, bannerRateUp } from '@/utils/bannerData'
 import { useI18n } from 'vue-i18n';
@@ -10,7 +10,10 @@ import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
 import TrackerArcanistIcon from './TrackerArcanistIcon.vue';
 import TrackerSpecialIcon from './TrackerSpecialIcon.vue';
-import TrackerEditor from './TrackerEditor.vue';
+
+const TrackerEditor = defineAsyncComponent(() =>
+    import('./TrackerEditor.vue')
+)
 
 const props = defineProps({
     pulls: {
@@ -34,6 +37,7 @@ const props = defineProps({
 const arcanists = useDataStore().arcanists;
 const activeRarities = ref<number[]>([6]);
 const isEditing = ref(false);
+const showSpinner = ref(false);
 const { t } = useI18n();
 
 const selectedRarities = (rarity: number) => {
@@ -112,6 +116,15 @@ const winrate = computed(() => {
     const winCount = indicatorsArray.filter(i => i === 'W').length;
     const loseCount = indicatorsArray.filter(i => i === 'L').length;
     return Math.round((winCount / (winCount + loseCount)) * 100);
+});
+
+watch(isEditing, (newVal) => {
+    if (newVal) {
+        showSpinner.value = true;
+        setTimeout(() => {
+            showSpinner.value = false;
+        }, 1000);
+    }
 });
 
 </script>
@@ -241,6 +254,8 @@ const winrate = computed(() => {
     </div>
 
     <TrackerEditor v-if="isEditing" :pulls="props.pulls" />
+    <div v-if="showSpinner" class="text-white text-center font-bold"><i class="fa-solid fa-spinner fa-spin"></i></div>
+
     <div v-if="!isEditing" class="flex flex-col overflow-x-auto hidden-scrollbar">
         <!-- Rarity select -->
         <div class="flex justify-center space-x-2 pb-4">

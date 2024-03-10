@@ -25,7 +25,7 @@
                         </template>
                     </i18n-t>
                 </p>
-                <p class=" text-white">• {{
+                <p class=" text-white">3. {{
                     $t('the-summon-tracker-will-automatically-extract-display-and-save-the-information-from-the-screenshots')
                 }}</p>
                 <h3 class="font-bold text-lg pt-4 text-info">{{ $t('tips') }}</h3>
@@ -91,7 +91,7 @@
                         <template #discord>@windbow</template>
                     </i18n-t>
                 </p> -->
-                <p class="text-white">
+                <p class="text-white">•
                     <i18n-t keypath='solution-1'>
                         <template #editor>
                            <span class="text-error">{{ $t('summon-editor') }}</span>

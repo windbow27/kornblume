@@ -25,18 +25,20 @@ const getNormalizedMaterial = () => {
 
 <template>
     <div class="tooltip" :data-tip="$t(getNormalizedMaterial().material)">
-        <div class="relative inline-block">
-            <img :src="getNormalizedMaterial().borderImagePath" alt="Border Image" class="w-20 h-20 absolute"
-                :class="{ 'w-36': checkQuantity() }" />
-            <img :src="getNormalizedMaterial().itemImagePath" alt="Material Image" class="w-20 h-20 avatar"
-                :class="{ 'mx-5': checkQuantity() }" />
-            <div class="flex items-center justify-center small-text text-white absolute -bottom-3 left-3 input input-xs rounded-t-none"
-                :class="{
-                    'left-[17px] w-[85px]': checkQuantity(), 'w-14': !checkQuantity(),
-                    'bg-green-800/80': useWarehouseStore().getItemQuantity(props.material.Material) >= props.material.Quantity, 'bg-red-500/60': useWarehouseStore().getItemQuantity(props.material.Material) < props.material.Quantity
-                }">
-                {{ formatQuantity(useWarehouseStore().getItemQuantity(getNormalizedMaterial().material)) }} / {{
-                    getNormalizedMaterial().quantity }}
+        <div class="avatar">
+            <div class="relative inline-block">
+                <img v-if="getNormalizedMaterial().borderImagePath" :src="getNormalizedMaterial().borderImagePath"
+                    alt="Border Image" class="w-20 h-20 absolute" :class="{ 'w-36': checkQuantity() }" />
+                <img v-if="getNormalizedMaterial().itemImagePath" :src="getNormalizedMaterial().itemImagePath"
+                    alt="Material Image" class="w-20 h-20" :class="{ 'mx-5': checkQuantity() }" />
+                <div class="flex items-center justify-center small-text text-white absolute -bottom-3 left-3 input input-xs rounded-t-none"
+                    :class="{
+        'left-[17px] w-[85px]': checkQuantity(), 'w-14': !checkQuantity(),
+        'bg-green-800/80': useWarehouseStore().getItemQuantity(props.material.Material) >= props.material.Quantity, 'bg-red-500/60': useWarehouseStore().getItemQuantity(props.material.Material) < props.material.Quantity
+    }">
+                    {{ formatQuantity(useWarehouseStore().getItemQuantity(getNormalizedMaterial().material)) }} / {{
+        getNormalizedMaterial().quantity }}
+                </div>
             </div>
         </div>
     </div>

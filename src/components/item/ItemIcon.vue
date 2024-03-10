@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { normalizeDisplayMaterial } from '@/composables/materials';
 import { IMaterialUnit } from '@/types';
+import { normalizeDisplayMaterial } from '@/composables/materials';
 
 const props = defineProps({
     material: {
@@ -17,11 +17,15 @@ const getNormalizedMaterial = () => {
 
 <template>
     <div class="tooltip" :data-tip="$t(getNormalizedMaterial().material)">
-        <div class="relative inline-block">
-            <img :src="getNormalizedMaterial().borderImagePath" alt="Border Image" class=" w-20 h-20 absolute" />
-            <img :src="getNormalizedMaterial().itemImagePath" alt="Material Image" class="w-20 h-20 avatar" />
-            <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs">
-                {{ getNormalizedMaterial().quantity }}
+        <div class="avatar">
+            <div class="relative inline-block">
+                <img v-if="getNormalizedMaterial().borderImagePath" :src="getNormalizedMaterial().borderImagePath"
+                    alt="Border Image" class=" w-20 h-20 absolute" />
+                <img v-if="getNormalizedMaterial().itemImagePath" :src="getNormalizedMaterial().itemImagePath"
+                    alt="Material Image" class="w-20 h-20" />
+                <div class="absolute text-white bottom-4 right-3 bg-gray-700 rounded-tl px-1 py-px text-xs">
+                    {{ getNormalizedMaterial().quantity }}
+                </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,3 @@
-<!-- eslint-disable @typescript-eslint/no-unused-vars -->
-<!-- eslint-disable no-unused-vars -->
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
 import { IPullNumber, IPull, usePullsRecordStore } from '@/stores/pullsRecordStore';
