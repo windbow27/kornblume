@@ -35,10 +35,10 @@ watch(() => props.material, (newValue) => {
 
 <template>
     <div class="pb-6">
-        <div class="relative inline-block">
-            <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute"
+        <div class="relative inline-block w-20 h-20">
+            <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="absolute"
                 :class="{ 'w-36': normalizedMaterial.material === 'Sharpodonty' || normalizedMaterial.material === 'Dust' }" />
-            <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 avatar"
+            <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="avatar"
                 :class="{ 'mx-5': normalizedMaterial.material === 'Sharpodonty' || normalizedMaterial.material === 'Dust' }" />
             <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""
                 class="bg-slate-600 text-white absolute -bottom-3 left-3 w-14 input input-xs rounded-t-none text-center"

@@ -52,9 +52,9 @@ watchEffect(() => {
 <template>
     <div class="pb-4">
         <div class="relative flex flex-col">
-            <div class="relative">
-                <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
-                <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 avatar" />
+            <div class="relative w-20 h-20">
+                <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="absolute" />
+                <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="avatar" />
             </div>
             <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""
                 class="bg-slate-600 text-white w-14 input input-xs rounded-none text-center absolute right-3 bottom-6" />
