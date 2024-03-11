@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, watchEffect, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore';
 import { IPull, usePullsRecordStore } from '@/stores/pullsRecordStore'
 import { bannerList, specialArcanists } from '@/utils/bannerData'
@@ -282,9 +282,10 @@ const ocr: clickHandler = (payload: Event): void => {
             await worker.terminate();
             pulls.value = result;
             isImporting.value = false;
+            if (pulls.value.length > 0) {
+                usePullsRecordStore().updatePullsRecord(pulls.value)
+            }
             syncDrive();
-            // const endTime = performance.now();
-            // console.log('time: ', endTime - startTime);
         })();
     }
 }
@@ -300,12 +301,6 @@ onMounted(() => {
         changelogsStore.setIsOpenTutorial(true)
     }
 })
-
-watchEffect(() => {
-    if (pulls.value.length > 0) {
-        usePullsRecordStore().updatePullsRecord(pulls.value)
-    }
-});
 
 GApiSvc.init().then(async () => {
     syncDrive();
@@ -332,7 +327,8 @@ GApiSvc.init().then(async () => {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <p class="text-sm lg:text-base"> Introducing Tracker Editor! Read Bug Handling in Tutorial for more information.</p>
+                <p class="text-sm lg:text-base"> Introducing Tracker Editor! Read Bug Handling in Tutorial for more
+                    information.</p>
             </div>
         </div>
 
