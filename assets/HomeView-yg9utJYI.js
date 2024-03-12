@@ -1,4 +1,4 @@
-import{o as $}from"./index-vX4jqS2i.js";import{d as x,o,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as u,w as y,h as j,i as m,j as M,k as O,l as w,m as z}from"./index-E19zNPif.js";const k=[{date:"10/03/2024",description:`• UI "fixes". 
+import{o as $}from"./index-LsoLr4F-.js";import{d as x,o,c as n,a as e,t,F as g,r as v,u as F,b as W,e as R,f as _,g as u,w as y,h as j,i as m,j as M,k as O,l as w,m as z}from"./index-jT1KqCN4.js";const k=[{date:"10/03/2024",description:`• UI "fixes". 
  • Let me know if anything looks funky.`},{date:"09/03/2024",description:`• Added Tracker Editor. 
  • Updated stats for released arcanists by Heightweight.`},{date:"08/03/2024",description:`• Added Google Drive Sync. 
  • Added The First Milestone banner.`},{date:"05/03/2024",description:"• Planner has been modified and upgraded. Enjoy almost lag free planning experience."},{date:"04/03/2024",description:`• Cleaning up item names in json and bug fixes. 
