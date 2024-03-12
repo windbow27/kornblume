@@ -185,8 +185,8 @@
   "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Leveling up will update the arcanist's current status and consume your warehouse inventory. Proceed?",
   "after-your-first-import": "After your first import, you only need to import the new images.",
   "tips": "Tips",
-  "example-of-incomplete-10x": "Example of incomplete 10x image:",
-  "incomplete-10x": "10x",
+  "example-of-incomplete-10x": "Example of incomplete 10x",
+  "incomplete-10x": "image",
   "ko-fi": "Buy us a Coffee",
   "loading-indicator-vertin-wheel-vertin-wheel-vertin-wheel": "Loading indicator. Thank you for consenting and sending us the PSD of the image directly!",
   "homescreen-image": "Homescreen image. Beautiful work.",
@@ -233,5 +233,7 @@
   "cancel": "Cancel",
   "summon-editor": "Summon Editor",
   "solution-1": "If Summon Tracker fails to read correctly, use the {editor} to manually input or correct the data.",
-  "solution-2": "If there's missing 10x because of old pulls, either delete them or add the missing pulls."
+  "solution-2": "If there's missing 10x because of old pulls, either delete them or add the missing pulls.",
+  "note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images": "Note that incomplete 10x is caused by ocr failing to read text or missing imported images,",
+  "not-by-user-doing-single-pulls": "NOT by user doing single pulls."
 }

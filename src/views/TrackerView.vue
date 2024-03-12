@@ -327,8 +327,11 @@ GApiSvc.init().then(async () => {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <p class="text-sm lg:text-base"> Introducing Tracker Editor! Read Bug Handling in Tutorial for more
-                    information.</p>
+                <div>
+                    <p class="text-sm lg:text-base"> • Introducing Tracker Editor! Please read Tutorial again.</p>
+                    <p class="text-sm lg:text-base"> • {{ $t('note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images') }}
+                        <span class="text-sm lg:text-base text-error"> {{ $t('not-by-user-doing-single-pulls') }}</span> </p>
+                </div>
             </div>
         </div>
 

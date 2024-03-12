@@ -41,7 +41,11 @@
                 </p>
                 <p class=" text-white">• {{ $t('example-of-incomplete-10x') }}
                     <a href="https://imgur.com/a/6kXTVZz" target="_blank" class="text-blue-500 hover:text-blue-700">{{
-                    $t('incomplete-10x') }}</a>
+                    $t('incomplete-10x') }}</a>.
+                    <span class="text-white"> {{
+                    $t('note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images')
+                }}</span>
+                    <span class="text-error"> {{ $t('not-by-user-doing-single-pulls') }}</span>
                 </p>
                 <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
                 <p class="text-white">•
@@ -94,7 +98,7 @@
                 <p class="text-white">•
                     <i18n-t keypath='solution-1'>
                         <template #editor>
-                           <span class="text-error">{{ $t('summon-editor') }}</span>
+                            <span class="text-error">{{ $t('summon-editor') }}</span>
                         </template>
                     </i18n-t>
                 </p>
