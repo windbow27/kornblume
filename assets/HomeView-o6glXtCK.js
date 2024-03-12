@@ -1,4 +1,4 @@
-import{o as $}from"./index-jpiI3XZE.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as T,f as _,g as u,w as y,h as j,i as m,j as M,k as O,l as w,m as z}from"./index-foHziSK0.js";const k=[{date:"12/03/2024",description:`• Updated notifications. Again, please read Summon Tracker Tutorial". 
+import{o as $}from"./index-ZMLkygsX.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as T,f as _,g as u,w as y,h as j,i as m,j as M,k as O,l as w,m as z}from"./index-uTaIB7fx.js";const k=[{date:"12/03/2024",description:`• Updated notifications. Again, please read Summon Tracker Tutorial. 
  • Google Sync seems stable, should be good to use now.`},{date:"10/03/2024",description:`• UI "fixes". 
  • Let me know if anything looks funky.`},{date:"09/03/2024",description:`• Added Tracker Editor. 
  • Updated stats for released arcanists by Heightweight.`},{date:"08/03/2024",description:`• Added Google Drive Sync. 
