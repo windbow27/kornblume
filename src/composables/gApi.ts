@@ -16,7 +16,7 @@ const createScriptTag = (url) => {
 };
 
 const initialize = () => {
-    console.log('initialize');
+    // console.log('initialize');
     isLoading.value = true;
 
     const scriptTagGAPI = createScriptTag('https://apis.google.com/js/api.js');
@@ -56,7 +56,7 @@ export function useGapi () {
 export class GApiSvc {
     static init () {
         const { scriptLoaded } = useGapi();
-        console.log('init scriptLoaded:' + scriptLoaded.value);
+        // console.log('init scriptLoaded:' + scriptLoaded.value);
 
         return new Promise<void>((resolve, reject) => {
             watchEffect(() => {
@@ -188,7 +188,7 @@ export class GApiSvc {
 
 export async function syncDrive () {
     if (await GApiSvc.isSignedIn()) {
-        console.log(GApiSvc.isSignedIn());
+        // console.log(GApiSvc.isSignedIn());
         const files = await GApiSvc.getFiles();
         // console.log(files);
         const file = files.find((file: { name: string; }) => file.name === 'kornblume.json');
