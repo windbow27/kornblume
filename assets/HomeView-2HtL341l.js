@@ -1,4 +1,4 @@
-import{o as $}from"./index-tm-RgLjZ.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as T,f as _,g as u,w as y,h as j,i as m,j as M,k as O,l as w,m as z}from"./index-Ca8Pn3Xj.js";const k=[{date:"13/03/2024",description:`• Fixed Tracker Editor only saving one type of section. 
+import{o as $}from"./index-wV4L5s1D.js";import{d as x,o as a,c as n,a as e,t,F as g,r as v,u as F,b as W,e as T,f as _,g as u,w as y,h as j,i as m,j as M,k as O,l as w,m as z}from"./index-1wF1yPc0.js";const k=[{date:"13/03/2024",description:`• Fixed Tracker Editor only saving one type of section. 
  • Updated French translations by sillight`},{date:"12/03/2024",description:`• Updated notifications. Again, please read Summon Tracker Tutorial. 
  • Google Sync seems stable, should be good to use now.`},{date:"10/03/2024",description:`• UI "fixes". 
  • Let me know if anything looks funky.`},{date:"09/03/2024",description:`• Added Tracker Editor. 
