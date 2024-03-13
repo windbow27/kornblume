@@ -233,7 +233,7 @@
   "solution-1": "如果征集追踪无法正确读取征集记录，请使用{editor}手动输入或更正数据。",
   "add-pull": "添加征集记录",
   "banner": "类型",
-  "solution-2": "如果丢失了之前征集的10连抽记录，请修改或添加丢失的征集记录。"
+  "solution-2": "如果丢失了之前征集的10连抽记录，请修改或添加丢失的征集记录。",
   "note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images": "请注意，不完整的10连抽是由于 ocr 无法读取文本或缺少导入的图像导致的，",
   "not-by-user-doing-single-pulls": "而不是用户进行单抽引起的。"
 }
