@@ -195,7 +195,8 @@ const format = (date) => {
                         <VueDatePicker v-model="localPullDates[index]" enable-seconds :format="format" :is-24="true" />
                     </td>
                     <td class="text-center whitespace-nowrap px-2">
-                        <button class="btn btn-sm btn-circle btn-ghost" @click="localPulls.splice(index, 1)">✕</button>
+                        <button class="btn btn-sm btn-circle btn-ghost"
+                            @click="localPulls.splice(index, 1); localPullDates.splice(index, 1);">✕</button>
                     </td>
                 </tr>
             </tbody>
