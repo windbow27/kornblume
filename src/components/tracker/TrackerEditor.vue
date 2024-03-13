@@ -59,7 +59,7 @@ const savePulls = () => {
                 ArcanistName: pull.ArcanistName,
                 Rarity: rarity,
                 BannerType: pull.BannerType,
-                Timestamp: isNaN(pull.Timestamp) ? localPullDates[index].getTime() : pull.Timestamp
+                Timestamp: localPullDates[index].getTime()
             };
         });
     pullsRecordStore.updatePullsRecord(pullsToSave);
@@ -85,7 +85,6 @@ const format = (date) => {
 </script>
 
 <template>
-    <!-- {{ console.log(pullsRecordStore.data) }} -->
     <div class="flex justify-center space-x-5 pb-4">
         <button class="blue-button" onclick="addPull.showModal()">{{ $t('add-pull') }}</button>
         <dialog id="addPull" class="modal">
