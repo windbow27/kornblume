@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '13/03/2024', description: '• Fixed Tracker Editor only saving one type of section.' },
     { date: '12/03/2024', description: '• Updated notifications. Again, please read Summon Tracker Tutorial. \n • Google Sync seems stable, should be good to use now.' },
     { date: '10/03/2024', description: '• UI "fixes". \n • Let me know if anything looks funky.' },
     { date: '09/03/2024', description: '• Added Tracker Editor. \n • Updated stats for released arcanists by Heightweight.' },

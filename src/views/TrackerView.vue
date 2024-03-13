@@ -51,6 +51,18 @@ const sortedPulls = computed(() => {
     return pulls.value.slice().sort((a, b) => b.Timestamp - a.Timestamp);
 });
 
+const allPulls = computed(() => {
+    return sortedPulls.value.map((pull, index) => {
+        return {
+            PullNumber: sortedPulls.value.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
+            Timestamp: pull.Timestamp
+        }
+    });
+});
+
 const waterPulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Abundance of the Water:');
     return filteredPulls.map((pull, index) => {
@@ -443,13 +455,13 @@ GApiSvc.init().then(async () => {
                     $t('water') }}</button>
         </div>
 
-        <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
+        <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls" :allPulls="allPulls"
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Standard'" :text="$t('summary-standard')" :pulls="standardPulls"
+        <TrackerBoard v-if="selectedBannerType === 'Standard'" :text="$t('summary-standard')" :pulls="standardPulls" :allPulls="allPulls"
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls"
+        <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls" :allPulls="allPulls"
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Water'" :text="$t('summary-water')" :pulls="waterPulls"
+        <TrackerBoard v-if="selectedBannerType === 'Water'" :text="$t('summary-water')" :pulls="waterPulls" :allPulls="allPulls"
             :isError="isError" :wrongTimestamps="wrongTimestamps" />
     </div>
 </template>

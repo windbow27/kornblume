@@ -20,6 +20,10 @@ const props = defineProps({
         type: Array as () => IPullNumber[],
         required: true
     },
+    allPulls: {
+        type: Array as () => IPullNumber[],
+        required: true
+    },
     isError: {
         type: Boolean,
         required: true
@@ -253,7 +257,7 @@ watch(isEditing, (newVal) => {
         </div>
     </div>
 
-    <TrackerEditor v-if="isEditing" :pulls="props.pulls" />
+    <TrackerEditor v-if="isEditing" :pulls="props.allPulls" />
     <div v-if="showSpinner" class="text-white text-center font-bold"><i class="fa-solid fa-spinner fa-spin"></i></div>
 
     <div v-if="!isEditing" class="flex flex-col overflow-x-auto hidden-scrollbar">

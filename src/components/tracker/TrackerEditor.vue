@@ -100,7 +100,7 @@ const format = (date) => {
                         <input class="custom-input w-64 text-white" type="text" v-model="newArcanistName" />
                         <template #content>
                             <div class="custom-item-list"
-                                v-for="(arcanist, i) in arcanists.filter(a => a.Name.includes(newArcanistName))"
+                                v-for="(arcanist, i) in arcanists.filter(a => a.Name.toLowerCase().includes(newArcanistName.toLowerCase()))"
                                 :key="i" @click="newArcanistName = arcanist.Name">
                                 {{ arcanist.Name }}
                             </div>
@@ -110,8 +110,8 @@ const format = (date) => {
                         <input class="custom-input w-64 text-white" type="text" v-model="newBannerType" />
                         <template #content>
                             <div class="custom-item-list"
-                                v-for="(banner, i) in bannerList.filter(b => b.includes(newBannerType))" :key="i"
-                                @click="newBannerType = banner">
+                                v-for="(banner, i) in bannerList.filter(b => b.toLowerCase().includes(newBannerType.toLowerCase()))"
+                                :key="i" @click="newBannerType = banner">
                                 {{ banner }}
                             </div>
                         </template>
@@ -164,11 +164,11 @@ const format = (date) => {
                             <div class="relative">
                                 <input class="custom-input w-36" type="text" v-model="arcanistNames[index]" />
                                 <button @click="arcanistNames[index] = ''"
-                                        class="absolute inset-y-0 right-0 pr-3 text-white text-sm">✕</button>
+                                    class="absolute inset-y-0 right-0 pr-3 text-white text-sm">✕</button>
                             </div>
                             <template #content>
                                 <div class="custom-item-list"
-                                    v-for="(arcanist, i) in arcanists.filter(a => a.Name.includes(arcanistNames[index]))"
+                                    v-for="(arcanist, i) in arcanists.filter(a => a.Name.toLowerCase().includes(arcanistNames[index].toLowerCase()))"
                                     :key="i" @click="arcanistNames[index] = pull.ArcanistName = arcanist.Name">
                                     {{ arcanist.Name }}
                                 </div>
@@ -185,7 +185,7 @@ const format = (date) => {
                             </div>
                             <template #content>
                                 <div class="custom-item-list"
-                                    v-for="(banner, i) in bannerList.filter(b => b.includes(bannerTypes[index]))"
+                                    v-for="(banner, i) in bannerList.filter(b => b.toLowerCase().includes(bannerTypes[index].toLowerCase()))"
                                     :key="i" @click="bannerTypes[index] = pull.BannerType = banner">
                                     {{ banner }}
                                 </div>
@@ -193,7 +193,7 @@ const format = (date) => {
                         </Popper>
                     </td>
                     <td class="text-center whitespace-nowrap w-56 px-2">
-                        <VueDatePicker v-model="localPullDates[index]" enable-seconds :format="format" :is-24="true"/>
+                        <VueDatePicker v-model="localPullDates[index]" enable-seconds :format="format" :is-24="true" />
                     </td>
                     <td class="text-center whitespace-nowrap px-2">
                         <button class="btn btn-sm btn-circle btn-ghost" @click="localPulls.splice(index, 1)">✕</button>
