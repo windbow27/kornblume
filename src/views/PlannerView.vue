@@ -1,5 +1,5 @@
 <script setup lang="ts" name="PlannerView">
-import { ref, computed, watchEffect } from 'vue'
+import { ref, computed, watchEffect, onMounted, onUnmounted } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 import { useGlobalStore } from '@/stores/global'
 import { usePlannerStore } from '@/stores/plannerStore'
@@ -27,6 +27,7 @@ const wildernessStore = useWildernessStore()
 const arcanistStore = useDataStore().arcanists
 const settingsStore = usePlannerSettingsStore()
 const listArcanists = ref<IArcanist[]>([])
+const isLargeScreen = ref(false);
 
 const selectedArcanistIds = computed(() =>
     plannerStore.selectedArcanists.map((arcanist) => arcanist.Id)
@@ -48,6 +49,10 @@ const plannerEditRef = ref(null)
 const wildernessRef = ref(null)
 const warehouseRef = ref(null)
 const settingsRef = ref(null)
+
+const updateScreenSize = () => {
+    isLargeScreen.value = window.matchMedia('(min-width: 768px)').matches;
+};
 
 const openAddOverlay = () => {
     isAddingArcanist.value = true
@@ -168,6 +173,15 @@ watchEffect(() => {
     listArcanists.value = formatArcanists(listArcanists.value);
 })
 
+onMounted(() => {
+    window.addEventListener('resize', updateScreenSize);
+    updateScreenSize();
+});
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updateScreenSize);
+});
+
 onClickOutside(activityRef, closeActivity)
 onClickOutside(arcanistListRef, closeAddOverlay)
 onClickOutside(plannerEditRef, closeEditOverlay)
@@ -196,7 +210,8 @@ GApiSvc.init().then(async () => {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-sm lg:text-base"> Google Drive Sync has been added. Head to Profile to try it out.</p>
+                    <p class="text-sm lg:text-base"> Google Drive Sync has been added. Head to Profile to try it out.
+                    </p>
                 </div>
             </div>
         </div>
@@ -209,15 +224,18 @@ GApiSvc.init().then(async () => {
             <div class="flex space-x-2">
                 <div class="tooltip" :data-tip="$t('activity-settings')">
                     <button @click="openActivity" class="btn btn-ghost btn-sm custom-gradient-button rounded"><i
-                            class="fa-solid fa-bolt"></i></button>
+                            class="fa-solid fa-bolt"></i> <span v-show="isLargeScreen">{{ $t('activity')
+                            }}</span></button>
                 </div>
                 <div class="tooltip" :data-tip="$t('wilderness-settings')">
                     <button @click="openWilderness" class="btn btn-ghost btn-sm custom-gradient-button"><i
-                            class="fa-solid fa-tree"></i></button>
+                            class="fa-solid fa-tree"></i><span v-show="isLargeScreen">{{ $t('wilderness')
+                            }}</span></button>
                 </div>
                 <div class="tooltip tooltip-left" :data-tip="$t('manage-warehouse')">
                     <button @click="openWarehouse" class="btn btn-ghost btn-sm custom-gradient-button"><i
-                            class="fa-solid fa-box-archive"></i></button>
+                            class="fa-solid fa-box-archive"></i><span v-show="isLargeScreen">{{ $t('warehouse')
+                            }}</span></button>
                 </div>
                 <!-- Hide this settings button till we actually have some settings that allow them to make changes -->
                 <div v-if="false" class="tooltip tooltip-left" :data-tip="$t('settings')">

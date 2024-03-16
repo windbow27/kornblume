@@ -221,5 +221,17 @@
   "used-by-the-following-arcanists": "以下神祕學家將使用",
   "wishing-spring-formula": "不休荒原合成配方",
   "special": "特別的",
-  "contributors": "貢獻者"
+  "contributors": "貢獻者",
+  "activity": "活性",
+  "wilderness": "荒原",
+  "warehouse": "倉庫",
+  "banner": "類型",
+  "cancel": "取消",
+  "click-to-show-email": "點選顯示電子郵件",
+  "google-drive-save": "Google 雲端硬碟同步",
+  "water": "里程碑",
+  "synced": "已同步",
+  "summary-water": "第一個里程碑總結",
+  "sign-out-google-drive": "退出 Google 雲端硬碟",
+  "login-google-drive": "登入 Google 雲端硬碟"
 }

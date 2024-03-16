@@ -1,6 +1,6 @@
 export const changelogs = [
     // Add more from top
-    { date: '16/03/2024', description: '• Added Stage names.' },
+    { date: '16/03/2024', description: '• Added stage names. \n • UI improvements.' },
     { date: '13/03/2024', description: '• Fixed Tracker Editor only saving one type of section. \n • Updated French translations by sillight. \n • Updated zh Chinese translations by ryle798. \n • Fixed missing Spanish translations. \n • Updated Viet translations.' },
     { date: '12/03/2024', description: '• Updated notifications. Again, please read Summon Tracker Tutorial. \n • Google Sync seems stable, should be good to use now.' },
     { date: '10/03/2024', description: '• UI "fixes". \n • Let me know if anything looks funky.' },

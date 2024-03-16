@@ -237,5 +237,8 @@
   "wishing-spring-formula": "Formule du Wishing Spring",
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Vous pouvez utiliser Google Drive pour permettre à Kornblume d'enregister et synchroniser les données entre vos appareils. Nous utilisons suelement les fichiers créés par Kornblume.",
   "special": "Spécial",
-  "contributors": "Contributeurs"
+  "contributors": "Contributeurs",
+  "activity": "Activités",
+  "wilderness": "Wilderness",
+  "warehouse": "Warehouse"
 }

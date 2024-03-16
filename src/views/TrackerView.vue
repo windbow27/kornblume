@@ -349,83 +349,82 @@ GApiSvc.init().then(async () => {
             </div>
         </div>
 
-        <div class="flex justify-between">
-            <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center">
-                <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
-                    multiple />
-                <button @click="triggerFileInput('Default')" :disabled="isImporting"
-                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
-                    {{ $t('ocr-import') }} </button>
+        <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center justify-center sm:justify-start">
+            <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
+                multiple />
+            <button @click="triggerFileInput('Default')" :disabled="isImporting"
+                class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
+                {{ $t('ocr-import') }} </button>
 
-                <div class="space-x-1.5 sm:space-x-2">
-                    <button id="tutorial-button" ref="tutorialButton"
-                        class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()">{{
+            <div class="space-x-1.5 sm:space-x-2">
+                <button id="tutorial-button" ref="tutorialButton"
+                    class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()"><i
+                        class="fa-solid fa-book"></i> {{
                     $t('tutorial') }}</button>
-                    <button onclick="legacyButtons.showModal()"
-                        class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                <button onclick="legacyButtons.showModal()"
+                    class="btn btn-ghost custom-gradient-button btn-sm text-white"><i class="fa-solid fa-lightbulb"></i>
+                    {{
                     $t('legacy') }}</button>
-                    <button onclick="resetTracker.showModal()"
-                        class="btn btn-ghost custom-gradient-button btn-sm text-white">{{
+                <button onclick="resetTracker.showModal()"
+                    class="btn btn-ghost custom-gradient-button btn-sm text-white"><i
+                        class="fa-solid fa-triangle-exclamation"></i> {{
                     $t('reset') }}</button>
-                </div>
             </div>
+        </div>
 
-            <TrackerTutorial />
+        <TrackerTutorial />
 
-            <dialog id="legacyButtons" class="modal">
-                <div
-                    class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
-                    <form method="dialog">
-                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
-                    </form>
-                    <p class="p-2 text-white text-center">{{
+        <dialog id="legacyButtons" class="modal">
+            <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                </form>
+                <p class="p-2 text-white text-center">{{
                     $t('legacy-notice') }}
-                    </p>
-                    <div class="flex flex-wrap gap-x-10 gap-y-6 p-2 justify-center items-center">
-                        <form method="dialog">
-                            <div class="tooltip" data-tip="Stable. Works on all OS.">
-                                <button @click="triggerFileInput('Version1')" :disabled="isImporting"
-                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
-                                    Version 1 </button>
-                            </div>
-                        </form>
-                        <form method="dialog">
-                            <div class="tooltip" data-tip="Better. Doesn't support iOS.">
-                                <button @click="triggerFileInput('Version2')" :disabled="isImporting"
-                                    class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
-                                    Version 2 </button>
-                            </div>
-                        </form>
-                        <div class="tooltip" :data-tip="$t('exploshe')">
-                            <a href="https://timekeeper.top" target="_blank"
-                                class="bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 py-2 px-4 rounded text-white">
-                                timekeeper </a>
+                </p>
+                <div class="flex flex-wrap gap-x-10 gap-y-6 p-2 justify-center items-center">
+                    <form method="dialog">
+                        <div class="tooltip" data-tip="Stable. Works on all OS.">
+                            <button @click="triggerFileInput('Version1')" :disabled="isImporting"
+                                class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
+                                Version 1 </button>
                         </div>
+                    </form>
+                    <form method="dialog">
+                        <div class="tooltip" data-tip="Better. Doesn't support iOS.">
+                            <button @click="triggerFileInput('Version2')" :disabled="isImporting"
+                                class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
+                                Version 2 </button>
+                        </div>
+                    </form>
+                    <div class="tooltip" :data-tip="$t('exploshe')">
+                        <a href="https://timekeeper.top" target="_blank"
+                            class="bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 py-2 px-4 rounded text-white">
+                            timekeeper </a>
                     </div>
                 </div>
-                <form method="dialog" class="modal-backdrop">
-                    <button>close</button>
-                </form>
-            </dialog>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
 
-            <dialog id="resetTracker" class="modal">
-                <div
-                    class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
-                    <form method="dialog">
-                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
-                    </form>
-                    <p class="p-2 text-white text-center">{{
-                    $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
-                    </p>
-                    <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetTracker" class="red-button">
-                        {{ $t('reset-tracker') }} </button>
-                </div>
-                <form method="dialog" class="modal-backdrop">
-                    <button>close</button>
+        <dialog id="resetTracker" class="modal">
+            <div class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                 </form>
-            </dialog>
-        </div>
+                <p class="p-2 text-white text-center">{{
+                    $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
+                </p>
+                <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
+                <button @click="resetTracker" class="red-button">
+                    {{ $t('reset-tracker') }} </button>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
 
         <div class="p-3 flex items-center ">
             <a :href="'https://weibo.com/1851315674/N36YRc9zw?pagetype=viewer'"> <img v-show="isImporting"
@@ -449,14 +448,15 @@ GApiSvc.init().then(async () => {
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Standard'">{{
                     $t('standard') }}</button>
-            <div class="dropdown">
+            <div class="dropdown dropdown-bottom dropdown-end">
                 <div tabindex="0" role="button">
                     <button
                         v-bind:class="{ 'border-button': selectedBannerType === 'Thread' || selectedBannerType === 'Water' }"
                         class=' text-white py-1 px-3 hover:bg-info rounded-md'>{{
                     $t('special') }}</button>
                 </div>
-                <ul tabindex="0" class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box space-y-2 p-4 mt-2 w-32">
+                <ul tabindex="0"
+                    class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box space-y-2 p-4 mt-2 w-32">
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Thread'">{{
