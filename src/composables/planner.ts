@@ -196,13 +196,8 @@ export function getDrops () {
     //     enabledUnreleasedStages_v1_7
     // } = usePlannerSettingsStore().settings;
     const dataStore = useDataStore();
-    // const neededMaterialsMapping = { ...useGlobalStore().neededRawMaterialsMapping };
 
-    // const enableGreedy = Object.keys(neededMaterialsMapping).length >= 20; // if there are more than 20 materials, enable greedy mode
-    // Change the neededMaterialsMapping if necessary
-    // TODO: change stages1_4 to new stages data when we ready
-    // return dataStore[enableGreedy ? 'stages1_4' : 'stages1_4'] || {}
-    return dataStore.stages1_4 || {} // does greedy mode still needed?
+    return dataStore.stages1_4_greedy || {}
 }
 
 export async function getPlan (materials: IMaterialUnit[], isEnableWilderness: boolean): Promise<IPlanCards> {
