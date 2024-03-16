@@ -1,4 +1,4 @@
-import{o as $}from"./index-B7hVTKUL.js";import{d as x,o,c as n,a as e,t,F as g,r as v,u as F,b as W,e as T,f as _,g as u,w as y,h as j,i as m,j as z,k as M,l as w,m as O}from"./index-sGInlVZX.js";const k=[{date:"16/03/2024",description:`• Added stage names. 
+import{o as $}from"./index-bIKS48Xa.js";import{d as x,o,c as n,a as e,t,F as g,r as v,u as F,b as W,e as T,f as _,g as u,w as y,h as j,i as m,j as z,k as M,l as w,m as O}from"./index-Bydo41KQ.js";const k=[{date:"16/03/2024",description:`• Added stage names. 
  • UI improvements.`},{date:"13/03/2024",description:`• Fixed Tracker Editor only saving one type of section. 
  • Updated French translations by sillight. 
  • Updated zh Chinese translations by ryle798. 
