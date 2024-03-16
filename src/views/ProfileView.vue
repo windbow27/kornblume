@@ -73,21 +73,21 @@ GApiSvc.init().then(async () => {
             <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4">{{ $t('profile') }}</h2>
             <p class="text-white"> {{ $t('you-can-export-or-import-your-data-here') }}</p>
             <div class="flex justify-center items-center p-2 space-x-5">
-                <button @click="exportStores"
-                    class="blue-button">
+                <button @click="exportStores" class="blue-button">
                     {{ $t('export-data') }} </button>
 
                 <input type="file" ref="fileInput" @change="importStores" accept=".json" class="ml-4"
                     style="display: none;" />
-                <button @click="triggerFileInput"
-                    class="green-button">
+                <button @click="triggerFileInput" class="green-button">
                     {{ $t('import-data') }} </button>
             </div>
         </div>
 
         <div class="pb-6">
             <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4"> {{ $t('google-drive-save') }} </h2>
-            <p class="text-white"> {{ $t('you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created') }}.</p>
+            <p class="text-white"> {{
+                $t('you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created')
+            }}</p>
 
             <!-- Notification -->
             <!-- <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white mt-4">
@@ -100,13 +100,11 @@ GApiSvc.init().then(async () => {
             </div> -->
 
             <div class="flex justify-center items-center p-2 space-x-5">
-                <button :disabled="!isGapiReady" v-if="!isSignedIn"
-                    class="green-button"
-                    @click="loginGoogleDrive">{{ $t('login-google-drive') }} <i class="fa-brands fa-google-drive"></i> </button>
+                <button :disabled="!isGapiReady" v-if="!isSignedIn" class="green-button" @click="loginGoogleDrive">{{
+                $t('login-google-drive') }} <i class="fa-brands fa-google-drive"></i> </button>
                 <div class="flex flex-col justify-center items-center" v-else>
-                    <button :disabled="!isGapiReady"
-                        class="blue-button"
-                        @click="signOutGoogleDrive">{{ $t('sign-out-google-drive') }} <i class="fa-brands fa-google-drive"></i>
+                    <button :disabled="!isGapiReady" class="blue-button" @click="signOutGoogleDrive">{{
+                $t('sign-out-google-drive') }} <i class="fa-brands fa-google-drive"></i>
                     </button>
                     <div v-if="showEmail" class="text-white opacity-90 mt-2">
                         <p>{{ GApiSvc.getEmail() }}</p>
@@ -127,11 +125,9 @@ GApiSvc.init().then(async () => {
                 $t('if-you-encounter-any-unexpected-issues-with-the-site-you-can-reset-your-data-sorry-for-the-inconvenience')
             }}</p>
             <div class="flex flex-wrap justify-center items-center p-2 space-x-5 gap-y-5">
-                <button onclick="resetTracker.showModal()"
-                    class="red-button">
+                <button onclick="resetTracker.showModal()" class="red-button">
                     {{ $t('reset-tracker') }} </button>
-                <button onclick="resetAll.showModal()"
-                    class="red-button">
+                <button onclick="resetAll.showModal()" class="red-button">
                     {{ $t('reset-data') }} </button>
             </div>
 
@@ -144,8 +140,7 @@ GApiSvc.init().then(async () => {
                     <p class="pb-4 text-white text-center">{{
                 $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}</p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetTracker"
-                        class="red-button">
+                    <button @click="resetTracker" class="red-button">
                         {{ $t('reset-tracker') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">
@@ -162,8 +157,7 @@ GApiSvc.init().then(async () => {
                     <p class="pb-4 text-white text-center">{{ $t('once-you-delete-your-data-there-is-no-going-back') }}
                     </p>
                     <p class="pb-4 text-white text-center">{{ $t('please-be-certain') }}</p>
-                    <button @click="resetStores"
-                        class="red-button">
+                    <button @click="resetStores" class="red-button">
                         {{ $t('reset-all') }} </button>
                 </div>
                 <form method="dialog" class="modal-backdrop">

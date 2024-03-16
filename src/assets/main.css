@@ -32,6 +32,11 @@
     @apply border-2 border-blue-800;
 }
 
+.custom-border-light {
+    @apply border-blue-300;
+    border-width: 1px;
+}
+
 .custom-border-white {
     @apply border-2 border-transparent box-border border-white rounded
 }
@@ -41,7 +46,7 @@
 }
 
 .border-button {
-    @apply border-2 border-info rounded-md;
+    @apply border-2 border-info rounded-md text-white;
 }
 
 .range-slider {

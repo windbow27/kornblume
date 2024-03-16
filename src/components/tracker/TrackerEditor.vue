@@ -134,7 +134,7 @@ const format = (date) => {
         <button class="green-button" @click="savePulls">{{ $t('save') }}</button>
         <button class="red-button" @click="reload">{{ $t('cancel') }}</button>
     </div>
-    <div class="flex flex-col overflow-x-auto hidden-scrollbar">
+    <div v-if="props.pulls.length > 0" class="flex flex-col overflow-x-auto hidden-scrollbar">
         <table class="table-auto w-auto text-white lg:mx-auto">
             <thead>
                 <tr>

@@ -32,7 +32,6 @@ const selectedArcanistIds = computed(() =>
     plannerStore.selectedArcanists.map((arcanist) => arcanist.Id)
 )
 
-// TODO: need to add the type definition for these refs
 const selectedArcanist = ref<ISelectedArcanist | null>(null) // Current working arcanist
 const totalActivityAndDays = ref([]) // Total activity and days
 

@@ -163,7 +163,7 @@
   "limited": "Limited",
   "standard": "Standard",
   "thread": "Thread",
-  "translators": "Translators",
+  "translators": "Contributors",
   "50-50-winrate": "50 / 50 Win Rate",
   "add": "Add",
   "remove": "Remove",
@@ -235,5 +235,7 @@
   "solution-1": "If Summon Tracker fails to read correctly, use the {editor} to manually input or correct the data.",
   "solution-2": "If there's missing 10x because of old pulls, either delete them or add the missing pulls.",
   "note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images": "Note that incomplete 10x is caused by ocr failing to read text or missing imported images, ",
-  "not-by-user-doing-single-pulls": "NOT by user doing single pulls."
+  "not-by-user-doing-single-pulls": "NOT by user doing single pulls.",
+  "special": "Special",
+  "contributors": "Contributors"
 }

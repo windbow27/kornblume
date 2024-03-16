@@ -23,7 +23,7 @@ export const bannerList = [
     // thread
     'Invitation From the Water',
     // water
-    'Abundance of the Water:'
+    'Abundance of the Water'
 ];
 
 export const bannerRateUp = [

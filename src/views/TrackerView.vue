@@ -64,7 +64,7 @@ const allPulls = computed(() => {
 });
 
 const waterPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Abundance of the Water:');
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Abundance of the Water');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -103,7 +103,7 @@ const standardPulls = computed(() => {
 });
 
 const limitedPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType !== 'Amongst the Lake' && pull.BannerType !== 'Invitation From the Water' && pull.BannerType !== 'Abundance of the Water:');
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType !== 'Amongst the Lake' && pull.BannerType !== 'Invitation From the Water' && pull.BannerType !== 'Abundance of the Water');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -321,7 +321,6 @@ GApiSvc.init().then(async () => {
 </script>
 
 <template>
-    <!-- <img id="testing" src=""/> -->
     <div class="responsive-spacer">
         <div class="flex pb-4">
             <h2 class="text-2xl text-white font-bold">
@@ -341,8 +340,11 @@ GApiSvc.init().then(async () => {
                 </svg>
                 <div>
                     <p class="text-sm lg:text-base"> • Introducing Tracker Editor! Please read Tutorial again.</p>
-                    <p class="text-sm lg:text-base"> • {{ $t('note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images') }}
-                        <span class="text-sm lg:text-base text-error"> {{ $t('not-by-user-doing-single-pulls') }}</span> </p>
+                    <p class="text-sm lg:text-base"> • {{
+                    $t('note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images')
+                }}
+                        <span class="text-sm lg:text-base text-error"> {{ $t('not-by-user-doing-single-pulls') }}</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -447,22 +449,34 @@ GApiSvc.init().then(async () => {
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Standard'">{{
                     $t('standard') }}</button>
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }"
-                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Thread'">{{
-                    $t('thread') }}</button>
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Water' }"
-                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Water'">{{
-                    $t('water') }}</button>
+            <div class="dropdown">
+                <div tabindex="0" role="button">
+                    <button
+                        v-bind:class="{ 'border-button': selectedBannerType === 'Thread' || selectedBannerType === 'Water' }"
+                        class=' text-white py-1 px-3 hover:bg-info rounded-md'>{{
+                    $t('special') }}</button>
+                </div>
+                <ul tabindex="0" class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box space-y-2 p-4 mt-2 w-32">
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectedBannerType = 'Thread'">{{
+                    $t('thread') }}</button></li>
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Water' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectedBannerType = 'Water'">{{
+                    $t('water') }}</button></li>
+                </ul>
+            </div>
         </div>
 
-        <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls" :allPulls="allPulls"
-            :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Standard'" :text="$t('summary-standard')" :pulls="standardPulls" :allPulls="allPulls"
-            :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls" :allPulls="allPulls"
-            :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Water'" :text="$t('summary-water')" :pulls="waterPulls" :allPulls="allPulls"
-            :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Limited'" :text="$t('summary-limited')" :pulls="limitedPulls"
+            :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Standard'" :text="$t('summary-standard')" :pulls="standardPulls"
+            :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls"
+            :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Water'" :text="$t('summary-water')" :pulls="waterPulls"
+            :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
     </div>
 </template>
 

@@ -163,7 +163,7 @@
   "limited": "Limited",
   "standard": "Standard",
   "thread": "Thread",
-  "translators": "Translators",
+  "translators": "Kontributor",
   "50-50-winrate": "50 / 50 Win Rate",
   "add": "Tambahkan",
   "remove": "Hapus",
@@ -217,5 +217,7 @@
   "quick-goal": "Auto Objektif",
   "show-cards": "Perlihatkan stage tidak penting",
   "hide-cards": "Sembunyikan stage tidak penting",
-  "ascension-material": "Bahan Ascension"
+  "ascension-material": "Bahan Ascension",
+  "special": "Spesial",
+  "contributors": "Kontributor"
 }

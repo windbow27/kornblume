@@ -93,7 +93,7 @@
   "resonance": "Resonancia",
   "search-arcanists": "Buscar Arcanistas",
   "standard": "Estándar",
-  "translators": "Traductores",
+  "translators": "Colaboradores",
   "unreleased": "Sin Publicar",
   "multiple-images": "múltiples imágenes",
   "manage-warehouse": "Administrar Almacén",
@@ -204,5 +204,7 @@
   "search-by-name": "Buscar por nombre",
   "stages": "Escenario",
   "used-by-the-following-arcanists": "Utilizado por los siguientes arcanistas",
-  "wishing-spring-formula": "Fórmula en la Wishing Spring"
+  "wishing-spring-formula": "Fórmula en la Wishing Spring",
+  "special": "Especial",
+  "contributors": "Colaboradores"
 }

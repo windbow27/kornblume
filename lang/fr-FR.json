@@ -134,7 +134,7 @@
   "thread": "Thread",
   "total-goal-materials": "Objectif de Matériaux total",
   "total-summons": "Total des Invocations",
-  "translators": "Traducteurs",
+  "translators": "Contributeurs",
   "tutorial": "Tutoriel",
   "unreleased": "Pas encore sorti",
   "upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once": "Importez les captures d'écran dans le Summon Tracker (Vous pourriez importer {highlight} en une fois). ",
@@ -235,5 +235,7 @@
   "water": "Milestone",
   "win": "Réussir le 50/50",
   "wishing-spring-formula": "Formule du Wishing Spring",
-  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Vous pouvez utiliser Google Drive pour permettre à Kornblume d'enregister et synchroniser les données entre vos appareils. Nous utilisons suelement les fichiers créés par Kornblume."
+  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Vous pouvez utiliser Google Drive pour permettre à Kornblume d'enregister et synchroniser les données entre vos appareils. Nous utilisons suelement les fichiers créés par Kornblume.",
+  "special": "Spécial",
+  "contributors": "Contributeurs"
 }

@@ -144,7 +144,7 @@
   "thread": "金の結び",
   "total-goal-materials": "必要な素材の合計",
   "total-summons": "召喚の合計",
-  "translators": "翻訳者",
+  "translators": "貢献者",
   "tutorial": "チュートリアル",
   "upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once": "ガチャ結果保存にスクリーンショットをアップロード(一度に{highlight}をアップロードできます。",
   "uppercase-days": "日",
@@ -187,5 +187,7 @@
   "example-of-incomplete-10x": "不完全な10連の画像例：",
   "incomplete-10x": "不完全な10連",
   "tips": "チップ",
-  "P{portrait}": "{portrait}凸"
+  "P{portrait}": "{portrait}凸",
+  "special": "特別",
+  "contributors": "貢献者"
 }

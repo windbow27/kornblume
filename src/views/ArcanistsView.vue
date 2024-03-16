@@ -78,7 +78,7 @@ onMounted(() => {
         </div>
 
         <!-- Notification -->
-        <div class="pb-4">
+        <!-- <div class="pb-4">
             <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
@@ -87,7 +87,7 @@ onMounted(() => {
                 </svg>
                 <p class="text-sm lg:text-base"> Released arcanists stats have been updated by Heightweight.</p>
             </div>
-        </div>
+        </div> -->
 
         <div class="flex flex-wrap p-4 gap-x-4 justify-between items-center">
             <!--Search bar and unreleased filter-->

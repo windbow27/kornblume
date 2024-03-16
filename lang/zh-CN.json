@@ -163,7 +163,7 @@
   "limited": "限时",
   "standard": "常驻",
   "thread": "湖的邀约",
-  "translators": "翻译者",
+  "translators": "贡献者",
   "50-50-winrate": "6 {star} UP 角色概率",
   "add": "添加",
   "missing-information": "丢失的信息时间戳",
@@ -235,5 +235,7 @@
   "banner": "类型",
   "solution-2": "如果丢失了之前征集的10连抽记录，请修改或添加丢失的征集记录。",
   "note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images": "请注意，不完整的10连抽是由于 ocr 无法读取文本或缺少导入的图像导致的，",
-  "not-by-user-doing-single-pulls": "而不是用户进行单抽引起的。"
+  "not-by-user-doing-single-pulls": "而不是用户进行单抽引起的。",
+  "special": "特别的",
+  "contributors": "贡献者"
 }

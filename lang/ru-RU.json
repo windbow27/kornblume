@@ -163,7 +163,7 @@
   "limited": "Лимитированный",
   "standard": "Стандартный",
   "thread": "Thread",
-  "translators": "Переводчики",
+  "translators": "Авторы",
   "50-50-winrate": "50 / 50 Win Rate",
   "add": "Добавить",
   "remove": "Убрать",
@@ -178,5 +178,7 @@
   "example-of-incomplete-10x": "Пример неполного изображения в 10-кратном увеличении:",
   "incomplete-10x": "10x",
   "tips": "Советы",
-  "P{portrait}": "P{portrait}"
+  "P{portrait}": "P{portrait}",
+  "special": "Особенный",
+  "contributors": "Авторы"
 }

@@ -163,7 +163,7 @@
   "limited": "限時",
   "standard": "常駐",
   "thread": "湖的邀約",
-  "translators": "翻譯者",
+  "translators": "貢獻者",
   "50-50-winrate": "6 {star} UP 角色機率",
   "add": "添加",
   "missing-information": "遺失的訊息時間戳",
@@ -219,5 +219,7 @@
   "stages": "關卡章節",
   "try-legacy": "如果導入無法正確運作，請點擊替代方案設定以調整。",
   "used-by-the-following-arcanists": "以下神祕學家將使用",
-  "wishing-spring-formula": "不休荒原合成配方"
+  "wishing-spring-formula": "不休荒原合成配方",
+  "special": "特別的",
+  "contributors": "貢獻者"
 }
