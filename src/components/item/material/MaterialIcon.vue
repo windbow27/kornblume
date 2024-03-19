@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { IMaterialUnit } from '@/types';
 import { useRouter } from 'vue-router';
-import { normalizeDisplayMaterial } from '@/composables/materials';
+import { INormalizedMaterial, formatQuantity } from '@/composables/materials';
 import { useGlobalStore } from '@/stores/global';
+import { getItemImageIconPathByMatl, getBorderImageIconPathByMatl } from '@/composables/images'
 
 const props = defineProps({
     material: {
@@ -22,6 +23,16 @@ const selectMaterial = () => {
     globalStore.setSelectedMaterial(props.material);
     router.push('/items')
 };
+
+function normalizeDisplayMaterial (unprocessedMaterial: IMaterialUnit): INormalizedMaterial {
+    const result = {
+        material: unprocessedMaterial.Material,
+        quantity: formatQuantity(unprocessedMaterial.Quantity),
+        itemImagePath: getItemImageIconPathByMatl(unprocessedMaterial.Material),
+        borderImagePath: getBorderImageIconPathByMatl(unprocessedMaterial.Material)
+    };
+    return result;
+}
 
 </script>
 
