@@ -46,22 +46,27 @@ const addPull = () => {
 };
 
 const savePulls = () => {
-    const pullsToSave: IPull[] = localPulls
-        .filter(pull => pull.ArcanistName && pull.BannerType && !isNaN(pull.Timestamp)) // filter out empty pulls
-        .map((pull, index) => {
-            const selectedArcanist = arcanists.find(a => a.Name === pull.ArcanistName);
-            let rarity = pull.Rarity;
-            if (selectedArcanist) {
-                rarity = selectedArcanist.Rarity;
-            }
+    const filteredIndices = localPulls
+        .map((pull, index) => pull.ArcanistName && pull.BannerType && !isNaN(pull.Timestamp) ? index : -1)
+        .filter(index => index !== -1); // get indices of valid pulls
 
-            return {
-                ArcanistName: pull.ArcanistName,
-                Rarity: rarity,
-                BannerType: pull.BannerType,
-                Timestamp: localPullDates[index].getTime()
-            };
-        });
+    const pullsToSave: IPull[] = filteredIndices.map(index => {
+        const pull = localPulls[index];
+        const selectedArcanist = arcanists.find(a => a.Name === pull.ArcanistName);
+        let rarity = pull.Rarity;
+        if (selectedArcanist) {
+            rarity = selectedArcanist.Rarity;
+        }
+
+        return {
+            ArcanistName: pull.ArcanistName,
+            Rarity: rarity,
+            BannerType: pull.BannerType,
+            Timestamp: localPullDates[index].getTime()
+        };
+    });
+
+    // console.log(pullsToSave);
     pullsRecordStore.updatePullsRecord(pullsToSave);
     setTimeout(() => window.location.reload());
 };
@@ -106,32 +111,32 @@ const format = (date) => {
                                 {{ arcanist.Name }}
                             </div>
                         </template>
-                    </Popper>
-                    <Popper arrow placement="bottom" offsetDistance="2">
-                        <input class="custom-input w-64 text-white" type="text" v-model="newBannerType" />
-                        <template #content>
+</Popper>
+<Popper arrow placement="bottom" offsetDistance="2">
+    <input class="custom-input w-64 text-white" type="text" v-model="newBannerType" />
+    <template #content>
                             <div class="custom-item-list"
                                 v-for="(banner, i) in bannerList.filter(b => b.toLowerCase().includes(newBannerType.toLowerCase()))"
                                 :key="i" @click="newBannerType = banner">
                                 {{ banner }}
                             </div>
                         </template>
-                    </Popper>
-                    <VueDatePicker v-model="newPullDate" enable-seconds />
-                    <div class="flex justify-center space-x-5">
-                        <form method="dialog">
-                            <button class="green-button" @click="addPull">{{ $t('add') }}</button>
-                        </form>
-                        <form method="dialog">
-                            <button class="red-button" onclick="addPull.close()">{{ $t('cancel') }}</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <form method="dialog" class="modal-backdrop">
-                <button>close</button>
-            </form>
-        </dialog> -->
+</Popper>
+<VueDatePicker v-model="newPullDate" enable-seconds />
+<div class="flex justify-center space-x-5">
+    <form method="dialog">
+        <button class="green-button" @click="addPull">{{ $t('add') }}</button>
+    </form>
+    <form method="dialog">
+        <button class="red-button" onclick="addPull.close()">{{ $t('cancel') }}</button>
+    </form>
+</div>
+</div>
+</div>
+<form method="dialog" class="modal-backdrop">
+    <button>close</button>
+</form>
+</dialog> -->
 
         <button class="green-button" @click="savePulls">{{ $t('save') }}</button>
         <button class="red-button" @click="reload">{{ $t('cancel') }}</button>
