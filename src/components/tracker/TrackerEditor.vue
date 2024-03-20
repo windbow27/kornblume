@@ -47,7 +47,7 @@ const addPull = () => {
 
 const savePulls = () => {
     const pullsToSave: IPull[] = localPulls
-        .filter(pull => pull.ArcanistName && pull.Rarity && pull.BannerType && !isNaN(pull.Timestamp)) // filter out empty pulls
+        .filter(pull => pull.ArcanistName && pull.BannerType && !isNaN(pull.Timestamp)) // filter out empty pulls
         .map((pull, index) => {
             const selectedArcanist = arcanists.find(a => a.Name === pull.ArcanistName);
             let rarity = pull.Rarity;
@@ -86,7 +86,9 @@ const format = (date) => {
 
 <template>
     <div class="flex justify-center space-x-5 pb-4">
-        <button class="blue-button" onclick="addPull.showModal()">{{ $t('add-pull') }}</button>
+        <button class="blue-button" @click="addPull">{{ $t('add-pull') }}</button>
+        <!-- too lazy to create a working modal -->
+        <!-- <button class="blue-button" onclick="addPull.showModal()">{{ $t('add-pull') }}</button>
         <dialog id="addPull" class="modal">
             <div
                 class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center overflow-auto hidden-scrollbar">
@@ -129,7 +131,7 @@ const format = (date) => {
             <form method="dialog" class="modal-backdrop">
                 <button>close</button>
             </form>
-        </dialog>
+        </dialog> -->
 
         <button class="green-button" @click="savePulls">{{ $t('save') }}</button>
         <button class="red-button" @click="reload">{{ $t('cancel') }}</button>

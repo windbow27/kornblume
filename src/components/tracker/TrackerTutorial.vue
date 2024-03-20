@@ -34,7 +34,7 @@
                 <p class="text-white">•
                     <i18n-t keypath='this-is-an-example-of-a-good-image'>
                         <template #highlight>
-                            <a href="https://i.imgur.com/NgspD1g.webp" target="_blank"
+                            <a href="https://imgur.com/a/cHqOqJL" target="_blank"
                                 class="text-blue-500 hover:text-blue-700">{{ $t('image') }}</a>
                         </template>
                     </i18n-t>
