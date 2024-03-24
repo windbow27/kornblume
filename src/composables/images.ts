@@ -4,12 +4,12 @@ const items = useDataStore().items;
 
 const getId = (material: string) => {
     const item = items.find(item => item.Name === material);
-    return item ? item.Id : null;
+    return item ? item.Id : 1;
 };
 
 const getRarity = (material: string) => {
     const item = items.find(item => item.Name === material);
-    return item ? item.Rarity : null;
+    return item ? item.Rarity : 6;
 };
 
 // 1.0
