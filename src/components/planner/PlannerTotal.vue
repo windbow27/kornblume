@@ -24,16 +24,18 @@ const activityStore = useActivityStore();
         <i class="fa-solid fa-calculator text-white mr-3"></i>
 
         <!-- Activity and Days -->
-        <div class="tooltip flex items-center" :data-tip="$t('estimated-total-activities-and-days')">
-            <div class="text">{{ props.totalActivityAndDays?.[0] || 0 }}</div>
-            <div class="avatar">
-                <div class="w-8 rounded">
-                    <img src="/images/items/common/0.webp" alt="avatar" />
+        <div class="tooltip" :data-tip="$t('estimated-total-activities-and-days')">
+            <div class="flex items-center">
+                <div class="text">{{ props.totalActivityAndDays?.[0] || 0 }}</div>
+                <div class="avatar">
+                    <div class="w-8 rounded">
+                        <img src="/images/items/common/0.webp" alt="avatar" />
+                    </div>
                 </div>
+                <div class="text pr-3">
+                    {{ props.totalActivityAndDays?.[1] || 0 }} {{ props.totalActivityAndDays[1] > 1 ? $t("days") : $t("day")
+                    }}</div>
             </div>
-            <div class="text pr-3">
-                {{ props.totalActivityAndDays?.[1] || 0 }} {{ props.totalActivityAndDays[1] > 1 ? $t("days") : $t("day")
-                }}</div>
         </div>
 
         <!-- Drops Cost -->

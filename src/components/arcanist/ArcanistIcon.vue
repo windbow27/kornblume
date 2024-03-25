@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import { getArcanistIconImagePath } from '@/composables/images';
 import { IArcanist } from '@/types';
+import { useI18n } from 'vue-i18n';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 
 const props = defineProps({
     arcanist: {
@@ -9,11 +13,20 @@ const props = defineProps({
     }
 });
 
+const tooltip = ref(null);
+const { t } = useI18n();
+
+onMounted(() => {
+    tippy(tooltip.value as unknown as Element, {
+        content: t(props.arcanist.Name),
+        theme: 'daisyui'
+    });
+});
 </script>
 
 <template>
-    <div class="tooltip" :data-tip="$t(props.arcanist.Name)">
-        <router-link :to="`/arcanist-${arcanist.Id}`">
+    <div ref="tooltip" class="cursor-pointer">
+        <router-link :to="`/arcanist-${props.arcanist.Id}`">
             <div class="rounded-md overflow-hidden">
                 <div class="avatar">
                     <div class="w-10 rounded" :class="{

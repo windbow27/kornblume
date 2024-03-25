@@ -184,7 +184,7 @@
 }
 
 .indigo-badge {
-    @apply bg-indigo-100 text-indigo-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded  border border-indigo-400
+    @apply bg-indigo-100 text-indigo-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-indigo-400
 }
 
 .orange-badge {
@@ -245,4 +245,45 @@
 
 .modal {
     margin-left: 0 !important;
+}
+
+.tippy-box[data-theme~='daisyui'] {
+    background-color: #2b3440;
+    color: #d7dde4;
+}
+
+.tippy-box[data-theme~='daisyui'][data-placement^='top']>.tippy-arrow::before {
+    border-top-color: #2b3440;
+}
+
+.tippy-box[data-theme~='daisyui'][data-placement^='bottom']>.tippy-arrow::before {
+    border-bottom-color: #2b3440;
+}
+
+.tippy-box[data-theme~='daisyui'][data-placement^='left']>.tippy-arrow::before {
+    border-left-color: #2b3440;
+}
+
+.tippy-box[data-theme~='daisyui'][data-placement^='right']>.tippy-arrow::before {
+    border-right-color: #2b3440;
+}
+
+.tooltip:after {
+    position: absolute;
+    content: "";
+    border-style: solid;
+    border-width: var(--tooltip-tail, 0);
+    width: 0;
+    height: 0;
+    display: block;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    --tooltip-tail: 0.45rem;
+    --tooltip-color: var(--fallback-n,oklch(var(--n)/1));
+    --tooltip-text-color: var(--fallback-nc,oklch(var(--nc)/1));
+    --tooltip-tail-offset: calc(100% + 0.0625rem/* 1px */ - var(--tooltip-tail));
 }
