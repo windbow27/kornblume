@@ -18,7 +18,7 @@ const router = createRouter({
             name: 'arcanists',
             component: () => import('@/views/ArcanistsView.vue'),
             meta: {
-                requiredJson: ['arcanists', 'items', 'psychubes']
+                requiredJson: ['arcanists', 'items', 'stages1_4', 'psychubes']
             }
         },
         {
@@ -26,7 +26,7 @@ const router = createRouter({
             name: 'items',
             component: () => import('@/views/ItemsView.vue'),
             meta: {
-                requiredJson: ['arcanists', 'items', 'psychubes', 'formulas', 'stages1_4']
+                requiredJson: ['arcanists', 'items', 'stages1_4', 'psychubes', 'formulas']
             }
         },
         {
@@ -34,7 +34,7 @@ const router = createRouter({
             name: 'tracker',
             component: () => import('@/views/TrackerView.vue'),
             meta: {
-                requiredJson: ['arcanists']
+                requiredJson: ['arcanists', 'items', 'stages1_4']
             }
         },
         {
@@ -42,7 +42,7 @@ const router = createRouter({
             name: 'planner',
             component: () => import('@/views/PlannerView.vue'),
             meta: {
-                requiredJson: ['arcanists', 'items', 'shops', 'formulas', 'stages1_4', 'stages1_4_greedy']
+                requiredJson: ['arcanists', 'items', 'stages1_4', 'stages1_4_greedy', 'shops', 'formulas']
             }
         },
         {
@@ -50,7 +50,7 @@ const router = createRouter({
             name: 'stages',
             component: () => import('@/views/StagesView.vue'),
             meta: {
-                requiredJson: ['stages1_4', 'items']
+                requiredJson: ['arcanists', 'items', 'stages1_4']
             }
         },
         {
@@ -66,7 +66,7 @@ const router = createRouter({
             name: 'arcanist',
             component: () => import('@/components/arcanist/ArcanistDisplay.vue'),
             meta: {
-                requiredJson: ['arcanists', 'items']
+                requiredJson: ['arcanists', 'items', 'stages1_4', 'psychubes']
             }
         }
     ]

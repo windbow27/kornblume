@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '25/03/2024', description: '• Fixed item images sometimes not being loaded (hopefully).' },
     { date: '24/03/2024', description: '• Added Marcus as unreleased arcanist.' },
     { date: '20/03/2024', description: '• Updated Spanish translations by mgeshagrath.\n • Fixed (lazily) "Add Pull" UI bug. \n • Fixed dead link in Tracker Tutorial. \n • Fixed another Editor Tracker bug. Hopefully it works now?' },
     { date: '19/03/2024', description: '• Updated zh Chinese stage names by ryle798.' },

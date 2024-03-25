@@ -1,6 +1,13 @@
+import { watchEffect } from 'vue';
 import { useDataStore } from '../stores/dataStore'
 
 const items = useDataStore().items;
+
+watchEffect(() => {
+    if (items.length === 0) {
+        location.reload();
+    }
+})
 
 const getId = (material: string) => {
     const item = items.find(item => item.Name === material);
