@@ -1,4 +1,4 @@
-import{o as $}from"./index-2Dtxw82y.js";import{d as x,o,c as n,a as e,t,F as g,r as v,u as F,b as z,e as T,f as _,g as u,w as y,h as M,i as m,j as W,k as j,l as w,m as O}from"./index-Knke-YsK.js";const k=[{date:"24/03/2024",description:"• Added Marcus as unreleased arcanist."},{date:"20/03/2024",description:`• Updated Spanish translations by mgeshagrath.
+import{o as $}from"./index-ik3UJ9UO.js";import{d as x,o,c as n,a as e,t,F as g,r as v,u as F,b as z,e as T,f as _,g as u,w as y,h as M,i as m,j as W,k as j,l as w,m as O}from"./index-eDWQlHdV.js";const k=[{date:"25/03/2024",description:"• Fixed item images sometimes not being loaded (hopefully)."},{date:"24/03/2024",description:"• Added Marcus as unreleased arcanist."},{date:"20/03/2024",description:`• Updated Spanish translations by mgeshagrath.
  • Fixed (lazily) "Add Pull" UI bug. 
  • Fixed dead link in Tracker Tutorial. 
  • Fixed another Editor Tracker bug. Hopefully it works now?`},{date:"19/03/2024",description:"• Updated zh Chinese stage names by ryle798."},{date:"16/03/2024",description:`• Added stage names. 
