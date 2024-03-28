@@ -18,6 +18,7 @@ export const bannerList = [
     'The Era of Great Speech',
     'The Arrow Breaks Through The Air',
     'Beyond the World of Matters',
+    'Seeker in the Cave',
     // standard
     'Amongst the Lake',
     // thread
@@ -44,7 +45,8 @@ export const bannerRateUp = [
     'Medicine Pocket',
     'Ms. NewBabel',
     'Lilya',
-    '37'
+    '37',
+    '6'
 ];
 
 export const specialArcanists: string[] = [
