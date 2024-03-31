@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { watchEffect } from 'vue';
 import { useDataStore } from '../stores/dataStore'
 
@@ -51,13 +53,11 @@ const getStageBackgroundId = (id: number) => {
 }
 
 export const getItemImagePathByMatl = (material: string) => {
-    const id = getId(material);
-    return id ? `images/items/icon/${id}.webp` : '';
+    return 'images/arcanists/icon/10016.webp';
 };
 
 export const getItemImageIconPathByMatl = (material: string) => {
-    const id = getId(material);
-    return id ? `images/items/icon/thumbnails/${id}.webp` : '';
+    return 'images/arcanists/icon/10016.webp';
 };
 
 export const getBorderImageIconPathByMatl = (material: string) => {
@@ -74,19 +74,19 @@ export function getStageImagePathByStage (stage: number) {
 }
 
 export function getArcanistImagePath (id: number | string) {
-    return `images/arcanists/icon/${id}.webp`;
+    return 'images/arcanists/icon/10016.webp';
 }
 
 export function getArcanistIconImagePath (id: number | string) {
-    return `images/arcanists/icon/thumbnails/${id}.webp`;
+    return 'images/arcanists/icon/thumbnails/10016.webp';
 }
 
 export function getArcanistI0ImagePath (id: number | string) {
-    return `images/arcanists/i0/thumbnails/${id}.webp`;
+    return 'images/arcanists/i0/thumbnails/10016.webp';
 }
 
 export function getArcanistI2ImagePath (id: number | string) {
-    return `images/arcanists/i2/${id}.webp`;
+    return 'images/arcanists/i2/10016.webp';
 }
 
 export function getArcanistAfflatusPath (afflatus: string) {
