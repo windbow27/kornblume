@@ -1,4 +1,4 @@
-import{o as $}from"./index-X2WOgJRq.js";import{d as x,o,c as n,a as e,t,F as g,r as v,u as F,b as z,e as T,f as _,g as u,w as y,h as M,i as m,j as W,k as j,l as w,m as O}from"./index-Rn8sO-bI.js";const k=[{date:"28/03/2024",description:"• Added 6 banner."},{date:"25/03/2024",description:`• Fixed item images sometimes not being loaded (hopefully). 
+import{o as $}from"./index-Tcvzz8g-.js";import{d as x,o,c as n,a as e,t,F as g,r as v,u as F,b as z,e as T,f as _,g as u,w as y,h as M,i as m,j as W,k as j,l as w,m as O}from"./index-vuj6P1g7.js";const k=[{date:"01/04/2024",description:"• Nothing happened."},{date:"28/03/2024",description:"• Added 6 banner."},{date:"25/03/2024",description:`• Fixed item images sometimes not being loaded (hopefully). 
  • UI update for tooltips.`},{date:"24/03/2024",description:"• Added Marcus as unreleased arcanist."},{date:"20/03/2024",description:`• Updated Spanish translations by mgeshagrath.
  • Fixed (lazily) "Add Pull" UI bug. 
  • Fixed dead link in Tracker Tutorial. 
