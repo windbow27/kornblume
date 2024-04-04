@@ -1,5 +1,7 @@
 export const changelogs = [
     // Add more from top
+    { date: '04/04/2024', description: '• Fixed syncing bug. \n • For the last time, import error is caused by OCR failing to read images or missing images from user, doing single pulls or order of images DOES NOT matter.' },
+    { date: '01/04/2024', description: '• Nothing happened.' },
     { date: '28/03/2024', description: '• Added 6 banner.' },
     { date: '25/03/2024', description: '• Fixed item images sometimes not being loaded (hopefully). \n • UI update for tooltips.' },
     { date: '24/03/2024', description: '• Added Marcus as unreleased arcanist.' },

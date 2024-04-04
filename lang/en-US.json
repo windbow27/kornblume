@@ -232,7 +232,7 @@
   "add-pull": "Add Pull",
   "cancel": "Cancel",
   "summon-editor": "Summon Editor",
-  "solution-1": "If Summon Tracker fails to read correctly, use the {editor} to manually input or correct the data.",
+  "solution-1": "Use the {editor} to manually input or correct the data.",
   "solution-2": "If there's missing 10x because of old pulls, either delete them or add the missing pulls.",
   "not-by-user-doing-single-pulls": "NOT by user doing single pulls.",
   "special": "Special",
@@ -240,5 +240,5 @@
   "activity": "Activity",
   "wilderness": "Wilderness",
   "warehouse": "Warehouse",
-  "note-that-missing-timestamps": "Missing data timestamps is caused by OCR failing to read text or missing imported images from user."
+  "error-is-caused-by": "Import error is caused by OCR failing to read text or missing imported images from user."
 }

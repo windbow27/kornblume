@@ -236,9 +236,9 @@
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Puedes utilizar Google Drive y dejar que Kornblume guarde y sincronice datos entre dispositivos. Solo leemos y escribimos archivos creados por Kornblume.",
   "show-cards": "Mostrar escenarios menores",
   "summon-editor": "Editor de invocaciiones",
-  "solution-1": "Si el Registro de Invocaciones no lee correctamente los datos, usa el {editor} para ingresar o corregir manualmente los datos.",
+  "solution-1": "Usa el {editor} para ingresar o corregir manualmente los datos.",
   "solution-2": "Si faltan 10x debido a giradas antiguas, elimínalas o agrega las giradas que faltan.",
   "summary-water": "Resumen The First Milestone",
   "not-by-user-doing-single-pulls": "NO por haber dado giradas individuales.",
-  "note-that-missing-timestamps": "Las marcas de tiempo de datos faltantes se deben a que el OCR no puede leer el texto o faltan imágenes importadas del usuario."
+  "error-is-caused-by": "El error de importación se debe a que el OCR no puede leer el texto o faltan imágenes importadas del usuario."
 }

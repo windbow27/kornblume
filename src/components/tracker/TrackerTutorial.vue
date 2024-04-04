@@ -39,14 +39,14 @@
                         </template>
                     </i18n-t>
                 </p>
-                <p class=" text-white">•
-                    <!-- {{ $t('example-of-incomplete-10x') }}
+                <!-- <p class=" text-white">•
+                    {{ $t('example-of-incomplete-10x') }}
                     <a href="https://imgur.com/a/6kXTVZz" target="_blank" class="text-blue-500 hover:text-blue-700">{{
-                    $t('incomplete-10x') }}</a>. -->
+                    $t('incomplete-10x') }}</a>.
                     <span class="text-white"> {{
-                    $t('note-that-missing-timestamps')
+                    $t('error-is-caused-by')
                 }}</span>
-                </p>
+                </p> -->
                 <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
                 <p class="text-white">•
                     <i18n-t
@@ -86,7 +86,7 @@
                             <span class="text-error">{{ $t('missing-information') }}</span>
                         </template>
                     </i18n-t>
-                    <span class=" text-white ml-1">{{ $t('import-the-error-images-again') }}</span>
+                    <!-- <span class=" text-white ml-1">{{ $t('import-the-error-images-again') }}</span> -->
                 </p>
                 <!-- <p class="text-white">{{ $t('if-that-doesnt-work-recapture-the-images-and-import-them-again') }}</p>
                 <p class="text-white">

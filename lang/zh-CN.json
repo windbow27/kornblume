@@ -230,7 +230,7 @@
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "您可以使用 Google 云端硬盘让 Kornblume 在不同设备间保存和同步数据。\n我们只能读取和写入 Kornblume 创建的文件。",
   "cancel": "取消",
   "summon-editor": "征集编辑",
-  "solution-1": "如果征集追踪无法正确读取征集记录，请使用{editor}手动输入或更正数据。",
+  "solution-1": "请使用{editor}手动输入或更正数据。",
   "add-pull": "添加征集记录",
   "banner": "类型",
   "solution-2": "如果丢失了之前征集的10连抽记录，请修改或添加丢失的征集记录。",
@@ -240,5 +240,5 @@
   "activity": "活性",
   "wilderness": "荒原",
   "warehouse": "仓库",
-  "note-that-missing-timestamps": "丢失数据时间戳是由于 OCR 无法读取文本或丢失用户导入的图像造成的。"
+  "error-is-caused-by": "导入错误是由于 OCR 无法读取文本或丢失用户导入的图像而导致的。"
 }

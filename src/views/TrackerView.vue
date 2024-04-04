@@ -340,10 +340,6 @@ GApiSvc.init().then(async () => {
                 </svg>
                 <div>
                     <p class="text-sm lg:text-base"> • Introducing Tracker Editor! Please read Tutorial again.</p>
-                    <p class="text-sm lg:text-base"> • {{
-                    $t('note-that-missing-timestamps')
-                }}
-                    </p>
                 </div>
             </div>
         </div>

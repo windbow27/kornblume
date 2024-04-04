@@ -221,7 +221,7 @@
   "search-by-name": "Rechercher grâce au nom",
   "show-cards": "Montrer les niveaux mineurs",
   "sign-out-google-drive": "Se déconnecter de Google Drive",
-  "solution-1": "Si le Summon Tracker ne fonctionne pas, utiliser l'{editor} pour ajouter ou corriger les données",
+  "solution-1": "Utiliser l'{editor} pour ajouter ou corriger les données",
   "solution-2": "S'il manque des Invocations 10x à cause d'anciennes Invocations, supprimez les ou ajoutez les Invocations manquantes.",
   "stages": "Niveaux",
   "summary-water": "Sommaire The First Milestone",
@@ -240,5 +240,5 @@
   "activity": "Activités",
   "wilderness": "Wilderness",
   "warehouse": "Warehouse",
-  "note-that-missing-timestamps": "Les horodatages de données manquants sont dus à l'échec de la lecture du texte par l'OCR ou à l'absence d'images importées par l'utilisateur."
+  "error-is-caused-by": "L'erreur d'importation est due au fait que l'OCR ne parvient pas à lire le texte ou aux images importées manquantes de l'utilisateur."
 }

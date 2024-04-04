@@ -231,5 +231,5 @@
   "sign-out-google-drive": "Google 드라이브에서 로그아웃",
   "quick-goal": "빠른 목표",
   "login-google-drive": "Google 드라이브에 로그인",
-  "note-that-missing-timestamps": "데이터 타임스탬프 누락은 OCR이 텍스트를 읽지 못하거나 사용자로부터 가져온 이미지가 누락되어 발생합니다."
+  "error-is-caused-by": "가져오기 오류는 OCR이 텍스트를 읽지 못하거나 사용자로부터 가져온 이미지가 누락되어 발생합니다."
 }
