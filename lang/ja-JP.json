@@ -228,5 +228,6 @@
   "obtained-from-the-following-stages": "以下のステージで入手",
   "solution-1": "",
   "stages": "ステージ",
-  "search-by-name": "名前で検索"
+  "search-by-name": "名前で検索",
+  "note-that-missing-timestamps": "データのタイムスタンプの欠落は、OCR がテキストの読み取りに失敗したか、ユーザーからインポートされた画像が欠落していることが原因で発生します。"
 }

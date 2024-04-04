@@ -341,9 +341,8 @@ GApiSvc.init().then(async () => {
                 <div>
                     <p class="text-sm lg:text-base"> • Introducing Tracker Editor! Please read Tutorial again.</p>
                     <p class="text-sm lg:text-base"> • {{
-                    $t('note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images')
+                    $t('note-that-missing-timestamps')
                 }}
-                        <span class="text-sm lg:text-base text-error"> {{ $t('not-by-user-doing-single-pulls') }}</span>
                     </p>
                 </div>
             </div>

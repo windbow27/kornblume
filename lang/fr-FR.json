@@ -213,7 +213,6 @@
   "lose": "Rater le 50/50",
   "not-by-user-doing-single-pulls": "Pas fait pour les utilisateurs invoquant un à la fois.",
   "not-enough-materials": "Vous ne possédez pas assez de Matériaux.",
-  "note-that-incomplete-10x-is-caused-by-ocr-failing-to-read-text-or-missing-imported-images": "Sachez qu'une invocation 10x incomplète est dûe à l'ocr ne pouvant pas reconnaître le texte et/ou des images manquantes",
   "obtained-from-the-following-stages": "Obtenus en farmant ces niveaux",
   "pity": "Pity",
   "possible-drops": "Drops possibles de Matériaux ",
@@ -240,5 +239,6 @@
   "contributors": "Contributeurs",
   "activity": "Activités",
   "wilderness": "Wilderness",
-  "warehouse": "Warehouse"
+  "warehouse": "Warehouse",
+  "note-that-missing-timestamps": "Les horodatages de données manquants sont dus à l'échec de la lecture du texte par l'OCR ou à l'absence d'images importées par l'utilisateur."
 }

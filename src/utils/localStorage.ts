@@ -5,7 +5,6 @@ import { useWildernessStore } from '@/stores/wildernessStore';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { usePullsRecordStore } from '@/stores/pullsRecordStore';
 import { useActivityStore } from '@/stores/activityStore';
-import { useChangelogsStore } from '@/stores/global';
 
 const localStorageKeys = [
     'plannerSettings',
@@ -19,7 +18,6 @@ const localStorageKeys = [
 ];
 
 export function setGlobalLastModifiedTimestamp () {
-    const changelogsStore = useChangelogsStore();
     const plannerStore = usePlannerStore();
     const plannerSettingsStore = usePlannerSettingsStore();
     const wildernessStore = useWildernessStore();
@@ -31,7 +29,6 @@ export function setGlobalLastModifiedTimestamp () {
         localStorage.setItem('lastModified', new Date().toISOString());
     };
 
-    watch(() => changelogsStore.$state, updateTimestamp, { deep: true });
     watch(() => plannerStore.$state, updateTimestamp, { deep: true });
     watch(() => plannerSettingsStore.$state, updateTimestamp, { deep: true });
     watch(() => wildernessStore.$state, updateTimestamp, { deep: true });

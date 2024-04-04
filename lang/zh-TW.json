@@ -233,5 +233,6 @@
   "synced": "已同步",
   "summary-water": "第一個里程碑總結",
   "sign-out-google-drive": "退出 Google 雲端硬碟",
-  "login-google-drive": "登入 Google 雲端硬碟"
+  "login-google-drive": "登入 Google 雲端硬碟",
+  "note-that-missing-timestamps": "遺失資料時間戳記是由於 OCR 無法讀取文字或遺失使用者匯入的影像造成的。"
 }

@@ -232,5 +232,6 @@
   "water": "Tonggak pencapaian",
   "synced": "Disinkronkan",
   "sign-out-google-drive": "Keluar dari Google Drive",
-  "login-google-drive": "Masuk ke Google Drive"
+  "login-google-drive": "Masuk ke Google Drive",
+  "note-that-missing-timestamps": "Stempel waktu data yang hilang disebabkan oleh OCR yang gagal membaca teks atau kehilangan gambar yang diimpor dari pengguna."
 }
