@@ -88,7 +88,7 @@ const filter = () => {
                             { 'text-error': index === 0, 'text-info': index === 1, 'text-success': index === 2, 'text-warning': index === 3, 'text-secondary': index === 4 }
                         ]" @click="selectedCategories(category); filter()"
                             class="p-2 rounded-md text-sm">
-                            {{ category }}
+                            {{ $t(category) }}
                         </button>
                     </div>
                     <div class="flex justify-center">
@@ -96,7 +96,7 @@ const filter = () => {
                             { 'border-2 border-info': activeCategories.includes(categories[4]), 'border-2 border-transparent': !activeCategories.includes(categories[4]) },
                         ]" @click="selectedCategories(categories[4]); filter()"
                             class="w-40 p-2 rounded-md text-sm text-secondary">
-                            {{ categories[4] }}
+                            {{ $t(categories[4]) }}
                         </button>
                     </div>
                 </div>
