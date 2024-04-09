@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '09/04/2024', description: '• Improved Russian translations by mushel2442.' },
     { date: '04/04/2024', description: '• Fixed syncing bug. \n • For the last time, import error is caused by OCR failing to read images or missing images from user, doing single pulls or order of images DOES NOT matter.' },
     { date: '01/04/2024', description: '• Nothing happened.' },
     { date: '28/03/2024', description: '• Added 6 banner.' },

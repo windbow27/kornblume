@@ -120,7 +120,7 @@ onClickOutside(resourcesRef, closeResources)
                         $t('kornblume-is-not-affilated-with-bluepoch-all-images-and-data-belongs-to-their-respective-owners')
                     }}</p>
                     <p class="text-xs sm:text-base opacity-90 mx-2 mt-2">{{ $t('developed-by-windbow-joined-by-zero-day-and-fran') }}</p>
-                    <button class="btn btn-ghost btn-xs sm:btn-sm opacity-90" onclick="translators.showModal()">{{ $t('translators')
+                    <button class="btn btn-ghost btn-xs sm:btn-sm opacity-90" onclick="translators.showModal()">{{ $t('contributors')
                     }}</button>
                     <button class="btn btn-ghost btn-xs sm:btn-sm opacity-90" onclick="privacy.showModal()">{{ $t('privacy-policy')
                     }}</button>
@@ -129,7 +129,7 @@ onClickOutside(resourcesRef, closeResources)
                             <form method="dialog">
                                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                             </form>
-                            <h2 class="pb-3 text-xl font-bold"> {{ $t('translators') }} </h2>
+                            <h2 class="pb-3 text-xl font-bold"> {{ $t('contributors') }} </h2>
                             <div class="space-y-1">
                                 <p><span class="text-info"> Español </span> mgeshagrath </p>
                                 <p><span class="text-info"> Français </span> я герой#3673 & sillight</p>
@@ -140,7 +140,7 @@ onClickOutside(resourcesRef, closeResources)
                                 <p><span class="text-info"> Indonesia </span> ArieKee </p>
                                 <p><span class="text-info"> 한국어 </span> CaptinRegulus </p>
                                 <p><span class="text-info"> 日本語 </span> yagochi </p>
-                                <p><span class="text-info"> Русский </span> spun4ik & dagufz37 </p>
+                                <p><span class="text-info"> Русский </span> spun4ik, dagufz37 & mushel2442 </p>
                                 <p> hato </p>
                                 <p> Heightweight </p>
                             </div>
