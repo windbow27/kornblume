@@ -16,7 +16,7 @@
   "golden-compass": "赤金罗盘",
   "tome-of-mineral-wealth": "岩中典全章",
   "tome-of-starlit-ascent": "星升典全章",
-  "tome-of-plantal-vimen": "林娑典全章",
+  "tome-of-plantal-vimen": "木娑典全章",
   "tome-of-beastly-thirst": "兽涎典全章",
   "biting-box": "啮咬盒",
   "salted-mandrake": "盐封曼德拉",
@@ -29,7 +29,7 @@
   "golden-beetle": "砂金甲虫",
   "scroll-of-mineral-wealth": "岩中典孤卷",
   "scroll-of-starlit-ascent": "星升典孤卷",
-  "scroll-of-plantal-vimen": "林娑典孤卷",
+  "scroll-of-plantal-vimen": "木娑典孤卷",
   "scroll-of-beastly-thirst": "兽涎典孤卷",
   "liquefied-terror": "液化战栗",
   "milled-magnesia": "精磨苦盐",
@@ -41,7 +41,7 @@
   "solidus": "罗马金币",
   "page-of-mineral-wealth": "岩中典残篇",
   "page-of-starlit-ascent": "星升典残篇",
-  "page-of-plantal-vimen": "林娑典残篇",
+  "page-of-plantal-vimen": "木娑典残篇",
   "page-of-beastly-thirst": "兽涎典残篇",
   "trembling-tooth": "颤颤之齿",
   "magnesia-crystal": "苦盐簇",
@@ -54,6 +54,5 @@
   "hoarse-echo": "嘶哑的回音",
   "sonorous-knell": "悠远的振响",
   "brief-cacophony": "片刻的喧嚣",
-  "moment-of-dissonance": "一瞬的躁动",
-  "crystal-casket": "共鸣晶匣"
+  "moment-of-dissonance": "一瞬的躁动"
 }
