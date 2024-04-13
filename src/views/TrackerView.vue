@@ -341,8 +341,8 @@ GApiSvc.init().then(async () => {
                 <div>
                     <!-- <p class="text-sm lg:text-base"> • Introducing Tracker Editor! Please read Tutorial again.</p> -->
                     <p class="text-sm lg:text-base">The site's URL has been updated from <span
-                            class="text-info">windbow27.github.io/Kornblume</span>
-                        to <a href="windbow27.github.io/kornblume" class="text-info">windbow27.github.io/kornblume</a>
+                            class="text-info">windbow27.github.io/Kornblume/</span>
+                        to <span class="text-info">windbow27.github.io/kornblume/</span>
                         (with a lowercase k).
                     </p>
                 </div>
@@ -360,15 +360,15 @@ GApiSvc.init().then(async () => {
                 <button id="tutorial-button" ref="tutorialButton"
                     class="btn btn-ghost custom-gradient-button btn-sm text-white" onclick="tutorial.showModal()"><i
                         class="fa-solid fa-book"></i> {{
-                    $t('tutorial') }}</button>
+                            $t('tutorial') }}</button>
                 <button onclick="legacyButtons.showModal()"
                     class="btn btn-ghost custom-gradient-button btn-sm text-white"><i class="fa-solid fa-lightbulb"></i>
                     {{
-                    $t('legacy') }}</button>
+                        $t('legacy') }}</button>
                 <button onclick="resetTracker.showModal()"
                     class="btn btn-ghost custom-gradient-button btn-sm text-white"><i
                         class="fa-solid fa-triangle-exclamation"></i> {{
-                    $t('reset') }}</button>
+                            $t('reset') }}</button>
             </div>
         </div>
 
@@ -453,18 +453,18 @@ GApiSvc.init().then(async () => {
                     <button
                         v-bind:class="{ 'border-button': selectedBannerType === 'Thread' || selectedBannerType === 'Water' }"
                         class=' text-white py-1 px-3 hover:bg-info rounded-md'>{{
-                    $t('special') }}</button>
+                            $t('special') }}</button>
                 </div>
                 <ul tabindex="0"
                     class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box space-y-2 p-4 mt-2 w-32">
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Thread'">{{
-                    $t('thread') }}</button></li>
+                                $t('thread') }}</button></li>
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Water' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Water'">{{
-                    $t('water') }}</button></li>
+                                $t('water') }}</button></li>
                 </ul>
             </div>
         </div>

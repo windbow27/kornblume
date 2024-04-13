@@ -213,8 +213,8 @@ GApiSvc.init().then(async () => {
                     <!-- <p class="text-sm lg:text-base"> Google Drive Sync has been added. Head to Profile to try it out.
                     </p> -->
                     <p class="text-sm lg:text-base">The site's URL has been updated from <span
-                            class="text-info">windbow27.github.io/Kornblume</span>
-                        to <a href="windbow27.github.io/kornblume" class="text-info">windbow27.github.io/kornblume</a>
+                            class="text-info">windbow27.github.io/Kornblume/</span>
+                        to <span class="text-info">windbow27.github.io/kornblume/</span>
                         (with a lowercase k).
                     </p>
                 </div>

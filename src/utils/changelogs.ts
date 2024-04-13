@@ -1,6 +1,6 @@
 export const changelogs = [
     // Add more from top
-    { date: '13/04/2024', description: '• The site\'s URL has been updated from windbow27.github.io/Kornblume to windbow27.github.io/kornblume (with a lowercase k).' },
+    { date: '13/04/2024', description: '• The site\'s URL has been updated from windbow27.github.io/Kornblume/ to windbow27.github.io/kornblume/ (with a lowercase k).' },
     { date: '12/04/2024', description: '• Added Vila and Avgust as unreleased arcanists.' },
     { date: '09/04/2024', description: '• Improved Russian translations by mushel2442.' },
     { date: '04/04/2024', description: '• Fixed syncing bug. \n • For the last time, import error is caused by OCR failing to read images or missing images from user, doing single pulls or order of images DOES NOT matter.' },
