@@ -102,7 +102,7 @@ onClickOutside(resourcesRef, closeResources)
                     </a>
                 </div>
 
-                <a href="https://github.com/windbow27/Kornblume" target="_blank"
+                <a href="https://github.com/windbow27/kornblume" target="_blank"
                     class="text-2xl lg:text-3xl text-gray-400 hover:text-white">
                     <i class="fab fa-github"></i>
                 </a>

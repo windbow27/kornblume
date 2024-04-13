@@ -2,7 +2,7 @@
 
 Reverse: 1999 Toolsite. All contributions are appreciated, the checklist of what need to be done is [here](https://docs.google.com/spreadsheets/d/1Ten6TdTrUbnFhOGallPDs2Xs7GNfiQfsrf-uZidY4l8/edit#gid=1859046052).
 
-We are translating Kornblume to other languages and we need your help! [Help us translate](https://github.com/windbow27/Kornblume/blob/main/lang/README.md).
+We are translating Kornblume to other languages and we need your help! [Help us translate](https://github.com/windbow27/kornblume/blob/main/lang/README.md).
 
 ## Recommended IDE Setup
 
