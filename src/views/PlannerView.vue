@@ -210,7 +210,12 @@ GApiSvc.init().then(async () => {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-sm lg:text-base"> Google Drive Sync has been added. Head to Profile to try it out.
+                    <!-- <p class="text-sm lg:text-base"> Google Drive Sync has been added. Head to Profile to try it out.
+                    </p> -->
+                    <p class="text-sm lg:text-base">The site's URL has been updated from <span
+                            class="text-info">windbow27.github.io/Kornblume</span>
+                        to <a href="windbow27.github.io/kornblume" class="text-info">windbow27.github.io/kornblume</a>
+                        (with a lowercase k).
                     </p>
                 </div>
             </div>
