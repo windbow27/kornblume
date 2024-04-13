@@ -74,7 +74,6 @@
   "add-arcanist": "마도학자 추가",
   "lazy-modo": "게으름뱅이",
   "output": "결과",
-  "wilderness-output-will-be-considered-for-calculations": "황무지 생산량을 계산에 포함합니다.",
   "save": "저장",
   "vigor": "활성",
   "vigor-percent": "활성 (%)",
@@ -230,5 +229,9 @@
   "sign-out-google-drive": "Google 드라이브에서 로그아웃",
   "quick-goal": "빠른 목표",
   "login-google-drive": "Google 드라이브에 로그인",
-  "error-is-caused-by": "가져오기 오류는 OCR이 텍스트를 읽지 못하거나 사용자로부터 가져온 이미지가 누락되어 발생합니다."
+  "error-is-caused-by": "가져오기 오류는 OCR이 텍스트를 읽지 못하거나 사용자로부터 가져온 이미지가 누락되어 발생합니다.",
+  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Google 드라이브를 사용하고 Kornblume이 장치 간에 데이터를 저장하고 동기화하도록 할 수 있습니다. \n우리는 Kornblume이 생성한 파일만 읽고 씁니다.",
+  "solution-1": "데이터를 수동으로 입력하거나 수정하려면 {editor}를 이용하세요.",
+  "summon-editor": "소환 편집자",
+  "hide-cards": "마이너 스테이지 숨기기"
 }

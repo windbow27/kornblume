@@ -92,52 +92,6 @@ const format = (date) => {
 <template>
     <div class="flex justify-center space-x-5 pb-4">
         <button class="blue-button" @click="addPull">{{ $t('add-pull') }}</button>
-        <!-- too lazy to create a working modal -->
-        <!-- <button class="blue-button" onclick="addPull.showModal()">{{ $t('add-pull') }}</button>
-        <dialog id="addPull" class="modal">
-            <div
-                class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center overflow-auto hidden-scrollbar">
-                <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
-                </form>
-                <h2 class="text-white text-lg pb-4 font-bold">{{ $t('add-pull') }}</h2>
-                <div class="flex flex-col gap-y-4">
-                    <Popper arrow placement="bottom" offsetDistance="2">
-                        <input class="custom-input w-64 text-white" type="text" v-model="newArcanistName" />
-                        <template #content>
-                            <div class="custom-item-list"
-                                v-for="(arcanist, i) in arcanists.filter(a => a.Name.toLowerCase().includes(newArcanistName.toLowerCase()))"
-                                :key="i" @click="newArcanistName = arcanist.Name">
-                                {{ arcanist.Name }}
-                            </div>
-                        </template>
-</Popper>
-<Popper arrow placement="bottom" offsetDistance="2">
-    <input class="custom-input w-64 text-white" type="text" v-model="newBannerType" />
-    <template #content>
-                            <div class="custom-item-list"
-                                v-for="(banner, i) in bannerList.filter(b => b.toLowerCase().includes(newBannerType.toLowerCase()))"
-                                :key="i" @click="newBannerType = banner">
-                                {{ banner }}
-                            </div>
-                        </template>
-</Popper>
-<VueDatePicker v-model="newPullDate" enable-seconds />
-<div class="flex justify-center space-x-5">
-    <form method="dialog">
-        <button class="green-button" @click="addPull">{{ $t('add') }}</button>
-    </form>
-    <form method="dialog">
-        <button class="red-button" onclick="addPull.close()">{{ $t('cancel') }}</button>
-    </form>
-</div>
-</div>
-</div>
-<form method="dialog" class="modal-backdrop">
-    <button>close</button>
-</form>
-</dialog> -->
-
         <button class="green-button" @click="savePulls">{{ $t('save') }}</button>
         <button class="red-button" @click="reload">{{ $t('cancel') }}</button>
     </div>

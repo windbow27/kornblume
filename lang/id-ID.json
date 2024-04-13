@@ -74,7 +74,6 @@
   "add-arcanist": "Tambahkan Arcanist",
   "lazy-modo": "Mode Pemalas",
   "output": "Penghasilan",
-  "wilderness-output-will-be-considered-for-calculations": "Penghasilan Wilderness akan dipertimbangkan untuk Kalkulator",
   "save": "Simpan",
   "vigor": "Vigor",
   "vigor-percent": "Vigor (%)",
@@ -232,5 +231,8 @@
   "synced": "Disinkronkan",
   "sign-out-google-drive": "Keluar dari Google Drive",
   "login-google-drive": "Masuk ke Google Drive",
-  "error-is-caused-by": "Kesalahan impor disebabkan oleh OCR yang gagal membaca teks atau kehilangan gambar yang diimpor dari pengguna."
+  "error-is-caused-by": "Kesalahan impor disebabkan oleh OCR yang gagal membaca teks atau kehilangan gambar yang diimpor dari pengguna.",
+  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Anda dapat menggunakan Google Drive dan membiarkan Kornblume menyimpan dan menyinkronkan data antar perangkat. \nKami hanya membaca dan menulis file yang dibuat Kornblume.",
+  "solution-1": "Gunakan {editor} untuk memasukkan atau mengoreksi data secara manual.",
+  "summon-editor": "Editor Pemanggilan"
 }

@@ -156,7 +156,6 @@
   "we-are-translating-the-site-into-other-languages-please-help-us-out-you-could-reach-out-to-us-through-windbow-in-discord": "私達はこのサイトを多言語に翻訳しています。{link}{discord} Discordを通して私達に連絡ができます。",
   "weekly-activeness": "ウィークリーミッションの活性",
   "when-you-add-arcanists-to-the-planner-with-their-current-goal-levels-and-resonance-you-will-see-several-sections-appear-below": "現在／目標レベルを入力してアルカニストを育成プランに追加すると、以下にいくつかのセクションが表示されます。",
-  "wilderness-output-will-be-considered-for-calculations": "ウィルダネスの産出は計算に含まれます。",
   "wilderness-production": "ウィルダネスの産出",
   "wilderness-settings": "ウィルダネスの設定",
   "with-numbers-used-in-crafting": "({numbers}個が下位素材として使用されます)",
@@ -225,8 +224,11 @@
   "legacy-notice": "現在のインポートが機能しない場合は、次の方法を試してください。\nカーソルを合わせると詳細が表示されます。",
   "loading-indicator-vertin-wheel-vertin-wheel-vertin-wheel": "ローディングインジケーター。\n同意して画像の PSD を直接送っていただきありがとうございます。",
   "obtained-from-the-following-stages": "以下のステージで入手",
-  "solution-1": "",
+  "solution-1": "データを手動で入力または修正するには、{editor} を使用します。",
   "stages": "ステージ",
   "search-by-name": "名前で検索",
-  "error-is-caused-by": "インポート エラーは、OCR がテキストの読み取りに失敗したり、ユーザーからインポートされた画像が欠落していることが原因で発生します。"
+  "error-is-caused-by": "インポート エラーは、OCR がテキストの読み取りに失敗したり、ユーザーからインポートされた画像が欠落していることが原因で発生します。",
+  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Google ドライブを使用すると、Kornblume にデータを保存してデバイス間で同期させることができます。 \nKornblume が作成したファイルの読み取りと書き込みのみを行います。",
+  "summon-editor": "サモンエディター",
+  "hide-cards": "マイナーステージを非表示にする"
 }

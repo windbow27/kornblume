@@ -69,7 +69,6 @@
   "add-arcanist": "加入神祕學家",
   "lazy-modo": "懶人模式",
   "output": "產出量",
-  "wilderness-output-will-be-considered-for-calculations": "荒原的產出將被考慮在計算中",
   "save": "儲存",
   "vigor": "活力",
   "vigor-percent": "活力 (%)",
@@ -163,7 +162,6 @@
   "limited": "限時",
   "standard": "常駐",
   "thread": "湖的邀約",
-  "translators": "貢獻者",
   "50-50-winrate": "6 {star} UP 角色機率",
   "add": "添加",
   "missing-information": "遺失的訊息時間戳",
@@ -234,5 +232,6 @@
   "summary-water": "第一個里程碑總結",
   "sign-out-google-drive": "退出 Google 雲端硬碟",
   "login-google-drive": "登入 Google 雲端硬碟",
-  "error-is-caused-by": "匯入錯誤是由於 OCR 無法讀取文字或遺失使用者匯入的影像而導致的。"
+  "error-is-caused-by": "匯入錯誤是由於 OCR 無法讀取文字或遺失使用者匯入的影像而導致的。",
+  "summon-editor": "召喚編輯"
 }
