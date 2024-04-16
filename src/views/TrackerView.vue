@@ -340,8 +340,7 @@ GApiSvc.init().then(async () => {
                 </svg>
                 <div>
                     <!-- <p class="text-sm lg:text-base"> • Introducing Tracker Editor! Please read Tutorial again.</p> -->
-                    <p class="text-sm lg:text-base">The site's URL has been updated from <span
-                            class="text-info">windbow27.github.io/Kornblume/</span>
+                    <p class="text-sm lg:text-base">The site's URL has been updated
                         to <span class="text-info">windbow27.github.io/kornblume/</span>
                         (with a lowercase k).
                     </p>
