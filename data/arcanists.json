@@ -1252,7 +1252,7 @@
   },
   {
     "Id": 10067,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Ezra Theodore",
     "Rarity": 6,
     "Afflatus": "Star",
@@ -1501,7 +1501,7 @@
   },
   {
     "Id": 10065,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Spathodea",
     "Rarity": 6,
     "Afflatus": "Beast",
@@ -6487,7 +6487,7 @@
   },
   {
     "Id": 10066,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Ulu",
     "Rarity": 5,
     "Afflatus": "Mineral",
@@ -6736,7 +6736,7 @@
   },
   {
     "Id": 10068,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Desert Flannel",
     "Rarity": 5,
     "Afflatus": "Beast",
