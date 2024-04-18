@@ -222,9 +222,9 @@
   "google-drive-save": "Google 云端硬盘同步",
   "login-google-drive": "登录 Google 云端硬盘",
   "sign-out-google-drive": "退出 Google 云端硬盘",
-  "summary-water": "湖的丰饶",
+  "summary-abundance": "丰富的水资源总结",
   "synced": "已同步",
-  "water": "湖的丰饶",
+  "abundance": "丰富",
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "您可以使用 Google 云端硬盘让 Kornblume 在不同设备间保存和同步数据。\n我们只能读取和写入 Kornblume 创建的文件。",
   "cancel": "取消",
   "summon-editor": "征集编辑",
@@ -238,5 +238,7 @@
   "activity": "活性",
   "wilderness": "荒原",
   "warehouse": "仓库",
-  "error-is-caused-by": "导入错误是由于 OCR 无法读取文本或丢失用户导入的图像而导致的。"
+  "error-is-caused-by": "导入错误是由于 OCR 无法读取文本或丢失用户导入的图像而导致的。",
+  "yearning": "向往",
+  "summary-yearning": "对水的向往剧情简介"
 }

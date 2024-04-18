@@ -218,8 +218,8 @@
   "disable-wilderness": "Disable wilderness",
   "enable-wilderness": "Enable wilderness",
   "ascension-material": "Ascension Material",
-  "water": "Milestone",
-  "summary-water": "The First Milestone Summary",
+  "abundance": "Abundance",
+  "summary-abundance": "Abundance of the Water Summary",
   "google-drive-save": "Google Drive Sync",
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "You can use Google Drive and let Kornblume save and sync data between devices. We only read and write files that Kornblume created.",
   "login-google-drive": "Sign in Google Drive",
@@ -238,5 +238,7 @@
   "activity": "Activity",
   "wilderness": "Wilderness",
   "warehouse": "Warehouse",
-  "error-is-caused-by": "Import error is caused by OCR failing to read text or missing imported images from user."
+  "error-is-caused-by": "Import error is caused by OCR failing to read text or missing imported images from user.",
+  "yearning": "Yearning",
+  "summary-yearning": "Yearning of the Water Summary"
 }

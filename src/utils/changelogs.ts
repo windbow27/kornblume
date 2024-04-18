@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '18/04/2024', description: '• Added Spathodea banner. Added Tooth Fairy + Centurion double banner.' },
     { date: '16/04/2024', description: '• Added Spathodea, Ezra, Ulu and Flannel as released arcanists.' },
     { date: '13/04/2024', description: '• The site\'s URL has been updated from windbow27.github.io/Kornblume/ to windbow27.github.io/kornblume/ (with a lowercase k).' },
     { date: '12/04/2024', description: '• Added Vila and Avgust as unreleased arcanists.' },

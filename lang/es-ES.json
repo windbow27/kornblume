@@ -223,7 +223,7 @@
   "disable-wilderness": "Deshabilitar el Wilderness",
   "google-drive-save": "Sincronización de Google Drive",
   "enable-wilderness": "Habilitar el Wilderness",
-  "water": "Logro",
+  "abundance": "Abundancia",
   "synced": "Sincronizado",
   "sign-out-google-drive": "Cerrar sesión en Google Drive",
   "quick-goal": "meta rápida",
@@ -236,7 +236,9 @@
   "summon-editor": "Editor de invocaciiones",
   "solution-1": "Usa el {editor} para ingresar o corregir manualmente los datos.",
   "solution-2": "Si faltan 10x debido a giradas antiguas, elimínalas o agrega las giradas que faltan.",
-  "summary-water": "Resumen The First Milestone",
+  "summary-abundance": "Resumen de la abundancia del agua",
   "not-by-user-doing-single-pulls": "NO por haber dado giradas individuales.",
-  "error-is-caused-by": "El error de importación se debe a que el OCR no puede leer el texto o faltan imágenes importadas del usuario."
+  "error-is-caused-by": "El error de importación se debe a que el OCR no puede leer el texto o faltan imágenes importadas del usuario.",
+  "yearning": "Anhelo",
+  "summary-yearning": "Resumen del anhelo del agua"
 }

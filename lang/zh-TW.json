@@ -227,11 +227,13 @@
   "cancel": "取消",
   "click-to-show-email": "點選顯示電子郵件",
   "google-drive-save": "Google 雲端硬碟同步",
-  "water": "里程碑",
+  "abundance": "豐富",
   "synced": "已同步",
-  "summary-water": "第一個里程碑總結",
+  "summary-abundance": "豐富的水資源總結",
   "sign-out-google-drive": "退出 Google 雲端硬碟",
   "login-google-drive": "登入 Google 雲端硬碟",
   "error-is-caused-by": "匯入錯誤是由於 OCR 無法讀取文字或遺失使用者匯入的影像而導致的。",
-  "summon-editor": "召喚編輯"
+  "summon-editor": "召喚編輯",
+  "yearning": "嚮往",
+  "summary-yearning": "對水的嚮往劇情簡介"
 }

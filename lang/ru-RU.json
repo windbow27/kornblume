@@ -218,8 +218,8 @@
   "disable-wilderness": "Отключить wilderness",
   "enable-wilderness": "Включить wilderness",
   "ascension-material": "Материалы для Ascension",
-  "water": "Milestone",
-  "summary-water": "The First Milestone баннер: итог",
+  "abundance": "Избыток",
+  "summary-abundance": "Обилие воды",
   "google-drive-save": "Синхронизация с Google Drive",
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Возможно использование Google Drive для сохранения и синхронизации данных между устройствами. Мы читаем только файлы созданные Kornblume.",
   "login-google-drive": "Войти в Google Drive",
@@ -238,5 +238,7 @@
   "activity": "Энергия",
   "wilderness": "Wilderness",
   "warehouse": "Warehouse",
-  "error-is-caused-by": "Ошибка импорта вызвана тем, что OCR не смог распознать текст или тем, что изображения от пользователя отсутствуют."
+  "error-is-caused-by": "Ошибка импорта вызвана тем, что OCR не смог распознать текст или тем, что изображения от пользователя отсутствуют.",
+  "yearning": "Тоска",
+  "summary-yearning": "Тоска по воде Краткое содержание"
 }

@@ -227,12 +227,15 @@
   "disable-wilderness": "Nonaktifkan Wilderness",
   "google-drive-save": "Sinkronisasi Google Drive",
   "enable-wilderness": "Aktifkan Wilderness",
-  "water": "Tonggak pencapaian",
+  "abundance": "Kelimpahan",
   "synced": "Disinkronkan",
   "sign-out-google-drive": "Keluar dari Google Drive",
   "login-google-drive": "Masuk ke Google Drive",
   "error-is-caused-by": "Kesalahan impor disebabkan oleh OCR yang gagal membaca teks atau kehilangan gambar yang diimpor dari pengguna.",
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Anda dapat menggunakan Google Drive dan membiarkan Kornblume menyimpan dan menyinkronkan data antar perangkat. \nKami hanya membaca dan menulis file yang dibuat Kornblume.",
   "solution-1": "Gunakan {editor} untuk memasukkan atau mengoreksi data secara manual.",
-  "summon-editor": "Editor Pemanggilan"
+  "summon-editor": "Editor Pemanggilan",
+  "summary-abundance": "Ringkasan Kelimpahan Air",
+  "yearning": "Kerinduan",
+  "summary-yearning": "Ringkasan Kerinduan Air"
 }

@@ -214,7 +214,7 @@
   "ko-fi": "コーヒーを買ってきてください",
   "legacy": "代わりの",
   "wishing-spring-formula": "ウィッシングスプリングフォーミュラ",
-  "water": "マイルストーン",
+  "abundance": "豊富",
   "synced": "同期済み",
   "used-by-the-following-arcanists": "以下のキャラが使用",
   "try-legacy": "現在のインポートが機能しない場合は、代替メソッドを開いて使用してください。",
@@ -231,5 +231,8 @@
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Google ドライブを使用すると、Kornblume にデータを保存してデバイス間で同期させることができます。 \nKornblume が作成したファイルの読み取りと書き込みのみを行います。",
   "summon-editor": "サモンエディター",
   "hide-cards": "マイナーステージを非表示にする",
-  "another-drop-rates": "シロネガイ氏によるドロップ率シート。 \n2024年3月から更新されていません、しろいどこにいるのですか:("
+  "another-drop-rates": "シロネガイ氏によるドロップ率シート。 \n2024年3月から更新されていません、しろいどこにいるのですか:(",
+  "summary-abundance": "豊富な水の概要",
+  "yearning": "憧れ",
+  "summary-yearning": "水への憧れ 概要"
 }

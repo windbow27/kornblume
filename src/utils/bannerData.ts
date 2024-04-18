@@ -19,11 +19,15 @@ export const bannerList = [
     'The Arrow Breaks Through The Air',
     'Beyond the World of Matters',
     'Seeker in the Cave',
+    'The Chirps of Flame',
+    // tf + centurion
+    'Yearning of the Water',
+    'Yearning of the Water',
     // standard
     'Amongst the Lake',
     // thread
     'Invitation From the Water',
-    // water
+    // abundance
     'Abundance of the Water'
 ];
 
@@ -46,7 +50,10 @@ export const bannerRateUp = [
     'Ms. NewBabel',
     'Lilya',
     '37',
-    '6'
+    '6',
+    'Spathodea',
+    'Tooth Fairy',
+    'Centurion'
 ];
 
 export const specialArcanists: string[] = [

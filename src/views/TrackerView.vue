@@ -63,7 +63,20 @@ const allPulls = computed(() => {
     });
 });
 
-const waterPulls = computed(() => {
+const yearningPulls = computed(() => {
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Yearning of the Water');
+    return filteredPulls.map((pull, index) => {
+        return {
+            PullNumber: filteredPulls.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
+            Timestamp: pull.Timestamp
+        }
+    });
+});
+
+const abundancePulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Abundance of the Water');
     return filteredPulls.map((pull, index) => {
         return {
@@ -103,7 +116,11 @@ const standardPulls = computed(() => {
 });
 
 const limitedPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType !== 'Amongst the Lake' && pull.BannerType !== 'Invitation From the Water' && pull.BannerType !== 'Abundance of the Water');
+    const filteredPulls = sortedPulls.value.filter(
+        pull => pull.BannerType !== 'Amongst the Lake' &&
+            pull.BannerType !== 'Invitation From the Water' &&
+            pull.BannerType !== 'Abundance of the Water' &&
+            pull.BannerType !== 'Yearning of the Water');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -450,20 +467,25 @@ GApiSvc.init().then(async () => {
             <div class="dropdown dropdown-bottom dropdown-end">
                 <div tabindex="0" role="button">
                     <button
-                        v-bind:class="{ 'border-button': selectedBannerType === 'Thread' || selectedBannerType === 'Water' }"
+                        v-bind:class="{ 'border-button': selectedBannerType === 'Thread' || selectedBannerType === 'Abundance' }"
                         class=' text-white py-1 px-3 hover:bg-info rounded-md'>{{
                             $t('special') }}</button>
                 </div>
+                <!-- Special banners -->
                 <ul tabindex="0"
                     class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box space-y-2 p-4 mt-2 w-32">
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Thread'">{{
                                 $t('thread') }}</button></li>
-                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Water' }"
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Abundance' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Water'">{{
-                                $t('water') }}</button></li>
+                            @click="selectedBannerType = 'Abundance'">{{
+                                $t('abundance') }}</button></li>
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Yearning' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectedBannerType = 'Yearning'">{{
+                                $t('yearning') }}</button></li>
                 </ul>
             </div>
         </div>
@@ -474,7 +496,9 @@ GApiSvc.init().then(async () => {
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Thread'" :text="$t('summary-thread')" :pulls="threadPulls"
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Water'" :text="$t('summary-water')" :pulls="waterPulls"
+        <TrackerBoard v-if="selectedBannerType === 'Abundance'" :text="$t('summary-abundance')" :pulls="abundancePulls"
+            :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Yearning'" :text="$t('summary-yearning')" :pulls="yearningPulls"
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
     </div>
 </template>

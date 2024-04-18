@@ -228,15 +228,17 @@
   "sign-out-google-drive": "Đăng xuất Google Drive",
   "solution-1": "Sử dụng {editor} để nhập hoặc sửa dữ liệu theo cách thủ công.",
   "solution-2": "Nếu bị hiển thị thiếu 10x bởi vì lượt quay cũ, xoá bỏ chúng hoặc thêm các lượt quay còn thiếu.",
-  "summary-water": "Tổng kết Cột mốc đầu tiên",
+  "summary-abundance": "Sự phong phú của nước",
   "summon-editor": "Trình chỉnh sửa Triệu hồi",
   "synced": "Đã đồng bộ hóa",
-  "water": "Cột mốc",
+  "abundance": "Trù phú",
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Bạn có thể sử dụng Google Drive và cho phép Kornblume lưu và đồng bộ hóa dữ liệu giữa các thiết bị. \nChúng tôi chỉ đọc và ghi các tập tin mà Kornblume đã tạo.",
   "special": "Đặc biệt",
   "contributors": "Người đóng góp",
   "activity": "Hoạt động",
   "wilderness": "Vùng hoang dã",
   "warehouse": "Kho",
-  "error-is-caused-by": "Lỗi nhập xảy ra do OCR không đọc được văn bản hoặc thiếu hình ảnh được nhập từ người dùng."
+  "error-is-caused-by": "Lỗi nhập xảy ra do OCR không đọc được văn bản hoặc thiếu hình ảnh được nhập từ người dùng.",
+  "yearning": "Khao khát",
+  "summary-yearning": " Tóm Tắt Khát Vọng của Nước"
 }

@@ -222,14 +222,14 @@
   "solution-1": "Utiliser l'{editor} pour ajouter ou corriger les données",
   "solution-2": "S'il manque des Invocations 10x à cause d'anciennes Invocations, supprimez les ou ajoutez les Invocations manquantes.",
   "stages": "Niveaux",
-  "summary-water": "Sommaire The First Milestone",
+  "summary-abundance": "Résumé de l'abondance de l'eau",
   "summon-editor": "Editeur d'Invocations",
   "synced": "Synchronisé",
   "the-other-two-sections-are-hard-stages-and-crafting-these-results-have-been-optimized-to-reduce-the-stamina-required-for-farming-these-materials-by-running-the-listed-stages-the-number-of-times-it-suggests-it-is-expected-you-will-receive-all-the-materials-you-need-the-materials-obtained-from-the-hard-stage-farming-will-help-you-make-the-items-listed-in-the-crafting-section": "Les deux autres sections représentent les {hardstages} & le {crafting}. Les résultats ont été optimisés afin de réduire l'Activité nécessaire pour obtenir ces Matériaux. En farmant ces niveaux le nombre de fois indiqué, vous pouvez vous attendre à recevoir tous les Matériaux nécessaires. Les Matériaux obtenus lors du farming des niveaux difficiles vous aideront à fabriquer les Matérieu indiqués dans la section Crafting.",
   "try-legacy": "Si cette méthode d'importation ne fonctionne pas, veuillez consulter les méthodes alternatives et les utiliser.",
   "the-resources-and-insight-sections-are-straightforward-and-they-show-you-how-many-times-you-need-to-run-each-stage-in-order-to-get-the-materials-based-on-your-intended-arcanist-levels-since-we-cant-farm-resonance-materials-those-are-shown-with-the-cost-associated-in-the-oneiric-shop-found-in-the-bank": "Les sections {resources} & {insight} sont faciles à comprendre et vous montrent le nombre de fois nécessaire pur obtenir les Matériaux en fonction des niveaux désirés de vos Arcanistes., Sachant que nous ne pouvont pas farmer les Matériaux de Résonance, ceux-ci sont affichés aux prix de l'Oneiric Shop.",
   "used-by-the-following-arcanists": "Utilisés par ces Arcanistes",
-  "water": "Milestone",
+  "abundance": "Abondance",
   "win": "Réussir le 50/50",
   "wishing-spring-formula": "Formule du Wishing Spring",
   "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "Vous pouvez utiliser Google Drive pour permettre à Kornblume d'enregister et synchroniser les données entre vos appareils. Nous utilisons suelement les fichiers créés par Kornblume.",
@@ -238,5 +238,7 @@
   "activity": "Activités",
   "wilderness": "Wilderness",
   "warehouse": "Warehouse",
-  "error-is-caused-by": "L'erreur d'importation est due au fait que l'OCR ne parvient pas à lire le texte ou aux images importées manquantes de l'utilisateur."
+  "error-is-caused-by": "L'erreur d'importation est due au fait que l'OCR ne parvient pas à lire le texte ou aux images importées manquantes de l'utilisateur.",
+  "yearning": "Aspiration",
+  "summary-yearning": "Désir de l'eau Résumé"
 }
