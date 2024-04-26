@@ -1,4 +1,252 @@
-[
+[{
+  "Id": 10076,
+  "IsReleased": false,
+  "Name": "Windsong",
+  "Rarity": 6,
+  "Afflatus": "Star",
+  "Stats": {
+    "0-1": [69, 69, 69, 69, 69, 69, 69], 
+    "0-30": [69, 69, 69, 69, 69, 69, 69], 
+    "1-40": [69, 69, 69, 69, 69, 69, 69], 
+    "2-50": [69, 69, 69, 69, 69, 69, 69],
+    "3-60": [69, 69, 69, 69, 69, 69, 69]
+  },
+  "Insight": [
+    {
+      "Id": 1,
+      "Material": [
+        "Sharpodonty",
+        "Page of Starlit Ascent",
+        "Spell of Banishing",
+        "Perpetual Cog"
+      ],
+      "Quantity": [
+        18000,
+        6,
+        6,
+        5
+      ]
+    },
+    {
+      "Id": 2,
+      "Material": [
+        "Sharpodonty",
+        "Scroll of Starlit Ascent",
+        "Liquefied Terror",
+        "Holy Silver"
+      ],
+      "Quantity": [
+        40000,
+        10,
+        5,
+        5
+      ]
+    },
+    {
+      "Id": 3,
+      "Material": [
+        "Sharpodonty",
+        "Tome of Starlit Ascent",
+        "Glowing Mothwing",
+        "Mistilteinn"
+      ],
+      "Quantity": [
+        200000,
+        16,
+        6,
+        3
+      ]
+    }
+  ],
+  "Resonance": [
+    {
+      "Id": 2,
+      "Material": [
+        "Moment of Dissonance"
+      ],
+      "Quantity": [
+        5
+      ]
+    },
+    {
+      "Id": 3,
+      "Material": [
+        "Moment of Dissonance",
+        "Spell of Banishing"
+      ],
+      "Quantity": [
+        5,
+        6
+      ]
+    },
+    {
+      "Id": 4,
+      "Material": [
+        "Moment of Dissonance",
+        "Silver Ore",
+        "Solidus"
+      ],
+      "Quantity": [
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "Id": 5,
+      "Material": [
+        "Brief Cacophony",
+        "Milled Magnesia",
+        "Liquefied Terror"
+      ],
+      "Quantity": [
+        5,
+        3,
+        3
+      ]
+    },
+    {
+      "Id": 6,
+      "Material": [
+        "Sharpodonty",
+        "Brief Cacophony",
+        "Clawed Pendulum"
+      ],
+      "Quantity": [
+        30000,
+        5,
+        3
+      ]
+    },
+    {
+      "Id": 7,
+      "Material": [
+        "Brief Cacophony",
+        "Winged Key"
+      ],
+      "Quantity": [
+        6,
+        5
+      ]
+    },
+    {
+      "Id": 8,
+      "Material": [
+        "Brief Cacophony",
+        "Goose Neck",
+        "Esoteric Bones"
+      ],
+      "Quantity": [
+        6,
+        4,
+        6
+      ]
+    },
+    {
+      "Id": 9,
+      "Material": [
+        "Brief Cacophony",
+        "Biting Box",
+        "Spell of Fortune"
+      ],
+      "Quantity": [
+        8,
+        4,
+        6
+      ]
+    },
+    {
+      "Id": 10,
+      "Material": [
+        "Sinuous Howl",
+        "Sonorous Knell",
+        "Holy Silver",
+        "Bifurcated Skeleton"
+      ],
+      "Quantity": [
+        1,
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "Id": 11,
+      "Material": [
+        "Sinuous Howl",
+        "Sharpodonty",
+        "Sonorous Knell",
+        "Platinum Ouija"
+      ],
+      "Quantity": [
+        1,
+        120000,
+        5,
+        4
+      ]
+    },
+    {
+      "Id": 12,
+      "Material": [
+        "Sinuous Howl",
+        "Sonorous Knell",
+        "Watch Core",
+        "Prophetic Bird"
+      ],
+      "Quantity": [
+        1,
+        6,
+        4,
+        5
+      ]
+    },
+    {
+      "Id": 13,
+      "Material": [
+        "Sinuous Howl",
+        "Sonorous Knell",
+        "Murmur of Insanity",
+        "Holy Silver"
+      ],
+      "Quantity": [
+        1,
+        6,
+        5,
+        5
+      ]
+    },
+    {
+      "Id": 14,
+      "Material": [
+        "Sinuous Howl",
+        "Sonorous Knell",
+        "Fruit of Good and Evil",
+        "Bogeyman"
+      ],
+      "Quantity": [
+        1,
+        8,
+        2,
+        4
+      ]
+    },
+    {
+      "Id": 15,
+      "Material": [
+        "Sinuous Howl",
+        "Sonorous Knell",
+        "Golden Fleece",
+        "Wyrmling Skeleton"
+      ],
+      "Quantity": [
+        1,
+        8,
+        3,
+        4
+      ]
+    }
+  ]
+},
   {
     "Id": 10075,
     "IsReleased": false,
