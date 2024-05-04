@@ -9,7 +9,8 @@ import MaterialDisplay from '@/components/item/material/MaterialDisplay.vue';
 import MaterialFilter from '@/components/item/material/MaterialFilter.vue';
 
 const categories = ['Base Item', 'Build Material', 'Insight Material', 'Resonate Material', 'Ascension Material'];
-const buttons = ['Materials', 'Psychubes'];
+const buttons = ['Materials'];
+// const buttons = ['Materials', 'Psychubes'];
 const selectedButton = ref(buttons[0]);
 
 const itemStore = useDataStore().items;

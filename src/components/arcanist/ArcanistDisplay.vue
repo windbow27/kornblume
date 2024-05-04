@@ -15,7 +15,8 @@ import Builds from '@/components/arcanist/info/Builds.vue';
 const route = useRoute();
 const arcanistStore = useDataStore().arcanists;
 const arcanist = ref<IArcanist>(arcanistStore[0]);
-const buttons = ['Stats', 'Upgrades', 'Skills'];
+const buttons = ['Stats'];
+// const buttons = ['Stats', 'Upgrades', 'Skills'];
 const selectedButton = ref(buttons[0]);
 
 onBeforeMount(() => {
