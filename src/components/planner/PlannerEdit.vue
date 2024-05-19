@@ -388,6 +388,10 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                     <button>close</button>
                 </form>
             </dialog>
+            <!-- Padding -->
+            <div v-if="selectedCurrentLevel == selectedGoalLevel && selectedCurrentInsight == selectedGoalInsight && selectedCurrentResonance == selectedGoalResonance
+            " class="pb-32"></div>
+
             <!-- Materials -->
             <ArcanistCalculate :arcanist="editingArcanist" />
         </div>
