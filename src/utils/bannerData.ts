@@ -20,9 +20,9 @@ export const bannerList = [
     'Beyond the World of Matters',
     'Seeker in the Cave',
     'The Chirps of Flame',
-    // tf + centurion
     'Yearning of the Water',
     'Yearning of the Water',
+    'The Spores of Peace',
     // standard
     'Amongst the Lake',
     // thread
@@ -53,7 +53,8 @@ export const bannerRateUp = [
     '6',
     'Spathodea',
     'Tooth Fairy',
-    'Centurion'
+    'Centurion',
+    'Ezra Theodore'
 ];
 
 export const specialArcanists: string[] = [
