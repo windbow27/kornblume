@@ -1501,7 +1501,7 @@
   },
   {
     "Id": 10069,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Jiu Niangzi",
     "Rarity": 6,
     "Afflatus": "Mineral",
@@ -6991,7 +6991,7 @@
   },
   {
     "Id": 10070,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Yenisei",
     "Rarity": 5,
     "Afflatus": "Star",
@@ -16302,7 +16302,7 @@
   },
   {
     "Id": 10071,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Getian",
     "Rarity": 6,
     "Afflatus": "Beast",
