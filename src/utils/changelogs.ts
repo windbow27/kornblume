@@ -1,5 +1,7 @@
 export const changelogs = [
     // Add more from top
+    { date: '21/05/2024', description: '• Added Jiu, Getian and Yenisei as released arcanists. \n • Updated zh-TW translations by Yumemigokochi.' },
+    { date: '19/05/2024', description: '• Added Semmelweis and Lucy as unreleased characters. Semmelweis is so hot i can\'t.' },
     { date: '10/05/2024', description: '• Added Ezra banner, I forgor.' },
     { date: '26/04/2024', description: '• Added Windsong as unreleased character.' },
     { date: '20/04/2024', description: '• Improved French translations by Sillight.' },
