@@ -23,6 +23,7 @@ export const bannerList = [
     'Yearning of the Water',
     'Yearning of the Water',
     'The Spores of Peace',
+    'Till the Last Drop',
     // standard
     'Amongst the Lake',
     // thread
@@ -54,7 +55,8 @@ export const bannerRateUp = [
     'Spathodea',
     'Tooth Fairy',
     'Centurion',
-    'Ezra Theodore'
+    'Ezra Theodore',
+    'Jiu Niangzi'
 ];
 
 export const specialArcanists: string[] = [

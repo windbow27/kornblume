@@ -63,6 +63,19 @@ const allPulls = computed(() => {
     });
 });
 
+const jiuNiangziPulls = computed(() => {
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Till the Last Drop');
+    return filteredPulls.map((pull, index) => {
+        return {
+            PullNumber: filteredPulls.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
+            Timestamp: pull.Timestamp
+        }
+    });
+});
+
 const yearningPulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Yearning of the Water');
     return filteredPulls.map((pull, index) => {
@@ -120,7 +133,8 @@ const limitedPulls = computed(() => {
         pull => pull.BannerType !== 'Amongst the Lake' &&
             pull.BannerType !== 'Invitation From the Water' &&
             pull.BannerType !== 'Abundance of the Water' &&
-            pull.BannerType !== 'Yearning of the Water');
+            pull.BannerType !== 'Yearning of the Water' &&
+            pull.BannerType !== 'Till the Last Drop');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -458,6 +472,11 @@ GApiSvc.init().then(async () => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
+            <!-- Temporary Jiu banner, will merge into special later -->
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Till the Last Drop' }"
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Till the Last Drop'">{{
+                    $t('jiu-niangzi') }}</button>
+
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Limited'">{{
                     $t('limited') }}</button>
@@ -499,6 +518,8 @@ GApiSvc.init().then(async () => {
         <TrackerBoard v-if="selectedBannerType === 'Abundance'" :text="$t('summary-abundance')" :pulls="abundancePulls"
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Yearning'" :text="$t('summary-yearning')" :pulls="yearningPulls"
+            :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Till the Last Drop'" :text="$t('jiu-niangzi')" :pulls="jiuNiangziPulls"
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
     </div>
 </template>
