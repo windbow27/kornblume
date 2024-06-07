@@ -6,11 +6,51 @@
     "Rarity": 6,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        254,
+        1360,
+        128,
+        128,
+        273,
+        9.1,
+        143.7
+      ],
+      "0-30": [
+        385,
+        2064,
+        194,
+        194,
+        273,
+        9.1,
+        143.7
+      ],
+      "1-40": [
+        646,
+        3461,
+        326,
+        326,
+        309,
+        10.3,
+        145.4
+      ],
+      "2-50": [
+        963,
+        5161,
+        486,
+        486,
+        345,
+        11.5,
+        147.3
+      ],
+      "3-60": [
+        1133,
+        6072,
+        572,
+        572,
+        381,
+        12.7,
+        149.1
+      ]
     },
     "Insight": [
       {
@@ -249,17 +289,346 @@
     ]
   },
   {
+    "Id": 10074,
+    "IsReleased": false,
+    "Name": "Vila",
+    "Rarity": 6,
+    "Afflatus": "Plant",
+    "Stats": {
+      "0-1": [
+        254,
+        1404,
+        111,
+        111,
+        273,
+        9.1,
+        143.7
+      ],
+      "0-30": [
+        385,
+        2132,
+        168,
+        168,
+        273,
+        9.1,
+        143.7
+      ],
+      "1-40": [
+        643,
+        3574,
+        281,
+        281,
+        309,
+        10.3,
+        145.4
+      ],
+      "2-50": [
+        963,
+        5329,
+        419,
+        419,
+        345,
+        11.5,
+        147.3
+      ],
+      "3-60": [
+        1133,
+        6270,
+        492,
+        492,
+        381,
+        12.7,
+        149.1
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Plantal Vimen",
+          "Shattered Bones",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Plantal Vimen",
+          "Milled Magnesia",
+          "Winged Key"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Plantal Vimen",
+          "Bogeyman",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          5,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Magnesia Crystal"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Trembling Tooth",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Esoteric Bones",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          5,
+          3,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Goose Neck",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          8,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Bifurcated Skeleton",
+          "Winged Key"
+        ],
+        "Quantity": [
+          1,
+          5,
+          8,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Hoarse Echo",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Glowing Mothwing",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Silver Bullet",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          8
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Serpent Scepter",
+          "Watch Core"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Mistilteinn",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10078,
     "IsReleased": false,
     "Name": "Lucy",
     "Rarity": 6,
     "Afflatus": "Intellect",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        234,
+        1493,
+        113,
+        113,
+        630,
+        21,
+        161.5
+      ],
+      "0-30": [
+        355,
+        2266,
+        172,
+        172,
+        630,
+        21,
+        161.5
+      ],
+      "1-40": [
+        595,
+        3800,
+        288,
+        288,
+        714,
+        23.8,
+        165.7
+      ],
+      "2-50": [
+        888,
+        5666,
+        430,
+        430,
+        798,
+        26.6,
+        169.9
+      ],
+      "3-60": [
+        1044,
+        6666,
+        505,
+        505,
+        882,
+        29.4,
+        174.1
+      ]
     },
     "Insight": [
       {
@@ -504,311 +873,102 @@
     ]
   },
   {
-  "Id": 10076,
-  "IsReleased": false,
-  "Name": "Windsong",
-  "Rarity": 6,
-  "Afflatus": "Star",
-  "Stats": {
-    "0-1": [69, 69, 69, 69, 69, 69, 69], 
-    "0-30": [69, 69, 69, 69, 69, 69, 69], 
-    "1-40": [69, 69, 69, 69, 69, 69, 69], 
-    "2-50": [69, 69, 69, 69, 69, 69, 69],
-    "3-60": [69, 69, 69, 69, 69, 69, 69]
-  },
-  "Insight": [
-    {
-      "Id": 1,
-      "Material": [
-        "Sharpodonty",
-        "Page of Starlit Ascent",
-        "Spell of Banishing",
-        "Perpetual Cog"
-      ],
-      "Quantity": [
-        18000,
-        6,
-        6,
-        5
-      ]
-    },
-    {
-      "Id": 2,
-      "Material": [
-        "Sharpodonty",
-        "Scroll of Starlit Ascent",
-        "Liquefied Terror",
-        "Holy Silver"
-      ],
-      "Quantity": [
-        40000,
-        10,
-        5,
-        5
-      ]
-    },
-    {
-      "Id": 3,
-      "Material": [
-        "Sharpodonty",
-        "Tome of Starlit Ascent",
-        "Glowing Mothwing",
-        "Mistilteinn"
-      ],
-      "Quantity": [
-        200000,
-        16,
-        6,
-        3
-      ]
-    }
-  ],
-  "Resonance": [
-    {
-      "Id": 2,
-      "Material": [
-        "Moment of Dissonance"
-      ],
-      "Quantity": [
-        5
-      ]
-    },
-    {
-      "Id": 3,
-      "Material": [
-        "Moment of Dissonance",
-        "Spell of Banishing"
-      ],
-      "Quantity": [
-        5,
-        6
-      ]
-    },
-    {
-      "Id": 4,
-      "Material": [
-        "Moment of Dissonance",
-        "Silver Ore",
-        "Solidus"
-      ],
-      "Quantity": [
-        5,
-        4,
-        3
-      ]
-    },
-    {
-      "Id": 5,
-      "Material": [
-        "Brief Cacophony",
-        "Milled Magnesia",
-        "Liquefied Terror"
-      ],
-      "Quantity": [
-        5,
-        3,
-        3
-      ]
-    },
-    {
-      "Id": 6,
-      "Material": [
-        "Sharpodonty",
-        "Brief Cacophony",
-        "Clawed Pendulum"
-      ],
-      "Quantity": [
-        30000,
-        5,
-        3
-      ]
-    },
-    {
-      "Id": 7,
-      "Material": [
-        "Brief Cacophony",
-        "Winged Key"
-      ],
-      "Quantity": [
-        6,
-        5
-      ]
-    },
-    {
-      "Id": 8,
-      "Material": [
-        "Brief Cacophony",
-        "Goose Neck",
-        "Esoteric Bones"
-      ],
-      "Quantity": [
-        6,
-        4,
-        6
-      ]
-    },
-    {
-      "Id": 9,
-      "Material": [
-        "Brief Cacophony",
-        "Biting Box",
-        "Spell of Fortune"
-      ],
-      "Quantity": [
-        8,
-        4,
-        6
-      ]
-    },
-    {
-      "Id": 10,
-      "Material": [
-        "Sinuous Howl",
-        "Sonorous Knell",
-        "Holy Silver",
-        "Bifurcated Skeleton"
-      ],
-      "Quantity": [
-        1,
-        5,
-        6,
-        8
-      ]
-    },
-    {
-      "Id": 11,
-      "Material": [
-        "Sinuous Howl",
-        "Sharpodonty",
-        "Sonorous Knell",
-        "Platinum Ouija"
-      ],
-      "Quantity": [
-        1,
-        120000,
-        5,
-        4
-      ]
-    },
-    {
-      "Id": 12,
-      "Material": [
-        "Sinuous Howl",
-        "Sonorous Knell",
-        "Watch Core",
-        "Prophetic Bird"
-      ],
-      "Quantity": [
-        1,
-        6,
-        4,
-        5
-      ]
-    },
-    {
-      "Id": 13,
-      "Material": [
-        "Sinuous Howl",
-        "Sonorous Knell",
-        "Murmur of Insanity",
-        "Holy Silver"
-      ],
-      "Quantity": [
-        1,
-        6,
-        5,
-        5
-      ]
-    },
-    {
-      "Id": 14,
-      "Material": [
-        "Sinuous Howl",
-        "Sonorous Knell",
-        "Fruit of Good and Evil",
-        "Bogeyman"
-      ],
-      "Quantity": [
-        1,
-        8,
-        2,
-        4
-      ]
-    },
-    {
-      "Id": 15,
-      "Material": [
-        "Sinuous Howl",
-        "Sonorous Knell",
-        "Golden Fleece",
-        "Wyrmling Skeleton"
-      ],
-      "Quantity": [
-        1,
-        8,
-        3,
-        4
-      ]
-    }
-  ]
-},
-  {
-    "Id": 10075,
-    "IsReleased": false,
-    "Name": "Avgust",
-    "Rarity": 5,
-    "Afflatus": "Plant",
+    "Id": 10071,
+    "IsReleased": true,
+    "Name": "Getian",
+    "Rarity": 6,
+    "Afflatus": "Beast",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        246,
+        1538,
+        124,
+        124,
+        218,
+        7.3,
+        140.9
+      ],
+      "0-30": [
+        374,
+        2334,
+        189,
+        189,
+        218,
+        7.3,
+        140.9
+      ],
+      "1-40": [
+        626,
+        3913,
+        316,
+        316,
+        247,
+        8.2,
+        142.3
+      ],
+      "2-50": [
+        933,
+        5835,
+        471,
+        471,
+        276,
+        9.2,
+        143.8
+      ],
+      "3-60": [
+        1097,
+        6864,
+        554,
+        554,
+        305,
+        10.2,
+        145.3
+      ]
     },
     "Insight": [
       {
         "Id": 1,
         "Material": [
           "Sharpodonty",
-          "Page of Plantal Vimen",
-          "Shattered Bones",
+          "Page of Beastly Thirst",
+          "Magnesia Crystal",
           "Rough Silver Ingot"
         ],
         "Quantity": [
-          12000,
+          18000,
           6,
-          4,
-          4
+          6,
+          5
         ]
       },
       {
         "Id": 2,
         "Material": [
           "Sharpodonty",
-          "Scroll of Plantal Vimen",
-          "Spell of Fortune",
-          "Clawed Pendulum"
+          "Scroll of Beastly Thirst",
+          "Esoteric Bones",
+          "Goose Neck"
         ],
         "Quantity": [
-          30000,
-          8,
-          6,
-          2
+          40000,
+          10,
+          5,
+          5
         ]
       },
       {
         "Id": 3,
         "Material": [
           "Sharpodonty",
-          "Tome of Plantal Vimen",
-          "Bogeyman",
-          "Golden Fleece"
+          "Tome of Beastly Thirst",
+          "Platinum Ouija",
+          "Serpent Scepter"
         ],
         "Quantity": [
-          120000,
-          12,
-          4,
-          2
+          200000,
+          16,
+          5,
+          3
         ]
       }
     ],
@@ -819,18 +979,18 @@
           "Moment of Dissonance"
         ],
         "Quantity": [
-          4
+          5
         ]
       },
       {
         "Id": 3,
         "Material": [
           "Moment of Dissonance",
-          "Silver Ore"
+          "Trembling Tooth"
         ],
         "Quantity": [
-          4,
-          5
+          5,
+          4
         ]
       },
       {
@@ -841,7 +1001,7 @@
           "Solidus"
         ],
         "Quantity": [
-          4,
+          5,
           4,
           3
         ]
@@ -850,45 +1010,8 @@
         "Id": 5,
         "Material": [
           "Brief Cacophony",
-          "Esoteric Bones",
-          "Milled Magnesia"
-        ],
-        "Quantity": [
-          4,
-          3,
-          3
-        ]
-      },
-      {
-        "Id": 6,
-        "Material": [
-          "Sharpodonty",
-          "Brief Cacophony",
-          "Clawed Pendulum"
-        ],
-        "Quantity": [
-          25000,
-          4,
-          3
-        ]
-      },
-      {
-        "Id": 7,
-        "Material": [
-          "Brief Cacophony",
-          "Holy Silver"
-        ],
-        "Quantity": [
-          5,
-          5
-        ]
-      },
-      {
-        "Id": 8,
-        "Material": [
-          "Brief Cacophony",
-          "Prophetic Bird",
-          "Esoteric Bones"
+          "Cicada Wings",
+          "Spell of Fortune"
         ],
         "Quantity": [
           5,
@@ -897,286 +1020,74 @@
         ]
       },
       {
-        "Id": 9,
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
         "Material": [
           "Brief Cacophony",
-          "Biting Box",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver",
           "Liquefied Terror"
         ],
         "Quantity": [
           6,
           4,
-          5
+          4
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          8,
+          7,
+          6
         ]
       },
       {
         "Id": 10,
         "Material": [
-          "Sinuous Howl",
+          "Hypocritical Murmur",
           "Sonorous Knell",
-          "Salted Mandrake",
-          "Prophetic Bird"
-        ],
-        "Quantity": [
-          1,
-          4,
-          6,
-          8
-        ]
-      },
-      {
-        "Id": 11,
-        "Material": [
-          "Sinuous Howl",
-          "Sharpodonty",
-          "Sonorous Knell",
-          "Platinum Ouija"
-        ],
-        "Quantity": [
-          1,
-          100000,
-          4,
-          3
-        ]
-      },
-      {
-        "Id": 12,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Incorrupt Monkeypaw",
-          "Holy Silver"
-        ],
-        "Quantity": [
-          1,
-          5,
-          3,
-          5
-        ]
-      },
-      {
-        "Id": 13,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Wyrmling Skeleton",
+          "Winged Key",
           "Salted Mandrake"
         ],
         "Quantity": [
           1,
           5,
-          4,
-          7
-        ]
-      },
-      {
-        "Id": 14,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Fruit of Good and Evil",
-          "Bogeyman"
-        ],
-        "Quantity": [
-          1,
           6,
-          1,
-          3
-        ]
-      },
-      {
-        "Id": 15,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Mistilteinn",
-          "Wyrmling Skeleton"
-        ],
-        "Quantity": [
-          1,
-          6,
-          2,
-          4
-        ]
-      }
-    ]
-  },
-  {
-    "Id": 10074,
-    "IsReleased": false,
-    "Name": "Vila",
-    "Rarity": 6,
-    "Afflatus": "Plant",
-    "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
-    },
-    "Insight": [
-      {
-        "Id": 1,
-        "Material": [
-          "Sharpodonty",
-          "Page of Plantal Vimen",
-          "Shattered Bones",
-          "Spell of Fortune"
-        ],
-        "Quantity": [
-          18000,
-          6,
-          6,
-          6
-        ]
-      },
-      {
-        "Id": 2,
-        "Material": [
-          "Sharpodonty",
-          "Scroll of Plantal Vimen",
-          "Milled Magnesia",
-          "Winged Key"
-        ],
-        "Quantity": [
-          40000,
-          10,
-          5,
-          6
-        ]
-      },
-      {
-        "Id": 3,
-        "Material": [
-          "Sharpodonty",
-          "Tome of Plantal Vimen",
-          "Bogeyman",
-          "Fruit of Good and Evil"
-        ],
-        "Quantity": [
-          200000,
-          16,
-          5,
-          3
-        ]
-      }
-    ],
-    "Resonance": [
-      {
-        "Id": 2,
-        "Material": [
-          "Moment of Dissonance"
-        ],
-        "Quantity": [
-          5
-        ]
-      },
-      {
-        "Id": 3,
-        "Material": [
-          "Moment of Dissonance",
-          "Magnesia Crystal"
-        ],
-        "Quantity": [
-          5,
-          4
-        ]
-      },
-      {
-        "Id": 4,
-        "Material": [
-          "Moment of Dissonance",
-          "Trembling Tooth",
-          "Solidus"
-        ],
-        "Quantity": [
-          5,
-          4,
-          3
-        ]
-      },
-      {
-        "Id": 5,
-        "Material": [
-          "Brief Cacophony",
-          "Esoteric Bones",
-          "Perpetual Cog"
-        ],
-        "Quantity": [
-          5,
-          3,
-          3
-        ]
-      },
-      {
-        "Id": 6,
-        "Material": [
-          "Sharpodonty",
-          "Brief Cacophony",
-          "Golden Beetle"
-        ],
-        "Quantity": [
-          30000,
-          5,
-          3
-        ]
-      },
-      {
-        "Id": 7,
-        "Material": [
-          "Brief Cacophony",
-          "Holy Silver"
-        ],
-        "Quantity": [
-          6,
-          5
-        ]
-      },
-      {
-        "Id": 8,
-        "Material": [
-          "Brief Cacophony",
-          "Prophetic Bird",
-          "Cicada Wings"
-        ],
-        "Quantity": [
-          6,
-          4,
-          5
-        ]
-      },
-      {
-        "Id": 9,
-        "Material": [
-          "Brief Cacophony",
-          "Goose Neck",
-          "Liquefied Terror"
-        ],
-        "Quantity": [
-          8,
-          5,
-          5
-        ]
-      },
-      {
-        "Id": 10,
-        "Material": [
-          "Hoarse Echo",
-          "Sonorous Knell",
-          "Bifurcated Skeleton",
-          "Winged Key"
-        ],
-        "Quantity": [
-          1,
-          5,
-          8,
           6
         ]
       },
       {
         "Id": 11,
         "Material": [
-          "Hoarse Echo",
+          "Hypocritical Murmur",
           "Sharpodonty",
           "Sonorous Knell",
           "Golden Compass"
@@ -1191,280 +1102,31 @@
       {
         "Id": 12,
         "Material": [
-          "Hoarse Echo",
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Wyrmling Skeleton",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Hypocritical Murmur",
           "Sonorous Knell",
           "Glowing Mothwing",
-          "Biting Box"
+          "Goose Neck"
         ],
         "Quantity": [
           1,
           6,
-          4,
-          5
-        ]
-      },
-      {
-        "Id": 13,
-        "Material": [
-          "Hoarse Echo",
-          "Sonorous Knell",
-          "Silver Bullet",
-          "Prophetic Bird"
-        ],
-        "Quantity": [
-          1,
-          6,
-          5,
-          8
-        ]
-      },
-      {
-        "Id": 14,
-        "Material": [
-          "Hoarse Echo",
-          "Sonorous Knell",
-          "Serpent Scepter",
-          "Watch Core"
-        ],
-        "Quantity": [
-          1,
-          8,
-          2,
-          4
-        ]
-      },
-      {
-        "Id": 15,
-        "Material": [
-          "Hoarse Echo",
-          "Sonorous Knell",
-          "Mistilteinn",
-          "Bogeyman"
-        ],
-        "Quantity": [
-          1,
-          8,
-          3,
-          4
-        ]
-      }
-    ]
-  },
-  {
-    "Id": 10073,
-    "IsReleased": false,
-    "Name": "Marcus",
-    "Rarity": 6,
-    "Afflatus": "Plant",
-    "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
-    },
-    "Insight": [
-      {
-        "Id": 1,
-        "Material": [
-          "Sharpodonty",
-          "Page of Plantal Vimen",
-          "Trembling Tooth",
-          "Cicada Wings"
-        ],
-        "Quantity": [
-          18000,
-          6,
-          5,
-          6
-        ]
-      },
-      {
-        "Id": 2,
-        "Material": [
-          "Sharpodonty",
-          "Scroll of Plantal Vimen",
-          "Solidus",
-          "Prophetic Bird"
-        ],
-        "Quantity": [
-          40000,
-          10,
-          3,
-          6
-        ]
-      },
-      {
-        "Id": 3,
-        "Material": [
-          "Sharpodonty",
-          "Tome of Plantal Vimen",
-          "Golden Compass",
-          "Fruit of Good and Evil"
-        ],
-        "Quantity": [
-          200000,
-          16,
-          5,
-          3
-        ]
-      }
-    ],
-    "Resonance": [
-      {
-        "Id": 2,
-        "Material": [
-          "Moment of Dissonance"
-        ],
-        "Quantity": [
-          5
-        ]
-      },
-      {
-        "Id": 3,
-        "Material": [
-          "Moment of Dissonance",
-          "Silver Ore"
-        ],
-        "Quantity": [
           5,
           5
-        ]
-      },
-      {
-        "Id": 4,
-        "Material": [
-          "Moment of Dissonance",
-          "Magnesia Crystal",
-          "Solidus"
-        ],
-        "Quantity": [
-          5,
-          4,
-          3
-        ]
-      },
-      {
-        "Id": 5,
-        "Material": [
-          "Brief Cacophony",
-          "Spell of Fortune",
-          "Esoteric Bones"
-        ],
-        "Quantity": [
-          5,
-          4,
-          4
-        ]
-      },
-      {
-        "Id": 6,
-        "Material": [
-          "Sharpodonty",
-          "Brief Cacophony",
-          "Golden Beetle"
-        ],
-        "Quantity": [
-          30000,
-          5,
-          3
-        ]
-      },
-      {
-        "Id": 7,
-        "Material": [
-          "Brief Cacophony",
-          "Biting Box"
-        ],
-        "Quantity": [
-          6,
-          4
-        ]
-      },
-      {
-        "Id": 8,
-        "Material": [
-          "Brief Cacophony",
-          "Goose Neck",
-          "Rough Silver Ingot"
-        ],
-        "Quantity": [
-          6,
-          4,
-          4
-        ]
-      },
-      {
-        "Id": 9,
-        "Material": [
-          "Brief Cacophony",
-          "Bifurcated Skeleton",
-          "Cicada Wings"
-        ],
-        "Quantity": [
-          8,
-          5,
-          6
-        ]
-      },
-      {
-        "Id": 10,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sonorous Knell",
-          "Holy Silver",
-          "Prophetic Bird"
-        ],
-        "Quantity": [
-          1,
-          5,
-          6,
-          8
-        ]
-      },
-      {
-        "Id": 11,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sharpodonty",
-          "Sonorous Knell",
-          "Golden Compass"
-        ],
-        "Quantity": [
-          1,
-          120000,
-          5,
-          4
-        ]
-      },
-      {
-        "Id": 12,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sonorous Knell",
-          "Murmur of Insanity",
-          "Winged Key"
-        ],
-        "Quantity": [
-          1,
-          6,
-          4,
-          5
-        ]
-      },
-      {
-        "Id": 13,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sonorous Knell",
-          "Watch Core",
-          "Biting Box"
-        ],
-        "Quantity": [
-          1,
-          6,
-          5,
-          6
         ]
       },
       {
@@ -1473,7 +1135,7 @@
           "Hypocritical Murmur",
           "Sonorous Knell",
           "Fruit of Good and Evil",
-          "Wyrmling Skeleton"
+          "Silver Bullet"
         ],
         "Quantity": [
           1,
@@ -1487,8 +1149,8 @@
         "Material": [
           "Hypocritical Murmur",
           "Sonorous Knell",
-          "Serpent Scepter",
-          "Silver Bullet"
+          "Mistilteinn",
+          "Murmur of Insanity"
         ],
         "Quantity": [
           1,
@@ -1506,11 +1168,51 @@
     "Rarity": 6,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        259,
+        1493,
+        113,
+        106,
+        382,
+        12.7,
+        149.1
+      ],
+      "0-30": [
+        393,
+        2266,
+        172,
+        161,
+        382,
+        12.7,
+        149.1
+      ],
+      "1-40": [
+        658,
+        3800,
+        288,
+        269,
+        433,
+        14.4,
+        151.6
+      ],
+      "2-50": [
+        980,
+        5666,
+        430,
+        402,
+        484,
+        16.1,
+        154.2
+      ],
+      "3-60": [
+        1153,
+        6666,
+        505,
+        472,
+        535,
+        17.8,
+        156.8
+      ]
     },
     "Insight": [
       {
@@ -1749,17 +1451,641 @@
     ]
   },
   {
+    "Id": 10072,
+    "IsReleased": false,
+    "Name": "Isolde",
+    "Rarity": 6,
+    "Afflatus": "Spirit",
+    "Stats": {
+      "0-1": [
+        251,
+        1552,
+        126,
+        117,
+        273,
+        9.1,
+        143.7
+      ],
+      "0-30": [
+        381,
+        2356,
+        191,
+        178,
+        273,
+        9.1,
+        143.7
+      ],
+      "1-40": [
+        639,
+        3949,
+        319,
+        297,
+        309,
+        10.3,
+        145.4
+      ],
+      "2-50": [
+        952,
+        5889,
+        475,
+        443,
+        345,
+        11.5,
+        147.3
+      ],
+      "3-60": [
+        1120,
+        6927,
+        559,
+        520,
+        381,
+        12.7,
+        149.1
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Plantal Vimen",
+          "Page of Beastly Thirst",
+          "Silver Ore",
+          "Milled Magnesia"
+        ],
+        "Quantity": [
+          18000,
+          3,
+          3,
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Plantal Vimen",
+          "Scroll of Beastly Thirst",
+          "Esoteric Bones",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          40000,
+          5,
+          5,
+          6,
+          3
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Plantal Vimen",
+          "Tome of Beastly Thirst",
+          "Murmur of Insanity",
+          "Serpent Scepter"
+        ],
+        "Quantity": [
+          200000,
+          8,
+          8,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Shattered Bones"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Spell of Banishing",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          6,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Liquefied Terror",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          5,
+          3,
+          4
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Winged Key"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Bifurcated Skeleton",
+          "Milled Magnesia"
+        ],
+        "Quantity": [
+          8,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Prophetic Bird",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Sinuous Howl",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Bogeyman",
+          "Winged Key"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Murmur of Insanity",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Mistilteinn",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Golden Fleece",
+          "Watch Core"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 10080,
+    "IsReleased": false,
+    "Name": "Kakania",
+    "Rarity": 6,
+    "Afflatus": "Plant",
+    "Stats": {
+      "0-1": [
+        227,
+        1922,
+        129,
+        129,
+        218,
+        7.3,
+        140.9
+      ],
+      "0-30": [
+        344,
+        2917,
+        196,
+        196,
+        218,
+        7.3,
+        140.9
+      ],
+      "1-40": [
+        576,
+        4890,
+        329,
+        329,
+        247,
+        8.2,
+        142.3
+      ],
+      "2-50": [
+        859,
+        7292,
+        490,
+        490,
+        276,
+        9.2,
+        143.8
+      ],
+      "3-60": [
+        1011,
+        8579,
+        577,
+        577,
+        305,
+        10.8,
+        145.3
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Plantal Vimen",
+          "Spell of Banishing",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Plantal Vimen",
+          "Rough Silver Ingot",
+          "Biting Box"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Plantal Vimen",
+          "Glowing Mothwing",
+          "Rhine Gold"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Shattered Bones"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Trembling Tooth",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Spell of Fortune",
+          "Alopecurus pratensis"
+        ],
+        "Quantity": [
+          5,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Winged Key",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          6,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Golden Herb Incense",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          8,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Prophetic Bird",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          8
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Hoarse Echo",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Watch Core",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Wyrmling Skeleton",
+          "Goose Neck"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Golden Fleece",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Rhine Gold",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10064,
     "IsReleased": true,
     "Name": "6",
     "Rarity": 6,
     "Afflatus": "Intellect",
     "Stats": {
-			"0-1": [251, 1611, 132, 140, 300, 10, 145], 
-			"0-30": [381, 2446, 200, 213, 300, 10, 145], 
-			"1-40": [639, 4100, 335, 357, 340, 11.33, 147], 
-			"2-50": [952, 6113, 499, 531, 380, 12.67, 149], 
-			"3-60": [1120, 7192, 587, 625, 420, 14, 151]
+      "0-1": [
+        251,
+        1611,
+        132,
+        140,
+        300,
+        10,
+        145
+      ],
+      "0-30": [
+        381,
+        2446,
+        200,
+        213,
+        300,
+        10,
+        145
+      ],
+      "1-40": [
+        639,
+        4100,
+        335,
+        357,
+        340,
+        11.3,
+        147
+      ],
+      "2-50": [
+        952,
+        6113,
+        499,
+        531,
+        380,
+        12.7,
+        149
+      ],
+      "3-60": [
+        1120,
+        7192,
+        582,
+        625,
+        420,
+        14,
+        151
+      ]
     },
     "Insight": [
       {
@@ -2004,17 +2330,346 @@
     ]
   },
   {
+    "Id": 10076,
+    "IsReleased": false,
+    "Name": "Windsong",
+    "Rarity": 6,
+    "Afflatus": "Star",
+    "Stats": {
+      "0-1": [
+        256,
+        1404,
+        111,
+        111,
+        382,
+        12.7,
+        149.1
+      ],
+      "0-30": [
+        389,
+        2132,
+        168,
+        168,
+        382,
+        12.7,
+        149.1
+      ],
+      "1-40": [
+        652,
+        3572,
+        281,
+        281,
+        433,
+        0,
+        0
+      ],
+      "2-50": [
+        972,
+        5329,
+        419,
+        419,
+        484,
+        0,
+        0
+      ],
+      "3-60": [
+        1143,
+        6270,
+        492,
+        492,
+        535,
+        17.8,
+        156.8
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Starlit Ascent",
+          "Spell of Banishing",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Starlit Ascent",
+          "Liquefied Terror",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Starlit Ascent",
+          "Glowing Mothwing",
+          "Mistilteinn"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Spell of Banishing"
+        ],
+        "Quantity": [
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Silver Ore",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Milled Magnesia",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          5,
+          3,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Clawed Pendulum"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Winged Key"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Goose Neck",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          6,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          8,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Holy Silver",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          8
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Sinuous Howl",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Watch Core",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Murmur of Insanity",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Fruit of Good and Evil",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Golden Fleece",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10067,
     "IsReleased": true,
     "Name": "Ezra Theodore",
     "Rarity": 6,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        212,
+        1848,
+        128,
+        128,
+        327,
+        10.9,
+        146.4
+      ],
+      "0-30": [
+        322,
+        2805,
+        194,
+        194,
+        327,
+        10.9,
+        146.4
+      ],
+      "1-40": [
+        539,
+        4702,
+        326,
+        326,
+        370,
+        12.3,
+        148.5
+      ],
+      "2-50": [
+        803,
+        7012,
+        486,
+        486,
+        413,
+        13.8,
+        150.6
+      ],
+      "3-60": [
+        945,
+        8249,
+        572,
+        572,
+        456,
+        15.2,
+        152.8
+      ]
     },
     "Insight": [
       {
@@ -2259,11 +2914,51 @@
     "Rarity": 6,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        266,
+        1478,
+        121,
+        111,
+        218,
+        7.3,
+        140.9
+      ],
+      "0-30": [
+        404,
+        2244,
+        183,
+        168,
+        218,
+        7.3,
+        140.9
+      ],
+      "1-40": [
+        677,
+        3762,
+        307,
+        281,
+        247,
+        8.2,
+        142.3
+      ],
+      "2-50": [
+        1009,
+        5610,
+        458,
+        419,
+        276,
+        9.2,
+        143.8
+      ],
+      "3-60": [
+        1186,
+        6600,
+        538,
+        492,
+        305,
+        10.2,
+        145.3
+      ]
     },
     "Insight": [
       {
@@ -2508,11 +3203,51 @@
     "Rarity": 6,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [249, 1626, 117, 113, 191, 6.37, 139.55], 
-			"0-30": [378, 2468, 178, 172, 191, 6.37, 139.55], 
-			"1-40": [633, 4137, 297, 288, 216, 7.2, 140.8], 
-			"2-50": [944, 6169, 443, 430, 241, 8.03, 142.05], 
-			"3-60": [1110, 7258, 520, 505, 266, 8.87, 143.3]
+      "0-1": [
+        249,
+        1626,
+        117,
+        113,
+        191,
+        6.4,
+        139.6
+      ],
+      "0-30": [
+        378,
+        2468,
+        178,
+        172,
+        191,
+        6.4,
+        139.6
+      ],
+      "1-40": [
+        633,
+        4137,
+        297,
+        288,
+        216,
+        7.2,
+        140.8
+      ],
+      "2-50": [
+        944,
+        6169,
+        443,
+        430,
+        241,
+        8,
+        142.1
+      ],
+      "3-60": [
+        1110,
+        7258,
+        520,
+        505,
+        266,
+        8.9,
+        143.3
+      ]
     },
     "Insight": [
       {
@@ -2757,11 +3492,51 @@
     "Rarity": 6,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [261, 1316, 123, 111, 354, 11.8, 147.7], 
-			"0-30": [396, 1997, 187, 168, 354, 11.8, 147.7], 
-			"1-40": [664, 3348, 313, 281, 401, 13.37, 150.05], 
-			"2-50": [989, 4992, 467, 419, 448, 14.93, 152.4], 
-			"3-60": [1163, 5873, 549, 492, 495, 16.5, 154.75]
+      "0-1": [
+        261,
+        1316,
+        123,
+        111,
+        354,
+        11.8,
+        147.7
+      ],
+      "0-30": [
+        396,
+        1997,
+        187,
+        168,
+        354,
+        11.8,
+        147.7
+      ],
+      "1-40": [
+        664,
+        3348,
+        313,
+        281,
+        401,
+        13.4,
+        150.1
+      ],
+      "2-50": [
+        989,
+        4992,
+        467,
+        419,
+        448,
+        14.9,
+        152.4
+      ],
+      "3-60": [
+        1163,
+        5873,
+        549,
+        492,
+        495,
+        16.5,
+        154.8
+      ]
     },
     "Insight": [
       {
@@ -3006,11 +3781,51 @@
     "Rarity": 6,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [269, 1242, 113, 131, 313, 10.43, 145.65], 
-			"0-30": [408, 1885, 172, 198, 313, 10.43, 145.65], 
-			"1-40": [683, 3160, 288, 332, 354, 11.8, 147.7], 
-			"2-50": [1019, 4712, 430, 495, 395, 13.17, 149.75], 
-			"3-60": [1199, 5543, 505, 582, 436, 14.53, 151.8]
+      "0-1": [
+        269,
+        1242,
+        113,
+        131,
+        313,
+        10.4,
+        145.7
+      ],
+      "0-30": [
+        408,
+        1885,
+        172,
+        198,
+        313,
+        10.4,
+        145.7
+      ],
+      "1-40": [
+        683,
+        3160,
+        288,
+        332,
+        354,
+        11.8,
+        147.7
+      ],
+      "2-50": [
+        1019,
+        4712,
+        430,
+        495,
+        395,
+        13.2,
+        149.8
+      ],
+      "3-60": [
+        1199,
+        5543,
+        505,
+        582,
+        436,
+        14.5,
+        151.8
+      ]
     },
     "Insight": [
       {
@@ -3249,17 +4064,346 @@
     ]
   },
   {
+    "Id": 10073,
+    "IsReleased": false,
+    "Name": "Marcus",
+    "Rarity": 6,
+    "Afflatus": "Plant",
+    "Stats": {
+      "0-1": [
+        261,
+        1419,
+        116,
+        116,
+        218,
+        7.3,
+        140.9
+      ],
+      "0-30": [
+        396,
+        2154,
+        176,
+        176,
+        218,
+        7.3,
+        140.9
+      ],
+      "1-40": [
+        664,
+        3611,
+        294,
+        294,
+        247,
+        8.2,
+        142.3
+      ],
+      "2-50": [
+        989,
+        5385,
+        438,
+        438,
+        276,
+        9.2,
+        143.8
+      ],
+      "3-60": [
+        1163,
+        6336,
+        515,
+        515,
+        305,
+        10.2,
+        145.3
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Plantal Vimen",
+          "Trembling Tooth",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Plantal Vimen",
+          "Solidus",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          3,
+          6
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Plantal Vimen",
+          "Golden Compass",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          5,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Silver Ore"
+        ],
+        "Quantity": [
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Magnesia Crystal",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Spell of Fortune",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          5,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box"
+        ],
+        "Quantity": [
+          6,
+          4
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Goose Neck",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          6,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Bifurcated Skeleton",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          8,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Holy Silver",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          8
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Murmur of Insanity",
+          "Winged Key"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Watch Core",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Fruit of Good and Evil",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Serpent Scepter",
+          "Silver Bullet"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10058,
     "IsReleased": true,
     "Name": "Pickles",
     "Rarity": 6,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [251, 1449, 118, 133, 218, 7.27, 140.9], 
-			"0-30": [381, 2199, 180, 202, 218, 7.27, 140.9], 
-			"1-40": [639, 3687, 300, 338, 247, 8.23, 142.35], 
-			"2-50": [952, 5498, 447, 503, 276, 9.2, 143.8], 
-			"3-60": [1120, 6468, 525, 592, 305, 10.17, 145.25]
+      "0-1": [
+        251,
+        1449,
+        118,
+        133,
+        218,
+        7.3,
+        140.9
+      ],
+      "0-30": [
+        381,
+        2199,
+        180,
+        202,
+        218,
+        7.3,
+        140.9
+      ],
+      "1-40": [
+        639,
+        3687,
+        300,
+        338,
+        247,
+        8.26,
+        142.35
+      ],
+      "2-50": [
+        952,
+        5498,
+        447,
+        503,
+        276,
+        9.23,
+        143.8
+      ],
+      "3-60": [
+        1120,
+        6468,
+        525,
+        592,
+        305,
+        10.2,
+        145.25
+      ]
     },
     "Insight": [
       {
@@ -3504,11 +4648,51 @@
     "Rarity": 6,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [254, 1390, 128, 128, 245, 8.17, 142.25], 
-			"0-30": [385, 2109, 194, 194, 245, 8.17, 142.25], 
-			"1-40": [646, 3536, 326, 326, 277, 9.23, 143.85], 
-			"2-50": [963, 5273, 486, 486, 309, 10.3, 145.45], 
-			"3-60": [1133, 6204, 572, 572, 341, 11.37, 147.05]
+      "0-1": [
+        254,
+        1390,
+        128,
+        128,
+        245,
+        8.2,
+        142.25
+      ],
+      "0-30": [
+        385,
+        2109,
+        194,
+        194,
+        245,
+        8.2,
+        142.25
+      ],
+      "1-40": [
+        646,
+        3536,
+        326,
+        326,
+        277,
+        9.26,
+        143.85
+      ],
+      "2-50": [
+        963,
+        5273,
+        486,
+        486,
+        309,
+        10.3,
+        145.45
+      ],
+      "3-60": [
+        1133,
+        6204,
+        572,
+        572,
+        341,
+        11.4,
+        147.05
+      ]
     },
     "Insight": [
       {
@@ -3753,11 +4937,51 @@
     "Rarity": 6,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [256, 1567, 121, 121, 204, 6.8, 140.2], 
-			"0-30": [389, 2379, 183, 183, 204, 6.8, 140.2], 
-			"1-40": [652, 3987, 307, 307, 231, 7.7, 141.55], 
-			"2-50": [972, 5945, 458, 458, 258, 8.6, 142.9], 
-			"3-60": [1143, 6993, 538, 538, 285, 9.5, 144.25]
+      "0-1": [
+        256,
+        1567,
+        121,
+        121,
+        204,
+        6.8,
+        140.2
+      ],
+      "0-30": [
+        389,
+        2379,
+        183,
+        183,
+        204,
+        6.8,
+        140.2
+      ],
+      "1-40": [
+        652,
+        3987,
+        307,
+        307,
+        231,
+        7.7,
+        141.6
+      ],
+      "2-50": [
+        972,
+        5945,
+        458,
+        458,
+        258,
+        8.6,
+        142.9
+      ],
+      "3-60": [
+        1143,
+        6993,
+        538,
+        538,
+        285,
+        9.5,
+        144.3
+      ]
     },
     "Insight": [
       {
@@ -4002,11 +5226,51 @@
     "Rarity": 6,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [251, 1375, 116, 131, 313, 10.43, 145.65], 
-			"0-30": [381, 2087, 176, 198, 313, 10.43, 145.65], 
-			"1-40": [639, 3499, 294, 332, 354, 11.8, 147.7], 
-			"2-50": [952, 5217, 438, 495, 395, 13.17, 149.75], 
-			"3-60": [1120, 6138, 515, 582, 436, 14.53, 151.8]
+      "0-1": [
+        251,
+        1375,
+        116,
+        131,
+        313,
+        10.4,
+        145.7
+      ],
+      "0-30": [
+        381,
+        2087,
+        176,
+        198,
+        313,
+        10.4,
+        145.7
+      ],
+      "1-40": [
+        639,
+        3499,
+        294,
+        332,
+        354,
+        11.8,
+        147.7
+      ],
+      "2-50": [
+        952,
+        5217,
+        438,
+        495,
+        395,
+        13.2,
+        149.8
+      ],
+      "3-60": [
+        1120,
+        6138,
+        515,
+        582,
+        436,
+        14.5,
+        151.8
+      ]
     },
     "Insight": [
       {
@@ -4251,11 +5515,51 @@
     "Rarity": 6,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [232, 1700, 136, 111, 218, 7.27, 140.9], 
-			"0-30": [352, 2581, 206, 168, 218, 7.27, 140.9], 
-			"1-40": [589, 4326, 345, 281, 247, 8.23, 142.35], 
-			"2-50": [879, 6450, 514, 419, 276, 9.2, 143.8], 
-			"3-60": [1034, 7588, 605, 492, 305, 10.17, 145.25]
+      "0-1": [
+        232,
+        1700,
+        136,
+        111,
+        218,
+        7.3,
+        140.9
+      ],
+      "0-30": [
+        352,
+        2581,
+        206,
+        168,
+        218,
+        7.3,
+        140
+      ],
+      "1-40": [
+        589,
+        4326,
+        345,
+        281,
+        247,
+        8.2,
+        142.3
+      ],
+      "2-50": [
+        879,
+        6450,
+        514,
+        419,
+        276,
+        9.2,
+        143.8
+      ],
+      "3-60": [
+        1034,
+        7588,
+        605,
+        492,
+        305,
+        10.2,
+        145.3
+      ]
     },
     "Insight": [
       {
@@ -4500,11 +5804,51 @@
     "Rarity": 6,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [251, 1538, 136, 111, 182, 6.07, 139.1], 
-			"0-30": [381, 2334, 206, 168, 182, 6.07, 139.1], 
-			"1-40": [639, 3913, 345, 281, 206, 6.87, 140.3], 
-			"2-50": [952, 5835, 514, 419, 230, 7.67, 141.5], 
-			"3-60": [1120, 6864, 605, 492, 254, 8.47, 142.7]
+      "0-1": [
+        251,
+        1538,
+        136,
+        111,
+        182,
+        6.1,
+        139.1
+      ],
+      "0-30": [
+        381,
+        2334,
+        206,
+        168,
+        182,
+        6.1,
+        139.1
+      ],
+      "1-40": [
+        639,
+        3913,
+        345,
+        281,
+        206,
+        6.9,
+        140.3
+      ],
+      "2-50": [
+        952,
+        5835,
+        514,
+        419,
+        230,
+        7.7,
+        141.5
+      ],
+      "3-60": [
+        1120,
+        6864,
+        605,
+        492,
+        254,
+        8.5,
+        142.7
+      ]
     },
     "Insight": [
       {
@@ -4749,11 +6093,51 @@
     "Rarity": 6,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [251, 1508, 116, 123, 234, 7.8, 141.7], 
-			"0-30": [381, 2289, 176, 187, 234, 7.8, 141.7], 
-			"1-40": [639, 3837, 294, 313, 265, 8.83, 143.25], 
-			"2-50": [952, 5722, 438, 467, 296, 9.87, 144.8], 
-			"3-60": [1120, 6732, 515, 549, 327, 10.9, 146.35]
+      "0-1": [
+        251,
+        1508,
+        116,
+        123,
+        234,
+        7.8,
+        141.7
+      ],
+      "0-30": [
+        381,
+        2289,
+        176,
+        187,
+        234,
+        7.8,
+        141.7
+      ],
+      "1-40": [
+        639,
+        3837,
+        294,
+        313,
+        265,
+        8.8,
+        143.25
+      ],
+      "2-50": [
+        952,
+        5722,
+        438,
+        467,
+        296,
+        9.9,
+        144.8
+      ],
+      "3-60": [
+        1120,
+        6732,
+        515,
+        549,
+        327,
+        10.93,
+        146.35
+      ]
     },
     "Insight": [
       {
@@ -4998,11 +6382,51 @@
     "Rarity": 6,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [241, 1508, 126, 126, 273, 9.1, 143.65], 
-			"0-30": [367, 2289, 191, 191, 273, 9.1, 143.65], 
-			"1-40": [614, 3837, 319, 319, 309, 10.3, 145.45], 
-			"2-50": [916, 5722, 475, 475, 345, 11.5, 147.25], 
-			"3-60": [1077, 6732, 559, 559, 381, 12.7, 149.05]
+      "0-1": [
+        241,
+        1508,
+        126,
+        126,
+        273,
+        9.13,
+        143.65
+      ],
+      "0-30": [
+        367,
+        2289,
+        191,
+        191,
+        273,
+        9.13,
+        143.65
+      ],
+      "1-40": [
+        614,
+        3837,
+        319,
+        319,
+        309,
+        10.3,
+        145.45
+      ],
+      "2-50": [
+        916,
+        5722,
+        475,
+        475,
+        345,
+        11.53,
+        147.25
+      ],
+      "3-60": [
+        1077,
+        6732,
+        559,
+        559,
+        381,
+        12.7,
+        149.05
+      ]
     },
     "Insight": [
       {
@@ -5247,11 +6671,51 @@
     "Rarity": 6,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [261, 1257, 128, 128, 273, 9.1, 143.65], 
-			"0-30": [396, 1907, 194, 194, 273, 9.1, 143.65], 
-			"1-40": [664, 3197, 326, 326, 309, 10.3, 145.45], 
-			"2-50": [989, 4768, 486, 486, 345, 11.5, 147.25], 
-			"3-60": [1163, 5609, 572, 572, 381, 12.7, 149.05]
+      "0-1": [
+        261,
+        1257,
+        128,
+        128,
+        273,
+        9.13,
+        143.65
+      ],
+      "0-30": [
+        396,
+        1907,
+        194,
+        194,
+        273,
+        9.13,
+        143.65
+      ],
+      "1-40": [
+        664,
+        3197,
+        326,
+        326,
+        309,
+        10.3,
+        145.45
+      ],
+      "2-50": [
+        989,
+        4768,
+        486,
+        486,
+        345,
+        11.53,
+        147.25
+      ],
+      "3-60": [
+        1163,
+        5609,
+        572,
+        572,
+        381,
+        12.73,
+        149.05
+      ]
     },
     "Insight": [
       {
@@ -5496,11 +6960,51 @@
     "Rarity": 6,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [259, 1331, 123, 99, 409, 13.63, 150.45], 
-			"0-30": [393, 2020, 187, 150, 409, 13.63, 150.45], 
-			"1-40": [658, 3386, 313, 251, 463, 15.43, 153.15], 
-			"2-50": [980, 5049, 467, 374, 517, 17.23, 155.85], 
-			"3-60": [1153, 5939, 549, 439, 571, 19.03, 158.55]
+      "0-1": [
+        259,
+        1331,
+        123,
+        99,
+        409,
+        13.6,
+        150.45
+      ],
+      "0-30": [
+        393,
+        2020,
+        187,
+        150,
+        409,
+        13.6,
+        150.45
+      ],
+      "1-40": [
+        658,
+        3386,
+        313,
+        251,
+        463,
+        15.4,
+        153.15
+      ],
+      "2-50": [
+        980,
+        5049,
+        467,
+        374,
+        517,
+        17.2,
+        155.85
+      ],
+      "3-60": [
+        1153,
+        5939,
+        549,
+        439,
+        571,
+        19,
+        158.55
+      ]
     },
     "Insight": [
       {
@@ -5745,11 +7249,51 @@
     "Rarity": 6,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [266, 1257, 101, 136, 368, 12.27, 148.4], 
-			"0-30": [404, 1907, 153, 206, 368, 12.27, 148.4], 
-			"1-40": [677, 3197, 257, 345, 417, 13.9, 150.85], 
-			"2-50": [1009, 4768, 382, 514, 466, 15.53, 153.3], 
-			"3-60": [1186, 5609, 449, 605, 515, 17.17, 155.75]
+      "0-1": [
+        266,
+        1257,
+        101,
+        136,
+        368,
+        12.3,
+        148.4
+      ],
+      "0-30": [
+        404,
+        1907,
+        153,
+        206,
+        368,
+        12.3,
+        148.4
+      ],
+      "1-40": [
+        677,
+        3197,
+        257,
+        345,
+        417,
+        13.93,
+        150.85
+      ],
+      "2-50": [
+        1009,
+        4768,
+        382,
+        514,
+        466,
+        15.56,
+        153.3
+      ],
+      "3-60": [
+        1186,
+        5609,
+        449,
+        605,
+        515,
+        17.2,
+        155.75
+      ]
     },
     "Insight": [
       {
@@ -5994,11 +7538,51 @@
     "Rarity": 6,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [246, 1656, 116, 116, 204, 6.8, 140.2], 
-			"0-30": [374, 2513, 176, 176, 204, 6.8, 140.2], 
-			"1-40": [626, 4213, 294, 294, 231, 7.7, 141.55], 
-			"2-50": [933, 6282, 438, 438, 258, 8.6, 142.9], 
-			"3-60": [1097, 7390, 515, 515, 285, 9.5, 144.25]
+      "0-1": [
+        246,
+        1656,
+        116,
+        116,
+        204,
+        6.83,
+        140.2
+      ],
+      "0-30": [
+        374,
+        2513,
+        176,
+        176,
+        204,
+        6.83,
+        140.2
+      ],
+      "1-40": [
+        626,
+        4213,
+        294,
+        294,
+        231,
+        7.73,
+        141.55
+      ],
+      "2-50": [
+        933,
+        6282,
+        438,
+        438,
+        258,
+        8.63,
+        142.9
+      ],
+      "3-60": [
+        1097,
+        7390,
+        515,
+        515,
+        285,
+        9.53,
+        144.25
+      ]
     },
     "Insight": [
       {
@@ -6243,11 +7827,51 @@
     "Rarity": 6,
     "Afflatus": "Spirit",
     "Stats": {
-			"0-1": [264, 1626, 126, 126, 273, 9.1, 143.65], 
-			"0-30": [400, 2468, 191, 191, 273, 9.1, 143.65], 
-			"1-40": [671, 4137, 319, 319, 309, 10.3, 145.45], 
-			"2-50": [1000, 6169, 475, 475, 345, 11.5, 147.25], 
-			"3-60": [1176, 7258, 559, 559, 381, 12.7, 149.05]
+      "0-1": [
+        264,
+        1626,
+        126,
+        126,
+        273,
+        9.13,
+        143.65
+      ],
+      "0-30": [
+        400,
+        2468,
+        191,
+        191,
+        273,
+        9.13,
+        143.65
+      ],
+      "1-40": [
+        671,
+        4137,
+        319,
+        319,
+        309,
+        10.3,
+        145.45
+      ],
+      "2-50": [
+        1000,
+        6169,
+        475,
+        475,
+        345,
+        11.53,
+        147.25
+      ],
+      "3-60": [
+        1176,
+        7258,
+        559,
+        559,
+        381,
+        12.73,
+        149.05
+      ]
     },
     "Insight": [
       {
@@ -6498,11 +8122,51 @@
     "Rarity": 6,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [249, 1345, 123, 99, 368, 12.27, 148.4], 
-			"0-30": [378, 2042, 187, 150, 368, 12.27, 148.4], 
-			"1-40": [633, 3423, 313, 251, 417, 13.9, 150.85], 
-			"2-50": [944, 5105, 467, 374, 466, 15.53, 153.3], 
-			"3-60": [1110, 6005, 549, 439, 515, 17.17, 155.75]
+      "0-1": [
+        249,
+        1345,
+        123,
+        99,
+        368,
+        12.3,
+        148.4
+      ],
+      "0-30": [
+        378,
+        2042,
+        187,
+        150,
+        368,
+        12.3,
+        148.4
+      ],
+      "1-40": [
+        633,
+        3423,
+        313,
+        251,
+        417,
+        13.93,
+        150.85
+      ],
+      "2-50": [
+        944,
+        5105,
+        467,
+        374,
+        466,
+        15.56,
+        153.3
+      ],
+      "3-60": [
+        1110,
+        6005,
+        549,
+        539,
+        515,
+        17.2,
+        155.75
+      ]
     },
     "Insight": [
       {
@@ -6747,11 +8411,51 @@
     "Rarity": 6,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [254, 1419, 116, 136, 218, 7.27, 140.9], 
-			"0-30": [385, 2154, 176, 206, 218, 7.27, 140.9], 
-			"1-40": [646, 3611, 294, 345, 247, 8.23, 142.35], 
-			"2-50": [963, 5385, 438, 514, 276, 9.2, 143.8], 
-			"3-60": [1133, 6336, 515, 605, 305, 10.17, 145.25]
+      "0-1": [
+        254,
+        1419,
+        116,
+        136,
+        218,
+        7.3,
+        140.9
+      ],
+      "0-30": [
+        385,
+        2154,
+        176,
+        206,
+        218,
+        7.3,
+        140.9
+      ],
+      "1-40": [
+        646,
+        3611,
+        294,
+        345,
+        247,
+        8.26,
+        142.35
+      ],
+      "2-50": [
+        963,
+        5385,
+        438,
+        514,
+        276,
+        9.23,
+        143.8
+      ],
+      "3-60": [
+        1133,
+        6336,
+        605,
+        605,
+        305,
+        10.2,
+        145.25
+      ]
     },
     "Insight": [
       {
@@ -6990,17 +8694,346 @@
     ]
   },
   {
+    "Id": 10079,
+    "IsReleased": false,
+    "Name": "Lorelei",
+    "Rarity": 5,
+    "Afflatus": "Star",
+    "Stats": {
+      "0-1": [
+        230,
+        1312,
+        108,
+        108,
+        425,
+        14.2,
+        151.3
+      ],
+      "0-30": [
+        349,
+        1992,
+        164,
+        164,
+        425,
+        14.2,
+        151.3
+      ],
+      "1-40": [
+        584,
+        3339,
+        275,
+        275,
+        481,
+        0,
+        0
+      ],
+      "2-50": [
+        871,
+        4979,
+        409,
+        409,
+        537,
+        17.9,
+        156.9
+      ],
+      "3-60": [
+        1024,
+        5857,
+        481,
+        481,
+        593,
+        19.8,
+        159.6
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Starlit Ascent",
+          "Shattered Bones",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          12000,
+          6,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Starlit Ascent",
+          "Milled Magnesia",
+          "Biting Box"
+        ],
+        "Quantity": [
+          30000,
+          8,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Starlit Ascent",
+          "Watch Core",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          120000,
+          12,
+          4,
+          2
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          4
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Shattered Bones"
+        ],
+        "Quantity": [
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Spell of Banishing",
+          "Solidus"
+        ],
+        "Quantity": [
+          4,
+          6,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Liquefied Terror",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          25000,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Salted Mandrake",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          5,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          6,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Goose Neck",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          4,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Interlaced Shudder",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          100000,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Glowing Mothwing",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          5,
+          3,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Wyrmling Skeleton",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          5,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Serpent Scepter",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          1,
+          6,
+          1,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Fruit of Good and Evil",
+          "Incorrupt Monkeypaw"
+        ],
+        "Quantity": [
+          1,
+          6,
+          2,
+          4
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10070,
     "IsReleased": true,
     "Name": "Yenisei",
     "Rarity": 5,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        207,
+        1575,
+        120,
+        120,
+        275,
+        9.2,
+        143.8
+      ],
+      "0-30": [
+        314,
+        2390,
+        182,
+        182,
+        275,
+        9.2,
+        143.8
+      ],
+      "1-40": [
+        526,
+        4008,
+        304,
+        304,
+        311,
+        10.4,
+        145.6
+      ],
+      "2-50": [
+        784,
+        5976,
+        454,
+        454,
+        347,
+        11.6,
+        147.4
+      ],
+      "3-60": [
+        922,
+        7031,
+        534,
+        534,
+        383,
+        12.8,
+        149.1
+      ]
     },
     "Insight": [
       {
@@ -7239,17 +9272,346 @@
     ]
   },
   {
+    "Id": 10075,
+    "IsReleased": false,
+    "Name": "Avgust",
+    "Rarity": 5,
+    "Afflatus": "Plant",
+    "Stats": {
+      "0-1": [
+        225,
+        1312,
+        109,
+        121,
+        254,
+        8.5,
+        142.7
+      ],
+      "0-30": [
+        342,
+        1992,
+        166,
+        183,
+        254,
+        8.5,
+        142.7
+      ],
+      "1-40": [
+        573,
+        3339,
+        277,
+        307,
+        288,
+        9.6,
+        144.4
+      ],
+      "2-50": [
+        855,
+        4979,
+        413,
+        458,
+        322,
+        10.7,
+        146.1
+      ],
+      "3-60": [
+        1006,
+        5857,
+        486,
+        538,
+        356,
+        11.9,
+        147.8
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Plantal Vimen",
+          "Shattered Bones",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          12000,
+          6,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Plantal Vimen",
+          "Spell of Fortune",
+          "Clawed Pendulum"
+        ],
+        "Quantity": [
+          30000,
+          8,
+          6,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Plantal Vimen",
+          "Bogeyman",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          120000,
+          12,
+          4,
+          2
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          4
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Silver Ore"
+        ],
+        "Quantity": [
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Magnesia Crystal",
+          "Solidus"
+        ],
+        "Quantity": [
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Esoteric Bones",
+          "Milled Magnesia"
+        ],
+        "Quantity": [
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Clawed Pendulum"
+        ],
+        "Quantity": [
+          25000,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          5,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Salted Mandrake",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          4,
+          6,
+          8
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Sinuous Howl",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          1,
+          100000,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Incorrupt Monkeypaw",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          5,
+          3,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Wyrmling Skeleton",
+          "Salted Mandrake"
+        ],
+        "Quantity": [
+          1,
+          5,
+          4,
+          7
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Fruit of Good and Evil",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          1,
+          6,
+          1,
+          3
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Mistilteinn",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          1,
+          6,
+          2,
+          4
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10066,
     "IsReleased": true,
     "Name": "Ulu",
     "Rarity": 5,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        241,
+        1538,
+        129,
+        128,
+        248,
+        8.3,
+        142.4
+      ],
+      "0-30": [
+        367,
+        2334,
+        196,
+        194,
+        248,
+        8.3,
+        142.4
+      ],
+      "1-40": [
+        614,
+        3913,
+        329,
+        326,
+        281,
+        9.4,
+        144.1
+      ],
+      "2-50": [
+        916,
+        5835,
+        490,
+        486,
+        314,
+        10.5,
+        145.7
+      ],
+      "3-60": [
+        1077,
+        6864,
+        577,
+        572,
+        347,
+        11.6,
+        147.4
+      ]
     },
     "Insight": [
       {
@@ -7494,11 +9856,51 @@
     "Rarity": 5,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
+      "0-1": [
+        230,
+        1381,
+        122,
+        120,
+        231,
+        7.7,
+        141.6
+      ],
+      "0-30": [
+        349,
+        2097,
+        185,
+        182,
+        231,
+        7.7,
+        141.6
+      ],
+      "1-40": [
+        584,
+        3515,
+        310,
+        304,
+        261,
+        8.7,
+        143.1
+      ],
+      "2-50": [
+        871,
+        5242,
+        462,
+        454,
+        291,
+        9.7,
+        144.6
+      ],
+      "3-60": [
+        1024,
+        6167,
+        543,
+        534,
+        321,
+        10.7,
+        146.1
+      ]
     },
     "Insight": [
       {
@@ -7743,11 +10145,51 @@
     "Rarity": 5,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [237, 1312, 112, 120, 196, 6.53, 139.8], 
-			"0-30": [360, 1992, 169, 182, 196, 6.53, 139.8], 
-			"1-40": [602, 3339, 284, 304, 222, 7.4, 141.1], 
-			"2-50": [897, 4979, 423, 454, 248, 8.27, 142.4], 
-			"3-60": [1055, 5857, 498, 534, 274, 9.13, 143.7]
+      "0-1": [
+        237,
+        1312,
+        112,
+        120,
+        196,
+        6.5,
+        139.8
+      ],
+      "0-30": [
+        360,
+        1992,
+        169,
+        182,
+        196,
+        6.5,
+        139.8
+      ],
+      "1-40": [
+        602,
+        3339,
+        284,
+        302,
+        222,
+        7.4,
+        141.1
+      ],
+      "2-50": [
+        897,
+        4979,
+        423,
+        454,
+        248,
+        8.3,
+        142.4
+      ],
+      "3-60": [
+        1055,
+        5857,
+        498,
+        534,
+        274,
+        9.1,
+        143.7
+      ]
     },
     "Insight": [
       {
@@ -7992,11 +10434,51 @@
     "Rarity": 5,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [235, 1381, 110, 122, 203, 6.77, 140.15], 
-			"0-30": [356, 2097, 168, 185, 203, 6.77, 140.15], 
-			"1-40": [596, 3515, 280, 310, 230, 7.67, 141.5], 
-			"2-50": [889, 5242, 417, 462, 257, 8.57, 142.85], 
-			"3-60": [1046, 6167, 490, 543, 284, 9.47, 144.2]
+      "0-1": [
+        235,
+        1381,
+        110,
+        122,
+        203,
+        6.8,
+        140.15
+      ],
+      "0-30": [
+        356,
+        2097,
+        168,
+        185,
+        203,
+        6.8,
+        140.15
+      ],
+      "1-40": [
+        596,
+        3515,
+        280,
+        310,
+        230,
+        7.7,
+        141.5
+      ],
+      "2-50": [
+        889,
+        5242,
+        417,
+        462,
+        257,
+        8.6,
+        142.85
+      ],
+      "3-60": [
+        1046,
+        6167,
+        490,
+        543,
+        284,
+        9.5,
+        144.2
+      ]
     },
     "Insight": [
       {
@@ -8241,11 +10723,51 @@
     "Rarity": 5,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [230, 1451, 103, 115, 229, 7.63, 141.45], 
-			"0-30": [349, 2202, 157, 175, 229, 7.63, 141.45], 
-			"1-40": [584, 3691, 262, 292, 259, 8.63, 142.95], 
-			"2-50": [871, 5504, 391, 436, 289, 9.63, 144.45], 
-			"3-60": [1024, 6475, 459, 512, 319, 10.63, 145.95]
+      "0-1": [
+        230,
+        1451,
+        103,
+        115,
+        229,
+        7.6,
+        141.4
+      ],
+      "0-30": [
+        349,
+        2202,
+        157,
+        175,
+        229,
+        7.6,
+        141.4
+      ],
+      "1-40": [
+        584,
+        3691,
+        262,
+        292,
+        259,
+        8.6,
+        142.9
+      ],
+      "2-50": [
+        871,
+        5504,
+        391,
+        436,
+        289,
+        9.6,
+        144.4
+      ],
+      "3-60": [
+        1024,
+        6475,
+        459,
+        512,
+        319,
+        10.6,
+        145.9
+      ]
     },
     "Insight": [
       {
@@ -8490,11 +11012,51 @@
     "Rarity": 5,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [235, 1354, 109, 103, 331, 11.03, 146.55], 
-			"0-30": [356, 2055, 166, 157, 331, 11.03, 146.55], 
-			"1-40": [596, 3445, 277, 262, 375, 12.5, 148.75], 
-			"2-50": [889, 5137, 413, 391, 419, 13.97, 150.95], 
-			"3-60": [1046, 6043, 486, 459, 463, 15.43, 153.15]
+      "0-1": [
+        235,
+        1354,
+        109,
+        103,
+        331,
+        11,
+        146.6
+      ],
+      "0-30": [
+        356,
+        2055,
+        166,
+        157,
+        331,
+        11,
+        146.6
+      ],
+      "1-40": [
+        596,
+        3445,
+        277,
+        262,
+        375,
+        12.5,
+        148.8
+      ],
+      "2-50": [
+        889,
+        5137,
+        413,
+        391,
+        419,
+        14,
+        150.9
+      ],
+      "3-60": [
+        1046,
+        6043,
+        486,
+        459,
+        463,
+        15.4,
+        153.1
+      ]
     },
     "Insight": [
       {
@@ -8739,11 +11301,51 @@
     "Rarity": 5,
     "Afflatus": "Spirit",
     "Stats": {
-			"0-1": [248, 1520, 126, 101, 203, 6.77, 140.15], 
-			"0-30": [377, 2307, 192, 154, 203, 6.77, 140.15], 
-			"1-40": [632, 3866, 321, 257, 230, 7.67, 141.5], 
-			"2-50": [942, 5765, 478, 383, 257, 8.57, 142.85], 
-			"3-60": [1108, 6783, 562, 450, 284, 9.47, 144.2]
+      "0-1": [
+        248,
+        1520,
+        126,
+        101,
+        203,
+        6.8,
+        140.15
+      ],
+      "0-30": [
+        377,
+        2307,
+        192,
+        154,
+        203,
+        6.8,
+        140.15
+      ],
+      "1-40": [
+        632,
+        3866,
+        321,
+        257,
+        230,
+        7.7,
+        141.5
+      ],
+      "2-50": [
+        942,
+        5765,
+        478,
+        383,
+        257,
+        8.6,
+        142.85
+      ],
+      "3-60": [
+        1108,
+        6783,
+        562,
+        450,
+        284,
+        9.5,
+        144.2
+      ]
     },
     "Insight": [
       {
@@ -8994,11 +11596,51 @@
     "Rarity": 5,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [244, 1257, 135, 92, 242, 8.07, 142.1], 
-			"0-30": [370, 1908, 204, 140, 242, 8.07, 142.1], 
-			"1-40": [620, 3199, 342, 234, 274, 9.13, 143.7], 
-			"2-50": [924, 4770, 510, 348, 306, 10.2, 145.3], 
-			"3-60": [1086, 5611, 601, 410, 338, 11.27, 146.9]
+      "0-1": [
+        244,
+        1257,
+        135,
+        92,
+        242,
+        8.1,
+        142.1
+      ],
+      "0-30": [
+        370,
+        1908,
+        204,
+        140,
+        242,
+        8.1,
+        142.1
+      ],
+      "1-40": [
+        620,
+        3199,
+        342,
+        234,
+        274,
+        9.16,
+        143.7
+      ],
+      "2-50": [
+        924,
+        4770,
+        510,
+        348,
+        306,
+        10.23,
+        145.3
+      ],
+      "3-60": [
+        1086,
+        5611,
+        601,
+        410,
+        338,
+        11.3,
+        146.9
+      ]
     },
     "Insight": [
       {
@@ -9243,11 +11885,51 @@
     "Rarity": 5,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [235, 1340, 108, 121, 254, 8.47, 142.7], 
-			"0-30": [356, 2034, 164, 183, 254, 8.47, 142.7], 
-			"1-40": [596, 3409, 275, 307, 288, 9.6, 144.4], 
-			"2-50": [889, 5084, 409, 458, 322, 10.73, 146.1], 
-			"3-60": [1046, 5981, 481, 538, 356, 11.87, 147.8]
+      "0-1": [
+        235,
+        1340,
+        108,
+        121,
+        254,
+        8.5,
+        142.7
+      ],
+      "0-30": [
+        356,
+        2034,
+        164,
+        183,
+        254,
+        8.5,
+        142.7
+      ],
+      "1-40": [
+        596,
+        3409,
+        275,
+        307,
+        288,
+        9.63,
+        144.4
+      ],
+      "2-50": [
+        889,
+        5084,
+        409,
+        458,
+        322,
+        10.76,
+        146.1
+      ],
+      "3-60": [
+        1046,
+        5981,
+        481,
+        538,
+        356,
+        11.9,
+        147.8
+      ]
     },
     "Insight": [
       {
@@ -9492,11 +12174,51 @@
     "Rarity": 5,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [244, 1381, 115, 92, 254, 8.47, 142.7], 
-			"0-30": [370, 2097, 175, 140, 254, 8.47, 142.7], 
-			"1-40": [620, 3515, 292, 234, 288, 9.6, 144.4], 
-			"2-50": [924, 5242, 436, 348, 322, 10.73, 146.1], 
-			"3-60": [1086, 6167, 512, 410, 356, 11.87, 147.8]
+      "0-1": [
+        244,
+        1381,
+        115,
+        92,
+        254,
+        8.5,
+        142.7
+      ],
+      "0-30": [
+        370,
+        2097,
+        175,
+        140,
+        254,
+        8.5,
+        142.7
+      ],
+      "1-40": [
+        620,
+        3515,
+        292,
+        234,
+        288,
+        9.63,
+        144.4
+      ],
+      "2-50": [
+        924,
+        5242,
+        436,
+        348,
+        322,
+        10.76,
+        146.1
+      ],
+      "3-60": [
+        1086,
+        6167,
+        512,
+        410,
+        356,
+        11.9,
+        147.8
+      ]
     },
     "Insight": [
       {
@@ -9741,11 +12463,51 @@
     "Rarity": 5,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [244, 1326, 92, 129, 254, 8.47, 142.7], 
-			"0-30": [370, 2013, 140, 195, 254, 8.47, 142.7], 
-			"1-40": [620, 3374, 234, 327, 288, 9.6, 144.4], 
-			"2-50": [924, 5031, 348, 488, 322, 10.73, 146.1], 
-			"3-60": [1086, 5919, 410, 574, 356, 11.87, 147.8]
+      "0-1": [
+        244,
+        1326,
+        92,
+        129,
+        254,
+        8.5,
+        142.7
+      ],
+      "0-30": [
+        370,
+        2013,
+        140,
+        195,
+        254,
+        8.5,
+        142.7
+      ],
+      "1-40": [
+        620,
+        3374,
+        234,
+        327,
+        288,
+        9.63,
+        144.4
+      ],
+      "2-50": [
+        924,
+        5031,
+        348,
+        488,
+        322,
+        10.76,
+        146.1
+      ],
+      "3-60": [
+        1086,
+        5919,
+        410,
+        574,
+        356,
+        11.9,
+        147.8
+      ]
     },
     "Insight": [
       {
@@ -9990,11 +12752,51 @@
     "Rarity": 5,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [218, 1520, 144, 106, 170, 5.67, 138.5], 
-			"0-30": [332, 2307, 218, 161, 170, 5.67, 138.5], 
-			"1-40": [556, 3866, 366, 269, 192, 6.4, 139.6], 
-			"2-50": [829, 5765, 545, 401, 214, 7.13, 140.7], 
-			"3-60": [975, 6783, 641, 472, 236, 7.87, 141.8]
+      "0-1": [
+        218,
+        1520,
+        144,
+        106,
+        170,
+        5.7,
+        138.5
+      ],
+      "0-30": [
+        332,
+        2307,
+        218,
+        161,
+        170,
+        5.7,
+        138.5
+      ],
+      "1-40": [
+        556,
+        3866,
+        366,
+        269,
+        192,
+        6.43,
+        139.6
+      ],
+      "2-50": [
+        829,
+        5765,
+        545,
+        401,
+        214,
+        7.16,
+        140.7
+      ],
+      "3-60": [
+        975,
+        6783,
+        641,
+        472,
+        236,
+        7.9,
+        141.8
+      ]
     },
     "Insight": [
       {
@@ -10239,11 +13041,51 @@
     "Rarity": 5,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [218, 1520, 130, 115, 178, 5.93, 138.9], 
-			"0-30": [332, 2307, 197, 175, 178, 5.93, 138.9], 
-			"1-40": [556, 3866, 330, 292, 201, 6.7, 140.05], 
-			"2-50": [829, 5765, 492, 436, 224, 7.47, 141.2], 
-			"3-60": [975, 6783, 579, 512, 247, 8.23, 142.35]
+      "0-1": [
+        218,
+        1520,
+        130,
+        115,
+        178,
+        5.96,
+        138.9
+      ],
+      "0-30": [
+        332,
+        2307,
+        197,
+        175,
+        178,
+        5.96,
+        138.9
+      ],
+      "1-40": [
+        556,
+        3866,
+        330,
+        292,
+        201,
+        6.73,
+        140.05
+      ],
+      "2-50": [
+        829,
+        5765,
+        492,
+        436,
+        224,
+        7.5,
+        141.2
+      ],
+      "3-60": [
+        975,
+        6783,
+        579,
+        512,
+        247,
+        8.26,
+        142.35
+      ]
     },
     "Insight": [
       {
@@ -10488,11 +13330,51 @@
     "Rarity": 5,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [235, 1381, 106, 124, 216, 7.2, 140.8], 
-			"0-30": [356, 2097, 161, 188, 216, 7.2, 140.8], 
-			"1-40": [596, 3515, 269, 315, 244, 8.13, 142.2], 
-			"2-50": [889, 5242, 401, 470, 272, 9.07, 143.6], 
-			"3-60": [1046, 6167, 472, 553, 300, 10, 145]
+      "0-1": [
+        235,
+        1381,
+        106,
+        124,
+        216,
+        7.23,
+        140.8
+      ],
+      "0-30": [
+        356,
+        2097,
+        161,
+        188,
+        216,
+        7.23,
+        140.8
+      ],
+      "1-40": [
+        596,
+        3515,
+        269,
+        315,
+        244,
+        8.16,
+        142.2
+      ],
+      "2-50": [
+        889,
+        5242,
+        401,
+        470,
+        272,
+        9.1,
+        143.6
+      ],
+      "3-60": [
+        1046,
+        6167,
+        472,
+        553,
+        300,
+        10.03,
+        145
+      ]
     },
     "Insight": [
       {
@@ -10737,11 +13619,51 @@
     "Rarity": 5,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [255, 1326, 100, 115, 140, 4.67, 137], 
-			"0-30": [387, 2013, 152, 175, 140, 4.67, 137], 
-			"1-40": [649, 3374, 254, 292, 158, 5.27, 137.9], 
-			"2-50": [968, 5031, 379, 436, 176, 5.87, 138.8], 
-			"3-60": [1139, 5919, 445, 512, 194, 6.47, 139.7]
+      "0-1": [
+        255,
+        1326,
+        100,
+        115,
+        140,
+        4.7,
+        137
+      ],
+      "0-30": [
+        387,
+        2013,
+        152,
+        175,
+        140,
+        4.7,
+        137
+      ],
+      "1-40": [
+        649,
+        3374,
+        254,
+        292,
+        158,
+        5.3,
+        137.9
+      ],
+      "2-50": [
+        968,
+        5031,
+        379,
+        436,
+        176,
+        5.9,
+        138.8
+      ],
+      "3-60": [
+        1139,
+        5919,
+        445,
+        512,
+        194,
+        6.5,
+        139.7
+      ]
     },
     "Insight": [
       {
@@ -10977,60 +13899,7 @@
           4
         ]
       }
-    ],
-    "InsightEffects": {
-      "Name": "Reverse Flow",
-      "Effect1": "When the enemy is in [Stats Down], [Neg Status] or [Control] statuses, DMG Dealt +20% to the enemy.",
-      "Effect2": "ATK +5% when the caster enters battle.",
-      "Effect3": "When the caster is attacked by an enemy in [Stats Down], [Neg Status] or [Control] statuses, DMG Taken -20%."
-    },
-    "PortraitEffects": {
-      "Effect1": "Uninvited Reviewer's effect changes to: deals 625% Reality DMG.",
-      "Effect2": "Watch Your Sleeves's effect changes to: at 1/2/3 stars, additionally deals 45/65/100% Reality DMG to enemies in [Stats Down], [Neg Status] or [Control] statuses.",
-      "Effect3": "Uninvited Reviewer's effect changes to: deals 675% Reality DMG.",
-      "Effect4": "Uninvited Reviewer's effect changes to: deals 750% Reality DMG.",
-      "Effect5": "Uninvited Reviewer's effect changes to: deals 800% Reality DMG."
-    },
-    "Skills": [
-      {
-        "Name": "Watch Her Sleeves",
-        "Effect": "Mass attack. Deals 135% Reality DMG to 2 enemies. If the target is in [Stats Down], [Neg Status], or [Control] statuses, this attack deals 30% more Reality DMG.",
-        "Type": "Attack"
-      },
-      {
-        "Name": "Watch Her Sleeves",
-        "Effect": "Mass attack. Deals 200% Reality DMG to 2 enemies. If the target is in [Stats Down], [Neg Status], or [Control] statuses, this attack deals 45% more Reality DMG.",
-        "Type": "Attack"
-      },
-      {
-        "Name": "Watch Her Sleeves",
-        "Effect": "Mass attack. Deals 335% Reality DMG to 2 enemies. If the target is in [Stats Down], [Neg Status], or [Control] statuses, this attack deals 75% more Reality DMG.",
-        "Type": "Attack"
-      },
-      {
-        "Name": "Prying Ear",
-        "Effect": "Mass debuff. All enemies suffer Reality DEF -15% and DMG Taken +15%. Lasts 2 rounds.",
-        "Type": "Debuff"
-      },
-      {
-        "Name": "Prying Ear",
-        "Effect": "Mass debuff. All enemies suffer Reality DEF -20% and DMG Taken +20%. Lasts 2 rounds.",
-        "Type": "Debuff"
-      },
-      {
-        "Name": "Prying Ear",
-        "Effect": "Mass debuff. All enemies suffer Reality DEF -25% and DMG Taken +25%. Lasts 3 rounds.",
-        "Type": "Debuff"
-      }
-    ],
-    "Ultimate": {
-      "Name": "Uninvited Reviewer",
-      "Effect": "1-target attack. Deals 550% Reality DMG and inflicts [Seal] for 3 rounds. If the target is immune to [Seal], Moxie -2 for the target instead."
-    },
-    "Psychube1": "Brave New World",
-    "Psychube2": "Luxurious Leisure",
-    "Resonance1": "Balanced",
-    "Resonance2": "Offensive"
+    ]
   },
   {
     "Id": 10014,
@@ -11039,11 +13908,51 @@
     "Rarity": 5,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [264, 1312, 109, 92, 129, 4.3, 136.45], 
-			"0-30": [401, 1992, 166, 140, 129, 4.3, 136.45], 
-			"1-40": [673, 3339, 277, 234, 146, 4.87, 137.3], 
-			"2-50": [1003, 4979, 413, 348, 163, 5.43, 138.15], 
-			"3-60": [1179, 5857, 486, 410, 180, 6, 139]
+      "0-1": [
+        264,
+        1312,
+        109,
+        92,
+        129,
+        4.3,
+        136.45
+      ],
+      "0-30": [
+        401,
+        1992,
+        166,
+        140,
+        129,
+        4.3,
+        136.45
+      ],
+      "1-40": [
+        673,
+        3339,
+        277,
+        234,
+        146,
+        4.9,
+        137.3
+      ],
+      "2-50": [
+        1003,
+        4979,
+        413,
+        348,
+        163,
+        5.46,
+        138.15
+      ],
+      "3-60": [
+        1179,
+        5857,
+        486,
+        410,
+        180,
+        6.03,
+        139
+      ]
     },
     "Insight": [
       {
@@ -11288,11 +14197,51 @@
     "Rarity": 5,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [214, 1603, 112, 138, 127, 4.23, 136.35], 
-			"0-30": [325, 2432, 169, 209, 127, 4.23, 136.35], 
-			"1-40": [544, 4077, 284, 351, 144, 4.8, 137.2], 
-			"2-50": [810, 6080, 423, 523, 161, 5.37, 138.05], 
-			"3-60": [953, 7152, 498, 615, 178, 5.93, 138.9]
+      "0-1": [
+        214,
+        1603,
+        112,
+        138,
+        127,
+        4.26,
+        136.35
+      ],
+      "0-30": [
+        325,
+        2432,
+        169,
+        209,
+        127,
+        4.26,
+        136.35
+      ],
+      "1-40": [
+        544,
+        4077,
+        284,
+        351,
+        144,
+        4.83,
+        137.2
+      ],
+      "2-50": [
+        810,
+        6080,
+        423,
+        523,
+        161,
+        5.4,
+        138.05
+      ],
+      "3-60": [
+        953,
+        7152,
+        498,
+        615,
+        178,
+        5.96,
+        138.9
+      ]
     },
     "Insight": [
       {
@@ -11537,11 +14486,51 @@
     "Rarity": 5,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [241, 1312, 115, 92, 356, 11.87, 147.8], 
-			"0-30": [367, 1992, 175, 140, 356, 11.87, 147.8], 
-			"1-40": [614, 3339, 292, 234, 403, 13.43, 150.15], 
-			"2-50": [916, 4979, 436, 348, 450, 15, 152.5], 
-			"3-60": [1077, 5857, 512, 410, 497, 16.57, 154.85]
+      "0-1": [
+        241,
+        1312,
+        115,
+        92,
+        356,
+        11.9,
+        147.8
+      ],
+      "0-30": [
+        367,
+        1992,
+        175,
+        140,
+        356,
+        11.9,
+        147.8
+      ],
+      "1-40": [
+        614,
+        3339,
+        292,
+        234,
+        403,
+        13.46,
+        150.15
+      ],
+      "2-50": [
+        916,
+        4979,
+        436,
+        348,
+        450,
+        15.03,
+        152.5
+      ],
+      "3-60": [
+        1077,
+        5857,
+        512,
+        410,
+        497,
+        16.6,
+        154.85
+      ]
     },
     "Insight": [
       {
@@ -11786,11 +14775,51 @@
     "Rarity": 5,
     "Afflatus": "Intellect",
     "Stats": {
-			"0-1": [241, 1520, 121, 121, 203, 6.77, 140.15], 
-			"0-30": [367, 2307, 183, 183, 203, 6.77, 140.15], 
-			"1-40": [614, 3866, 307, 307, 230, 7.67, 141.5], 
-			"2-50": [916, 5765, 458, 458, 257, 8.57, 142.85], 
-			"3-60": [1077, 6783, 538, 538, 284, 9.47, 144.2]
+      "0-1": [
+        241,
+        1520,
+        121,
+        121,
+        203,
+        6.8,
+        140.5
+      ],
+      "0-30": [
+        367,
+        2307,
+        183,
+        183,
+        203,
+        6.8,
+        140.5
+      ],
+      "1-40": [
+        614,
+        3866,
+        307,
+        307,
+        230,
+        7.7,
+        141.5
+      ],
+      "2-50": [
+        916,
+        5765,
+        458,
+        458,
+        257,
+        8.6,
+        142.85
+      ],
+      "3-60": [
+        1077,
+        6783,
+        538,
+        538,
+        284,
+        9.5,
+        144.2
+      ]
     },
     "Insight": [
       {
@@ -12041,10 +15070,42 @@
     "Rarity": 4,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [242, 1263, 116, 99, 200, 6.67, 140], 
-			"0-30": [368, 1917, 176, 150, 200, 6.67, 140], 
-			"1-40": [616, 3214, 294, 252, 226, 7.53, 141.3], 
-			"2-50": [919, 4793, 438, 376, 252, 8.4, 142.6]
+      "0-1": [
+        242,
+        1263,
+        116,
+        99,
+        200,
+        6.7,
+        140
+      ],
+      "0-30": [
+        368,
+        1917,
+        176,
+        150,
+        200,
+        6.7,
+        140
+      ],
+      "1-40": [
+        616,
+        3214,
+        294,
+        252,
+        226,
+        7.56,
+        141.3
+      ],
+      "2-50": [
+        919,
+        4793,
+        438,
+        376,
+        252,
+        8.4,
+        142.6
+      ]
     },
     "Insight": [
       {
@@ -12199,10 +15260,42 @@
     "Rarity": 4,
     "Afflatus": "Intellect",
     "Stats": {
-			"0-1": [245, 1197, 110, 132, 276, 9.2, 143.8], 
-			"0-30": [371, 1816, 167, 201, 276, 9.2, 143.8], 
-			"1-40": [622, 3045, 280, 336, 312, 10.4, 145.6], 
-			"2-50": [926, 4540, 416, 500, 348, 11.6, 147.4]
+      "0-1": [
+        245,
+        1197,
+        110,
+        132,
+        276,
+        9.23,
+        143.8
+      ],
+      "0-30": [
+        371,
+        1816,
+        167,
+        201,
+        276,
+        9.23,
+        143.8
+      ],
+      "1-40": [
+        622,
+        3045,
+        280,
+        336,
+        312,
+        10.43,
+        145.6
+      ],
+      "2-50": [
+        926,
+        4540,
+        416,
+        500,
+        348,
+        11.6,
+        147.4
+      ]
     },
     "Insight": [
       {
@@ -12361,10 +15454,42 @@
     "Rarity": 4,
     "Afflatus": "Spirit",
     "Stats": {
-			"0-1": [245, 1197, 143, 110, 175, 5.83, 138.75], 
-			"0-30": [371, 1816, 217, 167, 175, 5.83, 138.75], 
-			"1-40": [622, 3045, 364, 280, 198, 6.6, 139.9], 
-			"2-50": [926, 4540, 543, 416, 221, 7.37, 141.05]
+      "0-1": [
+        245,
+        1197,
+        143,
+        110,
+        175,
+        5.86,
+        138.75
+      ],
+      "0-30": [
+        371,
+        1816,
+        217,
+        167,
+        175,
+        5.86,
+        138.75
+      ],
+      "1-40": [
+        622,
+        3045,
+        364,
+        280,
+        198,
+        6.3,
+        139.9
+      ],
+      "2-50": [
+        926,
+        4540,
+        543,
+        416,
+        221,
+        7.4,
+        141.05
+      ]
     },
     "Insight": [
       {
@@ -12523,10 +15648,42 @@
     "Rarity": 4,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [231, 1316, 110, 121, 125, 4.17, 136.25], 
-			"0-30": [351, 1998, 167, 184, 125, 4.17, 136.25], 
-			"1-40": [588, 3349, 280, 308, 141, 4.7, 137.05], 
-			"2-50": [876, 4994, 416, 459, 157, 5.23, 137.85]
+      "0-1": [
+        231,
+        1316,
+        110,
+        121,
+        125,
+        4.2,
+        136.25
+      ],
+      "0-30": [
+        351,
+        1998,
+        167,
+        184,
+        125,
+        4.2,
+        136.25
+      ],
+      "1-40": [
+        588,
+        3349,
+        280,
+        308,
+        141,
+        4.73,
+        137.05
+      ],
+      "2-50": [
+        879,
+        4994,
+        416,
+        459,
+        157,
+        5.26,
+        137.85
+      ]
     },
     "Insight": [
       {
@@ -12681,10 +15838,42 @@
     "Rarity": 4,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [220, 1529, 99, 99, 200, 6.67, 140], 
-			"0-30": [334, 2321, 150, 150, 200, 6.67, 140], 
-			"1-40": [560, 3890, 252, 252, 226, 7.53, 141.3], 
-			"2-50": [835, 5801, 376, 376, 252, 8.4, 142.6]
+      "0-1": [
+        220,
+        1529,
+        99,
+        99,
+        200,
+        6.7,
+        140
+      ],
+      "0-30": [
+        334,
+        2321,
+        150,
+        150,
+        200,
+        6.7,
+        140
+      ],
+      "1-40": [
+        560,
+        3890,
+        252,
+        252,
+        226,
+        7.56,
+        141.3
+      ],
+      "2-50": [
+        835,
+        5801,
+        376,
+        376,
+        252,
+        8.43,
+        142.6
+      ]
     },
     "Insight": [
       {
@@ -12839,10 +16028,42 @@
     "Rarity": 4,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [220, 1330, 110, 121, 200, 6.67, 140], 
-			"0-30": [334, 2018, 167, 184, 200, 6.67, 140], 
-			"1-40": [560, 3383, 280, 308, 226, 7.53, 141.3], 
-			"2-50": [835, 5045, 416, 459, 252, 8.4, 142.6]
+      "0-1": [
+        220,
+        1330,
+        110,
+        121,
+        200,
+        6.7,
+        140
+      ],
+      "0-30": [
+        334,
+        2018,
+        167,
+        184,
+        200,
+        6.7,
+        140
+      ],
+      "1-40": [
+        560,
+        3383,
+        280,
+        308,
+        226,
+        7.56,
+        141.3
+      ],
+      "2-50": [
+        835,
+        5045,
+        416,
+        459,
+        252,
+        8.43,
+        142.6
+      ]
     },
     "Insight": [
       {
@@ -12997,10 +16218,42 @@
     "Rarity": 4,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [231, 1662, 77, 77, 150, 5, 137.5], 
-			"0-30": [351, 2523, 117, 117, 150, 5, 137.5], 
-			"1-40": [588, 4229, 196, 196, 170, 5.67, 138.5], 
-			"2-50": [876, 6305, 292, 292, 190, 6.33, 139.5]
+      "0-1": [
+        231,
+        1662,
+        77,
+        77,
+        150,
+        5.03,
+        137.5
+      ],
+      "0-30": [
+        351,
+        2523,
+        117,
+        117,
+        150,
+        5.03,
+        137.5
+      ],
+      "1-40": [
+        588,
+        4229,
+        196,
+        196,
+        170,
+        5.7,
+        138.5
+      ],
+      "2-50": [
+        876,
+        6305,
+        292,
+        292,
+        190,
+        6.36,
+        139.5
+      ]
     },
     "Insight": [
       {
@@ -13155,10 +16408,42 @@
     "Rarity": 4,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [231, 1250, 95, 126, 200, 6.67, 140], 
-			"0-30": [351, 1897, 144, 191, 200, 6.67, 140], 
-			"1-40": [588, 3180, 240, 319, 226, 7.53, 141.3], 
-			"2-50": [876, 4742, 358, 475, 252, 8.4, 142.6]
+      "0-1": [
+        231,
+        1250,
+        95,
+        126,
+        200,
+        6.7,
+        140
+      ],
+      "0-30": [
+        351,
+        1897,
+        144,
+        191,
+        200,
+        6.7,
+        140
+      ],
+      "1-40": [
+        588,
+        3180,
+        240,
+        319,
+        226,
+        7.56,
+        141.3
+      ],
+      "2-50": [
+        876,
+        4742,
+        358,
+        475,
+        252,
+        8.43,
+        142.6
+      ]
     },
     "Insight": [
       {
@@ -13313,10 +16598,42 @@
     "Rarity": 4,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [242, 1237, 99, 121, 150, 5, 137.5], 
-			"0-30": [368, 1877, 150, 184, 150, 5, 137.5], 
-			"1-40": [616, 3146, 252, 308, 170, 5.67, 138.5], 
-			"2-50": [919, 4691, 376, 459, 190, 6.33, 139.5]
+      "0-1": [
+        242,
+        1237,
+        99,
+        121,
+        150,
+        5.03,
+        137.5
+      ],
+      "0-30": [
+        368,
+        1877,
+        150,
+        184,
+        150,
+        5.03,
+        137.5
+      ],
+      "1-40": [
+        616,
+        3146,
+        252,
+        308,
+        170,
+        5.7,
+        138.5
+      ],
+      "2-50": [
+        919,
+        4691,
+        376,
+        459,
+        190,
+        6.36,
+        139.5
+      ]
     },
     "Insight": [
       {
@@ -13471,10 +16788,42 @@
     "Rarity": 4,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [242, 1197, 132, 88, 150, 5, 137.5], 
-			"0-30": [368, 1816, 201, 134, 150, 5, 137.5], 
-			"1-40": [616, 3045, 336, 223, 170, 5.67, 138.5], 
-			"2-50": [919, 4540, 500, 333, 190, 6.33, 139.5]
+      "0-1": [
+        242,
+        1197,
+        132,
+        88,
+        150,
+        5.03,
+        137.5
+      ],
+      "0-30": [
+        368,
+        1816,
+        201,
+        134,
+        150,
+        5.03,
+        137.5
+      ],
+      "1-40": [
+        616,
+        3045,
+        336,
+        223,
+        170,
+        5.7,
+        138.5
+      ],
+      "2-50": [
+        919,
+        4540,
+        500,
+        333,
+        190,
+        6.36,
+        139.5
+      ]
     },
     "Insight": [
       {
@@ -13629,10 +16978,42 @@
     "Rarity": 4,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [264, 1064, 99, 83, 250, 8.33, 142.5], 
-			"0-30": [401, 1615, 150, 125, 250, 8.33, 142.5], 
-			"1-40": [672, 2706, 252, 210, 283, 9.43, 144.15], 
-			"2-50": [1002, 4035, 376, 313, 316, 10.53, 145.8]
+      "0-1": [
+        264,
+        1064,
+        99,
+        83,
+        250,
+        8.36,
+        142.5
+      ],
+      "0-30": [
+        401,
+        1615,
+        150,
+        125,
+        250,
+        8.36,
+        142.5
+      ],
+      "1-40": [
+        672,
+        2706,
+        252,
+        210,
+        283,
+        9.46,
+        144.2
+      ],
+      "2-50": [
+        1002,
+        4035,
+        376,
+        313,
+        316,
+        10.5,
+        145.8
+      ]
     },
     "Insight": [
       {
@@ -13787,10 +17168,42 @@
     "Rarity": 4,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [236, 1303, 109, 91, 250, 8.33, 142.5], 
-			"0-30": [358, 1978, 166, 139, 250, 8.33, 142.5], 
-			"1-40": [599, 3315, 277, 232, 283, 9.43, 144.15], 
-			"2-50": [893, 4943, 413, 346, 316, 10.53, 145.8]
+      "0-1": [
+        236,
+        1303,
+        109,
+        91,
+        250,
+        8.36,
+        142.5
+      ],
+      "0-30": [
+        358,
+        1978,
+        166,
+        139,
+        250,
+        8.36,
+        142.5
+      ],
+      "1-40": [
+        599,
+        3315,
+        277,
+        232,
+        283,
+        9.46,
+        144.15
+      ],
+      "2-50": [
+        893,
+        4943,
+        413,
+        346,
+        316,
+        10.56,
+        145.8
+      ]
     },
     "Insight": [
       {
@@ -13945,10 +17358,42 @@
     "Rarity": 4,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [242, 1263, 106, 106, 175, 5.83, 138.75], 
-			"0-30": [368, 1917, 161, 161, 175, 5.83, 138.75], 
-			"1-40": [616, 3214, 269, 269, 198, 6.6, 139.9], 
-			"2-50": [919, 4793, 401, 401, 221, 7.37, 141.05]
+      "0-1": [
+        242,
+        1263,
+        106,
+        106,
+        175,
+        5.86,
+        138.5
+      ],
+      "0-30": [
+        368,
+        1917,
+        161,
+        161,
+        175,
+        5.86,
+        138.5
+      ],
+      "1-40": [
+        616,
+        3214,
+        269,
+        269,
+        198,
+        6.63,
+        139.9
+      ],
+      "2-50": [
+        919,
+        4793,
+        401,
+        401,
+        221,
+        7.4,
+        141.05
+      ]
     },
     "Insight": [
       {
@@ -14103,10 +17548,42 @@
     "Rarity": 4,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [242, 1197, 110, 77, 351, 11.7, 147.55], 
-			"0-30": [368, 1816, 167, 117, 351, 11.7, 147.55], 
-			"1-40": [616, 3045, 280, 196, 398, 13.27, 149.9], 
-			"2-50": [919, 4540, 416, 292, 445, 14.83, 152.25]
+      "0-1": [
+        242,
+        1197,
+        110,
+        77,
+        351,
+        11.73,
+        147.55
+      ],
+      "0-30": [
+        368,
+        1816,
+        167,
+        117,
+        351,
+        11.73,
+        147.55
+      ],
+      "1-40": [
+        616,
+        3045,
+        280,
+        196,
+        398,
+        13.3,
+        149.9
+      ],
+      "2-50": [
+        919,
+        4540,
+        416,
+        292,
+        445,
+        14.86,
+        152.25
+      ]
     },
     "Insight": [
       {
@@ -14261,10 +17738,42 @@
     "Rarity": 4,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [200, 1596, 132, 99, 175, 5.83, 138.75], 
-			"0-30": [304, 2422, 201, 150, 175, 5.83, 138.75], 
-			"1-40": [509, 4059, 336, 252, 198, 6.6, 139.9], 
-			"2-50": [759, 6053, 500, 376, 221, 7.37, 141.05]
+      "0-1": [
+        200,
+        1596,
+        132,
+        99,
+        175,
+        5.86,
+        138.75
+      ],
+      "0-30": [
+        304,
+        2422,
+        201,
+        150,
+        175,
+        5.86,
+        138.75
+      ],
+      "1-40": [
+        509,
+        4059,
+        336,
+        252,
+        198,
+        6.63,
+        139.9
+      ],
+      "2-50": [
+        759,
+        6053,
+        500,
+        376,
+        221,
+        7.4,
+        141.05
+      ]
     },
     "Insight": [
       {
@@ -14419,10 +17928,42 @@
     "Rarity": 3,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [200, 1473, 100, 130, 162, 5.4, 138.1], 
-			"0-30": [304, 2236, 152, 198, 162, 5.4, 138.1], 
-			"1-40": [508, 3748, 255, 331, 183, 6.1, 139.15], 
-			"2-50": [758, 5588, 379, 494, 204, 6.8, 140.2]
+      "0-1": [
+        200,
+        1473,
+        100,
+        130,
+        162,
+        5.43,
+        138.1
+      ],
+      "0-30": [
+        304,
+        2236,
+        152,
+        198,
+        162,
+        5.43,
+        138.1
+      ],
+      "1-40": [
+        508,
+        3748,
+        255,
+        331,
+        183,
+        6.13,
+        139.15
+      ],
+      "2-50": [
+        758,
+        5588,
+        379,
+        494,
+        204,
+        6.83,
+        140.2
+      ]
     },
     "Insight": [
       {
@@ -14575,10 +18116,42 @@
     "Rarity": 3,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [236, 1219, 99, 83, 213, 7.1, 140.65], 
-			"0-30": [358, 1850, 150, 127, 213, 7.1, 140.65], 
-			"1-40": [600, 3101, 252, 212, 241, 8.03, 142.05], 
-			"2-50": [894, 4625, 376, 316, 269, 8.97, 143.45]
+      "0-1": [
+        236,
+        1219,
+        99,
+        83,
+        213,
+        7.13,
+        140.65
+      ],
+      "0-30": [
+        358,
+        1850,
+        150,
+        127,
+        213,
+        7.13,
+        140.65
+      ],
+      "1-40": [
+        600,
+        3101,
+        252,
+        212,
+        241,
+        8,
+        142
+      ],
+      "2-50": [
+        894,
+        4625,
+        376,
+        316,
+        269,
+        9,
+        143.45
+      ]
     },
     "Insight": [
       {
@@ -14731,10 +18304,42 @@
     "Rarity": 3,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [221, 1105, 123, 123, 139, 4.63, 136.95], 
-			"0-30": [336, 1677, 187, 187, 139, 4.63, 136.95], 
-			"1-40": [562, 2811, 313, 313, 157, 5.23, 137.85], 
-			"2-50": [838, 4192, 466, 466, 175, 5.83, 138.75]
+      "0-1": [
+        221,
+        1105,
+        123,
+        123,
+        139,
+        4.6,
+        136.95
+      ],
+      "0-30": [
+        336,
+        1677,
+        187,
+        187,
+        139,
+        4.6,
+        136.95
+      ],
+      "1-40": [
+        562,
+        2811,
+        313,
+        313,
+        157,
+        5.26,
+        137.85
+      ],
+      "2-50": [
+        838,
+        4192,
+        466,
+        466,
+        175,
+        5.86,
+        138.75
+      ]
     },
     "Insight": [
       {
@@ -14887,10 +18492,42 @@
     "Rarity": 3,
     "Afflatus": "Mineral",
     "Stats": {
-			"0-1": [211, 1244, 130, 99, 185, 6.17, 139.25], 
-			"0-30": [320, 1889, 198, 150, 185, 6.17, 139.25], 
-			"1-40": [536, 3166, 331, 252, 209, 6.97, 140.45], 
-			"2-50": [799, 4720, 494, 376, 233, 7.77, 141.65]
+      "0-1": [
+        211,
+        1244,
+        130,
+        99,
+        185,
+        6.2,
+        139.25
+      ],
+      "0-30": [
+        320,
+        1889,
+        198,
+        150,
+        185,
+        6.2,
+        139.25
+      ],
+      "1-40": [
+        536,
+        3166,
+        331,
+        252,
+        209,
+        7,
+        140.45
+      ],
+      "2-50": [
+        799,
+        4720,
+        494,
+        376,
+        233,
+        7.8,
+        141.65
+      ]
     },
     "Insight": [
       {
@@ -15043,10 +18680,42 @@
     "Rarity": 3,
     "Afflatus": "Spirit",
     "Stats": {
-			"0-1": [211, 1397, 115, 130, 139, 4.63, 136.95], 
-			"0-30": [320, 2120, 174, 198, 139, 4.63, 136.95], 
-			"1-40": [536, 3554, 292, 331, 157, 5.23, 137.85], 
-			"2-50": [799, 5300, 435, 494, 175, 5.83, 138.75]
+      "0-1": [
+        211,
+        1397,
+        115,
+        130,
+        139,
+        4.6,
+        136
+      ],
+      "0-30": [
+        320,
+        2120,
+        174,
+        198,
+        139,
+        4.6,
+        0
+      ],
+      "1-40": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "2-50": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
     },
     "Insight": [
       {
@@ -15203,10 +18872,42 @@
     "Rarity": 3,
     "Afflatus": "Intellect",
     "Stats": {
-			"0-1": [232, 1257, 99, 115, 185, 6.17, 139.25], 
-			"0-30": [352, 1908, 150, 174, 185, 6.17, 139.25], 
-			"1-40": [590, 3198, 252, 292, 209, 6.97, 140.45], 
-			"2-50": [879, 4769, 376, 435, 233, 7.77, 141.65]
+      "0-1": [
+        232,
+        1257,
+        99,
+        125,
+        185,
+        6.2,
+        139.25
+      ],
+      "0-30": [
+        352,
+        1908,
+        150,
+        190,
+        185,
+        6.2,
+        139.25
+      ],
+      "1-40": [
+        590,
+        3198,
+        252,
+        318,
+        209,
+        7,
+        140.45
+      ],
+      "2-50": [
+        879,
+        4769,
+        376,
+        474,
+        233,
+        7.8,
+        141.65
+      ]
     },
     "Insight": [
       {
@@ -15363,10 +19064,42 @@
     "Rarity": 3,
     "Afflatus": "Beast",
     "Stats": {
-			"0-1": [234, 1105, 110, 99, 176, 5.87, 138.8], 
-			"0-30": [355, 1677, 166, 150, 176, 5.87, 138.8], 
-			"1-40": [595, 2811, 278, 252, 199, 6.63, 139.95], 
-			"2-50": [887, 4192, 414, 376, 222, 7.4, 141.1]
+      "0-1": [
+        234,
+        1105,
+        110,
+        99,
+        176,
+        5.9,
+        138.8
+      ],
+      "0-30": [
+        355,
+        1677,
+        166,
+        150,
+        176,
+        5.9,
+        138.8
+      ],
+      "1-40": [
+        595,
+        2811,
+        278,
+        252,
+        199,
+        6.6,
+        139.95
+      ],
+      "2-50": [
+        887,
+        4192,
+        414,
+        376,
+        222,
+        7.43,
+        141.1
+      ]
     },
     "Insight": [
       {
@@ -15519,10 +19252,42 @@
     "Rarity": 3,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [190, 1562, 125, 94, 174, 5.8, 138.7], 
-			"0-30": [288, 2370, 190, 143, 174, 5.8, 138.7], 
-			"1-40": [482, 3974, 318, 238, 197, 6.57, 139.85], 
-			"2-50": [719, 5926, 474, 355, 220, 7.33, 141]
+      "0-1": [
+        190,
+        1562,
+        125,
+        94,
+        174,
+        5.83,
+        138.7
+      ],
+      "0-30": [
+        288,
+        2370,
+        190,
+        143,
+        174,
+        5.83,
+        138.7
+      ],
+      "1-40": [
+        482,
+        3974,
+        318,
+        238,
+        197,
+        6.6,
+        139.85
+      ],
+      "2-50": [
+        719,
+        5926,
+        474,
+        355,
+        220,
+        7.36,
+        141
+      ]
     },
     "Insight": [
       {
@@ -15675,10 +19440,42 @@
     "Rarity": 3,
     "Afflatus": "Plant",
     "Stats": {
-			"0-1": [232, 1206, 99, 104, 139, 4.63, 136.95], 
-			"0-30": [352, 1831, 150, 158, 139, 4.63, 136.95], 
-			"1-40": [590, 3069, 252, 265, 157, 5.23, 137.85], 
-			"2-50": [879, 4576, 376, 394, 175, 5.83, 138.75]
+      "0-1": [
+        232,
+        1206,
+        99,
+        104,
+        139,
+        4.66,
+        136.95
+      ],
+      "0-30": [
+        352,
+        1831,
+        150,
+        158,
+        139,
+        4.66,
+        136.95
+      ],
+      "1-40": [
+        590,
+        3069,
+        252,
+        265,
+        157,
+        5.26,
+        137.85
+      ],
+      "2-50": [
+        879,
+        4576,
+        376,
+        394,
+        175,
+        5.86,
+        138.75
+      ]
     },
     "Insight": [
       {
@@ -15831,10 +19628,42 @@
     "Rarity": 3,
     "Afflatus": "Star",
     "Stats": {
-			"0-1": [198, 1460, 112, 125, 151, 5.03, 137.55], 
-			"0-30": [301, 2216, 169, 190, 151, 5.03, 137.55], 
-			"1-40": [503, 3715, 284, 318, 171, 5.7, 138.55], 
-			"2-50": [750, 5540, 424, 474, 191, 6.37, 139.55]
+      "0-1": [
+        198,
+        1460,
+        112,
+        125,
+        151,
+        5,
+        137.55
+      ],
+      "0-30": [
+        301,
+        2216,
+        169,
+        190,
+        151,
+        5,
+        137.55
+      ],
+      "1-40": [
+        503,
+        3715,
+        284,
+        318,
+        171,
+        5.73,
+        138.55
+      ],
+      "2-50": [
+        750,
+        5540,
+        424,
+        474,
+        191,
+        6.4,
+        139.55
+      ]
     },
     "Insight": [
       {
@@ -15987,10 +19816,42 @@
     "Rarity": 2,
     "Afflatus": "Intellect",
     "Stats": {
-			"0-1": [211, 1270, 110, 110, 178, 5.93, 138.9], 
-			"0-30": [320, 1927, 166, 166, 178, 5.93, 138.9], 
-			"1-40": [536, 3231, 278, 278, 201, 6.7, 140.05], 
-			"2-50": [799, 4818, 414, 414, 224, 7.47, 141.2]
+      "0-1": [
+        211,
+        1270,
+        110,
+        110,
+        178,
+        5.98,
+        138.9
+      ],
+      "0-30": [
+        320,
+        1927,
+        166,
+        166,
+        178,
+        5.98,
+        138.9
+      ],
+      "1-40": [
+        536,
+        3231,
+        278,
+        278,
+        201,
+        6.73,
+        140
+      ],
+      "2-50": [
+        799,
+        4818,
+        414,
+        414,
+        224,
+        7.5,
+        141.2
+      ]
     },
     "Insight": [
       {
@@ -16147,10 +20008,42 @@
     "Rarity": 2,
     "Afflatus": "Spirit",
     "Stats": {
-			"0-1": [217, 1333, 104, 104, 223, 7.43, 141.15], 
-			"0-30": [329, 2024, 158, 158, 223, 7.43, 141.15], 
-			"1-40": [552, 3392, 265, 265, 252, 8.4, 142.6], 
-			"2-50": [823, 5058, 394, 394, 281, 9.37, 144.05]
+      "0-1": [
+        217,
+        1333,
+        104,
+        104,
+        223,
+        7.46,
+        141.15
+      ],
+      "0-30": [
+        319,
+        2024,
+        158,
+        158,
+        223,
+        7.46,
+        141.15
+      ],
+      "1-40": [
+        552,
+        3392,
+        265,
+        265,
+        252,
+        8.43,
+        142.6
+      ],
+      "2-50": [
+        823,
+        5058,
+        394,
+        394,
+        281,
+        9.4,
+        144
+      ]
     },
     "Insight": [
       {
@@ -16295,510 +20188,6 @@
           1,
           2,
           4,
-          4
-        ]
-      }
-    ]
-  },
-  {
-    "Id": 10071,
-    "IsReleased": true,
-    "Name": "Getian",
-    "Rarity": 6,
-    "Afflatus": "Beast",
-    "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
-    },
-    "Insight": [
-      {
-        "Id": 1,
-        "Material": [
-          "Sharpodonty",
-          "Page of Beastly Thirst",
-          "Magnesia Crystal",
-          "Rough Silver Ingot"
-        ],
-        "Quantity": [
-          18000,
-          6,
-          6,
-          5
-        ]
-      },
-      {
-        "Id": 2,
-        "Material": [
-          "Sharpodonty",
-          "Scroll of Beastly Thirst",
-          "Esoteric Bones",
-          "Goose Neck"
-        ],
-        "Quantity": [
-          40000,
-          10,
-          5,
-          5
-        ]
-      },
-      {
-        "Id": 3,
-        "Material": [
-          "Sharpodonty",
-          "Tome of Beastly Thirst",
-          "Platinum Ouija",
-          "Serpent Scepter"
-        ],
-        "Quantity": [
-          200000,
-          16,
-          5,
-          3
-        ]
-      }
-    ],
-    "Resonance": [
-      {
-        "Id": 2,
-        "Material": [
-          "Moment of Dissonance"
-        ],
-        "Quantity": [
-          5
-        ]
-      },
-      {
-        "Id": 3,
-        "Material": [
-          "Moment of Dissonance",
-          "Trembling Tooth"
-        ],
-        "Quantity": [
-          5,
-          4
-        ]
-      },
-      {
-        "Id": 4,
-        "Material": [
-          "Moment of Dissonance",
-          "Magnesia Crystal",
-          "Solidus"
-        ],
-        "Quantity": [
-          5,
-          4,
-          3
-        ]
-      },
-      {
-        "Id": 5,
-        "Material": [
-          "Brief Cacophony",
-          "Cicada Wings",
-          "Spell of Fortune"
-        ],
-        "Quantity": [
-          5,
-          4,
-          6
-        ]
-      },
-      {
-        "Id": 6,
-        "Material": [
-          "Sharpodonty",
-          "Brief Cacophony",
-          "Golden Beetle"
-        ],
-        "Quantity": [
-          30000,
-          5,
-          3
-        ]
-      },
-      {
-        "Id": 7,
-        "Material": [
-          "Brief Cacophony",
-          "Bifurcated Skeleton"
-        ],
-        "Quantity": [
-          6,
-          5
-        ]
-      },
-      {
-        "Id": 8,
-        "Material": [
-          "Brief Cacophony",
-          "Holy Silver",
-          "Liquefied Terror"
-        ],
-        "Quantity": [
-          6,
-          4,
-          4
-        ]
-      },
-      {
-        "Id": 9,
-        "Material": [
-          "Brief Cacophony",
-          "Prophetic Bird",
-          "Perpetual Cog"
-        ],
-        "Quantity": [
-          8,
-          7,
-          6
-        ]
-      },
-      {
-        "Id": 10,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sonorous Knell",
-          "Winged Key",
-          "Salted Mandrake"
-        ],
-        "Quantity": [
-          1,
-          5,
-          6,
-          6
-        ]
-      },
-      {
-        "Id": 11,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sharpodonty",
-          "Sonorous Knell",
-          "Golden Compass"
-        ],
-        "Quantity": [
-          1,
-          120000,
-          5,
-          4
-        ]
-      },
-      {
-        "Id": 12,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sonorous Knell",
-          "Wyrmling Skeleton",
-          "Salted Mandrake"
-        ],
-        "Quantity": [
-          1,
-          6,
-          4,
-          5
-        ]
-      },
-      {
-        "Id": 13,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sonorous Knell",
-          "Glowing Mothwing",
-          "Goose Neck"
-        ],
-        "Quantity": [
-          1,
-          6,
-          5,
-          5
-        ]
-      },
-      {
-        "Id": 14,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sonorous Knell",
-          "Fruit of Good and Evil",
-          "Silver Bullet"
-        ],
-        "Quantity": [
-          1,
-          8,
-          2,
-          4
-        ]
-      },
-      {
-        "Id": 15,
-        "Material": [
-          "Hypocritical Murmur",
-          "Sonorous Knell",
-          "Mistilteinn",
-          "Murmur of Insanity"
-        ],
-        "Quantity": [
-          1,
-          8,
-          3,
-          4
-        ]
-      }
-    ]
-  },
-  {
-    "Id": 10072,
-    "IsReleased": false,
-    "Name": "Isolde",
-    "Rarity": 6,
-    "Afflatus": "Spirit",
-    "Stats": {
-			"0-1": [69, 69, 69, 69, 69, 69, 69], 
-			"0-30": [69, 69, 69, 69, 69, 69, 69], 
-			"1-40": [69, 69, 69, 69, 69, 69, 69], 
-			"2-50": [69, 69, 69, 69, 69, 69, 69],
-      "3-60": [69, 69, 69, 69, 69, 69, 69]
-    },
-    "Insight": [
-      {
-        "Id": 1,
-        "Material": [
-          "Sharpodonty",
-          "Page of Plantal Vimen",
-          "Page of Beastly Thirst",
-          "Silver Ore",
-          "Milled Magnesia"
-        ],
-        "Quantity": [
-          18000,
-          3,
-          3,
-          6,
-          5
-        ]
-      },
-      {
-        "Id": 2,
-        "Material": [
-          "Sharpodonty",
-          "Scroll of Plantal Vimen",
-          "Scroll of Beastly Thirst",
-          "Esoteric Bones",
-          "Golden Beetle"
-        ],
-        "Quantity": [
-          40000,
-          5,
-          5,
-          6,
-          3
-        ]
-      },
-      {
-        "Id": 3,
-        "Material": [
-          "Sharpodonty",
-          "Tome of Plantal Vimen",
-          "Tome of Beastly Thirst",
-          "Murmur of Insanity",
-          "Serpent Scepter"
-        ],
-        "Quantity": [
-          200000,
-          8,
-          8,
-          6,
-          3
-        ]
-      }
-    ],
-    "Resonance": [
-      {
-        "Id": 2,
-        "Material": [
-          "Moment of Dissonance"
-        ],
-        "Quantity": [
-          5
-        ]
-      },
-      {
-        "Id": 3,
-        "Material": [
-          "Moment of Dissonance",
-          "Shattered Bones"
-        ],
-        "Quantity": [
-          5,
-          4
-        ]
-      },
-      {
-        "Id": 4,
-        "Material": [
-          "Moment of Dissonance",
-          "Spell of Banishing",
-          "Solidus"
-        ],
-        "Quantity": [
-          5,
-          6,
-          3
-        ]
-      },
-      {
-        "Id": 5,
-        "Material": [
-          "Brief Cacophony",
-          "Liquefied Terror",
-          "Rough Silver Ingot"
-        ],
-        "Quantity": [
-          5,
-          3,
-          4
-        ]
-      },
-      {
-        "Id": 6,
-        "Material": [
-          "Sharpodonty",
-          "Brief Cacophony",
-          "Golden Beetle"
-        ],
-        "Quantity": [
-          30000,
-          5,
-          3
-        ]
-      },
-      {
-        "Id": 7,
-        "Material": [
-          "Brief Cacophony",
-          "Winged Key"
-        ],
-        "Quantity": [
-          6,
-          5
-        ]
-      },
-      {
-        "Id": 8,
-        "Material": [
-          "Brief Cacophony",
-          "Holy Silver",
-          "Cicada Wings"
-        ],
-        "Quantity": [
-          6,
-          4,
-          5
-        ]
-      },
-      {
-        "Id": 9,
-        "Material": [
-          "Brief Cacophony",
-          "Bifurcated Skeleton",
-          "Milled Magnesia"
-        ],
-        "Quantity": [
-          8,
-          5,
-          6
-        ]
-      },
-      {
-        "Id": 10,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Prophetic Bird",
-          "Biting Box"
-        ],
-        "Quantity": [
-          1,
-          5,
-          6,
-          6
-        ]
-      },
-      {
-        "Id": 11,
-        "Material": [
-          "Sinuous Howl",
-          "Sharpodonty",
-          "Sonorous Knell",
-          "Golden Compass"
-        ],
-        "Quantity": [
-          1,
-          120000,
-          5,
-          4
-        ]
-      },
-      {
-        "Id": 12,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Bogeyman",
-          "Winged Key"
-        ],
-        "Quantity": [
-          1,
-          6,
-          4,
-          5
-        ]
-      },
-      {
-        "Id": 13,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Murmur of Insanity",
-          "Holy Silver"
-        ],
-        "Quantity": [
-          1,
-          6,
-          5,
-          5
-        ]
-      },
-      {
-        "Id": 14,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Mistilteinn",
-          "Wyrmling Skeleton"
-        ],
-        "Quantity": [
-          1,
-          8,
-          2,
-          4
-        ]
-      },
-      {
-        "Id": 15,
-        "Material": [
-          "Sinuous Howl",
-          "Sonorous Knell",
-          "Golden Fleece",
-          "Watch Core"
-        ],
-        "Quantity": [
-          1,
-          8,
-          3,
           4
         ]
       }
