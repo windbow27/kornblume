@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 export interface IPlannerSettings {
     showUnreleasedArcanists: boolean,
     enabledUnreleasedStages_v1_7: boolean,
+    enabledUnreleasedStages_v1_9: boolean,
     enableWilderness: boolean,
     enableLowRunCards: boolean
 }
@@ -19,6 +20,7 @@ export const usePlannerSettingsStore = defineStore('plannerSettings', {
         settings: {
             showUnreleasedArcanists: false,
             enabledUnreleasedStages_v1_7: false,
+            enabledUnreleasedStages_v1_9: false,
             enableWilderness: true,
             enableLowRunCards: true
         }

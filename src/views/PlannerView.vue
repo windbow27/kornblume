@@ -241,10 +241,10 @@ GApiSvc.init().then(async () => {
                             class="fa-solid fa-box-archive"></i><span v-show="isLargeScreen">{{ $t('warehouse')
                             }}</span></button>
                 </div>
-                <!-- Hide this settings button till we actually have some settings that allow them to make changes -->
-                <div v-if="false" class="tooltip tooltip-left" :data-tip="$t('settings')">
+                <div class="tooltip tooltip-left" :data-tip="$t('settings')">
                     <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
-                            class="fa-solid fa-gear"></i></button>
+                            class="fa-solid fa-gear"></i><span v-show="isLargeScreen">{{ $t('settings')
+                            }}</span></button>
                 </div>
             </div>
         </div>
