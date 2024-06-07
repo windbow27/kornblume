@@ -1,6 +1,6 @@
 export const changelogs = [
     // Add more from top
-    { date: '07/06/2024', description: '• Added Kakania as unreleased arcanist.' },
+    { date: '07/06/2024', description: '• Added Kakania and Lorelei as unreleased arcanists.' },
     { date: '30/05/2024', description: '• Added Jiu Niangzi banner. "Till the Last Drop".' },
     { date: '21/05/2024', description: '• Added Jiu, Getian and Yenisei as released arcanists. \n • Updated zh-TW translations by Yumemigokochi.' },
     { date: '19/05/2024', description: '• Added Semmelweis and Lucy as unreleased characters. Semmelweis is so hot i can\'t.' },
