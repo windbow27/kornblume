@@ -551,5 +551,16 @@
     "drops": {
       "Tome of Beastly Thirst": 2
     }
+  },
+  "Unreleased": {
+    "id": 100000000,
+    "name": "Unreleased",
+    "cost": 0,
+    "drops": {
+      "Rhine Gold": 1,
+      "Golden Bell Essence Bottle": 1,
+      "Golden Herb Incense": 1,
+      "Alopecurus Pratensis": 1
+    }
   }
 }

@@ -479,5 +479,61 @@
     "Rarity": 2,
     "Material": [],
     "Quantity": []
+  },
+  {
+    "Id": 39,
+    "Name": "Rhine Gold",
+    "Rarity": 6,
+    "Material": [
+      "Watch Core",
+      "Golden Bell Essence Bottle",
+      "Biting Box",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      1,
+      1,
+      2,
+      800
+    ]
+  },
+  {
+    "Id": 40,
+    "Name": "Golden Bell Essence Bottle",
+    "Rarity": 5,
+    "Material": [
+      "Golden Herb Incense",
+      "Clawed Pendulum",
+      "Bifurcated Skeleton",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      1,
+      500
+    ]
+  },
+  {
+    "Id": 41,
+    "Name": "Golden Herb Incense",
+    "Rarity": 4,
+    "Material": [
+      "Alopecurus Pratensis",
+      "Cicada Wings",
+      "Sharpodonty"
+    ],
+    "Quantity": [
+      3,
+      1,
+      300
+    ]
+  },
+  {
+    "Id": 42,
+    "Name": "Alopecurus Pratensis",
+    "Rarity": 3,
+    "Material": [],
+    "Quantity": []
   }
 ]
