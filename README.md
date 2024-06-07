@@ -9,7 +9,7 @@ We are translating Kornblume to other languages and we need your help! [Help us 
  - [VSCode](https://code.visualstudio.com/)
  - [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-      **Strongly recommend setting up ESLint to auto-fix issues each time a file is saved, please check details [here](https://www.digitalocean.com/community/tutorials/workflow-auto-eslinting#step-4-adding-code-actions-on-save)**.
+      **Strongly recommend setting up ESLint to auto-fix on save, please check [here](https://www.digitalocean.com/community/tutorials/workflow-auto-eslinting#step-4-adding-code-actions-on-save)**.
  - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)
 
 ## Customize configuration
