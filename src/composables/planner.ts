@@ -1,6 +1,7 @@
 import { useDataStore } from '@/stores/dataStore'
 import { useWarehouseStore } from '@/stores/warehouseStore'
 import { useActivityStore } from '@/stores/activityStore';
+import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 import { IMaterialUnit, IStages } from '@/types';
 import { useGlobalStore } from '@/stores/global';
 import { getSolve, processSharpoAndDust } from './glpkSolver'
@@ -192,10 +193,17 @@ function updateCraftingMaterialsForGlobalStore (stages) {
 export interface IPlanCards extends Array<IPlanCard> { }
 
 export function getDrops () {
-    // const {
-    //     enabledUnreleasedStages_v1_7
-    // } = usePlannerSettingsStore().settings;
+    const {
+        enabledUnreleasedStages_v1_7,
+        enabledUnreleasedStages_v1_9
+    } = usePlannerSettingsStore().settings;
     const dataStore = useDataStore();
+
+    if (enabledUnreleasedStages_v1_9) {
+        return dataStore.stages1_9_greedy || {}
+    } else if (enabledUnreleasedStages_v1_7) {
+        return dataStore.stages1_7_greedy || {}
+    }
 
     return dataStore.stages1_4_greedy || {}
 }
