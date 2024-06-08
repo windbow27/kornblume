@@ -1,4 +1,4 @@
-import{o as T}from"./index-N9QZf54K.js";import{d as x,o as n,c as o,a as e,t,F as g,r as w,u as R,b as z,e as $,f as y,g as u,w as _,h as O,i as m,j as E,k as W,l as v,m as M}from"./index-_z5a2z7u.js";const k=[{date:"07/06/2024",description:`• Added Kakania and Lorelei as unreleased arcanists. 
+import{o as T}from"./index-Bx5ev17d.js";import{d as x,o as n,c as o,a as e,t,F as g,r as w,u as R,b as z,e as $,f as y,g as u,w as _,h as O,i as m,j as E,k as W,l as v,m as M}from"./index-X6cBbCUf.js";const k=[{date:"07/06/2024",description:`• Added Kakania and Lorelei as unreleased arcanists. 
  • Updated the stats for all arcanists. 
  • Added 1.9 materials. 
  • Added 1.9 droprates (experimental).`},{date:"30/05/2024",description:'• Added Jiu Niangzi banner. "Till the Last Drop".'},{date:"21/05/2024",description:`• Added Jiu, Getian and Yenisei as released arcanists. 
