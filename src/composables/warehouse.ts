@@ -41,7 +41,8 @@ export const initializeWarehouse = () => {
     const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_9;
     console.log('Initialize warehouse');
     useDataStore().items.forEach((item) => {
-        if (item.IsReleased || unreleasedDropsEnabled) {
+        const isItemReleasedForUser = item.IsReleased || unreleasedDropsEnabled;
+        if (isItemReleasedForUser) {
             if (isValidWarehouseItem(item)) {
                 useWarehouseStore().initItem(item.Name, item.Category);
             }
@@ -64,13 +65,14 @@ function isValidWarehouseItem (item) {
 export function checkWarehouse () {
     const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_9;
     useDataStore().items.forEach((item) => {
+        const isItemReleasedForUser = item.IsReleased || unreleasedDropsEnabled;
         if (
             !useWarehouseStore().hasItem(item.Name) &&
-            (item.Name === 'Crystal Casket' || item.IsReleased || unreleasedDropsEnabled) && isValidWarehouseItem(item)
+            (item.Name === 'Crystal Casket' || isItemReleasedForUser) && isValidWarehouseItem(item)
         ) {
             console.log('Adding', item.Name, 'to warehouse')
             useWarehouseStore().initItem(item.Name, item.Category);
-        } else if (!item.IsReleased || !isValidWarehouseItem(item)) {
+        } else if (!isItemReleasedForUser || !isValidWarehouseItem(item)) {
             // console.log('Removing', item.Name, 'from warehouse')
             useWarehouseStore().removeItem(item.Name);
         }
