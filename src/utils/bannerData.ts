@@ -20,20 +20,19 @@ export const bannerList = [
     'Beyond the World of Matters',
     'Seeker in the Cave',
     'The Chirps of Flame',
-    // yearning has tooth and centu as rate up
-    'Yearning of the Water',
-    'Yearning of the Water',
     'The Spores of Peace',
     'Till the Last Drop',
-    // revelation has anlee and jessica as rate up
-    'Revelation of the Water',
-    'Revelation of the Water',
+
     // standard
     'Amongst the Lake',
     // thread
     'Invitation From the Water',
     // abundance
-    'Abundance of the Water'
+    'Abundance of the Water',
+    // yearning
+    'Yearning of the Water',
+    // revelation
+    'Revelation of the Water'
 ];
 
 export const bannerRateUp = [
@@ -57,12 +56,8 @@ export const bannerRateUp = [
     '37',
     '6',
     'Spathodea',
-    'Tooth Fairy',
-    'Centurion',
     'Ezra Theodore',
-    'Jiu Niangzi',
-    'An-an Lee',
-    'Jessica'
+    'Jiu Niangzi'
 ];
 
 export const specialArcanists: string[] = [
