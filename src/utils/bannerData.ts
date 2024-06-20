@@ -21,7 +21,7 @@ export const bannerList = [
     'Seeker in the Cave',
     'The Chirps of Flame',
     'The Spores of Peace',
-    'Till the Last Drop',
+    'Over the New Leaf'
 
     // standard
     'Amongst the Lake',
@@ -31,6 +31,8 @@ export const bannerList = [
     'Abundance of the Water',
     // yearning
     'Yearning of the Water',
+    // jiu niangzi
+    'Till the Last Drop',
     // revelation
     'Revelation of the Water'
 ];
@@ -57,7 +59,7 @@ export const bannerRateUp = [
     '6',
     'Spathodea',
     'Ezra Theodore',
-    'Jiu Niangzi'
+    'Getian'
 ];
 
 export const specialArcanists: string[] = [
