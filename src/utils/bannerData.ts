@@ -21,7 +21,7 @@ export const bannerList = [
     'Seeker in the Cave',
     'The Chirps of Flame',
     'The Spores of Peace',
-    'Over the New Leaf'
+    'Over the New Leaf',
 
     // standard
     'Amongst the Lake',

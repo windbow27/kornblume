@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '20/05/2024', description: '• Added Getian banner.' },
     { date: '18/06/2024', description: '• Added very late Revelation of the Water banner. I was busy. And I hate these double banners so much, go pull Jiu instead.' },
     { date: '07/06/2024', description: '• Added Kakania and Lorelei as unreleased arcanists. \n • Updated the stats for all arcanists. \n • Added 1.9 materials. \n • Added 1.9 droprates (experimental).' },
     { date: '30/05/2024', description: '• Added Jiu Niangzi banner. "Till the Last Drop".' },
