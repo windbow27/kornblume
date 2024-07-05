@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '05/07/2024', description: '• Added J and Pioneer as unreleased arcanists.' },
     { date: '29/06/2024', description: '• Added Isolde and Marcus as released arcanists.' },
     { date: '20/06/2024', description: '• Added Getian banner.' },
     { date: '18/06/2024', description: '• Added very late Revelation of the Water banner. I was busy. And I hate these double banners so much, go pull Jiu instead.' },
