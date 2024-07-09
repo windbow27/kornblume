@@ -194,18 +194,15 @@ export interface IPlanCards extends Array<IPlanCard> { }
 
 export function getDrops () {
     const {
-        enabledUnreleasedStages_v1_7,
         enabledUnreleasedStages_v1_9
     } = usePlannerSettingsStore().settings;
     const dataStore = useDataStore();
 
     if (enabledUnreleasedStages_v1_9) {
         return dataStore.stages1_9_greedy || {}
-    } else if (enabledUnreleasedStages_v1_7) {
-        return dataStore.stages1_7_greedy || {}
     }
 
-    return dataStore.stages1_4_greedy || {}
+    return dataStore.stages1_7_greedy || {}
 }
 
 export async function getPlan (materials: IMaterialUnit[], isEnableWilderness: boolean): Promise<IPlanCards> {
