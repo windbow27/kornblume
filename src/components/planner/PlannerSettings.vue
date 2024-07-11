@@ -11,7 +11,6 @@ const props = defineProps({
 
 const emit = defineEmits<{(e: 'closeOverlay' | 'saveSettings', updatedSettings?: IPlannerSettings): void }>()
 
-const enabledUnreleasedStages_v1_7 = ref(props.settings.enabledUnreleasedStages_v1_7);
 const enabledUnreleasedStages_v1_9 = ref(props.settings.enabledUnreleasedStages_v1_9);
 
 const closeOverlay = () => {
@@ -21,7 +20,6 @@ const closeOverlay = () => {
 const saveSettings = () => {
     const updatedSettings = {
         showUnreleasedArcanists: props.settings.showUnreleasedArcanists,
-        enabledUnreleasedStages_v1_7: enabledUnreleasedStages_v1_7.value,
         enabledUnreleasedStages_v1_9: enabledUnreleasedStages_v1_9.value,
         enableWilderness: props.settings.enableWilderness,
         enableLowRunCards: props.settings.enableLowRunCards
@@ -38,12 +36,6 @@ const saveSettings = () => {
             <button @click="closeOverlay" class="absolute top-2 right-4 text-white">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="form-control">
-                <label class="cursor-pointer label justify-center space-x-5 text-center">
-                    <span class="label-text text-white text-md whitespace-nowrap">{{ $t('use-version-stage-data-experimental', {version: '1.7'}) }}</span>
-                    <input v-model="enabledUnreleasedStages_v1_7" type="checkbox" class="checkbox checkbox-info" />
-                </label>
-            </div>
             <div class="form-control">
                 <label class="cursor-pointer label justify-center space-x-5 text-center">
                     <span class="label-text text-white text-md whitespace-nowrap">{{ $t('use-version-stage-data-experimental', {version: '1.9'}) }}</span>
