@@ -9,7 +9,7 @@ import StageDisplay from '@/components/stage/StageDisplay.vue';
 const buttons = ['Story', 'Hard', 'Resource', 'Insight'];
 const selectedStage = ref<IStage>(useGlobalStore().selectedStage);
 const selectedButton = ref(useGlobalStore().selectedStage.category);
-const stageStore = useDataStore().stages1_4;
+const stageStore = useDataStore().stages1_7_greedy;
 const globalStore = useGlobalStore();
 
 const selectStage = (stage: IStage) => {

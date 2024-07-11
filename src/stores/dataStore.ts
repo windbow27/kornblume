@@ -4,8 +4,6 @@ import { IArcanists, IFormulas, IItems, IPsychubes, IShops, IStages } from '@/ty
 interface IDataStore {
     arcanists: IArcanists,
     stages: IStages,
-    stages1_4: IStages,
-    stages_greedy: IStages,
     stages1_4_greedy: IStages,
     stages1_7_greedy: IStages,
     stages1_9_greedy: IStages,
@@ -26,8 +24,6 @@ export const useDataStore = defineStore('dataStore', {
     state: (): IDataStore => ({
         arcanists: [],
         stages: {},
-        stages1_4: {},
-        stages_greedy: {},
         stages1_4_greedy: {},
         stages1_7_greedy: {},
         stages1_9_greedy: {},

@@ -22,6 +22,7 @@ export const bannerList = [
     'The Chirps of Flame',
     'The Spores of Peace',
     'Over the New Leaf',
+    'Vissi D\'arte, Vissi D\'amore',
 
     // standard
     'Amongst the Lake',
@@ -59,7 +60,8 @@ export const bannerRateUp = [
     '6',
     'Spathodea',
     'Ezra Theodore',
-    'Getian'
+    'Getian',
+    'Isolde'
 ];
 
 export const specialArcanists: string[] = [

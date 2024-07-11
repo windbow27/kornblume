@@ -1,5 +1,7 @@
 export const changelogs = [
     // Add more from top
+    { date: '11/07/2024', description: '• Added Isolde banner. \n • Updated planner to use 1.7 droprates.' },
+    { date: '29/06/2024', description: '• Added Isolde and Marcus as released arcanists.' },
     { date: '05/07/2024', description: '• Added J and Pioneer as unreleased arcanists.' },
     { date: '29/06/2024', description: '• Added Isolde and Marcus as released arcanists.' },
     { date: '20/06/2024', description: '• Added Getian banner.' },
