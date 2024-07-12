@@ -376,7 +376,7 @@ GApiSvc.init().then(async () => {
         </div>
 
         <!-- Notification -->
-        <!-- <div class="pb-4">
+        <div class="pb-4">
             <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
@@ -384,13 +384,16 @@ GApiSvc.init().then(async () => {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-sm lg:text-base">The site's URL has been updated
-                        to <span class="text-info">windbow27.github.io/kornblume/</span>
-                        (with a lowercase k).
+                    <p class="text-sm lg:text-base"><span class="text-info">Vissi D'arte D'amore</span> is a
+                        particularly finicky name. Use the
+                        editor to add any missing pulls if you encounter errors.</p>
+                    <p class="text-sm lg:text-base"><span class="text-info">Tip: </span>For PC users, press F12 after importing
+                        images to see which pulls went wrong.
                     </p>
+
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center justify-center sm:justify-start">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
