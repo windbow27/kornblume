@@ -65,6 +65,7 @@
                         </template>
                     </i18n-t>
                 </p>
+                <p class="text-sm lg:text-base">{{ $t('tip-for-pc-users-press-f12-after-importing-images-to-see-which-pulls-went-wrong') }} </p>
             </div>
         </div>
         <form method="dialog" class="modal-backdrop">

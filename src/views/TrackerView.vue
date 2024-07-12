@@ -224,7 +224,7 @@ const ocr: clickHandler = (payload: Event): void => {
 
                     const arcanistNameGroup: string = /^\W*(?<ArcanistName>\d*[376A-Za-z.,]+(?:\s[A-Za-z.,1]+)*)/.source;
                     const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
-                    const bannerGroup: string = `(?<BannerType>${bannerList.join('|').replaceAll(/\s/g, '\\s?')}).*`;
+                    const bannerGroup: string = `(?<BannerType>${bannerList.join('|').replaceAll(/\s/g, '\\s?').replaceAll("'", "['\\s]?")}).*`;
                     const dateGroup: string = /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/.source;
 
                     const pattern = new RegExp(arcanistNameGroup + parenGroup + bannerGroup + dateGroup, 'i');
@@ -384,13 +384,8 @@ GApiSvc.init().then(async () => {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-sm lg:text-base"><span class="text-info">Vissi D'arte D'amore</span> is a
-                        particularly finicky name. Use the
-                        editor to add any missing pulls if you encounter errors.</p>
-                    <p class="text-sm lg:text-base"><span class="text-info">Tip: </span>For PC users, press F12 after importing
-                        images to see which pulls went wrong.
-                    </p>
-
+                    <p class="text-sm lg:text-base"><span class="text-info">Update:</span> I found a way to fix the
+                        problem. It should properly pick up the banner name (Vissi D'arte, Vissi D'amore ) now.</p>
                 </div>
             </div>
         </div>
