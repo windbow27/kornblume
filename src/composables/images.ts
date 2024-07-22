@@ -34,7 +34,8 @@ const getRarity = (material: string) => {
 //     return 1;
 // }
 
-// 1.4
+// 1.7
+// so unorganized
 const getStageBackgroundId = (id: number) => {
     if (id <= 21) return 1;
     if (id <= 45) return 2;
@@ -47,6 +48,7 @@ const getStageBackgroundId = (id: number) => {
     if (id <= 122) return 8;
     if (id <= 125) return 9;
     if (id <= 128) return 10;
+    if (id <= 621 && id >= 600) return 12;
     return 1;
 }
 

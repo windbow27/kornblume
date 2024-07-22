@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '22/07/2024', description: '• Updated Spanish translations by mgeshagrath.\n • Added missing images in Chapter 6 stages.' },
     { date: '12/07/2024', description: '• Resonance materials are now craftable.' },
     { date: '11/07/2024', description: '• Added Isolde banner. \n • Updated planner to use 1.7 droprates.' },
     { date: '29/06/2024', description: '• Added Isolde and Marcus as released arcanists.' },

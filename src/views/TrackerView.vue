@@ -376,7 +376,7 @@ GApiSvc.init().then(async () => {
         </div>
 
         <!-- Notification -->
-        <div class="pb-4">
+        <!-- <div class="pb-4">
             <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
@@ -388,7 +388,7 @@ GApiSvc.init().then(async () => {
                         problem. It should properly pick up the banner name (Vissi D'arte, Vissi D'amore ) now.</p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center justify-center sm:justify-start">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"
