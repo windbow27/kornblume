@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '31/07/2024', description: '• Added Resonances section for arcanists. No it\'s not building guide, simply cost viewer copied from planner due to popular demand by users.' },
     { date: '30/07/2024', description: '• Added Mercuria as unreleased arcanist.' },
     { date: '22/07/2024', description: '• Updated Spanish translations by mgeshagrath.\n • Added missing images in Chapter 6 stages.' },
     { date: '12/07/2024', description: '• Resonance materials are now craftable.' },

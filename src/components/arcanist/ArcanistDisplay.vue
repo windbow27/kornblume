@@ -8,15 +8,12 @@ import { IArcanist } from '@/types'
 import { getArcanistI2ImagePath, getArcanistAfflatusPath, getArcanistDmgTypePath } from '@/composables/images';
 import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
-import Upgrades from '@/components/arcanist/info/Upgrades.vue';
-import Skills from '@/components/arcanist/info/Skills.vue';
-import Builds from '@/components/arcanist/info/Builds.vue';
+import Resonances from '@/components/arcanist/info/Resonances.vue';
 
 const route = useRoute();
 const arcanistStore = useDataStore().arcanists;
 const arcanist = ref<IArcanist>(arcanistStore[0]);
-const buttons = ['Stats'];
-// const buttons = ['Stats', 'Upgrades', 'Skills'];
+const buttons = ['Stats', 'Resonances'];
 const selectedButton = ref(buttons[0]);
 
 onBeforeMount(() => {
@@ -52,8 +49,7 @@ onBeforeMount(() => {
                 </div>
                 <div class="flex flex-wrap gap-x-2 gap-y-2 pt-2">
                     <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
-                        :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']"
-                        :disabled="index !== 0">
+                        :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']">
                         {{ $t(button) }}
                     </button>
                 </div>
@@ -61,9 +57,7 @@ onBeforeMount(() => {
             <!--Info Cards-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <Stats :arcanist="arcanist ?? {}" v-if="selectedButton === 'Stats'" />
-                <Upgrades :arcanist="arcanist ?? {}" v-if="selectedButton === 'Upgrades'" />
-                <Skills :arcanist="arcanist ?? {}" v-else-if="selectedButton === 'Skills'" />
-                <Builds :arcanist="arcanist ?? {}" v-else-if="selectedButton === 'Builds'" />
+                <Resonances :arcanist="arcanist ?? {}" v-if="selectedButton === 'Resonances'" />
             </div>
         </div>
     </div>

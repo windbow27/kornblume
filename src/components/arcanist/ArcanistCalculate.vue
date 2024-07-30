@@ -22,7 +22,7 @@ const calculateArcanist = computed(() => {
 
 <template>
     <div>
-        <ItemList class="max-h-48" :materialList="calculateArcanist" />
+        <ItemList class="max-h-60" :materialList="calculateArcanist" />
     </div>
 </template>
 
