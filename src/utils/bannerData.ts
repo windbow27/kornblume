@@ -23,6 +23,7 @@ export const bannerList = [
     'The Spores of Peace',
     'Over the New Leaf',
     'Vissi D\'arte, Vissi D\'amore',
+    'Reading in Sea Breeze',
 
     // standard
     'Amongst the Lake',
@@ -61,7 +62,8 @@ export const bannerRateUp = [
     'Spathodea',
     'Ezra Theodore',
     'Getian',
-    'Isolde'
+    'Isolde',
+    'Marcus'
 ];
 
 export const specialArcanists: string[] = [
