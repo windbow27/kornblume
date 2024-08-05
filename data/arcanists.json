@@ -2036,7 +2036,7 @@
   },
   {
     "Id": 10072,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Isolde",
     "Rarity": 6,
     "Afflatus": "Spirit",
@@ -4649,7 +4649,7 @@
   },
   {
     "Id": 10073,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Marcus",
     "Rarity": 6,
     "Afflatus": "Plant",
