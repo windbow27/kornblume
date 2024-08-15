@@ -1,6 +1,7 @@
 {
   "6": "6",
   "37": "37",
+  "tuesday": "藍手帕",
   "mercuria": "環狀水星",
   "j": "J",
   "semmelweis": "塞梅爾維斯",
@@ -31,6 +32,7 @@
   "a-knight": "未鏽鎧",
   "lilya": "紅弩箭",
   "druvis-iii": "槲寄生",
+  "barbara": "數羊羔",
   "lorelei": "羅蕾萊",
   "yenisei": "小葉尼塞",
   "avgust": "阿夫西維",
@@ -80,5 +82,20 @@
   "la-source": "拉拉泉",
   "the-fool": "弄臣",
   "door": "門",
-  "ms-radio": "無線電小姐"
+  "ms-radio": "無線電小姐",
+  "frequency-modulation-peace": "平和",
+  "frequency-modulation-insight": "洞徹",
+  "frequency-modulation-sincerity": "赤誠",
+  "frequency-modulation-excitement": "亢奮",
+  "frequency-modulation-inspiration": "鼓舞",
+  "frequency-modulation-fantasy": "縱情狂想",
+  "frequency-modulation-awe": "恍然驚詫",
+  "frequency-modulation-hope": "希冀",
+  "frequency-modulation-delusion": "瞬息迷狂",
+  "frequency-modulation-compassion": "憐憫",
+  "frequency-modulation-tranquility": "安恬泰然",
+  "frequency-modulation-balance": "循序平衡",
+  "frequency-modulation-satiety": "饜足",
+  "frequency-modulation-calm": "沉靜",
+  "frequency-modulation-moderation": "節制"
 }

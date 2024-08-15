@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '15/08/2024', description: '• Added Vila banner. \n • Added Tuesday and Barbara as unreleased arcanists.' },
     { date: '01/08/2024', description: '• Added Marcus banner.' },
     { date: '31/07/2024', description: '• Added Resonances section for arcanists. No it\'s not building guide, simply cost viewer copied from planner due to popular demand by users.' },
     { date: '30/07/2024', description: '• Added Mercuria as unreleased arcanist.' },

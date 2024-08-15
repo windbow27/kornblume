@@ -1,6 +1,7 @@
 {
   "6": "6",
   "37": "37",
+  "tuesday": "Tuesday",
   "mercuria": "Mercuria",
   "j": "J",
   "semmelweis": "Semmelweis",
@@ -31,6 +32,7 @@
   "a-knight": "A Knight",
   "lilya": "Lilya",
   "druvis-iii": "Druvis III",
+  "barbara": "Barbara",
   "lorelei": "Lorelei",
   "yenisei": "Yenisei",
   "avgust": "Avgust",
@@ -80,5 +82,20 @@
   "la-source": "La Source",
   "the-fool": "The Fool",
   "door": "Door",
-  "ms-radio": "Ms. Radio"
+  "ms-radio": "Ms. Radio",
+  "frequency-modulation-peace": "Peace",
+  "frequency-modulation-insight": "Insight",
+  "frequency-modulation-sincerity": "Sincerity",
+  "frequency-modulation-excitement": "Excitement",
+  "frequency-modulation-inspiration": "Inspiration",
+  "frequency-modulation-fantasy": "Fantasy",
+  "frequency-modulation-awe": "Awe",
+  "frequency-modulation-hope": "Hope",
+  "frequency-modulation-delusion": "Delusion",
+  "frequency-modulation-compassion": "Compassion",
+  "frequency-modulation-tranquility": "Tranquility",
+  "frequency-modulation-balance": "Balance",
+  "frequency-modulation-satiety": "Satiety",
+  "frequency-modulation-calm": "Calm",
+  "frequency-modulation-moderation": "Moderation"
 }
