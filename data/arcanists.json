@@ -1,5 +1,377 @@
 [
   {
+    "Id": 10084,
+    "IsReleased": false,
+    "Name": "Tuesday",
+    "Rarity": 6,
+    "Afflatus": "Spirit",
+    "Stats": {
+      "0-1": [
+        229,
+        1597,
+        118,
+        154,
+        218,
+        7.2,
+        140.9
+      ],
+      "0-30": [
+        348,
+        2424,
+        180,
+        234,
+        218,
+        7.2,
+        140.9
+      ],
+      "1-40": [
+        582,
+        4062,
+        300,
+        391,
+        247,
+        8.2,
+        142.3
+      ],
+      "2-50": [
+        868,
+        6057,
+        447,
+        583,
+        276,
+        9.2,
+        143.8
+      ],
+      "3-60": [
+        1021,
+        7125,
+        525,
+        686,
+        305,
+        10.1,
+        145.3
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Plantal Vimen",
+          "Page of Beastly Thirst",
+          "Trembling Tooth",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          18000,
+          3,
+          3,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Plantal Vimen",
+          "Scroll of Beastly Thirst",
+          "Esoteric Bones",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          40000,
+          5,
+          5,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Plantal Vimen",
+          "Tome of Beastly Thirst",
+          "Silver Bullet",
+          "Serpent Scepter"
+        ],
+        "Quantity": [
+          200000,
+          8,
+          8,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Shattered Bones"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Trembling Tooth",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Liquefied Terror",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          5,
+          3,
+          6
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Clawed Pendulum"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Goose Neck",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          8,
+          5,
+          8
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Golden Herb Incense",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Wyrmling Skeleton",
+          "Winged Key"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Silver Bullet",
+          "Golden Herb Incense"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Golden Fleece",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Hypocritical Murmur",
+          "Sonorous Knell",
+          "Rhine Gold",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Rhine Gold",
+          "Bogeyman",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Serpent Scepter",
+          "Golden Bell Essence Bottle",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Rhine Gold",
+          "Platinum Ouija",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Bogeyman",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Golden Fleece",
+          "Golden Bell Essence Bottle",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10083,
     "IsReleased": false,
     "Name": "Mercuria",
@@ -292,6 +664,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Silver Bullet",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Fleece",
+          "Watch Core",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Rhine Gold",
+          "Wyrmling Skeleton",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Mistilteinn",
+          "Wyrmling Skeleton",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Wyrmling Skeleton",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -579,6 +1028,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Bogeyman",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Serpent Scepter",
+          "Incorrupt Monkeypaw",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Platinum Ouija",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Rhine Gold",
+          "Silver Bullet",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Golden Fleece",
+          "Golden Bell Essence Bottle",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -870,11 +1396,88 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Platinum Ouija",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Rhine Gold",
+          "Platinum Ouija",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Mistilteinn",
+          "Wyrmling Skeleton",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Serpent Scepter",
+          "Bogeyman",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Rhine Gold",
+          "Silver Bullet",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      }
     ]
   },
   {
     "Id": 10074,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Vila",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -1157,6 +1760,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Golden Fleece",
+          "Incorrupt Monkeypaw",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Rhine Gold",
+          "Bogeyman",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Watch Core",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Rhine Gold",
+          "Wyrmling Skeleton",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Fleece",
+          "Silver Bullet",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -1454,6 +2134,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Rhine Gold",
+          "Murmur of Insanity",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Mistilteinn",
+          "Platinum Ouija",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Incorrupt Monkeypaw",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Serpent Scepter",
+          "Glowing Mothwing",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Watch Core",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -1743,6 +2500,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Mistilteinn",
+          "Glowing Mothwing",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Fleece",
+          "Watch Core",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Golden Fleece",
+          "Wyrmling Skeleton",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Golden Fleece",
+          "Golden Compass",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Golden Fleece",
+          "Golden Bell Essence Bottle",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -2030,6 +2864,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Golden Fleece",
+          "Wyrmling Skeleton",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Mistilteinn",
+          "Silver Bullet",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Golden Fleece",
+          "Platinum Ouija",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Rhine Gold",
+          "Glowing Mothwing",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Silver Bullet",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -2327,6 +3238,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Golden Bell Essence Bottle",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Rhine Gold",
+          "Wyrmling Skeleton",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Serpent Scepter",
+          "Bogeyman",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Bell Essence Bottle",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Mistilteinn",
+          "Bogeyman",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -2614,6 +3602,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Mistilteinn",
+          "Silver Bullet",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Incorrupt Monkeypaw",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Serpent Scepter",
+          "Murmur of Insanity",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Mistilteinn",
+          "Silver Bullet",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Serpent Scepter",
+          "Wyrmling Skeleton",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -2911,6 +3976,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Compass",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Fleece",
+          "Wyrmling Skeleton",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Bell Essence Bottle",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Watch Core",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Mistilteinn",
+          "Incorrupt Monkeypaw",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -2944,8 +4086,8 @@
         281,
         281,
         433,
-        0,
-        0
+        14.4,
+        151.6
       ],
       "2-50": [
         972,
@@ -2953,8 +4095,8 @@
         419,
         419,
         484,
-        0,
-        0
+        16.1,
+        154.2
       ],
       "3-60": [
         1143,
@@ -3198,6 +4340,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Compass",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Rhine Gold",
+          "Incorrupt Monkeypaw",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Serpent Scepter",
+          "Silver Bullet",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Murmur of Insanity",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Golden Fleece",
+          "Murmur of Insanity",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -3489,6 +4708,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Golden Fleece",
+          "Glowing Mothwing",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Fleece",
+          "Glowing Mothwing",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Rhine Gold",
+          "Wyrmling Skeleton",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Mistilteinn",
+          "Murmur of Insanity",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Golden Fleece",
+          "Platinum Ouija",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -3776,6 +5072,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Golden Fleece",
+          "Wyrmling Skeleton",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Mistilteinn",
+          "Wyrmling Skeleton",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Rhine Gold",
+          "Silver Bullet",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Rhine Gold",
+          "Murmur of Insanity",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Serpent Scepter",
+          "Glowing Mothwing",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
         ]
       }
     ]
@@ -4067,6 +5440,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Mistilteinn",
+          "Incorrupt Monkeypaw",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Fleece",
+          "Watch Core",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Serpent Scepter",
+          "Glowing Mothwing",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Rhine Gold",
+          "Glowing Mothwing",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Bell Essence Bottle",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -4354,6 +5804,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Wyrmling Skeleton",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Serpent Scepter",
+          "Bogeyman",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Rhine Gold",
+          "Platinum Ouija",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Rhine Gold",
+          "Silver Bullet",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Golden Fleece",
+          "Murmur of Insanity",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -4645,6 +6172,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Bogeyman",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Rhine Gold",
+          "Murmur of Insanity",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Serpent Scepter",
+          "Golden Compass",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Rhine Gold",
+          "Silver Bullet",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Watch Core",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -4932,6 +6536,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Rhine Gold",
+          "Golden Bell Essence Bottle",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Wyrmling Skeleton",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Glowing Mothwing",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Golden Fleece",
+          "Golden Bell Essence Bottle",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Silver Bullet",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -5223,6 +6904,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Rhine Gold",
+          "Bogeyman",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Fleece",
+          "Silver Bullet",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Silver Bullet",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Fleece",
+          "Platinum Ouija",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Bell Essence Bottle",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -5510,6 +7268,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Golden Fleece",
+          "Golden Bell Essence Bottle",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Bogeyman",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Wyrmling Skeleton",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Serpent Scepter",
+          "Golden Bell Essence Bottle",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Silver Bullet",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -5801,6 +7636,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Wyrmling Skeleton",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Mistilteinn",
+          "Glowing Mothwing",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Rhine Gold",
+          "Watch Core",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Rhine Gold",
+          "Platinum Ouija",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Silver Bullet",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -6088,6 +8000,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Mistilteinn",
+          "Golden Compass",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Serpent Scepter",
+          "Incorrupt Monkeypaw",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Mistilteinn",
+          "Wyrmling Skeleton",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Serpent Scepter",
+          "Bogeyman",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Rhine Gold",
+          "Golden Compass",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -6379,6 +8368,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Mistilteinn",
+          "Golden Bell Essence Bottle",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Rhine Gold",
+          "Murmur of Insanity",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Rhine Gold",
+          "Watch Core",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Mistilteinn",
+          "Wyrmling Skeleton",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Serpent Scepter",
+          "Incorrupt Monkeypaw",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -6666,6 +8732,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Bogeyman",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Rhine Gold",
+          "Golden Compass",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Rhine Gold",
+          "Incorrupt Monkeypaw",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Serpent Scepter",
+          "Murmur of Insanity",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Golden Fleece",
+          "Watch Core",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
         ]
       }
     ]
@@ -6957,6 +9100,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Mistilteinn",
+          "Incorrupt Monkeypaw",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Mistilteinn",
+          "Platinum Ouija",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Rhine Gold",
+          "Golden Compass",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Rhine Gold",
+          "Murmur of Insanity",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Golden Fleece",
+          "Glowing Mothwing",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -7244,6 +9464,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Mistilteinn",
+          "Golden Bell Essence Bottle",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Mistilteinn",
+          "Bogeyman",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Mistilteinn",
+          "Incorrupt Monkeypaw",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Golden Fleece",
+          "Golden Bell Essence Bottle",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Rhine Gold",
+          "Silver Bullet",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -7535,6 +9832,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Glowing Mothwing",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Serpent Scepter",
+          "Watch Core",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Serpent Scepter",
+          "Platinum Ouija",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Wyrmling Skeleton",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Mistilteinn",
+          "Watch Core",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -7822,6 +10196,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Rhine Gold",
+          "Golden Compass",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Fleece",
+          "Incorrupt Monkeypaw",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Mistilteinn",
+          "Silver Bullet",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Rhine Gold",
+          "Glowing Mothwing",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Rhine Gold",
+          "Incorrupt Monkeypaw",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
         ]
       }
     ]
@@ -8113,6 +10564,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Silver Bullet",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Serpent Scepter",
+          "Glowing Mothwing",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Serpent Scepter",
+          "Silver Bullet",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Mistilteinn",
+          "Golden Compass",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Golden Fleece",
+          "Watch Core",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -8400,6 +10928,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Murmur of Insanity",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Serpent Scepter",
+          "Silver Bullet",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Mistilteinn",
+          "Golden Compass",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Fleece",
+          "Silver Bullet",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Rhine Gold",
+          "Platinum Ouija",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
         ]
       }
     ]
@@ -8697,6 +11302,83 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Mistilteinn",
+          "Wyrmling Skeleton",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Fleece",
+          "Incorrupt Monkeypaw",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Golden Fleece",
+          "Murmur of Insanity",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Mistilteinn",
+          "Golden Bell Essence Bottle",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Compass",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      }
     ]
   },
   {
@@ -8984,6 +11666,83 @@
           8,
           3,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Silver Bullet",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Compass",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Mistilteinn",
+          "Wyrmling Skeleton",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Rhine Gold",
+          "Bogeyman",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Rhine Gold",
+          "Watch Core",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
         ]
       }
     ]
@@ -9275,6 +12034,445 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Serpent Scepter",
+          "Golden Compass",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Bogeyman",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Fruit of Good and Evil",
+          "Murmur of Insanity",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Fleece",
+          "Platinum Ouija",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Golden Fleece",
+          "Golden Compass",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 10085,
+    "IsReleased": false,
+    "Name": "Barbara",
+    "Rarity": 5,
+    "Afflatus": "Spirit",
+    "Stats": {
+      "0-1": [
+        230,
+        1326,
+        114,
+        138,
+        203,
+        6.7,
+        0
+      ],
+      "0-30": [
+        349,
+        2013,
+        173,
+        209,
+        203,
+        6.7,
+        0
+      ],
+      "1-40": [
+        584,
+        3374,
+        289,
+        351,
+        230,
+        7.6,
+        0
+      ],
+      "2-50": [
+        871,
+        5031,
+        431,
+        523,
+        257,
+        8.5,
+        0
+      ],
+      "3-60": [
+        1024,
+        5919,
+        507,
+        615,
+        284,
+        9.4,
+        0
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Plantal Vimen",
+          "Page of Beastly Thirst",
+          "Silver Ore",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          12000,
+          3,
+          3,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Plantal Vimen",
+          "Scroll of Beastly Thirst",
+          "Solidus",
+          "Salted Mandrake"
+        ],
+        "Quantity": [
+          30000,
+          4,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Plantal Vimen",
+          "Tome of Beastly Thirst",
+          "Glowing Mothwing",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          120000,
+          6,
+          6,
+          4,
+          2
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          4
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Silver Ore"
+        ],
+        "Quantity": [
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Spell of Banishing",
+          "Solidus"
+        ],
+        "Quantity": [
+          4,
+          6,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Esoteric Bones",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          4,
+          3,
+          4
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          25000,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Salted Mandrake",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          5,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Goose Neck",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          6,
+          5,
+          8
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Bifurcated Skeleton",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          1,
+          4,
+          8,
+          8
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Hoarse Echo",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          100000,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Silver Bullet",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          5,
+          3,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Incorrupt Monkeypaw",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          1,
+          5,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Mistilteinn",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          1,
+          6,
+          1,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Hoarse Echo",
+          "Sonorous Knell",
+          "Golden Fleece",
+          "Watch Core"
+        ],
+        "Quantity": [
+          1,
+          6,
+          2,
+          4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Golden Compass",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Bogeyman",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Watch Core",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Bogeyman",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Murmur of Insanity",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -9562,6 +12760,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Golden Compass",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Platinum Ouija",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Platinum Ouija",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
         ]
       }
     ]
@@ -9853,11 +13118,78 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Murmur of Insanity",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Glowing Mothwing",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Golden Compass",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Bogeyman",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
     "Id": 10075,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Avgust",
     "Rarity": 5,
     "Afflatus": "Plant",
@@ -10140,6 +13472,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Compass",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Golden Compass",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Bogeyman",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
         ]
       }
     ]
@@ -10431,6 +13830,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Watch Core",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Bogeyman",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Golden Compass",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Glowing Mothwing",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -10718,6 +14184,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Watch Core",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Silver Bullet",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Murmur of Insanity",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Wyrmling Skeleton",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
         ]
       }
     ]
@@ -11009,6 +14542,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Watch Core",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Compass",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Bogeyman",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Platinum Ouija",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -11296,6 +14896,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Bogeyman",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Silver Bullet",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Platinum Ouija",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
         ]
       }
     ]
@@ -11587,6 +15254,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Watch Core",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Silver Bullet",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Golden Compass",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Murmur of Insanity",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Glowing Mothwing",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -11874,6 +15608,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Platinum Ouija",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Platinum Ouija",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Watch Core",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Wyrmling Skeleton",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Glowing Mothwing",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
         ]
       }
     ]
@@ -12171,6 +15972,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Glowing Mothwing",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Platinum Ouija",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Bogeyman",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -12458,6 +16326,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Wyrmling Skeleton",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Silver Bullet",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Wyrmling Skeleton",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Platinum Ouija",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
         ]
       }
     ]
@@ -12749,6 +16684,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Glowing Mothwing",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Wyrmling Skeleton",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Murmur of Insanity",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Bogeyman",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Watch Core",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -13036,6 +17038,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Platinum Ouija",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Bogeyman",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Bogeyman",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Bogeyman",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Watch Core",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
         ]
       }
     ]
@@ -13327,6 +17396,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Silver Bullet",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Silver Bullet",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Golden Compass",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Golden Compass",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Silver Bullet",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -13614,6 +17750,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Glowing Mothwing",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Watch Core",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Platinum Ouija",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Glowing Mothwing",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Platinum Ouija",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
         ]
       }
     ]
@@ -13905,6 +18108,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Bogeyman",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Murmur of Insanity",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Glowing Mothwing",
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Silver Bullet",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -14192,6 +18462,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Watch Core",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Watch Core",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Compass",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Murmur of Insanity",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
         ]
       }
     ]
@@ -14483,6 +18820,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Platinum Ouija",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Bogeyman",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Murmur of Insanity",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -14770,6 +19174,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Murmur of Insanity",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Golden Compass",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Bogeyman",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Murmur of Insanity",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
         ]
       }
     ]
@@ -15061,6 +19532,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Bogeyman",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Murmur of Insanity",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Incorrupt Monkeypaw",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Wyrmling Skeleton",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Silver Bullet",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -15348,6 +19886,73 @@
           6,
           2,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Platinum Ouija",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Silver Bullet",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          5,
+          100000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Murmur of Insanity",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Golden Bell Essence Bottle",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Wyrmling Skeleton",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
         ]
       }
     ]
@@ -15645,6 +20250,73 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Watch Core",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Silver Bullet",
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Murmur of Insanity",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          3,
+          100000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Wyrmling Skeleton",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Bogeyman",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          4,
+          100000
+        ]
+      }
     ]
   },
   {
@@ -15833,6 +20505,63 @@
           3,
           4,
           6
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
         ]
       }
     ]
@@ -16029,6 +20758,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          5,
+          50000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      }
     ]
   },
   {
@@ -16223,6 +21009,63 @@
           6
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      }
     ]
   },
   {
@@ -16411,6 +21254,63 @@
           3,
           4,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          5,
+          50000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
         ]
       }
     ]
@@ -16603,6 +21503,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      }
     ]
   },
   {
@@ -16791,6 +21748,63 @@
           3,
           4,
           6
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
         ]
       }
     ]
@@ -16983,6 +21997,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      }
     ]
   },
   {
@@ -17171,6 +22242,63 @@
           3,
           4,
           6
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          5,
+          50000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          5,
+          50000
         ]
       }
     ]
@@ -17363,6 +22491,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          5,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      }
     ]
   },
   {
@@ -17551,6 +22736,63 @@
           3,
           4,
           6
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
         ]
       }
     ]
@@ -17743,6 +22985,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      }
     ]
   },
   {
@@ -17931,6 +23230,63 @@
           3,
           4,
           6
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          5,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
         ]
       }
     ]
@@ -18123,6 +23479,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          5,
+          50000
+        ]
+      }
     ]
   },
   {
@@ -18313,6 +23726,63 @@
           6
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      }
     ]
   },
   {
@@ -18501,6 +23971,63 @@
           3,
           4,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          4,
+          50000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          50000
         ]
       }
     ]
@@ -18695,6 +24222,63 @@
           6
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      }
     ]
   },
   {
@@ -18881,6 +24465,63 @@
           2,
           4,
           6
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
         ]
       }
     ]
@@ -19071,6 +24712,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Awe",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Hope",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Delusion",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      }
     ]
   },
   {
@@ -19259,6 +24957,63 @@
           6
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      }
     ]
   },
   {
@@ -19445,6 +25200,63 @@
           2,
           4,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
         ]
       }
     ]
@@ -19639,6 +25451,63 @@
           6
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      }
     ]
   },
   {
@@ -19831,6 +25700,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      }
     ]
   },
   {
@@ -20017,6 +25943,63 @@
           2,
           4,
           6
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
         ]
       }
     ]
@@ -20207,6 +26190,63 @@
           4
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      }
     ]
   },
   {
@@ -20395,6 +26435,63 @@
           6
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Inspiration",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Fantasy",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      }
     ]
   },
   {
@@ -20581,6 +26678,63 @@
           2,
           4,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
         ]
       }
     ]
@@ -20775,6 +26929,63 @@
           6
         ]
       }
+    ],
+    "Frequency": [
+      {
+        "Type": "Insight",
+        "Material": [
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Sincerity",
+        "Material": [
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Compassion",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Clawed Pendulum",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Balance",
+        "Material": [
+          "Salted Mandrake",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      }
     ]
   },
   {
@@ -20965,6 +27176,63 @@
           2,
           4,
           4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Excitement",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Satiety",
+        "Material": [
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
+        ]
+      },
+      {
+        "Type": "Calm",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Moderation",
+        "Material": [
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          3,
+          20000
+        ]
+      },
+      {
+        "Type": "Tranquility",
+        "Material": [
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          2,
+          20000
         ]
       }
     ]
