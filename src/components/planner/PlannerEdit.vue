@@ -382,10 +382,12 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <div v-if="false" class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal"
                         class="blue-button"><i class="fa-solid fa-angles-right"></i></button></div>
 
+                <!-- Level Up -->
                 <div class="tooltip pl-2 pr-4" :data-tip="$t('level-up')">
-                    <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
-                        onclick="level_up_container.showModal()" class="blue-button"><i
-                            class="fa-solid fa-arrow-up-from-bracket"></i></button>
+                    <button :disabled="indexInArcanistsList < 0 || materialRequirement.length === 0"
+                        onclick="level_up_container.showModal()" class="blue-button">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </button>
                 </div>
 
                 <!-- Save -->
