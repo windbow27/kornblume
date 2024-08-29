@@ -471,9 +471,6 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <!-- Materials -->
             <ArcanistCalculate :arcanist="editingArcanist" />
 
-            <!-- Padding -->
-            <div v-if="true"
-                class="pb-32"></div>
         </div>
     </div>
 </template>
