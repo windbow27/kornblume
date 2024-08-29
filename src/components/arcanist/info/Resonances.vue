@@ -13,7 +13,7 @@ const props = defineProps({
 
 const updateKey = ref(0);
 const selectedCurrentResonance = ref(1);
-const selectedGoalResonance = ref(1);
+const selectedGoalResonance = ref(10);
 const selectedFrequency = ref<{ Id: number; Type: string; }[]>([]);
 
 const currentResonanceOptions = computed(() => {
@@ -114,10 +114,6 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
     </div>
 
     <ArcanistCalculate :arcanist="editingArcanist" />
-
-    <div v-if="selectedCurrentResonance == selectedGoalResonance && selectedFrequency.length == 0" class="pb-60">
-    </div>
-
 </template>
 
 <style scoped></style>

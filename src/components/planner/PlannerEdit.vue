@@ -317,7 +317,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
 
 <template>
     <div class="edit-overlay">
-        <div class="fixed p-4 custom-modal-big custom-border rounded-md w-11/12 sm:max-w-2xl lg:h-5/6">
+        <div class="fixed p-4 custom-modal-big custom-border rounded-md w-11/12 sm:max-w-2xl md:h-5/6">
             <button @click="closeOverlay" class="text-white absolute top-2 right-4">
                 <i class="fas fa-times"></i>
             </button>
