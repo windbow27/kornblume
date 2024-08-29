@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue';
+import { getArcanistFrequencyPath } from '@/composables/images';
 import SelectList from '@/components/common/SelectList.vue';
 import ArcanistCalculate from '@/components/arcanist/ArcanistCalculate.vue';
 
@@ -12,13 +13,33 @@ const props = defineProps({
 
 const updateKey = ref(0);
 const selectedCurrentResonance = ref(1);
-const selectedGoalResonance = ref(1);
+const selectedGoalResonance = ref(10);
+const selectedFrequency = ref<{ Id: number; Type: string; }[]>([]);
 
 const currentResonanceOptions = computed(() => {
     return props.arcanist.Rarity >= 5
         ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
         : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 });
+
+const frequencyOptions = computed(() => {
+    const arcanistFrequency = props.arcanist.Frequency ?? [];
+    return arcanistFrequency.map((item: { Type: string; Id: number; }) => ({
+        Type: item.Type,
+        Id: item.Id
+    }));
+});
+
+const toggleFrequency = (frequency: { Id: number; Type: string; }) => {
+    const index = selectedFrequency.value.findIndex(f => f.Id === frequency.Id);
+    if (index !== -1) {
+        // remove if selected
+        selectedFrequency.value.splice(index, 1);
+    } else {
+        // add if not selected
+        selectedFrequency.value.push({ Id: frequency.Id, Type: frequency.Type });
+    }
+};
 
 const editingArcanist = computed(() => ({
     Id: props.arcanist.Id,
@@ -28,7 +49,8 @@ const editingArcanist = computed(() => ({
     goalInsight: 0,
     goalLevel: 1,
     currentResonance: selectedCurrentResonance.value,
-    goalResonance: selectedGoalResonance.value
+    goalResonance: selectedGoalResonance.value,
+    frequency: selectedFrequency.value
 }));
 
 const goalResonanceOptions = computed(() => {
@@ -64,7 +86,6 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
 
 <template>
     <div class="px-2">
-        {{ console.log(props.arcanist) }}
         <h2 class=" text-white text-2xl font-bold">Resonances</h2>
         <div class="mt-2 flex justify-center items-center leading-none">
             <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
@@ -74,8 +95,24 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
                 :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
         </div>
     </div>
-    <div v-if="selectedCurrentResonance == selectedGoalResonance
-    " class="pb-60"></div>
+
+    <div class="flex justify-center p-4">
+        <div class="flex flex-wrap gap-4 justify-center">
+            <button v-for="(frequency, index) in frequencyOptions" :key="index"
+                @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })" :class="{
+                    'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
+                    'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
+                    'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
+                    'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id)
+                }" class="rounded-lg">
+                <div class="tooltip px-2 font-light" :data-tip="$t('frequency-modulation-' + frequency.Id)">
+                    <img class="h-16 pt-1.5" :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
+                        alt="Frequency Icon" />
+                </div>
+            </button>
+        </div>
+    </div>
+
     <ArcanistCalculate :arcanist="editingArcanist" />
 </template>
 

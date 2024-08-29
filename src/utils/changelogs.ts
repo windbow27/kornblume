@@ -1,6 +1,6 @@
 export const changelogs = [
     // Add more from top
-    { date: '29/08/2024', description: '• Added Windsong banner.' },
+    { date: '29/08/2024', description: '• Added Windsong banner. \n • Added Frequency for Resonance.' },
     { date: '15/08/2024', description: '• Added Vila banner. \n • Added Tuesday and Barbara as unreleased arcanists.' },
     { date: '01/08/2024', description: '• Added Marcus banner.' },
     { date: '31/07/2024', description: '• Added Resonances section for arcanists. No it\'s not building guide, simply cost viewer copied from planner due to popular demand by users.' },

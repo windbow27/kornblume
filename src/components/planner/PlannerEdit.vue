@@ -6,6 +6,8 @@ import { useCalculation } from '@/composables/calculations';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { IArcanist, ISelectedArcanist } from '@/types';
+import { getArcanistFrequencyPath } from '@/composables/images';
+import Popper from 'vue3-popper';
 import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
 import SelectList from '@/components/common/SelectList.vue';
 import ArcanistLevelUp from '@/components/arcanist/ArcanistLevelUp.vue';
@@ -40,6 +42,7 @@ const selectedCurrentResonance = ref(props.selectedArcanist.currentResonance);
 const selectedGoalInsight = ref(props.selectedArcanist.goalInsight);
 const selectedGoalLevel = ref(props.selectedArcanist.goalLevel);
 const selectedGoalResonance = ref(props.selectedArcanist.goalResonance);
+const selectedFrequency = ref(props.selectedArcanist.frequency ?? []);
 const selectedVisible = ref(props.selectedArcanist.isVisible);
 
 const compareLevels = (currentInsightSelect: number, currentLevelSelect: number, goalInsightSelect: number, goalLevelSelect: number) => {
@@ -141,6 +144,17 @@ const quickGoal = () => {
     selectedGoalResonance.value = 10;
 };
 
+const toggleFrequency = (frequency: { Id: number; Type: string; }) => {
+    const index = selectedFrequency.value.findIndex(f => f.Id === frequency.Id);
+    if (index !== -1) {
+        // remove if selected
+        selectedFrequency.value.splice(index, 1);
+    } else {
+        // add if not selected
+        selectedFrequency.value.push({ Id: frequency.Id, Type: frequency.Type });
+    }
+};
+
 const closeOverlay = () => {
     emit('closeOverlay');
 };
@@ -181,7 +195,8 @@ const editingArcanist = computed(() => ({
     goalInsight: selectedGoalInsight.value,
     goalLevel: selectedGoalLevel.value,
     currentResonance: selectedCurrentResonance.value,
-    goalResonance: selectedGoalResonance.value
+    goalResonance: selectedGoalResonance.value,
+    frequency: selectedFrequency.value
 }));
 
 const rarity = computed(() => {
@@ -265,6 +280,14 @@ const goalResonanceOptions = computed(() => {
     return Array.from({ length: upperLimit - lowerLimit + 1 }, (_, index) => Number(lowerLimit + index));
 });
 
+const frequencyOptions = computed(() => {
+    const arcanistFrequency = selectedArcanist.value.Frequency ?? [];
+    return arcanistFrequency.map(item => ({
+        Type: item.Type,
+        Id: item.Id
+    }));
+});
+
 watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, selectedGoalInsight, selectedGoalLevel, selectedGoalResonance], () => {
     // Whenever any selectedX changes, update the key to trigger a re-render in all SelectList components
     updateKey.value += 1;
@@ -294,7 +317,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
 
 <template>
     <div class="edit-overlay">
-        <div class="fixed p-4 custom-modal-big custom-border rounded-md w-11/12 sm:max-w-2xl lg:h-auto">
+        <div class="fixed p-4 custom-modal-big custom-border rounded-md w-11/12 sm:max-w-2xl md:h-5/6">
             <button @click="closeOverlay" class="text-white absolute top-2 right-4">
                 <i class="fas fa-times"></i>
             </button>
@@ -341,28 +364,86 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                     :label="'Goal Insight'" :options="goalInsightOptions" v-on:update:selected="handleSelected" />
                 <i
                     class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
-                <SelectList :key="updateKey" v-model="selectedGoalLevel" :selected="selectedGoalLevel" :label="'Goal Level'"
-                    :options="goalLevelOptions" v-on:update:selected="handleSelected" />
+                <SelectList :key="updateKey" v-model="selectedGoalLevel" :selected="selectedGoalLevel"
+                    :label="'Goal Level'" :options="goalLevelOptions" v-on:update:selected="handleSelected" />
             </div>
             <div class="custom-label text-blue-100">{{ $t('resonance') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
-                    :label="'Current Resonance'" :options="currentResonanceOptions" v-on:update:selected="handleSelected" />
+                    :label="'Current Resonance'" :options="currentResonanceOptions"
+                    v-on:update:selected="handleSelected" />
                 <i class="text-white fa-solid fa-angles-right text-center"></i>
                 <SelectList :key="updateKey" v-model="selectedGoalResonance" :selected="selectedGoalResonance"
                     :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
             </div>
-            <!-- Save -->
-            <div class="flex justify-center space-x-4 pt-2">
-                <div class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal" class="blue-button"><i
-                            class="fa-solid fa-angles-right"></i></button></div>
+
+            <div class="flex justify-center space-x-3 pt-6 pb-2">
+                <!-- Quick Goal -->
+                <div v-if="false" class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal"
+                        class="blue-button"><i class="fa-solid fa-angles-right"></i></button></div>
+
+                <!-- Level Up -->
+                <div class="tooltip pl-2 pr-4" :data-tip="$t('level-up')">
+                    <button :disabled="indexInArcanistsList < 0 || materialRequirement.length === 0"
+                        onclick="level_up_container.showModal()" class="blue-button">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </button>
+                </div>
+
+                <!-- Save -->
                 <button @click="addArcanist" class="green-button">{{ $t('save') }}</button>
-                <div class="tooltip" :data-tip="$t('level-up')">
-                    <button v-if="indexInArcanistsList >= 0 && materialRequirement.length != 0"
-                        onclick="level_up_container.showModal()" class="blue-button"><i
-                            class="fa-solid fa-arrow-up-from-bracket"></i></button>
+
+                <!-- Frequency -->
+                <div>
+                    <Popper arrow placement="top" offsetDistance="2">
+                        <div v-if="selectedGoalResonance > 0" class="tooltip" :data-tip="$t('frequency')">
+                            <button class="btn-ghost btn btn-sm">
+                                <img class="h-11" :src="getArcanistFrequencyPath(frequencyOptions[0].Type as string, 0)"
+                                    alt="Frequency Icon" />
+                            </button>
+                        </div>
+                        <template #content>
+                            <div class="grid grid-cols-3 gap-4 justify-center">
+                                <button v-for="(frequency, index) in frequencyOptions.slice(0, 3)" :key="index"
+                                    @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })" :class="{
+                                        'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
+                                        'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
+                                        'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
+                                        'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id)
+                                    }" class="rounded-lg">
+                                    <div class="tooltip px-2 font-light"
+                                        :data-tip="$t('frequency-modulation-' + frequency.Id)">
+                                        <img class="h-16 pt-1.5"
+                                            :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
+                                            alt="Frequency Icon" />
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-3 gap-4 justify-center mt-4">
+                                <div class="col-span-3 flex justify-center space-x-4">
+                                    <button v-for="(frequency, index) in frequencyOptions.slice(3, 5)" :key="index"
+                                        @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })"
+                                        :class="{
+                                            'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
+                                            'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
+                                            'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
+                                            'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id)
+                                        }" class="rounded-lg">
+                                        <div class="tooltip px-2 font-light"
+                                            :data-tip="$t('frequency-modulation-' + frequency.Id)">
+                                            <img class="h-16 pt-1.5"
+                                                :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
+                                                alt="Frequency Icon" />
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </template>
+                    </Popper>
                 </div>
             </div>
+
+            <!-- Level Up Modal -->
             <dialog id="level_up_container" class="modal">
                 <div
                     class="modal-box custom-gradient-gray-blue custom-border relative flex flex-col min-h-[calc(30dvh)] max-h-[calc(85dvh)] sm:max-h-[calc(75dvh)] gap-4">
@@ -379,8 +460,8 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                         <ArcanistLevelUp :arcanist="editingArcanist" />
                     </div>
                     <form method="dialog" class="flex justify-center">
-                        <button v-if="isWarehouseSufficient" class="green-button"
-                            @click="levelUpArcanist">{{ $t('level-up') }}</button>
+                        <button v-if="isWarehouseSufficient" class="green-button" @click="levelUpArcanist">{{
+                            $t('level-up') }}</button>
                         <p v-else class="text-error"> {{ $t('not-enough-materials') }}</p>
                     </form>
                 </div>
@@ -388,12 +469,10 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                     <button>close</button>
                 </form>
             </dialog>
-            <!-- Padding -->
-            <div v-if="selectedCurrentLevel == selectedGoalLevel && selectedCurrentInsight == selectedGoalInsight && selectedCurrentResonance == selectedGoalResonance
-            " class="pb-32"></div>
 
             <!-- Materials -->
             <ArcanistCalculate :arcanist="editingArcanist" />
+
         </div>
     </div>
 </template>

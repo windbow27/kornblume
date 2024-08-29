@@ -108,3 +108,7 @@ export function getArcanistDmgTypePath (dmgType: string) {
 export function getArcanistFramePath (rarity: number) {
     return `images/arcanists/misc/bg${rarity}.webp`;
 }
+
+export function getArcanistFrequencyPath (type: string, id: number) {
+    return `images/arcanists/misc/frequency/${type}_${id}.webp`;
+}
