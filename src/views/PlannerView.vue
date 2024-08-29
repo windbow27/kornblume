@@ -129,7 +129,8 @@ const handleSelectArcanist = (arcanist: IArcanist) => {
         currentResonance: 0,
         goalInsight: 0,
         goalLevel: 1,
-        goalResonance: 0
+        goalResonance: 0,
+        frequency: []
     }
     // console.log(selectedArcanist.value);
     openEditOverlay()

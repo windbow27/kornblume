@@ -170,7 +170,6 @@ export function useCalculation (arc) {
         for (let current = Number(currentType + 1); current <= goalType; current++) {
             const data = type.find(obj => obj.Id === current);
             if (data) {
-                // console.log(data);
                 data.Material.forEach((material, index) => {
                     const quantity = data.Quantity[index];
 
@@ -190,6 +189,35 @@ export function useCalculation (arc) {
             Quantity: materialsCount[material]
         }));
         return result;
+    };
+
+    const calculateFrequencyMaterials = (frequencyList, type) => {
+        const materialsCount = {};
+
+        if (frequencyList) {
+            frequencyList.forEach(frequency => {
+                const data = type.find(obj => obj.Type === frequency.Type && obj.Id === frequency.Id);
+                if (data && data.Material && Array.isArray(data.Material)) {
+                    data.Material.forEach((material, index) => {
+                        const quantity = data.Quantity[index];
+
+                        // Accumulate materials and quantities
+                        if (materialsCount[material]) {
+                            materialsCount[material] += quantity;
+                        } else {
+                            materialsCount[material] = quantity;
+                        }
+                    });
+                }
+            });
+
+            // Convert the accumulated data to the desired format
+            const result = Object.keys(materialsCount).map(material => ({
+                Material: material,
+                Quantity: materialsCount[material]
+            }));
+            return result;
+        }
     };
 
     const getLevelsInfo = (arc, insight) => {
@@ -219,9 +247,10 @@ export function useCalculation (arc) {
     // Get the results from calculateInsight, calculateResonance, and calculateExp
     const insightResults = calculateMaterials(arc.currentInsight, arc.goalInsight, arcInfo.Insight);
     const resonanceResults = calculateMaterials(arc.currentResonance, arc.goalResonance, arcInfo.Resonance);
+    const frequencyResults = calculateFrequencyMaterials(arc.frequency, arcInfo.Frequency);
     const expResults = calculateExp(arc);
     // Merge all results into a single object
-    const mergedResults = mergeResults([insightResults, resonanceResults, expResults]);
+    const mergedResults = mergeResults([insightResults, resonanceResults, frequencyResults, expResults]);
     // Convert the merged object into the desired format
     const result = formatResults(mergedResults);
     return result;
