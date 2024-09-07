@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '07/09/2024', description: '• Added Semmelweis, Lucy, Kakania, Lorelei as released arcanists. I want Semmelweis to step on me.' },
     { date: '04/09/2024', description: '• Added Argus as unreleased arcanist. \n • UI improvements. \n • Updated Schale\'s new website link in Credits.\n ' },
     { date: '29/08/2024', description: '• Added Windsong banner. \n • Added Frequency for Resonance.' },
     { date: '15/08/2024', description: '• Added Vila banner. \n • Added Tuesday and Barbara as unreleased arcanists.' },
@@ -7,7 +8,7 @@ export const changelogs = [
     { date: '31/07/2024', description: '• Added Resonances section for arcanists. No it\'s not building guide, simply cost viewer copied from planner due to popular demand by users.' },
     { date: '30/07/2024', description: '• Added Mercuria as unreleased arcanist.' },
     { date: '22/07/2024', description: '• Updated Spanish translations by mgeshagrath.\n • Added missing images in Chapter 6 stages.' },
-    { date: '12/07/2024', description: '• Resonance materi•als are now craftable.' },
+    { date: '12/07/2024', description: '• Resonance materials are now craftable.' },
     { date: '11/07/2024', description: '• Added Isolde banner. \n • Updated planner to use 1.7 droprates.' },
     { date: '29/06/2024', description: '• Added Isolde and Marcus as released arcanists.' },
     { date: '05/07/2024', description: '• Added J and Pioneer as unreleased arcanists.' },

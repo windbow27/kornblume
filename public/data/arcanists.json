@@ -1497,7 +1497,7 @@
   },
   {
     "Id": 10077,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Semmelweis",
     "Rarity": 6,
     "Afflatus": "Mineral",
@@ -2239,7 +2239,7 @@
   },
   {
     "Id": 10078,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Lucy",
     "Rarity": 6,
     "Afflatus": "Intellect",
@@ -3735,7 +3735,7 @@
   },
   {
     "Id": 10080,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Kakania",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -13018,7 +13018,7 @@
   },
   {
     "Id": 10079,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Lorelei",
     "Rarity": 5,
     "Afflatus": "Star",
