@@ -6,8 +6,8 @@
         "Name": "Serpent Scepter",
         "Rarity": 6,
         "Description": "Mediating peace between those in dispute and hostility.",
-        "Source": "",
-        "Usage": ""
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     },
     {
         "Id": 3,
@@ -166,8 +166,8 @@
         "Name": "Golden Compass",
         "Rarity": 5,
         "Description": "It will remove the wrong paths for you.",
-        "Source": "",
-        "Usage": ""
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     },
     {
         "Id": 5,
@@ -186,8 +186,8 @@
         "Name": "Watch Core",
         "Rarity": 5,
         "Description": "Through polishing, inlaying, and fine carving, one can obtain a lively \"heart\".",
-        "Source": "",
-        "Usage": ""
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     },
     {
         "Id": 62,
@@ -196,8 +196,8 @@
         "Name": "Glowing Mothwing",
         "Rarity": 5,
         "Description": "Please do not stimulate the light source at its tail. Handle gently to avoid burning.",
-        "Source": "",
-        "Usage": ""
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     },
     {
         "Id": 4,
@@ -256,8 +256,8 @@
         "Name": "Golden Beetle",
         "Rarity": 4,
         "Description": "They discern directions through the moisture of the soil and the change of light, looking forward to their moment of maturation.",
-        "Source": "",
-        "Usage": ""
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     },
     {
         "Id": 13,
@@ -276,8 +276,8 @@
         "Name": "Goose Neck",
         "Rarity": 4,
         "Description": "It bends its neck to take up the balance spring of the clock, take up precision, take up time itself.",
-        "Source": "",
-        "Usage": ""
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     },
     {
         "Id": 65,
@@ -286,8 +286,8 @@
         "Name": "Winged Key",
         "Rarity": 4,
         "Description": "Find an open space, hold the key handle firmly, and mentally recite your destination. It will lead you to the keyhole, in the form of a bird.",
-        "Source": "",
-        "Usage": ""
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     },
     {
         "Id": 12,
@@ -704,39 +704,39 @@
         "Name": "Rhine Gold",
         "Rarity": 6,
         "Category": "Build Material", 
-        "IsReleased": false,
+        "IsReleased": true,
         "Description": "",
-        "Source": "",
-        "Usage": ""
+       "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
       },
       {
         "Id": 72,
         "Name": "Golden Bell Essence Bottle",
         "Rarity": 5,
         "Category": "Build Material", 
-        "IsReleased": false,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
+        "IsReleased": true,
+        "Description": "Made with a spirit, to be planted in a body.",
+       "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
       },
       {
         "Id": 73,
         "Name": "Golden Herb Incense",
         "Rarity": 4,
         "Category": "Build Material", 
-        "IsReleased": false,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
+        "IsReleased": true,
+        "Description": "Crafted with indiscernible materials and blended from a secret formula, this incense is often used to nourish the heart.",
+       "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     },
     {
         "Id": 74,
         "Name": "Alopecurus Pratensis",
         "Rarity": 3,
         "Category": "Build Material", 
-        "IsReleased": false,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
+        "IsReleased": true,
+        "Description": "A herb witches are particularly fond of.",
+       "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
     }
 ]

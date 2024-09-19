@@ -1,4 +1,4 @@
-<script setup lang="ts" name="ArcanistCalculate">
+<script setup lang="ts" name="CalculateItemList">
 import { computed } from 'vue';
 import { useCalculation } from '@/composables/calculations';
 import { ISelectedArcanist } from '@/types';

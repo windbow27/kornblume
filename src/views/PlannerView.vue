@@ -211,8 +211,7 @@ GApiSvc.init().then(async () => {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-sm lg:text-base"> Added Frequency feature for Resonance. Check it out!
-                    </p>
+                    <p class="text-sm lg:text-base">Planner has been updated to version 1.9. Happy 1st anniversary! </p>
                 </div>
             </div>
         </div>
@@ -238,7 +237,8 @@ GApiSvc.init().then(async () => {
                             class="fa-solid fa-box-archive"></i><span v-show="isLargeScreen">{{ $t('warehouse')
                             }}</span></button>
                 </div>
-                <div class="tooltip tooltip-left" :data-tip="$t('settings')">
+                <!-- Commented out until 2.1 greedy is available -->
+                <div v-if=false class="tooltip tooltip-left" :data-tip="$t('settings')">
                     <button @click="openSettings" class="btn btn-ghost btn-sm custom-gradient-button"><i
                             class="fa-solid fa-gear"></i><span v-show="isLargeScreen">{{ $t('settings')
                             }}</span></button>

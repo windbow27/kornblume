@@ -4483,7 +4483,7 @@
   },
   {
     "Id": 10076,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Windsong",
     "Rarity": 6,
     "Afflatus": "Star",

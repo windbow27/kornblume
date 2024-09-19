@@ -38,7 +38,9 @@ export const bannerList = [
     // jiu niangzi
     'Till the Last Drop',
     // revelation
-    'Revelation of the Water'
+    'Revelation of the Water',
+    // lucy
+    'Thoughts in Cylinder'
 ];
 
 export const bannerRateUp = [

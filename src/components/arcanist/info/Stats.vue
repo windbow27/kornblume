@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import ArcanistCalculate from '@/components/arcanist/ArcanistCalculate.vue';
+import CalculateItemList from '@/components/common/CalculateItemList.vue';
 
 const props = defineProps({
     arcanist: {
@@ -79,7 +79,7 @@ const editingArcanist = computed(() => ({
                 </tr>
             </table>
         </div>
-        <ArcanistCalculate :arcanist="editingArcanist" />
+        <CalculateItemList :arcanist="editingArcanist" />
     </div>
 </template>
 

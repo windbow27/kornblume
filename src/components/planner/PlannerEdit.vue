@@ -11,7 +11,7 @@ import Popper from 'vue3-popper';
 import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
 import SelectList from '@/components/common/SelectList.vue';
 import ArcanistLevelUp from '@/components/arcanist/ArcanistLevelUp.vue';
-import ArcanistCalculate from '@/components/arcanist/ArcanistCalculate.vue';
+import CalculateItemList from '@/components/common/CalculateItemList.vue';
 
 const props = defineProps({
     selectedArcanist: {
@@ -471,7 +471,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             </dialog>
 
             <!-- Materials -->
-            <ArcanistCalculate :arcanist="editingArcanist" />
+            <CalculateItemList :arcanist="editingArcanist" />
 
         </div>
     </div>

@@ -26,6 +26,7 @@
     "gapi-script": "^1.2.0",
     "glpk.js": "^4.0.2",
     "i18n": "^0.15.1",
+    "kornblume": "file:",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.0",
     "tesseract.js": "^5.0.3",

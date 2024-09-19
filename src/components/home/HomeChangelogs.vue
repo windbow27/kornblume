@@ -23,8 +23,8 @@ const closeOverlay = () => {
                 <li v-for="(log, index) in changelogs" :key="index">
                     <p class="text-sky-300">{{ log.date }}:</p>
                     <ul>
-                        <li v-for="(line, lineIndex) in log.description.split('\n')" :key="lineIndex" class="text-sm">{{
-                            line }}</li>
+                        <li v-for="(line, lineIndex) in log.description.split('<br>')" :key="lineIndex" class="text-sm"
+                            v-html="line"></li>
                     </ul>
                 </li>
             </ul>

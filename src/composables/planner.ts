@@ -1,7 +1,7 @@
 import { useDataStore } from '@/stores/dataStore'
 import { useWarehouseStore } from '@/stores/warehouseStore'
 import { useActivityStore } from '@/stores/activityStore';
-import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
+// import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 import { IMaterialUnit, IStages } from '@/types';
 import { useGlobalStore } from '@/stores/global';
 import { getSolve, processSharpoAndDust } from './glpkSolver'
@@ -193,16 +193,17 @@ function updateCraftingMaterialsForGlobalStore (stages) {
 export interface IPlanCards extends Array<IPlanCard> { }
 
 export function getDrops () {
-    const {
-        enabledUnreleasedStages_v1_9
-    } = usePlannerSettingsStore().settings;
+    // commented out for 1.9 update
+    // const {
+    //     enabledUnreleasedStages_v1_9
+    // } = usePlannerSettingsStore().settings;
     const dataStore = useDataStore();
 
-    if (enabledUnreleasedStages_v1_9) {
-        return dataStore.stages1_9_greedy || {}
-    }
+    // if (enabledUnreleasedStages_v1_9) {
+    //     return dataStore.stages1_9_greedy || {}
+    // }
 
-    return dataStore.stages1_7_greedy || {}
+    return dataStore.stages1_9_greedy || {}
 }
 
 export async function getPlan (materials: IMaterialUnit[], isEnableWilderness: boolean): Promise<IPlanCards> {

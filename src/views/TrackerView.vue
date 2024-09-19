@@ -19,7 +19,8 @@ const text = ref('');
 const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
-const selectedBannerType = ref('Limited');
+// const selectedBannerType = ref('Limited');
+const selectedBannerType = ref('Thoughts in Cylinder');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -55,6 +56,19 @@ const allPulls = computed(() => {
     return sortedPulls.value.map((pull, index) => {
         return {
             PullNumber: sortedPulls.value.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
+            Timestamp: pull.Timestamp
+        }
+    });
+});
+
+const lucyPulls = computed(() => {
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Thoughts in Cylinder');
+    return filteredPulls.map((pull, index) => {
+        return {
+            PullNumber: filteredPulls.length - index,
             ArcanistName: pull.ArcanistName,
             Rarity: pull.Rarity,
             BannerType: pull.BannerType,
@@ -483,6 +497,12 @@ GApiSvc.init().then(async () => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
+            <!-- Lucy banner -->
+            <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thoughts in Cylinder' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectedBannerType = 'Thoughts in Cylinder'">{{
+                                $t('lucy') }}</button></li>
+
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Limited'">{{
                     $t('limited') }}</button>
@@ -511,15 +531,23 @@ GApiSvc.init().then(async () => {
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Yearning of the Water'">{{
                                 $t('yearning') }}</button></li>
-                    <!-- Jiu banner -->
-                    <button v-bind:class="{ 'border-button': selectedBannerType === 'Till the Last Drop' }"
-                        class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                        @click="selectedBannerType = 'Till the Last Drop'">{{
-                            $t('jiu-niangzi') }}</button>
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Revelation of the Water' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Revelation of the Water'">{{
                                 $t('revelation') }}</button></li>
+                    <!-- Line separator -->
+                    <hr class="border-t border-gray-300 m-2">
+
+                    <!-- Jiu Niangzi banner -->
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Till the Last Drop' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectedBannerType = 'Till the Last Drop'">{{
+                                $t('jiu-niangzi') }}</button></li>
+                    <!-- Lucy banner -->
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thoughts in Cylinder' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectedBannerType = 'Thoughts in Cylinder'">{{
+                                $t('lucy') }}</button></li>
                 </ul>
             </div>
         </div>
@@ -534,10 +562,13 @@ GApiSvc.init().then(async () => {
             :pulls="abundancePulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Yearning of the Water'" :text="$t('summary-yearning')"
             :pulls="yearningPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Till the Last Drop'" :text="$t('jiu-niangzi')"
-            :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Revelation of the Water'" :text="$t('summary-revelation')"
             :pulls="revelationPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+
+        <TrackerBoard v-if="selectedBannerType === 'Till the Last Drop'" :text="$t('jiu-niangzi')"
+            :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Thoughts in Cylinder'" :text="$t('lucy')"
+            :pulls="lucyPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
 
     </div>
 </template>

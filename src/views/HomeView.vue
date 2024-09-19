@@ -96,7 +96,7 @@ onClickOutside(resourcesRef, closeResources)
                             class="fa-solid fa-book"></i> {{ $t('changelogs') }} </button>
                     <button @click="openResources" class="btn btn-ghost btn-md custom-gradient-button"><i
                             class="fa-solid fa-book"></i> {{ $t('credits') }} </button>
-                    <a href="https://forms.gle/vfapSjQmRNn7ChPe8" target="_blank"
+                    <a href="https://github.com/windbow27/kornblume/issues" target="_blank"
                         class="btn btn-ghost btn-md custom-gradient-button">
                         <i class="fa-solid fa-rectangle-list"></i> {{ $t('comments-bug-reports') }}
                     </a>

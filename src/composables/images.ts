@@ -49,6 +49,7 @@ const getStageBackgroundId = (id: number) => {
     if (id <= 125) return 9;
     if (id <= 128) return 10;
     if (id <= 621 && id >= 600) return 12;
+    if (id <= 726 && id > 700) return 13;
     return 1;
 }
 

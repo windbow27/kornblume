@@ -2,7 +2,7 @@
 import { ref, watch, computed } from 'vue';
 import { getArcanistFrequencyPath } from '@/composables/images';
 import SelectList from '@/components/common/SelectList.vue';
-import ArcanistCalculate from '@/components/arcanist/ArcanistCalculate.vue';
+import CalculateItemList from '@/components/common/CalculateItemList.vue';
 
 const props = defineProps({
     arcanist: {
@@ -113,7 +113,7 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
         </div>
     </div>
 
-    <ArcanistCalculate :arcanist="editingArcanist" />
+    <CalculateItemList :arcanist="editingArcanist" />
 </template>
 
 <style scoped></style>
