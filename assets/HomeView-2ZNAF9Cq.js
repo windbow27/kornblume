@@ -1,4 +1,4 @@
-import{o as C}from"./index-V_XnZQ7M.js";import{d as A,o as n,c as o,a as e,t,F as m,r as _,u as F,b as z,e as R,f as y,g as u,w,h as M,i as b,j as O,k as W,l as v,m as L}from"./index-782Aqtnp.js";const k=[{date:"19/09/2024",description:`
+import{o as C}from"./index-nGNpKNZ0.js";import{d as A,o as n,c as o,a as e,t,F as m,r as _,u as F,b as z,e as R,f as y,g as u,w,h as M,i as b,j as O,k as W,l as v,m as L}from"./index-mSsIoffa.js";const k=[{date:"19/09/2024",description:`
         • Added Lucy banner. <br>
         • Updated Planner, Arcanists, Items and Stages to version 1.9 update. <br>
         • Moved Bug Reports to Github issues since I barely check the Google Sheets anymore. <br>
