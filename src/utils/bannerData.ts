@@ -35,10 +35,13 @@ export const bannerList = [
     'Abundance of the Water',
     // yearning
     'Yearning of the Water',
-    // jiu niangzi
-    'Till the Last Drop',
     // revelation
     'Revelation of the Water',
+    // promise
+    'Promise of the Water',
+
+    // jiu niangzi
+    'Till the Last Drop',
     // lucy
     'Thoughts in Cylinder'
 ];

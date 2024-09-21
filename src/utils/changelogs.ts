@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '21/09/2024', description: '• Added Promise of the Water banner.' },
     {
         date: '19/09/2024',
         description: `

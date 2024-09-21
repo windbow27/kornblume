@@ -64,6 +64,19 @@ const allPulls = computed(() => {
     });
 });
 
+const promisePulls = computed(() => {
+    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Promise of the Water');
+    return filteredPulls.map((pull, index) => {
+        return {
+            PullNumber: sortedPulls.value.length - index,
+            ArcanistName: pull.ArcanistName,
+            Rarity: pull.Rarity,
+            BannerType: pull.BannerType,
+            Timestamp: pull.Timestamp
+        }
+    });
+});
+
 const lucyPulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Thoughts in Cylinder');
     return filteredPulls.map((pull, index) => {
@@ -162,7 +175,9 @@ const limitedPulls = computed(() => {
             pull.BannerType !== 'Abundance of the Water' &&
             pull.BannerType !== 'Yearning of the Water' &&
             pull.BannerType !== 'Till the Last Drop' &&
-            pull.BannerType !== 'Revelation of the Water');
+            pull.BannerType !== 'Revelation of the Water' &&
+            pull.BannerType !== 'Thoughts in Cylinder' &&
+            pull.BannerType !== 'Promise of the Water');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -498,11 +513,10 @@ GApiSvc.init().then(async () => {
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
             <!-- Lucy banner -->
-            <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thoughts in Cylinder' }"
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Thoughts in Cylinder' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Thoughts in Cylinder'">{{
-                                $t('lucy') }}</button></li>
-
+                                $t('lucy') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Limited'">{{
                     $t('limited') }}</button>
@@ -535,6 +549,11 @@ GApiSvc.init().then(async () => {
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Revelation of the Water'">{{
                                 $t('revelation') }}</button></li>
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Promise of the Water' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectedBannerType = 'Promise of the Water'">{{
+                                $t('promise') }}</button></li>
+
                     <!-- Line separator -->
                     <hr class="border-t border-gray-300 m-2">
 
@@ -564,6 +583,8 @@ GApiSvc.init().then(async () => {
             :pulls="yearningPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Revelation of the Water'" :text="$t('summary-revelation')"
             :pulls="revelationPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Promise of the Water'" :text="$t('summary-promise')"
+            :pulls="promisePulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
 
         <TrackerBoard v-if="selectedBannerType === 'Till the Last Drop'" :text="$t('jiu-niangzi')"
             :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
