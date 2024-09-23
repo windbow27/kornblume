@@ -1,4 +1,4 @@
-import{o as C}from"./index-QHiHCYob.js";import{d as A,o as n,c as o,a as e,t,F as m,r as _,u as F,b as z,e as R,f as y,g as u,w,h as M,i as b,j as W,k as O,l as v,m as L}from"./index-Qhp525nG.js";const k=[{date:"21/09/2024",description:"• Added Promise of the Water banner."},{date:"19/09/2024",description:`
+import{o as C}from"./index-50zGwBNi.js";import{d as A,o as n,c as o,a as e,t,F as m,r as _,u as F,b as z,e as R,f as y,g as u,w,h as M,i as b,j as W,k as O,l as v,m as L}from"./index-ywP1M2IP.js";const k=[{date:"22/09/2024",description:"• Updated warehouse order to match ingame."},{date:"21/09/2024",description:"• Added Promise of the Water banner."},{date:"19/09/2024",description:`
         • Added Lucy banner. <br>
         • Updated Planner, Arcanists, Items and Stages to version 1.9 update. <br>
         • Moved Bug Reports to Github issues since I barely check the Google Sheets anymore. <br>
