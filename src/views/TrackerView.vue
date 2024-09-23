@@ -68,7 +68,7 @@ const promisePulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Promise of the Water');
     return filteredPulls.map((pull, index) => {
         return {
-            PullNumber: sortedPulls.value.length - index,
+            PullNumber: filteredPulls.length - index,
             ArcanistName: pull.ArcanistName,
             Rarity: pull.Rarity,
             BannerType: pull.BannerType,
