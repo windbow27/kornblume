@@ -247,11 +247,11 @@ const ocr: clickHandler = (payload: Event): void => {
                     const modifiedImage: File = await preprocessImage(file, currentPreprocess.value);
                     const ret: Tesseract.RecognizeResult = await worker.recognize(modifiedImage);
                     text.value = ret.data.text;
-                    // console.log(text.value);
+                    console.log(text.value);
                     // (document.getElementById('testing') as HTMLImageElement).src = modifiedImage.toDataURL(); /* if modifiedImage is canvas */
                     // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedImage); /* if modifiedImage is file */
 
-                    const arcanistNameGroup: string = /^\W*(?<ArcanistName>\d*[376A-Za-z.,]+(?:\s[A-Za-z.,1]+)*)/.source;
+                    const arcanistNameGroup: string = /^\W*(?<ArcanistName>\d*[376A-Za-z.,-]+(?:\s[A-Za-z.,1-]+)*)/.source;
                     const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
                     const bannerGroup: string = `(?<BannerType>${bannerList.join('|').replaceAll(/\s/g, '\\s?').replaceAll("'", "['\\s]?")}).*`;
                     const dateGroup: string = /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/.source;
@@ -267,6 +267,7 @@ const ocr: clickHandler = (payload: Event): void => {
                         if (!match && line.length !== 0 && !line.match(excludeLineInfo)) { console.log(line); }
                         if (match) {
                             let arcanistName: string = match.groups?.ArcanistName.trim() || '';
+                            // console.log(arcanistName);
 
                             /* change roman numeral to digit for better fuzzy string matching */
                             if (arcanistName.includes('Golden')) { arcanistName = convertGoldenThreadString(arcanistName, 'digit'); }

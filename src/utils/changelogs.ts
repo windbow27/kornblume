@@ -1,6 +1,7 @@
 export const changelogs = [
     // Add more from top
-    { date: '24/07/2024', description: '• Added Anjo Nala, Mr. Duncan, White Rum as unreleased arcanist.' },
+    { date: '25/09/2024', description: '• Various bug fixes.' },
+    { date: '24/09/2024', description: '• Added Anjo Nala, Mr. Duncan, White Rum as unreleased arcanist.' },
     { date: '22/09/2024', description: '• Updated warehouse order to match ingame.' },
     { date: '21/09/2024', description: '• Added Promise of the Water banner.' },
     {

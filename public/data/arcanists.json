@@ -1868,7 +1868,7 @@
   },
   {
     "Id": 10077,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Semmelweis",
     "Rarity": 6,
     "Afflatus": "Mineral",
@@ -2610,7 +2610,7 @@
   },
   {
     "Id": 10078,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Lucy",
     "Rarity": 6,
     "Afflatus": "Intellect",
@@ -4106,7 +4106,7 @@
   },
   {
     "Id": 10080,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Kakania",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -4854,7 +4854,7 @@
   },
   {
     "Id": 10076,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Windsong",
     "Rarity": 6,
     "Afflatus": "Star",
@@ -8852,7 +8852,7 @@
     ],
     "Frequency": [
       {
-        "Type": "U-shape",
+        "Type": "Cross",
         "Id": 5,
         "Material": [
           "Mistilteinn",
@@ -8868,7 +8868,7 @@
         ]
       },
       {
-        "Type": "U-shape",
+        "Type": "Cross",
         "Id": 4,
         "Material": [
           "Serpent Scepter",
@@ -8884,7 +8884,7 @@
         ]
       },
       {
-        "Type": "U-shape",
+        "Type": "Cross",
         "Id": 14,
         "Material": [
           "Mistilteinn",
@@ -8900,7 +8900,7 @@
         ]
       },
       {
-        "Type": "U-shape",
+        "Type": "Cross",
         "Id": 2,
         "Material": [
           "Serpent Scepter",
@@ -8916,7 +8916,7 @@
         ]
       },
       {
-        "Type": "U-shape",
+        "Type": "Cross",
         "Id": 6,
         "Material": [
           "Rhine Gold",
@@ -13750,7 +13750,7 @@
   },
   {
     "Id": 10079,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Lorelei",
     "Rarity": 5,
     "Afflatus": "Star",
@@ -18015,7 +18015,7 @@
     ],
     "Frequency": [
       {
-        "Type": "Z-shape",
+        "Type": "Cross",
         "Id": 5,
         "Material": [
           "Glowing Mothwing",
@@ -18029,7 +18029,7 @@
         ]
       },
       {
-        "Type": "Z-shape",
+        "Type": "Cross",
         "Id": 4,
         "Material": [
           "Wyrmling Skeleton",
@@ -18043,7 +18043,7 @@
         ]
       },
       {
-        "Type": "Z-shape",
+        "Type": "Cross",
         "Id": 14,
         "Material": [
           "Murmur of Insanity",
@@ -18057,7 +18057,7 @@
         ]
       },
       {
-        "Type": "Z-shape",
+        "Type": "Cross",
         "Id": 2,
         "Material": [
           "Bogeyman",
@@ -18071,7 +18071,7 @@
         ]
       },
       {
-        "Type": "Z-shape",
+        "Type": "Cross",
         "Id": 6,
         "Material": [
           "Watch Core",
