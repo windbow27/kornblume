@@ -1256,7 +1256,7 @@
     "category": "Resource",
     "cost": 25,
     "drops": {
-      "Dust": 12000,
+      "Dust": 12500,
       "Sharpodonty": 250
     }
   },
