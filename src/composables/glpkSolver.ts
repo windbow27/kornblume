@@ -231,7 +231,7 @@ export async function processSharpoAndDust (generatedCards: ICard[]) {
 
     const variables = {
         'The Poussiere VI': {
-            Dust: 12000 + Number((wildernessDailyProduct.dust * 25 / dailyActivity).toFixed(1)),
+            Dust: 12500 + Number((wildernessDailyProduct.dust * 25 / dailyActivity).toFixed(1)),
             Sharpodonty: 250 + Number((wildernessDailyProduct.gold * 25 / dailyActivity).toFixed(1)),
             Cost: 25
         },
@@ -291,7 +291,7 @@ export async function processSharpoAndDust (generatedCards: ICard[]) {
         materials: [
             {
                 Material: 'Dust',
-                Quantity: 12000 * dustRuns
+                Quantity: 12500 * dustRuns
             },
             {
                 Material: 'Sharpodonty',
