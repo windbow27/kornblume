@@ -203,7 +203,7 @@ GApiSvc.init().then(async () => {
         </div>
 
         <!-- Notification -->
-        <div class="pb-4">
+        <!-- <div class="pb-4">
             <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
@@ -214,7 +214,7 @@ GApiSvc.init().then(async () => {
                     <p class="text-sm lg:text-base">Planner has been updated to version 1.9. Happy 1st anniversary! </p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <PlannerSelector :selectedArcanists="plannerStore.selectedArcanists" @open-edit-overlay="editEditOverlay" />
 

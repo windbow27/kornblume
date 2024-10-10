@@ -19,8 +19,7 @@ const text = ref('');
 const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
-// const selectedBannerType = ref('Limited');
-const selectedBannerType = ref('Thoughts in Cylinder');
+const selectedBannerType = ref('Limited');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -513,11 +512,6 @@ GApiSvc.init().then(async () => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
-            <!-- Lucy banner -->
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Thoughts in Cylinder' }"
-                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Thoughts in Cylinder'">{{
-                                $t('lucy') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Limited'">{{
                     $t('limited') }}</button>

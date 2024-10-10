@@ -26,6 +26,7 @@ export const bannerList = [
     'Reading in Sea Breeze',
     'Ode to the Utopia',
     'The Intersecting Lines',
+    'Observation into the Mirrors',
 
     // standard
     'Amongst the Lake',
@@ -72,7 +73,8 @@ export const bannerRateUp = [
     'Isolde',
     'Marcus',
     'Vila',
-    'Windsong'
+    'Windsong',
+    'Kakania'
 ];
 
 export const specialArcanists: string[] = [
