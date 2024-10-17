@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '17/10/2024', description: '• Added Lopera as unreleased arcanist. That i2 art is such a vibe.' },
     { date: '10/10/2024', description: '• Added Kakania banner.' },
     { date: '06/10/2024', description: '• More bug fixes.' },
     { date: '25/09/2024', description: '• Various bug fixes.' },
