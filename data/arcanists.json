@@ -1491,7 +1491,7 @@
   },
   {
     "Id": 10083,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Mercuria",
     "Rarity": 6,
     "Afflatus": "Spirit",
@@ -1868,7 +1868,7 @@
   },
   {
     "Id": 10081,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "J",
     "Rarity": 6,
     "Afflatus": "Beast",
@@ -26119,7 +26119,7 @@
   },
   {
     "Id": 10082,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Pioneer",
     "Rarity": 3,
     "Afflatus": "Spirit",
