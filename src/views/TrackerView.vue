@@ -252,7 +252,10 @@ const ocr: clickHandler = (payload: Event): void => {
 
                     const arcanistNameGroup: string = /^\W*(?<ArcanistName>\d*[376A-Za-z.,-]+(?:\s[A-Za-z.,1-]+)*)/.source;
                     const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
-                    const bannerGroup: string = `(?<BannerType>${bannerList.join('|').replaceAll(/\s/g, '\\s?').replaceAll("'", "['\\s]?")}).*`;
+                    const bannerGroup: string = `(?<BannerType>${bannerList.join('|')
+                        .replaceAll(/\s/g, '\\s?') // spaces
+                        .replaceAll("'", "['\\s]?") // single quote
+                        .replaceAll("\\\\'n\\\\'", "'n'")}).*`; // 'n' for J banner
                     const dateGroup: string = /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/.source;
 
                     const pattern = new RegExp(arcanistNameGroup + parenGroup + bannerGroup + dateGroup, 'i');
@@ -583,8 +586,8 @@ GApiSvc.init().then(async () => {
 
         <TrackerBoard v-if="selectedBannerType === 'Till the Last Drop'" :text="$t('jiu-niangzi')"
             :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'Thoughts in Cylinder'" :text="$t('lucy')"
-            :pulls="lucyPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Thoughts in Cylinder'" :text="$t('lucy')" :pulls="lucyPulls"
+            :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
 
     </div>
 </template>
