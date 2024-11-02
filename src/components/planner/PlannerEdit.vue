@@ -127,6 +127,7 @@ const levelUpArcanist = () => {
         selectedCurrentLevel.value = selectedGoalLevel.value
         selectedCurrentInsight.value = selectedGoalInsight.value
         selectedCurrentResonance.value = selectedGoalResonance.value
+        selectedFrequency.value = []
         useGlobalStore().setIsEditingPlanner(false);
         addArcanist();
     }

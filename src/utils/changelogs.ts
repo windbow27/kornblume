@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '02/11/2024', description: '• Updated Frequency Pattern names. <br> • Updated some Arcanist stats. <br> • Fixed a bug related to Level Up feature.' },
     { date: '31/10/2024', description: '• Added Mercuria banner.' },
     { date: '20/10/2024', description: '• Added Mercuria, J, Pioneer as released arcanists.' },
     { date: '17/10/2024', description: '• Added Lopera as unreleased arcanist. That i2 art is such a vibe.' },
