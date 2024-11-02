@@ -1,5 +1,376 @@
 [
   {
+    "Id": 10091,
+    "IsReleased": true,
+    "Name": "Willow",
+    "Rarity": 6,
+    "Afflatus": "Plant",
+    "Stats": {
+      "0-1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "0-30": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "1-40": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "2-50": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "3-60": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Plantal Vimen",
+          "Shattered Bones",
+          "Alopecurus Pratensis"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Plantal Vimen",
+          "Rough Silver Ingot",
+          "Biting Box"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Plantal Vimen",
+          "Murmur of Insanity",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Trembling Tooth"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Shattered Bones",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Rough Silver Ingot",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          5,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Golden Herb Incense"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Goose Neck",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          6,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          8,
+          5,
+          8
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Winged Key",
+          "Biting Box"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Sinuous Howl",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Murmur of Insanity",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Glowing Mothwing",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Fruit of Good and Evil",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Rhine Gold",
+          "Watch Core"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Z-shape",
+        "Id": 5,
+        "Material": [
+          "Golden Fleece",
+          "Platinum Ouija",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 4,
+        "Material": [
+          "Mistilteinn",
+          "Glowing Mothwing",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 11,
+        "Material": [
+          "Mistilteinn",
+          "Wyrmling Skeleton",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 12,
+        "Material": [
+          "Serpent Scepter",
+          "Glowing Mothwing",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 13,
+        "Material": [
+          "Fruit of Good and Evil",
+          "Glowing Mothwing",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      }
+    ]
+  },
+  {
     "Id": 10090,
     "IsReleased": false,
     "Name": "Lopera",
@@ -1497,49 +1868,49 @@
     "Afflatus": "Spirit",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        256,
+        1419,
+        115,
+        120,
+        409,
+        13.6,
+        150.4
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        389,
+        2154,
+        174,
+        181,
+        409,
+        13.6,
+        150.4
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        652,
+        3611,
+        291,
+        304,
+        463,
+        15.4,
+        153.1
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        972,
+        5385,
+        434,
+        453,
+        517,
+        17.2,
+        155.9
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1143,
+        6336,
+        533,
+        571,
+        571,
+        19,
+        158.6
       ]
     },
     "Insight": [
@@ -26130,8 +26501,8 @@
         116,
         116,
         200,
-        0,
-        0
+        6.7,
+        140
       ],
       "0-30": [
         318,
@@ -26139,8 +26510,8 @@
         176,
         176,
         200,
-        0,
-        0
+        6.7,
+        140
       ],
       "1-40": [
         533,
@@ -26148,8 +26519,8 @@
         294,
         294,
         226,
-        0,
-        0
+        7.5,
+        141.3
       ],
       "2-50": [
         794,
@@ -26157,8 +26528,8 @@
         438,
         438,
         252,
-        0,
-        0
+        8.4,
+        142.6
       ]
     },
     "Insight": [
