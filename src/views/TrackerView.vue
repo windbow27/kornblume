@@ -252,10 +252,13 @@ const ocr: clickHandler = (payload: Event): void => {
 
                     const arcanistNameGroup: string = /^\W*(?<ArcanistName>\d*[376A-Za-z.,-]+(?:\s[A-Za-z.,1-]+)*)/.source;
                     const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
-                    const bannerGroup: string = `(?<BannerType>${bannerList.join('|')
-                        .replaceAll(/\s/g, '\\s?') // spaces
-                        .replaceAll("'", "['\\s]?") // single quote
-                        .replaceAll("\\\\'n\\\\'", "'n'")}).*`; // 'n' for J banner
+                    const bannerGroup = `(?<BannerType>${bannerList
+                        .map(banner => banner
+                            .replace(/\s/g, '\\s*') // Handle spaces
+                            .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
+                            .replace(/Clash.*?Slash/, 'Clash[\\s\'"’\\w]*?Slash') // Handle Clash ... Slash variations
+                        ).join('|')
+                    }).*`;
                     const dateGroup: string = /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/.source;
 
                     const pattern = new RegExp(arcanistNameGroup + parenGroup + bannerGroup + dateGroup, 'i');
@@ -408,7 +411,7 @@ GApiSvc.init().then(async () => {
         </div>
 
         <!-- Notification -->
-        <!-- <div class="pb-4">
+        <div class="pb-4">
             <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
@@ -416,11 +419,11 @@ GApiSvc.init().then(async () => {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-sm lg:text-base"><span class="text-info">Update:</span> I found a way to fix the
-                        problem. It should properly pick up the banner name (Vissi D'arte, Vissi D'amore ) now.</p>
+                    <p class="text-sm lg:text-base"><span class="text-info">The Tracker is really bad at recognizing J. If you see 6, please
+                        use the editor to turn him into J. Thank you.</span></p>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <div class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center justify-center sm:justify-start">
             <input type="file" ref="fileInput" @change="ocr" accept="image/*" class="ml-4" style="display: none;"

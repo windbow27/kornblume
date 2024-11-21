@@ -1,6 +1,10 @@
 export const changelogs = [
     // Add more from top
-    { date: '21/11/2024', description: '• Added Flutterpage, Brimley as unreleased arcanist.' },
+    {
+        date: '21/11/2024', description: `• Added Flutterpage, Brimley as unreleased arcanist. <br>
+         • Added J banner. However the Tracker is really bad at recognizing him, please use the editor to turn 6 into J. Thank you.
+    `
+    },
     { date: '02/11/2024', description: '• Updated Frequency Pattern names. <br> • Updated some Arcanist stats. <br> • Fixed a bug related to Level Up feature. <br> • Added Willow as unreleased arcanist.' },
     { date: '31/10/2024', description: '• Added Mercuria banner.' },
     { date: '20/10/2024', description: '• Added Mercuria, J, Pioneer as released arcanists.' },
