@@ -1,5 +1,6 @@
 export const changelogs = [
     // Add more from top
+    { date: '21/11/2024', description: '• Added Flutterpage, Brimley as unreleased arcanist.' },
     { date: '02/11/2024', description: '• Updated Frequency Pattern names. <br> • Updated some Arcanist stats. <br> • Fixed a bug related to Level Up feature. <br> • Added Willow as unreleased arcanist.' },
     { date: '31/10/2024', description: '• Added Mercuria banner.' },
     { date: '20/10/2024', description: '• Added Mercuria, J, Pioneer as released arcanists.' },
