@@ -419,8 +419,8 @@ GApiSvc.init().then(async () => {
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-sm lg:text-base"><span class="text-info">The Tracker is really bad at recognizing J. If you see 6, please
-                        use the editor to turn him into J. Thank you.</span></p>
+                    <p class="text-sm lg:text-base"><span class="">The Tracker is really bad at recognizing J. If you encounter errors, please
+                        use the Tracker Editor. Thank you.</span></p>
                 </div>
             </div>
         </div>

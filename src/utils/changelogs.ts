@@ -1,6 +1,9 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '29/11/2024', description: 'Added Tuesday, Argus and Barbara as released arcanists. <br> Added Tuesday and Argus banners.'
+    },
+    {
         date: '21/11/2024', description: `• Added Flutterpage, Brimley as unreleased arcanist. <br>
          • Added J banner. However the Tracker is really bad at recognizing him, please use the editor to turn 6 into J. Thank you.
     `

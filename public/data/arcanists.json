@@ -1485,7 +1485,7 @@
   },
   {
     "Id": 10084,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Tuesday",
     "Rarity": 6,
     "Afflatus": "Spirit",
@@ -1862,7 +1862,7 @@
   },
   {
     "Id": 10086,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Argus",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -14857,7 +14857,7 @@
   },
   {
     "Id": 10085,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Barbara",
     "Rarity": 5,
     "Afflatus": "Spirit",

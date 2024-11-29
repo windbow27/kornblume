@@ -29,6 +29,8 @@ export const bannerList = [
     'Observation into the Mirrors',
     'Calming Hues in Frenzied Nights',
     'Clash \'n\' Slash',
+    'Blue Lullaby',
+    'Shooting in the Dark',
 
     // standard
     'Amongst the Lake',
@@ -78,7 +80,9 @@ export const bannerRateUp = [
     'Windsong',
     'Kakania',
     'Mercuria',
-    'J'
+    'J',
+    'Tuesday',
+    'Argus'
 ];
 
 export const specialArcanists: string[] = [
