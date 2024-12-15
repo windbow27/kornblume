@@ -16,6 +16,10 @@ interface IResonance extends Array<IMaterialNeeds>{}
 
 interface IFrequency extends Array<IMaterialNeeds>{}
 
+interface IEuphoria extends Array<IMaterialNeeds>{}
+
+interface IMastery extends Array<IMaterialNeeds>{}
+
 export interface IArcanist {
     Afflatus: string,
     Id: number,
@@ -24,7 +28,9 @@ export interface IArcanist {
     Name: string,
     Rarity: number,
     Resonance: IResonance,
-    Frequency: IFrequency
+    Frequency: IFrequency,
+    Euphoria: IEuphoria,
+    Mastery: IMastery,
 }
 
 export interface IArcanists extends Array<IArcanist>{}
@@ -40,4 +46,6 @@ export interface ISelectedArcanist {
     currentResonance: number;
     goalResonance: number;
     frequency: Frequency[];
+    euphoria: number[];
+    mastery: number;
 }

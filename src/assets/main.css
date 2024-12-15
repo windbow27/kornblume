@@ -13,7 +13,7 @@
 
 /*Custom common*/
 .custom-line {
-    @apply bg-gray-500 opacity-25 rounded-full w-full h-1 mt-4 mb-4 mx-1;
+    @apply bg-gray-500 opacity-25 rounded-full w-full h-1 mx-1;
 }
 
 .custom-gradient-gray-blue-dark {

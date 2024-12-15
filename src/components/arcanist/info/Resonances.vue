@@ -50,7 +50,9 @@ const editingArcanist = computed(() => ({
     goalLevel: 1,
     currentResonance: selectedCurrentResonance.value,
     goalResonance: selectedGoalResonance.value,
-    frequency: selectedFrequency.value
+    frequency: selectedFrequency.value,
+    euphoria: [],
+    mastery: 0
 }));
 
 const goalResonanceOptions = computed(() => {

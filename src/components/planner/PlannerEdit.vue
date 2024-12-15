@@ -6,7 +6,7 @@ import { useCalculation } from '@/composables/calculations';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { IArcanist, ISelectedArcanist } from '@/types';
-import { getArcanistFrequencyPath } from '@/composables/images';
+import { getArcanistFrequencyPath, getArcanistEuphoriaPath } from '@/composables/images';
 import Popper from 'vue3-popper';
 import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
 import SelectList from '@/components/common/SelectList.vue';
@@ -44,6 +44,8 @@ const selectedGoalLevel = ref(props.selectedArcanist.goalLevel);
 const selectedGoalResonance = ref(props.selectedArcanist.goalResonance);
 const selectedFrequency = ref(props.selectedArcanist.frequency ?? []);
 const selectedVisible = ref(props.selectedArcanist.isVisible);
+const selectedEuphoria = ref(props.selectedArcanist.euphoria ?? []);
+const selectedMastery = ref(props.selectedArcanist.mastery ?? 0);
 
 const compareLevels = (currentInsightSelect: number, currentLevelSelect: number, goalInsightSelect: number, goalLevelSelect: number) => {
     if (Number(currentInsightSelect) > Number(goalInsightSelect)) {
@@ -156,6 +158,17 @@ const toggleFrequency = (frequency: { Id: number; Type: string; }) => {
     }
 };
 
+const toggleEuphoria = (euphoria: number) => {
+    const index = selectedEuphoria.value.findIndex(e => e === euphoria);
+    if (index !== -1) {
+        // remove if selected
+        selectedEuphoria.value.splice(index, 1);
+    } else {
+        // add if not selected
+        selectedEuphoria.value.push(euphoria);
+    }
+};
+
 const closeOverlay = () => {
     emit('closeOverlay');
 };
@@ -197,7 +210,9 @@ const editingArcanist = computed(() => ({
     goalLevel: selectedGoalLevel.value,
     currentResonance: selectedCurrentResonance.value,
     goalResonance: selectedGoalResonance.value,
-    frequency: selectedFrequency.value
+    frequency: selectedFrequency.value,
+    euphoria: selectedEuphoria.value,
+    mastery: selectedMastery.value
 }));
 
 const rarity = computed(() => {
@@ -289,6 +304,13 @@ const frequencyOptions = computed(() => {
     }));
 });
 
+const euphoriaOptions = computed(() => {
+    const arcanistEuphoria = selectedArcanist.value.Euphoria ?? [];
+    return arcanistEuphoria.map(item => ({
+        Id: item.Id
+    }));
+});
+
 watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, selectedGoalInsight, selectedGoalLevel, selectedGoalResonance], () => {
     // Whenever any selectedX changes, update the key to trigger a re-render in all SelectList components
     updateKey.value += 1;
@@ -323,7 +345,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <i class="fas fa-times"></i>
             </button>
             <!-- Header -->
-            <div class="flex flex-wrap items-center p-2 mb-3 shadow-border-b">
+            <div class="flex flex-wrap items-center p-2 shadow-border-b">
                 <div class="flex items-center justify-center mr-2 space-x-3">
                     <ArcanistIcon class="ml-2" :arcanist="selectedArcanist" />
                     <h2 class="text-1xl md:text-2xl text-white font-bold">{{ $t(selectedArcanist.Name) }}</h2>
@@ -348,7 +370,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                     </div>
                 </div>
             </div>
-            <div class="custom-line"></div>
+            <div class="custom-line mb-4"></div>
             <!-- Selectors -->
             <div class="custom-label text-blue-100">{{ $t('current-level') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
@@ -378,28 +400,21 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                     :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
             </div>
 
-            <div class="flex justify-center space-x-3 pt-6 pb-2">
+            <div class="custom-line my-2"></div>
+
+            <div class="flex justify-center py-2 gap-x-2">
                 <!-- Quick Goal -->
-                <div v-if="false" class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal"
-                        class="blue-button"><i class="fa-solid fa-angles-right"></i></button></div>
-
-                <!-- Level Up -->
-                <div class="tooltip pl-2 pr-4" :data-tip="$t('level-up')">
-                    <button :disabled="indexInArcanistsList < 0 || materialRequirement.length === 0"
-                        onclick="level_up_container.showModal()" class="blue-button">
-                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                    </button>
-                </div>
-
-                <!-- Save -->
-                <button @click="addArcanist" class="green-button">{{ $t('save') }}</button>
+                <div class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal"
+                        class="gradient-blue btn btn-ghost btn-sm w-11"><i
+                            class="fa-solid fa-angles-right"></i></button></div>
 
                 <!-- Frequency -->
                 <div>
                     <Popper arrow placement="top" offsetDistance="2">
-                        <div v-if="selectedGoalResonance > 0" class="tooltip" :data-tip="$t('frequency')">
+                        <div :class="{ 'opacity-50 pointer-events-none': selectedGoalResonance <= 0 }" class="tooltip"
+                            :data-tip="$t('frequency')">
                             <button class="btn-ghost btn btn-sm">
-                                <img class="h-11" :src="getArcanistFrequencyPath(frequencyOptions[0].Type as string, 0)"
+                                <img class="h-8" :src="getArcanistFrequencyPath(frequencyOptions[0].Type as string, 0)"
                                     alt="Frequency Icon" />
                             </button>
                         </div>
@@ -410,10 +425,11 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                                         'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
                                         'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
                                         'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                                        'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id)
+                                        'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
+                                        'opacity-50 pointer-events-none': selectedGoalResonance <= 0
                                     }" class="rounded-lg">
                                     <div class="tooltip px-2 font-light"
-                                        :data-tip="$t('frequency-modulation-' + frequency.Id)">
+                                        :data-tip="$t('frequency-modulation' + frequency.Id)">
                                         <img class="h-16 pt-1.5"
                                             :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
                                             alt="Frequency Icon" />
@@ -428,7 +444,8 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                                             'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
                                             'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
                                             'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                                            'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id)
+                                            'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
+                                            'opacity-50 pointer-events-none': selectedGoalResonance <= 0
                                         }" class="rounded-lg">
                                         <div class="tooltip px-2 font-light"
                                             :data-tip="$t('frequency-modulation-' + frequency.Id)">
@@ -442,7 +459,54 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                         </template>
                     </Popper>
                 </div>
+
+                <!-- Euphoria -->
+                <div>
+                    <Popper arrow placement="top" offsetDistance="2">
+                        <div :class="{ 'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3 }"
+                            class="tooltip" :data-tip="$t('euphoria')">
+                            <button class="btn-ghost btn btn-sm">
+                                <img class="h-8" :src="getArcanistFrequencyPath(frequencyOptions[0].Type as string, 0)"
+                                    alt="Frequency Icon" />
+                            </button>
+                        </div>
+                        <template #content>
+                            <div class="flex justify-center space-x-4">
+                                <button v-for="(euphoria, index) in euphoriaOptions" :key="index"
+                                    @click="toggleEuphoria(euphoria.Id)" :class="{
+                                        'border-2 border-info': selectedEuphoria.some(e => e === euphoria.Id),
+                                        'border-2 border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
+                                        'hover:border-info': selectedEuphoria.some(e => e === euphoria.Id),
+                                        'hover:border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
+                                        'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3
+                                    }" class="rounded-lg
+                                    ">
+                                    <div class="tooltip px-2 font-light">
+                                        <img class="h-16 pt-1.5"
+                                            :src="getArcanistEuphoriaPath(selectedArcanist.Id, euphoria.Id)"
+                                            alt="Frequency Icon" />
+                                    </div>
+                                </button>
+                                <div v-if="euphoriaOptions.length === 0">
+                                    {{ $t('euphoria-requirement') }}
+                                </div>
+                            </div>
+                        </template>
+                    </Popper>
+                </div>
+
+                <!-- Level Up -->
+                <div class="tooltip" :data-tip="$t('level-up')">
+                    <button :disabled="indexInArcanistsList < 0 || materialRequirement.length === 0"
+                        onclick="level_up_container.showModal()" class="gradient-blue btn btn-ghost btn-sm w-11">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </button>
+                </div>
             </div>
+
+            <!-- Save -->
+            <div class="flex justify-center"> <button @click="addArcanist" class="green-button mb-2">{{ $t('save')
+                    }}</button></div>
 
             <!-- Level Up Modal -->
             <dialog id="level_up_container" class="modal">
@@ -455,7 +519,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                         <p class="text-white text-xl font-bold"> {{ $t('level-up') }}</p>
                         <p class=" text-white text-center">{{
                             $t('leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed')
-                        }}</p>
+                            }}</p>
                     </div>
                     <div class="overflow-y-auto shrink">
                         <ArcanistLevelUp :arcanist="editingArcanist" />

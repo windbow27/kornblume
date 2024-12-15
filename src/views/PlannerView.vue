@@ -130,7 +130,9 @@ const handleSelectArcanist = (arcanist: IArcanist) => {
         goalInsight: 0,
         goalLevel: 1,
         goalResonance: 0,
-        frequency: []
+        frequency: [],
+        euphoria: [],
+        mastery: 0
     }
     // console.log(selectedArcanist.value);
     openEditOverlay()
@@ -246,11 +248,11 @@ GApiSvc.init().then(async () => {
             </div>
         </div>
 
-        <div class="custom-line"></div>
+        <div class="custom-line my-4"></div>
 
         <PlannerTotal :totalActivityAndDays="totalActivityAndDays" :wildernessSettings="wildernessStore.settings" />
 
-        <div class="custom-line"></div>
+        <div class="custom-line my-4"></div>
 
         <!-- Add Arcanist Overlay -->
         <div v-if="isAddingArcanist" class="overlay">

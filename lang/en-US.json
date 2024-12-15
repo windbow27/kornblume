@@ -246,5 +246,8 @@
   "tip-for-pc-users-press-f12-after-importing-images-to-see-which-pulls-went-wrong": "Tip: For PC users, press F12 after importing images to see which pulls went wrong.",
   "frequency": "Frequency",
   "summary-promise": "Promise of the Water Summary",
-  "promise": "Promise"
+  "promise": "Promise",
+  "frequency-modulation": "Frequency Modulation",
+  "euphoria": "Euphoria",
+  "euphoria-requirement": "No Euphoria"
 }

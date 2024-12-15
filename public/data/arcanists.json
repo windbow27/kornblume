@@ -13760,6 +13760,100 @@
           120000
         ]
       }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Thought",
+          "Seed of Inspiration",
+          "Bud of Imagination",
+          "Mistilteinn"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Key of Thought",
+          "Seed of Inspiration",
+          "Bud of Imagination",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          16,
+          40,
+          300,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Bud of Imagination",
+          "Seed of Inspiration",
+          "Rheingold",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          20,
+          275,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Bud of Imagination",
+          "Seed of Inspiration",
+          "Fruit of Good and Evil",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          30,
+          566,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Bud of Imagination",
+          "Seed of Inspiration",
+          "Mistilteinn",
+          "Watch Core"
+        ],
+        "Quantity": [
+          35,
+          916,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Bud of Imagination",
+          "Seed of Inspiration",
+          "Golden Fleece",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          40,
+          1971,
+          2,
+          2
+        ]
+      }
     ]
   },
   {
