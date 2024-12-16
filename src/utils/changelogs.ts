@@ -1,7 +1,8 @@
 export const changelogs = [
     // Add more from top
+    { date: '16/12/2024', description: '• Added Barcarola as unreleased arcanist.' },
     {
-        date: '29/11/2024', description: 'Added Tuesday, Argus and Barbara as released arcanists. <br> Added Tuesday and Argus banners.'
+        date: '29/11/2024', description: '• Added Tuesday, Argus and Barbara as released arcanists. <br> • Added Tuesday and Argus banners.'
     },
     {
         date: '21/11/2024', description: `• Added Flutterpage, Brimley as unreleased arcanist. <br>
