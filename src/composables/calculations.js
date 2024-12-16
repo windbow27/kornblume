@@ -220,6 +220,69 @@ export function useCalculation (arc) {
         }
     };
 
+    const calculateEuphoriaMaterials = (euphoriaList, type) => {
+        const materialsCount = {};
+
+        if (type === undefined) return null;
+
+        if (euphoriaList) {
+            euphoriaList.forEach(euphoriaId => {
+                const data = type.find(obj => obj.Id === euphoriaId);
+                // console.log(data);
+                if (data && data.Material && Array.isArray(data.Material)) {
+                    data.Material.forEach((material, index) => {
+                        const quantity = data.Quantity[index];
+
+                        // Accumulate materials and quantities
+                        if (materialsCount[material]) {
+                            materialsCount[material] += quantity;
+                        } else {
+                            materialsCount[material] = quantity;
+                        }
+                    });
+                }
+            });
+
+            // Convert the accumulated data to the desired format
+            const result = Object.keys(materialsCount).map(material => ({
+                Material: material,
+                Quantity: materialsCount[material]
+            }));
+            return result;
+        }
+    }
+
+    const calculateMasteryMaterials = (currentMastery, goalMastery, type) => {
+        const materialsCount = {};
+
+        if (type === undefined) return null;
+
+        if (currentMastery === goalMastery) return null;
+
+        for (let current = Number(currentMastery + 1); current <= goalMastery; current++) {
+            const data = type.find(obj => obj.Id === current);
+            if (data) {
+                data.Material.forEach((material, index) => {
+                    const quantity = data.Quantity[index];
+
+                    // Accumulate materials and quantities
+                    if (materialsCount[material]) {
+                        materialsCount[material] += quantity;
+                    } else {
+                        materialsCount[material] = quantity;
+                    }
+                });
+            }
+        }
+
+        // Convert the accumulated data to the desired format
+        const result = Object.keys(materialsCount).map(material => ({
+            Material: material,
+            Quantity: materialsCount[material]
+        }));
+        return result;
+    }
+
     const getLevelsInfo = (arc, insight) => {
         const currentCalc = calculations.find((calc) =>
             calc.Rarity.includes(arcInfo.Rarity) &&
@@ -248,9 +311,11 @@ export function useCalculation (arc) {
     const insightResults = calculateMaterials(arc.currentInsight, arc.goalInsight, arcInfo.Insight);
     const resonanceResults = calculateMaterials(arc.currentResonance, arc.goalResonance, arcInfo.Resonance);
     const frequencyResults = calculateFrequencyMaterials(arc.frequency, arcInfo.Frequency);
+    const euphoriaResults = calculateEuphoriaMaterials(arc.euphoria, arcInfo.Euphoria);
+    const masteryResults = calculateMasteryMaterials(arc.currentMastery, arc.goalMastery, arcInfo.Mastery);
     const expResults = calculateExp(arc);
     // Merge all results into a single object
-    const mergedResults = mergeResults([insightResults, resonanceResults, frequencyResults, expResults]);
+    const mergedResults = mergeResults([insightResults, resonanceResults, frequencyResults, euphoriaResults, masteryResults, expResults]);
     // Convert the merged object into the desired format
     const result = formatResults(mergedResults);
     return result;

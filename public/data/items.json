@@ -738,5 +738,45 @@
     "Description": "The whispers inside are overflowing. Seize the opportunity when you get to hear them.",
     "Source": "",
     "Usage": ""
+  },
+  {
+    "Id": 70,
+    "Category": "Resonate Material",
+    "IsReleased": true,
+    "Name": "Crystal Casket",
+    "Rarity": 6,
+    "Description": "The whispers inside are overflowing. Seize the opportunity when you get to hear them.",
+    "Source": "",
+    "Usage": ""
+  },
+  {
+    "Id": 75,
+    "Category": "Build Material",
+    "IsReleased": true,
+    "Name": "Key of Thought",
+    "Rarity": 6,
+    "Description": "",
+    "Source": "",
+    "Usage": ""
+  },
+  {
+    "Id": 76,
+    "Category": "Build Material",
+    "IsReleased": true,
+    "Name": "Bud of Imagination",
+    "Rarity": 5,
+    "Description": "",
+    "Source": "",
+    "Usage": ""
+  },
+  {
+    "Id": 77,
+    "Category": "Build Material",
+    "IsReleased": true,
+    "Name": "Seed of Inspiration", 
+    "Rarity": 4,
+    "Description": "",
+    "Source": "",
+    "Usage": ""
   }
 ]

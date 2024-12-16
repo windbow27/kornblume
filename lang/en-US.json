@@ -178,9 +178,9 @@
   "pity": "Pity",
   "date": "Summon Time",
   "click-add-arcanist-button-to-start-planning": "Click '{button}' to start planning.",
-  "level-up": "Level Up",
+  "level-up": "Mark As Done",
   "not-enough-materials": "You don't have enough Materials.",
-  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Leveling up will update the arcanist's current status and consume your warehouse inventory. Proceed?",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "Marking as done will update the arcanist's current status and consume your warehouse inventory. Proceed?",
   "after-your-first-import": "After your first import, you only need to import the new images.",
   "tips": "Tips",
   "example-of-incomplete-10x": "Example of incomplete 10x",
@@ -246,5 +246,8 @@
   "tip-for-pc-users-press-f12-after-importing-images-to-see-which-pulls-went-wrong": "Tip: For PC users, press F12 after importing images to see which pulls went wrong.",
   "frequency": "Frequency",
   "summary-promise": "Promise of the Water Summary",
-  "promise": "Promise"
+  "promise": "Promise",
+  "frequency-modulation": "Frequency Modulation",
+  "euphoria": "Euphoria",
+  "euphoria-requirement": "No Euphoria"
 }

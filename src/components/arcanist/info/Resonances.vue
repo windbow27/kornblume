@@ -50,7 +50,10 @@ const editingArcanist = computed(() => ({
     goalLevel: 1,
     currentResonance: selectedCurrentResonance.value,
     goalResonance: selectedGoalResonance.value,
-    frequency: selectedFrequency.value
+    frequency: selectedFrequency.value,
+    euphoria: [],
+    currentMastery: 0,
+    goalMastery: 0
 }));
 
 const goalResonanceOptions = computed(() => {
@@ -85,35 +88,41 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
 </script>
 
 <template>
-    <div class="px-2">
-        <h2 class=" text-white text-2xl font-bold">Resonances</h2>
-        <div class="mt-2 flex justify-center items-center leading-none">
-            <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
-                :label="'Current Resonance'" :options="currentResonanceOptions" v-on:update:selected="handleSelected" />
-            <i class="text-white fa-solid fa-angles-right text-center"></i>
-            <SelectList :key="updateKey" v-model="selectedGoalResonance" :selected="selectedGoalResonance"
-                :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
+    <div class="card-container">
+        <div class="px-2">
+            <h2 class="text-white text-2xl font-bold">Resonances</h2>
+            <div class="mt-2 flex justify-center items-center leading-none">
+                <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
+                    :label="'Current Resonance'" :options="currentResonanceOptions" v-on:update:selected="handleSelected" />
+                <i class="text-white fa-solid fa-angles-right text-center w-11"></i>
+                <SelectList :key="updateKey" v-model="selectedGoalResonance" :selected="selectedGoalResonance"
+                    :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
+            </div>
         </div>
-    </div>
 
-    <div class="flex justify-center p-4">
-        <div class="flex flex-wrap gap-4 justify-center">
-            <button v-for="(frequency, index) in frequencyOptions" :key="index"
-                @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })" :class="{
-                    'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                    'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
-                    'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                    'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id)
-                }" class="rounded-lg">
-                <div class="tooltip px-2 font-light" :data-tip="$t('frequency-modulation-' + frequency.Id)">
-                    <img class="h-16 pt-1.5" :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
-                        alt="Frequency Icon" />
-                </div>
-            </button>
+        <div class="flex justify-center p-4">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button v-for="(frequency, index) in frequencyOptions" :key="index"
+                    @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })" :class="{
+                        'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
+                        'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
+                        'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
+                        'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id)
+                    }" class="rounded-lg">
+                    <div class="tooltip px-2 font-light" :data-tip="$t('frequency-modulation-' + frequency.Id)">
+                        <img class="h-16 pt-1.5" :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
+                            alt="Frequency Icon" />
+                    </div>
+                </button>
+            </div>
         </div>
-    </div>
 
-    <CalculateItemList :arcanist="editingArcanist" />
+        <CalculateItemList :arcanist="editingArcanist" />
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.card-container {
+    min-height: 568px;
+}
+</style>

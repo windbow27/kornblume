@@ -113,3 +113,7 @@ export function getArcanistFramePath (rarity: number) {
 export function getArcanistFrequencyPath (type: string, id: number) {
     return `images/arcanists/misc/frequency/${type}_${id}.webp`;
 }
+
+export function getArcanistEuphoriaPath (id: number, type: number) {
+    return `images/arcanists/euphoria/${id}_${type}.webp`;
+}

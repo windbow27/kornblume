@@ -57,7 +57,7 @@ onClickOutside(resourcesRef, closeResources)
 </script>
 
 <template>
-    <div class="responsive-spacer overflow-x-hidden">
+    <div class="container overflow-x-hidden">
         <div class="text-center p-2 mb-1">
             <h1 class="text-5xl lg:text-6xl font-bold text-white pt-2">Kornblume</h1>
             <p class="text-sm sm:text-lg text-gray-300">{{ $t('a-toolsite-and-cornflower-worship-place-for-reverse-1999') }}
@@ -75,7 +75,7 @@ onClickOutside(resourcesRef, closeResources)
             </p>
         </div>
 
-        <div class="container mx-auto w-full xl:w-1/2 px-4 aspect-video">
+        <div class="container mx-auto w-full xl:w-2/3 px-4 aspect-video">
             <div class="carousel w-full rounded-md">
                 <!-- Loop through carousel items -->
                 <div v-for="(item, index) in carouselItems" :key="index"

@@ -45,13 +45,16 @@ const editingArcanist = computed(() => ({
     goalLevel: (props.arcanist.Rarity >= 5 ? nodesHighRarity : nodesLowRarity).value[selected.value].level,
     currentResonance: 0,
     goalResonance: 0,
-    frequency: []
+    frequency: [],
+    euphoria: [],
+    currentMastery: 0,
+    goalMastery: 0
 }))
 
 </script>
 
 <template>
-    <div class="px-2">
+    <div class="px-2 card-container">
         <h2 class=" text-white text-2xl font-bold">{{ $t('Stats') }}</h2>
         <div class="px-8 lg:px-16 py-2">
             <div class="w-full text-white flex justify-between text-xs 3xl:text-base">
@@ -83,4 +86,8 @@ const editingArcanist = computed(() => ({
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.card-container {
+    min-height: 568px;
+}
+</style>
