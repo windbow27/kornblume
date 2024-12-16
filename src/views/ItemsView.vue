@@ -50,7 +50,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="container ">
+    <div class="container">
         <div class="flex pb-4">
             <h2 class="text-2xl text-white font-bold">{{ $t('items') }}</h2>
         </div>
@@ -67,10 +67,9 @@ onMounted(() => {
             </div>
         </div> -->
 
-        <div class="wrapper">
-            <div class="container">
-
-                <!--Item Selection Card-->
+        <div class="flex flex-col gap-y-4 lg:grid lg:grid-cols-2 lg:gap-4">
+            <!--Item Selection Card-->
+            <div class="flex flex-col gap-y-4">
                 <div class="card custom-border">
                     <div class="flex flex-wrap justify-center sm:justify-between pl-2 gap-y-2">
                         <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
@@ -81,8 +80,7 @@ onMounted(() => {
                             </button>
                         </div>
                         <!-- Filters -->
-                        <MaterialFilter :listItems="listItems" :categories="categories"
-                            @filtered="handleFilteredMaterials" />
+                        <MaterialFilter :listItems="listItems" :categories="categories" @filtered="handleFilteredMaterials" />
                     </div>
                 </div>
                 <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
@@ -94,22 +92,18 @@ onMounted(() => {
                 </div>
             </div>
 
-            <!--Item Display Card-->
-            <div class="container">
-                <MaterialDisplay :selectedMaterial="selectedMaterial || {}" :categories="categories" />
-            </div>
-
+              <!--Item Display Card-->
+              <div class="flex flex-col gap-y-4">
+                    <MaterialDisplay :selectedMaterial="selectedMaterial || {}" :categories="categories" />
+                </div>
         </div>
+
     </div>
 </template>
 
 <style scoped>
 button:disabled {
     opacity: 0.25;
-}
-
-.container {
-    @apply w-full lg:w-1/2 flex flex-col p-4 gap-y-4 2xl:px-8 max-w-3xl;
 }
 
 .card {

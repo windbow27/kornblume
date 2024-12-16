@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .container {
-    @apply p-4 sm:px-8 md:px-16 mx-auto max-w-[1920px]
+    @apply p-4 sm:px-8 md:px-16 mx-auto max-w-[1600px]
 }
 
 .wrapper {

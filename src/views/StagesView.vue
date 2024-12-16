@@ -51,8 +51,8 @@ watchEffect(() => {
             </div>
         </div> -->
 
-        <div class="wrapper">
-            <div class="container">
+        <div class="flex flex-col gap-y-4 lg:grid lg:grid-cols-2 lg:gap-4">
+            <div class="flex flex-col gap-y-4">
 
                 <!--Item Selection Card-->
                 <div class="card custom-border">
@@ -75,21 +75,15 @@ watchEffect(() => {
                     </div>
                 </div>
             </div>
-
             <!--Item Display Card-->
-            <div class="container">
+            <div class="flex flex-col gap-y-4">
                 <StageDisplay :selectedStage="selectedStage" :stageName="selectedStage.name" />
             </div>
-
         </div>
     </div>
 </template>
 
 <style scoped>
-.container {
-    @apply w-full lg:w-1/2 flex flex-col p-4 gap-y-4 2xl:px-8 max-w-3xl;
-}
-
 .card {
     @apply p-4 rounded shadow w-full;
 }
