@@ -14136,9 +14136,9 @@
       {
         "Id": 1,
         "Material": [
-          "Key of Thought",
-          "Seed of Inspiration",
-          "Bud of Imagination",
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
           "Mistilteinn"
         ],
         "Quantity": [
@@ -14151,9 +14151,9 @@
       {
         "Id": 2,
         "Material": [
-          "Key of Thought",
-          "Seed of Inspiration",
-          "Bud of Imagination",
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
           "Golden Fleece"
         ],
         "Quantity": [
@@ -14168,8 +14168,8 @@
       {
         "Id": 1,
         "Material": [
-          "Bud of Imagination",
-          "Seed of Inspiration",
+          "Sprout of Reverie",
+          "Seed of Insight",
           "Rhine Gold",
           "Murmur of Insanity"
         ],
@@ -14183,8 +14183,8 @@
       {
         "Id": 2,
         "Material": [
-          "Bud of Imagination",
-          "Seed of Inspiration",
+          "Sprout of Reverie",
+          "Seed of Insight",
           "Fruit of Good and Evil",
           "Glowing Mothwing"
         ],
@@ -14198,8 +14198,8 @@
       {
         "Id": 3,
         "Material": [
-          "Bud of Imagination",
-          "Seed of Inspiration",
+          "Sprout of Reverie",
+          "Seed of Insight",
           "Mistilteinn",
           "Watch Core"
         ],
@@ -14213,8 +14213,8 @@
       {
         "Id": 4,
         "Material": [
-          "Bud of Imagination",
-          "Seed of Inspiration",
+          "Sprout of Reverie",
+          "Seed of Insight",
           "Golden Fleece",
           "Golden Bell Essence Bottle"
         ],
@@ -22194,9 +22194,9 @@
       {
         "Id": 1,
         "Material": [
-          "Key of Thought",
-          "Seed of Inspiration",
-          "Bud of Imagination",
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
           "Golden Fleece"
         ],
         "Quantity": [
