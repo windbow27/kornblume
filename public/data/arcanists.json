@@ -21818,6 +21818,23 @@
           100000
         ]
       }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Thought",
+          "Seed of Inspiration",
+          "Bud of Imagination",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          6,
+          20,
+          100,
+          2
+        ]
+      }
     ]
   },
   {

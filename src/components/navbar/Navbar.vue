@@ -59,11 +59,12 @@ watchEffect(() => {
 
 <template>
   <nav class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4 z-50">
-    <img src="/images/items/common/logo.webp" alt="logo" class="w-8 h-8 mt-1 mr-4" />
+    <router-link to="/"><img src="/images/items/common/logo.webp" alt="logo" class="w-8 h-8 mt-1 mr-4" /></router-link>
 
     <!-- Navigation Links for Large Screens -->
     <div v-if="!isSmallScreen" class="flex space-x-2">
-      <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i class="fa-solid fa-house"></i>
+      <router-link to="/" class="nav-button" :class="{ 'active': $route.path === '/' }"><i
+          class="fa-solid fa-house"></i>
         {{ $t('home') }} </router-link>
       <router-link to="/arcanists" class="nav-button" :class="{ 'active': $route.path === '/arcanists' }"><i
           class="fa-solid fa-user"></i> {{ $t('arcanists') }} </router-link>

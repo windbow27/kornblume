@@ -223,6 +223,8 @@ export function useCalculation (arc) {
     const calculateEuphoriaMaterials = (euphoriaList, type) => {
         const materialsCount = {};
 
+        if (type === undefined) return null;
+
         if (euphoriaList) {
             euphoriaList.forEach(euphoriaId => {
                 const data = type.find(obj => obj.Id === euphoriaId);

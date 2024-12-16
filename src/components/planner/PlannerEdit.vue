@@ -133,6 +133,8 @@ const levelUpArcanist = () => {
         selectedCurrentInsight.value = selectedGoalInsight.value
         selectedCurrentResonance.value = selectedGoalResonance.value
         selectedFrequency.value = []
+        selectedEuphoria.value = []
+        selectedCurrentMastery.value = selectedGoalMastery.value
         useGlobalStore().setIsEditingPlanner(false);
         addArcanist();
     }
@@ -441,7 +443,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                 <!-- Frequency -->
                 <div>
                     <Popper arrow placement="top" offsetDistance="2">
-                        <div :class="{ 'opacity-50 pointer-events-none': selectedGoalResonance <= 0 }" class="tooltip"
+                        <div :class="{ 'opacity-50 pointer-events-none': selectedGoalResonance < 10 }" class="tooltip"
                             :data-tip="$t('frequency')">
                             <button class="btn-ghost btn btn-sm">
                                 <img class="h-8" :src="getArcanistFrequencyPath(frequencyOptions[0].Type as string, 0)"
@@ -456,7 +458,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                                         'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
                                         'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
                                         'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
-                                        'opacity-50 pointer-events-none': selectedGoalResonance <= 0
+                                        'opacity-50 pointer-events-none': selectedGoalResonance < 10
                                     }" class="rounded-lg">
                                     <div class="tooltip px-2 font-light"
                                         :data-tip="$t('frequency-modulation' + frequency.Id)">
@@ -475,7 +477,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                                             'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
                                             'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
                                             'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
-                                            'opacity-50 pointer-events-none': selectedGoalResonance <= 0
+                                            'opacity-50 pointer-events-none': selectedGoalResonance < 10
                                         }" class="rounded-lg">
                                         <div class="tooltip px-2 font-light"
                                             :data-tip="$t('frequency-modulation-' + frequency.Id)">
@@ -496,7 +498,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                         <div :class="{ 'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3 }"
                             class="tooltip" :data-tip="$t('euphoria')">
                             <button class="btn-ghost btn btn-sm">
-                                <img class="h-8" :src="getArcanistFrequencyPath(frequencyOptions[0].Type as string, 0)"
+                                <img class="h-8 transform scale-150" src="/images/items/icon/77.webp"
                                     alt="Frequency Icon" />
                             </button>
                         </div>
@@ -520,18 +522,21 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                                     </button>
                                 </div>
 
-                                <div v-if="euphoriaOptions.length === 0" class="m-auto">
+                                <div v-if="euphoriaOptions.length === 0" class="m-auto text-white">
                                     {{ $t('euphoria-requirement') }}
                                 </div>
 
                                 <div class="mt-2 flex justify-center items-center leading-none">
                                     <SelectList :key="'current-' + updateKey" v-model="selectedCurrentMastery"
                                         :selected="selectedCurrentMastery" :label="'Current Mastery'"
-                                        :options="currentMasteryOptions" v-on:update:selected="handleSelected" />
-                                    <i class="text-white fa-solid fa-angles-right text-center w-10"></i>
+                                        :options="currentMasteryOptions" v-on:update:selected="handleSelected"
+                                        :class="{'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3}"/>
+                                    <i class="text-white fa-solid fa-angles-right text-center w-10"
+                                    :class="{'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3}"></i>
                                     <SelectList :key="'goal-' + updateKey" v-model="selectedGoalMastery"
                                         :selected="selectedGoalMastery" :label="'Goal Mastery'"
-                                        :options="goalMasteryOptions" v-on:update:selected="handleSelected" />
+                                        :options="goalMasteryOptions" v-on:update:selected="handleSelected"
+                                        :class="{'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3}"/>
                                 </div>
                             </div>
                         </template>
