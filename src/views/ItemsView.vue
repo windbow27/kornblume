@@ -50,7 +50,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="responsive-spacer ">
+    <div class="container ">
         <div class="flex pb-4">
             <h2 class="text-2xl text-white font-bold">{{ $t('items') }}</h2>
         </div>

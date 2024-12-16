@@ -68,7 +68,7 @@ GApiSvc.init().then(async () => {
 </script>
 
 <template>
-    <div class="responsive-spacer">
+    <div class="container">
         <div class="pb-6">
             <h2 class="text-2xl text-white font-bold mb-2 lg:mb-4">{{ $t('profile') }}</h2>
             <p class="text-white"> {{ $t('you-can-export-or-import-your-data-here') }}</p>

@@ -9,11 +9,12 @@ import { getArcanistI2ImagePath, getArcanistAfflatusPath, getArcanistDmgTypePath
 import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
 import Resonances from '@/components/arcanist/info/Resonances.vue';
+import Euphoria from './info/Euphoria.vue';
 
 const route = useRoute();
 const arcanistStore = useDataStore().arcanists;
 const arcanist = ref<IArcanist>(arcanistStore[0]);
-const buttons = ['Stats', 'Resonances'];
+const buttons = ['Stats', 'Resonances', 'Euphoria'];
 const selectedButton = ref(buttons[0]);
 
 onBeforeMount(() => {
@@ -58,6 +59,7 @@ onBeforeMount(() => {
             <div class="p-4 rounded shadow custom-border w-full">
                 <Stats :arcanist="arcanist ?? {}" v-if="selectedButton === 'Stats'" />
                 <Resonances :arcanist="arcanist ?? {}" v-if="selectedButton === 'Resonances'" />
+                <Euphoria :arcanist="arcanist ?? {}" v-if="selectedButton === 'Euphoria'" />
             </div>
         </div>
     </div>

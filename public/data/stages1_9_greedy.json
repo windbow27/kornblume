@@ -856,5 +856,17 @@
       "drops": {
         "Tome of Beastly Thirst": 2
       }
+    }, 
+    "Unreleased": {
+      "id": 999,
+      "name": "Unreleased",
+      "category": "Unreleased",
+      "cost": 0,
+      "count": 0,
+      "drops": {
+        "Key of Thought": 1,
+        "Bud of Imagination": 1,
+        "Seed of Inspiration": 1
+      }
     }
   }

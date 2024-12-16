@@ -52,7 +52,8 @@ const editingArcanist = computed(() => ({
     goalResonance: selectedGoalResonance.value,
     frequency: selectedFrequency.value,
     euphoria: [],
-    mastery: 0
+    currentMastery: 0,
+    goalMastery: 0
 }));
 
 const goalResonanceOptions = computed(() => {
@@ -92,7 +93,7 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
         <div class="mt-2 flex justify-center items-center leading-none">
             <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
                 :label="'Current Resonance'" :options="currentResonanceOptions" v-on:update:selected="handleSelected" />
-            <i class="text-white fa-solid fa-angles-right text-center"></i>
+            <i class="text-white fa-solid fa-angles-right text-center w-11"></i>
             <SelectList :key="updateKey" v-model="selectedGoalResonance" :selected="selectedGoalResonance"
                 :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
         </div>

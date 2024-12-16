@@ -3,8 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.responsive-spacer {
-    @apply p-4 sm:px-8 md:px-16
+.container {
+    @apply p-4 sm:px-8 md:px-16 mx-auto max-w-[1920px]
 }
 
 .wrapper {

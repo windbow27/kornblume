@@ -45,7 +45,10 @@ const editingArcanist = computed(() => ({
     goalLevel: (props.arcanist.Rarity >= 5 ? nodesHighRarity : nodesLowRarity).value[selected.value].level,
     currentResonance: 0,
     goalResonance: 0,
-    frequency: []
+    frequency: [],
+    euphoria: [],
+    currentMastery: 0,
+    goalMastery: 0
 }))
 
 </script>
