@@ -1,3 +1,5 @@
+<!-- eslint-disable no-unused-vars -->
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue';
 import { useDataStore } from '@/stores/dataStore';
@@ -45,7 +47,8 @@ const selectedGoalResonance = ref(props.selectedArcanist.goalResonance);
 const selectedFrequency = ref(props.selectedArcanist.frequency ?? []);
 const selectedVisible = ref(props.selectedArcanist.isVisible);
 const selectedEuphoria = ref(props.selectedArcanist.euphoria ?? []);
-const selectedMastery = ref(props.selectedArcanist.mastery ?? 0);
+const selectedCurrentMastery = ref(props.selectedArcanist.currentMastery);
+const selectedGoalMastery = ref(props.selectedArcanist.goalMastery);
 
 const compareLevels = (currentInsightSelect: number, currentLevelSelect: number, goalInsightSelect: number, goalLevelSelect: number) => {
     if (Number(currentInsightSelect) > Number(goalInsightSelect)) {
@@ -193,6 +196,12 @@ const handleSelected = (option, optionType) => {
     case 'Goal Resonance':
         selectedGoalResonance.value = option;
         break;
+    case 'Current Mastery':
+        selectedCurrentMastery.value = option;
+        break;
+    case 'Goal Mastery':
+        selectedGoalMastery.value = option;
+        break;
     case 'Visible':
         selectedVisible.value = option;
         break;
@@ -212,7 +221,8 @@ const editingArcanist = computed(() => ({
     goalResonance: selectedGoalResonance.value,
     frequency: selectedFrequency.value,
     euphoria: selectedEuphoria.value,
-    mastery: selectedMastery.value
+    currentMastery: selectedCurrentMastery.value,
+    goalMastery: selectedGoalMastery.value
 }));
 
 const rarity = computed(() => {
@@ -311,7 +321,18 @@ const euphoriaOptions = computed(() => {
     }));
 });
 
-watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, selectedGoalInsight, selectedGoalLevel, selectedGoalResonance], () => {
+const currentMasteryOptions = computed(() => {
+    return [0, 1, 2, 3, 4];
+});
+
+const goalMasteryOptions = computed(() => {
+    return [0, 1, 2, 3, 4].filter(mastery => mastery >= selectedCurrentMastery.value);
+});
+
+watch([selectedCurrentInsight, selectedCurrentLevel,
+    selectedCurrentResonance, selectedGoalInsight,
+    selectedGoalLevel, selectedGoalResonance,
+    selectedCurrentMastery, selectedGoalMastery], () => {
     // Whenever any selectedX changes, update the key to trigger a re-render in all SelectList components
     updateKey.value += 1;
     if (selectedCurrentLevel.value > currentLevelOptions.value[currentLevelOptions.value.length - 1]) {
@@ -323,12 +344,21 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
     if (Number(selectedCurrentResonance.value) > Number(selectedGoalResonance.value)) {
         selectedGoalResonance.value = selectedCurrentResonance.value;
     }
+
+    // If the selected value is lower than the first option, set it to the first option
     if (selectedCurrentResonance.value < currentResonanceOptions.value[0]) {
         selectedCurrentResonance.value = currentResonanceOptions.value[0];
     }
     if (selectedGoalResonance.value < goalResonanceOptions.value[0]) {
         selectedGoalResonance.value = goalResonanceOptions.value[0];
     }
+    if (selectedCurrentMastery.value < currentMasteryOptions.value[0]) {
+        selectedCurrentMastery.value = currentMasteryOptions.value[0];
+    }
+    if (selectedGoalMastery.value < goalMasteryOptions.value[0]) {
+        selectedGoalMastery.value = goalMasteryOptions.value[0];
+    }
+
     if (compareLevels(selectedCurrentInsight.value, selectedCurrentLevel.value, selectedGoalInsight.value, selectedGoalLevel.value)) {
         // console.log('Current is higher than goal');
         selectedGoalInsight.value = selectedCurrentInsight.value;
@@ -377,7 +407,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <SelectList :key="updateKey" v-model="selectedCurrentInsight" :selected="selectedCurrentInsight"
                     :label="'Current Insight'" :options="currentInsightOptions" v-on:update:selected="handleSelected" />
                 <i
-                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
+                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2 w-10">_</i>
                 <SelectList :key="updateKey" v-model="selectedCurrentLevel" :selected="selectedCurrentLevel"
                     :label="'Current Level'" :options="currentLevelOptions" v-on:update:selected="handleSelected" />
             </div>
@@ -386,7 +416,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <SelectList :key="updateKey" v-model="selectedGoalInsight" :selected="selectedGoalInsight"
                     :label="'Goal Insight'" :options="goalInsightOptions" v-on:update:selected="handleSelected" />
                 <i
-                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2">_</i>
+                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2 w-10">_</i>
                 <SelectList :key="updateKey" v-model="selectedGoalLevel" :selected="selectedGoalLevel"
                     :label="'Goal Level'" :options="goalLevelOptions" v-on:update:selected="handleSelected" />
             </div>
@@ -395,7 +425,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
                     :label="'Current Resonance'" :options="currentResonanceOptions"
                     v-on:update:selected="handleSelected" />
-                <i class="text-white fa-solid fa-angles-right text-center"></i>
+                <i class="text-white fa-solid fa-angles-right text-center w-10"></i>
                 <SelectList :key="updateKey" v-model="selectedGoalResonance" :selected="selectedGoalResonance"
                     :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
             </div>
@@ -405,7 +435,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
             <div class="flex justify-center py-2 gap-x-2">
                 <!-- Quick Goal -->
                 <div class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal"
-                        class="gradient-blue btn btn-ghost btn-sm w-11"><i
+                        class="gradient-blue btn btn-ghost btn-sm w-11 mr-0.5"><i
                             class="fa-solid fa-angles-right"></i></button></div>
 
                 <!-- Frequency -->
@@ -471,24 +501,37 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                             </button>
                         </div>
                         <template #content>
-                            <div class="flex justify-center space-x-4">
-                                <button v-for="(euphoria, index) in euphoriaOptions" :key="index"
-                                    @click="toggleEuphoria(euphoria.Id)" :class="{
-                                        'border-2 border-info': selectedEuphoria.some(e => e === euphoria.Id),
-                                        'border-2 border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
-                                        'hover:border-info': selectedEuphoria.some(e => e === euphoria.Id),
-                                        'hover:border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
-                                        'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3
-                                    }" class="rounded-lg
-                                    ">
-                                    <div class="tooltip px-2 font-light">
-                                        <img class="h-16 pt-1.5"
-                                            :src="getArcanistEuphoriaPath(selectedArcanist.Id, euphoria.Id)"
-                                            alt="Frequency Icon" />
-                                    </div>
-                                </button>
-                                <div v-if="euphoriaOptions.length === 0">
+                            <div class="flex flex-col gap-y-2">
+                                <div class="flex justify-center space-x-4">
+                                    <button v-for="(euphoria, index) in euphoriaOptions" :key="index"
+                                        @click="toggleEuphoria(euphoria.Id)" :class="{
+                                            'border-2 border-info': selectedEuphoria.some(e => e === euphoria.Id),
+                                            'border-2 border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
+                                            'hover:border-info': selectedEuphoria.some(e => e === euphoria.Id),
+                                            'hover:border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
+                                            'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3
+                                        }" class="rounded-lg
+                                        ">
+                                        <div class="tooltip px-2 font-light">
+                                            <img class="h-16 pt-1.5"
+                                                :src="getArcanistEuphoriaPath(selectedArcanist.Id, euphoria.Id)"
+                                                alt="Frequency Icon" />
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div v-if="euphoriaOptions.length === 0" class="m-auto">
                                     {{ $t('euphoria-requirement') }}
+                                </div>
+
+                                <div class="mt-2 flex justify-center items-center leading-none">
+                                    <SelectList :key="'current-' + updateKey" v-model="selectedCurrentMastery"
+                                        :selected="selectedCurrentMastery" :label="'Current Mastery'"
+                                        :options="currentMasteryOptions" v-on:update:selected="handleSelected" />
+                                    <i class="text-white fa-solid fa-angles-right text-center w-10"></i>
+                                    <SelectList :key="'goal-' + updateKey" v-model="selectedGoalMastery"
+                                        :selected="selectedGoalMastery" :label="'Goal Mastery'"
+                                        :options="goalMasteryOptions" v-on:update:selected="handleSelected" />
                                 </div>
                             </div>
                         </template>
@@ -498,7 +541,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                 <!-- Level Up -->
                 <div class="tooltip" :data-tip="$t('level-up')">
                     <button :disabled="indexInArcanistsList < 0 || materialRequirement.length === 0"
-                        onclick="level_up_container.showModal()" class="gradient-blue btn btn-ghost btn-sm w-11">
+                        onclick="level_up_container.showModal()" class="gradient-blue btn btn-ghost btn-sm w-11 ml-0.5">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>
                     </button>
                 </div>
@@ -519,7 +562,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel, selectedCurrentResonance, s
                         <p class="text-white text-xl font-bold"> {{ $t('level-up') }}</p>
                         <p class=" text-white text-center">{{
                             $t('leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed')
-                            }}</p>
+                        }}</p>
                     </div>
                     <div class="overflow-y-auto shrink">
                         <ArcanistLevelUp :arcanist="editingArcanist" />

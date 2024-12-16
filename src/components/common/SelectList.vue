@@ -1,6 +1,9 @@
+<!-- eslint-disable no-unused-vars -->
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
 import { ref, onMounted, PropType } from 'vue';
 import { onClickOutside } from '@vueuse/core';
+import Popper from 'vue3-popper';
 
 const props = defineProps({
     label: { // Label for the selected on the button
@@ -52,9 +55,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="relative w-2/3 md:w-1/3 flex justify-center">
-        <!-- Button to open the options box -->
-        <button @click="openOptions" class="btn btn-sm btn-ghost gradient-blue w-1/2 m-2">
+    <Popper arrow placement="top" offsetDistance="2">
+        <button class="btn btn-sm btn-ghost gradient-blue w-24">
             <template v-if="label === 'Current Insight' || label === 'Goal Insight'">
                 <div v-if="selected === 0">
                     <i class="fa-regular fa-circle text-white"></i>
@@ -67,17 +69,9 @@ onMounted(() => {
                 {{ selected }}
             </template>
         </button>
-
-        <!-- Options box -->
-        <div v-if="isOptionsVisible" ref="containerRef" class="absolute mt-11 w-48 lg:w-64 z-50">
-            <!-- Caret-up icon -->
-            <div class="flex items-center justify-center">
-                <i class="fa-solid fa-caret-up text-blue-500"></i>
-            </div>
-            <div
-                class="grid grid-cols-4 gap-1 p-3 border border-blue-300 rounded-md shadow-lg options-box custom-gradient-gray-blue">
-                <!-- Options go here -->
-                <button v-for="option in options" :key="option" class="m-1" @click="selectOption(option)">
+        <template #content>
+            <div class="grid grid-cols-5 gap-2">
+                <button v-for="option in options" :key="option" class="" @click="selectOption(option)">
                     <div
                         class="flex items-center justify-center font-semibold rounded-full w-8 h-8 leading-none flex-col bg-blue-500 text-white">
                         <template v-if="label === 'Current Insight' || label === 'Goal Insight'">
@@ -85,7 +79,7 @@ onMounted(() => {
                                 <i class="fa-regular fa-circle text-white"></i>
                             </div>
                             <div v-else>
-                                <img :src="getImageSource(option)" :alt="'Option ' + option" />
+                                <img class="avatar w-6" :src="getImageSource(option)" :alt="'Option ' + option" />
                             </div>
                         </template>
                         <template v-else>
@@ -94,9 +88,8 @@ onMounted(() => {
                     </div>
                 </button>
             </div>
-        </div>
-
-    </div>
+        </template>
+    </Popper>
 </template>
 
 <style scoped></style>

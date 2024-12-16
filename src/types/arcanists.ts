@@ -47,5 +47,6 @@ export interface ISelectedArcanist {
     goalResonance: number;
     frequency: Frequency[];
     euphoria: number[];
-    mastery: number;
+    currentMastery: number;
+    goalMastery: number;
 }

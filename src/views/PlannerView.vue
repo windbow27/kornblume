@@ -132,7 +132,8 @@ const handleSelectArcanist = (arcanist: IArcanist) => {
         goalResonance: 0,
         frequency: [],
         euphoria: [],
-        mastery: 0
+        currentMastery: 0,
+        goalMastery: 0
     }
     // console.log(selectedArcanist.value);
     openEditOverlay()
