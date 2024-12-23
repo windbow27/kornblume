@@ -7,47 +7,47 @@
     "Afflatus": "Star",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        259,
+        1404,
+        117,
+        121,
+        286,
         0,
         0
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        393,
+        2132,
+        178,
+        183,
+        286,
         0,
         0
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        658,
+        3574,
+        297,
+        307,
+        324,
         0,
         0
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        980,
+        5329,
+        443,
+        458,
+        362,
         0,
         0
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        1153,
+        6270,
+        520,
+        538,
+        400,
         0,
         0
       ]
@@ -368,7 +368,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10092,
@@ -378,49 +380,49 @@
     "Afflatus": "Star",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        251,
+        1242,
+        111,
+        111,
+        409,
+        13.6,
+        150.4
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        381,
+        1885,
+        168,
+        168,
+        409,
+        13.6,
+        150.4
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        639,
+        3160,
+        281,
+        281,
+        463,
+        15.4,
+        153.1
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        952,
+        4712,
+        419,
+        419,
+        517,
+        17.2,
+        155.9
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1120,
+        5543,
+        492,
+        492,
+        571,
+        19,
+        188.5
       ]
     },
     "Insight": [
@@ -739,7 +741,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10091,
@@ -749,47 +753,47 @@
     "Afflatus": "Plant",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        222,
+        1700,
+        136,
+        136,
+        327,
         0,
         0
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        337,
+        2581,
+        206,
+        206,
+        327,
         0,
         0
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        564,
+        4326,
+        345,
+        345,
+        370,
         0,
         0
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        840,
+        6450,
+        514,
+        514,
+        413,
         0,
         0
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        988,
+        7588,
+        605,
+        605,
+        456,
         0,
         0
       ]
@@ -1110,7 +1114,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10090,
@@ -1120,47 +1126,47 @@
     "Afflatus": "Beast",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        222,
+        1419,
+        111,
+        111,
+        409,
         0,
         0
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        337,
+        2154,
+        168,
+        168,
+        409,
         0,
         0
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        564,
+        3611,
+        281,
+        281,
+        463,
         0,
         0
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        840,
+        5385,
+        419,
+        419,
+        517,
         0,
         0
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
+        988,
+        6336,
+        492,
+        492,
+        571,
         0,
         0
       ]
@@ -1481,7 +1487,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10087,
@@ -1852,7 +1860,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10084,
@@ -2229,7 +2239,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10086,
@@ -2600,7 +2612,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10083,
@@ -2977,7 +2991,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10081,
@@ -3348,7 +3364,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10077,
@@ -3719,7 +3737,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10074,
@@ -4090,7 +4110,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10078,
@@ -4467,7 +4489,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10071,
@@ -4838,7 +4862,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10069,
@@ -5209,7 +5235,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10072,
@@ -5586,7 +5614,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10080,
@@ -5957,7 +5987,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10064,
@@ -6334,7 +6366,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10076,
@@ -6705,7 +6739,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10067,
@@ -7076,7 +7112,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10065,
@@ -7447,7 +7485,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10063,
@@ -7816,6 +7856,85 @@
           2,
           3,
           120000
+        ]
+      }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Incorrupt Monkeypaw"
+        ],
+        "Quantity": [
+          30,
+          120,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          35,
+          140,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Silver Bullet"
+        ],
+        "Quantity": [
+          40,
+          160,
+          2,
+          2
         ]
       }
     ]
@@ -8189,7 +8308,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10060,
@@ -8560,7 +8681,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10073,
@@ -8931,7 +9054,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10058,
@@ -9302,7 +9427,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10057,
@@ -9673,7 +9800,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10051,
@@ -10042,6 +10171,85 @@
           2,
           3,
           120000
+        ]
+      }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Watch Core"
+        ],
+        "Quantity": [
+          30,
+          120,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          35,
+          140,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          40,
+          160,
+          2,
+          2
         ]
       }
     ]
@@ -10415,7 +10623,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10047,
@@ -10784,6 +10994,85 @@
           2,
           5,
           120000
+        ]
+      }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Incorrupt Monkeypaw"
+        ],
+        "Quantity": [
+          30,
+          120,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          35,
+          140,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Silver Bullet"
+        ],
+        "Quantity": [
+          40,
+          160,
+          2,
+          2
         ]
       }
     ]
@@ -11157,6 +11446,85 @@
           120000
         ]
       }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Watch Core"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          30,
+          120,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          35,
+          140,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Incorrupt Monkeypaw"
+        ],
+        "Quantity": [
+          40,
+          160,
+          2,
+          2
+        ]
+      }
     ]
   },
   {
@@ -11526,6 +11894,85 @@
           2,
           3,
           120000
+        ]
+      }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Incorrupt Monkeypaw"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          30,
+          120,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Silver Bullet"
+        ],
+        "Quantity": [
+          35,
+          140,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          40,
+          160,
+          2,
+          2
         ]
       }
     ]
@@ -11899,7 +12346,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10034,
@@ -12270,7 +12719,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10027,
@@ -12641,7 +13092,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10020,
@@ -13012,7 +13465,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10006,
@@ -13381,6 +13836,85 @@
           2,
           4,
           120000
+        ]
+      }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Silver Bullet"
+        ],
+        "Quantity": [
+          30,
+          120,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          35,
+          140,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          40,
+          160,
+          2,
+          2
         ]
       }
     ]
@@ -13760,7 +14294,9 @@
           120000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10002,
@@ -14175,7 +14711,7 @@
         ],
         "Quantity": [
           20,
-          275,
+          80,
           1,
           1
         ]
@@ -14190,7 +14726,7 @@
         ],
         "Quantity": [
           30,
-          566,
+          120,
           1,
           2
         ]
@@ -14205,7 +14741,7 @@
         ],
         "Quantity": [
           35,
-          916,
+          140,
           2,
           2
         ]
@@ -14220,7 +14756,7 @@
         ],
         "Quantity": [
           40,
-          1971,
+          160,
           2,
           2
         ]
@@ -14596,6 +15132,85 @@
           120000
         ]
       }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Watch Core"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          30,
+          120,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          35,
+          140,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Incorrupt Monkeypaw"
+        ],
+        "Quantity": [
+          40,
+          160,
+          2,
+          2
+        ]
+      }
     ]
   },
   {
@@ -14606,48 +15221,48 @@
     "Afflatus": "Mineral",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        214,
+        1520,
+        121,
+        121,
+        203,
+        6.7,
         0
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        325,
+        2307,
+        183,
+        183,
+        203,
+        6.7,
         0
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        544,
+        3866,
+        307,
+        307,
+        230,
+        7.6,
         0
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        810,
+        5765,
+        458,
+        458,
+        257,
+        8.5,
         0
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        953,
+        6783,
+        538,
+        538,
+        284,
+        9.4,
         0
       ]
     },
@@ -14957,7 +15572,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10088,
@@ -15318,7 +15935,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10085,
@@ -15685,7 +16304,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10079,
@@ -16046,7 +16667,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10070,
@@ -16407,7 +17030,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10075,
@@ -16768,7 +17393,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10066,
@@ -17129,7 +17756,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10068,
@@ -17490,7 +18119,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10062,
@@ -17851,7 +18482,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10059,
@@ -18212,7 +18845,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10056,
@@ -18573,7 +19208,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10055,
@@ -18934,7 +19571,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10044,
@@ -19301,7 +19940,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10038,
@@ -19660,6 +20301,81 @@
           2,
           3,
           100000
+        ]
+      }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter"
+        ],
+        "Quantity": [
+          6,
+          20,
+          100,
+          2
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          10,
+          40,
+          2
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter"
+        ],
+        "Quantity": [
+          15,
+          60,
+          1
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Silver Bullet"
+        ],
+        "Quantity": [
+          18,
+          70,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
         ]
       }
     ]
@@ -20023,6 +20739,81 @@
           100000
         ]
       }
+    ],
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          6,
+          20,
+          100,
+          2
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          10,
+          40,
+          2
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold"
+        ],
+        "Quantity": [
+          15,
+          60,
+          1
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Watch Core"
+        ],
+        "Quantity": [
+          18,
+          70,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      }
     ]
   },
   {
@@ -20384,7 +21175,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10032,
@@ -20745,7 +21538,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10019,
@@ -21106,7 +21901,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10018,
@@ -21467,7 +22264,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10017,
@@ -21828,7 +22627,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10016,
@@ -22206,6 +23007,64 @@
           2
         ]
       }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          10,
+          40,
+          2
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          15,
+          60,
+          1
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          18,
+          70,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          20,
+          80,
+          1,
+          1
+        ]
+      }
     ]
   },
   {
@@ -22567,7 +23426,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10013,
@@ -22928,7 +23789,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10008,
@@ -23289,7 +24152,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10007,
@@ -23656,7 +24521,9 @@
           100000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10089,
@@ -23912,7 +24779,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10053,
@@ -24164,7 +25033,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10052,
@@ -24420,7 +25291,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10041,
@@ -24676,7 +25549,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10039,
@@ -24928,7 +25803,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10037,
@@ -25180,7 +26057,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10028,
@@ -25432,7 +26311,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10026,
@@ -25684,7 +26565,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10023,
@@ -25936,7 +26819,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10021,
@@ -26188,7 +27073,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10015,
@@ -26440,7 +27327,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10012,
@@ -26692,7 +27581,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10011,
@@ -26944,7 +27835,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10010,
@@ -27196,7 +28089,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10004,
@@ -27448,7 +28343,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10003,
@@ -27700,7 +28597,9 @@
           50000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10082,
@@ -27954,7 +28853,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10050,
@@ -28204,7 +29105,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10049,
@@ -28454,7 +29357,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10045,
@@ -28704,7 +29609,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10040,
@@ -28954,7 +29861,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10035,
@@ -29208,7 +30117,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10031,
@@ -29462,7 +30373,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10030,
@@ -29712,7 +30625,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10029,
@@ -29962,7 +30877,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10025,
@@ -30212,7 +31129,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10009,
@@ -30462,7 +31381,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10054,
@@ -30716,7 +31637,9 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   },
   {
     "Id": 10022,
@@ -30970,6 +31893,8 @@
           20000
         ]
       }
-    ]
+    ],
+    "Euphoria": [],
+    "Mastery": []
   }
 ]
