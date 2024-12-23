@@ -856,5 +856,17 @@
       "drops": {
         "Tome of Beastly Thirst": 2
       }
+    }, 
+    "Unreleased": {
+      "id": 999,
+      "name": "Unreleased",
+      "category": "Unreleased",
+      "cost": 0,
+      "count": 0,
+      "drops": {
+        "Key of Reverie": 1,
+        "Sprout of Reverie": 1,
+        "Seed of Insight": 1
+      }
     }
   }
