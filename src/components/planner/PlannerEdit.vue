@@ -409,7 +409,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                 <SelectList :key="updateKey" v-model="selectedCurrentInsight" :selected="selectedCurrentInsight"
                     :label="'Current Insight'" :options="currentInsightOptions" v-on:update:selected="handleSelected" />
                 <i
-                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2 w-10">_</i>
+                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2 w-16">_</i>
                 <SelectList :key="updateKey" v-model="selectedCurrentLevel" :selected="selectedCurrentLevel"
                     :label="'Current Level'" :options="currentLevelOptions" v-on:update:selected="handleSelected" />
             </div>
@@ -418,7 +418,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                 <SelectList :key="updateKey" v-model="selectedGoalInsight" :selected="selectedGoalInsight"
                     :label="'Goal Insight'" :options="goalInsightOptions" v-on:update:selected="handleSelected" />
                 <i
-                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2 w-10">_</i>
+                    class="text-white text-center flex items-center justify-center font-extrabold text-2xl -translate-y-2 w-16">_</i>
                 <SelectList :key="updateKey" v-model="selectedGoalLevel" :selected="selectedGoalLevel"
                     :label="'Goal Level'" :options="goalLevelOptions" v-on:update:selected="handleSelected" />
             </div>
@@ -427,7 +427,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                 <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
                     :label="'Current Resonance'" :options="currentResonanceOptions"
                     v-on:update:selected="handleSelected" />
-                <i class="text-white fa-solid fa-angles-right text-center w-10"></i>
+                <i class="text-white fa-solid fa-angles-right text-center w-16"></i>
                 <SelectList :key="updateKey" v-model="selectedGoalResonance" :selected="selectedGoalResonance"
                     :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
             </div>
@@ -437,7 +437,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
             <div class="flex justify-center py-2 gap-x-2">
                 <!-- Quick Goal -->
                 <div class="tooltip" :data-tip="$t('quick-goal')"> <button @click="quickGoal"
-                        class="gradient-blue btn btn-ghost btn-sm w-11 mr-0.5"><i
+                        class="gradient-blue btn btn-ghost btn-sm w-10 mr-0.5"><i
                             class="fa-solid fa-angles-right"></i></button></div>
 
                 <!-- Frequency -->
@@ -461,7 +461,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                                         'opacity-50 pointer-events-none': selectedGoalResonance < 10
                                     }" class="rounded-lg">
                                     <div class="tooltip px-2 font-light"
-                                        :data-tip="$t('frequency-modulation' + frequency.Id)">
+                                        :data-tip="$t('frequency-modulation-' + frequency.Id)">
                                         <img class="h-16 pt-1.5"
                                             :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
                                             alt="Frequency Icon" />
@@ -546,7 +546,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                 <!-- Level Up -->
                 <div class="tooltip" :data-tip="$t('level-up')">
                     <button :disabled="indexInArcanistsList < 0 || materialRequirement.length === 0"
-                        onclick="level_up_container.showModal()" class="gradient-blue btn btn-ghost btn-sm w-11 ml-0.5">
+                        onclick="level_up_container.showModal()" class="gradient-blue btn btn-ghost btn-sm w-10 ml-0.5">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>
                     </button>
                 </div>
@@ -569,7 +569,7 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                             $t('leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed')
                         }}</p>
                     </div>
-                    <div class="overflow-y-auto shrink">
+                    <div class="overflow-y-auto shrink max-h-96">
                         <ArcanistLevelUp :arcanist="editingArcanist" />
                     </div>
                     <form method="dialog" class="flex justify-center">

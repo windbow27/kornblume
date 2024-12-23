@@ -70,7 +70,7 @@
 }
 
 .custom-modal-small {
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4;
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 2xl:w-1/4;
 }
 
 .custom-modal-big {
