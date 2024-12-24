@@ -48,7 +48,9 @@ export const bannerList = [
     // jiu niangzi
     'Till the Last Drop',
     // lucy
-    'Thoughts in Cylinder'
+    'Thoughts in Cylinder',
+    // anjo nala
+    ''
 ];
 
 export const bannerRateUp = [
