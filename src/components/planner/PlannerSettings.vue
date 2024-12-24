@@ -13,6 +13,7 @@ const props = defineProps({
 
 const emit = defineEmits<{(e: 'closeOverlay' | 'saveSettings', updatedSettings?: IPlannerSettings): void }>()
 
+// NOTE: keep these sample codes for future reference with toggle
 // const enabledUnreleasedStages_v1_9 = ref(props.settings.enabledUnreleasedStages_v1_9);
 
 const closeOverlay = () => {

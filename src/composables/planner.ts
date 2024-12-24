@@ -195,6 +195,14 @@ export interface IPlanCards extends Array<IPlanCard> { }
 export function getDrops () {
     const dataStore = useDataStore();
 
+    // NOTE: keep these sample codes for future reference with toggle
+    // const {
+    //     enabledUnreleasedStages_v1_9
+    // } = usePlannerSettingsStore().settings;
+    // if (enabledUnreleasedStages_v1_9) {
+    //     return dataStore.stages1_9_greedy || {}
+    // }
+
     return dataStore.stages2_2_greedy || {}
 }
 
