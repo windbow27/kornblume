@@ -193,17 +193,9 @@ function updateCraftingMaterialsForGlobalStore (stages) {
 export interface IPlanCards extends Array<IPlanCard> { }
 
 export function getDrops () {
-    // commented out for 1.9 update
-    // const {
-    //     enabledUnreleasedStages_v1_9
-    // } = usePlannerSettingsStore().settings;
     const dataStore = useDataStore();
 
-    // if (enabledUnreleasedStages_v1_9) {
-    //     return dataStore.stages1_9_greedy || {}
-    // }
-
-    return dataStore.stages1_9_greedy || {}
+    return dataStore.stages2_2_greedy || {}
 }
 
 export async function getPlan (materials: IMaterialUnit[], isEnableWilderness: boolean): Promise<IPlanCards> {
