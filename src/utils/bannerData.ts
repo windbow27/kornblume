@@ -50,7 +50,7 @@ export const bannerList = [
     // lucy
     'Thoughts in Cylinder',
     // anjo nala
-    ''
+    'ANJO_NALA_BANNER'
 ];
 
 export const bannerRateUp = [
