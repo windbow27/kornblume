@@ -63,109 +63,30 @@ const allPulls = computed(() => {
     });
 });
 
-const promisePulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Promise of the Water');
-    return filteredPulls.map((pull, index) => {
-        return {
-            PullNumber: filteredPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            BannerType: pull.BannerType,
-            Timestamp: pull.Timestamp
-        }
+function createPullsByBannerType (bannerType) {
+    return computed(() => {
+        const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === bannerType);
+        return filteredPulls.map((pull, index) => {
+            return {
+                PullNumber: filteredPulls.length - index,
+                ArcanistName: pull.ArcanistName,
+                Rarity: pull.Rarity,
+                BannerType: pull.BannerType,
+                Timestamp: pull.Timestamp
+            }
+        });
     });
-});
+}
 
-const lucyPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Thoughts in Cylinder');
-    return filteredPulls.map((pull, index) => {
-        return {
-            PullNumber: filteredPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            BannerType: pull.BannerType,
-            Timestamp: pull.Timestamp
-        }
-    });
-});
-
-const revelationPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Revelation of the Water');
-    return filteredPulls.map((pull, index) => {
-        return {
-            PullNumber: filteredPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            BannerType: pull.BannerType,
-            Timestamp: pull.Timestamp
-        }
-    });
-});
-
-const jiuNiangziPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Till the Last Drop');
-    return filteredPulls.map((pull, index) => {
-        return {
-            PullNumber: filteredPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            BannerType: pull.BannerType,
-            Timestamp: pull.Timestamp
-        }
-    });
-});
-
-const yearningPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Yearning of the Water');
-    return filteredPulls.map((pull, index) => {
-        return {
-            PullNumber: filteredPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            BannerType: pull.BannerType,
-            Timestamp: pull.Timestamp
-        }
-    });
-});
-
-const abundancePulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Abundance of the Water');
-    return filteredPulls.map((pull, index) => {
-        return {
-            PullNumber: filteredPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            BannerType: pull.BannerType,
-            Timestamp: pull.Timestamp
-        }
-    });
-});
-
-const threadPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Invitation From the Water');
-    return filteredPulls.map((pull, index) => {
-        return {
-            PullNumber: filteredPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            BannerType: pull.BannerType,
-            Timestamp: pull.Timestamp
-        }
-    });
-});
-
-const standardPulls = computed(() => {
-    const filteredPulls = sortedPulls.value.filter(pull => pull.BannerType === 'Amongst the Lake');
-    return filteredPulls.map((pull, index) => {
-        return {
-            PullNumber: filteredPulls.length - index,
-            ArcanistName: pull.ArcanistName,
-            Rarity: pull.Rarity,
-            BannerType: pull.BannerType,
-            Timestamp: pull.Timestamp
-        }
-    });
-});
+const anjoNalaPulls = createPullsByBannerType('ANJO_NALA_BANNER');
+const promisePulls = createPullsByBannerType('Promise of the Water');
+const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
+const revelationPulls = createPullsByBannerType('Revelation of the Water');
+const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
+const yearningPulls = createPullsByBannerType('Yearning of the the Water');
+const abundancePulls = createPullsByBannerType('Abundance of the Water');
+const threadPulls = createPullsByBannerType('Invitation From the Water');
+const standardPulls = createPullsByBannerType('Amongst the Lake');
 
 const limitedPulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(
@@ -176,7 +97,8 @@ const limitedPulls = computed(() => {
             pull.BannerType !== 'Till the Last Drop' &&
             pull.BannerType !== 'Revelation of the Water' &&
             pull.BannerType !== 'Thoughts in Cylinder' &&
-            pull.BannerType !== 'Promise of the Water');
+            pull.BannerType !== 'Promise of the Water' &&
+            pull.BannerType !== 'ANJO_NALA_BANNER');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -518,6 +440,11 @@ GApiSvc.init().then(async () => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
+            <!--Temporary Anjo Nala-->
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'ANJO_NALA_BANNER' }"
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'ANJO_NALA_BANNER'">{{
+                    $t('anjo-nala') }}</button>
+
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Limited'">{{
                     $t('limited') }}</button>
@@ -591,6 +518,8 @@ GApiSvc.init().then(async () => {
             :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Thoughts in Cylinder'" :text="$t('lucy')" :pulls="lucyPulls"
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'ANJO_NALA_BANNER'" :text="$t('anjo-nala')"
+            :pulls="anjoNalaPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
 
     </div>
 </template>
