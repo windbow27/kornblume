@@ -1,5 +1,14 @@
 export const changelogs = [
     // Add more from top
+    {
+        date: '23/12/2024',
+        description: `
+        • Added Euphoria. <br>
+        • This is the final update of 2024, I will be unavailable for private reasons next month, so some update schedules will be changed: <br> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - On schedule: 2.2 Planner & Tracker update.  <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Will be delayed until 23/01/2025: New CN arcanists, euphoria or any other updates. <br>
+        • There won't be any replies to bug reports or feature requests while I'm away. That's all. Happy padoru season! <br>`
+    },
     { date: '16/12/2024', description: '• Added Barcarola as unreleased arcanist.' },
     {
         date: '29/11/2024', description: '• Added Tuesday, Argus and Barbara as released arcanists. <br> • Added Tuesday and Argus banners.'

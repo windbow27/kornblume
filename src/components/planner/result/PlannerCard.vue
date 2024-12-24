@@ -54,7 +54,7 @@ watch(shouldHideScrollbar, (newVal) => {
                     </span>
                 </p>
                 <p v-else>
-                    {{ $t('available-after-version-update', {version: '2.2'}) }} </p>
+                    {{ $t('available-after-version-update', {version: '2.3'}) }} </p>
 
                 <p class="pl-2" v-if="card.activity !== 0">{{ card.activity }}</p>
                 <p v-else-if="layerId === 3">

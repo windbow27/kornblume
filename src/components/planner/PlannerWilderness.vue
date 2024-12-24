@@ -110,7 +110,7 @@ const wildernessOutput = computed(() => {
 
       <!-- Selectors -->
       <div class="custom-label text-yellow-100">{{ $t('dust-bell-towers') }}</div>
-      <div class="grid grid-cols-3">
+      <div class="flex justify-center items-center gap-x-4">
         <SelectList class="select-list" :options="options" :selected="selectedDust1" label="Dust 1"
           v-on:update:selected="handleSelected" />
         <SelectList class="select-list" :options="options" :selected="selectedDust2" label="Dust 2"
@@ -119,7 +119,7 @@ const wildernessOutput = computed(() => {
           v-on:update:selected="handleSelected" />
       </div>
       <div class="custom-label text-yellow-100">{{ $t('sharpodonty-markets') }}</div>
-      <div class="grid grid-cols-3">
+      <div class="flex justify-center items-center gap-x-4">
         <SelectList class="select-list" :options="options" :selected="selectedGold1" label="Gold 1"
           v-on:update:selected="handleSelected" />
         <SelectList class="select-list" :options="options" :selected="selectedGold2" label="Gold 2"
@@ -128,9 +128,9 @@ const wildernessOutput = computed(() => {
           v-on:update:selected="handleSelected" />
       </div>
       <div class="custom-label text-yellow-100">{{ $t('vigor-percent') }}</div>
-      <div class="grid grid-cols-2 p-2 items-center">
+      <div class="flex justify-center items-center gap-x-4 p-2">
         <input @input="validateVigor" v-model="vigor" type="text" :placeholder="$t('vigor')"
-          class="input input-bordered input-info input-sm mx-10 lg:mx-5 gradient-blue text-center" />
+          class="input input-bordered input-info input-sm w-32 gradient-blue text-center" />
         <div class="tooltip" :data-tip="$t('collect-once-a-day')">
           <div class="form-control">
             <label class="cursor-pointer label justify-center">
@@ -141,14 +141,14 @@ const wildernessOutput = computed(() => {
         </div>
       </div>
       <div class="custom-label text-yellow-100">{{ $t('output') }}</div>
-      <div class="grid grid-cols-2 p-2">
+      <div class="flex justify-center items-center gap-x-4 p-2">
         <div class="tooltip" :data-tip="$t('Dust')">
-          <label class="flex items-center justify-center gradient-blue text-center rounded mx-5 lg:mx-2 h-8">
+          <label class="flex items-center justify-center gradient-blue text-center rounded w-32 h-8">
             {{ wildernessOutput.dust }}
           </label>
         </div>
         <div class="tooltip" :data-tip="$t('Sharpodonty')">
-          <label class="flex items-center justify-center gradient-blue text-center rounded mx-5 lg:mx-2 h-8">
+          <label class="flex items-center justify-center gradient-blue text-center rounded w-32 h-8">
             {{ wildernessOutput.gold }}
           </label>
         </div>
@@ -162,8 +162,4 @@ const wildernessOutput = computed(() => {
   </div>
 </template>
 
-<style scoped>
-.select-list {
-  @apply w-full
-}
-</style>
+<style scoped></style>

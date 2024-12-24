@@ -56,7 +56,7 @@ onMounted(() => {
 
 <template>
     <Popper arrow placement="top" offsetDistance="2">
-        <button class="btn btn-sm btn-ghost gradient-blue w-24">
+        <button class="btn btn-sm btn-ghost gradient-blue w-20">
             <template v-if="label === 'Current Insight' || label === 'Goal Insight'">
                 <div v-if="selected === 0">
                     <i class="fa-regular fa-circle text-white"></i>

@@ -76,7 +76,7 @@ const cost = computed(() => {
             </p>
 
             <!-- Selectors -->
-            <div class="grid grid-cols-1 space-y-3">
+            <div class="grid grid-cols-1 space-y-3 pb-2">
                 <div class="form-control">
                     <label class="cursor-pointer label justify-center">
                         <span class="label-text text-white mr-3">{{ $t('roaring-month') }}</span>
@@ -104,9 +104,9 @@ const cost = computed(() => {
                     </div>
                 </div>
 
-                <div class="flex items-center justify-center translate-x-4">
+                <div class="tooltip" :data-tip="$t('daily-refill')">
                     <span class="label-text text-white">{{ $t('daily-refill') }}</span>
-                    <SelectList class="w-1/3" :options="options" :selected="refills" label="refills"
+                    <SelectList class="pl-4" :options="options" :selected="refills" label="refills"
                         v-on:update:selected="handleSelected" />
                 </div>
             </div>

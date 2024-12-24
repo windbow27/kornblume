@@ -55,8 +55,8 @@ const totalMaterials = computed(() => {
                         <form method="dialog">
                             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
                         </form>
-                        <h3 class="font-bold text-lg text-white text-center">{{ $t('total-goal-materials') }}</h3>
-                        <div class="hidden-scrollbar pt-9 custom-item-list">
+                        <h2 class="font-bold text-lg text-white text-center mb-4">{{ $t('total-goal-materials') }}</h2>
+                        <div class="hidden-scrollbar custom-item-list max-h-96 lg:max-h-[600px]">
                             <ItemGoalIcon class="py-2" v-for="material in totalMaterials" :key="material.Material.toString()" :material="material" />
                         </div>
                         <form method="dialog" class="flex justify-center pt-5">
