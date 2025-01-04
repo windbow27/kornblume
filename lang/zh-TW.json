@@ -240,5 +240,8 @@
   "not-by-user-doing-single-pulls": "而不是單抽所引起的。",
   "solution-1": "請使用{editor}來手動輸入或編輯修正。",
   "solution-2": "如果徵集的十連抽記錄有缺失，請修改或添加丟失的徵集記錄。",
-  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "您可以使用 Google 雲端來讓 Kornblume 在不同的使用裝置間保存和同步數據。\n我們只會讀寫 Kornblume 所創建的文件。"
+  "you-can-use-google-drive-and-let-kornblume-save-and-sync-data-between-devices-we-only-read-and-write-files-that-kornblume-created": "您可以使用 Google 雲端來讓 Kornblume 在不同的使用裝置間保存和同步數據。\n我們只會讀寫 Kornblume 所創建的文件。",
+  "frequency": "調頻",
+  "euphoria": "狂想",
+  "euphoria-requirement": "未支援狂想"
 }
