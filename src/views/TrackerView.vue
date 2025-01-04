@@ -78,7 +78,7 @@ function createPullsByBannerType (bannerType) {
     });
 }
 
-const anjoNalaPulls = createPullsByBannerType('ANJO_NALA_BANNER');
+const anjoNalaPulls = createPullsByBannerType('The Overcast October');
 const promisePulls = createPullsByBannerType('Promise of the Water');
 const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
 const revelationPulls = createPullsByBannerType('Revelation of the Water');
@@ -98,7 +98,7 @@ const limitedPulls = computed(() => {
             pull.BannerType !== 'Revelation of the Water' &&
             pull.BannerType !== 'Thoughts in Cylinder' &&
             pull.BannerType !== 'Promise of the Water' &&
-            pull.BannerType !== 'ANJO_NALA_BANNER');
+            pull.BannerType !== 'The Overcast October');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -441,8 +441,8 @@ GApiSvc.init().then(async () => {
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
             <!--Temporary Anjo Nala-->
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'ANJO_NALA_BANNER' }"
-                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'ANJO_NALA_BANNER'">{{
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'The Overcast October' }"
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'The Overcast October'">{{
                     $t('anjo-nala') }}</button>
 
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
@@ -518,7 +518,7 @@ GApiSvc.init().then(async () => {
             :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Thoughts in Cylinder'" :text="$t('lucy')" :pulls="lucyPulls"
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'ANJO_NALA_BANNER'" :text="$t('anjo-nala')"
+        <TrackerBoard v-if="selectedBannerType === 'The Overcast October'" :text="$t('anjo-nala')"
             :pulls="anjoNalaPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
 
     </div>

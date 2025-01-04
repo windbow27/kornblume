@@ -31,6 +31,7 @@ export const bannerList = [
     'Clash \'n\' Slash',
     'Blue Lullaby',
     'Shooting in the Dark',
+    'Into the Rainforest',
 
     // standard
     'Amongst the Lake',
@@ -50,7 +51,7 @@ export const bannerList = [
     // lucy
     'Thoughts in Cylinder',
     // anjo nala
-    'ANJO_NALA_BANNER'
+    'The Overcast October'
 ];
 
 export const bannerRateUp = [
@@ -84,7 +85,8 @@ export const bannerRateUp = [
     'Mercuria',
     'J',
     'Tuesday',
-    'Argus'
+    'Argus',
+    'Lopera'
 ];
 
 export const specialArcanists: string[] = [

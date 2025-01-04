@@ -1,6 +1,9 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '09/01/2025', description: '• Added Anjo Nala and Lopera banners. <br>• Updated Arcanists and Stages to version 2.2 update.'
+    },
+    {
         date: '23/12/2024',
         description: `
         • Added Euphoria. <br>
