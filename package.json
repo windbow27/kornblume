@@ -9,6 +9,7 @@
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
     "deploy": "npm run image-process && cd dist && copy index.html 404.html && cd .. && gh-pages -d dist",
+    "deploy:repo": "npm run image-process && cd dist && copy index.html 404.html && cd .. && gh-pages -d dist -r git@github.com:windbow27/kornblume.git",
     "type-check": "vue-tsc --noEmit --skipLibCheck --allowJs",
     "lint-fix": "eslint --fix --ext .js,.vue src",
     "test": "vitest",
