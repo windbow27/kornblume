@@ -51,7 +51,7 @@ export const bannerList = [
     // lucy
     'Thoughts in Cylinder',
     // anjo nala
-    'The Overcast October'
+    'Longing for Innocence'
 ];
 
 export const bannerRateUp = [

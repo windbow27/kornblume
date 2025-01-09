@@ -1,6 +1,9 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '10/01/2025', description: '• Fixed bug for Anjo Nala banner.'
+    },
+    {
         date: '09/01/2025', description: '• Added Anjo Nala and Lopera banners. <br>• Updated Arcanists and Stages for version 2.2. <br>• Added Fatutu as unreleased arcanist.'
     },
     {
