@@ -441,8 +441,8 @@ GApiSvc.init().then(async () => {
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
             <!--Temporary Anjo Nala-->
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'The Overcast October' }"
-                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'The Overcast October'">{{
+            <button v-bind:class="{ 'border-button': selectedBannerType === 'Longing for Innocence' }"
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Longing for Innocence'">{{
                     $t('anjo-nala') }}</button>
 
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
