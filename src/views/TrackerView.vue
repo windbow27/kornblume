@@ -78,7 +78,7 @@ function createPullsByBannerType (bannerType) {
     });
 }
 
-const anjoNalaPulls = createPullsByBannerType('The Overcast October');
+const anjoNalaPulls = createPullsByBannerType('Longing for Innocence');
 const promisePulls = createPullsByBannerType('Promise of the Water');
 const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
 const revelationPulls = createPullsByBannerType('Revelation of the Water');
@@ -98,7 +98,7 @@ const limitedPulls = computed(() => {
             pull.BannerType !== 'Revelation of the Water' &&
             pull.BannerType !== 'Thoughts in Cylinder' &&
             pull.BannerType !== 'Promise of the Water' &&
-            pull.BannerType !== 'The Overcast October');
+            pull.BannerType !== 'Longing for Innocence');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
