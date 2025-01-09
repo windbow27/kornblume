@@ -518,7 +518,7 @@ GApiSvc.init().then(async () => {
             :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Thoughts in Cylinder'" :text="$t('lucy')" :pulls="lucyPulls"
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
-        <TrackerBoard v-if="selectedBannerType === 'The Overcast October'" :text="$t('anjo-nala')"
+        <TrackerBoard v-if="selectedBannerType === 'Longing for Innocence'" :text="$t('anjo-nala')"
             :pulls="anjoNalaPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
 
     </div>
