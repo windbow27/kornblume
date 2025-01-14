@@ -83,7 +83,7 @@ const promisePulls = createPullsByBannerType('Promise of the Water');
 const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
 const revelationPulls = createPullsByBannerType('Revelation of the Water');
 const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
-const yearningPulls = createPullsByBannerType('Yearning of the the Water');
+const yearningPulls = createPullsByBannerType('Yearning of the Water');
 const abundancePulls = createPullsByBannerType('Abundance of the Water');
 const threadPulls = createPullsByBannerType('Invitation From the Water');
 const standardPulls = createPullsByBannerType('Amongst the Lake');
@@ -320,6 +320,10 @@ GApiSvc.init().then(async () => {
     syncDrive();
 });
 
+const selectBannerType = (bannerType : string) => {
+    selectedBannerType.value = bannerType
+};
+
 </script>
 
 <template>
@@ -442,14 +446,14 @@ GApiSvc.init().then(async () => {
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
             <!--Temporary Anjo Nala-->
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Longing for Innocence' }"
-                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Longing for Innocence'">{{
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectBannerType('Longing for Innocence')">{{
                     $t('anjo-nala') }}</button>
 
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
-                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Limited'">{{
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectBannerType('Limited')">{{
                     $t('limited') }}</button>
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Standard' }"
-                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectedBannerType = 'Standard'">{{
+                class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectBannerType('Standard')">{{
                     $t('standard') }}</button>
             <div class="dropdown dropdown-bottom dropdown-end">
                 <div tabindex="0" role="button">
@@ -463,23 +467,23 @@ GApiSvc.init().then(async () => {
                     class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box space-y-2 p-4 mt-2">
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thread' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Golden Thread'">{{
+                            @click="selectBannerType('Golden Thread')">{{
                                 $t('thread') }}</button></li>
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Abundance' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Abundance of the Water'">{{
+                            @click="selectBannerType('Abundance of the Water')">{{
                                 $t('abundance') }}</button></li>
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Yearning of the Water' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Yearning of the Water'">{{
+                            @click="selectBannerType('Yearning of the Water')">{{
                                 $t('yearning') }}</button></li>
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Revelation of the Water' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Revelation of the Water'">{{
+                            @click="selectBannerType('Revelation of the Water')">{{
                                 $t('revelation') }}</button></li>
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Promise of the Water' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Promise of the Water'">{{
+                            @click="selectBannerType('Promise of the Water')">{{
                                 $t('promise') }}</button></li>
 
                     <!-- Line separator -->
@@ -488,12 +492,12 @@ GApiSvc.init().then(async () => {
                     <!-- Jiu Niangzi banner -->
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Till the Last Drop' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Till the Last Drop'">{{
+                            @click="selectBannerType('Till the Last Drop')">{{
                                 $t('jiu-niangzi') }}</button></li>
                     <!-- Lucy banner -->
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Thoughts in Cylinder' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectedBannerType = 'Thoughts in Cylinder'">{{
+                            @click="selectBannerType('Thoughts in Cylinder')">{{
                                 $t('lucy') }}</button></li>
                 </ul>
             </div>

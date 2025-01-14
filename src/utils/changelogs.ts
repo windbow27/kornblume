@@ -1,6 +1,9 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '14/01/2025', description: '• Updated KR translations.<br>• Fixed bug for Yearning banner.'
+    },
+    {
         date: '10/01/2025', description: '• Fixed bug for Anjo Nala banner.'
     },
     {
