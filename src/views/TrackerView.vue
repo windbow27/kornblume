@@ -469,7 +469,7 @@ GApiSvc.init().then(async () => {
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Abundance of the Water'">{{
                                 $t('abundance') }}</button></li>
-                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Yearning' }"
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Yearning of the Water' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectedBannerType = 'Yearning of the Water'">{{
                                 $t('yearning') }}</button></li>
