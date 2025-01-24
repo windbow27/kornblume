@@ -1,6 +1,12 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '24/01/2025', description: '• Added Liang Yue and Loggerhead as unreleased arcanists.<br>• UI improvements.'
+    },
+    {
+        date: '22/01/2025', description: '• I\'m back.<br>• Fixed broken Google Drive sync.'
+    },
+    {
         date: '14/01/2025', description: '• Updated KR translations.<br>• Fixed bug for Yearning banner.'
     },
     {

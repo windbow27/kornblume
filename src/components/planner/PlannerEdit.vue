@@ -453,17 +453,14 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                         <template #content>
                             <div class="grid grid-cols-3 gap-4 justify-center">
                                 <button v-for="(frequency, index) in frequencyOptions.slice(0, 3)" :key="index"
-                                    @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })" :class="{
-                                        'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                                        'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
-                                        'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                                        'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
-                                        'opacity-50 pointer-events-none': selectedGoalResonance < 10
-                                    }" class="rounded-lg">
+                                    @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })"
+                                    class="rounded-lg">
                                     <div class="tooltip px-2 font-light"
                                         :data-tip="$t('frequency-modulation-' + frequency.Id)">
-                                        <img class="h-16 pt-1.5"
-                                            :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
+                                        <img class="h-16 pt-1.5 transition-transform duration-200" :class="{
+                                            'opacity-25': !selectedFrequency.some(f => f.Id === frequency.Id),
+                                            'hover:scale-110': true
+                                        }" :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
                                             alt="Frequency Icon" />
                                     </div>
                                 </button>
@@ -472,17 +469,13 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                                 <div class="col-span-3 flex justify-center space-x-4">
                                     <button v-for="(frequency, index) in frequencyOptions.slice(3, 5)" :key="index"
                                         @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })"
-                                        :class="{
-                                            'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                                            'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
-                                            'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                                            'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
-                                            'opacity-50 pointer-events-none': selectedGoalResonance < 10
-                                        }" class="rounded-lg">
+                                        class="rounded-lg">
                                         <div class="tooltip px-2 font-light"
                                             :data-tip="$t('frequency-modulation-' + frequency.Id)">
-                                            <img class="h-16 pt-1.5"
-                                                :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
+                                            <img class="h-16 pt-1.5 transition-transform duration-200" :class="{
+                                                'opacity-25': !selectedFrequency.some(f => f.Id === frequency.Id),
+                                                'hover:scale-110': true
+                                            }" :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
                                                 alt="Frequency Icon" />
                                         </div>
                                     </button>
@@ -506,18 +499,13 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                             <div class="flex flex-col gap-y-2">
                                 <div class="flex justify-center space-x-4">
                                     <button v-for="(euphoria, index) in euphoriaOptions" :key="index"
-                                        @click="toggleEuphoria(euphoria.Id)" :class="{
-                                            'border-2 border-info': selectedEuphoria.some(e => e === euphoria.Id),
-                                            'border-2 border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
-                                            'hover:border-info': selectedEuphoria.some(e => e === euphoria.Id),
-                                            'hover:border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
-                                            'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3
-                                        }" class="rounded-lg
-                                        ">
+                                        @click="toggleEuphoria(euphoria.Id)" class="rounded-lg">
                                         <div class="tooltip px-2 font-light">
-                                            <img class="h-16 pt-1.5"
-                                                :src="getArcanistEuphoriaPath(selectedArcanist.Id, euphoria.Id)"
-                                                alt="Frequency Icon" />
+                                            <img class="h-24 pt-1.5"
+                                                :src="getArcanistEuphoriaPath(selectedArcanist.Id, euphoria.Id)" :class="{
+                                                    'opacity-25': !selectedEuphoria.some(e => e === euphoria.Id),
+                                                    'hover:scale-110': true
+                                                }" alt="Euphoria Icon" />
                                         </div>
                                     </button>
                                 </div>
@@ -530,13 +518,13 @@ watch([selectedCurrentInsight, selectedCurrentLevel,
                                     <SelectList :key="'current-' + updateKey" v-model="selectedCurrentMastery"
                                         :selected="selectedCurrentMastery" :label="'Current Mastery'"
                                         :options="currentMasteryOptions" v-on:update:selected="handleSelected"
-                                        :class="{'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3}"/>
+                                        :class="{ 'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3 }" />
                                     <i class="text-white fa-solid fa-angles-right text-center w-10"
-                                    :class="{'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3}"></i>
+                                        :class="{ 'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3 }"></i>
                                     <SelectList :key="'goal-' + updateKey" v-model="selectedGoalMastery"
                                         :selected="selectedGoalMastery" :label="'Goal Mastery'"
                                         :options="goalMasteryOptions" v-on:update:selected="handleSelected"
-                                        :class="{'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3}"/>
+                                        :class="{ 'opacity-50 pointer-events-none': selectedGoalLevel < 30 || selectedGoalInsight < 3 }" />
                                 </div>
                             </div>
                         </template>

@@ -93,7 +93,8 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
             <h2 class="text-white text-2xl font-bold">Resonances</h2>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
-                    :label="'Current Resonance'" :options="currentResonanceOptions" v-on:update:selected="handleSelected" />
+                    :label="'Current Resonance'" :options="currentResonanceOptions"
+                    v-on:update:selected="handleSelected" />
                 <i class="text-white fa-solid fa-angles-right text-center w-11"></i>
                 <SelectList :key="updateKey" v-model="selectedGoalResonance" :selected="selectedGoalResonance"
                     :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
@@ -103,15 +104,13 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
         <div class="flex justify-center p-4">
             <div class="flex flex-wrap gap-4 justify-center">
                 <button v-for="(frequency, index) in frequencyOptions" :key="index"
-                    @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })" :class="{
-                        'border-2 border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                        'border-2 border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id),
-                        'hover:border-info': selectedFrequency.some(f => f.Id === frequency.Id),
-                        'hover:border-transparent': !selectedFrequency.some(f => f.Id === frequency.Id)
-                    }" class="rounded-lg">
+                    @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })" class="rounded-lg">
                     <div class="tooltip px-2 font-light" :data-tip="$t('frequency-modulation-' + frequency.Id)">
                         <img class="h-16 pt-1.5" :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
-                            alt="Frequency Icon" />
+                            :class="{
+                                'opacity-25': !selectedFrequency.some(f => f.Id === frequency.Id),
+                                'hover:scale-110': true
+                            }" alt="Frequency Icon" />
                     </div>
                 </button>
             </div>

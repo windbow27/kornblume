@@ -79,17 +79,14 @@ const editingArcanist = computed(() => ({
             <h2 class="text-white text-2xl font-bold">Euphoria</h2>
             <div class="flex flex-col gap-y-2 mt-2">
                 <div class="flex justify-center space-x-4">
-                    <button v-for="(euphoria, index) in euphoriaOptions" :key="index" @click="toggleEuphoria(euphoria.Id)"
-                        :class="{
-                            'border-2 border-info': selectedEuphoria.some(e => e === euphoria.Id),
-                            'border-2 border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
-                            'hover:border-info': selectedEuphoria.some(e => e === euphoria.Id),
-                            'hover:border-transparent': !selectedEuphoria.some(e => e === euphoria.Id),
-                        }" class="rounded-lg
+                    <button v-for="(euphoria, index) in euphoriaOptions" :key="index"
+                        @click="toggleEuphoria(euphoria.Id)" class="rounded-lg
                                                 ">
                         <div class="tooltip px-2 font-light">
-                            <img class="h-36 pt-1.5" :src="getArcanistEuphoriaPath(arcanist.Id, euphoria.Id)"
-                                alt="Euphoria Icon" />
+                            <img class="h-36 pt-1.5" :src="getArcanistEuphoriaPath(arcanist.Id, euphoria.Id)" :class="{
+                                'opacity-25': !selectedEuphoria.some(e => e === euphoria.Id),
+                                'hover:scale-110': true
+                            }" alt="Euphoria Icon" />
                         </div>
                     </button>
                 </div>
