@@ -1,6 +1,9 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '27/01/2025', description: '• Added Boon of the Water banner.'
+    },
+    {
         date: '24/01/2025', description: '• Added Liang Yue and Loggerhead as unreleased arcanists.<br>• UI improvements.'
     },
     {

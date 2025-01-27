@@ -45,6 +45,8 @@ export const bannerList = [
     'Revelation of the Water',
     // promise
     'Promise of the Water',
+    // boon
+    'Boon of the Water',
 
     // jiu niangzi
     'Till the Last Drop',
