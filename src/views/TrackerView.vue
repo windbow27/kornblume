@@ -86,6 +86,7 @@ const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
 const yearningPulls = createPullsByBannerType('Yearning of the Water');
 const abundancePulls = createPullsByBannerType('Abundance of the Water');
 const boonPulls = createPullsByBannerType('Boon of the Water');
+const goldenSpindlePulls = createPullsByBannerType('Golden Spindle');
 const threadPulls = createPullsByBannerType('Invitation From the Water');
 const standardPulls = createPullsByBannerType('Amongst the Lake');
 
@@ -100,7 +101,8 @@ const limitedPulls = computed(() => {
             pull.BannerType !== 'Thoughts in Cylinder' &&
             pull.BannerType !== 'Promise of the Water' &&
             pull.BannerType !== 'Longing for Innocence' &&
-            pull.BannerType !== 'Boon of the Water');
+            pull.BannerType !== 'Boon of the Water' &&
+            pull.BannerType !== 'Golden Spindle');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -178,9 +180,10 @@ const ocr: clickHandler = (payload: Event): void => {
                     const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
                     const bannerGroup = `(?<BannerType>${bannerList
                         .map(banner => banner
+                            .replace(/Fledgling.*?First Flight/, 'Fledgling[\\s\\S]*?First\\s*Flight') // Handle Fledgling ... First Flight variations
+                            .replace(/Clash.*?Slash/, 'Clash[\\s\'"’\\w]*?Slash') // Handle Clash ... Slash variations
                             .replace(/\s/g, '\\s*') // Handle spaces
                             .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
-                            .replace(/Clash.*?Slash/, 'Clash[\\s\'"’\\w]*?Slash') // Handle Clash ... Slash variations
                         ).join('|')
                     }).*`;
                     const dateGroup: string = /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/.source;
@@ -494,6 +497,12 @@ const selectBannerType = (bannerType: string) => {
                             @click="selectBannerType('Boon of the Water')">{{
                                 $t('boon') }}</button>
                     </li>
+                    <li>
+                        <button v-bind:class="{ 'border-button': selectedBannerType === 'Golden Spindle' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectBannerType('Golden Spindle')">{{
+                                $t('golden-spindle') }}</button>
+                    </li>
 
                     <!-- Line separator -->
                     <hr class="border-t border-gray-300 m-2">
@@ -528,6 +537,8 @@ const selectBannerType = (bannerType: string) => {
             :pulls="promisePulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Boon of the Water'" :text="$t('summary-boon')" :pulls="boonPulls"
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Golden Spindle'" :text="$t('summary-golden-spindle')"
+            :pulls="goldenSpindlePulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
 
         <TrackerBoard v-if="selectedBannerType === 'Till the Last Drop'" :text="$t('jiu-niangzi')"
             :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />

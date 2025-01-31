@@ -31,7 +31,7 @@ export const bannerList = [
     'Clash \'n\' Slash',
     'Blue Lullaby',
     'Shooting in the Dark',
-    'Into the Rainforest',
+    'Fledgling\'s First Flight',
 
     // standard
     'Amongst the Lake',
@@ -47,6 +47,8 @@ export const bannerList = [
     'Promise of the Water',
     // boon
     'Boon of the Water',
+    // golden spindle
+    'Golden Spindle',
 
     // jiu niangzi
     'Till the Last Drop',

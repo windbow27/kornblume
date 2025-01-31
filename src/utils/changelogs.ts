@@ -1,6 +1,12 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '31/01/2025', description: '• Fixed Tracker error for Lopera banner.'
+    },
+    {
+        date: '28/01/2025', description: '• Added Golden Spindle banner. <br>• Happy Lunar New Year!'
+    },
+    {
         date: '27/01/2025', description: '• Added Boon of the Water banner.'
     },
     {
