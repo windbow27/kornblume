@@ -27,5 +27,8 @@ export default defineConfig({
         watch: {
             usePolling: true // set to ensure that hot reload is enabled
         }
+    },
+    build: {
+        chunkSizeWarningLimit: 600
     }
 });
