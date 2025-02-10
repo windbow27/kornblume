@@ -1,6 +1,6 @@
 [
   {
-    "Id": 10096,
+    "Id": 10098,
     "IsReleased": false,
     "Name": "Noire",
     "Rarity": 6,
@@ -373,7 +373,7 @@
     "Mastery": []
   },
   {
-    "Id": 10097,
+    "Id": 10096,
     "IsReleased": false,
     "Name": "Liang Yue",
     "Rarity": 6,
@@ -16487,7 +16487,7 @@
     ]
   },
   {
-    "Id": 10098,
+    "Id": 10097,
     "IsReleased": false,
     "Name": "Loggerhead",
     "Rarity": 5,
