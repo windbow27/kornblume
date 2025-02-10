@@ -1493,7 +1493,7 @@
   },
   {
     "Id": 10092,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Flutterpage",
     "Rarity": 6,
     "Afflatus": "Star",
@@ -1866,7 +1866,7 @@
   },
   {
     "Id": 10091,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Willow",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -16851,7 +16851,7 @@
   },
   {
     "Id": 10093,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Brimley",
     "Rarity": 5,
     "Afflatus": "Mineral",
