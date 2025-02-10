@@ -488,15 +488,6 @@ const selectBannerType = (bannerType: string) => {
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectBannerType('Promise of the Water')">{{
                                 $t('promise') }}</button></li>
-                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Ripples of the Water' }"
-                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectBannerType('Ripples of the Water')">{{
-                                $t('ripples') }}</button></li>
-
-                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Longing for Innocence' }"
-                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                            @click="selectBannerType('Longing for Innocence')">{{
-                                $t('anjo-nala') }}</button></li>
                     <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Boon of the Water' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectBannerType('Boon of the Water')">{{
@@ -505,6 +496,10 @@ const selectBannerType = (bannerType: string) => {
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectBannerType('Golden Spindle')">{{
                                 $t('golden-spindle') }}</button></li>
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Ripples of the Water' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectBannerType('Ripples of the Water')">{{
+                                $t('ripples') }}</button></li>
 
                     <!-- Line separator -->
                     <hr class="border-t border-gray-300 m-2">
@@ -519,6 +514,11 @@ const selectBannerType = (bannerType: string) => {
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectBannerType('Thoughts in Cylinder')">{{
                                 $t('lucy') }}</button></li>
+                    <!-- Anjo Nala banner -->
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Longing for Innocence' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectBannerType('Longing for Innocence')">{{
+                                $t('anjo-nala') }}</button></li>
                 </ul>
             </div>
         </div>
