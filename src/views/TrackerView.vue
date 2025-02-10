@@ -78,17 +78,19 @@ function createPullsByBannerType (bannerType) {
     });
 }
 
-const anjoNalaPulls = createPullsByBannerType('Longing for Innocence');
-const promisePulls = createPullsByBannerType('Promise of the Water');
-const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
-const revelationPulls = createPullsByBannerType('Revelation of the Water');
-const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
-const yearningPulls = createPullsByBannerType('Yearning of the Water');
+const standardPulls = createPullsByBannerType('Amongst the Lake');
+const threadPulls = createPullsByBannerType('Invitation From the Water');
 const abundancePulls = createPullsByBannerType('Abundance of the Water');
+const yearningPulls = createPullsByBannerType('Yearning of the Water');
+const revelationPulls = createPullsByBannerType('Revelation of the Water');
+const promisePulls = createPullsByBannerType('Promise of the Water');
 const boonPulls = createPullsByBannerType('Boon of the Water');
 const goldenSpindlePulls = createPullsByBannerType('Golden Spindle');
-const threadPulls = createPullsByBannerType('Invitation From the Water');
-const standardPulls = createPullsByBannerType('Amongst the Lake');
+const ripplesPulls = createPullsByBannerType('Ripples of the Water');
+
+const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
+const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
+const anjoNalaPulls = createPullsByBannerType('Longing for Innocence');
 
 const limitedPulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(
@@ -102,7 +104,8 @@ const limitedPulls = computed(() => {
             pull.BannerType !== 'Promise of the Water' &&
             pull.BannerType !== 'Longing for Innocence' &&
             pull.BannerType !== 'Boon of the Water' &&
-            pull.BannerType !== 'Golden Spindle');
+            pull.BannerType !== 'Golden Spindle' &&
+            pull.BannerType !== 'Ripples of the Water');
     return filteredPulls.map((pull, index) => {
         return {
             PullNumber: filteredPulls.length - index,
@@ -449,12 +452,6 @@ const selectBannerType = (bannerType: string) => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
-            <!--Temporary Anjo Nala-->
-            <button v-bind:class="{ 'border-button': selectedBannerType === 'Longing for Innocence' }"
-                class=' text-white py-1 px-3 hover:bg-info rounded-md'
-                @click="selectBannerType('Longing for Innocence')">{{
-                    $t('anjo-nala') }}</button>
-
             <button v-bind:class="{ 'border-button': selectedBannerType === 'Limited' }"
                 class=' text-white py-1 px-3 hover:bg-info rounded-md' @click="selectBannerType('Limited')">{{
                     $t('limited') }}</button>
@@ -491,18 +488,23 @@ const selectBannerType = (bannerType: string) => {
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectBannerType('Promise of the Water')">{{
                                 $t('promise') }}</button></li>
-                    <li>
-                        <button v-bind:class="{ 'border-button': selectedBannerType === 'Boon of the Water' }"
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Ripples of the Water' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectBannerType('Ripples of the Water')">{{
+                                $t('ripples') }}</button></li>
+
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Longing for Innocence' }"
+                            class=' text-white py-1 px-3 hover:bg-info rounded-md'
+                            @click="selectBannerType('Longing for Innocence')">{{
+                                $t('anjo-nala') }}</button></li>
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Boon of the Water' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectBannerType('Boon of the Water')">{{
-                                $t('boon') }}</button>
-                    </li>
-                    <li>
-                        <button v-bind:class="{ 'border-button': selectedBannerType === 'Golden Spindle' }"
+                                $t('boon') }}</button></li>
+                    <li><button v-bind:class="{ 'border-button': selectedBannerType === 'Golden Spindle' }"
                             class=' text-white py-1 px-3 hover:bg-info rounded-md'
                             @click="selectBannerType('Golden Spindle')">{{
-                                $t('golden-spindle') }}</button>
-                    </li>
+                                $t('golden-spindle') }}</button></li>
 
                     <!-- Line separator -->
                     <hr class="border-t border-gray-300 m-2">
@@ -539,6 +541,8 @@ const selectBannerType = (bannerType: string) => {
             :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard v-if="selectedBannerType === 'Golden Spindle'" :text="$t('summary-golden-spindle')"
             :pulls="goldenSpindlePulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard v-if="selectedBannerType === 'Ripples of the Water'" :text="$t('summary-ripples')"
+            :pulls="ripplesPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />
 
         <TrackerBoard v-if="selectedBannerType === 'Till the Last Drop'" :text="$t('jiu-niangzi')"
             :pulls="jiuNiangziPulls" :allPulls="allPulls" :isError="isError" :wrongTimestamps="wrongTimestamps" />

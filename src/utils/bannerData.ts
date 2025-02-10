@@ -32,6 +32,8 @@ export const bannerList = [
     'Blue Lullaby',
     'Shooting in the Dark',
     'Fledgling\'s First Flight',
+    'When The Swan Dances',
+    'The Book of Whys',
 
     // standard
     'Amongst the Lake',
@@ -49,6 +51,8 @@ export const bannerList = [
     'Boon of the Water',
     // golden spindle
     'Golden Spindle',
+    // ripples,
+    'Ripples of the Water',
 
     // jiu niangzi
     'Till the Last Drop',
@@ -90,7 +94,9 @@ export const bannerRateUp = [
     'J',
     'Tuesday',
     'Argus',
-    'Lopera'
+    'Lopera',
+    'Willow',
+    'Flutterpage'
 ];
 
 export const specialArcanists: string[] = [

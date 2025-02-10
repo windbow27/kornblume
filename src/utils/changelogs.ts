@@ -1,7 +1,7 @@
 export const changelogs = [
     // Add more from top
     {
-        date: '10/02/2025', description: '• Added Noire as unreleased arcanist. <br>• Added Pickles and An-an Lee Euphorias.'
+        date: '10/02/2025', description: '• Added Noire as unreleased arcanist. <br>• Added Pickles and An-an Lee Euphorias. <br>• Added Willow, Flutterpage, Ripples of the Water banners.'
     },
     {
         date: '31/01/2025', description: '• Fixed Tracker error for Lopera banner.'
