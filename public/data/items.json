@@ -740,16 +740,6 @@
     "Usage": ""
   },
   {
-    "Id": 70,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Crystal Casket",
-    "Rarity": 6,
-    "Description": "The whispers inside are overflowing. Seize the opportunity when you get to hear them.",
-    "Source": "",
-    "Usage": ""
-  },
-  {
     "Id": 75,
     "Category": "Build Material",
     "IsReleased": true,
