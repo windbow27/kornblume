@@ -18,9 +18,6 @@ module.exports = {
         camelcase: 'off',
         semi: 0,
         'vue/multi-word-component-names': 'off',
-        indent: [
-            'error',
-            4
-        ]
+        indent: 'off'
     }
-}
+};
