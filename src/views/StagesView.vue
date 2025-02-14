@@ -27,14 +27,15 @@ const filteredStages = computed(() => {
 });
 
 watchEffect(() => {
-    const foundStage = Object.values(stageStore).find(stage => stage.id === globalStore.selectedStage.id);
+    const foundStage = Object.values(stageStore).find(
+        (stage) => stage.id === globalStore.selectedStage.id
+    );
     selectedStage.value = foundStage || Object.values(stageStore)[0];
 });
-
 </script>
 
 <template>
-    <div class="container ">
+    <div class="container">
         <div class="flex pb-4">
             <h2 class="text-2xl text-white font-bold">{{ $t('stages') }}</h2>
         </div>
@@ -53,31 +54,51 @@ watchEffect(() => {
 
         <div class="flex flex-col gap-y-4 lg:grid lg:grid-cols-2 lg:gap-4">
             <div class="flex flex-col gap-y-4">
-
                 <!--Item Selection Card-->
                 <div class="card custom-border">
                     <div class="flex flex-wrap justify-center gap-y-2">
-                        <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
-                            <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
-                                :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']">
+                        <div
+                            class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
+                            <button
+                                v-for="(button, index) in buttons"
+                                :key="index"
+                                @click="selectedButton = button"
+                                :class="[
+                                    'hover:bg-info rounded-md text-white py-1 px-3',
+                                    selectedButton === button
+                                        ? 'border-button'
+                                        : ''
+                                ]">
                                 {{ $t(button) }}
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)] ">
+                <div
+                    class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
                     <div class="custom-item-list">
-                        <div class="flex flex-wrap justify-center gap-x-5 gap-y-2">
-                            <StageSelectionIcon v-for="stage in filteredStages" :key="stage.name" :stage="stage"
-                                :stageName="stage.name" @click="selectStage(stage)"
-                                :class="selectedStage?.name === stage.name ? 'custom-border-white' : 'custom-border-transparent'" />
+                        <div
+                            class="flex flex-wrap justify-center gap-x-5 gap-y-2">
+                            <StageSelectionIcon
+                                v-for="stage in filteredStages"
+                                :key="stage.name"
+                                :stage="stage"
+                                :stageName="stage.name"
+                                @click="selectStage(stage)"
+                                :class="
+                                    selectedStage?.name === stage.name
+                                        ? 'custom-border-white'
+                                        : 'custom-border-transparent'
+                                " />
                         </div>
                     </div>
                 </div>
             </div>
             <!--Item Display Card-->
             <div class="flex flex-col gap-y-4">
-                <StageDisplay :selectedStage="selectedStage" :stageName="selectedStage.name" />
+                <StageDisplay
+                    :selectedStage="selectedStage"
+                    :stageName="selectedStage.name" />
             </div>
         </div>
     </div>

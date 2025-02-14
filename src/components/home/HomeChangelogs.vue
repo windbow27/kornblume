@@ -6,7 +6,6 @@ const emit = defineEmits(['closeOverlay']);
 const closeOverlay = () => {
     emit('closeOverlay');
 };
-
 </script>
 
 <template>
@@ -23,7 +22,10 @@ const closeOverlay = () => {
                 <li v-for="(log, index) in changelogs" :key="index">
                     <p class="text-sky-300">{{ log.date }}:</p>
                     <ul>
-                        <li v-for="(line, lineIndex) in log.description.split('<br>')" :key="lineIndex" class="text-sm"
+                        <li
+                            v-for="(line, lineIndex) in log.description.split('<br>')"
+                            :key="lineIndex"
+                            class="text-sm"
                             v-html="line"></li>
                     </ul>
                 </li>

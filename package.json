@@ -21,6 +21,7 @@
   "dependencies": {
     "@vuepic/vue-datepicker": "^8.2.0",
     "@vueuse/core": "^10.7.0",
+    "eslint-config-prettier": "^10.0.1",
     "fabric": "^5.3.0",
     "flag-icons": "^7.1.0",
     "fuse.js": "^7.0.0",
