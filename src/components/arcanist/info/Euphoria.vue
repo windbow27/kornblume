@@ -19,7 +19,7 @@ const selectedGoalMastery = ref(4);
 
 const euphoriaOptions = computed(() => {
     const arcanistEuphoria = props.arcanist.Euphoria ?? [];
-    return arcanistEuphoria.map(item => ({
+    return arcanistEuphoria.map((item) => ({
         Id: item.Id
     }));
 });
@@ -29,11 +29,11 @@ const currentMasteryOptions = computed(() => {
 });
 
 const goalMasteryOptions = computed(() => {
-    return [0, 1, 2, 3, 4].filter(mastery => mastery >= selectedCurrentMastery.value);
+    return [0, 1, 2, 3, 4].filter((mastery) => mastery >= selectedCurrentMastery.value);
 });
 
 const toggleEuphoria = (euphoria: number) => {
-    const index = selectedEuphoria.value.findIndex(e => e === euphoria);
+    const index = selectedEuphoria.value.findIndex((e) => e === euphoria);
     if (index !== -1) {
         // remove if selected
         selectedEuphoria.value.splice(index, 1);
@@ -45,16 +45,16 @@ const toggleEuphoria = (euphoria: number) => {
 
 const handleSelected = (option, optionType) => {
     switch (optionType) {
-    case 'Current Mastery':
-        selectedCurrentMastery.value = option;
-        break;
-    case 'Goal Mastery':
-        selectedGoalMastery.value = option;
-        break;
-    default:
-        break;
+        case 'Current Mastery':
+            selectedCurrentMastery.value = option;
+            break;
+        case 'Goal Mastery':
+            selectedGoalMastery.value = option;
+            break;
+        default:
+            break;
     }
-}
+};
 
 const editingArcanist = computed(() => ({
     Id: props.arcanist.Id,
@@ -70,7 +70,6 @@ const editingArcanist = computed(() => ({
     currentMastery: selectedCurrentMastery.value,
     goalMastery: selectedGoalMastery.value
 }));
-
 </script>
 
 <template>
@@ -79,14 +78,20 @@ const editingArcanist = computed(() => ({
             <h2 class="text-white text-2xl font-bold">Euphoria</h2>
             <div class="flex flex-col gap-y-2 mt-2">
                 <div class="flex justify-center space-x-4">
-                    <button v-for="(euphoria, index) in euphoriaOptions" :key="index"
-                        @click="toggleEuphoria(euphoria.Id)" class="rounded-lg
-                                                ">
+                    <button
+                        v-for="(euphoria, index) in euphoriaOptions"
+                        :key="index"
+                        @click="toggleEuphoria(euphoria.Id)"
+                        class="rounded-lg">
                         <div class="tooltip px-2 font-light">
-                            <img class="h-36 pt-1.5" :src="getArcanistEuphoriaPath(arcanist.Id, euphoria.Id)" :class="{
-                                'opacity-25': !selectedEuphoria.some(e => e === euphoria.Id),
-                                'hover:scale-110': true
-                            }" alt="Euphoria Icon" />
+                            <img
+                                class="h-36 pt-1.5"
+                                :src="getArcanistEuphoriaPath(arcanist.Id, euphoria.Id)"
+                                :class="{
+                                    'opacity-50': !selectedEuphoria.some((e) => e === euphoria.Id),
+                                    'hover:scale-110': true
+                                }"
+                                alt="Euphoria Icon" />
                         </div>
                     </button>
                 </div>
@@ -96,12 +101,21 @@ const editingArcanist = computed(() => ({
                 </div>
 
                 <div class="mt-2 flex justify-center items-center leading-none">
-                    <SelectList :key="'current-' + updateKey" v-model="selectedCurrentMastery"
-                        :selected="selectedCurrentMastery" :label="'Current Mastery'" :options="currentMasteryOptions"
+                    <SelectList
+                        :key="'current-' + updateKey"
+                        v-model="selectedCurrentMastery"
+                        :selected="selectedCurrentMastery"
+                        :label="'Current Mastery'"
+                        :options="currentMasteryOptions"
                         v-on:update:selected="handleSelected" />
                     <i class="text-white fa-solid fa-angles-right text-center w-10"></i>
-                    <SelectList :key="'goal-' + updateKey" v-model="selectedGoalMastery" :selected="selectedGoalMastery"
-                        :label="'Goal Mastery'" :options="goalMasteryOptions" v-on:update:selected="handleSelected" />
+                    <SelectList
+                        :key="'goal-' + updateKey"
+                        v-model="selectedGoalMastery"
+                        :selected="selectedGoalMastery"
+                        :label="'Goal Mastery'"
+                        :options="goalMasteryOptions"
+                        v-on:update:selected="handleSelected" />
                 </div>
             </div>
         </div>

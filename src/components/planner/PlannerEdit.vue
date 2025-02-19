@@ -8,10 +8,7 @@ import { useCalculation } from '@/composables/calculations';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { useGlobalStore } from '@/stores/global';
 import { IArcanist, ISelectedArcanist } from '@/types';
-import {
-    getArcanistFrequencyPath,
-    getArcanistEuphoriaPath
-} from '@/composables/images';
+import { getArcanistFrequencyPath, getArcanistEuphoriaPath } from '@/composables/images';
 import Popper from 'vue3-popper';
 import ArcanistIcon from '@/components/arcanist/ArcanistIcon.vue';
 import SelectList from '@/components/common/SelectList.vue';
@@ -33,19 +30,14 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits([
-    'closeOverlay',
-    'updateSelectedArcanists',
-    'updateListArcanists'
-]);
+const emit = defineEmits(['closeOverlay', 'updateSelectedArcanists', 'updateListArcanists']);
 
 const arcanists = useDataStore().arcanists;
 const updateKey = ref(0);
 const calculations = levelUpResources;
 const selectedArcanist = ref(
-    arcanists.find(
-        (arc) => Number(arc.Id) === Number(props.selectedArcanist.Id)
-    ) || ({} as IArcanist)
+    arcanists.find((arc) => Number(arc.Id) === Number(props.selectedArcanist.Id)) ||
+        ({} as IArcanist)
 );
 const selectedArcanists = ref(props.selectedArcanists);
 const listArcanists = ref(props.listArcanists);
@@ -102,9 +94,7 @@ const addArcanist = () => {
     }
 
     // Remove the arcanist from listArcanists
-    listArcanists.value = listArcanists.value.filter(
-        (arc) => arc.Id !== editingArcanist.value.Id
-    );
+    listArcanists.value = listArcanists.value.filter((arc) => arc.Id !== editingArcanist.value.Id);
 
     emit('updateSelectedArcanists', selectedArcanists.value);
     emit('updateListArcanists', listArcanists.value);
@@ -133,14 +123,8 @@ const isWarehouseSufficient = computed(() => {
     return (
         materialRequirement.value.filter((matl) => {
             if (CrystalCasketMaterials.includes(matl.Material)) {
-                return (
-                    useWarehouseStore().getItemQuantity('Crystal Casket') <
-                    matl.Quantity
-                );
-            } else if (
-                useWarehouseStore().getItemQuantity(matl.Material) <
-                matl.Quantity
-            ) {
+                return useWarehouseStore().getItemQuantity('Crystal Casket') < matl.Quantity;
+            } else if (useWarehouseStore().getItemQuantity(matl.Material) < matl.Quantity) {
                 return true;
             } else {
                 return false;
@@ -183,9 +167,7 @@ const quickGoal = () => {
 };
 
 const toggleFrequency = (frequency: { Id: number; Type: string }) => {
-    const index = selectedFrequency.value.findIndex(
-        (f) => f.Id === frequency.Id
-    );
+    const index = selectedFrequency.value.findIndex((f) => f.Id === frequency.Id);
     if (index !== -1) {
         // remove if selected
         selectedFrequency.value.splice(index, 1);
@@ -267,16 +249,11 @@ const rarity = computed(() => {
 });
 
 const currentInsightOptions = computed(() => {
-    return [
-        0,
-        ...(selectedArcanist.value.Insight ?? []).map((insight) => insight.Id)
-    ];
+    return [0, ...(selectedArcanist.value.Insight ?? []).map((insight) => insight.Id)];
 });
 
 const goalInsightOptions = computed(() => {
-    return currentInsightOptions.value.filter(
-        (insight) => insight >= selectedCurrentInsight.value
-    );
+    return currentInsightOptions.value.filter((insight) => insight >= selectedCurrentInsight.value);
 });
 
 const currentLevelOptions = computed(() => {
@@ -387,9 +364,7 @@ const currentMasteryOptions = computed(() => {
 });
 
 const goalMasteryOptions = computed(() => {
-    return [0, 1, 2, 3, 4].filter(
-        (mastery) => mastery >= selectedCurrentMastery.value
-    );
+    return [0, 1, 2, 3, 4].filter((mastery) => mastery >= selectedCurrentMastery.value);
 });
 
 watch(
@@ -413,17 +388,10 @@ watch(
             selectedCurrentLevel.value =
                 currentLevelOptions.value[currentLevelOptions.value.length - 1];
         }
-        if (
-            selectedGoalLevel.value >
-            goalLevelOptions.value[goalLevelOptions.value.length - 1]
-        ) {
-            selectedGoalLevel.value =
-                goalLevelOptions.value[goalLevelOptions.value.length - 1];
+        if (selectedGoalLevel.value > goalLevelOptions.value[goalLevelOptions.value.length - 1]) {
+            selectedGoalLevel.value = goalLevelOptions.value[goalLevelOptions.value.length - 1];
         }
-        if (
-            Number(selectedCurrentResonance.value) >
-            Number(selectedGoalResonance.value)
-        ) {
+        if (Number(selectedCurrentResonance.value) > Number(selectedGoalResonance.value)) {
             selectedGoalResonance.value = selectedCurrentResonance.value;
         }
 
@@ -461,9 +429,7 @@ watch(
     <div class="edit-overlay">
         <div
             class="fixed p-4 custom-modal-big custom-border rounded-md w-11/12 sm:max-w-2xl 2xl:h-[75vh]">
-            <button
-                @click="closeOverlay"
-                class="text-white absolute top-2 right-4">
+            <button @click="closeOverlay" class="text-white absolute top-2 right-4">
                 <i class="fas fa-times"></i>
             </button>
             <!-- Header -->
@@ -488,17 +454,13 @@ watch(
                 </div>
                 <div class="ml-auto flex items-center space-x-3">
                     <div class="tooltip" :data-tip="$t('remove-arcanist')">
-                        <i
-                            @click="removeArcanist"
-                            class="fas fa-trash-alt text-gray-500"></i>
+                        <i @click="removeArcanist" class="fas fa-trash-alt text-gray-500"></i>
                     </div>
                     <div class="tooltip" :data-tip="$t('hidden-show')">
                         <div
                             @click="selectedVisible = !selectedVisible"
                             class="badge badge-ghost"
-                            :class="
-                                selectedVisible ? 'green-badge' : 'red-badge'
-                            ">
+                            :class="selectedVisible ? 'green-badge' : 'red-badge'">
                             <i
                                 :class="
                                     selectedVisible
@@ -564,8 +526,7 @@ watch(
                     :label="'Current Resonance'"
                     :options="currentResonanceOptions"
                     v-on:update:selected="handleSelected" />
-                <i
-                    class="text-white fa-solid fa-angles-right text-center w-16"></i>
+                <i class="text-white fa-solid fa-angles-right text-center w-16"></i>
                 <SelectList
                     :key="updateKey"
                     v-model="selectedGoalResonance"
@@ -592,8 +553,7 @@ watch(
                     <Popper arrow placement="bottom" offsetDistance="2">
                         <div
                             :class="{
-                                'opacity-50 pointer-events-none':
-                                    selectedGoalResonance < 10
+                                'opacity-50 pointer-events-none': selectedGoalResonance < 10
                             }"
                             class="tooltip"
                             :data-tip="$t('frequency')">
@@ -607,9 +567,7 @@ watch(
                         <template #content>
                             <div class="grid grid-cols-3 gap-4 justify-center">
                                 <button
-                                    v-for="(
-                                        frequency, index
-                                    ) in frequencyOptions.slice(0, 3)"
+                                    v-for="(frequency, index) in frequencyOptions.slice(0, 3)"
                                     :key="index"
                                     @click="
                                         toggleFrequency({
@@ -620,21 +578,13 @@ watch(
                                     class="rounded-lg">
                                     <div
                                         class="tooltip px-2 font-light"
-                                        :data-tip="
-                                            $t(
-                                                'frequency-modulation-' +
-                                                    frequency.Id
-                                            )
-                                        ">
+                                        :data-tip="$t('frequency-modulation-' + frequency.Id)">
                                         <img
                                             class="h-16 pt-1.5 transition-transform duration-200"
                                             :class="{
-                                                'opacity-25':
-                                                    !selectedFrequency.some(
-                                                        (f) =>
-                                                            f.Id ===
-                                                            frequency.Id
-                                                    ),
+                                                'opacity-50': !selectedFrequency.some(
+                                                    (f) => f.Id === frequency.Id
+                                                ),
                                                 'hover:scale-110': true
                                             }"
                                             :src="
@@ -647,14 +597,10 @@ watch(
                                     </div>
                                 </button>
                             </div>
-                            <div
-                                class="grid grid-cols-3 gap-4 justify-center mt-4">
-                                <div
-                                    class="col-span-3 flex justify-center space-x-4">
+                            <div class="grid grid-cols-3 gap-4 justify-center mt-4">
+                                <div class="col-span-3 flex justify-center space-x-4">
                                     <button
-                                        v-for="(
-                                            frequency, index
-                                        ) in frequencyOptions.slice(3, 5)"
+                                        v-for="(frequency, index) in frequencyOptions.slice(3, 5)"
                                         :key="index"
                                         @click="
                                             toggleFrequency({
@@ -665,21 +611,13 @@ watch(
                                         class="rounded-lg">
                                         <div
                                             class="tooltip px-2 font-light"
-                                            :data-tip="
-                                                $t(
-                                                    'frequency-modulation-' +
-                                                        frequency.Id
-                                                )
-                                            ">
+                                            :data-tip="$t('frequency-modulation-' + frequency.Id)">
                                             <img
                                                 class="h-16 pt-1.5 transition-transform duration-200"
                                                 :class="{
-                                                    'opacity-25':
-                                                        !selectedFrequency.some(
-                                                            (f) =>
-                                                                f.Id ===
-                                                                frequency.Id
-                                                        ),
+                                                    'opacity-50': !selectedFrequency.some(
+                                                        (f) => f.Id === frequency.Id
+                                                    ),
                                                     'hover:scale-110': true
                                                 }"
                                                 :src="
@@ -703,8 +641,7 @@ watch(
                         <div
                             :class="{
                                 'opacity-50 pointer-events-none':
-                                    selectedGoalLevel < 30 ||
-                                    selectedGoalInsight < 3
+                                    selectedGoalLevel < 30 || selectedGoalInsight < 3
                             }"
                             class="tooltip"
                             :data-tip="$t('euphoria')">
@@ -719,9 +656,7 @@ watch(
                             <div class="flex flex-col gap-y-2">
                                 <div class="flex justify-center space-x-4">
                                     <button
-                                        v-for="(
-                                            euphoria, index
-                                        ) in euphoriaOptions"
+                                        v-for="(euphoria, index) in euphoriaOptions"
                                         :key="index"
                                         @click="toggleEuphoria(euphoria.Id)"
                                         class="rounded-lg">
@@ -735,27 +670,35 @@ watch(
                                                     )
                                                 "
                                                 :class="{
-                                                    'opacity-25':
-                                                        !selectedEuphoria.some(
-                                                            (e) =>
-                                                                e ===
-                                                                euphoria.Id
-                                                        ),
+                                                    'opacity-50': !selectedEuphoria.some(
+                                                        (e) => e === euphoria.Id
+                                                    ),
                                                     'hover:scale-110': true
                                                 }"
                                                 alt="Euphoria Icon" />
+
+                                            <div
+                                                class="form-control flex justify-center items-center">
+                                                <label class="cursor-pointer label">
+                                                    <input
+                                                        type="checkbox"
+                                                        :checked="
+                                                            selectedEuphoria.some(
+                                                                (e) => e === euphoria.Id
+                                                            )
+                                                        "
+                                                        class="checkbox checkbox-info" />
+                                                </label>
+                                            </div>
                                         </div>
                                     </button>
                                 </div>
 
-                                <div
-                                    v-if="euphoriaOptions.length === 0"
-                                    class="m-auto text-white">
+                                <div v-if="euphoriaOptions.length === 0" class="m-auto text-white">
                                     {{ $t('euphoria-requirement') }}
                                 </div>
 
-                                <div
-                                    class="mt-2 flex justify-center items-center leading-none">
+                                <div class="mt-2 flex justify-center items-center leading-none">
                                     <SelectList
                                         :key="'current-' + updateKey"
                                         v-model="selectedCurrentMastery"
@@ -765,15 +708,13 @@ watch(
                                         v-on:update:selected="handleSelected"
                                         :class="{
                                             'opacity-50 pointer-events-none':
-                                                selectedGoalLevel < 30 ||
-                                                selectedGoalInsight < 3
+                                                selectedGoalLevel < 30 || selectedGoalInsight < 3
                                         }" />
                                     <i
                                         class="text-white fa-solid fa-angles-right text-center w-10"
                                         :class="{
                                             'opacity-50 pointer-events-none':
-                                                selectedGoalLevel < 30 ||
-                                                selectedGoalInsight < 3
+                                                selectedGoalLevel < 30 || selectedGoalInsight < 3
                                         }"></i>
                                     <SelectList
                                         :key="'goal-' + updateKey"
@@ -784,8 +725,7 @@ watch(
                                         v-on:update:selected="handleSelected"
                                         :class="{
                                             'opacity-50 pointer-events-none':
-                                                selectedGoalLevel < 30 ||
-                                                selectedGoalInsight < 3
+                                                selectedGoalLevel < 30 || selectedGoalInsight < 3
                                         }" />
                                 </div>
                             </div>
@@ -796,10 +736,7 @@ watch(
                 <!-- Level Up -->
                 <div class="tooltip" :data-tip="$t('level-up')">
                     <button
-                        :disabled="
-                            indexInArcanistsList < 0 ||
-                            materialRequirement.length === 0
-                        "
+                        :disabled="indexInArcanistsList < 0 || materialRequirement.length === 0"
                         onclick="level_up_container.showModal()"
                         class="gradient-blue btn btn-ghost btn-sm w-10 ml-0.5">
                         <i class="fa-solid fa-arrow-up-from-bracket"></i>

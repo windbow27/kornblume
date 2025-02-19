@@ -14,7 +14,7 @@ const props = defineProps({
 const updateKey = ref(0);
 const selectedCurrentResonance = ref(1);
 const selectedGoalResonance = ref(10);
-const selectedFrequency = ref<{ Id: number; Type: string; }[]>([]);
+const selectedFrequency = ref<{ Id: number; Type: string }[]>([]);
 
 const currentResonanceOptions = computed(() => {
     return props.arcanist.Rarity >= 5
@@ -24,14 +24,14 @@ const currentResonanceOptions = computed(() => {
 
 const frequencyOptions = computed(() => {
     const arcanistFrequency = props.arcanist.Frequency ?? [];
-    return arcanistFrequency.map((item: { Type: string; Id: number; }) => ({
+    return arcanistFrequency.map((item: { Type: string; Id: number }) => ({
         Type: item.Type,
         Id: item.Id
     }));
 });
 
-const toggleFrequency = (frequency: { Id: number; Type: string; }) => {
-    const index = selectedFrequency.value.findIndex(f => f.Id === frequency.Id);
+const toggleFrequency = (frequency: { Id: number; Type: string }) => {
+    const index = selectedFrequency.value.findIndex((f) => f.Id === frequency.Id);
     if (index !== -1) {
         // remove if selected
         selectedFrequency.value.splice(index, 1);
@@ -59,19 +59,21 @@ const editingArcanist = computed(() => ({
 const goalResonanceOptions = computed(() => {
     const currentResonance = Number(selectedCurrentResonance.value);
     const upperLimit = props.arcanist.Rarity >= 5 ? 15 : 10;
-    return Array.from({ length: upperLimit - currentResonance + 1 }, (_, index) => Number(currentResonance + index));
+    return Array.from({ length: upperLimit - currentResonance + 1 }, (_, index) =>
+        Number(currentResonance + index)
+    );
 });
 
 const handleSelected = (option: number, optionType: unknown) => {
     switch (optionType) {
-    case 'Current Resonance':
-        selectedCurrentResonance.value = option;
-        break;
-    case 'Goal Resonance':
-        selectedGoalResonance.value = option;
-        break;
-    default:
-        break;
+        case 'Current Resonance':
+            selectedCurrentResonance.value = option;
+            break;
+        case 'Goal Resonance':
+            selectedGoalResonance.value = option;
+            break;
+        default:
+            break;
     }
 };
 
@@ -84,7 +86,6 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
         selectedGoalResonance.value = goalResonanceOptions.value[0];
     }
 });
-
 </script>
 
 <template>
@@ -92,25 +93,42 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
         <div class="px-2">
             <h2 class="text-white text-2xl font-bold">Resonances</h2>
             <div class="mt-2 flex justify-center items-center leading-none">
-                <SelectList :key="updateKey" v-model="selectedCurrentResonance" :selected="selectedCurrentResonance"
-                    :label="'Current Resonance'" :options="currentResonanceOptions"
+                <SelectList
+                    :key="updateKey"
+                    v-model="selectedCurrentResonance"
+                    :selected="selectedCurrentResonance"
+                    :label="'Current Resonance'"
+                    :options="currentResonanceOptions"
                     v-on:update:selected="handleSelected" />
                 <i class="text-white fa-solid fa-angles-right text-center w-11"></i>
-                <SelectList :key="updateKey" v-model="selectedGoalResonance" :selected="selectedGoalResonance"
-                    :label="'Goal Resonance'" :options="goalResonanceOptions" v-on:update:selected="handleSelected" />
+                <SelectList
+                    :key="updateKey"
+                    v-model="selectedGoalResonance"
+                    :selected="selectedGoalResonance"
+                    :label="'Goal Resonance'"
+                    :options="goalResonanceOptions"
+                    v-on:update:selected="handleSelected" />
             </div>
         </div>
 
         <div class="flex justify-center p-4">
             <div class="flex flex-wrap gap-4 justify-center">
-                <button v-for="(frequency, index) in frequencyOptions" :key="index"
-                    @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })" class="rounded-lg">
-                    <div class="tooltip px-2 font-light" :data-tip="$t('frequency-modulation-' + frequency.Id)">
-                        <img class="h-16 pt-1.5" :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
+                <button
+                    v-for="(frequency, index) in frequencyOptions"
+                    :key="index"
+                    @click="toggleFrequency({ Id: frequency.Id, Type: frequency.Type || '' })"
+                    class="rounded-lg">
+                    <div
+                        class="tooltip px-2 font-light"
+                        :data-tip="$t('frequency-modulation-' + frequency.Id)">
+                        <img
+                            class="h-16 pt-1.5"
+                            :src="getArcanistFrequencyPath(frequency.Type || '', frequency.Id)"
                             :class="{
-                                'opacity-25': !selectedFrequency.some(f => f.Id === frequency.Id),
+                                'opacity-50': !selectedFrequency.some((f) => f.Id === frequency.Id),
                                 'hover:scale-110': true
-                            }" alt="Frequency Icon" />
+                            }"
+                            alt="Frequency Icon" />
                     </div>
                 </button>
             </div>
