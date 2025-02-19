@@ -1,6 +1,6 @@
-import GLPK, { LP as GLPKModel } from 'glpk.js'
-import { useDataStore } from '../stores/dataStore'
-import { useWarehouseStore } from '../stores/warehouseStore'
+import GLPK, { LP as GLPKModel } from 'glpk.js';
+import { useDataStore } from '../stores/dataStore';
+import { useWarehouseStore } from '../stores/warehouseStore';
 import { getDrops } from './planner';
 import { useActivityStore } from '../stores/activityStore';
 import { useWildernessStore } from '../stores/wildernessStore';
@@ -8,23 +8,26 @@ import { IMaterialUnit } from '@/types';
 import { useGlobalStore } from '../stores/global';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-let glpk = null as any
+let glpk = null as any;
 
 const getGLPKModel = (yalpsModel) => {
     const model = {
         ...yalpsModel,
         binaries: [],
-        constraints: Object.keys(yalpsModel.constraints).map(
-            constraintName => ([constraintName, yalpsModel.constraints[constraintName]])
-        ),
-        variables: Object.keys(yalpsModel.variables).map(
-            variableName => ([variableName, Object.keys(yalpsModel.variables[variableName]).map(
-                coefs => ([coefs, yalpsModel.variables[variableName][coefs]])
-            )]
-            ))
-    }
+        constraints: Object.keys(yalpsModel.constraints).map((constraintName) => [
+            constraintName,
+            yalpsModel.constraints[constraintName]
+        ]),
+        variables: Object.keys(yalpsModel.variables).map((variableName) => [
+            variableName,
+            Object.keys(yalpsModel.variables[variableName]).map((coefs) => [
+                coefs,
+                yalpsModel.variables[variableName][coefs]
+            ])
+        ])
+    };
 
-    const constraints = new Map<string, GLPKModel['subjectTo'][0]>()
+    const constraints = new Map<string, GLPKModel['subjectTo'][0]>();
     for (const [name, { equal, min, max }] of model.constraints) {
         // prettier-ignore
         const bnds =
@@ -38,14 +41,14 @@ const getGLPKModel = (yalpsModel) => {
                         ? { type: glpk.GLP_UP, ub: max, lb: 0.0 }
                         : { type: glpk.GLP_FR, ub: 0.0, lb: 0.0 }
 
-        constraints.set(name, { name, vars: [], bnds })
+        constraints.set(name, { name, vars: [], bnds });
     }
 
-    const objective: GLPKModel['objective']['vars'] = []
+    const objective: GLPKModel['objective']['vars'] = [];
     for (const [name, variable] of model.variables) {
         for (const [key, coef] of variable) {
-            if (model.objective === key) objective.push({ name, coef })
-            constraints.get(key)?.vars.push({ name, coef })
+            if (model.objective === key) objective.push({ name, coef });
+            constraints.get(key)?.vars.push({ name, coef });
         }
     }
 
@@ -59,28 +62,28 @@ const getGLPKModel = (yalpsModel) => {
         subjectTo: Array.from(constraints.values()),
         binaries: Array.from(model.binaries),
         generals: Array.from(model.integers)
-    }
-}
+    };
+};
 
 const formulas = useDataStore().formulas;
 
 interface ICard {
-    stage: string,
-    runs: number,
-    activity: number,
-    days: number,
-    materials: IMaterialUnit[],
-    activityImagePath: string,
+    stage: string;
+    runs: number;
+    activity: number;
+    days: number;
+    materials: IMaterialUnit[];
+    activityImagePath: string;
 }
 
-function getDaysFromActivity (activity): number {
+function getDaysFromActivity(activity): number {
     const dailyActivity = useActivityStore().settings.activity;
     return Number((activity / dailyActivity).toFixed(1));
 }
 
-export async function getSolve (materials) {
+export async function getSolve(materials) {
     if (!glpk) {
-        glpk = await GLPK()
+        glpk = await GLPK();
     }
 
     const drops = getDrops();
@@ -92,6 +95,9 @@ export async function getSolve (materials) {
 
     // the LP currently doesn't account for the oneiric shop
     // since it's not really related to activity or farming routes
+
+    // i dont want to add new variable so i added reverie materials here too
+    // it shouldnt matter
     const resonanceMaterial = [
         'Sinuous Howl',
         'Interlaced Shudder',
@@ -100,10 +106,15 @@ export async function getSolve (materials) {
         'Sonorous Knell',
         'Brief Cacophony',
         'Moment of Dissonance',
-        'Crystal Casket'
+        'Crystal Casket',
+
+        'Key of Reverie',
+        'Sprout of Reverie',
+        'Seed of Insight'
     ];
     materials.forEach(({ Material: matlName, Quantity: quantity }) => {
-        if (!resonanceMaterial.includes(matlName)) { // filters out the materials from the oneiric shop
+        if (!resonanceMaterial.includes(matlName)) {
+            // filters out the materials from the oneiric shop
             neededConstraints[matlName] = { min: quantity };
         }
     });
@@ -142,7 +153,9 @@ export async function getSolve (materials) {
         dropMapping[stage] = { cost };
         for (const matlName in dropCount) {
             // migrating data between kdoc and shiroi
-            dropMapping[stage][matlName] = times ? (dropCount[matlName] / times) : dropCount[matlName];
+            dropMapping[stage][matlName] = times
+                ? dropCount[matlName] / times
+                : dropCount[matlName];
         }
     }
 
@@ -153,23 +166,20 @@ export async function getSolve (materials) {
 
     // consider warehouse
     warehouse.forEach((matlInfo) => {
-        const {
-            Material: matlName,
-            Quantity: quantity
-        } = matlInfo;
+        const { Material: matlName, Quantity: quantity } = matlInfo;
         const matlQuant = quantity;
         if (matlQuant > 0) {
             if (constraints[matlName]) {
                 constraints[matlName] = {
                     min: constraints[matlName].min - matlQuant
-                }
+                };
             } else {
                 constraints[matlName] = {
                     min: -matlQuant
-                }
+                };
             }
         }
-    })
+    });
 
     // define LP solver
     const variables = Object.assign({}, craftMapping, dropMapping);
@@ -182,69 +192,88 @@ export async function getSolve (materials) {
         integers
     };
 
-    const glpkModel = getGLPKModel(model)
+    const glpkModel = getGLPKModel(model);
     const glpkSolver = await glpk.solve(glpkModel as GLPKModel);
 
-    if (glpkSolver.result.status !== 5) { // fulfill
-        console.log(`%cStatus: ${glpkSolver.result.status}`, 'background-color: yellow; color: black;');
-        console.log('constraints: ', constraints)
-        console.log('variables: ', variables)
+    if (glpkSolver.result.status !== 5) {
+        // fulfill
+        console.log(
+            `%cStatus: ${glpkSolver.result.status}`,
+            'background-color: yellow; color: black;'
+        );
+        console.log('constraints: ', constraints);
+        console.log('variables: ', variables);
     }
     const glpkResult = {
         status: glpkSolver.result.status,
-        variables: Object.keys(glpkSolver.result.vars).map(variableName => ([variableName, glpkSolver.result.vars[variableName]])).filter(variable => variable[1] !== 0)
-    }
+        variables: Object.keys(glpkSolver.result.vars)
+            .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
+            .filter((variable) => variable[1] !== 0)
+    };
 
-    return glpkResult
+    return glpkResult;
 }
 
-export async function processSharpoAndDust (generatedCards: ICard[]) {
-    let sharpoForCrafting = 0
-    const craftingCard = generatedCards.find((card) => card.stage === 'Wilderness Wishing Spring')
+export async function processSharpoAndDust(generatedCards: ICard[]) {
+    let sharpoForCrafting = 0;
+    const craftingCard = generatedCards.find((card) => card.stage === 'Wilderness Wishing Spring');
     if (craftingCard) {
         craftingCard.materials.forEach(({ Material: matlName, Quantity: matlQuant }) => {
             const formula = formulas.find((matl) => matl.Name === matlName);
             if (formula?.Quantity.length) {
-                sharpoForCrafting += formula?.Quantity[formula?.Quantity.length - 1] * matlQuant
+                sharpoForCrafting += formula?.Quantity[formula?.Quantity.length - 1] * matlQuant;
             }
-        })
+        });
     }
-    const sharpoForGoal = useGlobalStore().getNeededMaterialsQuantity('Sharpodonty') + sharpoForCrafting
-    const dustForGoal = useGlobalStore().getNeededMaterialsQuantity('Dust')
+    const sharpoForGoal =
+        useGlobalStore().getNeededMaterialsQuantity('Sharpodonty') + sharpoForCrafting;
+    const dustForGoal = useGlobalStore().getNeededMaterialsQuantity('Dust');
 
-    let activityForOthers = 0
-    const otherStageCards = generatedCards.filter((card) => card.stage !== 'The Poussiere VI' && card.stage !== 'Mintage Aesthetics VI')
+    let activityForOthers = 0;
+    const otherStageCards = generatedCards.filter(
+        (card) => card.stage !== 'The Poussiere VI' && card.stage !== 'Mintage Aesthetics VI'
+    );
     otherStageCards.forEach((card) => {
         if (card.stage !== 'Oneiric Shop') {
-            activityForOthers += card.activity
+            activityForOthers += card.activity;
         }
-    })
+    });
     const dailyActivity = useActivityStore().settings.activity;
     const daysForOthers = getDaysFromActivity(activityForOthers);
 
-    const warehouseSharpo = useWarehouseStore().data.find((matl) => matl.Material === 'Sharpodonty')?.Quantity || 0
-    const warehouseDust = useWarehouseStore().data.find((matl) => matl.Material === 'Dust')?.Quantity || 0
+    const warehouseSharpo =
+        useWarehouseStore().data.find((matl) => matl.Material === 'Sharpodonty')?.Quantity || 0;
+    const warehouseDust =
+        useWarehouseStore().data.find((matl) => matl.Material === 'Dust')?.Quantity || 0;
 
     const wildernessDailyProduct = useWildernessStore().settings.wildernessOutput;
-    const remainingSharpo = Math.max(sharpoForGoal - wildernessDailyProduct.gold * daysForOthers - warehouseSharpo, 0);
-    const remainingDust = Math.max(dustForGoal - wildernessDailyProduct.dust * daysForOthers - warehouseDust, 0);
+    const remainingSharpo = Math.max(
+        sharpoForGoal - wildernessDailyProduct.gold * daysForOthers - warehouseSharpo,
+        0
+    );
+    const remainingDust = Math.max(
+        dustForGoal - wildernessDailyProduct.dust * daysForOthers - warehouseDust,
+        0
+    );
 
     const variables = {
         'The Poussiere VI': {
-            Dust: 12500 + Number((wildernessDailyProduct.dust * 25 / dailyActivity).toFixed(1)),
-            Sharpodonty: 250 + Number((wildernessDailyProduct.gold * 25 / dailyActivity).toFixed(1)),
+            Dust: 12500 + Number(((wildernessDailyProduct.dust * 25) / dailyActivity).toFixed(1)),
+            Sharpodonty:
+                250 + Number(((wildernessDailyProduct.gold * 25) / dailyActivity).toFixed(1)),
             Cost: 25
         },
         'Mintage Aesthetics VI': {
-            Dust: 0 + Number((wildernessDailyProduct.dust * 25 / dailyActivity).toFixed(1)),
-            Sharpodonty: 9000 + Number((wildernessDailyProduct.gold * 25 / dailyActivity).toFixed(1)),
+            Dust: 0 + Number(((wildernessDailyProduct.dust * 25) / dailyActivity).toFixed(1)),
+            Sharpodonty:
+                9000 + Number(((wildernessDailyProduct.gold * 25) / dailyActivity).toFixed(1)),
             Cost: 25
         }
-    }
+    };
     const constraints = {
         Sharpodonty: { min: remainingSharpo },
         Dust: { min: remainingDust }
-    }
+    };
 
     const model = {
         objective: 'Cost',
@@ -254,22 +283,24 @@ export async function processSharpoAndDust (generatedCards: ICard[]) {
         integers: Object.keys(variables)
     };
 
-    const glpkModel = getGLPKModel(model)
+    const glpkModel = getGLPKModel(model);
     const glpkSolver = await glpk.solve(glpkModel as GLPKModel);
     const glpkResult = {
         status: glpkSolver.result.status,
-        variables: Object.keys(glpkSolver.result.vars).map(variableName => ([variableName, glpkSolver.result.vars[variableName]])).filter(variable => variable[1] !== 0)
-    }
+        variables: Object.keys(glpkSolver.result.vars)
+            .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
+            .filter((variable) => variable[1] !== 0)
+    };
 
-    let sharpoRuns = 0
-    let dustRuns = 0
+    let sharpoRuns = 0;
+    let dustRuns = 0;
     glpkResult.variables.forEach(([stage, run]) => {
         if (stage === 'Mintage Aesthetics VI') {
-            sharpoRuns = Number(run)
+            sharpoRuns = Number(run);
         } else {
-            dustRuns = Number(run)
+            dustRuns = Number(run);
         }
-    })
+    });
 
     const sharpoCard = {
         stage: 'Mintage Aesthetics VI',
@@ -277,11 +308,13 @@ export async function processSharpoAndDust (generatedCards: ICard[]) {
         runs: sharpoRuns,
         activity: 25 * sharpoRuns,
         days: getDaysFromActivity(25 * sharpoRuns),
-        materials: [{
-            Material: 'Sharpodonty',
-            Quantity: 9000 * sharpoRuns
-        }]
-    }
+        materials: [
+            {
+                Material: 'Sharpodonty',
+                Quantity: 9000 * sharpoRuns
+            }
+        ]
+    };
     const dustCard = {
         stage: 'The Poussiere VI',
         activityImagePath: 'images/items/common/0.webp',
@@ -298,15 +331,15 @@ export async function processSharpoAndDust (generatedCards: ICard[]) {
                 Quantity: 250 * dustRuns
             }
         ]
-    }
+    };
 
-    const newGeneratedCards = [...otherStageCards]
+    const newGeneratedCards = [...otherStageCards];
     if (dustRuns > 0) {
-        newGeneratedCards.push(dustCard as ICard)
+        newGeneratedCards.push(dustCard as ICard);
     }
     if (sharpoRuns > 0) {
-        newGeneratedCards.push(sharpoCard as ICard)
+        newGeneratedCards.push(sharpoCard as ICard);
     }
 
-    return newGeneratedCards
+    return newGeneratedCards;
 }

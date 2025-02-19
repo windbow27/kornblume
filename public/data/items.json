@@ -1,772 +1,772 @@
 [
-  {
-    "Id": 71,
-    "Name": "Rhine Gold",
-    "Rarity": 6,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Description": "",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 61,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Serpent Scepter",
-    "Rarity": 6,
-    "Description": "Mediating peace between those in dispute and hostility.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 3,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Golden Fleece",
-    "Rarity": 6,
-    "Description": "It is a reward for the adventurous and the bravest souls.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 2,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Mistilteinn",
-    "Rarity": 6,
-    "Description": "It is the edge for the weak, the silent, and the belittled.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 1,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Fruit of Good and Evil",
-    "Rarity": 6,
-    "Description": "It is the rebel vanguard for the disobedient and those who seek knowledge.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 36,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Page of Beastly Thirst",
-    "Rarity": 3,
-    "Description": "They wept and they cried. They lived and they died.",
-    "Source": "Insight - Brutes Wilds",
-    "Usage": "The ritual of Beast Insight I."
-  },
-  {
-    "Id": 37,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Scroll of Beastly Thirst",
-    "Rarity": 4,
-    "Description": "They walked in the barrens, resting in the day and rising in the night.",
-    "Source": "Insight - Brutes Wilds",
-    "Usage": "The ritual of Beast Insight II."
-  },
-  {
-    "Id": 38,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Tome of Beastly Thirst",
-    "Rarity": 5,
-    "Description": "Their every breath feels like that of their mother's mother and their father's father. They see what the mortals see.",
-    "Source": "Insight - Brutes Wilds",
-    "Usage": "The ritual of Beast Insight III."
-  },
-  {
-    "Id": 33,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Page of Plantal Vimen",
-    "Rarity": 3,
-    "Description": "To reach the skies, its roots grow deep into the earth to extract nourishments from decomposed life.",
-    "Source": "Insight - Sylvanus Shape",
-    "Usage": "The ritual of Plant Insight I."
-  },
-  {
-    "Id": 34,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Scroll of Plantal Vimen",
-    "Rarity": 4,
-    "Description": "It shall keep growing till it smothers the entire sky, till it chokes everysingle space, till the deep green tIde blankets everything in sight.",
-    "Source": "Insight - Sylvanus Shape",
-    "Usage": "The ritual of Plant Insight II."
-  },
-  {
-    "Id": 35,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Tome of Plantal Vimen",
-    "Rarity": 5,
-    "Description": "It is the source of every twig in the deep woods, every strand of moss and floating weed and the mother of every tree. All of them know you.",
-    "Source": "Insight - Sylvanus Shape",
-    "Usage": "The ritual of Plant Insight III."
-  },
-  {
-    "Id": 30,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Page of Starlit Ascent",
-    "Rarity": 3,
-    "Description": "Neither the moon nor the sun could rob it of its colors.",
-    "Source": "Insight - Starfall Locale",
-    "Usage": "The ritual of Star Insight I."
-  },
-  {
-    "Id": 31,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Scroll of Starlit Ascent",
-    "Rarity": 4,
-    "Description": "It breeds infants and helps them sleep in peace. It is a friend of lengthy nights and fantasies.",
-    "Source": "Insight - Starfall Locale",
-    "Usage": "The ritual of Star Insight II."
-  },
-  {
-    "Id": 32,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Tome of Starlit Ascent",
-    "Rarity": 5,
-    "Description": "An omen, a filthy secret, or an act of absolute vileness. You can also treat it as a handful of broken glass on black satin.",
-    "Source": "Insight - Starfall Locale",
-    "Usage": "The ritual of Star Insight III."
-  },
-  {
-    "Id": 27,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Page of Mineral Wealth",
-    "Rarity": 3,
-    "Description": "They are buried deep under the mountain rocks where a gem is indistinguishable from bits of coal.",
-    "Source": "Insight - Mountain Echoes",
-    "Usage": "The ritual of Mineral Insight I."
-  },
-  {
-    "Id": 28,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Scroll of Mineral Wealth",
-    "Rarity": 4,
-    "Description": "The rock spits on those with a weak mind. It is the code between instant and eternity.",
-    "Source": "Insight - Mountain Echoes",
-    "Usage": "The ritual of Mineral Insight II."
-  },
-  {
-    "Id": 29,
-    "Category": "Insight Material",
-    "IsReleased": true,
-    "Name": "Tome of Mineral Wealth",
-    "Rarity": 5,
-    "Description": "It is a steadfast guardian and an indestructible friend. Even the nobles would bow before this sonorous herald.",
-    "Source": "Insight - Mountain Echoes",
-    "Usage": "The ritual of Mineral Insight III."
-  },
-  {
-    "Id": 64,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Golden Compass",
-    "Rarity": 5,
-    "Description": "It will remove the wrong paths for you.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 5,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Platinum Ouija",
-    "Rarity": 5,
-    "Description": "It shall purge things that lead you astray.",
-    "Source": "Craft in the Wilderness, Pawnshop",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 72,
-    "Name": "Golden Bell Essence Bottle",
-    "Rarity": 5,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Description": "Made with a spirit, to be planted in a body.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 63,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Watch Core",
-    "Rarity": 5,
-    "Description": "Through polishing, inlaying, and fine carving, one can obtain a lively \"heart\".",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 62,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Glowing Mothwing",
-    "Rarity": 5,
-    "Description": "Please do not stimulate the light source at its tail. Handle gently to avoid burning.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 4,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Murmur of Insanity",
-    "Rarity": 5,
-    "Description": "You will get to read the most hidden, forbidden and forgotten spells in history among the mad words of this book. He is the best tutor for all the ambitious villains. Just remember one thing: ask only, and never answer.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 9,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Silver Bullet",
-    "Rarity": 5,
-    "Description": "It takes effort to make one, but it's definitely worth it. No matter your target is a vampire or a werewolf, it will come in handy.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 6,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Wyrmling Skeleton",
-    "Rarity": 5,
-    "Description": "Dragons, the true cryptid. Aliving dragon commands majestic power, while a dead one is still a trove of riches.",
-    "Source": "Craft in the Wilderness Pawnshop",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 8,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Incorrupt Monkeypaw",
-    "Rarity": 5,
-    "Description": "A dried arm of a primate. Don't wish for anything from it, and that includes silent wishes as well.",
-    "Source": "Craft in the Wilderness, Pawnshop",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 7,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Bogeyman",
-    "Rarity": 5,
-    "Description": "Your children are right about the Bogeyman. As a parent, you better keep an eye out for these wicked kidnappers. But they can be lucrative. Catch one and it might help pay the bills because we're buying them! Call 098-1937**21 for details.",
-    "Source": "Craft in the Wilderness, Pawnshop",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 67,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Golden Beetle",
-    "Rarity": 4,
-    "Description": "They discern directions through the moisture of the soil and the change of light, looking forward to their moment of maturation.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 13,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Clawed Pendulum",
-    "Rarity": 4,
-    "Description": "It shall lead your way.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 73,
-    "Name": "Golden Herb Incense",
-    "Rarity": 4,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Description": "Crafted with indiscernible materials and blended from a secret formula, this incense is often used to nourish the heart.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 66,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Goose Neck",
-    "Rarity": 4,
-    "Description": "It bends its neck to take up the balance spring of the clock, take up precision, take up time itself.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 65,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Winged Key",
-    "Rarity": 4,
-    "Description": "Find an open space, hold the key handle firmly, and mentally recite your destination. It will lead you to the keyhole, in the form of a bird.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 12,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Prophetic Bird",
-    "Rarity": 4,
-    "Description": "An arcanist's best friend! Let this little birdie remember your spells for you. With over 5241 practical spells in its memory bank, this is the goto choice for busy arcanists!",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 15,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Holy Silver",
-    "Rarity": 4,
-    "Description": "Everybody loves a pretty bullion of silver. Being washed in holy abundance not only gave them a beauteous sheen, but also powerful arcane energy and exorcist properties.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 10,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Bifurcated Skeleton",
-    "Rarity": 4,
-    "Description": "What did the humans say again? Oh, what a poor, deformed little thing! But guess what the arcanists say. Oh my, look at these sublime features only evident in the noblest of all blood lines!",
-    "Source": "Craft in the Wilderness, Pawnshop",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 11,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Salted Mandrake",
-    "Rarity": 4,
-    "Description": "Amandrake that does not scream? That must be the greatest thing in the history of Arcanum! Robert the Magnesia made a fortune with this and now lives in his very own manor.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 14,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Biting Box",
-    "Rarity": 4,
-    "Description": "You won't be able to tell where it comes from, whom it belongs to or why it looks so strange. More importantly, you will never know what you have released.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 16,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Solidus",
-    "Rarity": 3,
-    "Description": "Embark on a journey, or wait plainly.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 74,
-    "Name": "Alopecurus Pratensis",
-    "Rarity": 3,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Description": "A herb witches are particularly fond of.",
-    "Source": "Craft in the Wilderness",
-    "Usage": "Insight or Resonate rituals of characters."
-  },
-  {
-    "Id": 69,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Perpetual Cog",
-    "Rarity": 3,
-    "Description": "All the secrets of time are hidden in the ceaseless turning of the gears.",
-    "Source": "",
-    "Usage": ""
-  },
-  {
-    "Id": 68,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Cicada Wings",
-    "Rarity": 3,
-    "Description": "Please store the wings away from the body, preferably in a cool place. Occasional trembling is normal; just wait for it to dry completely.",
-    "Source": "",
-    "Usage": ""
-  },
-  {
-    "Id": 21,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Spell of Fortune",
-    "Rarity": 3,
-    "Description": "Nobody would have thought that this item is the secret to good luck. The story of its origin begins with Marianna who worked at a family diner...",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 20,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Rough Silver Ingot",
-    "Rarity": 3,
-    "Description": "A tad unrefined but still serviceable. Use it to cast arcane skills or buy a jar of jelly beans or cookies. The choice is yours.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 19,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Esoteric Bones",
-    "Rarity": 3,
-    "Description": "Though not as superior as a full skeleton, the femur, ribs, and pieces of the skull are the optimal solution you can afford.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 17,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Milled Magnesia",
-    "Rarity": 3,
-    "Description": "Usable in exorcism and purification rites. It may not be important, but we can't do without it.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 18,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Liquefied Terror",
-    "Rarity": 3,
-    "Description": "You trembled in your dreams and suddenly woke up with a scream. They were running across your skin. Made with cracked teeth, the liquefaction has improved its stability and shelf life. Tasting it is not recommended as it brings more than just nightmares.",
-    "Source": "Craft in the Wilderness, Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 22,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Spell of Banishing",
-    "Rarity": 2,
-    "Description": "It can take care of both thorough and daily cleaning. All it takes is a bit of money and your hands will be freed forever. What's more cheering than that?",
-    "Source": "Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 23,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Silver Ore",
-    "Rarity": 2,
-    "Description": "Precious metal can be extracted from these ores. It is also a casting medium for some basic arcane skills.",
-    "Source": "Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 24,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Shattered Bones",
-    "Rarity": 2,
-    "Description": "Careful, this may be sharp. Of course, only fools will hurt themselves with this …. WHOA! Watch out!",
-    "Source": "Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 25,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Magnesia Crystal",
-    "Rarity": 2,
-    "Description": "It's not quite useful in high-level rituals. The seller promised that the part that looks like a human face was but a coincidence created by nature.",
-    "Source": "Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 26,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Trembling Tooth",
-    "Rarity": 2,
-    "Description": "Always take good care of it and use it immediately after it is opened. Don't be surprised by these little ones' speed when they flee: they were freaked out before running away from the gum.",
-    "Source": "Pawnshop, Story",
-    "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
-  },
-  {
-    "Id": 39,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Moment of Dissonance",
-    "Rarity": 3,
-    "Description": "In your drenched dreams, in the shadowed paths you strolled alone, at the moment sudden restlessness shivers up your spine, you find it there.",
-    "Source": "Fragment Shop: Oneiric",
-    "Usage": "A material for leveling up Character Resonate."
-  },
-  {
-    "Id": 40,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Brief Cacophony",
-    "Rarity": 4,
-    "Description": "Over the bonfire that burns moths into charred ash, in the ephemeral silence among the cheers of the crowd, through the brief cacophony that stores within the embrace, you find it there.",
-    "Source": "Craft in the Wilderness Pawnshop Fragment Shop: Oneiric",
-    "Usage": "A material for leveling up Character Resonate."
-  },
-  {
-    "Id": 41,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Sonorous Knell",
-    "Rarity": 5,
-    "Description": "On the stalker that has been tailing you, on the strange face that greets you on the other side of the mirror, in the sonorous knell that sends deafening reverberations, you find it there.",
-    "Source": "Craft in the Wilderness Pawnshop Fragment Shop: Oneiric",
-    "Usage": "A material for leveling up Character Resonate."
-  },
-  {
-    "Id": 42,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Sinuous Howl",
-    "Rarity": 6,
-    "Description": "When the dappled shade of the tree falls on the ground, when the dried branch cracks under your feet, when the birds are scared away by the sinuous howl, you find it there.",
-    "Source": "Pawnshop, Fragment Shop: Oneiric",
-    "Usage": "A material for leveling up Character Resonate."
-  },
-  {
-    "Id": 43,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Interlaced Shudder",
-    "Rarity": 6,
-    "Description": "When the suspension bridge is crumbling between the cliffs, when the man with tingling ears is walking on a wire, when the interlaced shudders cannot be stopped, you find it there.",
-    "Source": "Pawnshop, Fragment Shop: Oneiric",
-    "Usage": "A material for leveling up Character Resonate."
-  },
-  {
-    "Id": 44,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Hypocritical Murmur",
-    "Rarity": 6,
-    "Description": "When the traveler stands at a deserted fork, when the hurricane takes the sand away, when the hypocritical murmur is haunting the skull, you find it there.",
-    "Source": "Pawnshop, Fragment Shop: Oneiric",
-    "Usage": "A material for leveling up Character Resonate."
-  },
-  {
-    "Id": 45,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Hoarse Echo",
-    "Rarity": 6,
-    "Description": "When tears are shed and eyes are closed at midnight, when a sigh cannot be ignored in one's solitude, when the hoarse echo sinks into the deep sea, you find it there.",
-    "Source": "Pawnshop, Fragment Shop: Oneiric",
-    "Usage": "A material for leveling up Character Resonate."
-  },
-  {
-    "Id": 46,
-    "Category": "Ascension Material",
-    "IsReleased": true,
-    "Name": "LF Polarization",
-    "Rarity": 3,
-    "Description": "Polarization whose extremely low amplitude makes it unobservable. It is mainly generated by stable mental images. It reaches the peak in 1-3 hours after the image is formed, and starts to vanish in 12-15 days.",
-    "Source": "Pawnshop, Fragment Shop: Oneiric",
-    "Usage": "A low-lever material used for ascending Psychube's level limit."
-  },
-  {
-    "Id": 47,
-    "Category": "Ascension Material",
-    "IsReleased": true,
-    "Name": "MF Polarization",
-    "Rarity": 4,
-    "Description": "This polarization of low amplitude can be seen continually when observed. It is mainly generated by long-lasting, mild mental images, such as sorrow and nostalgia.",
-    "Source": "Craft in the Wilderness Pawnshop",
-    "Usage": "A mId-lever material used for ascending Psychube's level limit."
-  },
-  {
-    "Id": 48,
-    "Category": "Ascension Material",
-    "IsReleased": true,
-    "Name": "HF Polarization",
-    "Rarity": 5,
-    "Description": "This polarization has high amplitude and is easy to observe, but it is less often seen compared to MF Polarization. It is mainly generated by strong and temporary mental images, such as anger, impulse and greed.",
-    "Source": "Craft in the Wilderness Pawnshop",
-    "Usage": "A high-lever material used for ascending Psychube's level limit."
-  },
-  {
-    "Id": 49,
-    "Category": "Ascension Material",
-    "IsReleased": true,
-    "Name": "EHF Polarization",
-    "Rarity": 6,
-    "Description": "Rare polarization of extremely high amplitude. It is mainly generated by extremely unstable mental images. Whoever sees it must centrifuge it immediately and inform the head of the department as soon as possible.",
-    "Source": "Craft in tha TATildarnace Pawnshop",
-    "Usage": "The highest-lever material used for ascending Psychube's level limit."
-  },
-  {
-    "Id": 50,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Crystal Drop",
-    "Rarity": 6,
-    "Description": "The Storm arrived and the rain drops rose into the skies as though returning to their mother's embrace and the blistering hot cauldron from which they came. But accidents might just happen. If they fail to reach the other side before the Storm ends, they will fall back to the earth.",
-    "Source": "",
-    "Usage": "Summoning and item purchases."
-  },
-  {
-    "Id": 51,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Clear Drop",
-    "Rarity": 6,
-    "Description": "The quiet twin, the most reliable of the siblings, and the one always giving help to those in need. It is armed with every virtue. It is the last raindrop to rise, and the first to return to the earth.",
-    "Source": "",
-    "Usage": "Summoning or restoring Cellular Activity."
-  },
-  {
-    "Id": 52,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Unilog",
-    "Rarity": 6,
-    "Description": "The golden rabbit is a well known myth. It spies on people, steals their time, and sometimes even changes their fates. Though it's old, decrepit, and stale, it is unique and indispensable.",
-    "Source": "Pawnshop",
-    "Usage": "Character summoning."
-  },
-  {
-    "Id": 53,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Decalog",
-    "Rarity": 6,
-    "Description": "The storyteller never thought that golden rabbits could travel in packs. Nobody knows what this might entails, but no one chooses one single rabbit over more of it.",
-    "Source": "",
-    "Usage": "Character summoning."
-  },
-  {
-    "Id": 55,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Dust",
-    "Rarity": 3,
-    "Description": "The glorious supreme law is nowhere to be found, but its power is great and beyond prediction. As it wanders, its dropping Dust also contains the energy for power increasing. It is, in a sense, part of the ultimate answer.",
-    "Source": "Resource - The Poussiere Pawnshop",
-    "Usage": "Leveling up characters."
-  },
-  {
-    "Id": 54,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Sharpodonty",
-    "Rarity": 3,
-    "Description": "A currency from the ancient, unrecorded era. It has 13 edges and a maw of razor sharp teeth which only opens to those with arcanist blood.",
-    "Source": "Resource - Mintage Aesthetics Pawnshop",
-    "Usage": "Everyone needs some of this."
-  },
-  {
-    "Id": 56,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Track of the Lost",
-    "Rarity": 4,
-    "Description": "Some people call it a tape, while more arcanists choose the name \"Track of the Lost.\" It may have recorded a sad piece of rock music, an embarrassing monologue, a piece of white noise, or endless silence.",
-    "Source": "Summon Task - Weekly Activeness",
-    "Usage": "Can be exchanged for items at the [Bass Counter] in the Bank."
-  },
-  {
-    "Id": 57,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Album of the Lost",
-    "Rarity": 5,
-    "Description": "The loudest and best Track of the Lost. This means more rock and roll and more soliloquies with barely changing moments of silence and white noise. Passionate fans will deliver the Track to its destination, but you must understand that they're not doing this pro bono.",
-    "Source": "Summon",
-    "Usage": "Can be exchanged for items at the [Treble Counter] in the Bank."
-  },
-  {
-    "Id": 58,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Thought Element",
-    "Rarity": 4,
-    "Description": "There are so many ways to organize the mess: the furnace that burns, the blade that cuts ….. but I wish to keep it the way it is.",
-    "Source": "Resource - Pneuma Analysis",
-    "Usage": "Can be exchanged for items at the [Psychube Shop] in the Bank."
-  },
-  {
-    "Id": 59,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Thoughts in Entirety",
-    "Rarity": 5,
-    "Description": "As the disorganized has been organized, the darkened vision lightens, ideas are finally taking shape in my mind.",
-    "Source": "Resource - Pneuma Analysis",
-    "Usage": "Can be exchanged for items at the [Psychube Shop] in the Bank."
-  },
-  {
-    "Id": 60,
-    "Category": "Base Item",
-    "IsReleased": true,
-    "Name": "Oneiric FluId",
-    "Rarity": 4,
-    "Description": "Snowflakes crushed by the wheels, pasture grass rustling in the wind, waves shattered against distant cliffs. Such sounds are insignificant but are recorded nonetheless. Again and again, till the very end.",
-    "Source": "Artificial Somnambulism",
-    "Usage": "Can be exchanged for items in the [Oneiric Shop] in the Bank."
-  },
-  {
-    "Id": 70,
-    "Category": "Resonate Material",
-    "IsReleased": true,
-    "Name": "Crystal Casket",
-    "Rarity": 6,
-    "Description": "The whispers inside are overflowing. Seize the opportunity when you get to hear them.",
-    "Source": "",
-    "Usage": ""
-  },
-  {
-    "Id": 75,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Key of Reverie",
-    "Rarity": 6,
-    "Description": "",
-    "Source": "",
-    "Usage": ""
-  },
-  {
-    "Id": 76,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Sprout of Reverie",
-    "Rarity": 5,
-    "Description": "",
-    "Source": "",
-    "Usage": ""
-  },
-  {
-    "Id": 77,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Seed of Insight", 
-    "Rarity": 4,
-    "Description": "",
-    "Source": "",
-    "Usage": ""
-  }
+    {
+        "Id": 71,
+        "Name": "Rhine Gold",
+        "Rarity": 6,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Description": "",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 61,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Serpent Scepter",
+        "Rarity": 6,
+        "Description": "Mediating peace between those in dispute and hostility.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 3,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Golden Fleece",
+        "Rarity": 6,
+        "Description": "It is a reward for the adventurous and the bravest souls.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 2,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Mistilteinn",
+        "Rarity": 6,
+        "Description": "It is the edge for the weak, the silent, and the belittled.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 1,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Fruit of Good and Evil",
+        "Rarity": 6,
+        "Description": "It is the rebel vanguard for the disobedient and those who seek knowledge.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 36,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Page of Beastly Thirst",
+        "Rarity": 3,
+        "Description": "They wept and they cried. They lived and they died.",
+        "Source": "Insight - Brutes Wilds",
+        "Usage": "The ritual of Beast Insight I."
+    },
+    {
+        "Id": 37,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Scroll of Beastly Thirst",
+        "Rarity": 4,
+        "Description": "They walked in the barrens, resting in the day and rising in the night.",
+        "Source": "Insight - Brutes Wilds",
+        "Usage": "The ritual of Beast Insight II."
+    },
+    {
+        "Id": 38,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Tome of Beastly Thirst",
+        "Rarity": 5,
+        "Description": "Their every breath feels like that of their mother's mother and their father's father. They see what the mortals see.",
+        "Source": "Insight - Brutes Wilds",
+        "Usage": "The ritual of Beast Insight III."
+    },
+    {
+        "Id": 33,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Page of Plantal Vimen",
+        "Rarity": 3,
+        "Description": "To reach the skies, its roots grow deep into the earth to extract nourishments from decomposed life.",
+        "Source": "Insight - Sylvanus Shape",
+        "Usage": "The ritual of Plant Insight I."
+    },
+    {
+        "Id": 34,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Scroll of Plantal Vimen",
+        "Rarity": 4,
+        "Description": "It shall keep growing till it smothers the entire sky, till it chokes everysingle space, till the deep green tIde blankets everything in sight.",
+        "Source": "Insight - Sylvanus Shape",
+        "Usage": "The ritual of Plant Insight II."
+    },
+    {
+        "Id": 35,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Tome of Plantal Vimen",
+        "Rarity": 5,
+        "Description": "It is the source of every twig in the deep woods, every strand of moss and floating weed and the mother of every tree. All of them know you.",
+        "Source": "Insight - Sylvanus Shape",
+        "Usage": "The ritual of Plant Insight III."
+    },
+    {
+        "Id": 30,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Page of Starlit Ascent",
+        "Rarity": 3,
+        "Description": "Neither the moon nor the sun could rob it of its colors.",
+        "Source": "Insight - Starfall Locale",
+        "Usage": "The ritual of Star Insight I."
+    },
+    {
+        "Id": 31,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Scroll of Starlit Ascent",
+        "Rarity": 4,
+        "Description": "It breeds infants and helps them sleep in peace. It is a friend of lengthy nights and fantasies.",
+        "Source": "Insight - Starfall Locale",
+        "Usage": "The ritual of Star Insight II."
+    },
+    {
+        "Id": 32,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Tome of Starlit Ascent",
+        "Rarity": 5,
+        "Description": "An omen, a filthy secret, or an act of absolute vileness. You can also treat it as a handful of broken glass on black satin.",
+        "Source": "Insight - Starfall Locale",
+        "Usage": "The ritual of Star Insight III."
+    },
+    {
+        "Id": 27,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Page of Mineral Wealth",
+        "Rarity": 3,
+        "Description": "They are buried deep under the mountain rocks where a gem is indistinguishable from bits of coal.",
+        "Source": "Insight - Mountain Echoes",
+        "Usage": "The ritual of Mineral Insight I."
+    },
+    {
+        "Id": 28,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Scroll of Mineral Wealth",
+        "Rarity": 4,
+        "Description": "The rock spits on those with a weak mind. It is the code between instant and eternity.",
+        "Source": "Insight - Mountain Echoes",
+        "Usage": "The ritual of Mineral Insight II."
+    },
+    {
+        "Id": 29,
+        "Category": "Insight Material",
+        "IsReleased": true,
+        "Name": "Tome of Mineral Wealth",
+        "Rarity": 5,
+        "Description": "It is a steadfast guardian and an indestructible friend. Even the nobles would bow before this sonorous herald.",
+        "Source": "Insight - Mountain Echoes",
+        "Usage": "The ritual of Mineral Insight III."
+    },
+    {
+        "Id": 64,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Golden Compass",
+        "Rarity": 5,
+        "Description": "It will remove the wrong paths for you.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 5,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Platinum Ouija",
+        "Rarity": 5,
+        "Description": "It shall purge things that lead you astray.",
+        "Source": "Craft in the Wilderness, Pawnshop",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 72,
+        "Name": "Golden Bell Essence Bottle",
+        "Rarity": 5,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Description": "Made with a spirit, to be planted in a body.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 63,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Watch Core",
+        "Rarity": 5,
+        "Description": "Through polishing, inlaying, and fine carving, one can obtain a lively \"heart\".",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 62,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Glowing Mothwing",
+        "Rarity": 5,
+        "Description": "Please do not stimulate the light source at its tail. Handle gently to avoid burning.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 4,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Murmur of Insanity",
+        "Rarity": 5,
+        "Description": "You will get to read the most hidden, forbidden and forgotten spells in history among the mad words of this book. He is the best tutor for all the ambitious villains. Just remember one thing: ask only, and never answer.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 9,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Silver Bullet",
+        "Rarity": 5,
+        "Description": "It takes effort to make one, but it's definitely worth it. No matter your target is a vampire or a werewolf, it will come in handy.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 6,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Wyrmling Skeleton",
+        "Rarity": 5,
+        "Description": "Dragons, the true cryptid. Aliving dragon commands majestic power, while a dead one is still a trove of riches.",
+        "Source": "Craft in the Wilderness Pawnshop",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 8,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Incorrupt Monkeypaw",
+        "Rarity": 5,
+        "Description": "A dried arm of a primate. Don't wish for anything from it, and that includes silent wishes as well.",
+        "Source": "Craft in the Wilderness, Pawnshop",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 7,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Bogeyman",
+        "Rarity": 5,
+        "Description": "Your children are right about the Bogeyman. As a parent, you better keep an eye out for these wicked kidnappers. But they can be lucrative. Catch one and it might help pay the bills because we're buying them! Call 098-1937**21 for details.",
+        "Source": "Craft in the Wilderness, Pawnshop",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 67,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Golden Beetle",
+        "Rarity": 4,
+        "Description": "They discern directions through the moisture of the soil and the change of light, looking forward to their moment of maturation.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 13,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Clawed Pendulum",
+        "Rarity": 4,
+        "Description": "It shall lead your way.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 73,
+        "Name": "Golden Herb Incense",
+        "Rarity": 4,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Description": "Crafted with indiscernible materials and blended from a secret formula, this incense is often used to nourish the heart.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 66,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Goose Neck",
+        "Rarity": 4,
+        "Description": "It bends its neck to take up the balance spring of the clock, take up precision, take up time itself.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 65,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Winged Key",
+        "Rarity": 4,
+        "Description": "Find an open space, hold the key handle firmly, and mentally recite your destination. It will lead you to the keyhole, in the form of a bird.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 12,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Prophetic Bird",
+        "Rarity": 4,
+        "Description": "An arcanist's best friend! Let this little birdie remember your spells for you. With over 5241 practical spells in its memory bank, this is the goto choice for busy arcanists!",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 15,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Holy Silver",
+        "Rarity": 4,
+        "Description": "Everybody loves a pretty bullion of silver. Being washed in holy abundance not only gave them a beauteous sheen, but also powerful arcane energy and exorcist properties.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 10,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Bifurcated Skeleton",
+        "Rarity": 4,
+        "Description": "What did the humans say again? Oh, what a poor, deformed little thing! But guess what the arcanists say. Oh my, look at these sublime features only evident in the noblest of all blood lines!",
+        "Source": "Craft in the Wilderness, Pawnshop",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 11,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Salted Mandrake",
+        "Rarity": 4,
+        "Description": "Amandrake that does not scream? That must be the greatest thing in the history of Arcanum! Robert the Magnesia made a fortune with this and now lives in his very own manor.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 14,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Biting Box",
+        "Rarity": 4,
+        "Description": "You won't be able to tell where it comes from, whom it belongs to or why it looks so strange. More importantly, you will never know what you have released.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 16,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Solidus",
+        "Rarity": 3,
+        "Description": "Embark on a journey, or wait plainly.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 74,
+        "Name": "Alopecurus Pratensis",
+        "Rarity": 3,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Description": "A herb witches are particularly fond of.",
+        "Source": "Craft in the Wilderness",
+        "Usage": "Insight or Resonate rituals of characters."
+    },
+    {
+        "Id": 69,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Perpetual Cog",
+        "Rarity": 3,
+        "Description": "All the secrets of time are hidden in the ceaseless turning of the gears.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 68,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Cicada Wings",
+        "Rarity": 3,
+        "Description": "Please store the wings away from the body, preferably in a cool place. Occasional trembling is normal; just wait for it to dry completely.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 21,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Spell of Fortune",
+        "Rarity": 3,
+        "Description": "Nobody would have thought that this item is the secret to good luck. The story of its origin begins with Marianna who worked at a family diner...",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 20,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Rough Silver Ingot",
+        "Rarity": 3,
+        "Description": "A tad unrefined but still serviceable. Use it to cast arcane skills or buy a jar of jelly beans or cookies. The choice is yours.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 19,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Esoteric Bones",
+        "Rarity": 3,
+        "Description": "Though not as superior as a full skeleton, the femur, ribs, and pieces of the skull are the optimal solution you can afford.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 17,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Milled Magnesia",
+        "Rarity": 3,
+        "Description": "Usable in exorcism and purification rites. It may not be important, but we can't do without it.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 18,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Liquefied Terror",
+        "Rarity": 3,
+        "Description": "You trembled in your dreams and suddenly woke up with a scream. They were running across your skin. Made with cracked teeth, the liquefaction has improved its stability and shelf life. Tasting it is not recommended as it brings more than just nightmares.",
+        "Source": "Craft in the Wilderness, Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 22,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Spell of Banishing",
+        "Rarity": 2,
+        "Description": "It can take care of both thorough and daily cleaning. All it takes is a bit of money and your hands will be freed forever. What's more cheering than that?",
+        "Source": "Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 23,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Silver Ore",
+        "Rarity": 2,
+        "Description": "Precious metal can be extracted from these ores. It is also a casting medium for some basic arcane skills.",
+        "Source": "Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 24,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Shattered Bones",
+        "Rarity": 2,
+        "Description": "Careful, this may be sharp. Of course, only fools will hurt themselves with this …. WHOA! Watch out!",
+        "Source": "Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 25,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Magnesia Crystal",
+        "Rarity": 2,
+        "Description": "It's not quite useful in high-level rituals. The seller promised that the part that looks like a human face was but a coincidence created by nature.",
+        "Source": "Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 26,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Trembling Tooth",
+        "Rarity": 2,
+        "Description": "Always take good care of it and use it immediately after it is opened. Don't be surprised by these little ones' speed when they flee: they were freaked out before running away from the gum.",
+        "Source": "Pawnshop, Story",
+        "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 39,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Moment of Dissonance",
+        "Rarity": 3,
+        "Description": "In your drenched dreams, in the shadowed paths you strolled alone, at the moment sudden restlessness shivers up your spine, you find it there.",
+        "Source": "Fragment Shop: Oneiric",
+        "Usage": "A material for leveling up Character Resonate."
+    },
+    {
+        "Id": 40,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Brief Cacophony",
+        "Rarity": 4,
+        "Description": "Over the bonfire that burns moths into charred ash, in the ephemeral silence among the cheers of the crowd, through the brief cacophony that stores within the embrace, you find it there.",
+        "Source": "Craft in the Wilderness Pawnshop Fragment Shop: Oneiric",
+        "Usage": "A material for leveling up Character Resonate."
+    },
+    {
+        "Id": 41,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Sonorous Knell",
+        "Rarity": 5,
+        "Description": "On the stalker that has been tailing you, on the strange face that greets you on the other side of the mirror, in the sonorous knell that sends deafening reverberations, you find it there.",
+        "Source": "Craft in the Wilderness Pawnshop Fragment Shop: Oneiric",
+        "Usage": "A material for leveling up Character Resonate."
+    },
+    {
+        "Id": 42,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Sinuous Howl",
+        "Rarity": 6,
+        "Description": "When the dappled shade of the tree falls on the ground, when the dried branch cracks under your feet, when the birds are scared away by the sinuous howl, you find it there.",
+        "Source": "Pawnshop, Fragment Shop: Oneiric",
+        "Usage": "A material for leveling up Character Resonate."
+    },
+    {
+        "Id": 43,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Interlaced Shudder",
+        "Rarity": 6,
+        "Description": "When the suspension bridge is crumbling between the cliffs, when the man with tingling ears is walking on a wire, when the interlaced shudders cannot be stopped, you find it there.",
+        "Source": "Pawnshop, Fragment Shop: Oneiric",
+        "Usage": "A material for leveling up Character Resonate."
+    },
+    {
+        "Id": 44,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Hypocritical Murmur",
+        "Rarity": 6,
+        "Description": "When the traveler stands at a deserted fork, when the hurricane takes the sand away, when the hypocritical murmur is haunting the skull, you find it there.",
+        "Source": "Pawnshop, Fragment Shop: Oneiric",
+        "Usage": "A material for leveling up Character Resonate."
+    },
+    {
+        "Id": 45,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Hoarse Echo",
+        "Rarity": 6,
+        "Description": "When tears are shed and eyes are closed at midnight, when a sigh cannot be ignored in one's solitude, when the hoarse echo sinks into the deep sea, you find it there.",
+        "Source": "Pawnshop, Fragment Shop: Oneiric",
+        "Usage": "A material for leveling up Character Resonate."
+    },
+    {
+        "Id": 46,
+        "Category": "Ascension Material",
+        "IsReleased": true,
+        "Name": "LF Polarization",
+        "Rarity": 3,
+        "Description": "Polarization whose extremely low amplitude makes it unobservable. It is mainly generated by stable mental images. It reaches the peak in 1-3 hours after the image is formed, and starts to vanish in 12-15 days.",
+        "Source": "Pawnshop, Fragment Shop: Oneiric",
+        "Usage": "A low-lever material used for ascending Psychube's level limit."
+    },
+    {
+        "Id": 47,
+        "Category": "Ascension Material",
+        "IsReleased": true,
+        "Name": "MF Polarization",
+        "Rarity": 4,
+        "Description": "This polarization of low amplitude can be seen continually when observed. It is mainly generated by long-lasting, mild mental images, such as sorrow and nostalgia.",
+        "Source": "Craft in the Wilderness Pawnshop",
+        "Usage": "A mId-lever material used for ascending Psychube's level limit."
+    },
+    {
+        "Id": 48,
+        "Category": "Ascension Material",
+        "IsReleased": true,
+        "Name": "HF Polarization",
+        "Rarity": 5,
+        "Description": "This polarization has high amplitude and is easy to observe, but it is less often seen compared to MF Polarization. It is mainly generated by strong and temporary mental images, such as anger, impulse and greed.",
+        "Source": "Craft in the Wilderness Pawnshop",
+        "Usage": "A high-lever material used for ascending Psychube's level limit."
+    },
+    {
+        "Id": 49,
+        "Category": "Ascension Material",
+        "IsReleased": true,
+        "Name": "EHF Polarization",
+        "Rarity": 6,
+        "Description": "Rare polarization of extremely high amplitude. It is mainly generated by extremely unstable mental images. Whoever sees it must centrifuge it immediately and inform the head of the department as soon as possible.",
+        "Source": "Craft in tha TATildarnace Pawnshop",
+        "Usage": "The highest-lever material used for ascending Psychube's level limit."
+    },
+    {
+        "Id": 50,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Crystal Drop",
+        "Rarity": 6,
+        "Description": "The Storm arrived and the rain drops rose into the skies as though returning to their mother's embrace and the blistering hot cauldron from which they came. But accidents might just happen. If they fail to reach the other side before the Storm ends, they will fall back to the earth.",
+        "Source": "",
+        "Usage": "Summoning and item purchases."
+    },
+    {
+        "Id": 51,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Clear Drop",
+        "Rarity": 6,
+        "Description": "The quiet twin, the most reliable of the siblings, and the one always giving help to those in need. It is armed with every virtue. It is the last raindrop to rise, and the first to return to the earth.",
+        "Source": "",
+        "Usage": "Summoning or restoring Cellular Activity."
+    },
+    {
+        "Id": 52,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Unilog",
+        "Rarity": 6,
+        "Description": "The golden rabbit is a well known myth. It spies on people, steals their time, and sometimes even changes their fates. Though it's old, decrepit, and stale, it is unique and indispensable.",
+        "Source": "Pawnshop",
+        "Usage": "Character summoning."
+    },
+    {
+        "Id": 53,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Decalog",
+        "Rarity": 6,
+        "Description": "The storyteller never thought that golden rabbits could travel in packs. Nobody knows what this might entails, but no one chooses one single rabbit over more of it.",
+        "Source": "",
+        "Usage": "Character summoning."
+    },
+    {
+        "Id": 55,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Dust",
+        "Rarity": 3,
+        "Description": "The glorious supreme law is nowhere to be found, but its power is great and beyond prediction. As it wanders, its dropping Dust also contains the energy for power increasing. It is, in a sense, part of the ultimate answer.",
+        "Source": "Resource - The Poussiere Pawnshop",
+        "Usage": "Leveling up characters."
+    },
+    {
+        "Id": 54,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Sharpodonty",
+        "Rarity": 3,
+        "Description": "A currency from the ancient, unrecorded era. It has 13 edges and a maw of razor sharp teeth which only opens to those with arcanist blood.",
+        "Source": "Resource - Mintage Aesthetics Pawnshop",
+        "Usage": "Everyone needs some of this."
+    },
+    {
+        "Id": 56,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Track of the Lost",
+        "Rarity": 4,
+        "Description": "Some people call it a tape, while more arcanists choose the name \"Track of the Lost.\" It may have recorded a sad piece of rock music, an embarrassing monologue, a piece of white noise, or endless silence.",
+        "Source": "Summon Task - Weekly Activeness",
+        "Usage": "Can be exchanged for items at the [Bass Counter] in the Bank."
+    },
+    {
+        "Id": 57,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Album of the Lost",
+        "Rarity": 5,
+        "Description": "The loudest and best Track of the Lost. This means more rock and roll and more soliloquies with barely changing moments of silence and white noise. Passionate fans will deliver the Track to its destination, but you must understand that they're not doing this pro bono.",
+        "Source": "Summon",
+        "Usage": "Can be exchanged for items at the [Treble Counter] in the Bank."
+    },
+    {
+        "Id": 58,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Thought Element",
+        "Rarity": 4,
+        "Description": "There are so many ways to organize the mess: the furnace that burns, the blade that cuts ….. but I wish to keep it the way it is.",
+        "Source": "Resource - Pneuma Analysis",
+        "Usage": "Can be exchanged for items at the [Psychube Shop] in the Bank."
+    },
+    {
+        "Id": 59,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Thoughts in Entirety",
+        "Rarity": 5,
+        "Description": "As the disorganized has been organized, the darkened vision lightens, ideas are finally taking shape in my mind.",
+        "Source": "Resource - Pneuma Analysis",
+        "Usage": "Can be exchanged for items at the [Psychube Shop] in the Bank."
+    },
+    {
+        "Id": 60,
+        "Category": "Base Item",
+        "IsReleased": true,
+        "Name": "Oneiric FluId",
+        "Rarity": 4,
+        "Description": "Snowflakes crushed by the wheels, pasture grass rustling in the wind, waves shattered against distant cliffs. Such sounds are insignificant but are recorded nonetheless. Again and again, till the very end.",
+        "Source": "Artificial Somnambulism",
+        "Usage": "Can be exchanged for items in the [Oneiric Shop] in the Bank."
+    },
+    {
+        "Id": 70,
+        "Category": "Resonate Material",
+        "IsReleased": true,
+        "Name": "Crystal Casket",
+        "Rarity": 6,
+        "Description": "The whispers inside are overflowing. Seize the opportunity when you get to hear them.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 75,
+        "Category": "Reveries Material",
+        "IsReleased": true,
+        "Name": "Key of Reverie",
+        "Rarity": 6,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 76,
+        "Category": "Reveries Material",
+        "IsReleased": true,
+        "Name": "Sprout of Reverie",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 77,
+        "Category": "Reveries Material",
+        "IsReleased": true,
+        "Name": "Seed of Insight",
+        "Rarity": 4,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    }
 ]

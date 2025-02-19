@@ -4,11 +4,12 @@ import { useWarehouseStore, IItem as IWarehouseItem } from '../stores/warehouseS
 const categoryPriority = {
     'Base Item': 0,
     'Resonate Material': 1,
-    'Insight Material': 2,
-    'Build Material': 2 // insight/build material have same priority, should be arranged according to rarity
-}
+    'Reveries Material': 2,
+    'Insight Material': 3,
+    'Build Material': 3 // insight/build material have same priority, should be arranged according to rarity
+};
 
-export function addEventShopMaterialsToWarehouse (version: string) {
+export function addEventShopMaterialsToWarehouse(version: string) {
     const shopsData = useDataStore().shops;
     if (version in shopsData) {
         const materials = shopsData[version];
@@ -22,7 +23,7 @@ export function addEventShopMaterialsToWarehouse (version: string) {
     }
 }
 
-export function removeEventShopMaterialsFromWarehouse (version: string) {
+export function removeEventShopMaterialsFromWarehouse(version: string) {
     const shopsData = useDataStore().shops;
     if (version in shopsData) {
         const materials = shopsData[version];
@@ -49,21 +50,23 @@ export const initializeWarehouse = () => {
             }
         }
     });
-}
+};
 
-function isValidWarehouseItem (item) {
+function isValidWarehouseItem(item) {
     if (
         item.Category === 'Build Material' ||
         item.Category === 'Insight Material' ||
+        item.Category === 'Reveries Material' ||
         (item.Category === 'Resonate Material' && item.Rarity < 6) ||
         item.Name === 'Dust' ||
         item.Name === 'Sharpodonty' ||
         item.Name === 'Crystal Casket'
-    ) return true;
+    )
+        return true;
     return false;
 }
 
-export function checkWarehouse () {
+export function checkWarehouse() {
     useDataStore().items.forEach((item) => {
         // NOTE: keep these sample codes for future reference with new materials
         // const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_9;
@@ -71,9 +74,10 @@ export function checkWarehouse () {
         const isItemReleasedForUser = item.IsReleased;
         if (
             !useWarehouseStore().hasItem(item.Name) &&
-            (item.Name === 'Crystal Casket' || isItemReleasedForUser) && isValidWarehouseItem(item)
+            (item.Name === 'Crystal Casket' || isItemReleasedForUser) &&
+            isValidWarehouseItem(item)
         ) {
-            console.log('Adding', item.Name, 'to warehouse')
+            console.log('Adding', item.Name, 'to warehouse');
             useWarehouseStore().initItem(item.Name, item.Category);
         } else if (!isItemReleasedForUser || !isValidWarehouseItem(item)) {
             // console.log('Removing', item.Name, 'from warehouse')
@@ -87,8 +91,8 @@ export const sortWarehouseMaterials = (array: IWarehouseItem[]) => {
 
     array.sort((warehouseMatlA, warehouseMatlB) => {
         // Find corresponding item based on material name
-        const itemIndexA = itemsData.findIndex(item => item.Name === warehouseMatlA.Material);
-        const itemIndexB = itemsData.findIndex(item => item.Name === warehouseMatlB.Material);
+        const itemIndexA = itemsData.findIndex((item) => item.Name === warehouseMatlA.Material);
+        const itemIndexB = itemsData.findIndex((item) => item.Name === warehouseMatlB.Material);
         const itemA = itemsData[itemIndexA];
         const itemB = itemsData[itemIndexB];
 
@@ -108,4 +112,4 @@ export const sortWarehouseMaterials = (array: IWarehouseItem[]) => {
             return itemIndexB - itemIndexA;
         }
     });
-}
+};

@@ -8,7 +8,14 @@ import MaterialSelectionIcon from '@/components/item/material/MaterialSelectionI
 import MaterialDisplay from '@/components/item/material/MaterialDisplay.vue';
 import MaterialFilter from '@/components/item/material/MaterialFilter.vue';
 
-const categories = ['Base Item', 'Build Material', 'Insight Material', 'Resonate Material', 'Ascension Material'];
+const categories = [
+    'Base Item',
+    'Build Material',
+    'Insight Material',
+    'Resonate Material',
+    'Ascension Material',
+    'Reveries Material'
+];
 const buttons = ['Materials'];
 // const buttons = ['Materials', 'Psychubes'];
 const selectedButton = ref(buttons[0]);
@@ -28,24 +35,21 @@ const handleFilteredMaterials = (filteredMaterials: IItem[]) => {
 };
 
 watchEffect(() => {
-    const foundMaterial = itemStore.find(item => item.Name === globalStore.selectedMaterial.Material);
-    selectedMaterial.value = foundMaterial || itemStore.find(item => item.Name === 'Crystal Drop');
+    const foundMaterial = itemStore.find(
+        (item) => item.Name === globalStore.selectedMaterial.Material
+    );
+    selectedMaterial.value =
+        foundMaterial || itemStore.find((item) => item.Name === 'Crystal Drop');
 
-    listItems.value = itemStore.filter((item: IItem) =>
-        item.IsReleased
-    )
+    listItems.value = itemStore.filter((item: IItem) => item.IsReleased);
 
     sortCategoryMaterials(listItems.value, categories);
-})
+});
 
 onMounted(() => {
-    filteredItems.value = itemStore.filter((item: IItem) =>
-        item.IsReleased
-    )
+    filteredItems.value = itemStore.filter((item: IItem) => item.IsReleased);
     sortCategoryMaterials(filteredItems.value, categories);
-})
-
-// this is so stupid i cant
+});
 
 </script>
 
@@ -73,31 +77,48 @@ onMounted(() => {
                 <div class="card custom-border">
                     <div class="flex flex-wrap justify-center sm:justify-between pl-2 gap-y-2">
                         <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
-                            <button v-for="(button, index) in buttons" :key="index" @click="selectedButton = button"
-                                :class="['hover:bg-info rounded-md text-white py-1 px-3', selectedButton === button ? 'border-button' : '']"
+                            <button
+                                v-for="(button, index) in buttons"
+                                :key="index"
+                                @click="selectedButton = button"
+                                :class="[
+                                    'hover:bg-info rounded-md text-white py-1 px-3',
+                                    selectedButton === button ? 'border-button' : ''
+                                ]"
                                 :disabled="index !== 0">
                                 {{ $t(button) }}
                             </button>
                         </div>
                         <!-- Filters -->
-                        <MaterialFilter :listItems="listItems" :categories="categories" @filtered="handleFilteredMaterials" />
+                        <MaterialFilter
+                            :listItems="listItems"
+                            :categories="categories"
+                            @filtered="handleFilteredMaterials" />
                     </div>
                 </div>
                 <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
                     <div v-if="selectedButton === 'Materials'" class="custom-item-list">
-                        <MaterialSelectionIcon v-for="material in filteredItems" :key="material.Id" :material="material"
+                        <MaterialSelectionIcon
+                            v-for="material in filteredItems"
+                            :key="material.Id"
+                            :material="material"
                             @click="selectMaterial(material)"
-                            :class="selectedMaterial?.Name === material.Name ? 'custom-border-white' : 'custom-border-transparent'" />
+                            :class="
+                                selectedMaterial?.Name === material.Name
+                                    ? 'custom-border-white'
+                                    : 'custom-border-transparent'
+                            " />
                     </div>
                 </div>
             </div>
 
-              <!--Item Display Card-->
-              <div class="flex flex-col gap-y-4">
-                    <MaterialDisplay :selectedMaterial="selectedMaterial || {}" :categories="categories" />
-                </div>
+            <!--Item Display Card-->
+            <div class="flex flex-col gap-y-4">
+                <MaterialDisplay
+                    :selectedMaterial="selectedMaterial || {}"
+                    :categories="categories" />
+            </div>
         </div>
-
     </div>
 </template>
 

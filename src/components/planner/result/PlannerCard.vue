@@ -15,7 +15,7 @@ const props = defineProps({
     }
 });
 
-const { t } = useI18n()
+const { t } = useI18n();
 const scrollDiv = ref<HTMLDivElement | null>(null);
 
 const shouldHideScrollbar = computed(() => {
@@ -26,17 +26,18 @@ const toolTipText = computed(() => {
     if (props.layerId === 3 || props.card.stage === 'Unreleased') {
         return undefined;
     } else if (props.card.stage === 'Oneiric Shop') {
-        return t('number-of-oneiric-fluid')
+        return t('number-of-oneiric-fluid');
+    } else if (props.card.stage === 'Reveries') {
+        return t('from-reveries');
     }
-    return t('number-of-runs') + ' | ' + t('activities') + ' | ' + t('uppercase-days')
-})
+    return t('number-of-runs') + ' | ' + t('activities') + ' | ' + t('uppercase-days');
+});
 
 watch(shouldHideScrollbar, (newVal) => {
     if (newVal && scrollDiv.value) {
         scrollDiv.value.scrollLeft = 0;
     }
 });
-
 </script>
 
 <template>
@@ -47,52 +48,76 @@ watch(shouldHideScrollbar, (newVal) => {
 
         <div class="tooltip w-full" :data-tip="toolTipText">
             <div
-                class="calculations flex justify-center items-center bg-gradient-to-r from-blue-800/70 to-blue-900/90 text-white p-2 rounded-md">
+                class="calculations flex justify-center items-center bg-gradient-to-r from-blue-800/70 to-blue-900/90 text-white p-2 rounded-md h-12">
                 <p v-if="card.stage !== 'Unreleased'" class="border-blue-700/90 border-r pr-3">
                     <span v-show="card.runs > 0">
                         <i class="fa-solid fa-xmark text-xs mr-0.5" />{{ card.runs }}
                     </span>
                 </p>
                 <p v-else>
-                    {{ $t('available-after-version-update', {version: '2.3'}) }} </p>
-
-                <p class="pl-2" v-if="card.activity !== 0">{{ card.activity }}</p>
-                <p v-else-if="layerId === 3">
-                    <span class="block md:inline md:border-blue-700/90 md:border-r pr-3 text-sm md:text-base">{{
-                        $t('crafted-from-available-materials') }}</span>
-                    <span class="block md:inline pl-3 pr-3 text-sm md:text-base">{{
-                        $t('list-includes-dependencies') }}</span>
+                    {{ $t('available-after-version-update', { version: '2.3' }) }}
                 </p>
 
-                <img v-show="card.activity" :src="card.activityImagePath" alt="Activity Image"
+                <p class="pl-2" v-if="card.activity !== 0">{{ card.activity }}</p>
+                <p v-else-if="card.stage === 'Reveries'" class="pl-2">
+                    <span>{{ $t('from-reveries') }}</span>
+                </p>
+                <p v-else-if="layerId === 3">
+                    <span
+                        class="block md:inline md:border-blue-700/90 md:border-r pr-3 text-sm md:text-base"
+                        >{{ $t('crafted-from-available-materials') }}</span
+                    >
+                    <span class="block md:inline pl-3 pr-3 text-sm md:text-base">{{
+                        $t('list-includes-dependencies')
+                    }}</span>
+                </p>
+
+                <img
+                    v-show="card.activity"
+                    :src="card.activityImagePath"
+                    alt="Activity Image"
                     class="inline-block w-8 h-8" />
 
                 <p class="border-blue-700/90 border-l pl-3">
                     <span v-show="card.days > 0">
-                        {{ card.days }} {{ card.days === 0 ? '' : card.days > 1 ? $t('days') : $t('day') }}
+                        {{ card.days }}
+                        {{ card.days === 0 ? '' : card.days > 1 ? $t('days') : $t('day') }}
                     </span>
                 </p>
             </div>
         </div>
 
-        <div v-if="card.stage === 'Unreleased'" ref="scrollDiv" :class="{ 'hidden-scrollbar': shouldHideScrollbar }"
+        <div
+            v-if="card.stage === 'Unreleased'"
+            ref="scrollDiv"
+            :class="{ 'hidden-scrollbar': shouldHideScrollbar }"
             class="flex overflow-y-hidden overflow-x-auto m-auto scrollbar">
-            <div v-for="(material, materialIndex) in card.materials.filter((matl) => useGlobalStore().neededRawMaterialsMapping[matl.Material] > 0)"
-                :key="materialIndex" class="flex-shrink-0">
+            <div
+                v-for="(material, materialIndex) in card.materials.filter(
+                    (matl) => useGlobalStore().neededRawMaterialsMapping[matl.Material] > 0
+                )"
+                :key="materialIndex"
+                class="flex-shrink-0">
                 <MaterialItem :material="{ ...material, Quantity: 0 }" :layerId="layerId" />
             </div>
         </div>
-        <div v-else ref="scrollDiv" :class="{ 'hidden-scrollbar': shouldHideScrollbar }"
+        <div
+            v-else
+            ref="scrollDiv"
+            :class="{ 'hidden-scrollbar': shouldHideScrollbar }"
             class="flex overflow-y-hidden overflow-x-auto m-auto scrollbar">
-            <div v-for="(material, materialIndex) in card.materials" :key="materialIndex" class="flex-shrink-0">
+            <div
+                v-for="(material, materialIndex) in card.materials"
+                :key="materialIndex"
+                class="flex-shrink-0">
                 <MaterialItem :material="material" :layerId="layerId" />
             </div>
         </div>
-
     </div>
 </template>
 
 <style scoped>
 .scrollbar::-webkit-scrollbar {
     height: 6px;
-}</style>
+}
+</style>
