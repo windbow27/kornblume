@@ -4,7 +4,8 @@ export const changelogs = [
         date: '04/03/2025',
         description: `
         • Added Recoleta as unreleased arcanist' <br>
-        • Added 2.6 materials. 
+        • Added 2.6 materials. <br>
+        • Added MedPoc and Melania Euphorias. 
         `
     },
     {
