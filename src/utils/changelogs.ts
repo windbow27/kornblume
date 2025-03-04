@@ -1,6 +1,13 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '04/03/2025',
+        description: `
+        • Added Recoleta as unreleased arcanist' <br>
+        • Added 2.6 materials. 
+        `
+    },
+    {
         date: '19/02/2025',
         description: `
             • Added Reveries Material. It doesn't look like much, but a lot behind the scenes have changed. If you encouter any bugs, please make an issue. <br>
