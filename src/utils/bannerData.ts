@@ -22,16 +22,16 @@ export const bannerList = [
     'The Chirps of Flame',
     'The Spores of Peace',
     'Over the New Leaf',
-    'Vissi D\'arte, Vissi D\'amore',
+    "Vissi D'arte, Vissi D'amore",
     'Reading in Sea Breeze',
     'Ode to the Utopia',
     'The Intersecting Lines',
     'Observation into the Mirrors',
     'Calming Hues in Frenzied Nights',
-    'Clash \'n\' Slash',
+    "Clash 'n' Slash",
     'Blue Lullaby',
     'Shooting in the Dark',
-    'Fledgling\'s First Flight',
+    "Fledgling's First Flight",
     'When The Swan Dances',
     'The Book of Whys',
 
@@ -52,7 +52,7 @@ export const bannerList = [
     // golden spindle
     'Golden Spindle',
     // ripples,
-    'Ripples of the Water',
+    'Ripples on the Water',
 
     // jiu niangzi
     'Till the Last Drop',

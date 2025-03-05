@@ -93,7 +93,7 @@ const revelationPulls = createPullsByBannerType('Revelation of the Water');
 const promisePulls = createPullsByBannerType('Promise of the Water');
 const boonPulls = createPullsByBannerType('Boon of the Water');
 const goldenSpindlePulls = createPullsByBannerType('Golden Spindle');
-const ripplesPulls = createPullsByBannerType('Ripples of the Water');
+const ripplesPulls = createPullsByBannerType('Ripples on the Water');
 
 const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
 const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
@@ -113,7 +113,7 @@ const limitedPulls = computed(() => {
             pull.BannerType !== 'Longing for Innocence' &&
             pull.BannerType !== 'Boon of the Water' &&
             pull.BannerType !== 'Golden Spindle' &&
-            pull.BannerType !== 'Ripples of the Water'
+            pull.BannerType !== 'Ripples on the Water'
     );
     return filteredPulls.map((pull, index) => {
         return {
@@ -617,7 +617,7 @@ const selectBannerType = (bannerType: string) => {
                                 selectedBannerType === 'Promise of the Water' ||
                                 selectedBannerType === 'Boon of the Water' ||
                                 selectedBannerType === 'Golden Spindle' ||
-                                selectedBannerType === 'Ripples of the Water' ||
+                                selectedBannerType === 'Ripples on the Water' ||
                                 selectedBannerType === 'Till the Last Drop' ||
                                 selectedBannerType === 'Thoughts in Cylinder' ||
                                 selectedBannerType === 'Longing for Innocence'
@@ -703,10 +703,10 @@ const selectBannerType = (bannerType: string) => {
                     <li>
                         <button
                             v-bind:class="{
-                                'border-button': selectedBannerType === 'Ripples of the Water'
+                                'border-button': selectedBannerType === 'Ripples on the Water'
                             }"
                             class="text-white py-1 px-3 hover:bg-info rounded-md"
-                            @click="selectBannerType('Ripples of the Water')">
+                            @click="selectBannerType('Ripples on the Water')">
                             {{ $t('ripples') }}
                         </button>
                     </li>
@@ -815,7 +815,7 @@ const selectBannerType = (bannerType: string) => {
             :isError="isError"
             :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard
-            v-if="selectedBannerType === 'Ripples of the Water'"
+            v-if="selectedBannerType === 'Ripples on the Water'"
             :text="$t('summary-ripples')"
             :pulls="ripplesPulls"
             :allPulls="allPulls"
