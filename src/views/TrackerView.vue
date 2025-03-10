@@ -204,11 +204,12 @@ const ocr: clickHandler = (payload: Event): void => {
                                         /Fledgling.*?First Flight/,
                                         'Fledgling[\\s\\S]*?First\\s*Flight'
                                     ) // Handle Fledgling ... First Flight variations
-                                    .replace(/Clash.*?Slash/, 'Clash[\\s\'"’\\w]*?Slash') // Handle Clash ... Slash variations
+                                    .replace(/Clash.*?Slash/, 'Clash[\\s\\S]*?Slash') // Handle Clash - everything in between - Slash variations
                                     .replace(/\s/g, '\\s*') // Handle spaces
                                     .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
                         )
                         .join('|')}).*`;
+                    // console.log(bannerGroup);
                     const dateGroup: string =
                         /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/.source;
 

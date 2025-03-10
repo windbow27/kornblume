@@ -1,6 +1,12 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '10/03/2025',
+        description: `
+        • Fix Joe banner Tracker error.
+        `
+    },
+    {
         date: '04/03/2025',
         description: `
         • Added Recoleta as unreleased arcanist' <br>
