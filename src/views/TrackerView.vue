@@ -848,7 +848,4 @@ const selectBannerType = (bannerType: string) => {
 </template>
 
 <style scoped>
-.modal-box {
-    overflow-y: unset;
-}
 </style>

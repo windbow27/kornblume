@@ -1,6 +1,12 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '12/03/2025',
+        description: `
+        • UI Improvements.
+        `
+    },
+    {
         date: '10/03/2025',
         description: `
         • Fix Joe banner Tracker error.
@@ -9,64 +15,63 @@ export const changelogs = [
     {
         date: '04/03/2025',
         description: `
-        • Added Recoleta as unreleased arcanist' <br>
-        • Added 2.6 materials. <br>
-        • Added MedPoc and Melania Euphorias. 
+        • Add Recoleta as unreleased arcanist' <br>
+        • Add 2.6 materials. <br>
+        • Add MedPoc and Melania Euphorias. 
         `
     },
     {
         date: '19/02/2025',
         description: `
-            • Added Reveries Material. It doesn't look like much, but a lot behind the scenes have changed. If you encouter any bugs, please make an issue. <br>
+            • Add Reveries Material. It doesn't look like much, but a lot behind the scenes have changed. If you encouter any bugs, please make an issue. <br>
             • UI Improvements.`
     },
     {
         date: '14/02/2025',
-        description: '• Fixed duplicated Insight Casket by Ipun-majessica. <br>• UI Improvements.'
+        description: '• Fix duplicated Insight Casket by Ipun-majessica. <br>• UI Improvements.'
     },
     {
         date: '10/02/2025',
         description:
-            '• Added Noire as unreleased arcanist. <br>• Added Pickles and An-an Lee Euphorias. <br>• Added Willow, Flutterpage, Ripples on the Water banners.'
+            '• Add Noire as unreleased arcanist. <br>• Add Pickles and An-an Lee Euphorias. <br>• Add Willow, Flutterpage, Ripples on the Water banners.'
     },
     {
         date: '31/01/2025',
-        description: '• Fixed Tracker error for Lopera banner.'
+        description: '• Fix Tracker error for Lopera banner.'
     },
     {
         date: '28/01/2025',
-        description: '• Added Golden Spindle banner. <br>• Happy Lunar New Year!'
+        description: '• Add Golden Spindle banner. <br>• Happy Lunar New Year!'
     },
     {
         date: '27/01/2025',
-        description: '• Added Boon of the Water banner.'
+        description: '• Add Boon of the Water banner.'
     },
     {
         date: '24/01/2025',
-        description:
-            '• Added Liang Yue and Loggerhead as unreleased arcanists.<br>• UI improvements.'
+        description: '• Add Liang Yue and Loggerhead as unreleased arcanists.<br>• UI improvements.'
     },
     {
         date: '22/01/2025',
-        description: "• I'm back.<br>• Fixed broken Google Drive sync."
+        description: "• I'm back.<br>• Fix broken Google Drive sync."
     },
     {
         date: '14/01/2025',
-        description: '• Updated KR translations by LyvaKim.<br>• Fixed bug for Yearning banner.'
+        description: '• Updated KR translations by LyvaKim.<br>• Fix bug for Yearning banner.'
     },
     {
         date: '10/01/2025',
-        description: '• Fixed bug for Anjo Nala banner.'
+        description: '• Fix bug for Anjo Nala banner.'
     },
     {
         date: '09/01/2025',
         description:
-            '• Added Anjo Nala and Lopera banners. <br>• Updated Arcanists and Stages for version 2.2. <br>• Added Fatutu as unreleased arcanist.'
+            '• Add Anjo Nala and Lopera banners. <br>• Updated Arcanists and Stages for version 2.2. <br>• Add Fatutu as unreleased arcanist.'
     },
     {
         date: '23/12/2024',
         description: `
-        • Added Euphoria. <br>
+        • Add Euphoria. <br>
         • This is the final update of 2024, I will be unavailable for private reasons next month, so some update schedules will be changed: <br> 
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - On schedule: 2.2 Planner & Tracker update.  <br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Will be delayed until 23/01/2025: New CN arcanists, euphoria or any other updates. <br>
@@ -74,49 +79,49 @@ export const changelogs = [
     },
     {
         date: '16/12/2024',
-        description: '• Added Barcarola as unreleased arcanist.'
+        description: '• Add Barcarola as unreleased arcanist.'
     },
     {
         date: '29/11/2024',
         description:
-            '• Added Tuesday, Argus and Barbara as released arcanists. <br> • Added Tuesday and Argus banners.'
+            '• Add Tuesday, Argus and Barbara as released arcanists. <br> • Add Tuesday and Argus banners.'
     },
     {
         date: '21/11/2024',
-        description: `• Added Flutterpage, Brimley as unreleased arcanist. <br>
-         • Added J banner. However the Tracker is really bad at recognizing him, please use the editor to turn 6 into J. Thank you.
+        description: `• Add Flutterpage, Brimley as unreleased arcanist. <br>
+         • Add J banner. However the Tracker is really bad at recognizing him, please use the editor to turn 6 into J. Thank you.
     `
     },
     {
         date: '02/11/2024',
         description:
-            '• Updated Frequency Pattern names. <br> • Updated some Arcanist stats. <br> • Fixed a bug related to Level Up feature. <br> • Added Willow as unreleased arcanist.'
+            '• Updated Frequency Pattern names. <br> • Updated some Arcanist stats. <br> • Fix a bug related to Level Up feature. <br> • Add Willow as unreleased arcanist.'
     },
-    { date: '31/10/2024', description: '• Added Mercuria banner.' },
+    { date: '31/10/2024', description: '• Add Mercuria banner.' },
     {
         date: '20/10/2024',
-        description: '• Added Mercuria, J, Pioneer as released arcanists.'
+        description: '• Add Mercuria, J, Pioneer as released arcanists.'
     },
     {
         date: '17/10/2024',
-        description: '• Added Lopera as unreleased arcanist. That i2 art is such a vibe.'
+        description: '• Add Lopera as unreleased arcanist. That i2 art is such a vibe.'
     },
-    { date: '10/10/2024', description: '• Added Kakania banner.' },
+    { date: '10/10/2024', description: '• Add Kakania banner.' },
     { date: '06/10/2024', description: '• More bug fixes.' },
     { date: '25/09/2024', description: '• Various bug fixes.' },
     {
         date: '24/09/2024',
-        description: '• Added Anjo Nala, Mr. Duncan, White Rum as unreleased arcanist.'
+        description: '• Add Anjo Nala, Mr. Duncan, White Rum as unreleased arcanist.'
     },
     {
         date: '22/09/2024',
         description: '• Updated warehouse order to match ingame.'
     },
-    { date: '21/09/2024', description: '• Added Promise of the Water banner.' },
+    { date: '21/09/2024', description: '• Add Promise of the Water banner.' },
     {
         date: '19/09/2024',
         description: `
-        • Added Lucy banner. <br>
+        • Add Lucy banner. <br>
         • Updated Planner, Arcanists, Items and Stages to version 1.9 update. <br>
         • Moved Bug Reports to Github issues since I barely check the Google Sheets anymore. <br>
         • Also I want to ramble for a bit: <br>
@@ -133,36 +138,35 @@ export const changelogs = [
     {
         date: '07/09/2024',
         description:
-            '• Added Semmelweis, Lucy, Kakania, Lorelei as released arcanists. I want Semmelweis to step on me.'
+            '• Add Semmelweis, Lucy, Kakania, Lorelei as released arcanists. I want Semmelweis to step on me.'
     },
     {
         date: '04/09/2024',
         description:
-            "• Added Argus as unreleased arcanist. <br> • UI improvements. <br> • Updated Schale's new website link in Credits.<br> "
+            "• Add Argus as unreleased arcanist. <br> • UI improvements. <br> • Updated Schale's new website link in Credits.<br> "
     },
     {
         date: '29/08/2024',
-        description: '• Added Windsong banner. <br> • Added Frequency for Resonance.'
+        description: '• Add Windsong banner. <br> • Add Frequency for Resonance.'
     },
     {
         date: '15/08/2024',
-        description:
-            '• Added Vila banner. <br> • Added Tuesday and Barbara as unreleased arcanists.'
+        description: '• Add Vila banner. <br> • Add Tuesday and Barbara as unreleased arcanists.'
     },
-    { date: '01/08/2024', description: '• Added Marcus banner.' },
+    { date: '01/08/2024', description: '• Add Marcus banner.' },
     {
         date: '31/07/2024',
         description:
-            "• Added Resonances section for arcanists. No it's not building guide, simply cost viewer copied from planner due to popular demand by users."
+            "• Add Resonances section for arcanists. No it's not building guide, simply cost viewer copied from planner due to popular demand by users."
     },
     {
         date: '30/07/2024',
-        description: '• Added Mercuria as unreleased arcanist.'
+        description: '• Add Mercuria as unreleased arcanist.'
     },
     {
         date: '22/07/2024',
         description:
-            '• Updated Spanish translations by mgeshagrath.<br> • Added missing images in Chapter 6 stages.'
+            '• Updated Spanish translations by mgeshagrath.<br> • Add missing images in Chapter 6 stages.'
     },
     {
         date: '12/07/2024',
@@ -170,49 +174,49 @@ export const changelogs = [
     },
     {
         date: '11/07/2024',
-        description: '• Added Isolde banner. <br> • Updated planner to use 1.7 droprates.'
+        description: '• Add Isolde banner. <br> • Updated planner to use 1.7 droprates.'
     },
     {
         date: '29/06/2024',
-        description: '• Added Isolde and Marcus as released arcanists.'
+        description: '• Add Isolde and Marcus as released arcanists.'
     },
     {
         date: '05/07/2024',
-        description: '• Added J and Pioneer as unreleased arcanists.'
+        description: '• Add J and Pioneer as unreleased arcanists.'
     },
     {
         date: '29/06/2024',
-        description: '• Added Isolde and Marcus as released arcanists.'
+        description: '• Add Isolde and Marcus as released arcanists.'
     },
-    { date: '20/06/2024', description: '• Added Getian banner.' },
+    { date: '20/06/2024', description: '• Add Getian banner.' },
     {
         date: '18/06/2024',
         description:
-            '• Added very late Revelation of the Water banner. I was busy. And I hate these double banners so much, go pull Jiu instead.'
+            '• Add very late Revelation of the Water banner. I was busy. And I hate these double banners so much, go pull Jiu instead.'
     },
     {
         date: '07/06/2024',
         description:
-            '• Added Kakania and Lorelei as unreleased arcanists. <br> • Updated the stats for all arcanists. <br> • Added 1.9 materials. <br> • Added 1.9 droprates (experimental).'
+            '• Add Kakania and Lorelei as unreleased arcanists. <br> • Updated the stats for all arcanists. <br> • Add 1.9 materials. <br> • Add 1.9 droprates (experimental).'
     },
     {
         date: '30/05/2024',
-        description: '• Added Jiu Niangzi banner. "Till the Last Drop".'
+        description: '• Add Jiu Niangzi banner. "Till the Last Drop".'
     },
     {
         date: '21/05/2024',
         description:
-            '• Added Jiu, Getian and Yenisei as released arcanists. <br> • Updated zh-TW translations by Yumemigokochi.'
+            '• Add Jiu, Getian and Yenisei as released arcanists. <br> • Updated zh-TW translations by Yumemigokochi.'
     },
     {
         date: '19/05/2024',
         description:
-            "• Added Semmelweis and Lucy as unreleased characters. Semmelweis is so hot i can't."
+            "• Add Semmelweis and Lucy as unreleased characters. Semmelweis is so hot i can't."
     },
-    { date: '10/05/2024', description: '• Added Ezra banner, I forgor.' },
+    { date: '10/05/2024', description: '• Add Ezra banner, I forgor.' },
     {
         date: '26/04/2024',
-        description: '• Added Windsong as unreleased character.'
+        description: '• Add Windsong as unreleased character.'
     },
     {
         date: '20/04/2024',
@@ -220,11 +224,11 @@ export const changelogs = [
     },
     {
         date: '18/04/2024',
-        description: '• Added Spathodea banner. Added Tooth Fairy + Centurion double banner.'
+        description: '• Add Spathodea banner. Add Tooth Fairy + Centurion double banner.'
     },
     {
         date: '16/04/2024',
-        description: '• Added Spathodea, Ezra, Ulu and Flannel as released arcanists.'
+        description: '• Add Spathodea, Ezra, Ulu and Flannel as released arcanists.'
     },
     {
         date: '13/04/2024',
@@ -233,7 +237,7 @@ export const changelogs = [
     },
     {
         date: '12/04/2024',
-        description: '• Added Vila and Avgust as unreleased arcanists.'
+        description: '• Add Vila and Avgust as unreleased arcanists.'
     },
     {
         date: '09/04/2024',
@@ -242,23 +246,23 @@ export const changelogs = [
     {
         date: '04/04/2024',
         description:
-            '• Fixed syncing bug. <br> • For the last time, import error is caused by OCR failing to read images or missing images from user, doing single pulls or order of images DOES NOT matter.'
+            '• Fix syncing bug. <br> • For the last time, import error is caused by OCR failing to read images or missing images from user, doing single pulls or order of images DOES NOT matter.'
     },
     { date: '01/04/2024', description: '• Nothing happened.' },
-    { date: '28/03/2024', description: '• Added 6 banner.' },
+    { date: '28/03/2024', description: '• Add 6 banner.' },
     {
         date: '25/03/2024',
         description:
-            '• Fixed item images sometimes not being loaded (hopefully). <br> • UI update for tooltips.'
+            '• Fix item images sometimes not being loaded (hopefully). <br> • UI update for tooltips.'
     },
     {
         date: '24/03/2024',
-        description: '• Added Marcus as unreleased arcanist.'
+        description: '• Add Marcus as unreleased arcanist.'
     },
     {
         date: '20/03/2024',
         description:
-            '• Updated Spanish translations by mgeshagrath.<br> • Fixed (lazily) "Add Pull" UI bug. <br> • Fixed dead link in Tracker Tutorial. <br> • Fixed another Editor Tracker bug. Hopefully it works now?'
+            '• Updated Spanish translations by mgeshagrath.<br> • Fix (lazily) "Add Pull" UI bug. <br> • Fix dead link in Tracker Tutorial. <br> • Fix another Editor Tracker bug. Hopefully it works now?'
     },
     {
         date: '19/03/2024',
@@ -266,12 +270,12 @@ export const changelogs = [
     },
     {
         date: '16/03/2024',
-        description: '• Added stage names. <br> • UI improvements.'
+        description: '• Add stage names. <br> • UI improvements.'
     },
     {
         date: '13/03/2024',
         description:
-            '• Fixed Tracker Editor only saving one type of section. <br> • Updated French translations by sillight. <br> • Updated zh Chinese translations by ryle798. <br> • Fixed missing Spanish translations. <br> • Updated Viet translations.'
+            '• Fix Tracker Editor only saving one type of section. <br> • Updated French translations by sillight. <br> • Updated zh Chinese translations by ryle798. <br> • Fix missing Spanish translations. <br> • Updated Viet translations.'
     },
     {
         date: '12/03/2024',
@@ -285,11 +289,11 @@ export const changelogs = [
     {
         date: '09/03/2024',
         description:
-            '• Added Tracker Editor. <br> • Updated stats for released arcanists by Heightweight.'
+            '• Add Tracker Editor. <br> • Updated stats for released arcanists by Heightweight.'
     },
     {
         date: '08/03/2024',
-        description: '• Added Google Drive Sync. <br> • Added The First Milestone banner.'
+        description: '• Add Google Drive Sync. <br> • Add The First Milestone banner.'
     },
     {
         date: '05/03/2024',
@@ -299,12 +303,12 @@ export const changelogs = [
     {
         date: '04/03/2024',
         description:
-            '• Cleaning up item names in json and bug fixes. <br> • Added automatic Greedy mode. <br> • Optimized images for faster load time. <br> • Updated zh Chinese translations by ryle798.'
+            '• Cleaning up item names in json and bug fixes. <br> • Add automatic Greedy mode. <br> • Optimized images for faster load time. <br> • Updated zh Chinese translations by ryle798.'
     },
     {
         date: '02/03/2024',
         description:
-            '• Fixed 1.4 items not being added to Warehouse. <br> • Updated warehouse order to match ingame.  <br> • Updated Indonesia translations by ArieKee.'
+            '• Fix 1.4 items not being Add to Warehouse. <br> • Updated warehouse order to match ingame.  <br> • Updated Indonesia translations by ArieKee.'
     },
     {
         date: '01/03/2024',
@@ -313,7 +317,7 @@ export const changelogs = [
     },
     {
         date: '29/02/2024',
-        description: '• Deployed 1.4 update. <br> • Added 37 banner.'
+        description: '• Deployed 1.4 update. <br> • Add 37 banner.'
     },
     {
         date: '27/02/2024',
@@ -323,12 +327,12 @@ export const changelogs = [
     {
         date: '25/02/2024',
         description:
-            '• Added Lilya banner. <br> • Added a warning to ignore low opacity materials in planner crafting section.'
+            '• Add Lilya banner. <br> • Add a warning to ignore low opacity materials in planner crafting section.'
     },
     {
         date: '24/02/2024',
         description:
-            '• Added 37 and 6 as released. <br> • Added Getian and Isolde as unreleased. <br> • Added Quick Goal button (i3 lv30 r10 for 5-6* and i2 lv50 r10 otherwise) <br> • There were a lot of updates recently, you guys better go spread the words :gun: <br> • And as always, please let me know if there are bugs.'
+            '• Add 37 and 6 as released. <br> • Add Getian and Isolde as unreleased. <br> • Add Quick Goal button (i3 lv30 r10 for 5-6* and i2 lv50 r10 otherwise) <br> • There were a lot of updates recently, you guys better go spread the words :gun: <br> • And as always, please let me know if there are bugs.'
     },
     {
         date: '23/02/2024',
@@ -348,12 +352,11 @@ export const changelogs = [
     {
         date: '20/02/2024',
         description:
-            '• Added Arcanists page, work in progress.<br> • Added Items page. See the information, its droprate and usages here. <br> • Added Stages page to look up stages material drops.'
+            '• Add Arcanists page, work in progress.<br> • Add Items page. See the information, its droprate and usages here. <br> • Add Stages page to look up stages material drops.'
     },
     {
         date: '17/02/2024',
-        description:
-            '• Fixed 50/50 Win Rate displayed incorrectly when last pull is a Lose Rate Up.'
+        description: '• Fix 50/50 Win Rate displayed incorrectly when last pull is a Lose Rate Up.'
     },
     {
         date: '13/02/2024',
@@ -362,46 +365,45 @@ export const changelogs = [
     },
     {
         date: '12/02/2024',
-        description: '• Added Indonesia translation by ArieKee.'
+        description: '• Add Indonesia translation by ArieKee.'
     },
     {
         date: '11/02/2024',
         description:
-            '• Added Ms. NewBabel banner, good luck rolling her ;) <br> • Happy Lunar new year.'
+            '• Add Ms. NewBabel banner, good luck rolling her ;) <br> • Happy Lunar new year.'
     },
     {
         date: '08/02/2024',
-        description: '• Added 1.3 pt2 shop, Shamane banner. Fixed jukebox rewards.'
+        description: '• Add 1.3 pt2 shop, Shamane banner. Fix jukebox rewards.'
     },
     {
         date: '02/02/2024',
-        description: '• Added a link to timekeeper.top, also try them.'
+        description: '• Add a link to timekeeper.top, also try them.'
     },
     {
         date: '30/01/2024',
-        description: '• Added Substitute methods to Tracker'
+        description: '• Add Substitute methods to Tracker'
     },
     {
         date: '29/01/2024',
         description:
             "• Tracker algorithm was modified. Please let us know if it's working via Comments/Bug Reports."
     },
-    { date: '28/01/2024', description: '• Added Medicine Pocket banner.' },
+    { date: '28/01/2024', description: '• Add Medicine Pocket banner.' },
     {
         date: '19/01/2024',
-        description: '• OCR improvements. Added notice for incomplete 10x in Tutorial.'
+        description: '• OCR improvements. Add notice for incomplete 10x in Tutorial.'
     },
-    { date: '18/01/2024', description: '• Fixed iOS unable to import images.' },
+    { date: '18/01/2024', description: '• Fix iOS unable to import images.' },
     {
         date: '17/01/2024',
-        description:
-            '• Added Kaalaa Baunaa and Shamane banners.<br> • Updated 1.3 part 1 Event Shop.'
+        description: '• Add Kaalaa Baunaa and Shamane banners.<br> • Updated 1.3 part 1 Event Shop.'
     },
-    { date: '16/01/2024', description: '• Added Centurion banner.' },
+    { date: '16/01/2024', description: '• Add Centurion banner.' },
     {
         date: '15/01/2024',
         description:
-            '• Added "Level Up" function where you can consume your warehouse materials to update arcanist to goal status. Try it out by left clicking an arcanist.'
+            '• Add "Level Up" function where you can consume your warehouse materials to update arcanist to goal status. Try it out by left clicking an arcanist.'
     },
     { date: '14/01/2024', description: '• Home UI improvements.' },
     {
@@ -412,12 +414,12 @@ export const changelogs = [
     {
         date: '12/01/2024',
         description:
-            '• Fixed a bug where pity count in summon history is displayed incorrectly when other rarities are present.'
+            '• Fix a bug where pity count in summon history is displayed incorrectly when other rarities are present.'
     },
     {
         date: '11/01/2024',
         description:
-            '• Updated ES translations<br> • Added Jiu Niangzi, Енисе́й and updated previous missing data.'
+            '• Updated ES translations<br> • Add Jiu Niangzi, Енисе́й and updated previous missing data.'
     },
     {
         date: '10/01/2024',
@@ -430,22 +432,22 @@ export const changelogs = [
     {
         date: '07/01/2024',
         description:
-            '• Added French translations thanks to я герой#3673. <br> • Improved Japanese translations thanks to yagochi. <br> • Fixed X turning into 37 and crop problems. <br> • Added 50/50 win/lose indicator.'
+            '• Add French translations thanks to я герой#3673. <br> • Improved Japanese translations thanks to yagochi. <br> • Fix X turning into 37 and crop problems. <br> • Add 50/50 win/lose indicator.'
     },
     {
         date: '06/01/2024',
         description:
-            '• Added Spanish translations thanks to mgeshagrath. <br> • Added Russian translations thanks to spun4ik and dagufz37. <br> • Released 1.3 Arcanists.'
+            '• Add Spanish translations thanks to mgeshagrath. <br> • Add Russian translations thanks to spun4ik and dagufz37. <br> • Released 1.3 Arcanists.'
     },
     {
         date: '05/01/2024',
         description:
-            '• Big Summon Tracker Update. <br> • Added Japanese translations thanks to yagochi.'
+            '• Big Summon Tracker Update. <br> • Add Japanese translations thanks to yagochi.'
     },
     {
         date: '04/01/2024',
         description:
-            '• Added Korean translations thanks to CaptinRegulus.<br> • Added Banner Type for Tracker.'
+            '• Add Korean translations thanks to CaptinRegulus.<br> • Add Banner Type for Tracker.'
     },
     {
         date: '03/01/2024',
@@ -455,7 +457,7 @@ export const changelogs = [
     {
         date: '29/12/2023',
         description:
-            '• Added more languages! vi-VN, zh-CN, zh-TW have been fully translated. We need your help!'
+            '• Add more languages! vi-VN, zh-CN, zh-TW have been fully translated. We need your help!'
     },
     {
         date: '28/12/2023',
@@ -464,7 +466,7 @@ export const changelogs = [
     {
         date: '26/12/2023',
         description:
-            '• Improved OCR for 5*. <br> • Updated Stage Data and Greedy Method improvements. <br> • Added Ezra Theodore and Desert Flanndel.'
+            '• Improved OCR for 5*. <br> • Updated Stage Data and Greedy Method improvements. <br> • Add Ezra Theodore and Desert Flanndel.'
     },
     {
         date: '25/12/2023',
@@ -477,21 +479,21 @@ export const changelogs = [
     },
     {
         date: '23/12/2023',
-        description: '• UI Improvements for goals and crafting list. <br> • Added Goal Button.'
+        description: '• UI Improvements for goals and crafting list. <br> • Add Goal Button.'
     },
     {
         date: '21/12/2023',
-        description: '• UI Improvements. <br> • Added Goals and Crafting List.'
+        description: '• UI Improvements. <br> • Add Goals and Crafting List.'
     },
     {
         date: '20/12/2023',
         description:
-            '• Yet another warehouse update. <br> • Summon Tracker. Beta. <br> • Added Greedy method to prioritize Purple Materials '
+            '• Yet another warehouse update. <br> • Summon Tracker. Beta. <br> • Add Greedy method to prioritize Purple Materials '
     },
     {
         date: '16/12/2023',
         description:
-            '• Add names to 1.4 data. UI improvements.<br> • Added Activity Settings for Roaring Month and Refills.'
+            '• Add names to 1.4 data. UI improvements.<br> • Add Activity Settings for Roaring Month and Refills.'
     },
     {
         date: '15/12/2023',
@@ -501,23 +503,23 @@ export const changelogs = [
     {
         date: '14/12/2023',
         description:
-            '• Warehouse bug fixes (again), changed t6 resonate materials to casket. Sorry for the inconvenience but please reset your warehouse.<br> • Added 6, Spathodea and Ulu. Updated arcanists.json<br> • Various bug fixes and UI improvements.'
+            '• Warehouse bug fixes (again), changed t6 resonate materials to casket. Sorry for the inconvenience but please reset your warehouse.<br> • Add 6, Spathodea and Ulu. Updated arcanists.json<br> • Various bug fixes and UI improvements.'
     },
     {
         date: '12/12/2023',
         description: '• Optimized farming route, from the help of Fran!'
     },
-    { date: '05/12/2023', description: '• Added Profile. WIP.' },
+    { date: '05/12/2023', description: '• Add Profile. WIP.' },
     { date: '04/12/2023', description: '• Updated credits, minor bug fixes.' },
     {
         date: '03/12/2023',
         description:
-            '• Fixed wrong jsons. Hopefully it is correct now.<br> • Soldius. <br> • Added 1.2 event shops. Two buttons, all the items.'
+            '• Fix wrong jsons. Hopefully it is correct now.<br> • Soldius. <br> • Add 1.2 event shops. Two buttons, all the items.'
     },
     {
         date: '02/12/2023',
         description:
-            '• Fixed warehouse, added Tooth Fairy and Changeling to released.<br> • Fixed more warehouse bugs, added reset button.<br> • Fixed MORE warehouse bugs.'
+            '• Fix warehouse, Add Tooth Fairy and Changeling to released.<br> • Fix more warehouse bugs, Add reset button.<br> • Fix MORE warehouse bugs.'
     },
     {
         date: '01/12/2023',
@@ -525,7 +527,7 @@ export const changelogs = [
     },
     {
         date: '30/11/2023',
-        description: '• Added Warehouse. Fixed wrong Insight levels and unreleased Arcanists'
+        description: '• Add Warehouse. Fix wrong Insight levels and unreleased Arcanists'
     },
     { date: '29/11/2023', description: '• First release.' }
 ];

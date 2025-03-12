@@ -8,13 +8,15 @@ const props = defineProps({
         required: true
     }
 });
-
 </script>
 
 <template>
-    <div class="h-64 overflow-y-auto overflow-x-hidden">
+    <div class="h-64 overflow-y-auto overflow-x-hidden pb-20">
         <div class="mt-2 flex flex-wrap justify-center">
-            <MaterialIcon v-for="material in props.materialList" :key="material.Material" :material="material" />
+            <MaterialIcon
+                v-for="material in props.materialList"
+                :key="material.Material"
+                :material="material" />
         </div>
     </div>
 </template>

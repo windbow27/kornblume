@@ -800,10 +800,6 @@ watch(
 </template>
 
 <style scoped>
-.modal-box {
-    overflow-y: unset;
-}
-
 .euphoria-popper :deep(.popper #arrow::before) {
     /* not sure why its off-center */
     left: 96px;
