@@ -34,6 +34,8 @@ export const bannerList = [
     "Fledgling's First Flight",
     'When The Swan Dances',
     'The Book of Whys',
+    'Playing in Rainbow Clef',
+    'A Shell on the Waves',
 
     // standard
     'Amongst the Lake',
@@ -96,7 +98,9 @@ export const bannerRateUp = [
     'Argus',
     'Lopera',
     'Willow',
-    'Flutterpage'
+    'Flutterpage',
+    'Barcarola',
+    'Fatutu'
 ];
 
 export const specialArcanists: string[] = [

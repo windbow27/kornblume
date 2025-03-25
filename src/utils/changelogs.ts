@@ -1,6 +1,13 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '25/03/2025',
+        description: `
+        • Add Aleph as unreleased arcanists. <br>
+        • Add Barcarola and Fatutu banners.
+        `
+    },
+    {
         date: '12/03/2025',
         description: `
         • UI Improvements.
