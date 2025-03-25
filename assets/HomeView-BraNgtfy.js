@@ -1,4 +1,7 @@
-import{o as C}from"./index-RR8S30Xc.js";import{d as A,o as n,c as o,a as e,t,F as m,r as v,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as W,k as z,l as _,m as j}from"./index-CdtoMDdZ.js";const k=[{date:"12/03/2025",description:`
+import{o as C}from"./index-C8DENQGv.js";import{d as A,o as n,c as o,a as e,t,F as m,r as v,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as W,k as z,l as _,m as j}from"./index-CMOcKacU.js";const k=[{date:"25/03/2025",description:`
+        • Add Aleph as unreleased arcanists. <br>
+        • Add Barcarola and Fatutu banners.
+        `},{date:"12/03/2025",description:`
         • UI Improvements.
         `},{date:"10/03/2025",description:`
         • Fix Joe banner Tracker error.
