@@ -26,9 +26,7 @@ const selectedRarities = (rarity: number) => {
 
 const selectedAfflatus = (afflatus: string) => {
     if (activeAfflatus.value.includes(afflatus)) {
-        activeAfflatus.value = activeAfflatus.value.filter(
-            (a) => a !== afflatus
-        );
+        activeAfflatus.value = activeAfflatus.value.filter((a) => a !== afflatus);
     } else {
         activeAfflatus.value.push(afflatus);
     }
@@ -37,9 +35,7 @@ const selectedAfflatus = (afflatus: string) => {
 const portraitCounts = computed(() => {
     return listArcanists.value.map((arc) => ({
         ArcanistName: arc.Name,
-        count:
-            pulls.value.filter((pull) => pull.ArcanistName === arc.Name)
-                .length - 1
+        count: pulls.value.filter((pull) => pull.ArcanistName === arc.Name).length - 1
     }));
 });
 
@@ -52,21 +48,15 @@ const filteredArcanists = computed(() => {
             arc.Name.toLowerCase().includes(searchQuery.value.toLowerCase())
         );
     } else {
-        filtered = filtered.filter((arc) =>
-            t(arc.Name).includes(searchQuery.value)
-        );
+        filtered = filtered.filter((arc) => t(arc.Name).includes(searchQuery.value));
     }
 
     if (activeRarities.value.length > 0) {
-        filtered = filtered.filter((arc) =>
-            activeRarities.value.includes(arc.Rarity)
-        );
+        filtered = filtered.filter((arc) => activeRarities.value.includes(arc.Rarity));
     }
 
     if (activeAfflatus.value.length > 0) {
-        filtered = filtered.filter((arc) =>
-            activeAfflatus.value.includes(arc.Afflatus)
-        );
+        filtered = filtered.filter((arc) => activeAfflatus.value.includes(arc.Afflatus));
     }
 
     // Filter based on the showUnreleasedArcanists setting
@@ -109,18 +99,14 @@ onMounted(() => {
                     :placeholder="$t('search-arcanists')"
                     class="input input-sm w-full sm:w-auto bg-gray-800 text-white py-2 px-4 rounded-md focus:outline-none" />
                 <div class="form-control">
-                    <label
-                        class="cursor-pointer label justify-center space-x-5">
+                    <label class="cursor-pointer label justify-center space-x-5">
                         <span class="label-text text-white text-md">{{
                             $t('show-unreleased-arcanists')
                         }}</span>
                         <input
-                            v-model="
-                                usePlannerSettingsStore().settings
-                                    .showUnreleasedArcanists
-                            "
+                            v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists"
                             type="checkbox"
-                            class="checkbox checkbox-info" />
+                            class="checkbox checkbox-warning" />
                     </label>
                 </div>
             </div>
@@ -131,9 +117,8 @@ onMounted(() => {
                         v-for="i in [2, 3, 4, 5, 6]"
                         :key="i"
                         :class="{
-                            'border-2 border-info': activeRarities.includes(i),
-                            'border-2 border-transparent':
-                                !activeRarities.includes(i)
+                            'border-2 border-warning': activeRarities.includes(i),
+                            'border-2 border-transparent': !activeRarities.includes(i)
                         }"
                         @click="selectedRarities(i)"
                         class="p-2 rounded-md">
@@ -143,7 +128,7 @@ onMounted(() => {
                                 'text-orange-300': i === 6,
                                 'text-yellow-100': i === 5,
                                 'text-purple-400': i === 4,
-                                'text-sky-200': i === 3,
+                                'text-yellow-200': i === 3,
                                 'text-green-200': i === 2
                             }"></i>
                     </button>
@@ -161,10 +146,8 @@ onMounted(() => {
                         ]"
                         :key="afflatus"
                         :class="{
-                            'border-2 border-info':
-                                activeAfflatus.includes(afflatus),
-                            'border-2 border-transparent':
-                                !activeAfflatus.includes(afflatus)
+                            'border-2 border-warning': activeAfflatus.includes(afflatus),
+                            'border-2 border-transparent': !activeAfflatus.includes(afflatus)
                         }"
                         @click="selectedAfflatus(afflatus)"
                         class="p-2 rounded-md">
@@ -184,9 +167,7 @@ onMounted(() => {
                 <ArcanistPortrait
                     :arcanist="arcanist"
                     :count="
-                        portraitCounts.find(
-                            (pc) => pc.ArcanistName === arcanist.Name
-                        )?.count ?? -1
+                        portraitCounts.find((pc) => pc.ArcanistName === arcanist.Name)?.count ?? -1
                     " />
             </router-link>
         </div>

@@ -293,7 +293,7 @@ watch(isEditing, (newVal) => {
             <button
                 v-for="i in [2, 3, 4, 5, 6]"
                 :key="i"
-                :class="{ 'border-2 border-info': activeRarities.includes(i) }"
+                :class="{ 'border-2 border-warning': activeRarities.includes(i) }"
                 @click="selectedRarities(i)"
                 class="p-2 rounded-md">
                 <i
@@ -302,7 +302,7 @@ watch(isEditing, (newVal) => {
                         'text-orange-300': i === 6,
                         'text-yellow-100': i === 5,
                         'text-purple-400': i === 4,
-                        'text-sky-200': i === 3,
+                        'text-yellow-200': i === 3,
                         'text-green-200': i === 2
                     }"></i>
             </button>
@@ -326,7 +326,7 @@ watch(isEditing, (newVal) => {
                         'text-orange-300': pull.Rarity === 6,
                         'text-yellow-100': pull.Rarity === 5,
                         'text-purple-400': pull.Rarity === 4,
-                        'text-sky-200': pull.Rarity === 3,
+                        'text-yellow-200': pull.Rarity === 3,
                         'text-green-200': pull.Rarity === 2
                     }">
                     <!-- Index -->

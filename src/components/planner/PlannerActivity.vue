@@ -60,7 +60,6 @@ const cost = computed(() => {
     // console.log(result);
     return result;
 });
-
 </script>
 
 <template>
@@ -72,7 +71,8 @@ const cost = computed(() => {
             </button>
 
             <p class="text-white text-center text-lg font-bold">{{ $t('activity-settings') }}</p>
-            <p class="text-info text-center pb-5">{{ $t('current-per-day') }} <span class="font-bold">{{ activity }}</span>
+            <p class="text-warning text-center pb-5">
+                {{ $t('current-per-day') }} <span class="font-bold">{{ activity }}</span>
             </p>
 
             <!-- Selectors -->
@@ -80,17 +80,25 @@ const cost = computed(() => {
                 <div class="form-control">
                     <label class="cursor-pointer label justify-center">
                         <span class="label-text text-white mr-3">{{ $t('roaring-month') }}</span>
-                        <input v-model="roaringMonth" type="checkbox" :checked="roaringMonth"
-                            class="checkbox checkbox-info" />
+                        <input
+                            v-model="roaringMonth"
+                            type="checkbox"
+                            :checked="roaringMonth"
+                            class="checkbox checkbox-warning" />
                     </label>
                 </div>
 
                 <div class="tooltip" :data-tip="$t('240-activities-per-week')">
                     <div class="form-control">
                         <label class="cursor-pointer label justify-center">
-                            <span class="label-text text-white mr-3">{{ $t('weekly-activeness') }}</span>
-                            <input v-model="weeklyActivity" type="checkbox" :checked="weeklyActivity"
-                                class="checkbox checkbox-info" />
+                            <span class="label-text text-white mr-3">{{
+                                $t('weekly-activeness')
+                            }}</span>
+                            <input
+                                v-model="weeklyActivity"
+                                type="checkbox"
+                                :checked="weeklyActivity"
+                                class="checkbox checkbox-warning" />
                         </label>
                     </div>
                 </div>
@@ -99,14 +107,22 @@ const cost = computed(() => {
                     <div class="form-control">
                         <label class="cursor-pointer label justify-center">
                             <span class="label-text text-white mr-3">{{ $t('lazy-modo') }}</span>
-                            <input v-model="lazyModo" type="checkbox" :checked="lazyModo" class="checkbox checkbox-info" />
+                            <input
+                                v-model="lazyModo"
+                                type="checkbox"
+                                :checked="lazyModo"
+                                class="checkbox checkbox-warning" />
                         </label>
                     </div>
                 </div>
 
                 <div class="tooltip" :data-tip="$t('daily-refill')">
                     <span class="label-text text-white">{{ $t('daily-refill') }}</span>
-                    <SelectList class="pl-4" :options="options" :selected="refills" label="refills"
+                    <SelectList
+                        class="pl-4"
+                        :options="options"
+                        :selected="refills"
+                        label="refills"
                         v-on:update:selected="handleSelected" />
                 </div>
             </div>

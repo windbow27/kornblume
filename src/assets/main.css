@@ -214,12 +214,12 @@
 }
 
 :root {
-    --popper-theme-background-color: #172554;
-    --popper-theme-background-color-hover: #172554;
+    --popper-theme-background-color: #4a0916;
+    --popper-theme-background-color-hover: #4a0916;
     --popper-theme-text-color: #ffffff;
     --popper-theme-border-width: 1px;
     --popper-theme-border-style: solid;
-    --popper-theme-border-color: rgb(147, 197, 253);
+    --popper-theme-border-color: rgb(253, 147, 149);
     --popper-theme-border-radius: 6px;
     --popper-theme-padding: 20px;
     --popper-theme-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),

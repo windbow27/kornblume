@@ -79,7 +79,7 @@ const filter = () => {
                         v-for="i in [2, 3, 4, 5, 6]"
                         :key="i"
                         :class="{
-                            'border-2 border-info': activeRarities.includes(i),
+                            'border-2 border-warning': activeRarities.includes(i),
                             'border-2 border-transparent': !activeRarities.includes(i)
                         }"
                         @click="
@@ -93,7 +93,7 @@ const filter = () => {
                                 'text-orange-300': i === 6,
                                 'text-yellow-100': i === 5,
                                 'text-purple-400': i === 4,
-                                'text-sky-200': i === 3,
+                                'text-yellow-200': i === 3,
                                 'text-green-200': i === 2
                             }"></i>
                     </button>
@@ -105,13 +105,13 @@ const filter = () => {
                             :key="category"
                             :class="[
                                 {
-                                    'border-2 border-info': activeCategories.includes(category),
+                                    'border-2 border-warning': activeCategories.includes(category),
                                     'border-2 border-transparent':
                                         !activeCategories.includes(category)
                                 },
                                 {
                                     'text-error': index === 0,
-                                    'text-info': index === 1,
+                                    'text-warning': index === 1,
                                     'text-success': index === 2,
                                     'text-warning': index === 3,
                                     'text-secondary': index === 4,
@@ -128,7 +128,7 @@ const filter = () => {
                     </div>
                     <!-- <div class="flex justify-center">
                         <button v-if="categories.length > 0" :key="categories[4]" :class="[
-                            { 'border-2 border-info': activeCategories.includes(categories[4]), 'border-2 border-transparent': !activeCategories.includes(categories[4]) },
+                            { 'border-2 border-warning': activeCategories.includes(categories[4]), 'border-2 border-transparent': !activeCategories.includes(categories[4]) },
                         ]" @click="selectedCategories(categories[4]); filter()"
                             class="w-40 p-2 rounded-md text-sm text-secondary">
                             {{ $t(categories[4]) }}

@@ -447,7 +447,7 @@ watch(
                                 'text-orange-300': rarity === 6,
                                 'text-yellow-100': rarity === 5,
                                 'text-purple-400': rarity === 4,
-                                'text-sky-200': rarity === 3,
+                                'text-yellow-200': rarity === 3,
                                 'text-green-200': rarity === 2
                             }"></i>
                     </label>
@@ -473,7 +473,7 @@ watch(
             </div>
             <div class="custom-line mb-4"></div>
             <!-- Selectors -->
-            <div class="custom-label text-blue-100">
+            <div class="custom-label text-red-100">
                 {{ $t('current-level') }}
             </div>
             <div class="mt-2 flex justify-center items-center leading-none">
@@ -496,7 +496,7 @@ watch(
                     :options="currentLevelOptions"
                     v-on:update:selected="handleSelected" />
             </div>
-            <div class="custom-label text-blue-100">{{ $t('goal-level') }}</div>
+            <div class="custom-label text-red-100">{{ $t('goal-level') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList
                     :key="updateKey"
@@ -517,7 +517,7 @@ watch(
                     :options="goalLevelOptions"
                     v-on:update:selected="handleSelected" />
             </div>
-            <div class="custom-label text-blue-100">{{ $t('resonance') }}</div>
+            <div class="custom-label text-red-100">{{ $t('resonance') }}</div>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList
                     :key="updateKey"
@@ -687,7 +687,7 @@ watch(
                                                                 (e) => e === euphoria.Id
                                                             )
                                                         "
-                                                        class="checkbox checkbox-info" />
+                                                        class="checkbox checkbox-warning" />
                                                 </label>
                                             </div>
                                         </div>

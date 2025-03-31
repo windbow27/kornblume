@@ -52,7 +52,7 @@ onBeforeMount(() => {
                             'text-orange-300': arcanist?.Rarity === 6,
                             'text-yellow-100': arcanist?.Rarity === 5,
                             'text-purple-400': arcanist?.Rarity === 4,
-                            'text-sky-200': arcanist?.Rarity === 3,
+                            'text-yellow-200': arcanist?.Rarity === 3,
                             'text-green-200': arcanist?.Rarity === 2
                         }">
                         {{ arcanist?.Rarity }} <i class="fa-solid fa-star"></i>

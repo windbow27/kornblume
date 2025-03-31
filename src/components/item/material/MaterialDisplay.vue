@@ -87,7 +87,7 @@ const stageList = computed(() => {
                 class=""
                 :class="{
                     'text-error': props.selectedMaterial.Category === categories[0],
-                    'text-info': props.selectedMaterial.Category === categories[1],
+                    'text-warning': props.selectedMaterial.Category === categories[1],
                     'text-success': props.selectedMaterial.Category === categories[2],
                     'text-warning': props.selectedMaterial.Category === categories[3],
                     'text-secondary': props.selectedMaterial.Category === categories[4],
@@ -101,7 +101,7 @@ const stageList = computed(() => {
                     'text-orange-300': props.selectedMaterial.Rarity === 6,
                     'text-yellow-100': props.selectedMaterial.Rarity === 5,
                     'text-purple-400': props.selectedMaterial.Rarity === 4,
-                    'text-sky-200': props.selectedMaterial.Rarity === 3,
+                    'text-yellow-200': props.selectedMaterial.Rarity === 3,
                     'text-green-200': props.selectedMaterial.Rarity === 2
                 }">
                 {{ props.selectedMaterial.Rarity }} <i class="fa-solid fa-star"></i>

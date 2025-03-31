@@ -8,15 +8,13 @@ import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 import { IMaterialUnit } from '@/types';
 import PlannerLayer from '@/components/planner/result/PlannerLayer.vue';
 
-const emits = defineEmits([
-    'update:totalActivityAndDays'
-]);
+const emits = defineEmits(['update:totalActivityAndDays']);
 
 const calculateCards = ref<IPlanCards>([]);
 
 watchEffect(async () => {
     if (!useGlobalStore().isEditingPlanner) {
-        const result = usePlannerStore().selectedArcanists.map(arc => {
+        const result = usePlannerStore().selectedArcanists.map((arc) => {
             if (!arc.isVisible) return [];
             const arcResult: IMaterialUnit[] = useCalculation(arc);
             return arcResult;
@@ -34,36 +32,43 @@ watchEffect(async () => {
         calculateCards.value = normalizedCards;
     }
 });
-
 </script>
 
 <template>
     <div class="flex flex-wrap">
-        <button class="text-center text-info font-bold text-sm hover:text-blue-200 opacity-90"
-            onclick="process_explaination.showModal()">{{ $t('planner-calculation-explanation') }}</button>
+        <button
+            class="text-center text-warning font-bold text-sm hover:text-red-200 opacity-90"
+            onclick="process_explaination.showModal()">
+            {{ $t('planner-calculation-explanation') }}
+        </button>
         <dialog id="process_explaination" class="modal">
             <div class="modal-box custom-gradient-gray-blue border border-red-800">
                 <form method="dialog">
-                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    <button
+                        class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">
+                        ✕
+                    </button>
                 </form>
                 <div>
                     <p class="py-4 text-white">
                         {{
-                            $t('when-you-add-arcanists-to-the-planner-with-their-current-goal-levels-and-resonance-you-will-see-several-sections-appear-below')
+                            $t(
+                                'when-you-add-arcanists-to-the-planner-with-their-current-goal-levels-and-resonance-you-will-see-several-sections-appear-below'
+                            )
                         }}
-                        <br>
-                        <br>
+                        <br />
+                        <br />
                         <i18n-t
                             keypath="the-resources-and-insight-sections-are-straightforward-and-they-show-you-how-many-times-you-need-to-run-each-stage-in-order-to-get-the-materials-based-on-your-intended-arcanist-levels-since-we-cant-farm-resonance-materials-those-are-shown-with-the-cost-associated-in-the-oneiric-shop-found-in-the-bank">
                             <template #resources>
                                 <span class="text-yellow-500">{{ $t('resources') }}</span>
                             </template>
                             <template #insight>
-                                <span class="text-blue-500">{{ $t('insight') }}</span>
+                                <span class="text-red-500">{{ $t('insight') }}</span>
                             </template>
                         </i18n-t>
-                        <br>
-                        <br>
+                        <br />
+                        <br />
                         <i18n-t
                             keypath="the-other-two-sections-are-hard-stages-and-crafting-these-results-have-been-optimized-to-reduce-the-stamina-required-for-farming-these-materials-by-running-the-listed-stages-the-number-of-times-it-suggests-it-is-expected-you-will-receive-all-the-materials-you-need-the-materials-obtained-from-the-hard-stage-farming-will-help-you-make-the-items-listed-in-the-crafting-section">
                             <template #hardstages>
@@ -73,13 +78,15 @@ watchEffect(async () => {
                                 <span class="text-green-500">{{ $t('crafting') }}</span>
                             </template>
                         </i18n-t>
-                        <br>
-                        <br>
+                        <br />
+                        <br />
                         {{
-                            $t('as-you-obtain-materials-from-farming-hard-stages-its-recommended-that-you-update-your-warehouse-values-so-that-the-planner-remains-up-to-date-and-your-results-are-accurate')
+                            $t(
+                                'as-you-obtain-materials-from-farming-hard-stages-its-recommended-that-you-update-your-warehouse-values-so-that-the-planner-remains-up-to-date-and-your-results-are-accurate'
+                            )
                         }}
-                        <br>
-                        <br>
+                        <br />
+                        <br />
                         <i18n-t
                             keypath="please-note-that-we-do-not-know-exact-drop-rates-so-we-can-only-show-what-youre-expected-to-get-not-what-you-will-get-exactly-the-hard-stages-section-will-also-show-any-drop-that-you-may-get-rather-than-only-the-items-that-you-need-this-does-not-affect-the-results-of-the-farm-plan">
                             <template #expected>

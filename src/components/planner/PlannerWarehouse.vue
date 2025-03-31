@@ -113,14 +113,14 @@ onMounted(() => {
                                     :key="category"
                                     :class="[
                                         {
-                                            'border-2 border-info':
+                                            'border-2 border-warning':
                                                 activeCategories.includes(category),
                                             'border-2 border-transparent':
                                                 !activeCategories.includes(category)
                                         },
                                         {
                                             'text-error': index === 0,
-                                            'text-info': index === 1,
+                                            'text-warning': index === 1,
                                             'text-success': index === 2,
                                             'text-warning': index === 3,
                                             'text-green-300': index === 4

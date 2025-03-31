@@ -164,40 +164,40 @@ onClickOutside(resourcesRef, closeResources);
                             </h2>
                             <div class="space-y-1">
                                 <p>
-                                    <span class="text-info"> Español </span>
+                                    <span class="text-warning"> Español </span>
                                     mgeshagrath
                                 </p>
                                 <p>
-                                    <span class="text-info"> Français </span> я герой#3673 &
+                                    <span class="text-warning"> Français </span> я герой#3673 &
                                     sillight
                                 </p>
-                                <!-- <p><span class="text-info"> Deutsch </span> </p> -->
+                                <!-- <p><span class="text-warning"> Deutsch </span> </p> -->
                                 <p>
-                                    <span class="text-info"> 简体中文 </span>
+                                    <span class="text-warning"> 简体中文 </span>
                                     fran & ryle798
                                 </p>
                                 <p>
-                                    <span class="text-info"> 繁體中文 </span>
+                                    <span class="text-warning"> 繁體中文 </span>
                                     fran & Yumemigokochi
                                 </p>
                                 <p>
-                                    <span class="text-info"> Tiếng Việt </span>
+                                    <span class="text-warning"> Tiếng Việt </span>
                                     windbow
                                 </p>
                                 <p>
-                                    <span class="text-info"> Indonesia </span>
+                                    <span class="text-warning"> Indonesia </span>
                                     ArieKee
                                 </p>
                                 <p>
-                                    <span class="text-info"> 한국어 </span>
+                                    <span class="text-warning"> 한국어 </span>
                                     CaptinRegulus & LyvaKim
                                 </p>
                                 <p>
-                                    <span class="text-info"> 日本語 </span>
+                                    <span class="text-warning"> 日本語 </span>
                                     yagochi
                                 </p>
                                 <p>
-                                    <span class="text-info"> Русский </span>
+                                    <span class="text-warning"> Русский </span>
                                     spun4ik, dagufz37 & mushel2442
                                 </p>
                                 <p>hato</p>

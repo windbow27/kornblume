@@ -31,7 +31,7 @@ const getArcanistSkillPath = (id: string, skill: number) => {
             <img class="attribute" src="/images/arcanists/misc/card-attack.webp" alt="">
         </div>
         <div class="w-4/5 flex flex-col pl-4 justify-center">
-            <p class="text-blue-400/90 font-bold"> {{ props.arcanist.Skills[3 * (props.id - 1) + props.star - 1].Name }}</p>
+            <p class="text-red-400/90 font-bold"> {{ props.arcanist.Skills[3 * (props.id - 1) + props.star - 1].Name }}</p>
             <Text :effect="props.arcanist.Skills[3 * (props.id - 1) + props.star - 1].Effect"/>
         </div>
     </div>

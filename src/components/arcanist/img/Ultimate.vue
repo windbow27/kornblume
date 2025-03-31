@@ -25,7 +25,7 @@ const getArcanistUltPath = (id: string, ult: number) => {
             <img class="ult" :src="getArcanistUltPath(props.arcanist.Id, 3)" alt="">
         </div>
         <div class="w-4/5 flex flex-col pl-4 justify-center">
-            <p class="text-blue-400/90 font-bold"> {{ props.arcanist.Ultimate.Name }}</p>
+            <p class="text-red-400/90 font-bold"> {{ props.arcanist.Ultimate.Name }}</p>
             <Text :effect="props.arcanist.Ultimate.Effect" />
         </div>
     </div>

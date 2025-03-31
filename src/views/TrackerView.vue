@@ -580,10 +580,10 @@ const selectBannerType = (bannerType: string) => {
             <span v-show="isImporting" class="text-white text-base pl-1">
                 <i18n-t keypath="processing-file-number-out-of-numbers-please-wait">
                     <template #current>
-                        <span class="text-info">{{ currentFileIndex }}</span>
+                        <span class="text-warning">{{ currentFileIndex }}</span>
                     </template>
                     <template #total>
-                        <span class="text-info">{{ totalFiles }}</span>
+                        <span class="text-warning">{{ totalFiles }}</span>
                     </template>
                 </i18n-t>
             </span>

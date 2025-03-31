@@ -48,8 +48,8 @@ watch(shouldHideScrollbar, (newVal) => {
 
         <div class="tooltip w-full" :data-tip="toolTipText">
             <div
-                class="calculations flex justify-center items-center bg-gradient-to-r from-blue-800/70 to-blue-900/90 text-white p-2 rounded-md h-12">
-                <p v-if="card.stage !== 'Unreleased'" class="border-blue-700/90 border-r pr-3">
+                class="calculations flex justify-center items-center bg-gradient-to-r from-red-800/70 to-red-900/90 text-white p-2 rounded-md h-12">
+                <p v-if="card.stage !== 'Unreleased'" class="border-red-700/90 border-r pr-3">
                     <span v-show="card.runs > 0">
                         <i class="fa-solid fa-xmark text-xs mr-0.5" />{{ card.runs }}
                     </span>
@@ -64,7 +64,7 @@ watch(shouldHideScrollbar, (newVal) => {
                 </p>
                 <p v-else-if="layerId === 3">
                     <span
-                        class="block md:inline md:border-blue-700/90 md:border-r pr-3 text-sm md:text-base"
+                        class="block md:inline md:border-red-700/90 md:border-r pr-3 text-sm md:text-base"
                         >{{ $t('crafted-from-available-materials') }}</span
                     >
                     <span class="block md:inline pl-3 pr-3 text-sm md:text-base">{{
@@ -78,7 +78,7 @@ watch(shouldHideScrollbar, (newVal) => {
                     alt="Activity Image"
                     class="inline-block w-8 h-8" />
 
-                <p class="border-blue-700/90 border-l pl-3">
+                <p class="border-red-700/90 border-l pl-3">
                     <span v-show="card.days > 0">
                         {{ card.days }}
                         {{ card.days === 0 ? '' : card.days > 1 ? $t('days') : $t('day') }}

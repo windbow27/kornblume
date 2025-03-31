@@ -126,7 +126,7 @@ watchEffect(() => {
                     <div class="flex justify-center pt-2">
                         <a href="https://github.com/windbow27/kornblume/blob/main/lang/README.md">
                             <p
-                                class="btn btn-sm btn-outline btn-ghost hover:border-info hover:bg-transparent hover:text-info text-white">
+                                class="btn btn-sm btn-outline btn-ghost hover:border-warning hover:bg-transparent hover:text-warning text-white">
                                 {{ $t('help-us-translate') }}
                             </p>
                         </a>

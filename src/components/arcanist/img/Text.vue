@@ -18,7 +18,7 @@ const getEffectParts = () => {
 <template>
     <div class="skill-text">
         <span class="" v-for="(part, index) in getEffectParts()" :key="index"
-            :class="{ 'text-blue-400/90': part.startsWith('['), 'text-orange-300': /^(\+|-)\d+|%|\d+\/\d+\/\d+%?/.test(part) }">
+            :class="{ 'text-red-400/90': part.startsWith('['), 'text-orange-300': /^(\+|-)\d+|%|\d+\/\d+\/\d+%?/.test(part) }">
             {{ part }}
         </span>
     </div>
