@@ -122,7 +122,7 @@ onMounted(() => {
                                             'text-error': index === 0,
                                             'text-warning': index === 1,
                                             'text-success': index === 2,
-                                            'text-warning': index === 3,
+                                            'text-info': index === 3,
                                             'text-green-300': index === 4
                                         }
                                     ]"

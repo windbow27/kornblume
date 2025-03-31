@@ -89,7 +89,7 @@ const stageList = computed(() => {
                     'text-error': props.selectedMaterial.Category === categories[0],
                     'text-warning': props.selectedMaterial.Category === categories[1],
                     'text-success': props.selectedMaterial.Category === categories[2],
-                    'text-warning': props.selectedMaterial.Category === categories[3],
+                    'text-info': props.selectedMaterial.Category === categories[3],
                     'text-secondary': props.selectedMaterial.Category === categories[4],
                     'text-green-300': props.selectedMaterial.Category === categories[5]
                 }">
