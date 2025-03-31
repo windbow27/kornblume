@@ -50,7 +50,6 @@ onMounted(() => {
     filteredItems.value = itemStore.filter((item: IItem) => item.IsReleased);
     sortCategoryMaterials(filteredItems.value, categories);
 });
-
 </script>
 
 <template>
@@ -82,7 +81,7 @@ onMounted(() => {
                                 :key="index"
                                 @click="selectedButton = button"
                                 :class="[
-                                    'hover:bg-info rounded-md text-white py-1 px-3',
+                                    'hover:bg-warning rounded-md text-white py-1 px-3',
                                     selectedButton === button ? 'border-button' : ''
                                 ]"
                                 :disabled="index !== 0">

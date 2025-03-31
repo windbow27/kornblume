@@ -21,9 +21,7 @@ function setLocalStorageDataByKey(key, data) {
 // otherwise, it may lead to data incompatibility and potentially break users' data
 function clearLegacyData() {
     const plannerSettingsStoreKey = 'plannerSettings';
-    const plannerSettingsStoreData = getLocalStorageDataByKey(
-        plannerSettingsStoreKey
-    );
+    const plannerSettingsStoreData = getLocalStorageDataByKey(plannerSettingsStoreKey);
     if (plannerSettingsStoreData) {
         // only do this if there's data already stored in users' devices
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -39,10 +37,7 @@ function clearLegacyData() {
             ...plannerSettingsStoreData,
             settings: restSettings
         };
-        setLocalStorageDataByKey(
-            plannerSettingsStoreKey,
-            newPlannerSettingsStoreData
-        );
+        setLocalStorageDataByKey(plannerSettingsStoreKey, newPlannerSettingsStoreData);
     }
 
     const warehouseStoreKey = 'warehouse';
@@ -62,8 +57,7 @@ function clearLegacyData() {
             'Wheel and Axle Core': 'Watch Core'
         };
         const newWarehouseData = warehouseData.map((matlInfo) => {
-            const newMatlName =
-                legacyMatlNameMapping[matlInfo.Material] || matlInfo.Material;
+            const newMatlName = legacyMatlNameMapping[matlInfo.Material] || matlInfo.Material;
             return {
                 ...matlInfo,
                 Material: newMatlName
@@ -84,7 +78,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="bg-gradient-to-r from-gray-900 to-blue-950">
+    <div class="bg-gradient-to-r from-pink-950 to-red-950">
         <header>
             <Navbar />
         </header>

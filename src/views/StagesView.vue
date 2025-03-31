@@ -57,28 +57,23 @@ watchEffect(() => {
                 <!--Item Selection Card-->
                 <div class="card custom-border">
                     <div class="flex flex-wrap justify-center gap-y-2">
-                        <div
-                            class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
+                        <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
                             <button
                                 v-for="(button, index) in buttons"
                                 :key="index"
                                 @click="selectedButton = button"
                                 :class="[
-                                    'hover:bg-info rounded-md text-white py-1 px-3',
-                                    selectedButton === button
-                                        ? 'border-button'
-                                        : ''
+                                    'hover:bg-warning rounded-md text-white py-1 px-3',
+                                    selectedButton === button ? 'border-button' : ''
                                 ]">
                                 {{ $t(button) }}
                             </button>
                         </div>
                     </div>
                 </div>
-                <div
-                    class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
+                <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
                     <div class="custom-item-list">
-                        <div
-                            class="flex flex-wrap justify-center gap-x-5 gap-y-2">
+                        <div class="flex flex-wrap justify-center gap-x-5 gap-y-2">
                             <StageSelectionIcon
                                 v-for="stage in filteredStages"
                                 :key="stage.name"
@@ -96,9 +91,7 @@ watchEffect(() => {
             </div>
             <!--Item Display Card-->
             <div class="flex flex-col gap-y-4">
-                <StageDisplay
-                    :selectedStage="selectedStage"
-                    :stageName="selectedStage.name" />
+                <StageDisplay :selectedStage="selectedStage" :stageName="selectedStage.name" />
             </div>
         </div>
     </div>

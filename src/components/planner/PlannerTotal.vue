@@ -15,7 +15,6 @@ const props = defineProps({
 });
 
 const activityStore = useActivityStore();
-
 </script>
 
 <template>
@@ -33,14 +32,19 @@ const activityStore = useActivityStore();
                     </div>
                 </div>
                 <div class="text pr-3">
-                    {{ props.totalActivityAndDays?.[1] || 0 }} {{ props.totalActivityAndDays[1] > 1 ? $t("days") : $t("day")
-                    }}</div>
+                    {{ props.totalActivityAndDays?.[1] || 0 }}
+                    {{ props.totalActivityAndDays[1] > 1 ? $t('days') : $t('day') }}
+                </div>
             </div>
         </div>
 
         <!-- Drops Cost -->
         <div v-if="activityStore.settings.cost > 0" class="tooltip" :data-tip="$t('drops-cost')">
-            <div class="text"> {{ Number(formatQuantity(activityStore.settings.cost)) * props.totalActivityAndDays[1] }}
+            <div class="text">
+                {{
+                    Number(formatQuantity(activityStore.settings.cost)) *
+                    props.totalActivityAndDays[1]
+                }}
             </div>
         </div>
         <div v-if="activityStore.settings.cost > 0" class="avatar">
@@ -52,8 +56,13 @@ const activityStore = useActivityStore();
         <!-- Dust -->
         <div v-if="false" class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
             <div class="flex items-center">
-                <div class="text"> {{ formatQuantity(props.wildernessSettings.wildernessOutput.dust *
-                props.totalActivityAndDays[1] || 0) }}
+                <div class="text">
+                    {{
+                        formatQuantity(
+                            props.wildernessSettings.wildernessOutput.dust *
+                                props.totalActivityAndDays[1] || 0
+                        )
+                    }}
                 </div>
                 <div class="avatar">
                     <div class="w-8 rounded">
@@ -66,8 +75,13 @@ const activityStore = useActivityStore();
         <!-- Sharpodonty -->
         <div v-if="false" class="tooltip tooltip-left" :data-tip="$t('wilderness-production')">
             <div class="flex items-center">
-                <div class="text"> {{ formatQuantity(props.wildernessSettings.wildernessOutput.gold *
-                props.totalActivityAndDays[1] || 0) }}
+                <div class="text">
+                    {{
+                        formatQuantity(
+                            props.wildernessSettings.wildernessOutput.gold *
+                                props.totalActivityAndDays[1] || 0
+                        )
+                    }}
                 </div>
                 <div class="avatar">
                     <div class="w-8 rounded">
@@ -81,6 +95,6 @@ const activityStore = useActivityStore();
 
 <style scoped>
 .text {
-    @apply border-blue-700/90 border-l pl-3 text-sm sm:text-base text-white;
+    @apply border-yellow-700/90 border-l pl-3 text-sm sm:text-base text-white;
 }
 </style>

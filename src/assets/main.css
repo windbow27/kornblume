@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 .container {
-    @apply p-4 sm:px-8 md:px-16 mx-auto max-w-[1600px]
+    @apply p-4 sm:px-8 md:px-16 mx-auto max-w-[1600px];
 }
 
 .wrapper {
-    @apply sm:px-8 md:px-16 flex flex-wrap justify-center
+    @apply sm:px-8 md:px-16 flex flex-wrap justify-center;
 }
 
 /*Custom common*/
@@ -17,52 +17,52 @@
 }
 
 .custom-gradient-gray-blue-dark {
-    @apply bg-gradient-to-r from-gray-900 to-blue-950;
+    @apply bg-gradient-to-r from-red-950 to-red-950;
 }
 
 .custom-gradient-gray-blue {
-    @apply bg-gradient-to-r from-gray-800 to-blue-950;
+    @apply bg-gradient-to-r from-red-950 to-red-950;
 }
 
 .custom-gradient-gray-blue-light {
-    @apply bg-gradient-to-r from-blue-800/70 to-blue-900/90;
+    @apply bg-gradient-to-r from-red-800/70 to-red-900/90;
 }
 
 .custom-border {
-    @apply border-2 border-blue-800;
+    @apply border-2 border-red-800;
 }
 
 .custom-border-light {
-    @apply border-blue-300;
+    @apply border-red-300;
     border-width: 1px;
 }
 
 .custom-border-white {
-    @apply border-2 border-transparent box-border border-white rounded
+    @apply border-2 border-transparent box-border border-white rounded;
 }
 
 .custom-border-transparent {
-    @apply border-2 border-transparent box-border rounded
+    @apply border-2 border-transparent box-border rounded;
 }
 
 .border-button {
-    @apply border-2 border-info rounded-md text-white;
+    @apply border-2 border-warning rounded-md text-white;
 }
 
 .range-slider {
-    @apply h-1.5 w-full cursor-pointer appearance-none rounded border-transparent bg-info
+    @apply h-1.5 w-full cursor-pointer appearance-none rounded border-transparent bg-warning;
 }
 
 .gradient-blue {
-    @apply text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 focus:ring-2 focus:outline-none focus:ring-blue-300 hover:bg-gradient-to-br bg-clip-padding
+    @apply text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 focus:ring-2 focus:outline-none focus:ring-red-300 hover:bg-gradient-to-br bg-clip-padding;
 }
 
 .custom-select {
-    @apply block py-2.5 px-0 w-1/5 text-sm bg-transparent border-0 border-gray-600 border-b-2 focus:outline-none focus:ring-0 focus:border-gray-500 text-center appearance-none bg-gray-800 text-white pl-3 pr-10 rounded leading-tight
+    @apply block py-2.5 px-0 w-1/5 text-sm bg-transparent border-0 border-gray-600 border-b-2 focus:outline-none focus:ring-0 focus:border-gray-500 text-center appearance-none bg-gray-800 text-white pl-3 pr-10 rounded leading-tight;
 }
 
 .custom-label {
-    @apply mt-2 mb-2 text-center uppercase text-sm font-semibold py-1 px-2 rounded bg-gray-600/80
+    @apply mt-2 mb-2 text-center uppercase text-sm font-semibold py-1 px-2 rounded bg-gray-600/80;
 }
 
 .overlay {
@@ -70,35 +70,35 @@
 }
 
 .custom-modal-small {
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 2xl:w-1/4;
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-red-950 to-red-950 p-8 border-2 border-red-800 rounded-md w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 2xl:w-1/4;
 }
 
 .custom-modal-big {
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-gray-800 to-blue-950 p-8 border-2 border-blue-800 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2 max-h-[95vh] overflow-y-hidden overflow-x-hidden;
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-red-950 to-red-950 p-8 border-2 border-red-800 rounded-md w-11/12 sm:w-3/4 md:w-2/3 2xl:w-1/2 max-h-[95vh] overflow-y-hidden overflow-x-hidden;
 }
 
 .red-button {
-    @apply btn btn-error hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/40 text-white/90 py-2 px-4 rounded-xl
+    @apply btn btn-error hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/40 text-white/90 py-2 px-4 rounded-xl;
 }
 
 .red-button-small {
-    @apply btn btn-error btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/40 text-white/90 py-1 px-2 rounded-xl
+    @apply btn btn-error btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-500/40 text-white/90 py-1 px-2 rounded-xl;
 }
 
 .green-button {
-    @apply btn btn-success hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-white/90 py-2 px-4 rounded-xl
+    @apply btn btn-warning hover:bg-gradient-to-bl bg-gradient-to-br from-warning to-yellow-600 text-white/90 py-2 px-4 rounded-xl;
 }
 
 .green-button-small {
-    @apply btn btn-success btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-success to-green-600 text-white/90 py-1 px-2 rounded-xl
+    @apply btn btn-warning btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-warning to-yellow-600 text-white/90 py-1 px-2 rounded-xl;
 }
 
 .blue-button {
-    @apply btn btn-info hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-white/90 py-2 px-4 rounded-xl
+    @apply btn btn-error hover:bg-gradient-to-bl bg-gradient-to-br from-error to-red-400 text-white/90 py-2 px-4 rounded-xl;
 }
 
 .blue-button-small {
-    @apply btn btn-info btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-info to-blue-400 text-white/90 py-1 px-2 rounded-xl
+    @apply btn btn-error btn-sm hover:bg-gradient-to-bl bg-gradient-to-br from-info to-red-400 text-white/90 py-1 px-2 rounded-xl;
 }
 
 @keyframes fadeIn {
@@ -138,11 +138,11 @@
 /* Doesn't work */
 
 .custom-gradient-button {
-    @apply text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 bg-clip-padding rounded-xl
+    @apply text-white bg-gradient-to-r from-yellow-400 to-yellow-600 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 bg-clip-padding rounded-xl;
 }
 
 .custom-item-list {
-    @apply flex flex-wrap justify-center overflow-y-auto overflow-x-hidden
+    @apply flex flex-wrap justify-center overflow-y-auto overflow-x-hidden;
 }
 
 .custom-card {
@@ -156,39 +156,39 @@
 /*Badges*/
 
 .blue-badge {
-    @apply bg-blue-100 text-blue-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-blue-400
+    @apply bg-red-100 text-blue-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-blue-400;
 }
 
 .black-badge {
-    @apply bg-gray-100 text-gray-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-gray-500
+    @apply bg-gray-100 text-gray-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-gray-500;
 }
 
 .red-badge {
-    @apply bg-red-100 text-red-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-red-400
+    @apply bg-red-100 text-red-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-red-400;
 }
 
 .green-badge {
-    @apply bg-green-100 text-green-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-green-400
+    @apply bg-green-100 text-green-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-green-400;
 }
 
 .yellow-badge {
-    @apply bg-yellow-100 text-yellow-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-yellow-400
+    @apply bg-yellow-100 text-yellow-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-yellow-400;
 }
 
 .purple-badge {
-    @apply bg-purple-100 text-purple-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-purple-400
+    @apply bg-purple-100 text-purple-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-purple-400;
 }
 
 .pink-badge {
-    @apply bg-pink-100 text-pink-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-pink-400
+    @apply bg-pink-100 text-pink-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-pink-400;
 }
 
 .indigo-badge {
-    @apply bg-indigo-100 text-indigo-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-indigo-400
+    @apply bg-indigo-100 text-indigo-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-indigo-400;
 }
 
 .orange-badge {
-    @apply bg-orange-100 text-orange-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-orange-400
+    @apply bg-orange-100 text-orange-800 text-xs font-bold me-2 px-2.5 py-0.5 rounded border border-orange-400;
 }
 
 /* width */
@@ -222,7 +222,8 @@
     --popper-theme-border-color: rgb(147, 197, 253);
     --popper-theme-border-radius: 6px;
     --popper-theme-padding: 20px;
-    --popper-theme-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    --popper-theme-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .hidden-scrollbar {
@@ -252,25 +253,25 @@
     color: #d7dde4;
 }
 
-.tippy-box[data-theme~='daisyui'][data-placement^='top']>.tippy-arrow::before {
+.tippy-box[data-theme~='daisyui'][data-placement^='top'] > .tippy-arrow::before {
     border-top-color: #2b3440;
 }
 
-.tippy-box[data-theme~='daisyui'][data-placement^='bottom']>.tippy-arrow::before {
+.tippy-box[data-theme~='daisyui'][data-placement^='bottom'] > .tippy-arrow::before {
     border-bottom-color: #2b3440;
 }
 
-.tippy-box[data-theme~='daisyui'][data-placement^='left']>.tippy-arrow::before {
+.tippy-box[data-theme~='daisyui'][data-placement^='left'] > .tippy-arrow::before {
     border-left-color: #2b3440;
 }
 
-.tippy-box[data-theme~='daisyui'][data-placement^='right']>.tippy-arrow::before {
+.tippy-box[data-theme~='daisyui'][data-placement^='right'] > .tippy-arrow::before {
     border-right-color: #2b3440;
 }
 
 .tooltip:after {
     position: absolute;
-    content: "";
+    content: '';
     border-style: solid;
     border-width: var(--tooltip-tail, 0);
     width: 0;
@@ -283,7 +284,7 @@
     display: inline-block;
     text-align: center;
     --tooltip-tail: 0.45rem;
-    --tooltip-color: var(--fallback-n,oklch(var(--n)/1));
-    --tooltip-text-color: var(--fallback-nc,oklch(var(--nc)/1));
-    --tooltip-tail-offset: calc(100% + 0.0625rem/* 1px */ - var(--tooltip-tail));
+    --tooltip-color: var(--fallback-n, oklch(var(--n) / 1));
+    --tooltip-text-color: var(--fallback-nc, oklch(var(--nc) / 1));
+    --tooltip-tail-offset: calc(100% + 0.0625rem /* 1px */ - var(--tooltip-tail));
 }

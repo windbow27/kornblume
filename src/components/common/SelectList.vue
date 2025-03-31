@@ -6,15 +6,18 @@ import { onClickOutside } from '@vueuse/core';
 import Popper from 'vue3-popper';
 
 const props = defineProps({
-    label: { // Label for the selected on the button
+    label: {
+        // Label for the selected on the button
         type: String,
         required: true
     },
-    options: { // List of options
+    options: {
+        // List of options
         type: Array as PropType<number[]>,
         required: true
     },
-    selected: { // Selected option
+    selected: {
+        // Selected option
         type: Number
     }
 });
@@ -62,7 +65,10 @@ onMounted(() => {
                     <i class="fa-regular fa-circle text-white"></i>
                 </div>
                 <div v-else>
-                    <img class="avatar w-6" :src="getImageSource(selected)" :alt="'Option ' + selected" />
+                    <img
+                        class="avatar w-6"
+                        :src="getImageSource(selected)"
+                        :alt="'Option ' + selected" />
                 </div>
             </template>
             <template v-else>
@@ -71,15 +77,22 @@ onMounted(() => {
         </button>
         <template #content>
             <div class="grid grid-cols-5 gap-2">
-                <button v-for="option in options" :key="option" class="" @click="selectOption(option)">
+                <button
+                    v-for="option in options"
+                    :key="option"
+                    class=""
+                    @click="selectOption(option)">
                     <div
-                        class="flex items-center justify-center font-semibold rounded-full w-8 h-8 leading-none flex-col bg-blue-500 text-white">
+                        class="flex items-center justify-center font-semibold rounded-full w-8 h-8 leading-none flex-col bg-red-500 text-white">
                         <template v-if="label === 'Current Insight' || label === 'Goal Insight'">
                             <div v-if="option === 0">
                                 <i class="fa-regular fa-circle text-white"></i>
                             </div>
                             <div v-else>
-                                <img class="avatar w-6" :src="getImageSource(option)" :alt="'Option ' + option" />
+                                <img
+                                    class="avatar w-6"
+                                    :src="getImageSource(option)"
+                                    :alt="'Option ' + option" />
                             </div>
                         </template>
                         <template v-else>
