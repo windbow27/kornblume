@@ -15,8 +15,7 @@ const isMediumScreen = ref(window.innerWidth >= 768);
 const carouselItems = [
     {
         link: 'https://www.pixiv.net/en/artworks/110046834',
-        imageUrl:
-            'https://pbs.twimg.com/media/F1XIYQXakAAgrt4?format=jpg&name=4096x4096'
+        imageUrl: 'https://pbs.twimg.com/media/F1XIYQXakAAgrt4?format=jpg&name=4096x4096'
     }
 ];
 
@@ -59,26 +58,14 @@ onClickOutside(resourcesRef, closeResources);
 <template>
     <div class="container overflow-x-hidden">
         <div class="text-center p-2 mb-1">
-            <h1 class="text-5xl lg:text-6xl font-bold text-white pt-2">
-                Kornblume
-            </h1>
+            <h1 class="text-5xl lg:text-6xl font-bold text-white pt-2">Kornblume</h1>
             <p class="text-sm sm:text-lg text-gray-300">
-                {{
-                    $t(
-                        'a-toolsite-and-cornflower-worship-place-for-reverse-1999'
-                    )
-                }}
+                {{ $t('a-toolsite-and-cornflower-worship-place-for-reverse-1999') }}
             </p>
             <p class="text-xs sm:text-base text-gray-300">
-                {{
-                    $t(
-                        'any-help-sharing-this-tool-would-be-greated-appreciated'
-                    )
-                }}
+                {{ $t('any-help-sharing-this-tool-would-be-greated-appreciated') }}
             </p>
-            <p
-                class="text-xs sm:text-base text-gray-300"
-                v-if="!isMediumScreen">
+            <p class="text-xs sm:text-base text-gray-300" v-if="!isMediumScreen">
                 <i18n-t keypath="for-mobile-users-click-top-right-to-start">
                     <template #mobile>
                         <i class="fa-solid fa-mobile-screen-button"></i>
@@ -99,9 +86,7 @@ onClickOutside(resourcesRef, closeResources);
                     class="carousel-item w-full flex items-center justify-center">
                     <a :href="item.link" target="_blank">
                         <div class="aspect-video overflow-hidden rounded-md">
-                            <img
-                                :src="item.imageUrl"
-                                class="object-cover w-full h-full" />
+                            <img :src="item.imageUrl" class="object-cover w-full h-full" />
                         </div>
                     </a>
                 </div>
@@ -110,8 +95,7 @@ onClickOutside(resourcesRef, closeResources);
 
         <footer class="text-white">
             <div class="container mx-auto flex flex-col items-center space">
-                <div
-                    class="flex flex-wrap justify-center items-center mb-4 gap-x-4 gap-y-4">
+                <div class="flex flex-wrap justify-center items-center mb-4 gap-x-4 gap-y-4">
                     <button
                         @click="openChangelogs"
                         class="btn btn-ghost btn-md custom-gradient-button">
@@ -155,11 +139,7 @@ onClickOutside(resourcesRef, closeResources);
                         }}
                     </p>
                     <p class="text-xs sm:text-base opacity-90 mx-2 mt-2">
-                        {{
-                            $t(
-                                'developed-by-windbow-joined-by-zero-day-and-fran'
-                            )
-                        }}
+                        {{ $t('developed-by-windbow-joined-by-zero-day-and-fran') }}
                     </p>
                     <button
                         class="btn btn-ghost btn-xs sm:btn-sm opacity-90"
@@ -172,8 +152,7 @@ onClickOutside(resourcesRef, closeResources);
                         {{ $t('privacy-policy') }}
                     </button>
                     <dialog id="translators" class="modal">
-                        <div
-                            class="modal-box custom-border custom-gradient-gray-blue">
+                        <div class="modal-box custom-border custom-gradient-gray-blue">
                             <form method="dialog">
                                 <button
                                     class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -189,8 +168,8 @@ onClickOutside(resourcesRef, closeResources);
                                     mgeshagrath
                                 </p>
                                 <p>
-                                    <span class="text-info"> Français </span> я
-                                    герой#3673 & sillight
+                                    <span class="text-info"> Français </span> я герой#3673 &
+                                    sillight
                                 </p>
                                 <!-- <p><span class="text-info"> Deutsch </span> </p> -->
                                 <p>
@@ -211,7 +190,7 @@ onClickOutside(resourcesRef, closeResources);
                                 </p>
                                 <p>
                                     <span class="text-info"> 한국어 </span>
-                                    CaptinRegulus & LyvaKim
+                                    CaptinRegulus, LyvaKim & seih6790
                                 </p>
                                 <p>
                                     <span class="text-info"> 日本語 </span>
@@ -231,8 +210,7 @@ onClickOutside(resourcesRef, closeResources);
                         </form>
                     </dialog>
                     <dialog id="privacy" class="modal">
-                        <div
-                            class="modal-box custom-border custom-gradient-gray-blue">
+                        <div class="modal-box custom-border custom-gradient-gray-blue">
                             <form method="dialog">
                                 <button
                                     class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -247,11 +225,7 @@ onClickOutside(resourcesRef, closeResources);
                                 }}
                             </p>
                             <p class="pb-4">
-                                {{
-                                    $t(
-                                        'planner-data-is-stored-locally-on-your-device'
-                                    )
-                                }}
+                                {{ $t('planner-data-is-stored-locally-on-your-device') }}
                             </p>
                         </div>
                         <form method="dialog" class="modal-backdrop">
@@ -264,9 +238,7 @@ onClickOutside(resourcesRef, closeResources);
 
         <!-- Changelogs Overlay -->
         <div v-if="isChangeLogs" class="overlay">
-            <HomeChangelogs
-                ref="changelogsRef"
-                @closeOverlay="closeChangelogs" />
+            <HomeChangelogs ref="changelogsRef" @closeOverlay="closeChangelogs" />
         </div>
         <div v-if="isResources" class="overlay">
             <HomeResources ref="resourcesRef" @closeOverlay="closeResources" />
