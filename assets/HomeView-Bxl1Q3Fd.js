@@ -1,4 +1,6 @@
-import{o as C}from"./index-eVeBnrye.js";import{d as A,o as n,c as o,a as e,t,F as m,r as v,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as W,k as z,l as _,m as K}from"./index-DOOmfTqK.js";const k=[{date:"06/04/2025",description:`
+import{o as C}from"./index-S2uBeOZL.js";import{d as A,o as n,c as o,a as e,t,F as m,r as v,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as W,k as z,l as _,m as K}from"./index-9-xQ3jC1.js";const k=[{date:"14/04/2025",description:`
+        • Add filter by owned arcanists.
+        `},{date:"06/04/2025",description:`
         • Update Korean translations by seih6790.
         `},{date:"25/03/2025",description:`
         • Add Aleph as unreleased arcanists. <br>
