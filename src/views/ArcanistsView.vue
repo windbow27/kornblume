@@ -26,9 +26,7 @@ const selectedRarities = (rarity: number) => {
 
 const selectedAfflatus = (afflatus: string) => {
     if (activeAfflatus.value.includes(afflatus)) {
-        activeAfflatus.value = activeAfflatus.value.filter(
-            (a) => a !== afflatus
-        );
+        activeAfflatus.value = activeAfflatus.value.filter((a) => a !== afflatus);
     } else {
         activeAfflatus.value.push(afflatus);
     }
@@ -37,9 +35,7 @@ const selectedAfflatus = (afflatus: string) => {
 const portraitCounts = computed(() => {
     return listArcanists.value.map((arc) => ({
         ArcanistName: arc.Name,
-        count:
-            pulls.value.filter((pull) => pull.ArcanistName === arc.Name)
-                .length - 1
+        count: pulls.value.filter((pull) => pull.ArcanistName === arc.Name).length - 1
     }));
 });
 
@@ -52,21 +48,24 @@ const filteredArcanists = computed(() => {
             arc.Name.toLowerCase().includes(searchQuery.value.toLowerCase())
         );
     } else {
-        filtered = filtered.filter((arc) =>
-            t(arc.Name).includes(searchQuery.value)
-        );
+        filtered = filtered.filter((arc) => t(arc.Name).includes(searchQuery.value));
     }
 
     if (activeRarities.value.length > 0) {
-        filtered = filtered.filter((arc) =>
-            activeRarities.value.includes(arc.Rarity)
-        );
+        filtered = filtered.filter((arc) => activeRarities.value.includes(arc.Rarity));
     }
 
     if (activeAfflatus.value.length > 0) {
-        filtered = filtered.filter((arc) =>
-            activeAfflatus.value.includes(arc.Afflatus)
-        );
+        filtered = filtered.filter((arc) => activeAfflatus.value.includes(arc.Afflatus));
+    }
+
+    // Filter based on the portraitCounts
+    if (usePlannerSettingsStore().settings.showOwnedArcanists) {
+        filtered = filtered.filter((arc) => {
+            const count =
+                portraitCounts.value.find((pc) => pc.ArcanistName === arc.Name)?.count ?? -1;
+            return count >= 0;
+        });
     }
 
     // Filter based on the showUnreleasedArcanists setting
@@ -109,16 +108,23 @@ onMounted(() => {
                     :placeholder="$t('search-arcanists')"
                     class="input input-sm w-full sm:w-auto bg-gray-800 text-white py-2 px-4 rounded-md focus:outline-none" />
                 <div class="form-control">
-                    <label
-                        class="cursor-pointer label justify-center space-x-5">
+                    <label class="cursor-pointer label justify-center space-x-5">
                         <span class="label-text text-white text-md">{{
                             $t('show-unreleased-arcanists')
                         }}</span>
                         <input
-                            v-model="
-                                usePlannerSettingsStore().settings
-                                    .showUnreleasedArcanists
-                            "
+                            v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists"
+                            type="checkbox"
+                            class="checkbox checkbox-info" />
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label class="cursor-pointer label justify-center space-x-5">
+                        <span class="label-text text-white text-md">{{
+                            $t('show-owned-arcanists')
+                        }}</span>
+                        <input
+                            v-model="usePlannerSettingsStore().settings.showOwnedArcanists"
                             type="checkbox"
                             class="checkbox checkbox-info" />
                     </label>
@@ -132,8 +138,7 @@ onMounted(() => {
                         :key="i"
                         :class="{
                             'border-2 border-info': activeRarities.includes(i),
-                            'border-2 border-transparent':
-                                !activeRarities.includes(i)
+                            'border-2 border-transparent': !activeRarities.includes(i)
                         }"
                         @click="selectedRarities(i)"
                         class="p-2 rounded-md">
@@ -161,10 +166,8 @@ onMounted(() => {
                         ]"
                         :key="afflatus"
                         :class="{
-                            'border-2 border-info':
-                                activeAfflatus.includes(afflatus),
-                            'border-2 border-transparent':
-                                !activeAfflatus.includes(afflatus)
+                            'border-2 border-info': activeAfflatus.includes(afflatus),
+                            'border-2 border-transparent': !activeAfflatus.includes(afflatus)
                         }"
                         @click="selectedAfflatus(afflatus)"
                         class="p-2 rounded-md">
@@ -184,9 +187,7 @@ onMounted(() => {
                 <ArcanistPortrait
                     :arcanist="arcanist"
                     :count="
-                        portraitCounts.find(
-                            (pc) => pc.ArcanistName === arcanist.Name
-                        )?.count ?? -1
+                        portraitCounts.find((pc) => pc.ArcanistName === arcanist.Name)?.count ?? -1
                     " />
             </router-link>
         </div>

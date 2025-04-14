@@ -1,13 +1,14 @@
 import { defineStore } from 'pinia';
 
 export interface IPlannerSettings {
-    showUnreleasedArcanists: boolean,
-    enableWilderness: boolean,
-    enableLowRunCards: boolean
+    showUnreleasedArcanists: boolean;
+    showOwnedArcanists: boolean;
+    enableWilderness: boolean;
+    enableLowRunCards: boolean;
 }
 
 interface IPlannerSettingsStore {
-    settings: IPlannerSettings
+    settings: IPlannerSettings;
 }
 
 // NOTE: if we need to add new version drops data, please check the getDrops, initializeWarehouse and checkWarehouse functions
@@ -17,6 +18,7 @@ export const usePlannerSettingsStore = defineStore('plannerSettings', {
     state: (): IPlannerSettingsStore => ({
         settings: {
             showUnreleasedArcanists: false,
+            showOwnedArcanists: false,
             enableWilderness: true,
             enableLowRunCards: true
         }
