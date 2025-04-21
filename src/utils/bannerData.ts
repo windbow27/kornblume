@@ -36,6 +36,7 @@ export const bannerList = [
     'The Book of Whys',
     'Playing in Rainbow Clef',
     'A Shell on the Waves',
+    'A Life in Montage',
 
     // standard
     'Amongst the Lake',
@@ -61,7 +62,9 @@ export const bannerList = [
     // lucy
     'Thoughts in Cylinder',
     // anjo nala
-    'Longing for Innocence'
+    'Longing for Innocence',
+    // liang
+    'Moonbeam Guardian'
 ];
 
 export const bannerRateUp = [
@@ -100,7 +103,8 @@ export const bannerRateUp = [
     'Willow',
     'Flutterpage',
     'Barcarola',
-    'Fatutu'
+    'Fatutu',
+    'Noire'
 ];
 
 export const specialArcanists: string[] = [
