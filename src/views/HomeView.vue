@@ -174,7 +174,7 @@ onClickOutside(resourcesRef, closeResources);
                                 <!-- <p><span class="text-info"> Deutsch </span> </p> -->
                                 <p>
                                     <span class="text-info"> 简体中文 </span>
-                                    fran & ryle798
+                                    fran & ryle798 & Yumemigokochi
                                 </p>
                                 <p>
                                     <span class="text-info"> 繁體中文 </span>
@@ -194,7 +194,7 @@ onClickOutside(resourcesRef, closeResources);
                                 </p>
                                 <p>
                                     <span class="text-info"> 日本語 </span>
-                                    yagochi
+                                    yagochi & Yumemigokochi
                                 </p>
                                 <p>
                                     <span class="text-info"> Русский </span>
