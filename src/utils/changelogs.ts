@@ -1,6 +1,13 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '22/04/2025',
+        description: `
+        • Fix missing images for Hissabeth and Name Day. <br>
+        • Add unreleased stage for 2.6 materials.
+        `
+    },
+    {
         date: '21/04/2025',
         description: `
         • Add Liang and Noire banners <br>
