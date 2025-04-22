@@ -98,6 +98,7 @@ const ripplesPulls = createPullsByBannerType('Ripples on the Water');
 const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
 const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
 const anjoNalaPulls = createPullsByBannerType('Longing for Innocence');
+const liangPulls = createPullsByBannerType('Moonbeam Guardian');
 
 const limitedPulls = computed(() => {
     const filteredPulls = sortedPulls.value.filter(
@@ -111,6 +112,7 @@ const limitedPulls = computed(() => {
             pull.BannerType !== 'Thoughts in Cylinder' &&
             pull.BannerType !== 'Promise of the Water' &&
             pull.BannerType !== 'Longing for Innocence' &&
+            pull.BannerType !== 'Moonbeam Guardian' &&
             pull.BannerType !== 'Boon of the Water' &&
             pull.BannerType !== 'Golden Spindle' &&
             pull.BannerType !== 'Ripples on the Water'
@@ -590,6 +592,16 @@ const selectBannerType = (bannerType: string) => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
+            <!-- Limited Liang -->
+            <button
+                v-bind:class="{
+                    'border-button': selectedBannerType === 'Moonbeam Guardian'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md"
+                @click="selectBannerType('Moonbeam Guardian')">
+                {{ $t('liang') }}
+            </button>
+
             <button
                 v-bind:class="{
                     'border-button': selectedBannerType === 'Limited'
@@ -621,7 +633,8 @@ const selectBannerType = (bannerType: string) => {
                                 selectedBannerType === 'Ripples on the Water' ||
                                 selectedBannerType === 'Till the Last Drop' ||
                                 selectedBannerType === 'Thoughts in Cylinder' ||
-                                selectedBannerType === 'Longing for Innocence'
+                                selectedBannerType === 'Longing for Innocence' ||
+                                selectedBannerType === 'Moonbeam Guardian'
                         }"
                         class="text-white py-1 px-3 hover:bg-info rounded-md">
                         {{ $t('special') }}
@@ -748,6 +761,17 @@ const selectBannerType = (bannerType: string) => {
                             {{ $t('anjo-nala') }}
                         </button>
                     </li>
+                    <!-- Liang banner -->
+                    <li>
+                        <button
+                            v-bind:class="{
+                                'border-button': selectedBannerType === 'Moonbeam Guardian'
+                            }"
+                            class="text-white py-1 px-3 hover:bg-info rounded-md"
+                            @click="selectBannerType('Moonbeam Guardian')">
+                            {{ $t('liang') }}
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -844,8 +868,14 @@ const selectBannerType = (bannerType: string) => {
             :allPulls="allPulls"
             :isError="isError"
             :wrongTimestamps="wrongTimestamps" />
+        <TrackerBoard
+            v-if="selectedBannerType === 'Moonbeam Guardian'"
+            :text="$t('liang')"
+            :pulls="liangPulls"
+            :allPulls="allPulls"
+            :isError="isError"
+            :wrongTimestamps="wrongTimestamps" />
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

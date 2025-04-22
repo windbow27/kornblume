@@ -1,6 +1,20 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '21/04/2025',
+        description: `
+        • Add Liang and Noire banners <br>
+        • Add Hissabeth and Name Day as unreleased arcanists. <br>
+        • Update zh-TW, zh-CN and JP translations by Yumemigokochi. <br>
+        `
+    },
+    {
+        date: '14/04/2025',
+        description: `
+        • Add filter by owned arcanists.
+        `
+    },
+    {
         date: '06/04/2025',
         description: `
         • Update Korean translations by seih6790.
