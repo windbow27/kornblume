@@ -620,5 +620,17 @@
         "drops": {
             "Tome of Beastly Thirst": 2
         }
+    },
+    "Unreleased": {
+        "id": 999,
+        "name": "Unreleased",
+        "category": "Unreleased",
+        "cost": 0,
+        "count": 0,
+        "drops": {
+            "Pyroxene Ore": 1,
+            "Red Lacquer Tablet": 1,
+            "Jadeite Tablet": 1
+        }
     }
 }
