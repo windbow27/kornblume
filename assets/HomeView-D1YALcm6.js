@@ -1,4 +1,4 @@
-import{o as C}from"./index-BiBfzzo2.js";import{d as A,o as n,c as i,a as e,t,F as m,r as v,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as W,k as z,l as k,m as N}from"./index-D7uxOCsp.js";const _=[{date:"22/04/2025",description:`
+import{o as C}from"./index-C84yVWhS.js";import{d as A,o as n,c as i,a as e,t,F as m,r as v,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as W,k as z,l as k,m as N}from"./index-DhAqccYV.js";const _=[{date:"22/04/2025",description:`
         • Fix missing images for Hissabeth and Name Day. <br>
         • Add unreleased stage for 2.6 materials.
         `},{date:"21/04/2025",description:`
