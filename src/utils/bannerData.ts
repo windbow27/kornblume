@@ -63,7 +63,7 @@ export const bannerList = [
     'Thoughts in Cylinder',
     // anjo nala
     'Longing for Innocence',
-    // liang
+    // liang yue
     'Moonbeam Guardian'
 ];
 

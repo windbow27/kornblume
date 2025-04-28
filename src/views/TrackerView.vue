@@ -24,7 +24,7 @@ const text = ref('');
 const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
-const selectedBannerType = ref('Limited');
+const selectedBannerType = ref('Moonbeam Guardian');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -592,14 +592,14 @@ const selectBannerType = (bannerType: string) => {
         </div>
 
         <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
-            <!-- Limited Liang -->
+            <!-- Limited Liang Yue -->
             <button
                 v-bind:class="{
                     'border-button': selectedBannerType === 'Moonbeam Guardian'
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md"
                 @click="selectBannerType('Moonbeam Guardian')">
-                {{ $t('liang') }}
+                {{ $t('liang-yue') }}
             </button>
 
             <button
@@ -761,7 +761,7 @@ const selectBannerType = (bannerType: string) => {
                             {{ $t('anjo-nala') }}
                         </button>
                     </li>
-                    <!-- Liang banner -->
+                    <!-- Liang Yue banner -->
                     <li>
                         <button
                             v-bind:class="{
@@ -769,7 +769,7 @@ const selectBannerType = (bannerType: string) => {
                             }"
                             class="text-white py-1 px-3 hover:bg-info rounded-md"
                             @click="selectBannerType('Moonbeam Guardian')">
-                            {{ $t('liang') }}
+                            {{ $t('liang-yue') }}
                         </button>
                     </li>
                 </ul>
@@ -870,7 +870,7 @@ const selectBannerType = (bannerType: string) => {
             :wrongTimestamps="wrongTimestamps" />
         <TrackerBoard
             v-if="selectedBannerType === 'Moonbeam Guardian'"
-            :text="$t('liang')"
+            :text="$t('liang-yue')"
             :pulls="liangPulls"
             :allPulls="allPulls"
             :isError="isError"
