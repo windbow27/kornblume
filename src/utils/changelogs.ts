@@ -3,8 +3,8 @@ export const changelogs = [
     {
         date: '22/05/2025',
         description: `
-        • Add Recoleta and Aleph banners.
-        • Add Nautika, Ulrich, Buddy Fair Child as unreleased arcanists.
+        • Add Recoleta and Aleph banners. <br>
+        • Add Nautika, Ulrich, Buddy Fair Child as unreleased arcanists. <br>
         • Add Lucy, Jessica, Regulus and Semmelweis euphorias.
         `
     },
