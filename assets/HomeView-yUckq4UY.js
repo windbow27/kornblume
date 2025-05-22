@@ -1,6 +1,6 @@
-import{o as C}from"./index-qjCWdcQ0.js";import{d as A,o as n,c as i,a as e,t,F as m,r as v,u as $,b as L,e as F,f,g as h,w,h as M,i as u,j as W,k as z,l as k,m as N}from"./index-CUN6Ye_3.js";const _=[{date:"22/05/2025",description:`
-        • Add Recoleta and Aleph banners.
-        • Add Nautika, Ulrich, Buddy Fair Child as unreleased arcanists.
+import{o as C}from"./index-BaYIlrjR.js";import{d as A,o as n,c as i,a as e,t,F as m,r as v,u as $,b as L,e as F,f,g as h,w,h as M,i as u,j as W,k as z,l as k,m as N}from"./index-CAapuMSa.js";const _=[{date:"22/05/2025",description:`
+        • Add Recoleta and Aleph banners. <br>
+        • Add Nautika, Ulrich, Buddy Fair Child as unreleased arcanists. <br>
         • Add Lucy, Jessica, Regulus and Semmelweis euphorias.
         `},{date:"28/04/2025",description:`
         • Add Kiperina as unreleased arcanist.
