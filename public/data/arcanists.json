@@ -13842,14 +13842,34 @@
     "Euphoria": [
       {
         "Id": 1,
-        "Material": [],
-        "Quantity": []
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
       },
       {
-        "Id": 2,
-        "Material": [],
-        "Quantity": []
-      }
+      "Id": 2,
+      "Material": [
+        "Key of Reverie",
+        "Sprout of Reverie",
+        "Seed of Insight",
+        "Mistilteinn"
+      ],
+      "Quantity": [
+        12,
+        40,
+        200,
+        3
+      ]
+    }
     ],
     "Mastery": [
       {

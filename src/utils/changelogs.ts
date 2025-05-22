@@ -1,6 +1,20 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '22/05/2025',
+        description: `
+        • Add Recoleta and Aleph banners.
+        • Add Nautika, Ulrich, Buddy Fair Child as unreleased arcanists.
+        • Add Lucy, Jessica, Regulus and Semmelweis euphorias.
+        `
+    },
+    {
+        date: '28/04/2025',
+        description: `
+        • Add Kiperina as unreleased arcanist.
+        `
+    },
+    {
         date: '22/04/2025',
         description: `
         • Fix missing images for Hissabeth and Name Day. <br>
@@ -10,7 +24,7 @@ export const changelogs = [
     {
         date: '21/04/2025',
         description: `
-        • Add Liang and Noire banners <br>
+        • Add Liang Yue and Noire banners <br>
         • Add Hissabeth and Name Day as unreleased arcanists. <br>
         • Update zh-TW, zh-CN and JP translations by Yumemigokochi. <br>
         `
