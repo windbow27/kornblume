@@ -207,6 +207,7 @@ const ocr: clickHandler = (payload: Event): void => {
                                         'Fledgling[\\s\\S]*?First\\s*Flight'
                                     ) // Handle Fledgling ... First Flight variations
                                     .replace(/Clash.*?Slash/, 'Clash[\\s\\S]*?Slash') // Handle Clash - everything in between - Slash variations
+                                    .replace(/The Mirror's.*?Lonely Watcher/, 'The\\s*Mirror\\\'s[\\s\\S]*?Lonely\\s*Watcher') // Handle The Mirror's Lonely Watcher variations
                                     .replace(/\s/g, '\\s*') // Handle spaces
                                     .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
                         )

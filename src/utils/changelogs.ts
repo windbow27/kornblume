@@ -1,6 +1,12 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '25/05/2025',
+        description: `
+        • Add Semmelweis banner.
+        `
+    },
+    {
         date: '22/05/2025',
         description: `
         • Add Recoleta and Aleph banners. <br>

@@ -39,6 +39,7 @@ export const bannerList = [
     'A Life in Montage',
     'A Writing Writer Written',
     'The Shattered Product',
+    'The Mirror\'s Lonely Watcher',
 
     // standard
     'Amongst the Lake',
@@ -108,7 +109,8 @@ export const bannerRateUp = [
     'Fatutu',
     'Noire',
     'Recoleta',
-    'Aleph'
+    'Aleph',
+    'Semmelweis'
 ];
 
 export const specialArcanists: string[] = [
