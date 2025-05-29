@@ -52,6 +52,7 @@ const getStageBackgroundId = (id: number) => {
     if (id <= 699 && id >= 600) return 12;
     if (id <= 799 && id > 700) return 13;
     if (id <= 899 && id > 800) return 14;
+    if (id <= 999 && id > 900) return 15;
 }
 
 export const getItemImagePathByMatl = (material: string) => {

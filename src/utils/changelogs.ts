@@ -1,6 +1,12 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '29/05/2025',
+        description: `
+        • Update Planner, Items, Stages to version 2.6.
+        `
+    },
+    {
         date: '25/05/2025',
         description: `
         • Add Semmelweis banner.
