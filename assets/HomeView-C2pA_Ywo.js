@@ -1,4 +1,4 @@
-import{o as C}from"./index-BJGyFsSP.js";import{d as _,o as n,c as i,a as e,t,F as m,r as v,u as $,b as L,e as F,f,g as h,w,h as M,i as u,j as W,k as z,l as k,m as N}from"./index-D1g5KPNO.js";const A=[{date:"29/05/2025",description:`
+import{o as C}from"./index-CwMeo3Vo.js";import{d as _,o as n,c as i,a as e,t,F as m,r as v,u as $,b as L,e as F,f,g as h,w,h as M,i as u,j as W,k as z,l as k,m as N}from"./index-DRFaSFmY.js";const A=[{date:"29/05/2025",description:`
         • Update Planner, Items, Stages to version 2.6.
         `},{date:"25/05/2025",description:`
         • Add Semmelweis banner.
