@@ -190,6 +190,16 @@
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
     },
     {
+        "Id": 78,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Jadeite Tablet",
+        "Rarity": 5,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
         "Id": 72,
         "Name": "Golden Bell Essence Bottle",
         "Rarity": 5,
@@ -289,6 +299,16 @@
         "Source": "Craft in the Wilderness, Pawnshop, Story",
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
     },
+        {
+        "Id": 79,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Red Lacquer Tablet",
+        "Rarity": 4,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
     {
         "Id": 73,
         "Name": "Golden Herb Incense",
@@ -378,6 +398,16 @@
         "Description": "Embark on a journey, or wait plainly.",
         "Source": "Craft in the Wilderness, Pawnshop, Story",
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
+    },
+    {
+        "Id": 80,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Pyroxene Ore",
+        "Rarity": 3,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
     },
     {
         "Id": 74,
@@ -765,36 +795,6 @@
         "IsReleased": true,
         "Name": "Seed of Insight",
         "Rarity": 4,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 78,
-        "Category": "Build Material",
-        "IsReleased": true,
-        "Name": "Jadeite Tablet",
-        "Rarity": 5,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 79,
-        "Category": "Build Material",
-        "IsReleased": true,
-        "Name": "Red Lacquer Tablet",
-        "Rarity": 4,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 80,
-        "Category": "Build Material",
-        "IsReleased": true,
-        "Name": "Pyroxene Ore",
-        "Rarity": 3,
         "Description": "",
         "Source": "",
         "Usage": ""
