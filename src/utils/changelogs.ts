@@ -1,5 +1,11 @@
 export const changelogs = [
     // Add more from top
+     {
+        date: '16/06/2025',
+        description: `
+        • Add Moldir as unreleased arcanist.
+        `
+    },
     {
         date: '29/05/2025',
         description: `
