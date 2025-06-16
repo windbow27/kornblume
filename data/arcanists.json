@@ -1,5 +1,378 @@
 [
   {
+    "Id": 10107,
+    "IsReleased": false,
+    "Name": "Moldir",
+    "Rarity": 6,
+    "Afflatus": "Beast",
+    "Stats": {
+      "0-1": [
+        259,
+        1404,
+        121,
+        118,
+        300,
+        10,
+        145
+      ],
+      "0-30": [
+        393,
+        2132,
+        183,
+        180,
+        300,
+        10,
+        145
+      ],
+      "1-40": [
+        658,
+        3574,
+        307,
+        300,
+        340,
+        11.3,
+        147
+      ],
+      "2-50": [
+        980,
+        5329,
+        458,
+        447,
+        380,
+        12.6,
+        149
+      ],
+      "3-60": [
+        1153,
+        6270,
+        538,
+        525,
+        420,
+        14,
+        151
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Beastly Thirst",
+          "Shattered Bones",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Beastly Thirst",
+          "Pyroxene Ore",
+          "Biting Box"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Beastly Thirst",
+          "Watch Core",
+          "Rhine Gold"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Silver Ore"
+        ],
+        "Quantity": [
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Magnesia Crystal",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Cicada Wings",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Golden Herb Incense"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Bifurcated Skeleton",
+          "Pyroxene Ore"
+        ],
+        "Quantity": [
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          8,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Biting Box",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Sinuous Howl",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Silver Bullet",
+          "Goose Neck"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Murmur of Insanity",
+          "Winged Key"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Rhine Gold",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Fruit of Good and Evil",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Z-shape",
+        "Id": 5,
+        "Material": [
+          "Fruit of Good and Evil",
+          "Silver Bullet",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 4,
+        "Material": [
+          "Rhine Gold",
+          "Golden Compass",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 11,
+        "Material": [
+          "Fruit of Good and Evil",
+          "Golden Bell Essence Bottle",
+          "Golden Beetle",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 12,
+        "Material": [
+          "Golden Fleece",
+          "Glowing Mothwing",
+          "Red Lacquer Tablet",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 13,
+        "Material": [
+          "Mistilteinn",
+          "Bogeyman",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      }
+    ],
+    "Euphoria": [],
+    "Mastery": []
+  },
+  {
     "Id": 10104,
     "IsReleased": false,
     "Name": "Nautika",
@@ -1137,8 +1510,8 @@
         116,
         118,
         327,
-        0,
-        0
+        10.9,
+        146.4
       ],
       "0-30": [
         393,
@@ -1146,8 +1519,8 @@
         176,
         180,
         327,
-        0,
-        0
+        10.9,
+        146.4
       ],
       "1-40": [
         658,
@@ -1155,8 +1528,8 @@
         294,
         300,
         370,
-        0,
-        0
+        12.3,
+        148.5
       ],
       "2-50": [
         980,
@@ -1164,8 +1537,8 @@
         438,
         447,
         413,
-        0,
-        0
+        13.8,
+        150.6
       ],
       "3-60": [
         1153,
@@ -1173,8 +1546,8 @@
         515,
         525,
         456,
-        0,
-        0
+        15.2,
+        152.8
       ]
     },
     "Insight": [
@@ -1505,49 +1878,49 @@
     "Afflatus": "Intellect",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        259,
+        1478,
+        123,
+        160,
+        327,
+        10.9,
+        146.4
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        393,
+        2244,
+        187,
+        243,
+        327,
+        10.9,
+        146.4
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        658,
+        3762,
+        313,
+        407,
+        370,
+        12.3,
+        148.5
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        980,
+        5610,
+        467,
+        607,
+        413,
+        13.8,
+        150.6
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1153,
+        6600,
+        549,
+        714,
+        456,
+        15.2,
+        152.8
       ]
     },
     "Insight": [
