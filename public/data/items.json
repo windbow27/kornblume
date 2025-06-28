@@ -798,5 +798,15 @@
         "Description": "",
         "Source": "",
         "Usage": ""
+    },
+    {
+        "Id": 81,
+        "Category": "Reveries Material",
+        "IsReleased": true,
+        "Name": "Key of New Sprout",
+        "Rarity": 6,
+        "Description": "",
+        "Source": "",
+        "Usage": ""
     }
 ]

@@ -1,6 +1,13 @@
 export const changelogs = [
     // Add more from top
-     {
+    {
+        date: '28/06/2025',
+        description: `
+        • Add Sentinel as unreleased arcanist.
+        • Add Getian, Centurion, Druvis III euphorias.
+        `
+    },
+    {
         date: '16/06/2025',
         description: `
         • Add Moldir as unreleased arcanist.
