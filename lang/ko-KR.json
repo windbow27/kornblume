@@ -180,7 +180,7 @@
   "click-add-arcanist-button-to-start-planning": "'{button}'을 클릭해 계획 짜기.",
   "level-up": "완료로 표시",
   "not-enough-materials": "충분한 재화가 없습니다.",
-  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "",
+  "leveling-up-will-update-the-arcanists-current-status-and-consume-your-warehouse-inventory-proceed": "완료로 표시하면 마도학자의 현재 상태가 업데이트되고 창고 인벤토리가 소모됩니다. 계속할까요?",
   "after-your-first-import": "최초 업로드 이후에는 새로운 이미지만 올리면 됩니다.",
   "tips": "팁",
   "example-of-incomplete-10x": "부정확한 10x 이미지의 예시:",
@@ -246,5 +246,18 @@
   "add-pull": "뽑기 추가하기",
   "promise": "승낙",
   "revelation": "계시",
-  "solution-2": "이전 뽑기기록으로 인해 누락된 10뽑기록이 있는 경우 삭제하거나 누락된 뽑기기록을 추가하세요."
+  "solution-2": "이전 뽑기기록으로 인해 누락된 10뽑기록이 있는 경우 삭제하거나 누락된 뽑기기록을 추가하세요.",
+  "boon": "호수의 선물",
+  "euphoria": "광상",
+  "euphoria-requirement": "광상 없음",
+  "filter": "필터",
+  "golden-spindle": "황금실",
+  "not-by-user-doing-single-pulls": "사용자가 단일 뽑기를 수행하는 것이 아닙니다.",
+  "ripples": "호수의 물결",
+  "show-owned-arcanists": "가지고 있는 마도학자를 본다",
+  "from-reveries": "빗 속의 공상 보상",
+  "summary-boon": "호수의 선물 설명",
+  "summary-ripples": "호수의 물결 설명",
+  "summary-golden-spindle": "황금실 설명",
+  "frequency-modulation": "공명 변조"
 }
