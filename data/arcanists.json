@@ -1,5 +1,378 @@
 [
   {
+    "Id": 10108,
+    "IsReleased": true,
+    "Name": "Sentinel",
+    "Rarity": 6,
+    "Afflatus": "Mineral",
+    "Stats": {
+      "0-1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "0-30": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "1-40": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "2-50": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "3-60": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Mineral Wealth",
+          "Shattered Bones",
+          "Pyroxene Ore"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Mineral Wealth",
+          "Spell of Fortune",
+          "Biting Box"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Mineral Wealth",
+          "Golden Bell Essence Bottle",
+          "Mistilteinn"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Magnesia Crystal"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Spell of Banishing",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          6,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Alopecurus Pratensis",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          5,
+          3,
+          4
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Golden Beetle"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Bifurcated Skeleton"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          6,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Goose Neck",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          8,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Red Lacquer Tablet",
+          "Winged Key"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Sinuous Howl",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Murmur of Insanity",
+          "Golden Herb Incense"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Bogeyman",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Rhine Gold",
+          "Watch Core"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Golden Fleece",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Z-shape",
+        "Id": 5,
+        "Material": [
+          "Rhine Gold",
+          "Wyrmling Skeleton",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 4,
+        "Material": [
+          "Serpent Scepter",
+          "Murmur of Insanity",
+          "Holy Silver",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 11,
+        "Material": [
+          "Mistilteinn",
+          "Bogeyman",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 12,
+        "Material": [
+          "Fruit of Good and Evil",
+          "Silver Bullet",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 13,
+        "Material": [
+          "Serpent Scepter",
+          "Watch Core",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
+    ],
+    "Euphoria": [],
+    "Mastery": []
+  },
+  {
     "Id": 10107,
     "IsReleased": false,
     "Name": "Moldir",
@@ -753,7 +1126,7 @@
   },
   {
     "Id": 10103,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Kiperina",
     "Rarity": 6,
     "Afflatus": "Star",
@@ -1126,7 +1499,7 @@
   },
   {
     "Id": 10101,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Hissabeth",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -8765,8 +9138,85 @@
         ]
       }
     ],
-    "Euphoria": [],
-    "Mastery": []
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          20,
+          275,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Incorrupt Monkeypaw"
+        ],
+        "Quantity": [
+          30,
+          371,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          35,
+          470,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Silver Bullet"
+        ],
+        "Quantity": [
+          40,
+          1195,
+          2,
+          2
+        ]
+      }
+    ]
   },
   {
     "Id": 10069,
@@ -17487,8 +17937,85 @@
         ]
       }
     ],
-    "Euphoria": [],
-    "Mastery": []
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Watch Core"
+        ],
+        "Quantity": [
+          20,
+          275,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          30,
+          371,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Jadeite Tablet"
+        ],
+        "Quantity": [
+          35,
+          470,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Golden Compass"
+        ],
+        "Quantity": [
+          40,
+          1195,
+          2,
+          2
+        ]
+      }
+    ]
   },
   {
     "Id": 10020,
@@ -19619,6 +20146,15 @@
           200,
           3
         ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Key of New Sprout"
+        ],
+        "Quantity": [
+          1
+        ]
       }
     ],
     "Mastery": [
@@ -19686,7 +20222,7 @@
   },
   {
     "Id": 10102,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Name Day",
     "Rarity": 5,
     "Afflatus": "Mineral",
