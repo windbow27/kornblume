@@ -190,7 +190,7 @@ onClickOutside(resourcesRef, closeResources);
                                 </p>
                                 <p>
                                     <span class="text-info"> 한국어 </span>
-                                    CaptinRegulus, LyvaKim & seih6790
+                                    CaptinRegulus, LyvaKim, seih6790 & thun700
                                 </p>
                                 <p>
                                     <span class="text-info"> 日本語 </span>
