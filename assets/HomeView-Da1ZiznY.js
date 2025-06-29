@@ -1,4 +1,4 @@
-import{o as C}from"./index-C1PzlGLg.js";import{d as _,o as n,c as i,a as e,t,F as m,r as v,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as W,k as z,l as A,m as N}from"./index-BSI8J1Oa.js";const k=[{date:"28/06/2025",description:`
+import{o as C}from"./index-BWhqtbA4.js";import{d as _,o as n,c as i,a as e,t,F as m,r as v,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as W,k as z,l as A,m as N}from"./index-ADSPI0D5.js";const k=[{date:"28/06/2025",description:`
         • Add Sentinel as unreleased arcanist.
         • Add Getian, Centurion, Druvis III euphorias.
         `},{date:"22/06/2025",description:`
