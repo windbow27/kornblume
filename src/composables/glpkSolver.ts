@@ -110,7 +110,10 @@ export async function getSolve(materials) {
 
         'Key of Reverie',
         'Sprout of Reverie',
-        'Seed of Insight'
+        'Seed of Insight',
+        
+        // druvis special
+        'Key of New Sprout'
     ];
     materials.forEach(({ Material: matlName, Quantity: quantity }) => {
         if (!resonanceMaterial.includes(matlName)) {
