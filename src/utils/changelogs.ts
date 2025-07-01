@@ -10,7 +10,7 @@ export const changelogs = [
     {
         date: '22/06/2025',
         description: `
-        • Update Korean translations by thun700.
+        • Update Korean translations by thun300.
         `
     },
     {
