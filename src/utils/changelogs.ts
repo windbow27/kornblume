@@ -1,6 +1,12 @@
 export const changelogs = [
     // Add more from top
     {
+        date: '03/07/2025',
+        description: `
+        • Add Hissabeth and Kiperina banners.
+        `
+    },
+    {
         date: '28/06/2025',
         description: `
         • Add Sentinel as unreleased arcanist.

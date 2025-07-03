@@ -40,7 +40,8 @@ export const bannerList = [
     'A Writing Writer Written',
     'The Shattered Product',
     'The Mirror\'s Lonely Watcher',
-
+    'Serpentine Century',
+    'Wirewalking in Zero Gravity',
     // standard
     'Amongst the Lake',
     // thread
@@ -110,7 +111,9 @@ export const bannerRateUp = [
     'Noire',
     'Recoleta',
     'Aleph',
-    'Semmelweis'
+    'Semmelweis',
+    'Hissabeth',
+    'Kiperina'
 ];
 
 export const specialArcanists: string[] = [
