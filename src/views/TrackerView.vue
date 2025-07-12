@@ -206,8 +206,14 @@ const ocr: clickHandler = (payload: Event): void => {
                                         /Fledgling.*?First Flight/,
                                         'Fledgling[\\s\\S]*?First\\s*Flight'
                                     ) // Handle Fledgling ... First Flight variations
-                                    .replace(/Clash.*?Slash/, 'Clash[\\s\\S]*?Slash') // Handle Clash - everything in between - Slash variations
-                                    .replace(/The Mirror's.*?Lonely Watcher/, 'The\\s*Mirror\\\'s[\\s\\S]*?Lonely\\s*Watcher') // Handle The Mirror's Lonely Watcher variations
+                                    .replace(
+                                        /Clash.*?Slash/, 
+                                        'Clash[\\s\\S]*?Slash') 
+                                        // Handle Clash n Slash variations
+                                   .replace(
+                                        /The Mirror.*?Lonely Watcher/,
+                                        `The\\s*Mirror[\\s\\S]*?Lonely\\s*Watcher` // Handle The Mirror ... Lonely Watcher variations
+                                    ) // Handle The Mirror's ... Lonely Watcher variations
                                     .replace(/\s/g, '\\s*') // Handle spaces
                                     .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
                         )
@@ -237,7 +243,7 @@ const ocr: clickHandler = (payload: Event): void => {
                         .forEach((line) => {
                             const match = line.match(pattern);
                             if (!match && line.length !== 0 && !line.match(excludeLineInfo)) {
-                                console.log(line);
+                                console.log('Error reading: ', line);
                             }
                             if (match) {
                                 let arcanistName: string = match.groups?.ArcanistName.trim() || '';

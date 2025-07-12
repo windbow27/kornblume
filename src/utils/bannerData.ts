@@ -39,7 +39,7 @@ export const bannerList = [
     'A Life in Montage',
     'A Writing Writer Written',
     'The Shattered Product',
-    'The Mirror\'s Lonely Watcher',
+    "The Mirror's Lonely Watcher",
     'Serpentine Century',
     'Wirewalking in Zero Gravity',
     // standard
