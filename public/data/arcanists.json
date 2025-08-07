@@ -752,6 +752,379 @@
     "Mastery": []
   },
   {
+    "Id": 10110,
+    "IsReleased": true,
+    "Name": "Ezio Auditore",
+    "Rarity": 6,
+    "Afflatus": "Star",
+    "Stats": {
+      "0-1": [
+        256,
+        1464,
+        112,
+        111,
+        791,
+        26.4,
+        169.5
+      ],
+      "0-30": [
+        389,
+        2222,
+        170,
+        168,
+        791,
+        26.4,
+        169.5
+      ],
+      "1-40": [
+        652,
+        3724,
+        285,
+        281,
+        896,
+        29.9,
+        174.8
+      ],
+      "2-50": [
+        972,
+        5554,
+        425,
+        419,
+        1001,
+        33.4,
+        180
+      ],
+      "3-60": [
+        1143,
+        6534,
+        500,
+        492,
+        1106,
+        36.9,
+        185.3
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Starlit Ascent",
+          "Trembling Tooth",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Starlit Ascent",
+          "Cicada Wings",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Starlit Ascent",
+          "Silver Bullet",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          6,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Silver Ore"
+        ],
+        "Quantity": [
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Shattered Bones",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Perpetual Cog",
+          "Liquefied Terror"
+        ],
+        "Quantity": [
+          5,
+          3,
+          3
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Clawed Pendulum"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Golden Herb Incense"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird",
+          "Esoteric Bones"
+        ],
+        "Quantity": [
+          6,
+          4,
+          6
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Winged Key",
+          "Pyroxene Ore"
+        ],
+        "Quantity": [
+          8,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Biting Box",
+          "Goose Neck"
+        ],
+        "Quantity": [
+          1,
+          5,
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Interlaced Shudder",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Wyrmling Skeleton",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Bogeyman",
+          "Red Lacquer Tablet"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Mistilteinn",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Interlaced Shudder",
+          "Sonorous Knell",
+          "Serpent Scepter",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Cross",
+        "Id": 5,
+        "Material": [
+          "Rhine Gold",
+          "Murmur of Insanity",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Cross",
+        "Id": 4,
+        "Material": [
+          "Golden Fleece",
+          "Murmur of Insanity",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Cross",
+        "Id": 14,
+        "Material": [
+          "Fruit of Good and Evil",
+          "Jadeite Tablet",
+          "Goose Neck",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Cross",
+        "Id": 2,
+        "Material": [
+          "Mistilteinn",
+          "Murmur of Insanity",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Cross",
+        "Id": 6,
+        "Material": [
+          "Golden Fleece",
+          "Silver Bullet",
+          "Winged Key",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
+    ],
+    "Euphoria": [],
+    "Mastery": []
+  },
+  {
     "Id": 10107,
     "IsReleased": false,
     "Name": "Moldir",
@@ -1889,8 +2262,8 @@
         116,
         116,
         327,
-        0,
-        0
+        10.9,
+        146.4
       ],
       "0-30": [
         396,
@@ -1898,8 +2271,8 @@
         176,
         176,
         327,
-        0,
-        0
+        10.9,
+        146.4
       ],
       "1-40": [
         664,
@@ -1907,8 +2280,8 @@
         294,
         294,
         370,
-        0,
-        0
+        12.3,
+        148.5
       ],
       "2-50": [
         989,
@@ -1916,8 +2289,8 @@
         438,
         438,
         413,
-        0,
-        0
+        13.8,
+        150.6
       ],
       "3-60": [
         1163,
@@ -1925,8 +2298,8 @@
         515,
         515,
         456,
-        0,
-        0
+        15.2,
+        152.8
       ]
     },
     "Insight": [

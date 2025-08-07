@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '07/08/2025',
+    description: `
+        • Add Ezio Auditore banner. <br>
+        `
+  },
+  {
     date: '19/07/2025',
     description: `
         • Add Charon as unreleased arcanist.
