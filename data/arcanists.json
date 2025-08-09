@@ -7,49 +7,49 @@
     "Afflatus": "Spirit",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        251,
+        1331,
+        111,
+        111,
+        491,
+        16.3,
+        154.5
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        381,
+        2020,
+        168,
+        168,
+        491,
+        16.3,
+        154.5
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        639,
+        3386,
+        281,
+        281,
+        556,
+        18.5,
+        157.8
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        952,
+        5049,
+        419,
+        419,
+        621,
+        20.7,
+        161
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1120,
+        5939,
+        492,
+        492,
+        686,
+        22.8,
+        164.3
       ]
     },
     "Insight": [
@@ -386,49 +386,49 @@
     "Afflatus": "Mineral",
     "Stats": {
       "0-1": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        246,
+        1700,
+        99,
+        99,
+        327,
+        10.9,
+        146.3
       ],
       "0-30": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        374,
+        2581,
+        150,
+        150,
+        327,
+        10.9,
+        146.3
       ],
       "1-40": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        626,
+        4326,
+        251,
+        251,
+        370,
+        12.3,
+        148.5
       ],
       "2-50": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        933,
+        6450,
+        374,
+        374,
+        413,
+        13.7,
+        150.6
       ],
       "3-60": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1097,
+        7588,
+        439,
+        439,
+        456,
+        15.2,
+        152.8
       ]
     },
     "Insight": [
@@ -9061,8 +9061,85 @@
         ]
       }
     ],
-    "Euphoria": [],
-    "Mastery": []
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          20,
+          275,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          30,
+          371,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Jadeite Tablet"
+        ],
+        "Quantity": [
+          35,
+          470,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          40,
+          1195,
+          2,
+          2
+        ]
+      }
+    ]
   },
   {
     "Id": 10078,
@@ -14328,8 +14405,85 @@
         ]
       }
     ],
-    "Euphoria": [],
-    "Mastery": []
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          20,
+          275,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          30,
+          371,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          35,
+          470,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Watch Core"
+        ],
+        "Quantity": [
+          40,
+          1195,
+          2,
+          2
+        ]
+      }
+    ]
   },
   {
     "Id": 10058,
@@ -16897,6 +17051,21 @@
           "Sprout of Reverie",
           "Seed of Insight",
           "Mistilteinn"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter"
         ],
         "Quantity": [
           12,
