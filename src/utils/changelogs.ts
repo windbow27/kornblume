@@ -1,9 +1,15 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '09/08/2025',
+    description: `
+        • Add Marcus, Vila and second Eternity euphorias.
+        `
+  },
+  {
     date: '07/08/2025',
     description: `
-        • Add Ezio Auditore banner. <br>
+        • Add Ezio Auditore banner.
         `
   },
   {
