@@ -299,7 +299,7 @@
         "Source": "Craft in the Wilderness, Pawnshop, Story",
         "Usage": "Insight or Resonate rituals of characters. Also used as the material for crafting advanced materials."
     },
-        {
+    {
         "Id": 79,
         "Category": "Build Material",
         "IsReleased": true,
@@ -806,6 +806,56 @@
         "Name": "Key of New Sprout",
         "Rarity": 6,
         "Description": "",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 82,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Simple Insight Casket",
+        "Rarity": 2,
+        "Description": "A casket which all arcanists are familiar with. Open it to get a low-level material of your choice used for character Insight or Resonate.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 83,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Fine Insight Casket",
+        "Rarity": 3,
+        "Description": "A casket which all arcanists are familiar with. Open it to get a mid-level material of your choice used for Insight or Resonate.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 84,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Delicate Insight Casket",
+        "Rarity": 4,
+        "Description": "A casket which all arcanists are familiar with. Open it to get a high-level material of your choice used for Insight or Resonate.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 85,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Exquisite Insight Casket",
+        "Rarity": 5,
+        "Description": "A casket which all arcanists are familiar with. Open it to get a superior-level material of your choice, used for Insight or Resonate.",
+        "Source": "",
+        "Usage": ""
+    },
+    {
+        "Id": 86,
+        "Category": "Build Material",
+        "IsReleased": true,
+        "Name": "Mystical Insight Casket",
+        "Rarity": 6,
+        "Description": "A casket all arcanists are familiar with. Open it to get a mystical-level material of your choice, used for Insight or Resonance.",
         "Source": "",
         "Usage": ""
     }

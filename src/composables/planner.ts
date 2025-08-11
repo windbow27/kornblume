@@ -268,6 +268,27 @@ export async function getPlan(
 
     updateCraftingMaterialsForGlobalStore(plan.variables);
 
+    // add insight casket materials
+    const insightCasketMaterials: IMaterialUnit[] = [];
+    if (plan.flexUsage) {
+        Object.entries(plan.flexUsage).forEach(([matlName, usage]) => {
+            insightCasketMaterials.push({
+                Material: matlName,
+                Quantity: (usage as { used: number }).used
+            });
+        });
+    }
+    if (insightCasketMaterials.length > 0) {
+        generatedCards.push({
+            stage: 'Insight Casket',
+            runs: 0,
+            activity: 0,
+            days: 0,
+            materials: insightCasketMaterials,
+            activityImagePath: getActivityImagePathByStage('Insight Casket')
+        });
+    }
+
     plan.variables.forEach((stage) => {
         const stageInfo = drops[stage[0]];
         if (stageInfo) {
@@ -303,13 +324,17 @@ export async function getPlan(
         ? await processSharpoAndDust(generatedCards)
         : generatedCards;
 
-    // console.log(generatedCardsConsideringWilderness);
+    console.log(generatedCardsConsideringWilderness);
 
     const cardsFirstLayer = generatedCardsConsideringWilderness.filter(
         (card) =>
-            ['The Poussiere VI', 'Mintage Aesthetics VI', 'Oneiric Shop', 'Reveries'].includes(
-                card.stage
-            ) && card.materials.length > 0
+            [
+                'The Poussiere VI',
+                'Mintage Aesthetics VI',
+                'Oneiric Shop',
+                'Reveries',
+                'Insight Casket'
+            ].includes(card.stage) && card.materials.length > 0
     );
 
     const cardsSecondLayer = generatedCardsConsideringWilderness.filter(

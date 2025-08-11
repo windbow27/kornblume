@@ -9,6 +9,7 @@ import { useGlobalStore } from '../stores/global';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let glpk = null as any;
+let itemRarityMap: Record<string, number> | null = null;
 
 const getGLPKModel = (yalpsModel) => {
     const model = {
@@ -81,6 +82,20 @@ function getDaysFromActivity(activity): number {
     return Number((activity / dailyActivity).toFixed(1));
 }
 
+function getItemRarityMap() {
+    if (itemRarityMap) return itemRarityMap;
+    itemRarityMap = {};
+    try {
+        const items = useDataStore().items || [];
+        items.forEach((item) => {
+            itemRarityMap![item.Name] = item.Rarity;
+        });
+    } catch (e) {
+        itemRarityMap = {};
+    }
+    return itemRarityMap;
+}
+
 export async function getSolve(materials) {
     if (!glpk) {
         glpk = await GLPK();
@@ -111,7 +126,7 @@ export async function getSolve(materials) {
         'Key of Reverie',
         'Sprout of Reverie',
         'Seed of Insight',
-        
+
         // druvis special
         'Key of New Sprout'
     ];
@@ -167,22 +182,51 @@ export async function getSolve(materials) {
         ...neededConstraints
     };
 
-    // consider warehouse
+    // consider warehouse and flex build materials by rarity
+    const flexNames = {
+        2: 'Simple Insight Casket',
+        3: 'Fine Insight Casket',
+        4: 'Delicate Insight Casket',
+        5: 'Exquisite Insight Casket',
+        6: 'Mystical Insight Casket'
+    };
+
+    const flexCounts = {
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0
+    };
     warehouse.forEach((matlInfo) => {
         const { Material: matlName, Quantity: quantity } = matlInfo;
-        const matlQuant = quantity;
-        if (matlQuant > 0) {
-            if (constraints[matlName]) {
-                constraints[matlName] = {
-                    min: constraints[matlName].min - matlQuant
-                };
-            } else {
-                constraints[matlName] = {
-                    min: -matlQuant
-                };
+        for (const rarity in flexNames) {
+            if (matlName === flexNames[rarity]) {
+                flexCounts[rarity] += quantity;
             }
         }
     });
+
+    const itemRarityMap = getItemRarityMap();
+
+    // track flex usage for reporting
+    const flexUsage = {};
+    for (const matlName in constraints) {
+        const rarity = itemRarityMap[matlName];
+        if (!rarity || !flexCounts[rarity]) continue;
+        if (constraints[matlName].min > 0) {
+            const useFlex = Math.min(constraints[matlName].min, flexCounts[rarity]);
+            constraints[matlName].min -= useFlex;
+            flexCounts[rarity] -= useFlex;
+            if (useFlex > 0) {
+                flexUsage[matlName] = {
+                    rarity,
+                    used: useFlex,
+                    flexName: flexNames[rarity]
+                };
+            }
+        }
+    }
 
     // define LP solver
     const variables = Object.assign({}, craftMapping, dropMapping);
@@ -211,8 +255,14 @@ export async function getSolve(materials) {
         status: glpkSolver.result.status,
         variables: Object.keys(glpkSolver.result.vars)
             .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
-            .filter((variable) => variable[1] !== 0)
+            .filter((variable) => variable[1] !== 0),
+        flexUsage 
     };
+
+    // console.log('glpkResult: ', glpkResult);
+    // if (Object.keys(flexUsage).length > 0) {
+    //     console.log('Flex item usage:', flexUsage);
+    // }
 
     return glpkResult;
 }
