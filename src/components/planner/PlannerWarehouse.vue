@@ -20,7 +20,8 @@ const categories = [
     'Build Material',
     'Insight Material',
     'Resonate Material',
-    'Reveries Material'
+    'Reveries Material',
+    'Insight Casket'
 ];
 
 const activeCategories = ref([] as string[]);

@@ -14,8 +14,10 @@ const categories = [
     'Insight Material',
     'Resonate Material',
     'Ascension Material',
-    'Reveries Material'
+    'Reveries Material',
+    'Insight Casket'
 ];
+
 const buttons = ['Materials'];
 // const buttons = ['Materials', 'Psychubes'];
 const selectedButton = ref(buttons[0]);
@@ -50,7 +52,6 @@ onMounted(() => {
     filteredItems.value = itemStore.filter((item: IItem) => item.IsReleased);
     sortCategoryMaterials(filteredItems.value, categories);
 });
-
 </script>
 
 <template>
