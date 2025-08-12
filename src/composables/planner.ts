@@ -324,7 +324,7 @@ export async function getPlan(
         ? await processSharpoAndDust(generatedCards)
         : generatedCards;
 
-    console.log(generatedCardsConsideringWilderness);
+    // console.log(generatedCardsConsideringWilderness);
 
     const cardsFirstLayer = generatedCardsConsideringWilderness.filter(
         (card) =>
