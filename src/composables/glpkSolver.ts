@@ -96,6 +96,34 @@ function getItemRarityMap() {
     return itemRarityMap;
 }
 
+function createFlexConversionVariables(constraints, flexCounts, itemRarityMap, flexNames) {
+    const flexConversionVars = {};
+    const flexConstraints = {};
+
+    for (const rarity in flexCounts) {
+        if (flexCounts[rarity] > 0) {
+            const flexName = flexNames[rarity];
+            flexConstraints[`flex_${flexName}`] = { max: flexCounts[rarity] };
+        }
+    }
+
+    for (const matlName in constraints) {
+        const rarity = itemRarityMap[matlName];
+        if (rarity && flexCounts[rarity] && flexCounts[rarity] > 0) {
+            const flexName = flexNames[rarity];
+            const conversionVarName = `flex_convert_${matlName}`;
+
+            flexConversionVars[conversionVarName] = {
+                [matlName]: 1, // produces 1 unit of the material
+                [`flex_${flexName}`]: 1, // consumes 1 unit of the flex item
+                cost: 0 // no additional cost for conversion
+            };
+        }
+    }
+
+    return { flexConversionVars, flexConstraints };
+}
+
 export async function getSolve(materials) {
     if (!glpk) {
         glpk = await GLPK();
@@ -107,7 +135,6 @@ export async function getSolve(materials) {
     // prepare constraints
     const materialConstraints = {};
     const neededConstraints = {};
-
     // the LP currently doesn't account for the oneiric shop
     // since it's not really related to activity or farming routes
 
@@ -122,14 +149,12 @@ export async function getSolve(materials) {
         'Brief Cacophony',
         'Moment of Dissonance',
         'Crystal Casket',
-
         'Key of Reverie',
         'Sprout of Reverie',
         'Seed of Insight',
-
-        // druvis special
         'Key of New Sprout'
     ];
+
     materials.forEach(({ Material: matlName, Quantity: quantity }) => {
         if (!resonanceMaterial.includes(matlName)) {
             // filters out the materials from the oneiric shop
@@ -204,6 +229,7 @@ export async function getSolve(materials) {
         for (const rarity in flexNames) {
             if (matlName === flexNames[rarity]) {
                 flexCounts[rarity] += quantity;
+                return;
             }
         }
         const matlQuant = quantity;
@@ -222,32 +248,28 @@ export async function getSolve(materials) {
 
     const itemRarityMap = getItemRarityMap();
 
-    // track flex usage for reporting
-    const flexUsage = {};
-    for (const matlName in constraints) {
-        const rarity = itemRarityMap[matlName];
-        if (!rarity || !flexCounts[rarity]) continue;
-        if (constraints[matlName].min > 0) {
-            const useFlex = Math.min(constraints[matlName].min, flexCounts[rarity]);
-            constraints[matlName].min -= useFlex;
-            flexCounts[rarity] -= useFlex;
-            if (useFlex > 0) {
-                flexUsage[matlName] = {
-                    rarity,
-                    used: useFlex,
-                    flexName: flexNames[rarity]
-                };
-            }
-        }
-    }
+    const { flexConversionVars, flexConstraints } = createFlexConversionVariables(
+        constraints,
+        flexCounts,
+        itemRarityMap,
+        flexNames
+    );
 
-    // define LP solver
-    const variables = Object.assign({}, craftMapping, dropMapping);
+    const allConstraints = {
+        ...constraints,
+        ...flexConstraints
+    };
+
+    const variables = {
+        ...craftMapping,
+        ...dropMapping,
+        ...flexConversionVars
+    };
 
     const model = {
         objective: 'cost',
         direction: 'minimize',
-        constraints,
+        constraints: allConstraints,
         variables,
         integers
     };
@@ -256,26 +278,46 @@ export async function getSolve(materials) {
     const glpkSolver = await glpk.solve(glpkModel as GLPKModel);
 
     if (glpkSolver.result.status !== 5) {
-        // fulfill
         console.log(
             `%cStatus: ${glpkSolver.result.status}`,
             'background-color: yellow; color: black;'
         );
-        console.log('constraints: ', constraints);
+        console.log('constraints: ', allConstraints);
         console.log('variables: ', variables);
     }
+
+    const flexUsage = {};
+    const resultVariables = Object.keys(glpkSolver.result.vars)
+        .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
+        .filter((variable) => variable[1] !== 0);
+
+    // Extract flex conversion information from results
+    resultVariables.forEach(([varName, value]) => {
+        if (varName.startsWith('flex_convert_')) {
+            const materialName = varName.replace('flex_convert_', '');
+            const rarity = itemRarityMap[materialName];
+            if (rarity) {
+                // Round to nearest integer and filter out near-zero values
+                const roundedValue = Math.round(value);
+                if (roundedValue > 0) {
+                    // Only include positive values
+                    flexUsage[materialName] = {
+                        rarity,
+                        used: roundedValue,
+                        flexName: flexNames[rarity]
+                    };
+                }
+            }
+        }
+    });
+
     const glpkResult = {
         status: glpkSolver.result.status,
-        variables: Object.keys(glpkSolver.result.vars)
-            .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
-            .filter((variable) => variable[1] !== 0),
+        variables: resultVariables.filter(
+            ([varName]) => !varName.startsWith('flex_convert_') && !varName.startsWith('flex_')
+        ),
         flexUsage
     };
-
-    // console.log('glpkResult: ', glpkResult);
-    // if (Object.keys(flexUsage).length > 0) {
-    //     console.log('Flex item usage:', flexUsage);
-    // }
 
     return glpkResult;
 }
