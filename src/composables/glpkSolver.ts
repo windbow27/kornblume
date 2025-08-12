@@ -198,11 +198,24 @@ export async function getSolve(materials) {
         5: 0,
         6: 0
     };
+
     warehouse.forEach((matlInfo) => {
         const { Material: matlName, Quantity: quantity } = matlInfo;
         for (const rarity in flexNames) {
             if (matlName === flexNames[rarity]) {
                 flexCounts[rarity] += quantity;
+            }
+        }
+        const matlQuant = quantity;
+        if (matlQuant > 0) {
+            if (constraints[matlName]) {
+                constraints[matlName] = {
+                    min: constraints[matlName].min - matlQuant
+                };
+            } else {
+                constraints[matlName] = {
+                    min: -matlQuant
+                };
             }
         }
     });
@@ -256,7 +269,7 @@ export async function getSolve(materials) {
         variables: Object.keys(glpkSolver.result.vars)
             .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
             .filter((variable) => variable[1] !== 0),
-        flexUsage 
+        flexUsage
     };
 
     // console.log('glpkResult: ', glpkResult);

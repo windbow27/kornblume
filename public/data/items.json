@@ -821,7 +821,7 @@
     },
     {
         "Id": 83,
-        "Category": "Build Material",
+        "Category": "Insight Casket",
         "IsReleased": true,
         "Name": "Fine Insight Casket",
         "Rarity": 3,
@@ -831,7 +831,7 @@
     },
     {
         "Id": 84,
-        "Category": "Build Material",
+        "Category": "Insight Casket",
         "IsReleased": true,
         "Name": "Delicate Insight Casket",
         "Rarity": 4,
@@ -841,7 +841,7 @@
     },
     {
         "Id": 85,
-        "Category": "Build Material",
+        "Category": "Insight Casket",
         "IsReleased": true,
         "Name": "Exquisite Insight Casket",
         "Rarity": 5,
@@ -851,7 +851,7 @@
     },
     {
         "Id": 86,
-        "Category": "Build Material",
+        "Category": "Insight Casket",
         "IsReleased": true,
         "Name": "Mystical Insight Casket",
         "Rarity": 6,

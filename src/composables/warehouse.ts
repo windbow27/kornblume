@@ -5,8 +5,9 @@ const categoryPriority = {
     'Base Item': 0,
     'Resonate Material': 1,
     'Reveries Material': 2,
-    'Insight Material': 3,
-    'Build Material': 3 // insight/build material have same priority, should be arranged according to rarity
+    'Insight Casket': 3,
+    'Insight Material': 4,
+    'Build Material': 4 // insight/build material have same priority, should be arranged according to rarity
 };
 
 export function addEventShopMaterialsToWarehouse(version: string) {
@@ -57,6 +58,7 @@ function isValidWarehouseItem(item) {
         item.Category === 'Build Material' ||
         item.Category === 'Insight Material' ||
         item.Category === 'Reveries Material' ||
+        item.Category === 'Insight Casket' ||
         (item.Category === 'Resonate Material' && item.Rarity < 6) ||
         item.Name === 'Dust' ||
         item.Name === 'Sharpodonty' ||
