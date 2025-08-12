@@ -1,4 +1,4 @@
-import{o as C}from"./index-QpPfGhmw.js";import{d as _,o as n,c as i,a as e,t,F as m,r as A,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as z,k as W,l as v,m as N}from"./index-DASNUWIO.js";const k=[{date:"11/08/2025",description:`
+import{o as C}from"./index-_2xcDhMH.js";import{d as _,o as n,c as i,a as e,t,F as m,r as A,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as z,k as W,l as v,m as N}from"./index-DMyI51Vm.js";const k=[{date:"11/08/2025",description:`
         • Improve Tracker Editor. It's still suck to use, but hey it's better, I think.
         `},{date:"09/08/2025",description:`
         • Add Marcus, Vila and second Eternity euphorias.
