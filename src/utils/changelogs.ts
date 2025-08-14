@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '14/08/2025',
+    description: `
+        • Add Insight Casket to Planner. There might be some bugs, if you encounter any, please report them.
+        `
+  },
+  {
     date: '11/08/2025',
     description: `
         • Improve Tracker Editor. It's still suck to use, but hey it's better, I think.
