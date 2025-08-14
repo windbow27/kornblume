@@ -29,6 +29,8 @@ const toolTipText = computed(() => {
         return t('number-of-oneiric-fluid');
     } else if (props.card.stage === 'Reveries') {
         return t('from-reveries');
+    } else if (props.card.stage === 'Insight Casket') {
+        return t('from-insight-casket');
     }
     return t('number-of-runs') + ' | ' + t('activities') + ' | ' + t('uppercase-days');
 });
@@ -61,6 +63,9 @@ watch(shouldHideScrollbar, (newVal) => {
                 <p class="pl-2" v-if="card.activity !== 0">{{ card.activity }}</p>
                 <p v-else-if="card.stage === 'Reveries'" class="pl-2">
                     <span>{{ $t('from-reveries') }}</span>
+                </p>
+                <p v-else-if="card.stage === 'Insight Casket'" class="pl-2">
+                    <span>{{ $t('from-insight-casket') }}</span>
                 </p>
                 <p v-else-if="layerId === 3">
                     <span

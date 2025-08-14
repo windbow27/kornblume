@@ -9,6 +9,7 @@ import { useGlobalStore } from '../stores/global';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 let glpk = null as any;
+let itemRarityMap: Record<string, number> | null = null;
 
 const getGLPKModel = (yalpsModel) => {
     const model = {
@@ -81,6 +82,60 @@ function getDaysFromActivity(activity): number {
     return Number((activity / dailyActivity).toFixed(1));
 }
 
+function getItemRarityMap() {
+    if (itemRarityMap) return itemRarityMap;
+    itemRarityMap = {};
+    try {
+        const items = useDataStore().items || [];
+        items.forEach((item) => {
+            itemRarityMap![item.Name] = item.Rarity;
+        });
+    } catch (e) {
+        itemRarityMap = {};
+    }
+    return itemRarityMap;
+}
+
+function createFlexConversionVariables(constraints, flexCounts, itemRarityMap, flexNames) {
+    const flexConversionVars = {};
+    const flexConstraints = {};
+
+    for (const rarity in flexCounts) {
+        if (flexCounts[rarity] > 0) {
+            const flexName = flexNames[rarity];
+            flexConstraints[`flex_${flexName}`] = { max: flexCounts[rarity] };
+        }
+    }
+
+    const items = useDataStore().items || [];
+    const itemCategoryMap = {};
+    items.forEach((item) => {
+        itemCategoryMap[item.Name] = item.Category;
+    });
+
+    for (const matlName in constraints) {
+        const rarity = itemRarityMap[matlName];
+        const category = itemCategoryMap[matlName];
+        if (
+            rarity &&
+            flexCounts[rarity] &&
+            flexCounts[rarity] > 0 &&
+            category === 'Build Material'
+        ) {
+            const flexName = flexNames[rarity];
+            const conversionVarName = `flex_convert_${matlName}`;
+
+            flexConversionVars[conversionVarName] = {
+                [matlName]: 1, // produces 1 unit of the material
+                [`flex_${flexName}`]: 1, // consumes 1 unit of the flex item
+                cost: 0 // no additional cost for conversion
+            };
+        }
+    }
+
+    return { flexConversionVars, flexConstraints };
+}
+
 export async function getSolve(materials) {
     if (!glpk) {
         glpk = await GLPK();
@@ -92,7 +147,6 @@ export async function getSolve(materials) {
     // prepare constraints
     const materialConstraints = {};
     const neededConstraints = {};
-
     // the LP currently doesn't account for the oneiric shop
     // since it's not really related to activity or farming routes
 
@@ -107,14 +161,12 @@ export async function getSolve(materials) {
         'Brief Cacophony',
         'Moment of Dissonance',
         'Crystal Casket',
-
         'Key of Reverie',
         'Sprout of Reverie',
         'Seed of Insight',
-        
-        // druvis special
         'Key of New Sprout'
     ];
+
     materials.forEach(({ Material: matlName, Quantity: quantity }) => {
         if (!resonanceMaterial.includes(matlName)) {
             // filters out the materials from the oneiric shop
@@ -167,9 +219,31 @@ export async function getSolve(materials) {
         ...neededConstraints
     };
 
-    // consider warehouse
+    // consider warehouse and flex build materials by rarity
+    const flexNames = {
+        2: 'Simple Insight Casket',
+        3: 'Fine Insight Casket',
+        4: 'Delicate Insight Casket',
+        5: 'Exquisite Insight Casket',
+        6: 'Mystical Insight Casket'
+    };
+
+    const flexCounts = {
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0
+    };
+
     warehouse.forEach((matlInfo) => {
         const { Material: matlName, Quantity: quantity } = matlInfo;
+        for (const rarity in flexNames) {
+            if (matlName === flexNames[rarity]) {
+                flexCounts[rarity] += quantity;
+                return;
+            }
+        }
         const matlQuant = quantity;
         if (matlQuant > 0) {
             if (constraints[matlName]) {
@@ -184,13 +258,30 @@ export async function getSolve(materials) {
         }
     });
 
-    // define LP solver
-    const variables = Object.assign({}, craftMapping, dropMapping);
+    const itemRarityMap = getItemRarityMap();
+
+    const { flexConversionVars, flexConstraints } = createFlexConversionVariables(
+        constraints,
+        flexCounts,
+        itemRarityMap,
+        flexNames
+    );
+
+    const allConstraints = {
+        ...constraints,
+        ...flexConstraints
+    };
+
+    const variables = {
+        ...craftMapping,
+        ...dropMapping,
+        ...flexConversionVars
+    };
 
     const model = {
         objective: 'cost',
         direction: 'minimize',
-        constraints,
+        constraints: allConstraints,
         variables,
         integers
     };
@@ -199,19 +290,43 @@ export async function getSolve(materials) {
     const glpkSolver = await glpk.solve(glpkModel as GLPKModel);
 
     if (glpkSolver.result.status !== 5) {
-        // fulfill
         console.log(
             `%cStatus: ${glpkSolver.result.status}`,
             'background-color: yellow; color: black;'
         );
-        console.log('constraints: ', constraints);
+        console.log('constraints: ', allConstraints);
         console.log('variables: ', variables);
     }
+
+    const flexUsage = {};
+    const resultVariables = Object.keys(glpkSolver.result.vars)
+        .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
+        .filter((variable) => variable[1] !== 0);
+
+    resultVariables.forEach(([varName, value]) => {
+        if (varName.startsWith('flex_convert_')) {
+            const materialName = varName.replace('flex_convert_', '');
+            const rarity = itemRarityMap[materialName];
+            if (rarity) {
+                // round to nearest integer and filter out near-zero values
+                const roundedValue = Math.round(value);
+                if (roundedValue > 0) {
+                    flexUsage[materialName] = {
+                        rarity,
+                        used: roundedValue,
+                        flexName: flexNames[rarity]
+                    };
+                }
+            }
+        }
+    });
+
     const glpkResult = {
         status: glpkSolver.result.status,
-        variables: Object.keys(glpkSolver.result.vars)
-            .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
-            .filter((variable) => variable[1] !== 0)
+        variables: resultVariables.filter(
+            ([varName]) => !varName.startsWith('flex_convert_') && !varName.startsWith('flex_')
+        ),
+        flexUsage
     };
 
     return glpkResult;
