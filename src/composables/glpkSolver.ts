@@ -107,9 +107,21 @@ function createFlexConversionVariables(constraints, flexCounts, itemRarityMap, f
         }
     }
 
+    const items = useDataStore().items || [];
+    const itemCategoryMap = {};
+    items.forEach((item) => {
+        itemCategoryMap[item.Name] = item.Category;
+    });
+
     for (const matlName in constraints) {
         const rarity = itemRarityMap[matlName];
-        if (rarity && flexCounts[rarity] && flexCounts[rarity] > 0) {
+        const category = itemCategoryMap[matlName];
+        if (
+            rarity &&
+            flexCounts[rarity] &&
+            flexCounts[rarity] > 0 &&
+            category === 'Build Material'
+        ) {
             const flexName = flexNames[rarity];
             const conversionVarName = `flex_convert_${matlName}`;
 
@@ -291,16 +303,14 @@ export async function getSolve(materials) {
         .map((variableName) => [variableName, glpkSolver.result.vars[variableName]])
         .filter((variable) => variable[1] !== 0);
 
-    // Extract flex conversion information from results
     resultVariables.forEach(([varName, value]) => {
         if (varName.startsWith('flex_convert_')) {
             const materialName = varName.replace('flex_convert_', '');
             const rarity = itemRarityMap[materialName];
             if (rarity) {
-                // Round to nearest integer and filter out near-zero values
+                // round to nearest integer and filter out near-zero values
                 const roundedValue = Math.round(value);
                 if (roundedValue > 0) {
-                    // Only include positive values
                     flexUsage[materialName] = {
                         rarity,
                         used: roundedValue,
