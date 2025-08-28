@@ -71,7 +71,9 @@ export const bannerList = [
   'Moonbeam Guardian',
 
   // ezio
-  'A Prophet Guided by Time'
+  'A Prophet Guided by Time',
+  // kassandra
+  'Wine-Dark Reflections of the Eagle'
 ];
 
 export const bannerRateUp = [

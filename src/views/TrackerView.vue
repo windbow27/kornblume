@@ -25,7 +25,7 @@ const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
 // const selectedBannerType = ref('Limited');
-const selectedBannerType = ref('A Prophet Guided by Time');
+const selectedBannerType = ref('Wine-Dark Reflections of the Eagle');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -101,6 +101,7 @@ const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
 const anjoNalaPulls = createPullsByBannerType('Longing for Innocence');
 const liangPulls = createPullsByBannerType('Moonbeam Guardian');
 const ezioPulls = createPullsByBannerType('A Prophet Guided by Time');
+const kassandraPulls = createPullsByBannerType('Wine-Dark Reflections of the Eagle');
 
 const limitedPulls = computed(() => {
   const filteredPulls = sortedPulls.value.filter(
@@ -118,7 +119,8 @@ const limitedPulls = computed(() => {
       pull.BannerType !== 'Boon of the Water' &&
       pull.BannerType !== 'Golden Spindle' &&
       pull.BannerType !== 'Ripples on the Water' &&
-      pull.BannerType !== 'A Prophet Guided by Time'
+      pull.BannerType !== 'A Prophet Guided by Time' &&
+      pull.BannerType !== 'Wine-Dark Reflections of the Eagle'
   );
   return filteredPulls.map((pull, index) => {
     return {
@@ -568,11 +570,11 @@ const selectBannerType = (bannerType: string) => {
       <!-- Limited Placeholder -->
       <button
         v-bind:class="{
-          'border-button': selectedBannerType === 'A Prophet Guided by Time'
+          'border-button': selectedBannerType === 'Wine-Dark Reflections of the Eagle'
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md"
-        @click="selectBannerType('A Prophet Guided by Time')">
-        {{ $t('ezio-auditore') }}
+        @click="selectBannerType('Wine-Dark Reflections of the Eaglee')">
+        {{ $t('kassandra') }}
       </button>
 
       <button
@@ -757,6 +759,16 @@ const selectBannerType = (bannerType: string) => {
               {{ $t('ezio-auditore') }}
             </button>
           </li>
+          <li>
+            <button
+              v-bind:class="{
+                'border-button': selectedBannerType === 'Wine-Dark Reflections of the Eagle'
+              }"
+              class="text-white py-1 px-3 hover:bg-info rounded-md"
+              @click="selectBannerType('Wine-Dark Reflections of the Eagle')">
+              {{ $t('kassandra') }}
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -864,6 +876,13 @@ const selectBannerType = (bannerType: string) => {
       v-if="selectedBannerType === 'A Prophet Guided by Time'"
       :text="$t('ezio-auditore')"
       :pulls="ezioPulls"
+      :allPulls="allPulls"
+      :isError="isError"
+      :wrongTimestamps="wrongTimestamps" />
+    <TrackerBoard
+      v-if="selectedBannerType === 'Wine-Dark Reflections of the Eagle'"
+      :text="$t('kassandra')"
+      :pulls="kassandraPulls"
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps" />

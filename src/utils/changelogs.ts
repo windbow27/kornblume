@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '28/08/2025',
+    description: `
+        • Add Kassandra and Alexios.
+        `
+  },
+  {
     date: '14/08/2025',
     description: `
         • Add Insight Casket to Planner. There might be some bugs, if you encounter any, please report them.
