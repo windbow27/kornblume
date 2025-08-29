@@ -1,4 +1,4 @@
-import{o as C}from"./index-BlMgtnVC.js";import{d as _,o as n,c as i,a as e,t,F as m,r as A,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as z,k as W,l as v,m as K}from"./index-Dud71rvd.js";const k=[{date:"28/08/2025",description:`
+import{o as C}from"./index-3uxSo9db.js";import{d as _,o as n,c as i,a as e,t,F as m,r as A,u as $,b as M,e as F,f,g as h,w,h as L,i as u,j as z,k as W,l as v,m as K}from"./index-Bg1A8R1p.js";const k=[{date:"28/08/2025",description:`
         • Add Kassandra and Alexios.
         `},{date:"14/08/2025",description:`
         • Add Insight Casket to Planner. There might be some bugs, if you encounter any, please report them.
