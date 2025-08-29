@@ -573,7 +573,7 @@ const selectBannerType = (bannerType: string) => {
           'border-button': selectedBannerType === 'Wine-Dark Reflections of the Eagle'
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md"
-        @click="selectBannerType('Wine-Dark Reflections of the Eaglee')">
+        @click="selectBannerType('Wine-Dark Reflections of the Eagle')">
         {{ $t('kassandra') }}
       </button>
 
@@ -610,7 +610,8 @@ const selectBannerType = (bannerType: string) => {
                 selectedBannerType === 'Thoughts in Cylinder' ||
                 selectedBannerType === 'Longing for Innocence' ||
                 selectedBannerType === 'Moonbeam Guardian' ||
-                selectedBannerType === 'A Prophet Guided by Time'
+                selectedBannerType === 'A Prophet Guided by Time' ||
+                selectedBannerType === 'Wine-Dark Reflections of the Eagle'
             }"
             class="text-white py-1 px-3 hover:bg-info rounded-md">
             {{ $t('special') }}
