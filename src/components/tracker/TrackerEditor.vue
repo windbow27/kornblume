@@ -20,8 +20,6 @@ const props = defineProps({
 const pullsRecordStore = usePullsRecordStore();
 const arcanists = formatNoSpoilerArcanists(useDataStore().arcanists);
 const localPulls = reactive(props.pulls.map((pull) => ({ ...pull })));
-const arcanistNames = reactive(localPulls.map((pull) => pull.ArcanistName));
-const bannerTypes = reactive(localPulls.map((pull) => pull.BannerType));
 const localPullDates = reactive(props.pulls.map((pull) => new Date(pull.Timestamp)));
 const newArcanistName = ref('');
 const newBannerType = ref('');
@@ -91,9 +89,8 @@ const addPull = () => {
     Timestamp: newPullDate.value.getTime()
   };
   localPulls.unshift(newPull);
-  arcanistNames.unshift(newArcanistName.value);
-  bannerTypes.unshift(newBannerType.value);
   localPullDates.unshift(newPullDate.value);
+  currentPage.value = 1;
   newArcanistName.value = '';
   newBannerType.value = '';
   newPullDate.value = new Date();
@@ -181,12 +178,7 @@ const format = (date) => {
             <SpecialIcon v-else :name="pull.ArcanistName" />
 
             <div class="relative w-36">
-              <select
-                class="select select-sm select-bordered w-full"
-                v-model="arcanistNames[index + (currentPage - 1) * itemsPerPage]"
-                @change="
-                  pull.ArcanistName = arcanistNames[index + (currentPage - 1) * itemsPerPage]
-                ">
+              <select class="select select-sm select-bordered w-full" v-model="pull.ArcanistName">
                 <option v-for="(arcanist, i) in arcanists" :key="i" :value="arcanist.Name">
                   {{ arcanist.Name }}
                 </option>
@@ -197,7 +189,7 @@ const format = (date) => {
             <div class="relative">
               <select
                 class="select select-sm select-bordered w-56 pl-3 pr-8"
-                v-model="bannerTypes[index + (currentPage - 1) * itemsPerPage]">
+                v-model="pull.BannerType">
                 <option v-for="(banner, i) in bannerList" :key="i" :value="banner">
                   {{ banner }}
                 </option>
