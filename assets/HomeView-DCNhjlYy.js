@@ -1,5 +1,5 @@
-import{o as T}from"./index-C4msyvCb.js";import{d as _,o as n,c as i,a as e,t,F as h,r as w,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as L,k as K,l as k,m as N}from"./index-CdOHPYZ6.js";const v=[{date:"03/09/2025",description:`
-        • Various UI/UX improvements, including mobile experience by SolidKalium..
+import{o as T}from"./index-CTLN7RIg.js";import{d as _,o as n,c as i,a as e,t,F as h,r as w,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as L,k as K,l as k,m as N}from"./index-C4vjW5o8.js";const v=[{date:"03/09/2025",description:`
+        • Various UI/UX improvements, including mobile experience by SolidKalium. <br>
         • Silksong tomorrow.
         `},{date:"28/08/2025",description:`
         • Add Kassandra and Alexios.
