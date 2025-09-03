@@ -1,16 +1,12 @@
 <script lang="ts" setup name="Navbar">
-import { onMounted, ref, watchEffect } from 'vue';
+import { onMounted, ref } from 'vue';
 import { setLocale, supportedLangCodes, langDropdownOptions } from '@/utils/i18n';
 import Popper from 'vue3-popper';
+import { useScreen } from '@/composables/useScreen';
 
-const isSmallScreen = ref(window.innerWidth <= 768);
-const showDropdown = ref(false);
+const { isLargeScreen } = useScreen();
 const currentLanguage = ref('English');
 const currentFlag = ref('fi fi-us');
-
-const toggleDropdown = () => {
-    showDropdown.value = !showDropdown.value;
-};
 
 const handleChangeLanguage = ({ locale, text, icon }) => {
     currentLanguage.value = text;
@@ -34,22 +30,6 @@ onMounted(() => {
         handleChangeLanguage(option);
     }
 });
-
-watchEffect(() => {
-    const handleResize = () => {
-        isSmallScreen.value = window.innerWidth <= 1024;
-        if (!isSmallScreen.value) {
-            showDropdown.value = false;
-        }
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Initial check
-
-    return () => {
-        window.removeEventListener('resize', handleResize);
-    };
-});
 </script>
 
 <template>
@@ -59,7 +39,7 @@ watchEffect(() => {
         /></router-link>
 
         <!-- Navigation Links for Large Screens -->
-        <div v-if="!isSmallScreen" class="flex space-x-2">
+        <div v-if="isLargeScreen" class="flex space-x-2">
             <router-link to="/" class="nav-button" :class="{ active: $route.path === '/' }"
                 ><i class="fa-solid fa-house"></i> {{ $t('home') }}
             </router-link>
@@ -135,7 +115,7 @@ watchEffect(() => {
             </Popper>
 
             <!-- Dropdown Button for Small Screens -->
-            <div v-if="isSmallScreen">
+            <div v-if="!isLargeScreen">
                 <Popper arrow placement="top" offsetDistance="2">
                     <div class="nav-button cursor-pointer">
                         <i class="fa-solid fa-bars text-white"></i>
@@ -143,48 +123,28 @@ watchEffect(() => {
                     <template #content="{ close }">
                         <div class="flex flex-col space-y-2">
                             <router-link
-                                @click="
-                                    () => {
-                                        toggleDropdown();
-                                        close();
-                                    }
-                                "
+                                @click="close"
                                 to="/"
                                 class="nav-button block"
                                 :class="{ active: $route.path === '/' }"
                                 ><i class="fa-solid fa-house"></i> {{ $t('home') }}
                             </router-link>
                             <router-link
-                                @click="
-                                    () => {
-                                        toggleDropdown();
-                                        close();
-                                    }
-                                "
+                                @click="close"
                                 to="/arcanists"
                                 class="nav-button block"
                                 :class="{ active: $route.path === '/arcanists' }"
                                 ><i class="fa-solid fa-user"></i> {{ $t('arcanists') }}
                             </router-link>
                             <router-link
-                                @click="
-                                    () => {
-                                        toggleDropdown();
-                                        close();
-                                    }
-                                "
+                                @click="close"
                                 to="/items"
                                 class="nav-button block"
                                 :class="{ active: $route.path === '/items' }"
                                 ><i class="fa-solid fa-box-archive"></i> {{ $t('items') }}
                             </router-link>
                             <router-link
-                                @click="
-                                    () => {
-                                        toggleDropdown();
-                                        close();
-                                    }
-                                "
+                                @click="close"
                                 to="/tracker"
                                 class="nav-button block"
                                 :class="{ active: $route.path === '/tracker' }"
@@ -192,36 +152,21 @@ watchEffect(() => {
                                 {{ $t('summon-tracker') }}
                             </router-link>
                             <router-link
-                                @click="
-                                    () => {
-                                        toggleDropdown();
-                                        close();
-                                    }
-                                "
+                                @click="close"
                                 to="/planner"
                                 class="nav-button block"
                                 :class="{ active: $route.path === '/planner' }"
                                 ><i class="fas fa-tasks"></i> {{ $t('planner') }}
                             </router-link>
                             <router-link
-                                @click="
-                                    () => {
-                                        toggleDropdown();
-                                        close();
-                                    }
-                                "
+                                @click="close"
                                 to="/stages"
                                 class="nav-button block"
                                 :class="{ active: $route.path === '/stages' }"
                                 ><i class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('stages') }}
                             </router-link>
                             <router-link
-                                @click="
-                                    () => {
-                                        toggleDropdown();
-                                        close();
-                                    }
-                                "
+                                @click="close"
                                 to="/profile"
                                 class="nav-button block"
                                 :class="{ active: $route.path === '/profile' }"

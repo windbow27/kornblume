@@ -122,7 +122,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
             <div class="flex items-center justify-center flex-col">
                 <p v-if="props.layerId === 1 || props.layerId === 2" class="text-center text-slate-300 text-sm opacity-80">
                     <!-- just a sum of the current values of a given mat in the LP result -->
-                    <i18n-t keypath="numbers-expected-to-drop">
+                    <i18n-t scope="global" keypath="numbers-expected-to-drop">
                         <template #numbers>
                             <span class="text-white">{{ props.material.Quantity }}</span>
                         </template>
@@ -130,7 +130,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                 </p>
                 <p v-if="props.layerId === 3" class="text-center text-slate-300 text-sm opacity-80">
                     <!-- only consider warehouseQuantityShift for crafting -->
-                    <i18n-t keypath="numbers-expected-to-be-crafted">
+                    <i18n-t scope="global" keypath="numbers-expected-to-be-crafted">
                         <template #numbers>
                             <span class="text-white">{{ Math.max(props.material.Quantity - warehouseQuantityShift,
                                 0) }}</span>
@@ -139,7 +139,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
                 </p>
 
                 <p class="text-center text-slate-300 text-sm opacity-80">
-                    <i18n-t keypath="numbers-needed-to-complete-the-goal">
+                    <i18n-t scope="global" keypath="numbers-needed-to-complete-the-goal">
                         <template #numbers>
                             <span class="text-white">{{ neededQuantityIncludingCraft }}</span>
                         </template>
@@ -148,7 +148,7 @@ const isLowerBuildMaterial = computed(() => materialItem.value?.Category === 'Bu
 
                 <p v-if="(isLowerBuildMaterial || props.material.Material === 'Sharpodonty') && neededQuantityForCraftingHigherTier > 0"
                     class="text-center text-slate-300 text-sm opacity-80">
-                    <i18n-t keypath="with-numbers-used-in-crafting">
+                    <i18n-t scope="global" keypath="with-numbers-used-in-crafting">
                         <template #numbers>
                             <span class="text-white">{{ neededQuantityForCraftingHigherTier }}</span>
                         </template>

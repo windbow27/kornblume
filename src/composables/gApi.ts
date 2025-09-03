@@ -59,6 +59,11 @@ export class GApiSvc {
         // console.log('init scriptLoaded:' + scriptLoaded.value);
 
         return new Promise<void>((resolve, reject) => {
+            if (!import.meta.env.VITE_GOOGLE_CLIENT_ID) {
+                // If client ID is not set, resolve without initializing GApi.
+                return resolve();
+            }
+
             watchEffect(() => {
                 if (scriptLoaded.value) { // Check if the script is loaded
                     // eslint-disable-next-line no-undef
@@ -79,19 +84,19 @@ export class GApiSvc {
     }
 
     static async signIn () {
-        return gapi.auth2.getAuthInstance().signIn();
+        return gapi.auth2?.getAuthInstance().signIn();
     }
 
     static async signOut () {
-        return gapi.auth2.getAuthInstance().signOut();
+        return gapi.auth2?.getAuthInstance().signOut();
     }
 
     static async isSignedIn () {
-        return gapi.auth2.getAuthInstance().isSignedIn.get();
+        return gapi.auth2?.getAuthInstance().isSignedIn.get();
     }
 
     static getEmail () {
-        return gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile().getEmail();
+        return gapi.auth2?.getAuthInstance()?.currentUser.get().getBasicProfile().getEmail();
     }
 
     static async getFiles () {

@@ -19,6 +19,7 @@
                 <p class=" text-white">1. {{ $t('take-screenshots-of-your-summon-history') }}</p>
                 <p class=" text-white">2.
                     <i18n-t
+                        scope="global"
                         keypath="upload-the-screenshots-to-the-summon-tracker-you-could-upload-multiple-images-at-once">
                         <template #highlight>
                             <span class="text-error">{{ $t('multiple-images') }}</span>
@@ -32,7 +33,7 @@
                 <p class=" text-white">• {{ $t('it-is-advised-to-save-your-screenshots-for-future-usages') }}</p>
                 <p class=" text-white">• {{ $t('after-your-first-import') }}</p>
                 <p class="text-white">•
-                    <i18n-t keypath='this-is-an-example-of-a-good-image'>
+                    <i18n-t scope="global" keypath='this-is-an-example-of-a-good-image'>
                         <template #highlight>
                             <a href="https://imgur.com/a/cHqOqJL" target="_blank"
                                 class="text-blue-500 hover:text-blue-700">{{ $t('image') }}</a>
@@ -42,6 +43,7 @@
                 <h3 class="font-bold text-lg pt-4 text-info">{{ $t('limitations') }}</h3>
                 <p class="text-white">•
                     <i18n-t
+                        scope="global"
                         keypath="ocr-import-only-works-with-english-text-consider-changing-your-language-into-english-to-screenshot">
                         <template #highlight>
                             <span class="text-error">{{ $t('english-text') }}</span>
@@ -52,6 +54,7 @@
                 <p class="text-white">• {{ $t('try-legacy') }}</p>
                 <p class=" text-white">•
                     <i18n-t
+                        scope="global"
                         keypath='if-you-encounter-a-bug-pinpoint-its-location-by-using-missing-information-timestamps'>
                         <template #missing>
                             <span class="text-error">{{ $t('missing-information') }}</span>
@@ -59,7 +62,7 @@
                     </i18n-t>
                 </p>
                 <p class="text-white">•
-                    <i18n-t keypath='solution-1'>
+                    <i18n-t scope="global" keypath='solution-1'>
                         <template #editor>
                             <span class="text-error">{{ $t('summon-editor') }}</span>
                         </template>
