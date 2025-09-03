@@ -72,7 +72,7 @@ const totalMaterials = computed(() => {
 
         <p v-if="arcanistsLength > 0" class="text-center text-slate-300 text-sm opacity-70">{{ $t('left-click-to-edit-right-click-to-show-hide') }}</p>
         <p v-else class="text-center text-slate-300 text-sm opacity-70">
-            <i18n-t keypath='click-add-arcanist-button-to-start-planning'>
+            <i18n-t scope="global" keypath='click-add-arcanist-button-to-start-planning'>
                 <template #button>
                     <span>{{ $t('add-arcanist') }}</span>
                 </template>

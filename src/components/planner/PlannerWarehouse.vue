@@ -192,7 +192,7 @@ onMounted(() => {
                 <dialog ref="dialog" class="modal">
                     <div class="modal-box custom-gradient-gray-blue custom-border">
                         <p class="py-4 text-lg text-white text-center">
-                            <i18n-t keypath="reset-quantity-of-selected-categories">
+                            <i18n-t scope="global" keypath="reset-quantity-of-selected-categories">
                                 <template #highlight>
                                     <span class="text-error">{{ $t('selected') }}</span>
                                 </template>
