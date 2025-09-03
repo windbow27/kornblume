@@ -305,16 +305,10 @@ const goalLevelOptions = computed(() => {
 const currentResonanceOptions = computed(() => {
     if (selectedCurrentInsight.value === null) return [];
     if (selectedCurrentInsight.value === 0) {
-        // FIXME:
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedCurrentResonance.value = 0;
         return [0];
     }
     const insightValue = Number(selectedCurrentInsight.value);
     if (insightValue === 0) {
-        // FIXME:
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedCurrentResonance.value = 0;
         return [];
     }
     const upperLimit = insightValue * 5;
@@ -324,17 +318,11 @@ const currentResonanceOptions = computed(() => {
 const goalResonanceOptions = computed(() => {
     if (selectedGoalInsight.value === null) return [];
     if (selectedGoalInsight.value === 0) {
-        // FIXME:
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedGoalResonance.value = 0;
         return [0];
     }
     const insightValue = Number(selectedGoalInsight.value);
     const currentResonance = Number(selectedCurrentResonance.value);
     if (insightValue === 0) {
-        // FIXME:
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        selectedGoalResonance.value = 0;
         return [];
     }
     const lowerLimit = currentResonance || 1; // Start from selectedCurrentResonance or 1 if not set
@@ -365,6 +353,18 @@ const currentMasteryOptions = computed(() => {
 
 const goalMasteryOptions = computed(() => {
     return [0, 1, 2, 3, 4].filter((mastery) => mastery >= selectedCurrentMastery.value);
+});
+
+watch(selectedCurrentInsight, (newInsight) => {
+    if (newInsight === 0) {
+        selectedCurrentResonance.value = 0;
+    }
+});
+
+watch(selectedGoalInsight, (newInsight) => {
+    if (newInsight === 0) {
+        selectedGoalResonance.value = 0;
+    }
 });
 
 watch(
