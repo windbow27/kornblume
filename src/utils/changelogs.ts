@@ -1,6 +1,13 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '03/09/2025',
+    description: `
+        • Various UI/UX improvements, including mobile experience by SolidKalium..
+        • Silksong tomorrow.
+        `
+  },
+  {
     date: '28/08/2025',
     description: `
         • Add Kassandra and Alexios.

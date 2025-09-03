@@ -195,6 +195,7 @@ onClickOutside(resourcesRef, closeResources);
                                 <p>hato</p>
                                 <p>Heightweight</p>
                                 <p>Ipun-majessica</p>
+                                <p>SolidKalium</p>
                             </div>
                         </div>
                         <form method="dialog" class="modal-backdrop">
