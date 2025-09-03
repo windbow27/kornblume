@@ -48,7 +48,7 @@ export function removeEventShopMaterialsFromWarehouse(version: string) {
     }
 }
 
-export const initializeWarehouse = () => {
+const initializeWarehouse = () => {
     // NOTE: keep these sample codes for future reference with new materials
     // const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_9;
     console.log('Initialize warehouse');
@@ -78,7 +78,7 @@ function isValidWarehouseItem(item) {
     return false;
 }
 
-export function checkWarehouse() {
+function checkWarehouse() {
     useDataStore().items.forEach((item) => {
         // NOTE: keep these sample codes for future reference with new materials
         // const unreleasedDropsEnabled = usePlannerSettingsStore().settings.enabledUnreleasedStages_v1_9;
@@ -98,7 +98,7 @@ export function checkWarehouse() {
     });
 }
 
-export const sortWarehouseMaterials = (array: IWarehouseItem[]) => {
+const sortWarehouseMaterials = (array: IWarehouseItem[]) => {
     const itemsData = useDataStore().items;
 
     array.sort((warehouseMatlA, warehouseMatlB) => {
@@ -125,3 +125,28 @@ export const sortWarehouseMaterials = (array: IWarehouseItem[]) => {
         }
     });
 };
+
+/**
+ * If initializeWarehouse was called extra times, the new copies will have 0 quantity.
+ * But if duplicates exist and one is edited, all will be updated.
+ * So we use max to combine them.
+ */
+export function removeDuplicateWarehouseItems () {
+    const warehouseStore = useWarehouseStore();
+    const items = warehouseStore.data;
+    const seen = new Map();
+
+    warehouseStore.data = items.reduce((acc, item) => {
+        const materialName = item.Material;
+        if (seen.has(materialName)) {
+            // If we've seen this material, update its quantity
+            const existingItem = seen.get(materialName);
+            existingItem.Quantity = Math.max(existingItem.Quantity || 0, item.Quantity || 0);
+        } else {
+            // If it's the first time we see this material, add it to our map and accumulator
+            seen.set(materialName, item);
+            acc.push(item);
+        }
+        return acc;
+    }, [] as IWarehouseItem[]);
+}
