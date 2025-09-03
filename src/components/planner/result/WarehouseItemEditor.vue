@@ -56,7 +56,7 @@ watchEffect(() => {
                 <img :src="normalizedMaterial.borderImagePath" alt="Border Image" class="w-20 h-20 absolute" />
                 <img :src="normalizedMaterial.itemImagePath" alt="Material Image" class="w-20 h-20 avatar" />
             </div>
-            <input v-model="quantity" @input="updateQuantity" type="text" placeholder=""
+            <input v-model="quantity" @input="updateQuantity" type="number" inputmode="numeric" step=1 min=0 placeholder=""
                 class="bg-slate-600 text-white w-14 input input-xs rounded-none text-center absolute right-3 bottom-6" />
             <div class="flex items-center justify-center font-bold w-20 mt-3">
                 <button
