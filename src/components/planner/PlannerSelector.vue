@@ -1,6 +1,7 @@
 <script setup lang="ts" name="PlannerSelector">
 import { ref, computed } from 'vue';
 import { useCalculation, mergeResults, formatResultsWithCasket } from '@/composables/calculations';
+import { useScreen } from '@/composables/useScreen';
 import { ISelectedArcanist } from '@/types';
 import ArcanistIconToggle from '@/components/arcanist/ArcanistIconToggle.vue';
 import ItemGoalIcon from '@/components/item/ItemGoalIcon.vue';
@@ -15,6 +16,7 @@ const props = defineProps({
 const emit = defineEmits(['open-edit-overlay']);
 
 const arcanists = ref(props.selectedArcanists);
+const { hasFinePointer } = useScreen();
 
 const handleLeftClick = (arcanist: ISelectedArcanist) => {
     emit('open-edit-overlay', arcanist);
@@ -70,13 +72,15 @@ const totalMaterials = computed(() => {
             </div>
         </div>
 
-        <p v-if="arcanistsLength > 0" class="text-center text-slate-300 text-sm opacity-70">{{ $t('left-click-to-edit-right-click-to-show-hide') }}</p>
-        <p v-else class="text-center text-slate-300 text-sm opacity-70">
+        <div v-if="arcanistsLength === 0" class="text-center text-slate-300 text-sm opacity-70">
             <i18n-t scope="global" keypath='click-add-arcanist-button-to-start-planning'>
                 <template #button>
                     <span>{{ $t('add-arcanist') }}</span>
                 </template>
             </i18n-t>
+        </div>
+        <p v-else-if="hasFinePointer" class="text-center text-slate-300 text-sm opacity-70">
+            {{ $t('left-click-to-edit-right-click-to-show-hide') }}
         </p>
     </div>
 </template>
