@@ -10,6 +10,16 @@ const categoryPriority = {
     'Build Material': 4 // insight/build material have same priority, should be arranged according to rarity
 };
 
+export function setupWarehouse() {
+    if (useWarehouseStore().data.length === 0) {
+        initializeWarehouse();
+    } else {
+        // else statement to be updated for seamless addition of new warehouse items
+        checkWarehouse();
+    }
+    sortWarehouseMaterials(useWarehouseStore().data);
+};
+
 export function addEventShopMaterialsToWarehouse(version: string) {
     const shopsData = useDataStore().shops;
     if (version in shopsData) {
