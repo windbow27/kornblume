@@ -287,3 +287,14 @@
     --tooltip-text-color: var(--fallback-nc,oklch(var(--nc)/1));
     --tooltip-tail-offset: calc(100% + 0.0625rem/* 1px */ - var(--tooltip-tail));
 }
+
+/* Hide number input arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
