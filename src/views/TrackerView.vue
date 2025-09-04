@@ -572,7 +572,7 @@ const selectBannerType = (bannerType: string) => {
         v-bind:class="{
           'border-button': selectedBannerType === 'Wine-Dark Reflections of the Eagle'
         }"
-        class="text-white py-1 px-3 hover:bg-info rounded-md"
+        class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
         @click="selectBannerType('Wine-Dark Reflections of the Eagle')">
         {{ $t('kassandra') }}
       </button>
@@ -581,18 +581,20 @@ const selectBannerType = (bannerType: string) => {
         v-bind:class="{
           'border-button': selectedBannerType === 'Limited'
         }"
-        class="text-white py-1 px-3 hover:bg-info rounded-md"
+        class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
         @click="selectBannerType('Limited')">
         {{ $t('limited') }}
       </button>
+
       <button
         v-bind:class="{
           'border-button': selectedBannerType === 'Standard'
         }"
-        class="text-white py-1 px-3 hover:bg-info rounded-md"
+        class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
         @click="selectBannerType('Standard')">
         {{ $t('standard') }}
       </button>
+
       <div class="dropdown dropdown-bottom dropdown-end">
         <div tabindex="0" role="button">
           <button
@@ -613,163 +615,164 @@ const selectBannerType = (bannerType: string) => {
                 selectedBannerType === 'A Prophet Guided by Time' ||
                 selectedBannerType === 'Wine-Dark Reflections of the Eagle'
             }"
-            class="text-white py-1 px-3 hover:bg-info rounded-md">
+            class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent">
             {{ $t('special') }}
           </button>
         </div>
         <!-- Special banners -->
         <ul
           tabindex="0"
-          class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box space-y-2 p-4 mt-2">
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Invitation From the Water'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Invitation From the Water')">
-              {{ $t('thread') }}
-            </button>
-          </li>
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Abundance of the Water'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Abundance of the Water')">
-              {{ $t('abundance') }}
-            </button>
-          </li>
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Yearning of the Water'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Yearning of the Water')">
-              {{ $t('yearning') }}
-            </button>
-          </li>
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Revelation of the Water'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Revelation of the Water')">
-              {{ $t('revelation') }}
-            </button>
-          </li>
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Promise of the Water'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Promise of the Water')">
-              {{ $t('promise') }}
-            </button>
-          </li>
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Boon of the Water'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Boon of the Water')">
-              {{ $t('boon') }}
-            </button>
-          </li>
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Golden Spindle'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Golden Spindle')">
-              {{ $t('golden-spindle') }}
-            </button>
-          </li>
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Ripples on the Water'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Ripples on the Water')">
-              {{ $t('ripples') }}
-            </button>
-          </li>
-
-          <!-- Line separator -->
-          <hr class="border-t border-gray-300 m-2" />
-
-          <!-- Jiu Niangzi banner -->
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Till the Last Drop'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Till the Last Drop')">
-              {{ $t('jiu-niangzi') }}
-            </button>
-          </li>
-          <!-- Lucy banner -->
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Thoughts in Cylinder'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Thoughts in Cylinder')">
-              {{ $t('lucy') }}
-            </button>
-          </li>
-          <!-- Anjo Nala banner -->
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Longing for Innocence'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Longing for Innocence')">
-              {{ $t('anjo-nala') }}
-            </button>
-          </li>
-          <!-- Liang Yue banner -->
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Moonbeam Guardian'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Moonbeam Guardian')">
-              {{ $t('liang-yue') }}
-            </button>
-          </li>
-          <!-- Ezio banner -->
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'A Prophet Guided by Time'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('A Prophet Guided by Time')">
-              {{ $t('ezio-auditore') }}
-            </button>
-          </li>
-          <li>
-            <button
-              v-bind:class="{
-                'border-button': selectedBannerType === 'Wine-Dark Reflections of the Eagle'
-              }"
-              class="text-white py-1 px-3 hover:bg-info rounded-md"
-              @click="selectBannerType('Wine-Dark Reflections of the Eagle')">
-              {{ $t('kassandra') }}
-            </button>
-          </li>
+          class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box p-4 mt-2"
+          style="min-width: 320px">
+          <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Invitation From the Water'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Invitation From the Water')">
+                {{ $t('thread') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Abundance of the Water'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Abundance of the Water')">
+                {{ $t('abundance') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Yearning of the Water'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Yearning of the Water')">
+                {{ $t('yearning') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Revelation of the Water'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Revelation of the Water')">
+                {{ $t('revelation') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Promise of the Water'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Promise of the Water')">
+                {{ $t('promise') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Boon of the Water'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Boon of the Water')">
+                {{ $t('boon') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Golden Spindle'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Golden Spindle')">
+                {{ $t('golden-spindle') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Ripples on the Water'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Ripples on the Water')">
+                {{ $t('ripples') }}
+              </button>
+            </li>
+            <!-- Line separator, full width -->
+            <div class="col-span-2"><hr class="border-t border-gray-300 my-2" /></div>
+            <!-- Jiu Niangzi banner -->
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Till the Last Drop'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Till the Last Drop')">
+                {{ $t('jiu-niangzi') }}
+              </button>
+            </li>
+            <!-- Lucy banner -->
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Thoughts in Cylinder'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Thoughts in Cylinder')">
+                {{ $t('lucy') }}
+              </button>
+            </li>
+            <!-- Anjo Nala banner -->
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Longing for Innocence'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Longing for Innocence')">
+                {{ $t('anjo-nala') }}
+              </button>
+            </li>
+            <!-- Liang Yue banner -->
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Moonbeam Guardian'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Moonbeam Guardian')">
+                {{ $t('liang-yue') }}
+              </button>
+            </li>
+            <!-- Ezio banner -->
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'A Prophet Guided by Time'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('A Prophet Guided by Time')">
+                {{ $t('ezio-auditore') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Wine-Dark Reflections of the Eagle'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Wine-Dark Reflections of the Eagle')">
+                {{ $t('kassandra') }}
+              </button>
+            </li>
+          </div>
         </ul>
       </div>
     </div>

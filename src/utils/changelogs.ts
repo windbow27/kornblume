@@ -3,7 +3,7 @@ export const changelogs = [
   {
     date: '03/09/2025',
     description: `
-        • Various UI/UX improvements, including mobile experience by SolidKalium..
+        • Various UI/UX improvements, including mobile experience by SolidKalium. <br>
         • Silksong tomorrow.
         `
   },

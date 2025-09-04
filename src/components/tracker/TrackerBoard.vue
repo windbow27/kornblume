@@ -263,16 +263,23 @@ watch(isEditing, (newVal) => {
     <div v-if="!isEditing" class="flex flex-col overflow-x-auto hidden-scrollbar">
         <!-- Rarity select -->
         <div class="flex justify-center space-x-2 pb-4">
-            <button v-for="i in [2, 3, 4, 5, 6]" :key="i"
-                :class="{ 'border-2 border-info': activeRarities.includes(i) }" @click="selectedRarities(i)"
-                class="p-2 rounded-md">
+            <button
+                v-for="i in [2, 3, 4, 5, 6]"
+                :key="i"
+                :class="[
+                    'border-2',
+                    activeRarities.includes(i) ? 'border-info' : 'border-transparent'
+                ]"
+                @click="selectedRarities(i)"
+                class="p-2 rounded-md"
+            >
                 <i class="fa-solid fa-star" :class="{
-        'text-orange-300': i === 6,
-        'text-yellow-100': i === 5,
-        'text-purple-400': i === 4,
-        'text-sky-200': i === 3,
-        'text-green-200': i === 2
-    }"></i>
+                    'text-orange-300': i === 6,
+                    'text-yellow-100': i === 5,
+                    'text-purple-400': i === 4,
+                    'text-sky-200': i === 3,
+                    'text-green-200': i === 2
+                }"></i>
             </button>
         </div>
 
