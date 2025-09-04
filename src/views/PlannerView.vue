@@ -18,7 +18,7 @@ import PlannerWilderness from '@/components/planner/PlannerWilderness.vue'
 import PlannerWarehouse from '@/components/planner/PlannerWarehouse.vue'
 import PlannerSettings from '@/components/planner/PlannerSettings.vue'
 import PlannerTotal from '@/components/planner/PlannerTotal.vue'
-import { initializeWarehouse } from '@/composables/warehouse'
+import { setupWarehouse } from '@/composables/warehouse'
 import PlannerResult from '@/components/planner/PlannerResult.vue'
 import ArcanistAddArcanistList from '@/components/arcanist/ArcanistAddArcanistList.vue'
 
@@ -181,7 +181,7 @@ watchEffect(() => {
 onMounted(() => {
     window.addEventListener('resize', updateScreenSize);
     updateScreenSize();
-    initializeWarehouse();
+    setupWarehouse();
 });
 
 onUnmounted(() => {

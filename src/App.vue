@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import { RouterView } from 'vue-router';
 import { useGlobalStore } from './stores/global';
 import { setGlobalLastModifiedTimestamp } from '@/utils/localStorage';
+import { removeDuplicateWarehouseItems } from '@/composables/warehouse';
 
 import Navbar from './components/navbar/Navbar.vue';
 import LoadingScreen from './components/navbar/LoadingScreen.vue';
@@ -80,6 +81,7 @@ function clearLegacyData() {
 onMounted(() => {
     clearLegacyData();
     setGlobalLastModifiedTimestamp();
+    removeDuplicateWarehouseItems();
 });
 </script>
 
