@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '18/09/2025',
+    description: `
+        • Add Nautika, Ulrich and Moldir as released arcanists.
+        `
+  },
+  {
     date: '03/09/2025',
     description: `
         • Various UI/UX improvements, including mobile experience by SolidKalium. <br>

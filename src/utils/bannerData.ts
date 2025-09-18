@@ -42,6 +42,8 @@ export const bannerList = [
   "The Mirror's Lonely Watcher",
   'Serpentine Century',
   'Wirewalking in Zero Gravity',
+  'From the Ruin of the Past',
+
   // standard
   'Amongst the Lake',
   // thread
@@ -73,7 +75,9 @@ export const bannerList = [
   // ezio
   'A Prophet Guided by Time',
   // kassandra
-  'Wine-Dark Reflections of the Eagle'
+  'Wine-Dark Reflections of the Eagle',
+  // nautika
+  'The Myth at Her Fingertips'
 ];
 
 export const bannerRateUp = [
@@ -118,7 +122,8 @@ export const bannerRateUp = [
   'Aleph',
   'Semmelweis',
   'Hissabeth',
-  'Kiperina'
+  'Kiperina',
+  'Moldir'
 ];
 
 export const specialArcanists: string[] = [

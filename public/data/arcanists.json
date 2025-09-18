@@ -1499,7 +1499,7 @@
   },
   {
     "Id": 10107,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Moldir",
     "Rarity": 6,
     "Afflatus": "Beast",
@@ -1872,7 +1872,7 @@
   },
   {
     "Id": 10104,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Nautika",
     "Rarity": 6,
     "Afflatus": "Spirit",
@@ -5241,7 +5241,7 @@
   },
   {
     "Id": 10105,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Ulrich",
     "Rarity": 6,
     "Afflatus": "Intellect",

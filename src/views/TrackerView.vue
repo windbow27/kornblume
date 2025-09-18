@@ -25,7 +25,7 @@ const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
 // const selectedBannerType = ref('Limited');
-const selectedBannerType = ref('Wine-Dark Reflections of the Eagle');
+const selectedBannerType = ref('The Myth at Her Fingertips');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -102,6 +102,7 @@ const anjoNalaPulls = createPullsByBannerType('Longing for Innocence');
 const liangPulls = createPullsByBannerType('Moonbeam Guardian');
 const ezioPulls = createPullsByBannerType('A Prophet Guided by Time');
 const kassandraPulls = createPullsByBannerType('Wine-Dark Reflections of the Eagle');
+const nautikaPulls = createPullsByBannerType('The Myth at Her Fingertips');
 
 const limitedPulls = computed(() => {
   const filteredPulls = sortedPulls.value.filter(
@@ -120,7 +121,8 @@ const limitedPulls = computed(() => {
       pull.BannerType !== 'Golden Spindle' &&
       pull.BannerType !== 'Ripples on the Water' &&
       pull.BannerType !== 'A Prophet Guided by Time' &&
-      pull.BannerType !== 'Wine-Dark Reflections of the Eagle'
+      pull.BannerType !== 'Wine-Dark Reflections of the Eagle' &&
+      pull.BannerType !== 'The Myth at Her Fingertips'
   );
   return filteredPulls.map((pull, index) => {
     return {
@@ -570,11 +572,11 @@ const selectBannerType = (bannerType: string) => {
       <!-- Limited Placeholder -->
       <button
         v-bind:class="{
-          'border-button': selectedBannerType === 'Wine-Dark Reflections of the Eagle'
+          'border-button': selectedBannerType === 'The Myth at Her Fingertips'
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
-        @click="selectBannerType('Wine-Dark Reflections of the Eagle')">
-        {{ $t('kassandra') }}
+        @click="selectBannerType('The Myth at Her Fingertips')">
+        {{ $t('nautika') }}
       </button>
 
       <button
@@ -613,7 +615,8 @@ const selectBannerType = (bannerType: string) => {
                 selectedBannerType === 'Longing for Innocence' ||
                 selectedBannerType === 'Moonbeam Guardian' ||
                 selectedBannerType === 'A Prophet Guided by Time' ||
-                selectedBannerType === 'Wine-Dark Reflections of the Eagle'
+                selectedBannerType === 'Wine-Dark Reflections of the Eagle' || 
+                selectedBannerType === 'The Myth at Her Fingertips'
             }"
             class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent">
             {{ $t('special') }}
@@ -772,6 +775,16 @@ const selectBannerType = (bannerType: string) => {
                 {{ $t('kassandra') }}
               </button>
             </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'The Myth at Her Fingertips'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('The Myth at Her Fingertips')">
+                {{ $t('nautika') }}
+              </button>
+            </li>
           </div>
         </ul>
       </div>
@@ -887,6 +900,13 @@ const selectBannerType = (bannerType: string) => {
       v-if="selectedBannerType === 'Wine-Dark Reflections of the Eagle'"
       :text="$t('kassandra')"
       :pulls="kassandraPulls"
+      :allPulls="allPulls"
+      :isError="isError"
+      :wrongTimestamps="wrongTimestamps" />
+    <TrackerBoard
+      v-if="selectedBannerType === 'The Myth at Her Fingertips'"
+      :text="$t('nautika')"
+      :pulls="nautikaPulls"
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps" />
