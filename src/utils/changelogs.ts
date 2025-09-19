@@ -1,6 +1,13 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '19/09/2025',
+    description: `
+        • Add Rubuska as unreleased arcanist. <br>
+        • Add 2.8 stages.
+        `
+  },
+  {
     date: '18/09/2025',
     description: `
         • Add Nautika, Ulrich and Moldir as released arcanists.
