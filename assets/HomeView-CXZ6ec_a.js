@@ -1,4 +1,4 @@
-import{o as T}from"./index-BgUS8JTf.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as L,k as K,l as w,m as N}from"./index-eWnFAW68.js";const v=[{date:"19/09/2025",description:`
+import{o as T}from"./index-D91uDBPS.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as L,k as K,l as w,m as N}from"./index-UP4EKbRw.js";const v=[{date:"19/09/2025",description:`
         • Add Rubuska as unreleased arcanist. <br>
         • Add 2.8 stages.
         `},{date:"18/09/2025",description:`
