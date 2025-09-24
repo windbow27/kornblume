@@ -1,7 +1,7 @@
 <script setup lang="ts" name="CalculateItemList">
 import { computed } from 'vue';
 import { useCalculation } from '@/composables/calculations';
-import { ISelectedArcanist } from '@/types';
+import { ISelectedArcanist, IMaterialUnit } from '@/types';
 import ItemList from '@/components/item/ItemList.vue'
 
 const props = defineProps({
@@ -14,8 +14,7 @@ const props = defineProps({
 const calculateArcanist = computed(() => {
     const arc = props.arcanist;
     const result = useCalculation(arc);
-    // console.log(result);
-    return result;
+    return result.filter((item: IMaterialUnit) => item.Quantity !== 0);
 });
 
 </script>
