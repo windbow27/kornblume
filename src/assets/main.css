@@ -298,3 +298,13 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+/* Make background gradient visible on overscroll */
+html:before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    @apply custom-gradient-gray-blue-dark;
+    z-index: -1;
+}
