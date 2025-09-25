@@ -20,9 +20,7 @@ const calculateArcanist = computed(() => {
 </script>
 
 <template>
-    <div>
-        <ItemList :materialList="calculateArcanist" />
-    </div>
+    <ItemList :materialList="calculateArcanist" />
 </template>
 
 <style scoped></style>

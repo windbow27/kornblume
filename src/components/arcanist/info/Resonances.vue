@@ -89,7 +89,7 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
 </script>
 
 <template>
-    <div class="card-container">
+    <div class="h-full flex flex-col">
         <div class="px-2">
             <h2 class="text-white text-2xl font-bold">Resonances</h2>
             <div class="mt-2 flex justify-center items-center leading-none">
@@ -134,12 +134,8 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
             </div>
         </div>
 
-        <CalculateItemList :arcanist="editingArcanist" />
+        <CalculateItemList :arcanist="editingArcanist" class="h-full"/>
     </div>
 </template>
 
-<style scoped>
-.card-container {
-    min-height: 568px;
-}
-</style>
+<style scoped></style>

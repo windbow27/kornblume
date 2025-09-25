@@ -56,7 +56,7 @@ onBeforeMount(() => {
                 </div>
             </div>
             <!--Info Cards-->
-            <div class="p-4 rounded shadow custom-border w-full">
+            <div class="p-4 rounded shadow custom-border w-full min-h-[568px] h-[85vh] lg:h-[55vh]">
                 <Stats :arcanist="arcanist ?? {}" v-if="selectedButton === 'Stats'" />
                 <Resonances :arcanist="arcanist ?? {}" v-if="selectedButton === 'Resonances'" />
                 <Euphoria :arcanist="arcanist ?? {}" v-if="selectedButton === 'Euphoria'" />

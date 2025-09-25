@@ -73,7 +73,7 @@ const editingArcanist = computed(() => ({
 </script>
 
 <template>
-    <div class="card-container">
+    <div class="h-full flex flex-col">
         <div class="px-2">
             <h2 class="text-white text-2xl font-bold">Euphoria</h2>
             <div class="flex flex-col gap-y-2 mt-2">
@@ -120,12 +120,8 @@ const editingArcanist = computed(() => ({
             </div>
         </div>
 
-        <CalculateItemList :arcanist="editingArcanist" />
+        <CalculateItemList :arcanist="editingArcanist" class="h-full"/>
     </div>
 </template>
 
-<style scoped>
-.card-container {
-    min-height: 568px;
-}
-</style>
+<style scoped></style>
