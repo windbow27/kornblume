@@ -14,18 +14,39 @@ const handleChangeLanguage = ({ locale, text, icon }) => {
     setLocale(locale);
 };
 
-onMounted(() => {
-    // get default locale from local storage or broswer settings
-    let defaultLocale = 'en-US';
-    if (localStorage.getItem('locale')) {
-        defaultLocale = localStorage.getItem('locale') || 'en-US';
-    } else {
-        defaultLocale = navigator.language || 'en-US';
-        if (!supportedLangCodes.includes(defaultLocale)) {
-            defaultLocale = 'en-US';
+const FALLBACK_LOCALE = 'en-US';
+
+function findBestLocale() {
+    // Check all languages in the list, not just the primary one
+    const browserLangs = navigator.languages || [];
+
+    for (const lang of browserLangs) {
+        // 1. Check for an exact match
+        if (supportedLangCodes.includes(lang)) {
+            return lang;
+        }
+        // 2. Check for a language prefix match
+        const langPrefix = lang.split('-')[0];
+        const partialMatch = supportedLangCodes.find(
+            (code) => code.split('-')[0] === langPrefix
+        );
+        if (partialMatch) {
+            return partialMatch;
         }
     }
-    const option = langDropdownOptions.find((opt) => opt.locale === defaultLocale);
+    // 3. Fallback
+    return FALLBACK_LOCALE;
+}
+
+onMounted(() => {
+    const savedLocale = localStorage.getItem('locale');
+
+    const initialLocale =
+        savedLocale && supportedLangCodes.includes(savedLocale)
+            ? savedLocale
+            : findBestLocale();
+
+    const option = langDropdownOptions.find((opt) => opt.locale === initialLocale);
     if (option) {
         handleChangeLanguage(option);
     }
