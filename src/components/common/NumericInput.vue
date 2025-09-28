@@ -116,5 +116,6 @@ const updateModel = (value: number) => {
         @focus="handleFocus"
         @blur="handleBlur"
         @keydown="handleKeydown"
+        @keydown.enter="($event.target as HTMLInputElement).blur()"
     />
 </template>
