@@ -91,7 +91,7 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
 <template>
     <div class="h-full flex flex-col">
         <div class="px-2">
-            <h2 class="text-white text-2xl font-bold">Resonances</h2>
+            <h2 class="text-white text-2xl font-bold">{{ $t('Resonance') }}</h2>
             <div class="mt-2 flex justify-center items-center leading-none">
                 <SelectList
                     :key="updateKey"

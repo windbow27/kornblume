@@ -8,13 +8,13 @@ import { IArcanist } from '@/types'
 import { getArcanistI2ImagePath, getArcanistAfflatusPath, getArcanistDmgTypePath } from '@/composables/images';
 import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
-import Resonances from '@/components/arcanist/info/Resonances.vue';
+import Resonance from '@/components/arcanist/info/Resonance.vue';
 import Euphoria from './info/Euphoria.vue';
 
 const route = useRoute();
 const arcanistStore = useDataStore().arcanists;
 const arcanist = ref<IArcanist>(arcanistStore[0]);
-const buttons = ['Stats', 'Resonances', 'Euphoria'];
+const buttons = ['Stats', 'Resonance', 'Euphoria'];
 const selectedButton = ref(buttons[0]);
 
 onBeforeMount(() => {
@@ -58,7 +58,7 @@ onBeforeMount(() => {
             <!--Info Cards-->
             <div class="p-4 rounded shadow custom-border w-full min-h-[568px] h-[85vh] lg:h-[55vh]">
                 <Stats :arcanist="arcanist ?? {}" v-if="selectedButton === 'Stats'" />
-                <Resonances :arcanist="arcanist ?? {}" v-if="selectedButton === 'Resonances'" />
+                <Resonance :arcanist="arcanist ?? {}" v-if="selectedButton === 'Resonance'" />
                 <Euphoria :arcanist="arcanist ?? {}" v-if="selectedButton === 'Euphoria'" />
             </div>
         </div>
