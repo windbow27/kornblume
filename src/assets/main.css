@@ -308,3 +308,12 @@ html:before{
     @apply custom-gradient-gray-blue-dark;
     z-index: -1;
 }
+
+.scroll-fade {
+    @apply absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-blue-950 to-transparent pointer-events-none transition-opacity duration-300;
+    mask-image: radial-gradient(
+        ellipse 100% 50% at 50% 100%,
+        #000,
+        transparent
+    );
+}

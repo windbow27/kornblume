@@ -42,10 +42,7 @@ const handleScroll = (event: UIEvent) => {
                     :material="material" />
             </div>
         </div>
-        <div
-            class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-blue-950 to-transparent pointer-events-none transition-opacity duration-300"
-            :class="{ 'opacity-0': isScrolledToBottom }"
-            style="mask-image: radial-gradient(ellipse 100% 50% at 50% 100%, #000, transparent)"></div>
+        <div class="scroll-fade" :class="{ 'opacity-0': isScrolledToBottom }"></div>
     </div>
 </template>
 
