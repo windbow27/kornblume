@@ -134,7 +134,7 @@ watch([selectedCurrentResonance, selectedGoalResonance], () => {
             </div>
         </div>
 
-        <CalculateItemList :arcanist="editingArcanist" class="h-full"/>
+        <CalculateItemList :arcanist="editingArcanist" :layout="'fill'" />
     </div>
 </template>
 

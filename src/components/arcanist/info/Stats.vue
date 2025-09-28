@@ -82,7 +82,7 @@ const editingArcanist = computed(() => ({
                 </tr>
             </table>
         </div>
-        <CalculateItemList :arcanist="editingArcanist" class="h-full" />
+        <CalculateItemList :arcanist="editingArcanist" :layout="'fill'" />
     </div>
 </template>
 

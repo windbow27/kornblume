@@ -8,7 +8,8 @@ const props = defineProps({
     arcanist: {
         type: Object as () => ISelectedArcanist,
         required: true
-    }
+    },
+    // layout: fill | fixed. (Passed through to ItemList)
 });
 
 const calculateArcanist = computed(() => {
@@ -20,7 +21,7 @@ const calculateArcanist = computed(() => {
 </script>
 
 <template>
-    <ItemList :materialList="calculateArcanist" />
+    <ItemList :materialList="calculateArcanist" v-bind="$attrs" />
 </template>
 
 <style scoped></style>
