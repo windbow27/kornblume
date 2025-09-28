@@ -26,7 +26,7 @@ onBeforeMount(() => {
 <template>
     <div class="container flex flex-col xl:flex-row justify-center items-center">
         <!--I2 Portrait-->
-        <div class="w-full xl:w-1/2 relative p-4">
+        <div class="w-full xl:w-1/2 relative p-4 flex justify-center">
             <img class="lg:h-[80vh] object-contain object-center text-2xl text-white font-bold"
                 :src="getArcanistI2ImagePath(arcanist?.Id.toString() ?? '')" alt="Work in progress">
         </div>
