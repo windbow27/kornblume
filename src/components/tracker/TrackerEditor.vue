@@ -177,7 +177,8 @@ const format = (date) => {
           <td class="flex items-center gap-x-3 whitespace-nowrap px-2">
             <ArcanistIcon
               v-if="arcanists.find((a) => a.Name === pull.ArcanistName)"
-              :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist" />
+              :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist"
+              :is-interactive="false" />
             <SpecialIcon v-else :name="pull.ArcanistName" />
 
             <div class="relative w-36">
