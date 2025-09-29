@@ -25,8 +25,6 @@ const pullsRecordStore = usePullsRecordStore();
 const arcanists = formatNoSpoilerArcanists(useDataStore().arcanists);
 const localPulls = reactive(props.pulls.map((pull) => ({ ...pull })));
 const localPullDates = reactive(props.pulls.map((pull) => new Date(pull.Timestamp)));
-const newArcanistName = ref('');
-const newPullDate = ref(new Date());
 
 const itemsPerPage = 10;
 const currentPage = ref(1);
@@ -86,16 +84,14 @@ function getPagination() {
 const addPull = () => {
   const newPull: IPullNumber = {
     PullNumber: localPulls.length + 1,
-    ArcanistName: newArcanistName.value,
-    Rarity: arcanists.find((a) => a.Name === newArcanistName.value)?.Rarity || 0,
+    ArcanistName: '',
+    Rarity: 0,
     BannerType: props.bannerType,
-    Timestamp: newPullDate.value.getTime()
+    Timestamp: new Date().getTime()
   };
   localPulls.unshift(newPull);
-  localPullDates.unshift(newPullDate.value);
+  localPullDates.unshift(new Date());
   currentPage.value = 1;
-  newArcanistName.value = '';
-  newPullDate.value = new Date();
 };
 
 const updateRarity = (pull: IPullNumber) => {
