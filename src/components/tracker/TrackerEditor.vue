@@ -220,7 +220,11 @@ const format = (date) => {
       </tbody>
     </table>
     <div class="flex justify-center items-center mt-4 space-x-2">
-      <button class="btn btn-sm" :disabled="currentPage === 1" @click="goToPage(currentPage - 1)">
+      <button
+        class="btn btn-sm"
+        :class="{ 'invisible': currentPage === 1 }"
+        :disabled="currentPage === 1"
+        @click="goToPage(currentPage - 1)">
         Prev
       </button>
       <template v-for="(page, idx) in getPagination()" :key="`page-${page}-${idx}`">
@@ -235,18 +239,19 @@ const format = (date) => {
       </template>
       <button
         class="btn btn-sm"
+        :class="{ 'invisible': currentPage === totalPages }"
         :disabled="currentPage === totalPages"
         @click="goToPage(currentPage + 1)">
         Next
       </button>
-      <span class="ml-4">Jump to page:</span>
+      <span class="ml-4 text-white">Jump to page:</span>
       <input
         type="number"
         min="1"
         :max="totalPages"
         :value="currentPage"
         @change="jumpToPage"
-        class="input input-sm w-16 ml-2" />
+        class="input input-sm w-16 ml-2 text-center" />
     </div>
   </div>
 </template>
