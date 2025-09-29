@@ -4,6 +4,7 @@ import { IPullNumber, IPull, usePullsRecordStore } from '@/stores/pullsRecordSto
 import { IArcanist } from '@/types';
 import { useDataStore } from '@/stores/dataStore';
 import { formatNoSpoilerArcanists } from '@/composables/arcanists';
+import { useScreen } from '@/composables/useScreen';
 import { bannerList } from '@/utils/bannerData';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
@@ -21,6 +22,7 @@ const props = defineProps({
   }
 });
 
+const { isLargeScreen } = useScreen();
 const pullsRecordStore = usePullsRecordStore();
 const arcanists = formatNoSpoilerArcanists(useDataStore().arcanists);
 const localPulls = reactive(props.pulls.map((pull) => ({ ...pull })));
@@ -204,6 +206,9 @@ const format = (date) => {
             <VueDatePicker
               v-model="localPullDates[index + (currentPage - 1) * itemsPerPage]"
               enable-seconds
+              :teleport-center="!isLargeScreen"
+              :teleport="isLargeScreen"
+              :month-change-on-scroll="false"
               :format="format"
               :is-24="true" />
           </td>
