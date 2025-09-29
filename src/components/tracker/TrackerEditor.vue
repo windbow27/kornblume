@@ -174,7 +174,7 @@ const format = (date) => {
             'text-green-200': pull.Rarity === 2
           }">
           <td class="text-center whitespace-nowrap px-2">{{ pull.PullNumber }}</td>
-          <td class="flex items-center gap-x-3 whitespace-nowrap px-2">
+          <td class="flex items-center gap-x-3 whitespace-nowrap px-2 py-1">
             <ArcanistIcon
               v-if="arcanists.find((a) => a.Name === pull.ArcanistName)"
               :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist"

@@ -310,7 +310,7 @@ watch(isEditing, (newVal) => {
                     <td class="text-center px-4 whitespace-nowrap">{{ pull.PullNumber }}</td>
 
                     <!-- Arcanist -->
-                    <td class="flex items-center px-4 gap-x-3 whitespace-nowrap">
+                    <td class="flex items-center px-4 py-1 gap-x-3 whitespace-nowrap">
                         <ArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)"
                             :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist" />
                         <SpecialIcon v-else :name="pull.ArcanistName" />

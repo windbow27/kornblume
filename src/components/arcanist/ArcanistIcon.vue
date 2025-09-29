@@ -36,7 +36,7 @@ onMounted(() => {
     <div ref="tooltip" :class="{ 'cursor-pointer': isInteractive }">
         <component :is="isInteractive ? 'router-link' : 'div'" :to="isInteractive ? `/arcanist-${props.arcanist.Id}` : null">
             <div class="rounded-md overflow-hidden">
-                <div class="avatar">
+                <div class="avatar flex">
                     <div class="w-10 rounded" :class="{
                         'bg-orange-300': props.arcanist.Rarity === 6,
                         'bg-yellow-100': props.arcanist.Rarity === 5,

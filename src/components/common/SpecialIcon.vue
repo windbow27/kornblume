@@ -16,7 +16,7 @@ const getImagePath = (name: string) => {
 <template>
     <div v-if="props.name" class="tooltip" :data-tip="$t(props.name)">
         <div class="rounded-md overflow-hidden">
-            <div class="avatar">
+            <div class="avatar flex">
                 <div class="w-10 rounded bg-orange-300">
                     <img :src="getImagePath(props.name)" :alt="props.name" />
                 </div>
