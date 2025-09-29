@@ -615,7 +615,7 @@ const selectBannerType = (bannerType: string) => {
                 selectedBannerType === 'Longing for Innocence' ||
                 selectedBannerType === 'Moonbeam Guardian' ||
                 selectedBannerType === 'A Prophet Guided by Time' ||
-                selectedBannerType === 'Wine-Dark Reflections of the Eagle' || 
+                selectedBannerType === 'Wine-Dark Reflections of the Eagle' ||
                 selectedBannerType === 'The Myth at Her Fingertips'
             }"
             class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent">
@@ -796,70 +796,81 @@ const selectBannerType = (bannerType: string) => {
       :pulls="limitedPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="From the Ruin of the Past" />
+      <!-- TODO: pass in the actual latest Limited Banner -->
     <TrackerBoard
       v-if="selectedBannerType === 'Standard'"
       :text="$t('summary-standard')"
       :pulls="standardPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Amongst the Lake" />
     <TrackerBoard
       v-if="selectedBannerType === 'Invitation From the Water'"
       :text="$t('summary-thread')"
       :pulls="threadPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Invitation From the Water" />
     <TrackerBoard
       v-if="selectedBannerType === 'Abundance of the Water'"
       :text="$t('summary-abundance')"
       :pulls="abundancePulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Abundance of the Water" />
     <TrackerBoard
       v-if="selectedBannerType === 'Yearning of the Water'"
       :text="$t('summary-yearning')"
       :pulls="yearningPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Yearning of the Water" />
     <TrackerBoard
       v-if="selectedBannerType === 'Revelation of the Water'"
       :text="$t('summary-revelation')"
       :pulls="revelationPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Revelation of the Water" />
     <TrackerBoard
       v-if="selectedBannerType === 'Promise of the Water'"
       :text="$t('summary-promise')"
       :pulls="promisePulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Promise of the Water" />
     <TrackerBoard
       v-if="selectedBannerType === 'Boon of the Water'"
       :text="$t('summary-boon')"
       :pulls="boonPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Boon of the Water" />
     <TrackerBoard
       v-if="selectedBannerType === 'Golden Spindle'"
       :text="$t('summary-golden-spindle')"
       :pulls="goldenSpindlePulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Golden Spindle" />
     <TrackerBoard
       v-if="selectedBannerType === 'Ripples on the Water'"
       :text="$t('summary-ripples')"
       :pulls="ripplesPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Ripples on the Water" />
 
     <TrackerBoard
       v-if="selectedBannerType === 'Till the Last Drop'"
@@ -867,49 +878,56 @@ const selectBannerType = (bannerType: string) => {
       :pulls="jiuNiangziPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Till the Last Drop" />
     <TrackerBoard
       v-if="selectedBannerType === 'Thoughts in Cylinder'"
       :text="$t('lucy')"
       :pulls="lucyPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Thoughts in Cylinder" />
     <TrackerBoard
       v-if="selectedBannerType === 'Longing for Innocence'"
       :text="$t('anjo-nala')"
       :pulls="anjoNalaPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Longing for Innocence" />
     <TrackerBoard
       v-if="selectedBannerType === 'Moonbeam Guardian'"
       :text="$t('liang-yue')"
       :pulls="liangPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Moonbeam Guardian" />
     <TrackerBoard
       v-if="selectedBannerType === 'A Prophet Guided by Time'"
       :text="$t('ezio-auditore')"
       :pulls="ezioPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="A Prophet Guided by Time" />
     <TrackerBoard
       v-if="selectedBannerType === 'Wine-Dark Reflections of the Eagle'"
       :text="$t('kassandra')"
       :pulls="kassandraPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Wine-Dark Reflections of the Eagle" />
     <TrackerBoard
       v-if="selectedBannerType === 'The Myth at Her Fingertips'"
       :text="$t('nautika')"
       :pulls="nautikaPulls"
       :allPulls="allPulls"
       :isError="isError"
-      :wrongTimestamps="wrongTimestamps" />
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="The Myth at Her Fingertips" />
   </div>
 </template>
 

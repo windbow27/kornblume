@@ -14,6 +14,10 @@ const props = defineProps({
   pulls: {
     type: Array as () => IPullNumber[],
     required: true
+  },
+  bannerType: {
+    type: String,
+    required: true
   }
 });
 
@@ -22,7 +26,6 @@ const arcanists = formatNoSpoilerArcanists(useDataStore().arcanists);
 const localPulls = reactive(props.pulls.map((pull) => ({ ...pull })));
 const localPullDates = reactive(props.pulls.map((pull) => new Date(pull.Timestamp)));
 const newArcanistName = ref('');
-const newBannerType = ref('');
 const newPullDate = ref(new Date());
 
 const itemsPerPage = 10;
@@ -85,15 +88,19 @@ const addPull = () => {
     PullNumber: localPulls.length + 1,
     ArcanistName: newArcanistName.value,
     Rarity: arcanists.find((a) => a.Name === newArcanistName.value)?.Rarity || 0,
-    BannerType: newBannerType.value,
+    BannerType: props.bannerType,
     Timestamp: newPullDate.value.getTime()
   };
   localPulls.unshift(newPull);
   localPullDates.unshift(newPullDate.value);
   currentPage.value = 1;
   newArcanistName.value = '';
-  newBannerType.value = '';
   newPullDate.value = new Date();
+};
+
+const updateRarity = (pull: IPullNumber) => {
+    const arcanist = arcanists.find(a => a.Name === pull.ArcanistName);
+    pull.Rarity = arcanist ? arcanist.Rarity : 0;
 };
 
 const savePulls = () => {
@@ -146,7 +153,7 @@ const format = (date) => {
     <button class="green-button" @click="savePulls">{{ $t('save') }}</button>
     <button class="red-button" @click="reload">{{ $t('cancel') }}</button>
   </div>
-  <div v-if="props.pulls.length > 0" class="flex flex-col overflow-x-auto hidden-scrollbar">
+  <div v-if="localPulls.length > 0" class="flex flex-col overflow-x-auto hidden-scrollbar">
     <table class="table-auto w-auto text-white lg:mx-auto">
       <thead>
         <tr>
@@ -178,7 +185,7 @@ const format = (date) => {
             <SpecialIcon v-else :name="pull.ArcanistName" />
 
             <div class="relative w-36">
-              <select class="select select-sm select-bordered w-full" v-model="pull.ArcanistName">
+              <select class="select select-sm select-bordered w-full" v-model="pull.ArcanistName" @change="updateRarity(pull)">
                 <option v-for="(arcanist, i) in arcanists" :key="i" :value="arcanist.Name">
                   {{ arcanist.Name }}
                 </option>
@@ -263,5 +270,10 @@ const format = (date) => {
   --dp-background-color: #202941;
   --dp-text-color: #fff;
   --dp-border-color: #202941;
+}
+
+/* Override text color for selects to ensure readability against their light background */
+tbody select {
+    color: black;
 }
 </style>
