@@ -212,6 +212,7 @@ const format = (date) => {
               :clearable="false"
               :format="format"
               :is-24="true" />
+              <!-- timezone="Etc/GMT+5" (we don't use timezone anywhere else... so adding it here might actually cause problems) -->
           </td>
           <td class="text-center whitespace-nowrap px-2">
             <button
