@@ -209,6 +209,7 @@ const format = (date) => {
               :teleport-center="!isLargeScreen"
               :teleport="isLargeScreen"
               :month-change-on-scroll="false"
+              :clearable="false"
               :format="format"
               :is-24="true" />
           </td>
