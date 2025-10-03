@@ -97,8 +97,8 @@ const addPull = () => {
 };
 
 const updateRarity = (pull: IPullNumber) => {
-    const arcanist = arcanists.find(a => a.Name === pull.ArcanistName);
-    pull.Rarity = arcanist ? arcanist.Rarity : 0;
+  const arcanist = arcanists.find((a) => a.Name === pull.ArcanistName);
+  pull.Rarity = arcanist ? arcanist.Rarity : 0;
 };
 
 const savePulls = () => {
@@ -184,7 +184,10 @@ const format = (date) => {
             <SpecialIcon v-else :name="pull.ArcanistName" />
 
             <div class="relative w-36">
-              <select class="select select-sm select-bordered w-full" v-model="pull.ArcanistName" @change="updateRarity(pull)">
+              <select
+                class="select select-sm bg-[#212121] border-white/5 w-full rounded-[4px] hover:border-white/50"
+                v-model="pull.ArcanistName"
+                @change="updateRarity(pull)">
                 <option v-for="(arcanist, i) in arcanists" :key="i" :value="arcanist.Name">
                   {{ arcanist.Name }}
                 </option>
@@ -194,7 +197,7 @@ const format = (date) => {
           <td class="text-center whitespace-nowrap px-2">
             <div class="relative">
               <select
-                class="select select-sm select-bordered w-56 pl-3 pr-8"
+                class="select select-sm bg-[#212121] border-white/5 w-56 h-9 rounded-[4px] pl-3 pr-8 hover:border-white/50"
                 v-model="pull.BannerType">
                 <option v-for="(banner, i) in bannerList" :key="i" :value="banner">
                   {{ banner }}
@@ -211,8 +214,9 @@ const format = (date) => {
               :month-change-on-scroll="false"
               :clearable="false"
               :format="format"
-              :is-24="true" />
-              <!-- timezone="Etc/GMT+5" (we don't use timezone anywhere else... so adding it here might actually cause problems) -->
+              :is-24="true"
+              dark />
+            <!-- timezone="Etc/GMT+5" (we don't use timezone anywhere else... so adding it here might actually cause problems) -->
           </td>
           <td class="text-center whitespace-nowrap px-2">
             <button
@@ -229,25 +233,25 @@ const format = (date) => {
     </table>
     <div class="flex justify-center items-center mt-4 space-x-2">
       <button
-        class="btn btn-sm"
-        :class="{ 'invisible': currentPage === 1 }"
+        class="btn btn-sm bg-gray-800 text-white border border-white/10 hover:bg-gray-800 hover:border-white/30 transition"
+        :class="{ invisible: currentPage === 1 }"
         :disabled="currentPage === 1"
         @click="goToPage(currentPage - 1)">
         Prev
       </button>
       <template v-for="(page, idx) in getPagination()" :key="`page-${page}-${idx}`">
-        <span v-if="page === '...'" class="px-2">...</span>
+        <span v-if="page === '...'" class="px-2 text-gray-400">...</span>
         <button
           v-else
-          class="btn btn-sm"
-          :class="{ 'btn-active': page === currentPage }"
+          class="btn btn-sm bg-gray-800 text-white border border-white/10 hover:bg-gray-800 hover:border-white/30 transition"
+          :class="{ 'btn-active bg-info text-white border-info': page === currentPage }"
           @click="typeof page === 'number' && goToPage(page)">
           {{ page }}
         </button>
       </template>
       <button
-        class="btn btn-sm"
-        :class="{ 'invisible': currentPage === totalPages }"
+        class="btn btn-sm bg-gray-800 text-white border border-white/10 hover:bg-gray-800 hover:border-white/30 transition"
+        :class="{ invisible: currentPage === totalPages }"
         :disabled="currentPage === totalPages"
         @click="goToPage(currentPage + 1)">
         Next
@@ -259,30 +263,9 @@ const format = (date) => {
         :max="totalPages"
         :value="currentPage"
         @change="jumpToPage"
-        class="input input-sm w-16 ml-2 text-center" />
+        class="input input-sm w-16 ml-2 text-center bg-gray-800 text-white border border-white/10 focus:border-info focus:ring-info/30" />
     </div>
   </div>
 </template>
 
-<style scoped>
-.custom-input {
-  @apply input input-sm input-ghost input-bordered hover:border hover:border-white;
-}
-
-.dp__theme_light {
-  --dp-background-color: #202941;
-  --dp-text-color: #fff;
-  --dp-border-color: #202941;
-}
-
-.dp__theme_dark {
-  --dp-background-color: #202941;
-  --dp-text-color: #fff;
-  --dp-border-color: #202941;
-}
-
-/* Override text color for selects to ensure readability against their light background */
-tbody select {
-    color: black;
-}
-</style>
+<style scoped></style>
