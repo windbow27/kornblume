@@ -8232,8 +8232,85 @@
         ]
       }
     ],
-    "Euphoria": [],
-    "Mastery": []
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          20,
+          275,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          30,
+          371,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Silver Bullet"
+        ],
+        "Quantity": [
+          35,
+          470,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn",
+          "Murmur of Insanity"
+        ],
+        "Quantity": [
+          40,
+          1195,
+          2,
+          2
+        ]
+      }
+    ]
   },
   {
     "Id": 10083,
@@ -20960,8 +21037,85 @@
         ]
       }
     ],
-    "Euphoria": [],
-    "Mastery": []
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          20,
+          275,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Glowing Mothwing"
+        ],
+        "Quantity": [
+          30,
+          371,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Watch Core"
+        ],
+        "Quantity": [
+          35,
+          470,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Fruit of Good and Evil",
+          "Golden Bell Essence Bottle"
+        ],
+        "Quantity": [
+          40,
+          1195,
+          2,
+          2
+        ]
+      }
+    ]
   },
   {
     "Id": 10002,

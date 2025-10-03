@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '21/09/2025',
+    description: `
+        • Add A Knight and Argus euphorias.
+        `
+  },
+  {
     date: '19/09/2025',
     description: `
         • Add Rubuska as unreleased arcanist. <br>
