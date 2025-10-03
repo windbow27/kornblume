@@ -10,6 +10,12 @@ const props = defineProps({
     arcanist: {
         type: Object as () => IArcanist,
         required: true
+    },
+    isInteractive: {
+        // Controls interactive features: tool-tip and link
+        // This is used when we don't want a user making edits to lose their work
+        type: Boolean,
+        default: true
     }
 });
 
@@ -17,18 +23,20 @@ const tooltip = ref(null);
 const { t } = useI18n();
 
 onMounted(() => {
-    tippy(tooltip.value as unknown as Element, {
-        content: t(props.arcanist.Name),
-        theme: 'daisyui'
-    });
+    if (props.isInteractive) {
+        tippy(tooltip.value as unknown as Element, {
+            content: t(props.arcanist.Name),
+            theme: 'daisyui'
+        });
+    }
 });
 </script>
 
 <template>
-    <div ref="tooltip" class="cursor-pointer">
-        <router-link :to="`/arcanist-${props.arcanist.Id}`">
+    <div ref="tooltip" :class="{ 'cursor-pointer': isInteractive }">
+        <component :is="isInteractive ? 'router-link' : 'div'" :to="isInteractive ? `/arcanist-${props.arcanist.Id}` : null">
             <div class="rounded-md overflow-hidden">
-                <div class="avatar">
+                <div class="avatar flex">
                     <div class="w-10 rounded" :class="{
                         'bg-orange-300': props.arcanist.Rarity === 6,
                         'bg-yellow-100': props.arcanist.Rarity === 5,
@@ -40,7 +48,7 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-        </router-link>
+        </component>
     </div>
 </template>
 

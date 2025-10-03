@@ -73,9 +73,9 @@ const editingArcanist = computed(() => ({
 </script>
 
 <template>
-    <div class="card-container">
+    <div class="h-full flex flex-col">
         <div class="px-2">
-            <h2 class="text-white text-2xl font-bold">Euphoria</h2>
+            <h2 class="text-white text-2xl font-bold">{{ $t('euphoria') }}</h2>
             <div class="flex flex-col gap-y-2 mt-2">
                 <div class="flex justify-center space-x-4">
                     <button
@@ -96,11 +96,11 @@ const editingArcanist = computed(() => ({
                     </button>
                 </div>
 
-                <div v-if="euphoriaOptions.length === 0" class="m-auto text-white">
+                <div v-if="euphoriaOptions.length === 0" class="m-auto text-gray-400 text-2xl">
                     {{ $t('euphoria-requirement') }}
                 </div>
 
-                <div class="mt-2 flex justify-center items-center leading-none">
+                <div v-else class="mt-2 flex justify-center items-center leading-none">
                     <SelectList
                         :key="'current-' + updateKey"
                         v-model="selectedCurrentMastery"
@@ -120,12 +120,8 @@ const editingArcanist = computed(() => ({
             </div>
         </div>
 
-        <CalculateItemList :arcanist="editingArcanist" />
+        <CalculateItemList :arcanist="editingArcanist" :layout="'fill'" />
     </div>
 </template>
 
-<style scoped>
-.card-container {
-    min-height: 568px;
-}
-</style>
+<style scoped></style>

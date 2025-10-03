@@ -4,6 +4,7 @@ import { IPullNumber, IPull, usePullsRecordStore } from '@/stores/pullsRecordSto
 import { IArcanist } from '@/types';
 import { useDataStore } from '@/stores/dataStore';
 import { formatNoSpoilerArcanists } from '@/composables/arcanists';
+import { useScreen } from '@/composables/useScreen';
 import { bannerList } from '@/utils/bannerData';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
@@ -14,16 +15,18 @@ const props = defineProps({
   pulls: {
     type: Array as () => IPullNumber[],
     required: true
+  },
+  bannerType: {
+    type: String,
+    required: true
   }
 });
 
+const { isLargeScreen } = useScreen();
 const pullsRecordStore = usePullsRecordStore();
 const arcanists = formatNoSpoilerArcanists(useDataStore().arcanists);
 const localPulls = reactive(props.pulls.map((pull) => ({ ...pull })));
 const localPullDates = reactive(props.pulls.map((pull) => new Date(pull.Timestamp)));
-const newArcanistName = ref('');
-const newBannerType = ref('');
-const newPullDate = ref(new Date());
 
 const itemsPerPage = 10;
 const currentPage = ref(1);
@@ -83,17 +86,19 @@ function getPagination() {
 const addPull = () => {
   const newPull: IPullNumber = {
     PullNumber: localPulls.length + 1,
-    ArcanistName: newArcanistName.value,
-    Rarity: arcanists.find((a) => a.Name === newArcanistName.value)?.Rarity || 0,
-    BannerType: newBannerType.value,
-    Timestamp: newPullDate.value.getTime()
+    ArcanistName: '',
+    Rarity: 0,
+    BannerType: props.bannerType,
+    Timestamp: new Date().getTime()
   };
   localPulls.unshift(newPull);
-  localPullDates.unshift(newPullDate.value);
+  localPullDates.unshift(new Date());
   currentPage.value = 1;
-  newArcanistName.value = '';
-  newBannerType.value = '';
-  newPullDate.value = new Date();
+};
+
+const updateRarity = (pull: IPullNumber) => {
+    const arcanist = arcanists.find(a => a.Name === pull.ArcanistName);
+    pull.Rarity = arcanist ? arcanist.Rarity : 0;
 };
 
 const savePulls = () => {
@@ -146,7 +151,7 @@ const format = (date) => {
     <button class="green-button" @click="savePulls">{{ $t('save') }}</button>
     <button class="red-button" @click="reload">{{ $t('cancel') }}</button>
   </div>
-  <div v-if="props.pulls.length > 0" class="flex flex-col overflow-x-auto hidden-scrollbar">
+  <div v-if="localPulls.length > 0" class="flex flex-col overflow-x-auto hidden-scrollbar">
     <table class="table-auto w-auto text-white lg:mx-auto">
       <thead>
         <tr>
@@ -171,14 +176,15 @@ const format = (date) => {
             'text-green-200': pull.Rarity === 2
           }">
           <td class="text-center whitespace-nowrap px-2">{{ pull.PullNumber }}</td>
-          <td class="flex items-center gap-x-3 whitespace-nowrap px-2">
+          <td class="flex items-center gap-x-3 whitespace-nowrap px-2 py-1">
             <ArcanistIcon
               v-if="arcanists.find((a) => a.Name === pull.ArcanistName)"
-              :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist" />
+              :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist"
+              :is-interactive="false" />
             <SpecialIcon v-else :name="pull.ArcanistName" />
 
             <div class="relative w-36">
-              <select class="select select-sm select-bordered w-full" v-model="pull.ArcanistName">
+              <select class="select select-sm select-bordered w-full" v-model="pull.ArcanistName" @change="updateRarity(pull)">
                 <option v-for="(arcanist, i) in arcanists" :key="i" :value="arcanist.Name">
                   {{ arcanist.Name }}
                 </option>
@@ -200,8 +206,13 @@ const format = (date) => {
             <VueDatePicker
               v-model="localPullDates[index + (currentPage - 1) * itemsPerPage]"
               enable-seconds
+              :teleport-center="!isLargeScreen"
+              :teleport="isLargeScreen"
+              :month-change-on-scroll="false"
+              :clearable="false"
               :format="format"
               :is-24="true" />
+              <!-- timezone="Etc/GMT+5" (we don't use timezone anywhere else... so adding it here might actually cause problems) -->
           </td>
           <td class="text-center whitespace-nowrap px-2">
             <button
@@ -217,7 +228,11 @@ const format = (date) => {
       </tbody>
     </table>
     <div class="flex justify-center items-center mt-4 space-x-2">
-      <button class="btn btn-sm" :disabled="currentPage === 1" @click="goToPage(currentPage - 1)">
+      <button
+        class="btn btn-sm"
+        :class="{ 'invisible': currentPage === 1 }"
+        :disabled="currentPage === 1"
+        @click="goToPage(currentPage - 1)">
         Prev
       </button>
       <template v-for="(page, idx) in getPagination()" :key="`page-${page}-${idx}`">
@@ -232,18 +247,19 @@ const format = (date) => {
       </template>
       <button
         class="btn btn-sm"
+        :class="{ 'invisible': currentPage === totalPages }"
         :disabled="currentPage === totalPages"
         @click="goToPage(currentPage + 1)">
         Next
       </button>
-      <span class="ml-4">Jump to page:</span>
+      <span class="ml-4 text-white">Jump to page:</span>
       <input
         type="number"
         min="1"
         :max="totalPages"
         :value="currentPage"
         @change="jumpToPage"
-        class="input input-sm w-16 ml-2" />
+        class="input input-sm w-16 ml-2 text-center" />
     </div>
   </div>
 </template>
@@ -263,5 +279,10 @@ const format = (date) => {
   --dp-background-color: #202941;
   --dp-text-color: #fff;
   --dp-border-color: #202941;
+}
+
+/* Override text color for selects to ensure readability against their light background */
+tbody select {
+    color: black;
 }
 </style>

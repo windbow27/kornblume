@@ -8,13 +8,13 @@ import { IArcanist } from '@/types'
 import { getArcanistI2ImagePath, getArcanistAfflatusPath, getArcanistDmgTypePath } from '@/composables/images';
 import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
-import Resonances from '@/components/arcanist/info/Resonances.vue';
+import Resonance from '@/components/arcanist/info/Resonance.vue';
 import Euphoria from './info/Euphoria.vue';
 
 const route = useRoute();
 const arcanistStore = useDataStore().arcanists;
 const arcanist = ref<IArcanist>(arcanistStore[0]);
-const buttons = ['Stats', 'Resonances', 'Euphoria'];
+const buttons = ['Stats', 'Resonance', 'Euphoria'];
 const selectedButton = ref(buttons[0]);
 
 onBeforeMount(() => {
@@ -26,7 +26,7 @@ onBeforeMount(() => {
 <template>
     <div class="container flex flex-col xl:flex-row justify-center items-center">
         <!--I2 Portrait-->
-        <div class="w-full xl:w-1/2 relative p-4">
+        <div class="w-full xl:w-1/2 relative p-4 flex justify-center">
             <img class="lg:h-[80vh] object-contain object-center text-2xl text-white font-bold"
                 :src="getArcanistI2ImagePath(arcanist?.Id.toString() ?? '')" alt="Work in progress">
         </div>
@@ -56,9 +56,9 @@ onBeforeMount(() => {
                 </div>
             </div>
             <!--Info Cards-->
-            <div class="p-4 rounded shadow custom-border w-full">
+            <div class="p-4 rounded shadow custom-border w-full min-h-[568px] h-[85vh] lg:h-[55vh]">
                 <Stats :arcanist="arcanist ?? {}" v-if="selectedButton === 'Stats'" />
-                <Resonances :arcanist="arcanist ?? {}" v-if="selectedButton === 'Resonances'" />
+                <Resonance :arcanist="arcanist ?? {}" v-if="selectedButton === 'Resonance'" />
                 <Euphoria :arcanist="arcanist ?? {}" v-if="selectedButton === 'Euphoria'" />
             </div>
         </div>

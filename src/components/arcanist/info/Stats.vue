@@ -54,7 +54,7 @@ const editingArcanist = computed(() => ({
 </script>
 
 <template>
-    <div class="px-2 card-container">
+    <div class="px-2 h-full flex flex-col">
         <h2 class=" text-white text-2xl font-bold">{{ $t('Stats') }}</h2>
         <div class="px-8 lg:px-16 py-2">
             <div class="w-full text-white flex justify-between text-xs 3xl:text-base">
@@ -82,12 +82,8 @@ const editingArcanist = computed(() => ({
                 </tr>
             </table>
         </div>
-        <CalculateItemList :arcanist="editingArcanist" />
+        <CalculateItemList :arcanist="editingArcanist" :layout="'fill'" />
     </div>
 </template>
 
-<style scoped>
-.card-container {
-    min-height: 568px;
-}
-</style>
+<style scoped></style>
