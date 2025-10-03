@@ -32,6 +32,10 @@ const props = defineProps({
         type: Array as () => number[],
         required: true
     },
+    bannerType: {
+        type: String,
+        required: true
+    },
     text: {
         type: String,
         required: true
@@ -257,7 +261,7 @@ watch(isEditing, (newVal) => {
         </div>
     </div>
 
-    <TrackerEditor v-if="isEditing" :pulls="props.allPulls" />
+    <TrackerEditor v-if="isEditing" :pulls="props.allPulls" :banner-type="props.bannerType" />
     <div v-if="showSpinner" class="text-white text-center font-bold"><i class="fa-solid fa-spinner fa-spin"></i></div>
 
     <div v-if="!isEditing" class="flex flex-col overflow-x-auto hidden-scrollbar">
@@ -306,7 +310,7 @@ watch(isEditing, (newVal) => {
                     <td class="text-center px-4 whitespace-nowrap">{{ pull.PullNumber }}</td>
 
                     <!-- Arcanist -->
-                    <td class="flex items-center px-4 gap-x-3 whitespace-nowrap">
+                    <td class="flex items-center px-4 py-1 gap-x-3 whitespace-nowrap">
                         <ArcanistIcon v-if="arcanists.find(a => a.Name === pull.ArcanistName)"
                             :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist" />
                         <SpecialIcon v-else :name="pull.ArcanistName" />
