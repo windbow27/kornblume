@@ -97,8 +97,8 @@ const addPull = () => {
 };
 
 const updateRarity = (pull: IPullNumber) => {
-    const arcanist = arcanists.find(a => a.Name === pull.ArcanistName);
-    pull.Rarity = arcanist ? arcanist.Rarity : 0;
+  const arcanist = arcanists.find((a) => a.Name === pull.ArcanistName);
+  pull.Rarity = arcanist ? arcanist.Rarity : 0;
 };
 
 const savePulls = () => {
@@ -184,7 +184,10 @@ const format = (date) => {
             <SpecialIcon v-else :name="pull.ArcanistName" />
 
             <div class="relative w-36">
-              <select class="select select-sm select-bordered w-full" v-model="pull.ArcanistName" @change="updateRarity(pull)">
+              <select
+                class="select select-sm select-bordered w-full"
+                v-model="pull.ArcanistName"
+                @change="updateRarity(pull)">
                 <option v-for="(arcanist, i) in arcanists" :key="i" :value="arcanist.Name">
                   {{ arcanist.Name }}
                 </option>
@@ -203,16 +206,18 @@ const format = (date) => {
             </div>
           </td>
           <td class="text-center whitespace-nowrap w-56 px-2">
-            <VueDatePicker
-              v-model="localPullDates[index + (currentPage - 1) * itemsPerPage]"
-              enable-seconds
-              :teleport-center="!isLargeScreen"
-              :teleport="isLargeScreen"
-              :month-change-on-scroll="false"
-              :clearable="false"
-              :format="format"
-              :is-24="true" />
-              <!-- timezone="Etc/GMT+5" (we don't use timezone anywhere else... so adding it here might actually cause problems) -->
+            <div class="dp-custom-wrapper">
+              <VueDatePicker
+                v-model="localPullDates[index + (currentPage - 1) * itemsPerPage]"
+                enable-seconds
+                :teleport-center="!isLargeScreen"
+                :teleport="isLargeScreen"
+                :month-change-on-scroll="false"
+                :clearable="false"
+                :format="format"
+                :is-24="true"
+                dark />
+            </div>
           </td>
           <td class="text-center whitespace-nowrap px-2">
             <button
@@ -230,7 +235,7 @@ const format = (date) => {
     <div class="flex justify-center items-center mt-4 space-x-2">
       <button
         class="btn btn-sm"
-        :class="{ 'invisible': currentPage === 1 }"
+        :class="{ invisible: currentPage === 1 }"
         :disabled="currentPage === 1"
         @click="goToPage(currentPage - 1)">
         Prev
@@ -247,7 +252,7 @@ const format = (date) => {
       </template>
       <button
         class="btn btn-sm"
-        :class="{ 'invisible': currentPage === totalPages }"
+        :class="{ invisible: currentPage === totalPages }"
         :disabled="currentPage === totalPages"
         @click="goToPage(currentPage + 1)">
         Next
@@ -266,7 +271,7 @@ const format = (date) => {
 
 <style scoped>
 .custom-input {
-  @apply input input-sm input-ghost input-bordered hover:border hover:border-white;
+  @apply input input-lg input-ghost hover:border hover:border-white;
 }
 
 .dp__theme_light {
@@ -281,8 +286,18 @@ const format = (date) => {
   --dp-border-color: #202941;
 }
 
-/* Override text color for selects to ensure readability against their light background */
-tbody select {
-    color: black;
+.dp-custom-wrapper :deep(.dp__input) {
+  @apply input input-sm input-ghost hover:border hover:border-white;
+  background-color: transparent !important;
+  color: white !important;
 }
+
+.dp-custom-wrapper :deep(.dp__input_icon) {
+  color: white !important;
+}
+
+/* Override text color for selects to ensure readability against their light background */
+/* tbody select {
+    color: black;
+} */
 </style>
