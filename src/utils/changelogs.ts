@@ -1,6 +1,22 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '03/10/2025',
+    description: `
+        • Improve layout for Arcanist page. <br>
+        • Improve Tracker Editor. <br>
+        • Improve Warehouse input usability. For example, you can now use k/m/b suffixes and scientific notation (e.g. 1e6) to input large numbers. <br>
+        • Various other improvements and bug fixes. <br>
+        • All by SolidKalium. 
+        `
+  },
+  {
+    date: '21/09/2025',
+    description: `
+        • Add A Knight and Argus euphorias.
+        `
+  },
+  {
     date: '19/09/2025',
     description: `
         • Add Rubuska as unreleased arcanist. <br>
