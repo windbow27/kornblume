@@ -213,6 +213,10 @@ const ocr: clickHandler = (payload: Event): void => {
                     /The Mirror.*?Lonely Watcher/,
                     `The\\s*Mirror[\\s\\S]*?Lonely\\s*Watcher` // Handle The Mirror ... Lonely Watcher variations
                   ) // Handle The Mirror's ... Lonely Watcher variations
+                  .replace(
+                    /The Mourner's.*?Eulogy/,
+                    `The\\s*Mourner's[\\s\\S]*?Eulogy` // Handle The Mourner's ... Eulogy variations
+                  )
                   .replace(/\s/g, '\\s*') // Handle spaces
                   .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
             )
@@ -798,7 +802,7 @@ const selectBannerType = (bannerType: string) => {
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
       banner-type="From the Ruin of the Past" />
-      <!-- TODO: pass in the actual latest Limited Banner -->
+    <!-- TODO: pass in the actual latest Limited Banner -->
     <TrackerBoard
       v-if="selectedBannerType === 'Standard'"
       :text="$t('summary-standard')"

@@ -1,5 +1,13 @@
 export const changelogs = [
-  // Add more from top
+  // Add more from top{
+  {
+    date: '26/10/2025',
+    description: `
+        • Add Corvus as unreleased arcanist. <br>
+        • Add Sentinel and Charon banners. <br>
+        • Thanks for worrying about my health, but I'm totally fine lol, I simply forgor.
+        `
+  },
   {
     date: '03/10/2025',
     description: `

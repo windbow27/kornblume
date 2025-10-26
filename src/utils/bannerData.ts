@@ -43,6 +43,8 @@ export const bannerList = [
   'Serpentine Century',
   'Wirewalking in Zero Gravity',
   'From the Ruin of the Past',
+  'A Beating Heart Beneath the Stone',
+  "The Mourner's Eulogy",
 
   // standard
   'Amongst the Lake',
@@ -123,7 +125,9 @@ export const bannerRateUp = [
   'Semmelweis',
   'Hissabeth',
   'Kiperina',
-  'Moldir'
+  'Moldir',
+  'Sentinel',
+  'Charon'
 ];
 
 export const specialArcanists: string[] = [
