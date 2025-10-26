@@ -1,4 +1,8 @@
-import{o as T}from"./index-DVUWZbzi.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as w,m as N}from"./index-DA8Z3MMX.js";const v=[{date:"03/10/2025",description:`
+import{o as T}from"./index-BigLjW1d.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as w,m as N}from"./index-Cl-HnMyx.js";const v=[{date:"26/10/2025",description:`
+        • Add Corvus as unreleased arcanist. <br>
+        • Add Sentinel and Charon banners. <br>
+        • Thanks for worrying about my health, but I'm totally fine lol, I simply forgor.
+        `},{date:"03/10/2025",description:`
         • Improve layout for Arcanist page. <br>
         • Improve Tracker Editor. <br>
         • Improve Warehouse input usability. For example, you can now use k/m/b suffixes and scientific notation (e.g. 1e6) to input large numbers. <br>
