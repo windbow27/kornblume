@@ -1,5 +1,6 @@
 import { watchEffect } from 'vue';
 import { useDataStore } from '../stores/dataStore';
+import { IStage } from '@/types';
 
 const items = useDataStore().items;
 
@@ -11,6 +12,9 @@ watchEffect(() => {
 
 const getId = (material: string) => {
   const item = items.find((item) => item.Name === material);
+  if (!item) {
+    console.warn("Material not found when locating image", material);
+  }
   return item ? item.Id : 1;
 };
 
@@ -34,9 +38,27 @@ const getRarity = (material: string) => {
 //     return 1;
 // }
 
+const getStageBackgroundId = (stage: IStage) => {
+  const {id: stageId, name: stageName} = stage;
+
+  if (stageId) {
+    const stageBackgroundId = getStageBackgroundIdByStageId(stageId);
+    if (stageBackgroundId) {
+      return stageBackgroundId;
+    }
+  }
+  if (stageName) {
+    const stageCode = stageName.split('-')[0];
+    const stageBackgroundId = getStageBackgroundIdByChapterCode(stageCode);
+    if (stageBackgroundId) {
+      return stageBackgroundId;
+    }
+  }
+};
+
 // 1.7
 // so unorganized
-const getStageBackgroundId = (id: number) => {
+const getStageBackgroundIdByStageId = (id: number) => {
   if (id <= 21) return 1;
   if (id <= 45) return 2;
   if (id <= 63) return 3;
@@ -55,6 +77,31 @@ const getStageBackgroundId = (id: number) => {
   if (id <= 999 && id > 900) return 15;
   if (id < 1100 && id > 1000) return 16;
 };
+
+const getStageBackgroundIdByChapterCode = (chapterCode: string) => {
+  if (isFinite(Number(chapterCode))) {
+    const chapterNum = Number(chapterCode);
+    if (chapterNum === 1) return 1;
+    if (chapterNum === 2) return 2;
+    if (chapterNum === 3) return 3;
+    if (chapterNum === 4) return 4;
+    if (chapterNum === 5) return 11;
+    if (chapterNum === 6) return 12;
+    if (chapterNum === 7) return 13;
+    if (chapterNum === 8) return 14;
+    if (chapterNum === 9) return 15;
+    if (chapterNum === 10) return 16;
+    if (chapterNum === 11) return 17;
+  }
+  if (chapterCode === 'LP') return 5; // The/Le Poussiere: Dust
+  if (chapterCode === 'MA') return 6; // Mintage Aesthetics: Sharpodonty
+  if (chapterCode === 'ME') return 7; // Mountain Echoes: Mineral insight
+  if (chapterCode === 'SL') return 8; // Starfall Locale: Star insight
+  if (chapterCode === 'SS') return 9; // Sylvanus Shape: Plant insight
+  if (chapterCode === 'BW') return 10; // Brutes Wilds: Beast insight
+  if (chapterCode === 'HP') return undefined; // Harvest Prime
+  if (chapterCode === 'PA') return undefined; // Pneuma Analysis
+}
 
 export const getItemImagePathByMatl = (material: string) => {
   const id = getId(material);
@@ -75,7 +122,7 @@ export function getActivityImagePathByStage(stage: string) {
   return `images/items/common/${stage === 'Oneiric Shop' ? 1 : 0}.webp`;
 }
 
-export function getStageImagePathByStage(stage: number) {
+export function getStageImagePathByStage(stage: IStage) {
   return `images/items/stage/thumbnails/${getStageBackgroundId(stage)}.webp`;
 }
 

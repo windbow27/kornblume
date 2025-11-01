@@ -9,7 +9,7 @@ export interface INormalizedStage {
 export function normalizeDisplayStage (unprocessedStage: IStage, stageName: string): INormalizedStage {
     const result = {
         stage: stageName,
-        stageImagePath: getStageImagePathByStage(unprocessedStage.id)
+        stageImagePath: getStageImagePathByStage(unprocessedStage)
     };
     return result;
 }
