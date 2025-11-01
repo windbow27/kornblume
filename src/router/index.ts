@@ -18,7 +18,7 @@ const router = createRouter({
       name: 'arcanists',
       component: () => import('@/views/ArcanistsView.vue'),
       meta: {
-        requiredJson: ['arcanists', 'items', 'stages2_8_greedy', 'psychubes']
+        requiredJson: ['arcanists', 'items', 'stages3_0_greedy', 'psychubes']
       }
     },
     {
@@ -26,7 +26,7 @@ const router = createRouter({
       name: 'items',
       component: () => import('@/views/ItemsView.vue'),
       meta: {
-        requiredJson: ['arcanists', 'items', 'stages2_8_greedy', 'psychubes', 'formulas']
+        requiredJson: ['arcanists', 'items', 'stages3_0_greedy', 'psychubes', 'formulas']
       }
     },
     {
@@ -34,7 +34,7 @@ const router = createRouter({
       name: 'tracker',
       component: () => import('@/views/TrackerView.vue'),
       meta: {
-        requiredJson: ['arcanists', 'items', 'stages2_8_greedy']
+        requiredJson: ['arcanists', 'items', 'stages3_0_greedy']
       }
     },
     {
@@ -42,7 +42,7 @@ const router = createRouter({
       name: 'planner',
       component: () => import('@/views/PlannerView.vue'),
       meta: {
-        requiredJson: ['arcanists', 'items', 'stages2_8_greedy', 'shops', 'formulas']
+        requiredJson: ['arcanists', 'items', 'stages3_0_greedy', 'shops', 'formulas']
       }
     },
     {
@@ -50,7 +50,7 @@ const router = createRouter({
       name: 'stages',
       component: () => import('@/views/StagesView.vue'),
       meta: {
-        requiredJson: ['arcanists', 'items', 'stages2_8_greedy']
+        requiredJson: ['arcanists', 'items', 'stages3_0_greedy']
       }
     },
     {
@@ -66,7 +66,7 @@ const router = createRouter({
       name: 'arcanist',
       component: () => import('@/components/arcanist/ArcanistDisplay.vue'),
       meta: {
-        requiredJson: ['arcanists', 'items', 'stages2_8_greedy', 'psychubes']
+        requiredJson: ['arcanists', 'items', 'stages3_0_greedy', 'psychubes']
       }
     }
   ]

@@ -8,6 +8,7 @@ interface IDataStore {
   stages1_7_greedy: IStages;
   stages1_9_greedy: IStages;
   stages2_8_greedy: IStages;
+  stages3_0_greedy: IStages;
   formulas: IFormulas;
   items: IItems;
   psychubes: IPsychubes;
@@ -29,6 +30,7 @@ export const useDataStore = defineStore('dataStore', {
     stages1_7_greedy: {},
     stages1_9_greedy: {},
     stages2_8_greedy: {},
+    stages3_0_greedy: {},
     formulas: [],
     items: [],
     psychubes: [],
