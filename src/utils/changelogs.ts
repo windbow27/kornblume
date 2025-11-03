@@ -1,5 +1,12 @@
 export const changelogs = [
-  // Add more from top{
+  // Add more from top
+  {
+    date: '03/11/2025',
+    description: `
+        • Add Beryl as unreleased arcanist. Add Anjo Nala and Isolde euphorias. <br>
+        • Add 3.0 stages by SolidKalium.
+        `
+  },
   {
     date: '26/10/2025',
     description: `
