@@ -1,4 +1,4 @@
-import{o as T}from"./index-D-zpWvaO.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as v,m as N}from"./index-xd9RtL_s.js";const w=[{date:"05/11/2025",description:`
+import{o as T}from"./index-DHOfgRPA.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as v,m as N}from"./index-BMrMVieO.js";const w=[{date:"05/11/2025",description:`
         • Add Kaalaa Baunaa euphoria. Her fault for using kb as her abbreviation. <br>
       `},{date:"03/11/2025",description:`
         • Add Beryl as unreleased arcanist. Add Anjo Nala and Isolde euphorias. <br>
