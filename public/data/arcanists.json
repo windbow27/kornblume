@@ -1,5 +1,378 @@
 [
   {
+    "Id": 10116,
+    "IsReleased": true,
+    "Name": "Brume",
+    "Rarity": 6,
+    "Afflatus": "Beast",
+    "Stats": {
+      "0-1": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "0-30": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "1-40": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "2-50": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "3-60": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "Insight": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sharpodonty",
+          "Page of Beastly Thirst",
+          "Shattered Bones",
+          "Spell of Fortune"
+        ],
+        "Quantity": [
+          18000,
+          6,
+          6,
+          6
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sharpodonty",
+          "Scroll of Beastly Thirst",
+          "Perpetual Cog",
+          "Holy Silver"
+        ],
+        "Quantity": [
+          40000,
+          10,
+          5,
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sharpodonty",
+          "Tome of Beastly Thirst",
+          "Bogeyman",
+          "Mistilteinn"
+        ],
+        "Quantity": [
+          200000,
+          16,
+          5,
+          3
+        ]
+      }
+    ],
+    "Resonance": [
+      {
+        "Id": 2,
+        "Material": [
+          "Moment of Dissonance"
+        ],
+        "Quantity": [
+          5
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Moment of Dissonance",
+          "Magnesia Crystal"
+        ],
+        "Quantity": [
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Moment of Dissonance",
+          "Shattered Bones",
+          "Solidus"
+        ],
+        "Quantity": [
+          5,
+          4,
+          3
+        ]
+      },
+      {
+        "Id": 5,
+        "Material": [
+          "Brief Cacophony",
+          "Liquefied Terror",
+          "Rough Silver Ingot"
+        ],
+        "Quantity": [
+          5,
+          3,
+          4
+        ]
+      },
+      {
+        "Id": 6,
+        "Material": [
+          "Sharpodonty",
+          "Brief Cacophony",
+          "Clawed Pendulum"
+        ],
+        "Quantity": [
+          30000,
+          5,
+          3
+        ]
+      },
+      {
+        "Id": 7,
+        "Material": [
+          "Brief Cacophony",
+          "Prophetic Bird"
+        ],
+        "Quantity": [
+          6,
+          5
+        ]
+      },
+      {
+        "Id": 8,
+        "Material": [
+          "Brief Cacophony",
+          "Holy Silver",
+          "Cicada Wings"
+        ],
+        "Quantity": [
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 9,
+        "Material": [
+          "Brief Cacophony",
+          "Biting Box",
+          "Perpetual Cog"
+        ],
+        "Quantity": [
+          8,
+          4,
+          4
+        ]
+      },
+      {
+        "Id": 10,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Bifurcated Skeleton",
+          "Red Lacquer Tablet"
+        ],
+        "Quantity": [
+          1,
+          5,
+          8,
+          6
+        ]
+      },
+      {
+        "Id": 11,
+        "Material": [
+          "Sinuous Howl",
+          "Sharpodonty",
+          "Sonorous Knell",
+          "Platinum Ouija"
+        ],
+        "Quantity": [
+          1,
+          120000,
+          5,
+          4
+        ]
+      },
+      {
+        "Id": 12,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Jadeite Tablet",
+          "Golden Herb Incense"
+        ],
+        "Quantity": [
+          1,
+          6,
+          4,
+          5
+        ]
+      },
+      {
+        "Id": 13,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Silver Bullet",
+          "Winged Key"
+        ],
+        "Quantity": [
+          1,
+          6,
+          5,
+          6
+        ]
+      },
+      {
+        "Id": 14,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Mistilteinn",
+          "Watch Core"
+        ],
+        "Quantity": [
+          1,
+          8,
+          2,
+          4
+        ]
+      },
+      {
+        "Id": 15,
+        "Material": [
+          "Sinuous Howl",
+          "Sonorous Knell",
+          "Rhine Gold",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          1,
+          8,
+          3,
+          4
+        ]
+      }
+    ],
+    "Frequency": [
+      {
+        "Type": "Z-shape",
+        "Id": 5,
+        "Material": [
+          "Golden Fleece",
+          "Platinum Ouija",
+          "Bifurcated Skeleton",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          4,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 4,
+        "Material": [
+          "Fruit of Good and Evil",
+          "Jadeite Tablet",
+          "Prophetic Bird",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          5,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 11,
+        "Material": [
+          "Mistilteinn",
+          "Murmur of Insanity",
+          "Biting Box",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 12,
+        "Material": [
+          "Rhine Gold",
+          "Golden Bell Essence Bottle",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      },
+      {
+        "Type": "Z-shape",
+        "Id": 13,
+        "Material": [
+          "Rhine Gold",
+          "Silver Bullet",
+          "Golden Herb Incense",
+          "Sharpodonty"
+        ],
+        "Quantity": [
+          1,
+          2,
+          3,
+          120000
+        ]
+      }
+    ],
+    "Euphoria": [],
+    "Mastery": []
+  },
+  {
     "Id": 10115,
     "IsReleased": false,
     "Name": "Beryl",

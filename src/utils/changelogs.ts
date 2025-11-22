@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '22/11/2025',
+    description: `
+        • Add Brume as unreleased arcanist. <br>
+      `
+  },
+  {
     date: '05/11/2025',
     description: `
         • Add Kaalaa Baunaa euphoria. Her fault for using kb as her abbreviation. <br>
