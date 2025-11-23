@@ -1,4 +1,4 @@
-import{o as T}from"./index-DkJnb_xs.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as v,m as N}from"./index-B5GkbmVo.js";const w=[{date:"22/11/2025",description:`
+import{o as T}from"./index-C_2gSPpw.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as v,m as N}from"./index-wdSONjLw.js";const w=[{date:"22/11/2025",description:`
         • Add Brume as unreleased arcanist. <br>
       `},{date:"05/11/2025",description:`
         • Add Kaalaa Baunaa euphoria. Her fault for using kb as her abbreviation. <br>
