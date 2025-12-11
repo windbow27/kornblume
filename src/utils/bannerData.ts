@@ -45,6 +45,8 @@ export const bannerList = [
   'From the Ruin of the Past',
   'A Beating Heart Beneath the Stone',
   "The Mourner's Eulogy",
+  'The Midnight Flutist',
+  "The Land's Iron Stitch",
 
   // standard
   'Amongst the Lake',
@@ -127,7 +129,9 @@ export const bannerRateUp = [
   'Kiperina',
   'Moldir',
   'Sentinel',
-  'Charon'
+  'Charon',
+  'Rubuska',
+  'Corvus'
 ];
 
 export const specialArcanists: string[] = [
