@@ -1,6 +1,14 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '22/12/2025',
+    description: `
+        • Add Marsha as unreleased arcanist. <br>
+        • Add An-an Lee and Mercuria euphorias. <br>
+        • Add 3.3 items <br>
+      `
+  },
+  {
     date: '11/12/2025',
     description: `
         • Add Rubuska and Corvus Banner. Can Bluepoch stop with the new weirdchamp water banners already. <br>  
