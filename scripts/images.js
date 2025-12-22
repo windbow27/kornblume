@@ -95,6 +95,9 @@ async function processAllImages() {
     await convertPngToWebp(arcanistI0PortraitDirectory);
     await convertPngToWebp(arcanistI2PortraitDirectory);
     await convertPngToWebp(arcanistEuphoriaDirectory);
+    await convertPngToWebp(itemsIconDirectory);
+    await convertPngToWebp(itemsBorderDirectory);
+    await convertPngToWebp(stagesIconDirectory);
     await processImagesInDirectory(arcanistsIconDirectory);
     await processImagesInDirectory(arcanistI0PortraitDirectory);
     await processImagesInDirectory(itemsIconDirectory);
