@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '11/12/2025',
+    description: `
+        • Add Rubuska and Corvus Banner. Can Bluepoch stop with the new weirdchamp water banners already. <br>  
+      `
+  },
+  {
     date: '22/11/2025',
     description: `
         • Add Brume as unreleased arcanist. <br>

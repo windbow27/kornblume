@@ -24,8 +24,8 @@ const text = ref('');
 const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
-// const selectedBannerType = ref('Limited');
-const selectedBannerType = ref('The Myth at Her Fingertips');
+const selectedBannerType = ref('Limited');
+// const selectedBannerType = ref('The Myth at Her Fingertips');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -216,6 +216,10 @@ const ocr: clickHandler = (payload: Event): void => {
                   .replace(
                     /The Mourner's.*?Eulogy/,
                     `The\\s*Mourner's[\\s\\S]*?Eulogy` // Handle The Mourner's ... Eulogy variations
+                  )
+                  .replace(
+                    /The Land's.*?Iron Stitch/,
+                    `The\\s*Land's[\\s\\S]*?Iron\\s*Stitch` // Handle The Land's ... Iron Stitch variations
                   )
                   .replace(/\s/g, '\\s*') // Handle spaces
                   .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
@@ -574,14 +578,6 @@ const selectBannerType = (bannerType: string) => {
 
     <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
       <!-- Limited Placeholder -->
-      <button
-        v-bind:class="{
-          'border-button': selectedBannerType === 'The Myth at Her Fingertips'
-        }"
-        class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
-        @click="selectBannerType('The Myth at Her Fingertips')">
-        {{ $t('nautika') }}
-      </button>
 
       <button
         v-bind:class="{
