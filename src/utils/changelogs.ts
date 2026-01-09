@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '09/01/2026',
+    description: `
+        • Add Igor as unreleased arcanist.
+      `
+  },
+  {
     date: '22/12/2025',
     description: `
         • Add Marsha as unreleased arcanist. <br>
