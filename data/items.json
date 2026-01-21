@@ -858,44 +858,5 @@
         "Description": "A casket all arcanists are familiar with. Open it to get a mystical-level material of your choice, used for Insight or Resonance.",
         "Source": "",
         "Usage": ""
-    },
-    {
-        "Id": 87,
-        "Category": "Build Material",
-        "IsReleased": true,
-        "Name": "Roaming Terror Hut",
-        "Rarity": 6,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 88,
-        "Category": "Build Material",
-        "IsReleased": true,
-        "Name": "Rootbox Rabbit",
-        "Rarity": 5,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
-    },
-    {
-        "Id": 89,
-        "Category": "Build Material",
-        "IsReleased": true,
-        "Name": "Heartfelt Easter Egg",
-        "Rarity": 4,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
-    },{
-        "Id": 90,
-        "Category": "Build Material",
-        "IsReleased": true,
-        "Name": "Sharp Needle",
-        "Rarity": 3,
-        "Description": "",
-        "Source": "",
-        "Usage": ""
     }
 ]

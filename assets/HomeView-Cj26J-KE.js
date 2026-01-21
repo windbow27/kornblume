@@ -1,10 +1,4 @@
-import{o as T}from"./index-BN5M6sK1.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as w,m as N}from"./index-Du8KS-MD.js";const v=[{date:"09/01/2026",description:`
-        • Add Igor as unreleased arcanist.
-      `},{date:"22/12/2025",description:`
-        • Add Marsha as unreleased arcanist. <br>
-        • Add An-an Lee and Mercuria euphorias. <br>
-        • Add 3.3 items <br>
-      `},{date:"11/12/2025",description:`
+import{o as T}from"./index-y-8nevWV.js";import{d as _,o as n,c as i,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as w,m as N}from"./index-D0jAelBh.js";const v=[{date:"11/12/2025",description:`
         • Add Rubuska and Corvus Banner. Can Bluepoch stop with the new weirdchamp water banners already. <br>  
       `},{date:"22/11/2025",description:`
         • Add Brume as unreleased arcanist. <br>
