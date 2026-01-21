@@ -47,6 +47,8 @@ export const bannerList = [
   "The Mourner's Eulogy",
   'The Midnight Flutist',
   "The Land's Iron Stitch",
+  "On Fate's Cue",
+  'The Brilliance Within',
 
   // standard
   'Amongst the Lake',
@@ -131,7 +133,9 @@ export const bannerRateUp = [
   'Sentinel',
   'Charon',
   'Rubuska',
-  'Corvus'
+  'Corvus',
+  'Beryl',
+  'Brume'
 ];
 
 export const specialArcanists: string[] = [

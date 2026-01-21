@@ -221,6 +221,10 @@ const ocr: clickHandler = (payload: Event): void => {
                     /The Land's.*?Iron Stitch/,
                     `The\\s*Land's[\\s\\S]*?Iron\\s*Stitch` // Handle The Land's ... Iron Stitch variations
                   )
+                  .replace(
+                    /On Fate's.*?Cue/,
+                    `On\\s*Fate's[\\s\\S]*?Cue` // Handle On Fate's ... Cue variations
+                  )
                   .replace(/\s/g, '\\s*') // Handle spaces
                   .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
             )

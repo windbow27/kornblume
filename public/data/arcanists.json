@@ -1,7 +1,7 @@
 [
   {
     "Id": 10116,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Brume",
     "Rarity": 6,
     "Afflatus": "Beast",
@@ -374,7 +374,7 @@
   },
   {
     "Id": 10115,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Beryl",
     "Rarity": 6,
     "Afflatus": "Intellect",
