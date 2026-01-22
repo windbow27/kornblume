@@ -1,5 +1,5 @@
-import{o as T}from"./index-DRxhDwlU.js";import{d as _,o as n,c as r,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as w,m as N}from"./index-WRiFbo0I.js";const v=[{date:"21/01/2026",description:`
-        • Add Beryl and Brume banners.
+import{o as T}from"./index-TIYIiVGU.js";import{d as _,o as n,c as r,a as e,t,F as h,r as k,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as w,m as N}from"./index-CQp2cYz0.js";const v=[{date:"21/01/2026",description:`
+        • Add Beryl and Brume banners. <br>
         • The Github repo has reached 69 stars, nice.
       `},{date:"09/01/2026",description:`
         • Add Igor as unreleased arcanist.
