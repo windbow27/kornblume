@@ -47,7 +47,6 @@ export const bannerList = [
   "The Mourner's Eulogy",
   'The Midnight Flutist',
   "The Land's Iron Stitch",
-  "On Fate's Cue",
   'The Brilliance Within',
 
   // standard
@@ -83,7 +82,9 @@ export const bannerList = [
   // kassandra
   'Wine-Dark Reflections of the Eagle',
   // nautika
-  'The Myth at Her Fingertips'
+  'The Myth at Her Fingertips',
+  // beryl
+  "On Fate's Cue"
 ];
 
 export const bannerRateUp = [
@@ -134,7 +135,6 @@ export const bannerRateUp = [
   'Charon',
   'Rubuska',
   'Corvus',
-  'Beryl',
   'Brume'
 ];
 
