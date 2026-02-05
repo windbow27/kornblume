@@ -47,6 +47,7 @@ export const bannerList = [
   "The Mourner's Eulogy",
   'The Midnight Flutist',
   "The Land's Iron Stitch",
+  'The Brilliance Within',
 
   // standard
   'Amongst the Lake',
@@ -81,7 +82,9 @@ export const bannerList = [
   // kassandra
   'Wine-Dark Reflections of the Eagle',
   // nautika
-  'The Myth at Her Fingertips'
+  'The Myth at Her Fingertips',
+  // beryl
+  "On Fate's Cue"
 ];
 
 export const bannerRateUp = [
@@ -131,7 +134,8 @@ export const bannerRateUp = [
   'Sentinel',
   'Charon',
   'Rubuska',
-  'Corvus'
+  'Corvus',
+  'Brume'
 ];
 
 export const specialArcanists: string[] = [

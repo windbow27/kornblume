@@ -9,6 +9,13 @@ export const changelogs = [
       `
   },
   {
+    date: '21/01/2026',
+    description: `
+        • Add Beryl and Brume banners. <br>
+        • The Github repo has reached 69 stars, nice.
+      `
+  },
+  {
     date: '09/01/2026',
     description: `
         • Add Igor as unreleased arcanist.
