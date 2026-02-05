@@ -1,6 +1,14 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '05/02/2026',
+    description: `
+        • Add Paper Heron as unreleased arcanist. <br>
+        • Add Willow, 6 and Tooth Fairy euphorias. 
+        
+      `
+  },
+  {
     date: '09/01/2026',
     description: `
         • Add Igor as unreleased arcanist.
@@ -11,7 +19,7 @@ export const changelogs = [
     description: `
         • Add Marsha as unreleased arcanist. <br>
         • Add An-an Lee and Mercuria euphorias. <br>
-        • Add 3.3 items <br>
+        • Add 3.3 items 
       `
   },
   {
