@@ -16,12 +16,14 @@
     "name": "1-14H",
     "category": "Hard",
     "cost": 12,
-    "count": 1122,
+    "count": 1064,
     "drops": {
-      "Magnesia Crystal": 15,
-      "Shattered Bones": 13,
-      "Silver Ore": 12,
-      "Spell of Banishing": 28
+      "Sharp Needle": 1064,
+      "Magnesia Crystal": 78,
+      "Shattered Bones": 140,
+      "Silver Ore": 159,
+      "Spell of Banishing": 215,
+      "Trembling Tooth": 77
     },
     "id": 9001
   },
@@ -42,19 +44,20 @@
     "name": "2-3H",
     "category": "Hard",
     "cost": 16,
-    "count": 167,
+    "count": 300,
     "drops": {
-      "Liquefied Terror": 2,
-      "Milled Magnesia": 2,
-      "Esoteric Bones": 4,
-      "Silver Ore": 270,
-      "Rough Silver Ingot": 3,
-      "Holy Silver": 58,
-      "Spell of Fortune": 4,
-      "Cicada Wings": 5,
-      "Perpetual Cog": 1,
-      "Alopecurus Pratensis": 6,
-      "Pyroxene Ore": 14
+      "Holy Silver": 103,
+      "Silver Ore": 516,
+      "Rough Silver Ingot": 9,
+      "Liquefied Terror": 9,
+      "Milled Magnesia": 3,
+      "Esoteric Bones": 8,
+      "Spell of Fortune": 7,
+      "Cicada Wings": 9,
+      "Perpetual Cog": 11,
+      "Alopecurus Pratensis": 12,
+      "Pyroxene Ore": 9,
+      "Sharp Needle": 9
     },
     "id": 41
   },
@@ -62,19 +65,20 @@
     "name": "2-6H",
     "category": "Hard",
     "cost": 16,
-    "count": 1190,
+    "count": 16832,
     "drops": {
-      "Liquefied Terror": 20,
-      "Milled Magnesia": 18,
-      "Esoteric Bones": 30,
-      "Rough Silver Ingot": 35,
-      "Spell of Banishing": 2372,
-      "Spell of Fortune": 38,
-      "Prophetic Bird": 551,
-      "Cicada Wings": 26,
-      "Perpetual Cog": 18,
-      "Alopecurus Pratensis": 22,
-      "Pyroxene Ore": 29
+      "Prophetic Bird": 7533,
+      "Spell of Banishing": 33253,
+      "Liquefied Terror": 382,
+      "Milled Magnesia": 416,
+      "Esoteric Bones": 424,
+      "Rough Silver Ingot": 387,
+      "Spell of Fortune": 410,
+      "Cicada Wings": 551,
+      "Perpetual Cog": 395,
+      "Alopecurus Pratensis": 572,
+      "Pyroxene Ore": 401,
+      "Sharp Needle": 382
     },
     "id": 9004
   },
@@ -82,19 +86,20 @@
     "name": "2-8H",
     "category": "Hard",
     "cost": 16,
-    "count": 312,
+    "count": 381,
     "drops": {
-      "Liquefied Terror": 6,
-      "Milled Magnesia": 7,
-      "Shattered Bones": 502,
-      "Esoteric Bones": 9,
-      "Bifurcated Skeleton": 97,
-      "Rough Silver Ingot": 8,
-      "Spell of Fortune": 12,
-      "Cicada Wings": 11,
-      "Perpetual Cog": 2,
-      "Alopecurus Pratensis": 2,
-      "Pyroxene Ore": 2
+      "Bifurcated Skeleton": 116,
+      "Shattered Bones": 615,
+      "Liquefied Terror": 7,
+      "Milled Magnesia": 9,
+      "Esoteric Bones": 10,
+      "Rough Silver Ingot": 6,
+      "Spell of Fortune": 8,
+      "Cicada Wings": 9,
+      "Perpetual Cog": 11,
+      "Alopecurus Pratensis": 12,
+      "Pyroxene Ore": 10,
+      "Sharp Needle": 9
     },
     "id": 9005
   },
@@ -115,19 +120,41 @@
     "name": "2-12H",
     "category": "Hard",
     "cost": 18,
-    "count": 167,
+    "count": 238,
     "drops": {
-      "Trembling Tooth": 160,
+      "Biting Box": 73,
+      "Trembling Tooth": 235,
       "Liquefied Terror": 2,
-      "Biting Box": 48,
-      "Milled Magnesia": 2,
-      "Esoteric Bones": 3,
-      "Rough Silver Ingot": 4,
-      "Spell of Fortune": 4,
-      "Cicada Wings": 3,
-      "Perpetual Cog": 3,
-      "Alopecurus Pratensis": 2,
-      "Pyroxene Ore": 2
+      "Milled Magnesia": 6,
+      "Esoteric Bones": 6,
+      "Rough Silver Ingot": 7,
+      "Spell of Fortune": 5,
+      "Cicada Wings": 6,
+      "Perpetual Cog": 8,
+      "Alopecurus Pratensis": 7,
+      "Pyroxene Ore": 9,
+      "Sharp Needle": 10
+    },
+    "id": 9007
+  },
+  "2-14H": {
+    "name": "2-14H",
+    "category": "Hard",
+    "cost": 18,
+    "count": 5865,
+    "drops": {
+      "Heartfelt Easter Egg": 1958,
+      "Magnesia Crystal": 3885,
+      "Liquefied Terror": 259,
+      "Milled Magnesia": 259,
+      "Esoteric Bones": 277,
+      "Rough Silver Ingot": 264,
+      "Spell of Fortune": 243,
+      "Cicada Wings": 303,
+      "Perpetual Cog": 247,
+      "Alopecurus Pratensis": 358,
+      "Pyroxene Ore": 281,
+      "Sharp Needle": 273
     },
     "id": 9007
   },
@@ -1651,17 +1678,6 @@
     "count": 1,
     "drops": {
       "Tome of Beastly Thirst": 2
-    }
-  },
-  "Unreleased": {
-    "id": 100,
-    "name": "Unreleased",
-    "cost": 0,
-    "drops": {
-      "Roaming Terror Hut": 1,
-      "Rootbox Rabbit": 1,
-      "Heartfelt Easter Egg": 1,
-      "Sharp Needle": 1
     }
   }
 }
