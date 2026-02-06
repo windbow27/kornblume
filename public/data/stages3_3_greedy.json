@@ -16,12 +16,14 @@
     "name": "1-14H",
     "category": "Hard",
     "cost": 12,
-    "count": 1122,
+    "count": 1064,
     "drops": {
-      "Magnesia Crystal": 15,
-      "Shattered Bones": 13,
-      "Silver Ore": 12,
-      "Spell of Banishing": 28
+      "Sharp Needle": 1064,
+      "Magnesia Crystal": 78,
+      "Shattered Bones": 140,
+      "Silver Ore": 159,
+      "Spell of Banishing": 215,
+      "Trembling Tooth": 77
     },
     "id": 9001
   },
@@ -1651,17 +1653,6 @@
     "count": 1,
     "drops": {
       "Tome of Beastly Thirst": 2
-    }
-  },
-  "Unreleased": {
-    "id": 100,
-    "name": "Unreleased",
-    "cost": 0,
-    "drops": {
-      "Roaming Terror Hut": 1,
-      "Rootbox Rabbit": 1,
-      "Heartfelt Easter Egg": 1,
-      "Sharp Needle": 1
     }
   }
 }
