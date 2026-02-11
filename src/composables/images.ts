@@ -13,7 +13,7 @@ watchEffect(() => {
 const getId = (material: string) => {
   const item = items.find((item) => item.Name === material);
   if (!item) {
-    console.warn("Material not found when locating image", material);
+    console.warn('Material not found when locating image', material);
   }
   return item ? item.Id : 1;
 };
@@ -39,7 +39,7 @@ const getRarity = (material: string) => {
 // }
 
 const getStageBackgroundId = (stage: IStage) => {
-  const {id: stageId, name: stageName} = stage;
+  const { id: stageId, name: stageName } = stage;
 
   if (stageId) {
     const stageBackgroundId = getStageBackgroundIdByStageId(stageId);
@@ -92,6 +92,7 @@ const getStageBackgroundIdByChapterCode = (chapterCode: string) => {
     if (chapterNum === 9) return 15;
     if (chapterNum === 10) return 16;
     if (chapterNum === 11) return 17;
+    if (chapterNum === 12) return 18;
   }
   if (chapterCode === 'LP') return 5; // The/Le Poussiere: Dust
   if (chapterCode === 'MA') return 6; // Mintage Aesthetics: Sharpodonty
@@ -101,7 +102,7 @@ const getStageBackgroundIdByChapterCode = (chapterCode: string) => {
   if (chapterCode === 'BW') return 10; // Brutes Wilds: Beast insight
   if (chapterCode === 'HP') return undefined; // Harvest Prime
   if (chapterCode === 'PA') return undefined; // Pneuma Analysis
-}
+};
 
 export const getItemImagePathByMatl = (material: string) => {
   const id = getId(material);
