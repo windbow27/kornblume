@@ -1,6 +1,14 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '11/02/2026',
+    description: `
+        • Add Reed as unreleased arcanist. <br>
+        • Add Liang Yue euphoria. 
+        
+      `
+  },
+  {
     date: '05/02/2026',
     description: `
         • Add Paper Heron as unreleased arcanist. <br>
