@@ -48,6 +48,7 @@ export const bannerList = [
   'The Midnight Flutist',
   "The Land's Iron Stitch",
   'The Brilliance Within',
+  'Cognitive Dynamics',
 
   // standard
   'Amongst the Lake',
@@ -135,7 +136,8 @@ export const bannerRateUp = [
   'Charon',
   'Rubuska',
   'Corvus',
-  'Brume'
+  'Brume',
+  'Ulrich'
 ];
 
 export const specialArcanists: string[] = [
