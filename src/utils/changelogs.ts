@@ -1,6 +1,13 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '02/03/2026',
+    description: `
+        • Add Cheng Heguang as unreleased arcanist. <br>
+        • Add Marsha and Igor banners. <br>
+      `
+  },
+  {
     date: '11/02/2026',
     description: `
         • Add Reed as unreleased arcanist. <br>

@@ -49,6 +49,8 @@ export const bannerList = [
   "The Land's Iron Stitch",
   'The Brilliance Within',
   'Cognitive Dynamics',
+  'The Oath Unyielding',
+  'Witness of Iron and Blood',
 
   // standard
   'Amongst the Lake',
@@ -137,7 +139,9 @@ export const bannerRateUp = [
   'Rubuska',
   'Corvus',
   'Brume',
-  'Ulrich'
+  'Ulrich',
+  'Marsha',
+  'Igor'
 ];
 
 export const specialArcanists: string[] = [
