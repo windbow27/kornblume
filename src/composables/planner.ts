@@ -251,7 +251,7 @@ export function getDrops() {
   //     return dataStore.stages1_9_greedy || {}
   // }
 
-  return dataStore.stages3_0_greedy || {};
+  return dataStore.stages3_3_greedy || {};
 }
 
 export async function getPlan(

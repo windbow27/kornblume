@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '05/03/2026',
+    description: `
+        • Update Planner, Arcanists, Items and Stages to version 3.3 update. <br>
+      `
+  },
+  {
     date: '02/03/2026',
     description: `
         • Add Cheng Heguang as unreleased arcanist. <br>

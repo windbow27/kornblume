@@ -21,7 +21,7 @@ const props = defineProps({
 
 const formulaStore = useDataStore().formulas;
 const arcanistStore = useDataStore().arcanists;
-const stageStore = useDataStore().stages3_0_greedy;
+const stageStore = useDataStore().stages3_3_greedy;
 
 const formulaItemList = computed(() => {
   const formula = formulaStore.find((formula) => formula.Name === props.selectedMaterial.Name);

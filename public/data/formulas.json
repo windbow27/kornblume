@@ -315,10 +315,24 @@
     "Quantity": [3, 1, 300]
   },
   {
-    "Id": 46,
+    "Id": 47,
     "Name": "Pyroxene Ore",
     "Rarity": 3,
     "Material": [],
     "Quantity": []
+  },
+  {
+    "Id": 48,
+    "Name": "Rootbox Rabbit",
+    "Rarity": 5,
+    "Material": ["Heartfelt Easter Egg", "Golden Beetle", "Silver Ore", "Sharpodonty"],
+    "Quantity": [3, 1, 1, 500]
+  },
+  {
+    "Id": 49,
+    "Name": "Roaming Terror Hut",
+    "Rarity": 6,
+    "Material": ["Rootbox Rabbit", "Red Lacquer Tablet", "Clawed Pendulum", "Sharpodonty"],
+    "Quantity": [1, 2, 2, 800]
   }
 ]
