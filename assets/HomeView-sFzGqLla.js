@@ -1,4 +1,4 @@
-import{o as T}from"./index-9F93cJ3q.js";import{d as _,o as n,c as r,a as e,t,F as h,r as w,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as k,m as N}from"./index-BDIXEt5N.js";const v=[{date:"05/03/2026",description:`
+import{o as T}from"./index-BRUD8XgK.js";import{d as _,o as n,c as r,a as e,t,F as h,r as w,u as C,b as $,e as F,f,g as u,w as A,h as M,i as y,j as K,k as L,l as k,m as N}from"./index-CVbuOlGN.js";const v=[{date:"05/03/2026",description:`
         • Update Planner, Arcanists, Items and Stages to version 3.3 update. <br>
       `},{date:"02/03/2026",description:`
         • Add Cheng Heguang as unreleased arcanist. <br>
