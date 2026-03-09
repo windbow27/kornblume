@@ -323,13 +323,27 @@
   },
   {
     "Id": 48,
-    "Name": "Rootbox Rabbit",
-    "Rarity": 5,
-    "Material": ["Heartfelt Easter Egg", "Golden Beetle", "Silver Ore", "Sharpodonty"],
-    "Quantity": [3, 1, 1, 500]
+    "Name": "Sharp Needle",
+    "Rarity": 3,
+    "Material": [],
+    "Quantity": []
   },
   {
     "Id": 49,
+    "Name": "Heartfelt Easter Egg",
+    "Rarity": 4,
+    "Material": ["Sharp Needle", "Alopecurus Pratensis", "Sharpodonty"],
+    "Quantity": [3, 1, 300]
+  },
+  {
+    "Id": 50,
+    "Name": "Rootbox Rabbit",
+    "Rarity": 5,
+    "Material": ["Heartfelt Easter Egg", "Golden Beetle", "Holy Silver", "Sharpodonty"],
+    "Quantity": [3, 1, 1, 500]
+  },
+  {
+    "Id": 51,
     "Name": "Roaming Terror Hut",
     "Rarity": 6,
     "Material": ["Rootbox Rabbit", "Red Lacquer Tablet", "Clawed Pendulum", "Sharpodonty"],

@@ -641,7 +641,7 @@ watch(
                         <div
                             :class="{
                                 'opacity-50 pointer-events-none':
-                                    selectedGoalLevel < 30 || selectedGoalInsight < 3
+                                    selectedGoalInsight < 3 || (selectedArcanist.Rarity !== 5 && selectedGoalLevel < 30)
                             }"
                             class="tooltip"
                             :data-tip="$t('euphoria')">
@@ -708,13 +708,13 @@ watch(
                                         v-on:update:selected="handleSelected"
                                         :class="{
                                             'opacity-50 pointer-events-none':
-                                                selectedGoalLevel < 30 || selectedGoalInsight < 3
+                                                selectedGoalInsight < 3 || (selectedArcanist.Rarity !== 5 && selectedGoalLevel < 30)
                                         }" />
                                     <i
                                         class="text-white fa-solid fa-angles-right text-center w-10"
                                         :class="{
                                             'opacity-50 pointer-events-none':
-                                                selectedGoalLevel < 30 || selectedGoalInsight < 3
+                                                selectedGoalInsight < 3 || (selectedArcanist.Rarity !== 5 && selectedGoalLevel < 30)
                                         }"></i>
                                     <SelectList
                                         :key="'goal-' + updateKey"
@@ -725,7 +725,7 @@ watch(
                                         v-on:update:selected="handleSelected"
                                         :class="{
                                             'opacity-50 pointer-events-none':
-                                                selectedGoalLevel < 30 || selectedGoalInsight < 3
+                                                selectedGoalInsight < 3 || (selectedArcanist.Rarity !== 5 && selectedGoalLevel < 30)
                                         }" />
                                 </div>
                             </div>
