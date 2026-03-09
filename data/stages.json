@@ -1383,14 +1383,14 @@
     "cost": 0,
     "drops": {
       "Serpent Scepter": 1,
-      "Glowing Mothwing": 1,
-      "Watch Core": 1,
       "Golden Compass": 1,
-      "Winged Key": 1,
-      "Goose Neck": 1,
+      "Watch Core": 1,
+      "Glowing Mothwing": 1,
       "Golden Beetle": 1,
-      "Cicada Wings": 1,
-      "Perpetual Cog": 1
+      "Goose Neck": 1,
+      "Winged Key": 1,
+      "Perpetual Cog": 1,
+      "Cicada Wings": 1
     }
   }
 }
