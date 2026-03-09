@@ -5,10 +5,10 @@
     "cost": 12,
     "count": 1112,
     "drops": {
-      "Magnesia Crystal": 26,
-      "Shattered Bones": 20,
+      "Spell of Banishing": 33,
       "Silver Ore": 34,
-      "Spell of Banishing": 33
+      "Shattered Bones": 20,
+      "Magnesia Crystal": 26
     },
     "id": 9000
   },
@@ -18,10 +18,10 @@
     "cost": 12,
     "count": 1122,
     "drops": {
-      "Magnesia Crystal": 15,
-      "Shattered Bones": 13,
+      "Spell of Banishing": 28,
       "Silver Ore": 12,
-      "Spell of Banishing": 28
+      "Shattered Bones": 13,
+      "Magnesia Crystal": 15
     },
     "id": 9001
   },
@@ -31,10 +31,10 @@
     "cost": 12,
     "count": 1142,
     "drops": {
-      "Magnesia Crystal": 19,
-      "Shattered Bones": 20,
+      "Spell of Banishing": 29,
       "Silver Ore": 27,
-      "Spell of Banishing": 29
+      "Shattered Bones": 20,
+      "Magnesia Crystal": 19
     },
     "id": 9002
   },
@@ -44,17 +44,17 @@
     "cost": 16,
     "count": 167,
     "drops": {
-      "Liquefied Terror": 2,
-      "Milled Magnesia": 2,
-      "Esoteric Bones": 4,
-      "Silver Ore": 270,
-      "Rough Silver Ingot": 3,
       "Holy Silver": 58,
-      "Spell of Fortune": 4,
-      "Cicada Wings": 5,
-      "Perpetual Cog": 1,
+      "Pyroxene Ore": 14,
       "Alopecurus Pratensis": 6,
-      "Pyroxene Ore": 14
+      "Perpetual Cog": 1,
+      "Cicada Wings": 5,
+      "Spell of Fortune": 4,
+      "Rough Silver Ingot": 3,
+      "Esoteric Bones": 4,
+      "Milled Magnesia": 2,
+      "Liquefied Terror": 2,
+      "Silver Ore": 270
     },
     "id": 41
   },
@@ -64,17 +64,17 @@
     "cost": 16,
     "count": 1190,
     "drops": {
-      "Liquefied Terror": 20,
-      "Milled Magnesia": 18,
-      "Esoteric Bones": 30,
-      "Rough Silver Ingot": 35,
-      "Spell of Banishing": 2372,
-      "Spell of Fortune": 38,
       "Prophetic Bird": 551,
-      "Cicada Wings": 26,
-      "Perpetual Cog": 18,
+      "Pyroxene Ore": 29,
       "Alopecurus Pratensis": 22,
-      "Pyroxene Ore": 29
+      "Perpetual Cog": 18,
+      "Cicada Wings": 26,
+      "Spell of Fortune": 38,
+      "Rough Silver Ingot": 35,
+      "Esoteric Bones": 30,
+      "Milled Magnesia": 18,
+      "Liquefied Terror": 20,
+      "Spell of Banishing": 2372
     },
     "id": 9004
   },
@@ -84,17 +84,17 @@
     "cost": 16,
     "count": 312,
     "drops": {
-      "Liquefied Terror": 6,
-      "Milled Magnesia": 7,
-      "Shattered Bones": 502,
-      "Esoteric Bones": 9,
       "Bifurcated Skeleton": 97,
-      "Rough Silver Ingot": 8,
-      "Spell of Fortune": 12,
-      "Cicada Wings": 11,
-      "Perpetual Cog": 2,
+      "Pyroxene Ore": 2,
       "Alopecurus Pratensis": 2,
-      "Pyroxene Ore": 2
+      "Perpetual Cog": 2,
+      "Cicada Wings": 11,
+      "Spell of Fortune": 12,
+      "Rough Silver Ingot": 8,
+      "Esoteric Bones": 9,
+      "Milled Magnesia": 7,
+      "Liquefied Terror": 6,
+      "Shattered Bones": 502
     },
     "id": 9005
   },
@@ -104,10 +104,10 @@
     "cost": 16,
     "count": 217,
     "drops": {
-      "Magnesia Crystal": 217,
       "Salted Mandrake": 55,
+      "Spell of Fortune": 32,
       "Spell of Banishing": 146,
-      "Spell of Fortune": 32
+      "Magnesia Crystal": 217
     },
     "id": 9006
   },
@@ -117,17 +117,17 @@
     "cost": 18,
     "count": 167,
     "drops": {
-      "Trembling Tooth": 160,
-      "Liquefied Terror": 2,
       "Biting Box": 48,
-      "Milled Magnesia": 2,
-      "Esoteric Bones": 3,
-      "Rough Silver Ingot": 4,
-      "Spell of Fortune": 4,
-      "Cicada Wings": 3,
-      "Perpetual Cog": 3,
+      "Pyroxene Ore": 2,
       "Alopecurus Pratensis": 2,
-      "Pyroxene Ore": 2
+      "Perpetual Cog": 3,
+      "Cicada Wings": 3,
+      "Spell of Fortune": 4,
+      "Rough Silver Ingot": 4,
+      "Esoteric Bones": 3,
+      "Milled Magnesia": 2,
+      "Liquefied Terror": 2,
+      "Trembling Tooth": 160
     },
     "id": 9007
   },
@@ -137,15 +137,15 @@
     "cost": 14,
     "count": 904,
     "drops": {
-      "Liquefied Terror": 17,
-      "Milled Magnesia": 22,
-      "Esoteric Bones": 24,
-      "Silver Ore": 665,
-      "Rough Silver Ingot": 35,
-      "Spell of Fortune": 35,
-      "Cicada Wings": 27,
       "Winged Key": 231,
-      "Perpetual Cog": 16
+      "Perpetual Cog": 16,
+      "Cicada Wings": 27,
+      "Spell of Fortune": 35,
+      "Rough Silver Ingot": 35,
+      "Esoteric Bones": 24,
+      "Milled Magnesia": 22,
+      "Liquefied Terror": 17,
+      "Silver Ore": 665
     },
     "id": 9008
   },
@@ -155,10 +155,10 @@
     "cost": 18,
     "count": 527,
     "drops": {
-      "Silver Ore": 374,
-      "Spell of Banishing": 716,
+      "Clawed Pendulum": 123,
       "Spell of Fortune": 133,
-      "Clawed Pendulum": 123
+      "Spell of Banishing": 716,
+      "Silver Ore": 374
     },
     "id": 9009
   },
@@ -168,13 +168,13 @@
     "cost": 18,
     "count": 160,
     "drops": {
-      "Trembling Tooth": 12,
-      "Magnesia Crystal": 5,
-      "Shattered Bones": 10,
-      "Silver Ore": 241,
+      "Solidus": 74,
       "Rough Silver Ingot": 63,
       "Spell of Banishing": 23,
-      "Solidus": 74
+      "Silver Ore": 241,
+      "Shattered Bones": 10,
+      "Magnesia Crystal": 5,
+      "Trembling Tooth": 12
     },
     "id": 9010
   },
@@ -184,10 +184,10 @@
     "cost": 18,
     "count": 1768,
     "drops": {
-      "Trembling Tooth": 1010,
+      "Bifurcated Skeleton": 587,
       "Liquefied Terror": 384,
       "Shattered Bones": 1162,
-      "Bifurcated Skeleton": 587
+      "Trembling Tooth": 1010
     },
     "id": 9011
   },
@@ -197,10 +197,10 @@
     "cost": 18,
     "count": 1263,
     "drops": {
-      "Shattered Bones": 1497,
+      "Holy Silver": 441,
       "Esoteric Bones": 394,
       "Silver Ore": 819,
-      "Holy Silver": 441
+      "Shattered Bones": 1497
     },
     "id": 9012
   },
@@ -210,15 +210,15 @@
     "cost": 14,
     "count": 684,
     "drops": {
-      "Liquefied Terror": 13,
-      "Milled Magnesia": 18,
-      "Esoteric Bones": 19,
-      "Rough Silver Ingot": 21,
-      "Spell of Banishing": 508,
-      "Spell of Fortune": 31,
-      "Cicada Wings": 12,
+      "Goose Neck": 171,
       "Perpetual Cog": 11,
-      "Goose Neck": 171
+      "Cicada Wings": 12,
+      "Spell of Fortune": 31,
+      "Rough Silver Ingot": 21,
+      "Esoteric Bones": 19,
+      "Milled Magnesia": 18,
+      "Liquefied Terror": 13,
+      "Spell of Banishing": 508
     },
     "id": 9013
   },
@@ -228,17 +228,17 @@
     "cost": 18,
     "count": 148,
     "drops": {
-      "Liquefied Terror": 4,
-      "Milled Magnesia": 5,
-      "Esoteric Bones": 5,
-      "Rough Silver Ingot": 80,
-      "Spell of Banishing": 86,
-      "Spell of Fortune": 6,
       "Prophetic Bird": 62,
-      "Cicada Wings": 2,
-      "Perpetual Cog": 1,
+      "Pyroxene Ore": 2,
       "Alopecurus Pratensis": 2,
-      "Pyroxene Ore": 2
+      "Perpetual Cog": 1,
+      "Cicada Wings": 2,
+      "Spell of Fortune": 6,
+      "Rough Silver Ingot": 80,
+      "Esoteric Bones": 5,
+      "Milled Magnesia": 5,
+      "Liquefied Terror": 4,
+      "Spell of Banishing": 86
     },
     "id": 9014
   },
@@ -248,10 +248,10 @@
     "cost": 18,
     "count": 2868,
     "drops": {
-      "Magnesia Crystal": 1110,
+      "Clawed Pendulum": 881,
       "Milled Magnesia": 349,
       "Spell of Banishing": 1938,
-      "Clawed Pendulum": 881
+      "Magnesia Crystal": 1110
     },
     "id": 9015
   },
@@ -261,10 +261,10 @@
     "cost": 18,
     "count": 6120,
     "drops": {
-      "Magnesia Crystal": 4156,
-      "Milled Magnesia": 842,
+      "Murmur of Insanity": 139,
       "Salted Mandrake": 2088,
-      "Murmur of Insanity": 139
+      "Milled Magnesia": 842,
+      "Magnesia Crystal": 4156
     },
     "id": 9016
   },
@@ -274,19 +274,19 @@
     "cost": 14,
     "count": 2424,
     "drops": {
-      "Trembling Tooth": 27,
-      "Liquefied Terror": 46,
-      "Milled Magnesia": 52,
-      "Shattered Bones": 1897,
-      "Esoteric Bones": 70,
-      "Rough Silver Ingot": 83,
-      "Spell of Banishing": 3,
-      "Spell of Fortune": 93,
-      "Cicada Wings": 46,
-      "Perpetual Cog": 48,
-      "Alopecurus Pratensis": 52,
+      "Golden Beetle": 487,
       "Pyroxene Ore": 47,
-      "Golden Beetle": 487
+      "Alopecurus Pratensis": 52,
+      "Perpetual Cog": 48,
+      "Cicada Wings": 46,
+      "Spell of Fortune": 93,
+      "Rough Silver Ingot": 83,
+      "Esoteric Bones": 70,
+      "Milled Magnesia": 52,
+      "Liquefied Terror": 46,
+      "Spell of Banishing": 3,
+      "Shattered Bones": 1897,
+      "Trembling Tooth": 27
     },
     "id": 9017
   },
@@ -296,13 +296,13 @@
     "cost": 16,
     "count": 900,
     "drops": {
-      "Trembling Tooth": 51,
-      "Magnesia Crystal": 350,
+      "Red Lacquer Tablet": 243,
       "Milled Magnesia": 131,
-      "Shattered Bones": 79,
-      "Silver Ore": 725,
       "Spell of Banishing": 117,
-      "Red Lacquer Tablet": 243
+      "Silver Ore": 725,
+      "Shattered Bones": 79,
+      "Magnesia Crystal": 350,
+      "Trembling Tooth": 51
     },
     "id": 9018
   },
@@ -312,19 +312,19 @@
     "cost": 16,
     "count": 1811,
     "drops": {
-      "Trembling Tooth": 11,
-      "Liquefied Terror": 37,
-      "Milled Magnesia": 39,
-      "Shattered Bones": 1258,
-      "Esoteric Bones": 53,
-      "Rough Silver Ingot": 67,
-      "Spell of Banishing": 20,
-      "Spell of Fortune": 67,
-      "Cicada Wings": 30,
-      "Perpetual Cog": 31,
-      "Alopecurus Pratensis": 29,
       "Golden Herb Incense": 507,
-      "Pyroxene Ore": 38
+      "Pyroxene Ore": 38,
+      "Alopecurus Pratensis": 29,
+      "Perpetual Cog": 31,
+      "Cicada Wings": 30,
+      "Spell of Fortune": 67,
+      "Rough Silver Ingot": 67,
+      "Esoteric Bones": 53,
+      "Milled Magnesia": 39,
+      "Liquefied Terror": 37,
+      "Spell of Banishing": 20,
+      "Shattered Bones": 1258,
+      "Trembling Tooth": 11
     },
     "id": 9019
   },
@@ -334,9 +334,9 @@
     "cost": 18,
     "count": 113,
     "drops": {
+      "Spell of Fortune": 100,
       "Liquefied Terror": 73,
-      "Spell of Banishing": 80,
-      "Spell of Fortune": 100
+      "Spell of Banishing": 80
     },
     "id": 9020
   },
@@ -346,10 +346,10 @@
     "cost": 18,
     "count": 105,
     "drops": {
-      "Magnesia Crystal": 35,
+      "Rough Silver Ingot": 72,
       "Milled Magnesia": 74,
       "Silver Ore": 75,
-      "Rough Silver Ingot": 72
+      "Magnesia Crystal": 35
     },
     "id": 9021
   },
@@ -359,9 +359,9 @@
     "cost": 16,
     "count": 338,
     "drops": {
-      "Spell of Banishing": 484,
+      "Goose Neck": 90,
       "Spell of Fortune": 46,
-      "Goose Neck": 90
+      "Spell of Banishing": 484
     },
     "id": 9022
   },
@@ -371,17 +371,17 @@
     "cost": 18,
     "count": 125,
     "drops": {
-      "Liquefied Terror": 2,
       "Biting Box": 36,
-      "Milled Magnesia": 6,
-      "Esoteric Bones": 1,
-      "Silver Ore": 90,
-      "Rough Silver Ingot": 59,
-      "Spell of Fortune": 2,
-      "Cicada Wings": 2,
-      "Perpetual Cog": 3,
+      "Pyroxene Ore": 2,
       "Alopecurus Pratensis": 7,
-      "Pyroxene Ore": 2
+      "Perpetual Cog": 3,
+      "Cicada Wings": 2,
+      "Spell of Fortune": 2,
+      "Rough Silver Ingot": 59,
+      "Esoteric Bones": 1,
+      "Milled Magnesia": 6,
+      "Liquefied Terror": 2,
+      "Silver Ore": 90
     },
     "id": 9023
   },
@@ -391,10 +391,10 @@
     "cost": 18,
     "count": 515,
     "drops": {
-      "Shattered Bones": 586,
+      "Prophetic Bird": 224,
       "Esoteric Bones": 174,
       "Spell of Banishing": 277,
-      "Prophetic Bird": 224
+      "Shattered Bones": 586
     },
     "id": 9024
   },
@@ -404,10 +404,10 @@
     "cost": 18,
     "count": 479,
     "drops": {
-      "Magnesia Crystal": 382,
+      "Holy Silver": 167,
       "Milled Magnesia": 98,
       "Silver Ore": 311,
-      "Holy Silver": 167
+      "Magnesia Crystal": 382
     },
     "id": 9025
   },
@@ -417,10 +417,10 @@
     "cost": 16,
     "count": 880,
     "drops": {
-      "Magnesia Crystal": 327,
+      "Winged Key": 259,
       "Milled Magnesia": 122,
       "Silver Ore": 606,
-      "Winged Key": 259
+      "Magnesia Crystal": 327
     },
     "id": 9026
   },
@@ -430,10 +430,10 @@
     "cost": 18,
     "count": 8574,
     "drops": {
-      "Shattered Bones": 5633,
       "Bifurcated Skeleton": 2919,
+      "Spell of Fortune": 3733,
       "Spell of Banishing": 17884,
-      "Spell of Fortune": 3733
+      "Shattered Bones": 5633
     },
     "id": 9027
   },
@@ -443,10 +443,10 @@
     "cost": 18,
     "count": 794,
     "drops": {
-      "Trembling Tooth": 482,
+      "Salted Mandrake": 238,
       "Liquefied Terror": 167,
       "Magnesia Crystal": 551,
-      "Salted Mandrake": 238
+      "Trembling Tooth": 482
     },
     "id": 9028
   },
@@ -456,10 +456,10 @@
     "cost": 18,
     "count": 2368,
     "drops": {
-      "Shattered Bones": 2817,
+      "Winged Key": 694,
       "Esoteric Bones": 725,
       "Silver Ore": 1678,
-      "Winged Key": 694
+      "Shattered Bones": 2817
     },
     "id": 9029
   },
@@ -469,15 +469,15 @@
     "cost": 18,
     "count": 1501,
     "drops": {
-      "Liquefied Terror": 5,
-      "Milled Magnesia": 7,
-      "Shattered Bones": 880,
-      "Esoteric Bones": 209,
-      "Silver Ore": 2,
-      "Rough Silver Ingot": 30,
-      "Spell of Banishing": 36,
+      "Golden Beetle": 431,
       "Spell of Fortune": 3,
-      "Golden Beetle": 431
+      "Rough Silver Ingot": 30,
+      "Esoteric Bones": 209,
+      "Milled Magnesia": 7,
+      "Liquefied Terror": 5,
+      "Spell of Banishing": 36,
+      "Silver Ore": 2,
+      "Shattered Bones": 880
     },
     "id": 9030
   },
@@ -487,17 +487,17 @@
     "cost": 18,
     "count": 2222,
     "drops": {
-      "Liquefied Terror": 44,
-      "Milled Magnesia": 44,
-      "Esoteric Bones": 52,
-      "Rough Silver Ingot": 1124,
-      "Spell of Banishing": 1556,
-      "Spell of Fortune": 94,
-      "Cicada Wings": 36,
-      "Perpetual Cog": 29,
       "Goose Neck": 657,
+      "Pyroxene Ore": 42,
       "Alopecurus Pratensis": 47,
-      "Pyroxene Ore": 42
+      "Perpetual Cog": 29,
+      "Cicada Wings": 36,
+      "Spell of Fortune": 94,
+      "Rough Silver Ingot": 1124,
+      "Esoteric Bones": 52,
+      "Milled Magnesia": 44,
+      "Liquefied Terror": 44,
+      "Spell of Banishing": 1556
     },
     "id": 9031
   },
@@ -507,10 +507,10 @@
     "cost": 18,
     "count": 833,
     "drops": {
-      "Trembling Tooth": 500,
+      "Holy Silver": 287,
       "Liquefied Terror": 169,
       "Silver Ore": 545,
-      "Holy Silver": 287
+      "Trembling Tooth": 500
     },
     "id": 9032
   },
@@ -520,9 +520,9 @@
     "cost": 18,
     "count": 1310,
     "drops": {
-      "Shattered Bones": 1658,
+      "Bifurcated Skeleton": 495,
       "Esoteric Bones": 386,
-      "Bifurcated Skeleton": 495
+      "Shattered Bones": 1658
     },
     "id": 9033
   },
@@ -532,10 +532,10 @@
     "cost": 18,
     "count": 367,
     "drops": {
-      "Magnesia Crystal": 278,
+      "Prophetic Bird": 167,
       "Milled Magnesia": 102,
       "Spell of Banishing": 205,
-      "Prophetic Bird": 167
+      "Magnesia Crystal": 278
     },
     "id": 9034
   },
@@ -545,17 +545,17 @@
     "cost": 18,
     "count": 254,
     "drops": {
-      "Liquefied Terror": 6,
-      "Magnesia Crystal": 169,
-      "Milled Magnesia": 4,
       "Salted Mandrake": 86,
-      "Esoteric Bones": 6,
-      "Rough Silver Ingot": 135,
-      "Spell of Fortune": 9,
-      "Cicada Wings": 5,
-      "Perpetual Cog": 5,
+      "Pyroxene Ore": 8,
       "Alopecurus Pratensis": 2,
-      "Pyroxene Ore": 8
+      "Perpetual Cog": 5,
+      "Cicada Wings": 5,
+      "Spell of Fortune": 9,
+      "Rough Silver Ingot": 135,
+      "Esoteric Bones": 6,
+      "Milled Magnesia": 4,
+      "Liquefied Terror": 6,
+      "Magnesia Crystal": 169
     },
     "id": 9035
   },
@@ -565,10 +565,10 @@
     "cost": 18,
     "count": 2270,
     "drops": {
-      "Silver Ore": 1547,
-      "Spell of Banishing": 1626,
+      "Clawed Pendulum": 714,
       "Spell of Fortune": 313,
-      "Clawed Pendulum": 714
+      "Spell of Banishing": 1626,
+      "Silver Ore": 1547
     },
     "id": 9036
   },
@@ -578,10 +578,10 @@
     "cost": 18,
     "count": 5464,
     "drops": {
-      "Liquefied Terror": 531,
+      "Silver Bullet": 112,
       "Biting Box": 1718,
-      "Silver Ore": 3886,
-      "Silver Bullet": 112
+      "Liquefied Terror": 531,
+      "Silver Ore": 3886
     },
     "id": 9037
   },
@@ -591,16 +591,16 @@
     "cost": 18,
     "count": 218,
     "drops": {
-      "Liquefied Terror": 5,
-      "Milled Magnesia": 4,
-      "Esoteric Bones": 3,
-      "Rough Silver Ingot": 7,
-      "Spell of Banishing": 113,
-      "Spell of Fortune": 11,
       "Prophetic Bird": 105,
-      "Cicada Wings": 58,
+      "Pyroxene Ore": 6,
       "Alopecurus Pratensis": 2,
-      "Pyroxene Ore": 6
+      "Cicada Wings": 58,
+      "Spell of Fortune": 11,
+      "Rough Silver Ingot": 7,
+      "Esoteric Bones": 3,
+      "Milled Magnesia": 4,
+      "Liquefied Terror": 5,
+      "Spell of Banishing": 113
     },
     "id": 9038
   },
@@ -610,19 +610,19 @@
     "cost": 18,
     "count": 1376,
     "drops": {
-      "Liquefied Terror": 35,
-      "Magnesia Crystal": 53,
-      "Milled Magnesia": 31,
-      "Shattered Bones": 725,
-      "Esoteric Bones": 258,
-      "Silver Ore": 17,
-      "Rough Silver Ingot": 41,
-      "Spell of Banishing": 937,
-      "Spell of Fortune": 59,
-      "Cicada Wings": 35,
-      "Perpetual Cog": 17,
       "Goose Neck": 407,
-      "Alopecurus Pratensis": 34
+      "Alopecurus Pratensis": 34,
+      "Perpetual Cog": 17,
+      "Cicada Wings": 35,
+      "Spell of Fortune": 59,
+      "Rough Silver Ingot": 41,
+      "Esoteric Bones": 258,
+      "Milled Magnesia": 31,
+      "Liquefied Terror": 35,
+      "Spell of Banishing": 937,
+      "Silver Ore": 17,
+      "Shattered Bones": 725,
+      "Magnesia Crystal": 53
     },
     "id": 9039
   },
@@ -632,9 +632,9 @@
     "cost": 18,
     "count": 857,
     "drops": {
-      "Trembling Tooth": 622,
       "Biting Box": 234,
-      "Spell of Fortune": 434
+      "Spell of Fortune": 434,
+      "Trembling Tooth": 622
     },
     "id": 9040
   },
@@ -644,10 +644,10 @@
     "cost": 18,
     "count": 729,
     "drops": {
-      "Trembling Tooth": 211,
+      "Winged Key": 206,
       "Liquefied Terror": 93,
       "Magnesia Crystal": 526,
-      "Winged Key": 206
+      "Trembling Tooth": 211
     },
     "id": 9041
   },
@@ -657,11 +657,11 @@
     "cost": 18,
     "count": 844,
     "drops": {
-      "Magnesia Crystal": 604,
+      "Bifurcated Skeleton": 277,
+      "Esoteric Bones": 7,
       "Milled Magnesia": 235,
       "Shattered Bones": 571,
-      "Esoteric Bones": 7,
-      "Bifurcated Skeleton": 277
+      "Magnesia Crystal": 604
     },
     "id": 9042
   },
@@ -672,9 +672,9 @@
     "count": 8612,
     "drops": {
       "Wyrmling Skeleton": 172,
-      "Silver Ore": 12051,
+      "Holy Silver": 3042,
       "Rough Silver Ingot": 1675,
-      "Holy Silver": 3042
+      "Silver Ore": 12051
     },
     "id": 9043
   },
@@ -684,16 +684,16 @@
     "cost": 18,
     "count": 503,
     "drops": {
-      "Liquefied Terror": 16,
-      "Magnesia Crystal": 353,
-      "Milled Magnesia": 15,
       "Salted Mandrake": 147,
-      "Shattered Bones": 268,
-      "Esoteric Bones": 112,
-      "Rough Silver Ingot": 20,
-      "Spell of Fortune": 17,
+      "Perpetual Cog": 7,
       "Cicada Wings": 16,
-      "Perpetual Cog": 7
+      "Spell of Fortune": 17,
+      "Rough Silver Ingot": 20,
+      "Esoteric Bones": 112,
+      "Milled Magnesia": 15,
+      "Liquefied Terror": 16,
+      "Shattered Bones": 268,
+      "Magnesia Crystal": 353
     },
     "id": 9044
   },
@@ -703,10 +703,10 @@
     "cost": 18,
     "count": 3303,
     "drops": {
-      "Silver Ore": 2463,
+      "Golden Beetle": 937,
       "Rough Silver Ingot": 641,
       "Spell of Banishing": 2338,
-      "Golden Beetle": 937
+      "Silver Ore": 2463
     },
     "id": 9045
   },
@@ -716,16 +716,16 @@
     "cost": 20,
     "count": 1272,
     "drops": {
-      "Liquefied Terror": 64,
-      "Magnesia Crystal": 1334,
-      "Milled Magnesia": 236,
       "Salted Mandrake": 415,
-      "Esoteric Bones": 90,
-      "Rough Silver Ingot": 87,
-      "Spell of Fortune": 84,
-      "Cicada Wings": 44,
+      "Alopecurus Pratensis": 64,
       "Perpetual Cog": 59,
-      "Alopecurus Pratensis": 64
+      "Cicada Wings": 44,
+      "Spell of Fortune": 84,
+      "Rough Silver Ingot": 87,
+      "Esoteric Bones": 90,
+      "Milled Magnesia": 236,
+      "Liquefied Terror": 64,
+      "Magnesia Crystal": 1334
     },
     "id": 9046
   },
@@ -735,16 +735,16 @@
     "cost": 20,
     "count": 111,
     "drops": {
-      "Liquefied Terror": 5,
-      "Magnesia Crystal": 73,
-      "Milled Magnesia": 5,
-      "Esoteric Bones": 3,
-      "Rough Silver Ingot": 8,
-      "Spell of Fortune": 4,
-      "Cicada Wings": 1,
-      "Alopecurus Pratensis": 17,
       "Golden Herb Incense": 33,
-      "Pyroxene Ore": 2
+      "Pyroxene Ore": 2,
+      "Alopecurus Pratensis": 17,
+      "Cicada Wings": 1,
+      "Spell of Fortune": 4,
+      "Rough Silver Ingot": 8,
+      "Esoteric Bones": 3,
+      "Milled Magnesia": 5,
+      "Liquefied Terror": 5,
+      "Magnesia Crystal": 73
     },
     "id": 9047
   },
@@ -754,17 +754,17 @@
     "cost": 20,
     "count": 1203,
     "drops": {
-      "Liquefied Terror": 32,
-      "Milled Magnesia": 46,
-      "Shattered Bones": 1431,
-      "Esoteric Bones": 269,
       "Bifurcated Skeleton": 463,
-      "Rough Silver Ingot": 68,
-      "Spell of Fortune": 74,
-      "Cicada Wings": 58,
-      "Perpetual Cog": 39,
+      "Pyroxene Ore": 39,
       "Alopecurus Pratensis": 37,
-      "Pyroxene Ore": 39
+      "Perpetual Cog": 39,
+      "Cicada Wings": 58,
+      "Spell of Fortune": 74,
+      "Rough Silver Ingot": 68,
+      "Esoteric Bones": 269,
+      "Milled Magnesia": 46,
+      "Liquefied Terror": 32,
+      "Shattered Bones": 1431
     },
     "id": 9048
   },
@@ -774,16 +774,16 @@
     "cost": 20,
     "count": 1495,
     "drops": {
-      "Liquefied Terror": 33,
-      "Magnesia Crystal": 989,
-      "Milled Magnesia": 53,
-      "Esoteric Bones": 58,
-      "Rough Silver Ingot": 63,
-      "Spell of Fortune": 53,
-      "Cicada Wings": 385,
       "Winged Key": 496,
+      "Alopecurus Pratensis": 39,
       "Perpetual Cog": 36,
-      "Alopecurus Pratensis": 39
+      "Cicada Wings": 385,
+      "Spell of Fortune": 53,
+      "Rough Silver Ingot": 63,
+      "Esoteric Bones": 58,
+      "Milled Magnesia": 53,
+      "Liquefied Terror": 33,
+      "Magnesia Crystal": 989
     },
     "id": 9049
   },
@@ -793,17 +793,17 @@
     "cost": 20,
     "count": 838,
     "drops": {
-      "Liquefied Terror": 20,
-      "Milled Magnesia": 29,
-      "Esoteric Bones": 48,
-      "Rough Silver Ingot": 50,
-      "Spell of Banishing": 416,
-      "Spell of Fortune": 500,
       "Prophetic Bird": 413,
-      "Cicada Wings": 34,
-      "Perpetual Cog": 22,
+      "Pyroxene Ore": 32,
       "Alopecurus Pratensis": 50,
-      "Pyroxene Ore": 32
+      "Perpetual Cog": 22,
+      "Cicada Wings": 34,
+      "Spell of Fortune": 500,
+      "Rough Silver Ingot": 50,
+      "Esoteric Bones": 48,
+      "Milled Magnesia": 29,
+      "Liquefied Terror": 20,
+      "Spell of Banishing": 416
     },
     "id": 9050
   },
@@ -813,16 +813,16 @@
     "cost": 20,
     "count": 1241,
     "drops": {
-      "Liquefied Terror": 26,
-      "Milled Magnesia": 29,
-      "Esoteric Bones": 30,
-      "Rough Silver Ingot": 48,
-      "Spell of Banishing": 853,
-      "Spell of Fortune": 41,
-      "Cicada Wings": 28,
-      "Perpetual Cog": 337,
       "Goose Neck": 381,
-      "Alopecurus Pratensis": 26
+      "Alopecurus Pratensis": 26,
+      "Perpetual Cog": 337,
+      "Cicada Wings": 28,
+      "Spell of Fortune": 41,
+      "Rough Silver Ingot": 48,
+      "Esoteric Bones": 30,
+      "Milled Magnesia": 29,
+      "Liquefied Terror": 26,
+      "Spell of Banishing": 853
     },
     "id": 9051
   },
@@ -832,17 +832,17 @@
     "cost": 20,
     "count": 228,
     "drops": {
-      "Liquefied Terror": 4,
-      "Milled Magnesia": 4,
-      "Esoteric Bones": 3,
-      "Silver Ore": 370,
-      "Rough Silver Ingot": 80,
       "Holy Silver": 94,
-      "Spell of Fortune": 8,
-      "Cicada Wings": 6,
-      "Perpetual Cog": 3,
+      "Pyroxene Ore": 8,
       "Alopecurus Pratensis": 5,
-      "Pyroxene Ore": 8
+      "Perpetual Cog": 3,
+      "Cicada Wings": 6,
+      "Spell of Fortune": 8,
+      "Rough Silver Ingot": 80,
+      "Esoteric Bones": 3,
+      "Milled Magnesia": 4,
+      "Liquefied Terror": 4,
+      "Silver Ore": 370
     },
     "id": 9052
   },
@@ -852,9 +852,9 @@
     "cost": 20,
     "count": 3029,
     "drops": {
-      "Silver Ore": 4166,
+      "Clawed Pendulum": 1035,
       "Rough Silver Ingot": 600,
-      "Clawed Pendulum": 1035
+      "Silver Ore": 4166
     },
     "id": 9053
   },
@@ -864,18 +864,18 @@
     "cost": 20,
     "count": 4344,
     "drops": {
-      "Trembling Tooth": 2981,
-      "Liquefied Terror": 66,
-      "Biting Box": 1345,
       "Bogeyman": 73,
-      "Milled Magnesia": 86,
-      "Esoteric Bones": 101,
-      "Rough Silver Ingot": 124,
-      "Spell of Fortune": 162,
-      "Cicada Wings": 95,
-      "Perpetual Cog": 61,
+      "Biting Box": 1345,
+      "Pyroxene Ore": 96,
       "Alopecurus Pratensis": 73,
-      "Pyroxene Ore": 96
+      "Perpetual Cog": 61,
+      "Cicada Wings": 95,
+      "Spell of Fortune": 162,
+      "Rough Silver Ingot": 124,
+      "Esoteric Bones": 101,
+      "Milled Magnesia": 86,
+      "Liquefied Terror": 66,
+      "Trembling Tooth": 2981
     },
     "id": 9054
   },
@@ -885,17 +885,17 @@
     "cost": 20,
     "count": 705,
     "drops": {
-      "Liquefied Terror": 17,
-      "Milled Magnesia": 33,
-      "Esoteric Bones": 31,
-      "Rough Silver Ingot": 44,
-      "Spell of Banishing": 341,
-      "Spell of Fortune": 396,
       "Prophetic Bird": 362,
-      "Cicada Wings": 30,
-      "Perpetual Cog": 21,
+      "Pyroxene Ore": 33,
       "Alopecurus Pratensis": 18,
-      "Pyroxene Ore": 33
+      "Perpetual Cog": 21,
+      "Cicada Wings": 30,
+      "Spell of Fortune": 396,
+      "Rough Silver Ingot": 44,
+      "Esoteric Bones": 31,
+      "Milled Magnesia": 33,
+      "Liquefied Terror": 17,
+      "Spell of Banishing": 341
     },
     "id": 9057
   },
@@ -905,16 +905,16 @@
     "cost": 20,
     "count": 122,
     "drops": {
-      "Trembling Tooth": 87,
-      "Liquefied Terror": 20,
       "Biting Box": 35,
-      "Milled Magnesia": 2,
-      "Esoteric Bones": 5,
-      "Rough Silver Ingot": 7,
-      "Spell of Fortune": 5,
-      "Cicada Wings": 3,
+      "Alopecurus Pratensis": 2,
       "Perpetual Cog": 2,
-      "Alopecurus Pratensis": 2
+      "Cicada Wings": 3,
+      "Spell of Fortune": 5,
+      "Rough Silver Ingot": 7,
+      "Esoteric Bones": 5,
+      "Milled Magnesia": 2,
+      "Liquefied Terror": 20,
+      "Trembling Tooth": 87
     },
     "id": 9058
   },
@@ -924,17 +924,17 @@
     "cost": 20,
     "count": 159,
     "drops": {
-      "Liquefied Terror": 4,
-      "Milled Magnesia": 3,
-      "Esoteric Bones": 2,
-      "Silver Ore": 206,
-      "Rough Silver Ingot": 98,
       "Holy Silver": 62,
-      "Spell of Fortune": 6,
-      "Cicada Wings": 1,
-      "Perpetual Cog": 3,
+      "Pyroxene Ore": 3,
       "Alopecurus Pratensis": 5,
-      "Pyroxene Ore": 3
+      "Perpetual Cog": 3,
+      "Cicada Wings": 1,
+      "Spell of Fortune": 6,
+      "Rough Silver Ingot": 98,
+      "Esoteric Bones": 2,
+      "Milled Magnesia": 3,
+      "Liquefied Terror": 4,
+      "Silver Ore": 206
     },
     "id": 9059
   },
@@ -944,11 +944,11 @@
     "cost": 20,
     "count": 2714,
     "drops": {
-      "Trembling Tooth": 3,
+      "Golden Beetle": 832,
+      "Esoteric Bones": 833,
       "Milled Magnesia": 3,
       "Shattered Bones": 1881,
-      "Esoteric Bones": 833,
-      "Golden Beetle": 832
+      "Trembling Tooth": 3
     },
     "id": 9060
   },
@@ -958,17 +958,17 @@
     "cost": 20,
     "count": 1081,
     "drops": {
-      "Liquefied Terror": 23,
-      "Magnesia Crystal": 704,
-      "Milled Magnesia": 34,
-      "Esoteric Bones": 26,
-      "Silver Ore": 2,
-      "Rough Silver Ingot": 50,
-      "Spell of Fortune": 37,
-      "Cicada Wings": 266,
       "Winged Key": 354,
+      "Alopecurus Pratensis": 18,
       "Perpetual Cog": 21,
-      "Alopecurus Pratensis": 18
+      "Cicada Wings": 266,
+      "Spell of Fortune": 37,
+      "Rough Silver Ingot": 50,
+      "Esoteric Bones": 26,
+      "Milled Magnesia": 34,
+      "Liquefied Terror": 23,
+      "Silver Ore": 2,
+      "Magnesia Crystal": 704
     },
     "id": 9061
   },
@@ -978,10 +978,10 @@
     "cost": 20,
     "count": 2768,
     "drops": {
-      "Magnesia Crystal": 2866,
-      "Milled Magnesia": 355,
+      "Incorrupt Monkeypaw": 71,
       "Salted Mandrake": 917,
-      "Incorrupt Monkeypaw": 71
+      "Milled Magnesia": 355,
+      "Magnesia Crystal": 2866
     },
     "id": 9062
   },
@@ -991,18 +991,18 @@
     "cost": 20,
     "count": 1011,
     "drops": {
-      "Liquefied Terror": 22,
-      "Magnesia Crystal": 696,
-      "Milled Magnesia": 18,
-      "Esoteric Bones": 28,
-      "Rough Silver Ingot": 49,
-      "Spell of Banishing": 3,
-      "Spell of Fortune": 34,
-      "Cicada Wings": 12,
-      "Perpetual Cog": 15,
-      "Alopecurus Pratensis": 255,
       "Golden Herb Incense": 306,
-      "Pyroxene Ore": 17
+      "Pyroxene Ore": 17,
+      "Alopecurus Pratensis": 255,
+      "Perpetual Cog": 15,
+      "Cicada Wings": 12,
+      "Spell of Fortune": 34,
+      "Rough Silver Ingot": 49,
+      "Esoteric Bones": 28,
+      "Milled Magnesia": 18,
+      "Liquefied Terror": 22,
+      "Spell of Banishing": 3,
+      "Magnesia Crystal": 696
     },
     "id": 9063
   },
@@ -1012,18 +1012,18 @@
     "cost": 20,
     "count": 245,
     "drops": {
-      "Trembling Tooth": 6,
-      "Liquefied Terror": 9,
-      "Milled Magnesia": 12,
-      "Shattered Bones": 151,
-      "Esoteric Bones": 76,
       "Bifurcated Skeleton": 86,
-      "Rough Silver Ingot": 16,
-      "Spell of Fortune": 21,
-      "Cicada Wings": 10,
-      "Perpetual Cog": 9,
+      "Pyroxene Ore": 15,
       "Alopecurus Pratensis": 11,
-      "Pyroxene Ore": 15
+      "Perpetual Cog": 9,
+      "Cicada Wings": 10,
+      "Spell of Fortune": 21,
+      "Rough Silver Ingot": 16,
+      "Esoteric Bones": 76,
+      "Milled Magnesia": 12,
+      "Liquefied Terror": 9,
+      "Shattered Bones": 151,
+      "Trembling Tooth": 6
     },
     "id": 9064
   },
@@ -1033,12 +1033,12 @@
     "cost": 18,
     "count": 215,
     "drops": {
-      "Shattered Bones": 17,
-      "Silver Ore": 164,
+      "Solidus": 122,
+      "Spell of Fortune": 39,
       "Rough Silver Ingot": 35,
       "Spell of Banishing": 326,
-      "Spell of Fortune": 39,
-      "Solidus": 122
+      "Silver Ore": 164,
+      "Shattered Bones": 17
     },
     "id": 9065
   },
@@ -1048,16 +1048,16 @@
     "cost": 20,
     "count": 907,
     "drops": {
-      "Liquefied Terror": 11,
-      "Milled Magnesia": 28,
-      "Esoteric Bones": 21,
-      "Rough Silver Ingot": 34,
-      "Spell of Banishing": 635,
-      "Spell of Fortune": 27,
-      "Cicada Wings": 24,
-      "Perpetual Cog": 219,
       "Goose Neck": 270,
-      "Alopecurus Pratensis": 22
+      "Alopecurus Pratensis": 22,
+      "Perpetual Cog": 219,
+      "Cicada Wings": 24,
+      "Spell of Fortune": 27,
+      "Rough Silver Ingot": 34,
+      "Esoteric Bones": 21,
+      "Milled Magnesia": 28,
+      "Liquefied Terror": 11,
+      "Spell of Banishing": 635
     },
     "id": 9066
   },
@@ -1067,17 +1067,17 @@
     "cost": 20,
     "count": 2342,
     "drops": {
-      "Liquefied Terror": 77,
-      "Milled Magnesia": 95,
-      "Shattered Bones": 1518,
-      "Esoteric Bones": 152,
-      "Rough Silver Ingot": 142,
-      "Spell of Fortune": 176,
-      "Cicada Wings": 104,
-      "Perpetual Cog": 64,
-      "Alopecurus Pratensis": 71,
+      "Red Lacquer Tablet": 771,
       "Pyroxene Ore": 717,
-      "Red Lacquer Tablet": 771
+      "Alopecurus Pratensis": 71,
+      "Perpetual Cog": 64,
+      "Cicada Wings": 104,
+      "Spell of Fortune": 176,
+      "Rough Silver Ingot": 142,
+      "Esoteric Bones": 152,
+      "Milled Magnesia": 95,
+      "Liquefied Terror": 77,
+      "Shattered Bones": 1518
     },
     "id": 9067
   },
@@ -1087,17 +1087,17 @@
     "cost": 20,
     "count": 965,
     "drops": {
-      "Trembling Tooth": 652,
-      "Liquefied Terror": 198,
       "Biting Box": 299,
-      "Milled Magnesia": 24,
-      "Esoteric Bones": 31,
-      "Rough Silver Ingot": 24,
-      "Spell of Fortune": 33,
-      "Cicada Wings": 20,
-      "Perpetual Cog": 17,
+      "Pyroxene Ore": 32,
       "Alopecurus Pratensis": 21,
-      "Pyroxene Ore": 32
+      "Perpetual Cog": 17,
+      "Cicada Wings": 20,
+      "Spell of Fortune": 33,
+      "Rough Silver Ingot": 24,
+      "Esoteric Bones": 31,
+      "Milled Magnesia": 24,
+      "Liquefied Terror": 198,
+      "Trembling Tooth": 652
     },
     "id": 9068
   },
@@ -1107,17 +1107,17 @@
     "cost": 20,
     "count": 1144,
     "drops": {
-      "Liquefied Terror": 17,
-      "Milled Magnesia": 29,
-      "Esoteric Bones": 25,
-      "Silver Ore": 1571,
-      "Rough Silver Ingot": 674,
       "Holy Silver": 438,
-      "Spell of Fortune": 45,
-      "Cicada Wings": 23,
-      "Perpetual Cog": 23,
+      "Pyroxene Ore": 38,
       "Alopecurus Pratensis": 25,
-      "Pyroxene Ore": 38
+      "Perpetual Cog": 23,
+      "Cicada Wings": 23,
+      "Spell of Fortune": 45,
+      "Rough Silver Ingot": 674,
+      "Esoteric Bones": 25,
+      "Milled Magnesia": 29,
+      "Liquefied Terror": 17,
+      "Silver Ore": 1571
     },
     "id": 9069
   },
@@ -1127,9 +1127,9 @@
     "cost": 20,
     "count": 996,
     "drops": {
-      "Silver Ore": 663,
+      "Clawed Pendulum": 320,
       "Rough Silver Ingot": 388,
-      "Clawed Pendulum": 320
+      "Silver Ore": 663
     },
     "id": 9070
   },
@@ -1139,17 +1139,17 @@
     "cost": 20,
     "count": 856,
     "drops": {
-      "Liquefied Terror": 34,
-      "Milled Magnesia": 35,
-      "Esoteric Bones": 48,
-      "Rough Silver Ingot": 56,
-      "Spell of Banishing": 419,
-      "Spell of Fortune": 479,
       "Prophetic Bird": 431,
-      "Cicada Wings": 39,
-      "Perpetual Cog": 23,
+      "Pyroxene Ore": 45,
       "Alopecurus Pratensis": 24,
-      "Pyroxene Ore": 45
+      "Perpetual Cog": 23,
+      "Cicada Wings": 39,
+      "Spell of Fortune": 479,
+      "Rough Silver Ingot": 56,
+      "Esoteric Bones": 48,
+      "Milled Magnesia": 35,
+      "Liquefied Terror": 34,
+      "Spell of Banishing": 419
     },
     "id": 9071
   },
@@ -1159,17 +1159,17 @@
     "cost": 20,
     "count": 1408,
     "drops": {
-      "Liquefied Terror": 40,
-      "Milled Magnesia": 61,
-      "Shattered Bones": 866,
-      "Esoteric Bones": 461,
       "Bifurcated Skeleton": 538,
-      "Rough Silver Ingot": 83,
-      "Spell of Fortune": 103,
-      "Cicada Wings": 58,
-      "Perpetual Cog": 34,
+      "Pyroxene Ore": 59,
       "Alopecurus Pratensis": 49,
-      "Pyroxene Ore": 59
+      "Perpetual Cog": 34,
+      "Cicada Wings": 58,
+      "Spell of Fortune": 103,
+      "Rough Silver Ingot": 83,
+      "Esoteric Bones": 461,
+      "Milled Magnesia": 61,
+      "Liquefied Terror": 40,
+      "Shattered Bones": 866
     },
     "id": 9072
   },
@@ -1179,18 +1179,18 @@
     "cost": 20,
     "count": 2311,
     "drops": {
-      "Liquefied Terror": 44,
-      "Magnesia Crystal": 1555,
-      "Milled Magnesia": 62,
-      "Esoteric Bones": 51,
-      "Rough Silver Ingot": 78,
-      "Spell of Fortune": 72,
-      "Cicada Wings": 30,
-      "Winged Key": 754,
       "Glowing Mothwing": 46,
-      "Perpetual Cog": 35,
+      "Winged Key": 754,
+      "Pyroxene Ore": 49,
       "Alopecurus Pratensis": 44,
-      "Pyroxene Ore": 49
+      "Perpetual Cog": 35,
+      "Cicada Wings": 30,
+      "Spell of Fortune": 72,
+      "Rough Silver Ingot": 78,
+      "Esoteric Bones": 51,
+      "Milled Magnesia": 62,
+      "Liquefied Terror": 44,
+      "Magnesia Crystal": 1555
     },
     "id": 9073
   },
@@ -1200,17 +1200,17 @@
     "cost": 20,
     "count": 678,
     "drops": {
-      "Liquefied Terror": 24,
-      "Magnesia Crystal": 449,
-      "Milled Magnesia": 196,
       "Salted Mandrake": 219,
-      "Esoteric Bones": 47,
-      "Rough Silver Ingot": 46,
-      "Spell of Fortune": 47,
-      "Cicada Wings": 28,
-      "Perpetual Cog": 28,
+      "Pyroxene Ore": 30,
       "Alopecurus Pratensis": 32,
-      "Pyroxene Ore": 30
+      "Perpetual Cog": 28,
+      "Cicada Wings": 28,
+      "Spell of Fortune": 47,
+      "Rough Silver Ingot": 46,
+      "Esoteric Bones": 47,
+      "Milled Magnesia": 196,
+      "Liquefied Terror": 24,
+      "Magnesia Crystal": 449
     },
     "id": 9074
   },
@@ -1220,9 +1220,9 @@
     "cost": 20,
     "count": 1812,
     "drops": {
-      "Shattered Bones": 1235,
+      "Golden Beetle": 568,
       "Esoteric Bones": 553,
-      "Golden Beetle": 568
+      "Shattered Bones": 1235
     },
     "id": 9075
   },
@@ -1232,17 +1232,17 @@
     "cost": 20,
     "count": 430,
     "drops": {
-      "Liquefied Terror": 7,
-      "Magnesia Crystal": 268,
-      "Milled Magnesia": 19,
-      "Esoteric Bones": 14,
-      "Rough Silver Ingot": 16,
-      "Spell of Fortune": 9,
-      "Cicada Wings": 134,
       "Winged Key": 134,
-      "Perpetual Cog": 10,
+      "Pyroxene Ore": 9,
       "Alopecurus Pratensis": 8,
-      "Pyroxene Ore": 9
+      "Perpetual Cog": 10,
+      "Cicada Wings": 134,
+      "Spell of Fortune": 9,
+      "Rough Silver Ingot": 16,
+      "Esoteric Bones": 14,
+      "Milled Magnesia": 19,
+      "Liquefied Terror": 7,
+      "Magnesia Crystal": 268
     },
     "id": 9076
   },
@@ -1252,17 +1252,17 @@
     "cost": 20,
     "count": 1264,
     "drops": {
-      "Liquefied Terror": 20,
-      "Milled Magnesia": 26,
-      "Esoteric Bones": 44,
-      "Rough Silver Ingot": 42,
-      "Spell of Banishing": 533,
-      "Spell of Fortune": 685,
       "Prophetic Bird": 726,
-      "Cicada Wings": 24,
-      "Perpetual Cog": 23,
+      "Pyroxene Ore": 34,
       "Alopecurus Pratensis": 16,
-      "Pyroxene Ore": 34
+      "Perpetual Cog": 23,
+      "Cicada Wings": 24,
+      "Spell of Fortune": 685,
+      "Rough Silver Ingot": 42,
+      "Esoteric Bones": 44,
+      "Milled Magnesia": 26,
+      "Liquefied Terror": 20,
+      "Spell of Banishing": 533
     },
     "id": 9077
   },
@@ -1272,17 +1272,17 @@
     "cost": 20,
     "count": 1583,
     "drops": {
-      "Liquefied Terror": 29,
-      "Milled Magnesia": 26,
-      "Esoteric Bones": 54,
-      "Silver Ore": 767,
-      "Rough Silver Ingot": 636,
       "Holy Silver": 763,
-      "Spell of Fortune": 65,
-      "Cicada Wings": 29,
-      "Perpetual Cog": 29,
+      "Pyroxene Ore": 85,
       "Alopecurus Pratensis": 35,
-      "Pyroxene Ore": 85
+      "Perpetual Cog": 29,
+      "Cicada Wings": 29,
+      "Spell of Fortune": 65,
+      "Rough Silver Ingot": 636,
+      "Esoteric Bones": 54,
+      "Milled Magnesia": 26,
+      "Liquefied Terror": 29,
+      "Silver Ore": 767
     },
     "id": 9078
   },
@@ -1292,19 +1292,19 @@
     "cost": 20,
     "count": 2313,
     "drops": {
-      "Liquefied Terror": 33,
-      "Magnesia Crystal": 41,
-      "Milled Magnesia": 40,
-      "Shattered Bones": 1239,
-      "Esoteric Bones": 782,
       "Bifurcated Skeleton": 1038,
-      "Silver Ore": 4,
-      "Rough Silver Ingot": 64,
-      "Spell of Fortune": 86,
-      "Cicada Wings": 55,
-      "Perpetual Cog": 26,
+      "Pyroxene Ore": 50,
       "Alopecurus Pratensis": 39,
-      "Pyroxene Ore": 50
+      "Perpetual Cog": 26,
+      "Cicada Wings": 55,
+      "Spell of Fortune": 86,
+      "Rough Silver Ingot": 64,
+      "Esoteric Bones": 782,
+      "Milled Magnesia": 40,
+      "Liquefied Terror": 33,
+      "Silver Ore": 4,
+      "Shattered Bones": 1239,
+      "Magnesia Crystal": 41
     },
     "id": 9079
   },
@@ -1314,17 +1314,17 @@
     "cost": 20,
     "count": 965,
     "drops": {
-      "Trembling Tooth": 660,
-      "Liquefied Terror": 206,
       "Biting Box": 298,
-      "Milled Magnesia": 19,
-      "Esoteric Bones": 22,
-      "Rough Silver Ingot": 26,
-      "Spell of Fortune": 31,
-      "Cicada Wings": 13,
-      "Perpetual Cog": 14,
+      "Pyroxene Ore": 19,
       "Alopecurus Pratensis": 20,
-      "Pyroxene Ore": 19
+      "Perpetual Cog": 14,
+      "Cicada Wings": 13,
+      "Spell of Fortune": 31,
+      "Rough Silver Ingot": 26,
+      "Esoteric Bones": 22,
+      "Milled Magnesia": 19,
+      "Liquefied Terror": 206,
+      "Trembling Tooth": 660
     },
     "id": 9080
   },
@@ -1334,17 +1334,17 @@
     "cost": 20,
     "count": 1145,
     "drops": {
-      "Liquefied Terror": 42,
-      "Milled Magnesia": 48,
-      "Shattered Bones": 763,
-      "Esoteric Bones": 47,
-      "Rough Silver Ingot": 61,
-      "Spell of Fortune": 89,
-      "Cicada Wings": 43,
-      "Perpetual Cog": 31,
-      "Alopecurus Pratensis": 45,
+      "Red Lacquer Tablet": 368,
       "Pyroxene Ore": 314,
-      "Red Lacquer Tablet": 368
+      "Alopecurus Pratensis": 45,
+      "Perpetual Cog": 31,
+      "Cicada Wings": 43,
+      "Spell of Fortune": 89,
+      "Rough Silver Ingot": 61,
+      "Esoteric Bones": 47,
+      "Milled Magnesia": 48,
+      "Liquefied Terror": 42,
+      "Shattered Bones": 763
     },
     "id": 9081
   },
@@ -1354,11 +1354,11 @@
     "cost": 20,
     "count": 3388,
     "drops": {
-      "Silver Ore": 2541,
+      "Watch Core": 60,
+      "Goose Neck": 1036,
       "Rough Silver Ingot": 639,
       "Spell of Banishing": 2340,
-      "Goose Neck": 1036,
-      "Watch Core": 60
+      "Silver Ore": 2541
     },
     "id": 9082
   },
@@ -1368,13 +1368,13 @@
     "cost": 25,
     "count": 301,
     "drops": {
-      "Trembling Tooth": 11,
-      "Magnesia Crystal": 302,
-      "Milled Magnesia": 118,
       "Salted Mandrake": 127,
-      "Shattered Bones": 21,
+      "Milled Magnesia": 118,
+      "Spell of Banishing": 43,
       "Silver Ore": 18,
-      "Spell of Banishing": 43
+      "Shattered Bones": 21,
+      "Magnesia Crystal": 302,
+      "Trembling Tooth": 11
     },
     "id": 9083
   },
@@ -1384,17 +1384,17 @@
     "cost": 25,
     "count": 1278,
     "drops": {
-      "Liquefied Terror": 23,
-      "Milled Magnesia": 20,
-      "Esoteric Bones": 29,
-      "Silver Ore": 686,
-      "Rough Silver Ingot": 532,
-      "Spell of Fortune": 57,
-      "Cicada Wings": 20,
-      "Perpetual Cog": 18,
-      "Alopecurus Pratensis": 16,
+      "Clawed Pendulum": 575,
       "Pyroxene Ore": 54,
-      "Clawed Pendulum": 575
+      "Alopecurus Pratensis": 16,
+      "Perpetual Cog": 18,
+      "Cicada Wings": 20,
+      "Spell of Fortune": 57,
+      "Rough Silver Ingot": 532,
+      "Esoteric Bones": 29,
+      "Milled Magnesia": 20,
+      "Liquefied Terror": 23,
+      "Silver Ore": 686
     },
     "id": 9084
   },
@@ -1404,17 +1404,17 @@
     "cost": 25,
     "count": 618,
     "drops": {
-      "Trembling Tooth": 396,
-      "Liquefied Terror": 144,
       "Biting Box": 223,
-      "Milled Magnesia": 25,
-      "Esoteric Bones": 30,
-      "Rough Silver Ingot": 41,
-      "Spell of Fortune": 43,
-      "Cicada Wings": 13,
-      "Perpetual Cog": 15,
+      "Pyroxene Ore": 32,
       "Alopecurus Pratensis": 27,
-      "Pyroxene Ore": 32
+      "Perpetual Cog": 15,
+      "Cicada Wings": 13,
+      "Spell of Fortune": 43,
+      "Rough Silver Ingot": 41,
+      "Esoteric Bones": 30,
+      "Milled Magnesia": 25,
+      "Liquefied Terror": 144,
+      "Trembling Tooth": 396
     },
     "id": 9085
   },
@@ -1424,18 +1424,18 @@
     "cost": 25,
     "count": 585,
     "drops": {
-      "Liquefied Terror": 14,
-      "Milled Magnesia": 24,
-      "Esoteric Bones": 33,
-      "Silver Ore": 232,
-      "Rough Silver Ingot": 225,
       "Holy Silver": 350,
-      "Spell of Banishing": 2,
-      "Spell of Fortune": 37,
-      "Cicada Wings": 26,
-      "Perpetual Cog": 14,
+      "Pyroxene Ore": 22,
       "Alopecurus Pratensis": 21,
-      "Pyroxene Ore": 22
+      "Perpetual Cog": 14,
+      "Cicada Wings": 26,
+      "Spell of Fortune": 37,
+      "Rough Silver Ingot": 225,
+      "Esoteric Bones": 33,
+      "Milled Magnesia": 24,
+      "Liquefied Terror": 14,
+      "Spell of Banishing": 2,
+      "Silver Ore": 232
     },
     "id": 9086
   },
@@ -1445,11 +1445,11 @@
     "cost": 25,
     "count": 161,
     "drops": {
-      "Silver Ore": 124,
+      "Goose Neck": 58,
+      "Perpetual Cog": 40,
       "Rough Silver Ingot": 31,
       "Spell of Banishing": 103,
-      "Perpetual Cog": 40,
-      "Goose Neck": 58
+      "Silver Ore": 124
     },
     "id": 9087
   },
@@ -1459,20 +1459,20 @@
     "cost": 25,
     "count": 531,
     "drops": {
-      "Trembling Tooth": 1,
-      "Liquefied Terror": 18,
-      "Magnesia Crystal": 298,
-      "Milled Magnesia": 21,
-      "Esoteric Bones": 20,
-      "Silver Ore": 2,
-      "Rough Silver Ingot": 32,
-      "Spell of Banishing": 2,
-      "Spell of Fortune": 38,
-      "Cicada Wings": 140,
       "Winged Key": 225,
-      "Perpetual Cog": 14,
+      "Pyroxene Ore": 26,
       "Alopecurus Pratensis": 11,
-      "Pyroxene Ore": 26
+      "Perpetual Cog": 14,
+      "Cicada Wings": 140,
+      "Spell of Fortune": 38,
+      "Rough Silver Ingot": 32,
+      "Esoteric Bones": 20,
+      "Milled Magnesia": 21,
+      "Liquefied Terror": 18,
+      "Spell of Banishing": 2,
+      "Silver Ore": 2,
+      "Magnesia Crystal": 298,
+      "Trembling Tooth": 1
     },
     "id": 9088
   },
@@ -1482,18 +1482,18 @@
     "cost": 25,
     "count": 884,
     "drops": {
-      "Trembling Tooth": 2,
-      "Liquefied Terror": 22,
-      "Milled Magnesia": 34,
-      "Shattered Bones": 382,
-      "Esoteric Bones": 312,
       "Bifurcated Skeleton": 483,
-      "Rough Silver Ingot": 46,
-      "Spell of Fortune": 76,
-      "Cicada Wings": 30,
-      "Perpetual Cog": 40,
+      "Pyroxene Ore": 44,
       "Alopecurus Pratensis": 28,
-      "Pyroxene Ore": 44
+      "Perpetual Cog": 40,
+      "Cicada Wings": 30,
+      "Spell of Fortune": 76,
+      "Rough Silver Ingot": 46,
+      "Esoteric Bones": 312,
+      "Milled Magnesia": 34,
+      "Liquefied Terror": 22,
+      "Shattered Bones": 382,
+      "Trembling Tooth": 2
     },
     "id": 9089
   },
@@ -1503,12 +1503,12 @@
     "cost": 25,
     "count": 1822,
     "drops": {
-      "Trembling Tooth": 566,
-      "Liquefied Terror": 157,
-      "Magnesia Crystal": 1129,
-      "Shattered Bones": 5,
+      "Golden Bell Essence Bottle": 32,
       "Golden Herb Incense": 707,
-      "Golden Bell Essence Bottle": 32
+      "Liquefied Terror": 157,
+      "Shattered Bones": 5,
+      "Magnesia Crystal": 1129,
+      "Trembling Tooth": 566
     },
     "id": 9090
   },
