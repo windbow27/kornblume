@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '09/03/2026',
+    description: `
+        • Fix wrong quantity for 3.3 stage drops. If anything still looks wrong, please report it. <br>
+      `
+  },
+  {
     date: '05/03/2026',
     description: `
         • Update Planner, Arcanists, Items and Stages to version 3.3 update. <br>

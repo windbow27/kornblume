@@ -10,36 +10,6 @@
     "Usage": ""
   },
   {
-    "Id": 88,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Rootbox Rabbit",
-    "Rarity": 5,
-    "Description": "",
-    "Source": "",
-    "Usage": ""
-  },
-  {
-    "Id": 89,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Heartfelt Easter Egg",
-    "Rarity": 4,
-    "Description": "",
-    "Source": "",
-    "Usage": ""
-  },
-  {
-    "Id": 90,
-    "Category": "Build Material",
-    "IsReleased": true,
-    "Name": "Sharp Needle",
-    "Rarity": 3,
-    "Description": "",
-    "Source": "",
-    "Usage": ""
-  },
-  {
     "Id": 71,
     "Name": "Rhine Gold",
     "Rarity": 6,
@@ -208,6 +178,36 @@
     "Description": "It is a steadfast guardian and an indestructible friend. Even the nobles would bow before this sonorous herald.",
     "Source": "Insight - Mountain Echoes",
     "Usage": "The ritual of Mineral Insight III."
+  },
+  {
+    "Id": 88,
+    "Category": "Build Material",
+    "IsReleased": true,
+    "Name": "Rootbox Rabbit",
+    "Rarity": 5,
+    "Description": "",
+    "Source": "",
+    "Usage": ""
+  },
+  {
+    "Id": 89,
+    "Category": "Build Material",
+    "IsReleased": true,
+    "Name": "Heartfelt Easter Egg",
+    "Rarity": 4,
+    "Description": "",
+    "Source": "",
+    "Usage": ""
+  },
+  {
+    "Id": 90,
+    "Category": "Build Material",
+    "IsReleased": true,
+    "Name": "Sharp Needle",
+    "Rarity": 3,
+    "Description": "",
+    "Source": "",
+    "Usage": ""
   },
   {
     "Id": 64,
