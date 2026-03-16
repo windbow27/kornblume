@@ -1451,24 +1451,25 @@
       "Trembling Tooth": 672
     }
   },
-  "12-1H": {
-    "name": "12-1H",
+  "12-3H": {
+    "name": "12-3H",
     "category": "Hard",
     "cost": 25,
-    "count": 26479,
+    "count": 33867,
     "id": 9089,
     "drops": {
-      "Heartfelt Easter Egg": 12260,
-      "Sharp Needle": 10990,
-      "Pyroxene Ore": 620,
-      "Alopecurus Pratensis": 962,
-      "Perpetual Cog": 624,
-      "Cicada Wings": 624,
-      "Spell of Fortune": 649,
-      "Rough Silver Ingot": 5695,
-      "Esoteric Bones": 632,
-      "Liquefied Terror": 583,
-      "Silver Ore": 33560
+      "Heartfelt Easter Egg": 15684,
+      "Sharp Needle": 13938,
+      "Pyroxene Ore": 797,
+      "Alopecurus Pratensis": 1136,
+      "Perpetual Cog": 802,
+      "Cicada Wings": 1025,
+      "Spell of Fortune": 824,
+      "Rough Silver Ingot": 7317,
+      "Esoteric Bones": 793,
+      "Milled Magnesia": 785,
+      "Liquefied Terror": 759,
+      "Silver Ore": 42972
     }
   },
   "12-5H": {
