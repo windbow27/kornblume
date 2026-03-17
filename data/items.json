@@ -850,6 +850,16 @@
     "Usage": ""
   },
   {
+    "Id": 91,
+    "Category": "Reveries Material",
+    "IsReleased": true,
+    "Name": "Key of Spark",
+    "Rarity": 6,
+    "Description": "",
+    "Source": "",
+    "Usage": ""
+  },
+  {
     "Id": 82,
     "Category": "Insight Casket",
     "IsReleased": true,
