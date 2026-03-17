@@ -1,6 +1,13 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '17/03/2026',
+    description: `
+        • Add Lorentz Butterfly and Lady by the Lake as unreleased arcanists. <br>
+        • Add Spathodea and Tuesday euphorias. <br>
+      `
+  },
+  {
     date: '09/03/2026',
     description: `
         • Fix wrong quantity for 3.3 stage drops. If anything still looks wrong, please report it. <br>
