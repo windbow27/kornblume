@@ -164,7 +164,8 @@ export async function getSolve(materials) {
         'Key of Reverie',
         'Sprout of Reverie',
         'Seed of Insight',
-        'Key of New Sprout'
+        'Key of New Sprout',
+        'Key of Spark'
     ];
 
     materials.forEach(({ Material: matlName, Quantity: quantity }) => {
