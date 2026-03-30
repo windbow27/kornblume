@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '30/03/2026',
+    description: `
+        • Add Ramona as unreleased arcanist.
+      `
+  },
+  {
     date: '17/03/2026',
     description: `
         • Add Lorentz Butterfly and Lady by the Lake as unreleased arcanists. <br>
