@@ -70,6 +70,8 @@ export const bannerList = [
   'Golden Spindle',
   // ripples,
   'Ripples on the Water',
+  // dushuo
+  'The Snow of Dushuo',
 
   // jiu niangzi
   'Till the Last Drop',

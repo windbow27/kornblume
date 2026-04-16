@@ -1,9 +1,15 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '16/04/2026',
+    description: `
+        • Add The Snow of Dushuo banner. 
+      `
+  },
+  {
     date: '30/03/2026',
     description: `
-        • Add Ramona as unreleased arcanist.
+        • Add Ramona as unreleased arcanist. 
       `
   },
   {

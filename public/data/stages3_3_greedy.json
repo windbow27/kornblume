@@ -1,7 +1,7 @@
 {
-  "1-14H": {
-    "name": "1-14H",
-    "category": "Hard",
+  "1-14": {
+    "name": "1-14",
+    "category": "Story",
     "cost": 12,
     "count": 1911,
     "drops": {
