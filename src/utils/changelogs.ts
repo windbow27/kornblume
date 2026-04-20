@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '20/04/2026',
+    description: `
+        • Add Paper Heron and Cheng Heguang banners <br>
+        • Add Adler as unreleased arcanist. <br>`
+  },
+  {
     date: '16/04/2026',
     description: `
         • Add The Snow of Dushuo banner. 
