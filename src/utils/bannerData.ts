@@ -51,6 +51,7 @@ export const bannerList = [
   'Cognitive Dynamics',
   'The Oath Unyielding',
   'Witness of Iron and Blood',
+  'Soaring Aspirations',
 
   // standard
   'Amongst the Lake',
@@ -81,7 +82,6 @@ export const bannerList = [
   'Longing for Innocence',
   // liang yue
   'Moonbeam Guardian',
-
   // ezio
   'A Prophet Guided by Time',
   // kassandra
@@ -89,7 +89,9 @@ export const bannerList = [
   // nautika
   'The Myth at Her Fingertips',
   // beryl
-  "On Fate's Cue"
+  "On Fate's Cue",
+  // Paper Heron
+  'Her Heart-Cut Spring'
 ];
 
 export const bannerRateUp = [

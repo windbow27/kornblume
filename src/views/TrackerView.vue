@@ -24,7 +24,8 @@ const text = ref('');
 const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
-const selectedBannerType = ref('Limited');
+// const selectedBannerType = ref('Limited');
+const selectedBannerType = ref('Her Heart-Cut Spring');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -104,6 +105,7 @@ const ezioPulls = createPullsByBannerType('A Prophet Guided by Time');
 const kassandraPulls = createPullsByBannerType('Wine-Dark Reflections of the Eagle');
 const nautikaPulls = createPullsByBannerType('The Myth at Her Fingertips');
 const berylPulls = createPullsByBannerType("On Fate's Cue");
+const heronPulls = createPullsByBannerType('Her Heart-Cut Spring');
 
 const limitedPulls = computed(() => {
   const filteredPulls = sortedPulls.value.filter(
@@ -125,7 +127,8 @@ const limitedPulls = computed(() => {
       pull.BannerType !== 'Wine-Dark Reflections of the Eagle' &&
       pull.BannerType !== 'The Myth at Her Fingertips' &&
       pull.BannerType !== "On Fate's Cue" &&
-      pull.BannerType !== 'The Snow of Dushuo'
+      pull.BannerType !== 'The Snow of Dushuo' &&
+      pull.BannerType !== 'Her Heart-Cut Spring'
   );
   return filteredPulls.map((pull, index) => {
     return {
@@ -585,14 +588,14 @@ const selectBannerType = (bannerType: string) => {
 
     <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
       <!-- Limited Placeholder -->
-      <!-- <button
+      <button
         v-bind:class="{
-          'border-button': selectedBannerType === 'On Fate\'s Cue'
+          'border-button': selectedBannerType === 'Her Heart-Cut Spring'
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
-        @click="selectBannerType('On Fate\'s Cue')">
-        {{ $t('beryl') }}
-      </button> -->
+        @click="selectBannerType('Her Heart-Cut Spring')">
+        {{ $t('heron') }}
+      </button>
 
       <button
         v-bind:class="{
@@ -633,7 +636,8 @@ const selectBannerType = (bannerType: string) => {
                 selectedBannerType === 'Wine-Dark Reflections of the Eagle' ||
                 selectedBannerType === 'The Myth at Her Fingertips' ||
                 selectedBannerType === 'On Fate\'s Cue' ||
-                selectedBannerType === 'The Snow of Dushuo'
+                selectedBannerType === 'The Snow of Dushuo' ||
+                selectedBannerType === 'Her Heart-Cut Spring'
             }"
             class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent">
             {{ $t('special') }}
@@ -733,6 +737,16 @@ const selectBannerType = (bannerType: string) => {
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
                 @click="selectBannerType('The Snow of Dushuo')">
                 {{ $t('dushuo') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Her Heart-Cut Spring'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Her Heart-Cut Spring')">
+                {{ $t('heron') }}
               </button>
             </li>
             <!-- Line separator, full width -->
@@ -981,6 +995,14 @@ const selectBannerType = (bannerType: string) => {
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
       banner-type="On Fate's Cue" />
+    <TrackerBoard
+      v-if="selectedBannerType === 'Her Heart-Cut Spring'"
+      :text="$t('summary-heron')"
+      :pulls="heronPulls"
+      :allPulls="allPulls"
+      :isError="isError"
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Her Heart-Cut Spring" />
   </div>
 </template>
 
