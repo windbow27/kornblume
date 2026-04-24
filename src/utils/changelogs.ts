@@ -1,6 +1,11 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '24/04/2026',
+    description: `
+        • Add Recoleta euphoria.`
+  },
+  {
     date: '20/04/2026',
     description: `
         • Add Paper Heron and Cheng Heguang banners <br>
