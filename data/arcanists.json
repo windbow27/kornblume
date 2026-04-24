@@ -1,7 +1,7 @@
 [
   {
     "Id": 10125,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Adler",
     "Rarity": 6,
     "Afflatus": "Intellect",
@@ -380,7 +380,7 @@
   },
   {
     "Id": 10124,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Ramona",
     "Rarity": 6,
     "Afflatus": "Plant",
@@ -1126,7 +1126,7 @@
   },
   {
     "Id": 10122,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Lorentz Butterfly",
     "Rarity": 6,
     "Afflatus": "Intellect",
@@ -7119,8 +7119,85 @@
         ]
       }
     ],
-    "Euphoria": [],
-    "Mastery": []
+    "Euphoria": [
+      {
+        "Id": 1,
+        "Material": [
+          "Key of Reverie",
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Mistilteinn"
+        ],
+        "Quantity": [
+          12,
+          40,
+          200,
+          3
+        ]
+      }
+    ],
+    "Mastery": [
+      {
+        "Id": 1,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Golden Fleece",
+          "Jadeite Tablet"
+        ],
+        "Quantity": [
+          20,
+          275,
+          1,
+          1
+        ]
+      },
+      {
+        "Id": 2,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Serpent Scepter",
+          "Rootbox Rabbit"
+        ],
+        "Quantity": [
+          30,
+          371,
+          1,
+          2
+        ]
+      },
+      {
+        "Id": 3,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Rhine Gold",
+          "Bogeyman"
+        ],
+        "Quantity": [
+          35,
+          470,
+          2,
+          2
+        ]
+      },
+      {
+        "Id": 4,
+        "Material": [
+          "Sprout of Reverie",
+          "Seed of Insight",
+          "Roaming Terror Hut",
+          "Wyrmling Skeleton"
+        ],
+        "Quantity": [
+          40,
+          1195,
+          2,
+          2
+        ]
+      }
+    ]
   },
   {
     "Id": 10100,
@@ -37594,7 +37671,7 @@
   },
   {
     "Id": 10123,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Lady by the Lake",
     "Rarity": 4,
     "Afflatus": "Plant",
