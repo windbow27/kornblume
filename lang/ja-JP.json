@@ -245,5 +245,20 @@
   "summary-boon": "湖の贈り物",
   "summary-ripples": "湖のさざ波",
   "ripples": "湖のさざ波",
-  "anjo-nala": "アンジョナナ"
+  "anjo-nala": "アンジョナナ",
+  "show-owned-arcanists": "所持しているアルカニストを表示する",
+  "tip-for-pc-users-press-f12-after-importing-images-to-see-which-pulls-went-wrong": "Tips: PCをご利用の方は、画像をインポートした後にF12キーを押すと、どのガチャ結果の読み込みに失敗したかを確認できます。",
+  "show-cards": "マイナーステージを表示する",
+  "summary-heron": "一切れの春を超えて",
+  "summary-dushuo": "朔日の飛雪",
+  "dushuo": "朔日の飛雪",
+  "heron": "鷺切",
+  "add-pull": "追加",
+  "frequency": "メイン思念",
+  "frequency-modulation": "共鳴周波数",
+  "euphoria-requirement": "狂想未実装",
+  "possible-drops": "獲得できる素材",
+  "filter": "絞り込み",
+  "from-reveries": "狂想用素材",
+  "from-insight-casket": "秘物手箱"
 }
