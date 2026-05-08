@@ -145,7 +145,8 @@ export const bannerRateUp = [
   'Brume',
   'Ulrich',
   'Marsha',
-  'Igor'
+  'Igor',
+  'Cheng Heguang'
 ];
 
 export const specialArcanists: string[] = [
