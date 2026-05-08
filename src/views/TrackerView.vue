@@ -142,10 +142,12 @@ const limitedPulls = computed(() => {
 });
 
 watch(sortedPulls, (newVal) => {
-  const timestampCounts = newVal.reduce((counts, pull) => {
-    counts[pull.Timestamp] = (counts[pull.Timestamp] || 0) + 1;
-    return counts;
-  }, {});
+  const timestampCounts = newVal
+    .filter((pull) => pull.BannerType !== 'Ripples on the Water')
+    .reduce((counts, pull) => {
+      counts[pull.Timestamp] = (counts[pull.Timestamp] || 0) + 1;
+      return counts;
+    }, {});
 
   wrongTimestamps.value = Object.entries(timestampCounts)
     .filter(([, count]) => count !== 1 && count !== 10)
@@ -739,16 +741,7 @@ const selectBannerType = (bannerType: string) => {
                 {{ $t('dushuo') }}
               </button>
             </li>
-            <li>
-              <button
-                v-bind:class="{
-                  'border-button': selectedBannerType === 'Her Heart-Cut Spring'
-                }"
-                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Her Heart-Cut Spring')">
-                {{ $t('heron') }}
-              </button>
-            </li>
+
             <!-- Line separator, full width -->
             <div class="col-span-2"><hr class="border-t border-gray-300 my-2" /></div>
             <!-- Jiu Niangzi banner -->
@@ -834,6 +827,16 @@ const selectBannerType = (bannerType: string) => {
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
                 @click="selectBannerType('On Fate\'s Cue')">
                 {{ $t('beryl') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Her Heart-Cut Spring'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Her Heart-Cut Spring')">
+                {{ $t('heron') }}
               </button>
             </li>
           </div>
