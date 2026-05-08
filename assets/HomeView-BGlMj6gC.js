@@ -1,4 +1,4 @@
-import{o as T}from"./index-BSAfh5r3.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as $,e as f,f as b,w as A,g as F,h as M,i as y,j as L,k as K,l as k,m as H}from"./index-DY-pHaEz.js";const v=[{date:"08/05/2026",description:`
+import{o as T}from"./index-ujb2eEVi.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as $,e as f,f as b,w as A,g as F,h as M,i as y,j as L,k as K,l as k,m as H}from"./index-drGZWDcy.js";const v=[{date:"08/05/2026",description:`
         • Add Rhiannon, Coppélia and Silverwing Eagle as unreleased arcanists. <br>
         • Add Nautika and Regulus euphorias. <br>
         • Fix issue related to Cheng Heguang banner.
