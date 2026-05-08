@@ -1,6 +1,14 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '08/05/2026',
+    description: `
+        • Add Rhiannon, Coppélia and Silverwing Eagle as unreleased arcanists. <br>
+        • Add Nautika and Regulus euphorias. <br>
+        • Fix issue related to Cheng Heguang banner.
+        • Update Japanese translation by toraojp0512-ship-it.`
+  },
+  {
     date: '24/04/2026',
     description: `
         • Add Recoleta euphoria.`
