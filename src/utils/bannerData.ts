@@ -73,6 +73,8 @@ export const bannerList = [
   'Ripples on the Water',
   // dushuo
   'The Snow of Dushuo',
+  // limited triple banners
+  "From the Lake's Heart",
 
   // jiu niangzi
   'Till the Last Drop',

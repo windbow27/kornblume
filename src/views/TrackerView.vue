@@ -96,6 +96,7 @@ const boonPulls = createPullsByBannerType('Boon of the Water');
 const goldenSpindlePulls = createPullsByBannerType('Golden Spindle');
 const ripplesPulls = createPullsByBannerType('Ripples on the Water');
 const dushuoPulls = createPullsByBannerType('The Snow of Dushuo');
+const lakeHeartPulls = createPullsByBannerType("From the Lake's Heart");
 
 const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
 const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
@@ -128,7 +129,8 @@ const limitedPulls = computed(() => {
       pull.BannerType !== 'The Myth at Her Fingertips' &&
       pull.BannerType !== "On Fate's Cue" &&
       pull.BannerType !== 'The Snow of Dushuo' &&
-      pull.BannerType !== 'Her Heart-Cut Spring'
+      pull.BannerType !== 'Her Heart-Cut Spring' &&
+      pull.BannerType !== "From the Lake's Heart"
   );
   return filteredPulls.map((pull, index) => {
     return {
@@ -639,7 +641,8 @@ const selectBannerType = (bannerType: string) => {
                 selectedBannerType === 'The Myth at Her Fingertips' ||
                 selectedBannerType === 'On Fate\'s Cue' ||
                 selectedBannerType === 'The Snow of Dushuo' ||
-                selectedBannerType === 'Her Heart-Cut Spring'
+                selectedBannerType === 'Her Heart-Cut Spring' ||
+                selectedBannerType === 'From the Lake\'s Heart'
             }"
             class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent">
             {{ $t('special') }}
@@ -739,6 +742,16 @@ const selectBannerType = (bannerType: string) => {
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
                 @click="selectBannerType('The Snow of Dushuo')">
                 {{ $t('dushuo') }}
+              </button>
+            </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'From the Lake\'s Heart'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('From the Lake\'s Heart')">
+                {{ $t('lake-heart') }}
               </button>
             </li>
 
@@ -933,6 +946,14 @@ const selectBannerType = (bannerType: string) => {
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
       banner-type="The Snow of Dushuo" />
+    <TrackerBoard
+      v-if="selectedBannerType === 'From the Lake\'s Heart'"
+      :text="$t('summary-lake-heart')"
+      :pulls="lakeHeartPulls"
+      :allPulls="allPulls"
+      :isError="isError"
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="From the Lake's Heart" />
 
     <TrackerBoard
       v-if="selectedBannerType === 'Till the Last Drop'"

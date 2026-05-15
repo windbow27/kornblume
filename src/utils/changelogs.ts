@@ -3,9 +3,15 @@ export const changelogs = [
   {
     date: '08/05/2026',
     description: `
+        • Add From The Lake's Heart banner.
+        `
+  },
+  {
+    date: '08/05/2026',
+    description: `
         • Add Rhiannon, Coppélia and Silverwing Eagle as unreleased arcanists. <br>
         • Add Nautika and Regulus euphorias. <br>
-        • Fix issue related to Cheng Heguang banner.
+        • Fix issue related to Cheng Heguang banner. <br>
         • Update Japanese translation by toraojp0512-ship-it.`
   },
   {
@@ -17,7 +23,7 @@ export const changelogs = [
     date: '20/04/2026',
     description: `
         • Add Paper Heron and Cheng Heguang banners <br>
-        • Add Adler as unreleased arcanist. <br>`
+        • Add Adler as unreleased arcanist.`
   },
   {
     date: '16/04/2026',
@@ -35,26 +41,26 @@ export const changelogs = [
     date: '17/03/2026',
     description: `
         • Add Lorentz Butterfly and Lady by the Lake as unreleased arcanists. <br>
-        • Add Spathodea and Tuesday euphorias. <br>
+        • Add Spathodea and Tuesday euphorias.
       `
   },
   {
     date: '09/03/2026',
     description: `
-        • Fix wrong quantity for 3.3 stage drops. If anything still looks wrong, please report it. <br>
+        • Fix wrong quantity for 3.3 stage drops. If anything still looks wrong, please report it.
       `
   },
   {
     date: '05/03/2026',
     description: `
-        • Update Planner, Arcanists, Items and Stages to version 3.3 update. <br>
+        • Update Planner, Arcanists, Items and Stages to version 3.3 update.
       `
   },
   {
     date: '02/03/2026',
     description: `
         • Add Cheng Heguang as unreleased arcanist. <br>
-        • Add Marsha and Igor banners. <br>
+        • Add Marsha and Igor banners.
       `
   },
   {
