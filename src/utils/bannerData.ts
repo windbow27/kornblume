@@ -52,6 +52,8 @@ export const bannerList = [
   'The Oath Unyielding',
   'Witness of Iron and Blood',
   'Soaring Aspirations',
+  'The Strange Attractor',
+  'Conduit of the Unseen',
 
   // standard
   'Amongst the Lake',
@@ -148,7 +150,9 @@ export const bannerRateUp = [
   'Ulrich',
   'Marsha',
   'Igor',
-  'Cheng Heguang'
+  'Cheng Heguang',
+  'Lorentz Butterfly',
+  'Ramona'
 ];
 
 export const specialArcanists: string[] = [

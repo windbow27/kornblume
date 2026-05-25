@@ -24,8 +24,8 @@ const text = ref('');
 const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
-// const selectedBannerType = ref('Limited');
-const selectedBannerType = ref('Her Heart-Cut Spring');
+const selectedBannerType = ref('Limited');
+// const selectedBannerType = ref('Her Heart-Cut Spring');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -592,14 +592,14 @@ const selectBannerType = (bannerType: string) => {
 
     <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
       <!-- Limited Placeholder -->
-      <button
+      <!-- <button
         v-bind:class="{
           'border-button': selectedBannerType === 'Her Heart-Cut Spring'
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
         @click="selectBannerType('Her Heart-Cut Spring')">
         {{ $t('heron') }}
-      </button>
+      </button> -->
 
       <button
         v-bind:class="{

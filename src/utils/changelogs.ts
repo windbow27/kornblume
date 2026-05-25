@@ -1,6 +1,13 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '25/05/2026',
+    description: `
+        • Add Ms. Stranger as unreleased arcanist. <br>
+        • Add Lorentz Butterfly and Ramona banners.
+        `
+  },
+  {
     date: '08/05/2026',
     description: `
         • Add From The Lake's Heart banner.
