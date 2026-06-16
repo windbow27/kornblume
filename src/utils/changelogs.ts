@@ -1,6 +1,13 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '16/06/2026',
+    description: `
+        • Add Everecho as unreleased arcanist. <br>
+        • Add J and Hissabeth euphorias.
+        `
+  },
+  {
     date: '25/05/2026',
     description: `
         • Add Ms. Stranger as unreleased arcanist. <br>
