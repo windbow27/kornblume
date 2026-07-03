@@ -310,7 +310,7 @@
   },
   {
     "Id": 10130,
-    "IsReleased": true,
+    "IsReleased": false,
     "Name": "Everecho",
     "Rarity": 6,
     "Afflatus": "Mineral",
