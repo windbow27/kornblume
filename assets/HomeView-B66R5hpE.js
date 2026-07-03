@@ -1,5 +1,5 @@
-import{o as T}from"./index-g5iivkYj.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as L,e as f,f as b,w as A,g as F,h as M,i as y,j as $,k as K,l as k,m as H}from"./index-D794xsnd.js";const v=[{date:"03/07/2026",description:`
-        • Add Enigma banner.
+import{o as T}from"./index-BFmVtXiz.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as L,e as f,f as b,w as A,g as F,h as M,i as y,j as $,k as K,l as k,m as H}from"./index-DKTMjdr_.js";const v=[{date:"03/07/2026",description:`
+        • Add Enigma banner. <br>
         `},{date:"16/06/2026",description:`
         • Add Everecho as unreleased arcanist. <br>
         • Add J and Hissabeth euphorias.
