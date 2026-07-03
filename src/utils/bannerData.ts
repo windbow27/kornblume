@@ -54,6 +54,7 @@ export const bannerList = [
   'Soaring Aspirations',
   'The Strange Attractor',
   'Conduit of the Unseen',
+  'Deciphering Reality',
 
   // standard
   'Amongst the Lake',
@@ -152,7 +153,8 @@ export const bannerRateUp = [
   'Igor',
   'Cheng Heguang',
   'Lorentz Butterfly',
-  'Ramona'
+  'Ramona',
+  'Enigma'
 ];
 
 export const specialArcanists: string[] = [

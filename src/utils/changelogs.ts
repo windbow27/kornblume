@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '03/07/2026',
+    description: `
+        • Add Enigma banner.
+        `
+  },
+  {
     date: '16/06/2026',
     description: `
         • Add Everecho as unreleased arcanist. <br>
