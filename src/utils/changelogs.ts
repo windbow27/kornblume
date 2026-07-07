@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '07/07/2026',
+    description: `
+        • Add Cornerstone as unreleased arcanist.
+        `
+  },
+  {
     date: '03/07/2026',
     description: `
         • Add Enigma banner.
