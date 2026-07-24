@@ -18,7 +18,7 @@ const props = defineProps({
 <template>
     <div class="p-2.5 relative overflow-hidden group">
         <div class="transform transition-transform duration-500 overflow-hidden">
-            <img class="w-16 sm:w-20 rounded-b-full scale-[1.025] transform transition-transform duration-300 group-hover:scale-125"
+            <img class="w-16 sm:w-20 aspect-[57/131] object-contain object-center rounded-b-full scale-[1.025] transform transition-transform duration-300 group-hover:scale-125"
                 :src="getArcanistI0ImagePath(props.arcanist.Id)" :alt="props.arcanist.Name" />
             <!-- Overlay -->
             <div

@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n';
 import { useDataStore } from '@/stores/dataStore';
 import { usePullsRecordStore, IPull } from '@/stores/pullsRecordStore';
 import { formatArcanists } from '@/composables/arcanists';
+import { getAfflatusList } from '@/composables/images';
 import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
 import ArcanistPortrait from '@/components/arcanist/ArcanistPortrait.vue';
 
@@ -56,7 +57,11 @@ const filteredArcanists = computed(() => {
   }
 
   if (activeAfflatus.value.length > 0) {
-    filtered = filtered.filter((arc) => activeAfflatus.value.includes(arc.Afflatus));
+    filtered = filtered.filter((arc) =>
+      getAfflatusList(arc.Afflatus).some((afflatus) =>
+        activeAfflatus.value.some((active) => active.toLowerCase() === afflatus.toLowerCase())
+      )
+    );
   }
 
   if (usePlannerSettingsStore().settings.showOwnedArcanists) {

@@ -24,8 +24,8 @@ const text = ref('');
 const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
-const selectedBannerType = ref('Limited');
-// const selectedBannerType = ref('Her Heart-Cut Spring');
+// const selectedBannerType = ref('Limited');
+const selectedBannerType = ref('Analysis of Metallic Dramaturgy');
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
@@ -107,6 +107,7 @@ const kassandraPulls = createPullsByBannerType('Wine-Dark Reflections of the Eag
 const nautikaPulls = createPullsByBannerType('The Myth at Her Fingertips');
 const berylPulls = createPullsByBannerType("On Fate's Cue");
 const heronPulls = createPullsByBannerType('Her Heart-Cut Spring');
+const twinsPulls = createPullsByBannerType('Analysis of Metallic Dramaturgy');
 
 const limitedPulls = computed(() => {
   const filteredPulls = sortedPulls.value.filter(
@@ -130,7 +131,8 @@ const limitedPulls = computed(() => {
       pull.BannerType !== "On Fate's Cue" &&
       pull.BannerType !== 'The Snow of Dushuo' &&
       pull.BannerType !== 'Her Heart-Cut Spring' &&
-      pull.BannerType !== "From the Lake's Heart"
+      pull.BannerType !== "From the Lake's Heart" &&
+      pull.BannerType !== 'Analysis of Metallic Dramaturgy'
   );
   return filteredPulls.map((pull, index) => {
     return {
@@ -592,14 +594,14 @@ const selectBannerType = (bannerType: string) => {
 
     <div class="flex flex-wrap justify-center space-x-5 pb-5 gap-y-5">
       <!-- Limited Placeholder -->
-      <!-- <button
+      <button
         v-bind:class="{
-          'border-button': selectedBannerType === 'Her Heart-Cut Spring'
+          'border-button': selectedBannerType === 'Analysis of Metallic Dramaturgy'
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
-        @click="selectBannerType('Her Heart-Cut Spring')">
-        {{ $t('heron') }}
-      </button> -->
+        @click="selectBannerType('Analysis of Metallic Dramaturgy')">
+        {{ $t('the-twins') }}
+      </button>
 
       <button
         v-bind:class="{
@@ -642,7 +644,8 @@ const selectBannerType = (bannerType: string) => {
                 selectedBannerType === 'On Fate\'s Cue' ||
                 selectedBannerType === 'The Snow of Dushuo' ||
                 selectedBannerType === 'Her Heart-Cut Spring' ||
-                selectedBannerType === 'From the Lake\'s Heart'
+                selectedBannerType === 'From the Lake\'s Heart' ||
+                selectedBannerType === 'Analysis of Metallic Dramaturgy'
             }"
             class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent">
             {{ $t('special') }}
@@ -852,6 +855,16 @@ const selectBannerType = (bannerType: string) => {
                 {{ $t('heron') }}
               </button>
             </li>
+            <li>
+              <button
+                v-bind:class="{
+                  'border-button': selectedBannerType === 'Analysis of Metallic Dramaturgy'
+                }"
+                class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
+                @click="selectBannerType('Analysis of Metallic Dramaturgy')">
+                {{ $t('the-twins') }}
+              </button>
+            </li>
           </div>
         </ul>
       </div>
@@ -1021,12 +1034,20 @@ const selectBannerType = (bannerType: string) => {
       banner-type="On Fate's Cue" />
     <TrackerBoard
       v-if="selectedBannerType === 'Her Heart-Cut Spring'"
-      :text="$t('summary-heron')"
+      :text="$t('heron')"
       :pulls="heronPulls"
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
       banner-type="Her Heart-Cut Spring" />
+    <TrackerBoard
+      v-if="selectedBannerType === 'Analysis of Metallic Dramaturgy'"
+      :text="$t('the-twins')"
+      :pulls="twinsPulls"
+      :allPulls="allPulls"
+      :isError="isError"
+      :wrongTimestamps="wrongTimestamps"
+      banner-type="Analysis of Metallic Dramaturgy" />
   </div>
 </template>
 

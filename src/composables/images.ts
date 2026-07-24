@@ -143,14 +143,27 @@ export function getArcanistI2ImagePath(id: number | string) {
   return `images/arcanists/i2/${id}.webp`;
 }
 
+// An arcanist can have more than one afflatus, e.g. "Mineral & star"
+export function getAfflatusList(afflatus: string) {
+  return afflatus
+    .split('&')
+    .map((a) => a.trim())
+    .filter((a) => a.length > 0);
+}
+
+// "Mineral & star" -> "mineral_star"
+function getAfflatusSlug(afflatus: string) {
+  return getAfflatusList(afflatus)
+    .map((a) => a.toLowerCase())
+    .join('_');
+}
+
 export function getArcanistAfflatusPath(afflatus: string) {
-  afflatus = afflatus.toLowerCase();
-  return `images/arcanists/misc/logo-${afflatus}.webp`;
+  return `images/arcanists/misc/logo-${getAfflatusSlug(afflatus)}.webp`;
 }
 
 export function getArcanistAfflatusIconPath(afflatus: string) {
-  afflatus = afflatus.toLowerCase();
-  return `images/arcanists/misc/${afflatus}.webp`;
+  return `images/arcanists/misc/${getAfflatusSlug(afflatus)}.webp`;
 }
 
 export function getArcanistDmgTypePath(dmgType: string) {

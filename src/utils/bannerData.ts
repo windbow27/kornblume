@@ -96,7 +96,9 @@ export const bannerList = [
   // beryl
   "On Fate's Cue",
   // Paper Heron
-  'Her Heart-Cut Spring'
+  'Her Heart-Cut Spring',
+  // The Twins
+  'Analysis of Metallic Dramaturgy'
 ];
 
 export const bannerRateUp = [

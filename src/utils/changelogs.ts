@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '24/07/2026',
+    description: `
+        • Add The Twins and NORA banner.
+        `
+  },
+  {
     date: '07/07/2026',
     description: `
         • Add Cornerstone as unreleased arcanist.

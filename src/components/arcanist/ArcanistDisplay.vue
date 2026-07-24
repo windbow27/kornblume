@@ -5,7 +5,7 @@ import { ref, onBeforeMount } from 'vue';
 import { useRoute } from 'vue-router';
 import { useDataStore } from '@/stores/dataStore';
 import { IArcanist } from '@/types'
-import { getArcanistI2ImagePath, getArcanistAfflatusPath, getArcanistDmgTypePath } from '@/composables/images';
+import { getArcanistI2ImagePath, getArcanistAfflatusPath, getAfflatusList, getArcanistDmgTypePath } from '@/composables/images';
 import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
 import Resonance from '@/components/arcanist/info/Resonance.vue';
@@ -45,7 +45,8 @@ onBeforeMount(() => {
                         'text-sky-200': arcanist?.Rarity === 3,
                         'text-green-200': arcanist?.Rarity === 2
                     }"> {{ arcanist?.Rarity }} <i class="fa-solid fa-star"></i> </p>
-                    <img class="inline-block w-10" :src="getArcanistAfflatusPath(arcanist?.Afflatus ?? '')" alt="">
+                    <img v-for="afflatus in getAfflatusList(arcanist?.Afflatus ?? '')" :key="afflatus"
+                        class="inline-block w-10" :src="getArcanistAfflatusPath(afflatus)" alt="">
                     <!-- <img class="inline-block w-8 pb-2" :src="getArcanistDmgTypePath('1')" alt=""> -->
                 </div>
                 <div class="flex flex-wrap gap-x-2 gap-y-2 pt-2 justify-center items-center sm:justify-start">
