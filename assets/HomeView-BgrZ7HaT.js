@@ -1,5 +1,7 @@
-import{o as T}from"./index-DTeml696.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as L,e as f,f as b,w as A,g as F,h as M,i as y,j as $,k as K,l as k,m as H}from"./index-DDfA9N1D.js";const v=[{date:"07/07/2026",description:`
-        • Add Cornerstone as unreleased arcanist. <br>
+import{o as T}from"./index-CEM7Q3w8.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as L,e as f,f as b,w as A,g as F,h as M,i as y,j as $,k as K,l as k,m as H}from"./index-fXs7_xX7.js";const v=[{date:"24/07/2026",description:`
+        • Add The Twins and NORA banner.
+        `},{date:"07/07/2026",description:`
+        • Add Cornerstone as unreleased arcanist.
         `},{date:"03/07/2026",description:`
         • Add Enigma banner.
         `},{date:"16/06/2026",description:`
