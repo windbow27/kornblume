@@ -8,6 +8,7 @@ import { useScreen } from '@/composables/useScreen';
 import { bannerList } from '@/utils/bannerData';
 import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
 import SpecialIcon from '../common/SpecialIcon.vue';
+import SearchableSelect from '../common/SearchableSelect.vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
@@ -25,6 +26,7 @@ const props = defineProps({
 const { isLargeScreen } = useScreen();
 const pullsRecordStore = usePullsRecordStore();
 const arcanists = formatNoSpoilerArcanists(useDataStore().arcanists);
+const arcanistNames = arcanists.map((arcanist) => arcanist.Name);
 const localPulls = reactive(props.pulls.map((pull) => ({ ...pull })));
 const localPullDates = reactive(props.pulls.map((pull) => new Date(pull.Timestamp)));
 
@@ -96,8 +98,9 @@ const addPull = () => {
   currentPage.value = 1;
 };
 
-const updateRarity = (pull: IPullNumber) => {
-  const arcanist = arcanists.find((a) => a.Name === pull.ArcanistName);
+const selectArcanist = (pull: IPullNumber, name: string) => {
+  pull.ArcanistName = name;
+  const arcanist = arcanists.find((a) => a.Name === name);
   pull.Rarity = arcanist ? arcanist.Rarity : 0;
 };
 
@@ -183,26 +186,22 @@ const format = (date) => {
               :is-interactive="false" />
             <SpecialIcon v-else :name="pull.ArcanistName" />
 
-            <div class="relative w-36">
-              <select
-                class="select select-sm bg-[#212121] border-white/5 w-full rounded-[4px] hover:border-white/50"
-                v-model="pull.ArcanistName"
-                @change="updateRarity(pull)">
-                <option v-for="(arcanist, i) in arcanists" :key="i" :value="arcanist.Name">
-                  {{ arcanist.Name }}
-                </option>
-              </select>
+            <div class="w-36">
+              <SearchableSelect
+                :model-value="pull.ArcanistName"
+                :options="arcanistNames"
+                :search-placeholder="$t('search-by-name')"
+                :no-results-text="$t('no-results')"
+                @update:model-value="(name: string) => selectArcanist(pull, name)" />
             </div>
           </td>
           <td class="text-center whitespace-nowrap px-2">
-            <div class="relative">
-              <select
-                class="select select-sm bg-[#212121] border-white/5 w-56 h-9 rounded-[4px] pl-3 pr-8 hover:border-white/50"
-                v-model="pull.BannerType">
-                <option v-for="(banner, i) in bannerList" :key="i" :value="banner">
-                  {{ banner }}
-                </option>
-              </select>
+            <div class="w-56">
+              <SearchableSelect
+                v-model="pull.BannerType"
+                :options="bannerList"
+                :search-placeholder="$t('search-banners')"
+                :no-results-text="$t('no-results')" />
             </div>
           </td>
           <td class="text-center whitespace-nowrap w-56 px-2">

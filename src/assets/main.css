@@ -225,6 +225,44 @@
     --popper-theme-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+/*Datepicker (@vuepic/vue-datepicker) - match the dark inputs used around the site*/
+.dp__theme_dark {
+    --dp-font-family: inherit;
+    --dp-font-size: 0.875rem;
+    --dp-background-color: #212121;
+    --dp-text-color: #ffffff;
+    --dp-border-color: rgba(255, 255, 255, 0.05);
+    --dp-border-color-hover: rgba(255, 255, 255, 0.5);
+    --dp-menu-border-color: rgba(255, 255, 255, 0.1);
+    --dp-hover-color: rgba(255, 255, 255, 0.1);
+    --dp-hover-text-color: #ffffff;
+    --dp-hover-icon-color: #ffffff;
+    --dp-icon-color: rgba(255, 255, 255, 0.5);
+    --dp-secondary-color: rgba(255, 255, 255, 0.35);
+    --dp-primary-color: var(--fallback-in, oklch(var(--in)/1));
+    --dp-primary-text-color: var(--fallback-inc, oklch(var(--inc)/1));
+    --dp-primary-disabled-color: rgba(255, 255, 255, 0.2);
+    --dp-highlight-color: var(--fallback-in, oklch(var(--in)/0.2));
+    --dp-disabled-color: rgba(255, 255, 255, 0.05);
+    --dp-disabled-color-text: rgba(255, 255, 255, 0.3);
+    --dp-tooltip-color: #2b2b2b;
+    --dp-scroll-bar-background: #212121;
+    --dp-scroll-bar-color: rgba(255, 255, 255, 0.2);
+    --dp-border-radius: 4px;
+    --dp-cell-border-radius: 4px;
+    --dp-input-padding: 0.375rem 0.75rem;
+    --dp-input-icon-padding: 2rem;
+}
+
+/*Same height as the selects sitting next to it*/
+.dp__theme_dark .dp__input {
+    height: 2.25rem;
+}
+
+.dp__theme_dark .dp__input_icons {
+    padding: 6px 10px;
+}
+
 .hidden-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
