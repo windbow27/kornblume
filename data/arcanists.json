@@ -40682,7 +40682,7 @@
   },
   {
     "Id": 10120,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Reed",
     "Rarity": 4,
     "Afflatus": "Plant",
