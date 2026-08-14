@@ -753,7 +753,7 @@
   },
   {
     "Id": 10126,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Rhiannon",
     "Rarity": 6,
     "Afflatus": "Beast",
@@ -1499,7 +1499,7 @@
   },
   {
     "Id": 10127,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Coppélia",
     "Rarity": 6,
     "Afflatus": "Mineral",
@@ -29297,7 +29297,7 @@
   },
   {
     "Id": 10128,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Silverwing Eagle",
     "Rarity": 5,
     "Afflatus": "Plant",
