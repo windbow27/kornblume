@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top
   {
+    date: '19/09/2026',
+    description: `
+        • Add Narcissus as unreleased arcanist. <br>
+        `
+  },
+  {
     date: '24/08/2026',
     description: `
         • Add Hedona as unreleased arcanist. <br>
