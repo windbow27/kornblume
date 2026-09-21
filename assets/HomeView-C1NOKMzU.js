@@ -1,4 +1,6 @@
-import{o as T}from"./index-b061znfN.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as M,e as f,f as b,w as A,g as R,h as L,i as y,j as $,k as H,l as k,m as K}from"./index-BrsDlp9v.js";const v=[{date:"24/08/2026",description:`
+import{o as T}from"./index-otFt8UHj.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as M,e as f,f as b,w as A,g as R,h as L,i as y,j as $,k as H,l as k,m as K}from"./index-CP9ppPjI.js";const v=[{date:"19/09/2026",description:`
+        • Add Narcissus as unreleased arcanist. <br>
+        `},{date:"24/08/2026",description:`
         • Add Hedona as unreleased arcanist. <br>
         • Add Noire and Moldir euphorias.
         `},{date:"14/08/2026",description:`
