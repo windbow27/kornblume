@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import { IArcanist } from '@/types';
 import { useI18n } from 'vue-i18n';
 import { useDataStore } from '@/stores/dataStore';
-import { usePullsRecordStore, IPull } from '@/stores/pullsRecordStore';
 import { formatArcanists } from '@/composables/arcanists';
 import { getAfflatusList } from '@/composables/images';
 import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
+import { useArcanistOwnershipStore } from '@/stores/arcanistOwnershipStore';
 import ArcanistPortrait from '@/components/arcanist/ArcanistPortrait.vue';
 
 const { locale, t } = useI18n();
@@ -14,9 +14,9 @@ const arcanistStore = useDataStore().arcanists;
 const listArcanists = ref<IArcanist[]>(arcanistStore);
 const sortMode = ref<'id' | 'name'>('id');
 const searchQuery = ref('');
-const pulls = ref<IPull[]>([]);
 const activeRarities = ref<number[]>([]);
 const activeAfflatus = ref<string[]>([]);
+const ownershipStore = useArcanistOwnershipStore();
 
 const selectedRarities = (rarity: number) => {
   if (activeRarities.value.includes(rarity)) {
@@ -33,13 +33,6 @@ const selectedAfflatus = (afflatus: string) => {
     activeAfflatus.value.push(afflatus);
   }
 };
-
-const portraitCounts = computed(() => {
-  return listArcanists.value.map((arc) => ({
-    ArcanistName: arc.Name,
-    count: pulls.value.filter((pull) => pull.ArcanistName === arc.Name).length - 1
-  }));
-});
 
 const filteredArcanists = computed(() => {
   let filtered = listArcanists.value;
@@ -66,8 +59,8 @@ const filteredArcanists = computed(() => {
 
   if (usePlannerSettingsStore().settings.showOwnedArcanists) {
     filtered = filtered.filter((arc) => {
-      const count = portraitCounts.value.find((pc) => pc.ArcanistName === arc.Name)?.count ?? -1;
-      return count >= 0;
+      const ownership = ownershipStore.getEffectiveEntry(arc.Id);
+      return !!ownership;
     });
   }
 
@@ -83,11 +76,6 @@ const filteredArcanists = computed(() => {
   return filtered;
 });
 
-onMounted(() => {
-  if (usePullsRecordStore().data.length > 0) {
-    pulls.value = [...usePullsRecordStore().data];
-  }
-});
 </script>
 
 <template>
@@ -130,7 +118,10 @@ onMounted(() => {
       </div>
 
       <!--Search bar and unreleased filter-->
-      <div class="flex flex-wrap gap-x-10 justify-center">
+      <div class="flex flex-wrap items-center gap-x-10 justify-center">
+        <router-link to="/set-owned-arcanists" class="btn btn-sm btn-outline text-white hover:bg-slate-700">
+          Set owned arcanists
+        </router-link>
         <div class="form-control">
           <label class="cursor-pointer label justify-center space-x-5">
             <span class="label-text text-white text-md">{{ $t('show-unreleased-arcanists') }}</span>
@@ -152,40 +143,48 @@ onMounted(() => {
       </div>
       <!-- Rarity select -->
       <div class="flex flex-wrap gap-x-10 justify-center">
-        <div class="flex justify-center space-x-2">
-          <button
-            v-for="i in [2, 3, 4, 5, 6]"
-            :key="i"
-            :class="{
-              'border-2 border-info': activeRarities.includes(i),
-              'border-2 border-transparent': !activeRarities.includes(i)
-            }"
-            @click="selectedRarities(i)"
-            class="p-2 rounded-md">
-            <i
-              class="fa-solid fa-star"
+        <div class="rounded-lg border border-slate-700/90 bg-slate-900/50 px-3 py-2">
+          <p class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-300">Rarity</p>
+          <div class="flex justify-center space-x-2">
+            <button
+              v-for="i in [2, 3, 4, 5, 6]"
+              :key="i"
               :class="{
-                'text-orange-300': i === 6,
-                'text-yellow-100': i === 5,
-                'text-purple-400': i === 4,
-                'text-sky-200': i === 3,
-                'text-green-200': i === 2
-              }"></i>
-          </button>
+                'border-2 border-info': activeRarities.includes(i),
+                'border-2 border-transparent': !activeRarities.includes(i)
+              }"
+              :title="`${i}-star`"
+              @click="selectedRarities(i)"
+              class="p-2 rounded-md">
+              <i
+                class="fa-solid fa-star"
+                :class="{
+                  'text-orange-300': i === 6,
+                  'text-yellow-100': i === 5,
+                  'text-purple-400': i === 4,
+                  'text-sky-200': i === 3,
+                  'text-green-200': i === 2
+                }"></i>
+            </button>
+          </div>
         </div>
         <!-- Afflatus select -->
-        <div class="flex justify-center space-x-2">
-          <button
-            v-for="afflatus in ['Beast', 'Mineral', 'Plant', 'Star', 'Intellect', 'Spirit']"
-            :key="afflatus"
-            :class="{
-              'border-2 border-info': activeAfflatus.includes(afflatus),
-              'border-2 border-transparent': !activeAfflatus.includes(afflatus)
-            }"
-            @click="selectedAfflatus(afflatus)"
-            class="p-2 rounded-md">
-            <img class="w-4" :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`" alt="" />
-          </button>
+        <div class="rounded-lg border border-slate-700/90 bg-slate-900/50 px-3 py-2">
+          <p class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-300">Afflatus</p>
+          <div class="flex justify-center gap-1.5">
+            <button
+              v-for="afflatus in ['Beast', 'Mineral', 'Plant', 'Star', 'Intellect', 'Spirit']"
+              :key="afflatus"
+              :class="{
+                'border-2 border-info': activeAfflatus.includes(afflatus),
+                'border-2 border-transparent': !activeAfflatus.includes(afflatus)
+              }"
+              :title="afflatus"
+              @click="selectedAfflatus(afflatus)"
+              class="h-10 w-10 rounded-md p-1 flex items-center justify-center">
+              <img class="h-9 w-9 object-contain" :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`" alt="" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -194,9 +193,7 @@ onMounted(() => {
         v-for="arcanist in filteredArcanists"
         :key="arcanist.Id"
         :to="`/arcanist-${arcanist.Id}`">
-        <ArcanistPortrait
-          :arcanist="arcanist"
-          :count="portraitCounts.find((pc) => pc.ArcanistName === arcanist.Name)?.count ?? -1" />
+        <ArcanistPortrait :arcanist="arcanist" />
       </router-link>
     </div>
   </div>
