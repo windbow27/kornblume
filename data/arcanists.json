@@ -1872,7 +1872,7 @@
   },
   {
     "Id": 10130,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Everecho",
     "Rarity": 6,
     "Afflatus": "Mineral",
@@ -3743,7 +3743,7 @@
   },
   {
     "Id": 10131,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Cornerstone",
     "Rarity": 6,
     "Afflatus": "Mineral",
