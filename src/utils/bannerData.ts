@@ -56,6 +56,8 @@ export const bannerList = [
   'Conduit of the Unseen',
   'Deciphering Reality',
   'Beneath the Guise of Her Cocoon',
+  'Speak and the Past Will Echo',
+  "The Future's Foundation",
 
   // standard
   'Amongst the Lake',
@@ -160,7 +162,9 @@ export const bannerRateUp = [
   'Lorentz Butterfly',
   'Ramona',
   'Enigma',
-  'Ms. Stranger'
+  'Ms. Stranger',
+  'Everecho',
+  'Cornerstone'
 ];
 
 export const specialArcanists: string[] = [

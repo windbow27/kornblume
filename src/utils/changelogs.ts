@@ -1,9 +1,15 @@
 export const changelogs = [
-  // Add more from top
+  // Add more from top,
+  {
+    date: '23/09/2026',
+    description: `
+        • Add Everecho and Cornerstone banners.
+        `
+  },
   {
     date: '19/09/2026',
     description: `
-        • Add Narcissus as unreleased arcanist. <br>
+        • Add Narcissus as unreleased arcanist.
         `
   },
   {
