@@ -1,6 +1,13 @@
 export const changelogs = [
   // Add more from top,
   {
+    date: '24/08/2026',
+    description: `
+        • Add Huntsworn Lilya and Glyndŵr as unreleased arcanists. <br>
+        • Add 37, Beryl, Centurion and Matilda euphorias.
+        `
+  },
+  {
     date: '23/09/2026',
     description: `
         • Add Everecho and Cornerstone banners.
