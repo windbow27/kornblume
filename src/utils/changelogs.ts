@@ -1,6 +1,12 @@
 export const changelogs = [
   // Add more from top,
   {
+    date: '15/10/2026',
+    description: `
+        • Add Drake as unreleased arcanist.
+        `
+  },
+  {
     date: '24/08/2026',
     description: `
         • Add Huntsworn Lilya and Glyndŵr as unreleased arcanists. <br>
