@@ -1,4 +1,6 @@
-import{o as T}from"./index-DKZ9fTkl.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as M,e as f,f as b,w as A,g as R,h as L,i as y,j as $,k as H,l as k,m as K}from"./index-qzPQvt4C.js";const v=[{date:"24/08/2026",description:`
+import{o as T}from"./index-iJTq8_m9.js";import{d as _,c as n,a as e,t,F as h,r as w,u as C,o as r,b as M,e as f,f as b,w as A,g as R,h as L,i as y,j as $,k as H,l as k,m as K}from"./index-Ch1drTXX.js";const v=[{date:"15/10/2026",description:`
+        • Add Drake as unreleased arcanist.
+        `},{date:"24/08/2026",description:`
         • Add Huntsworn Lilya and Glyndŵr as unreleased arcanists. <br>
         • Add 37, Beryl, Centurion and Matilda euphorias.
         `},{date:"23/09/2026",description:`
