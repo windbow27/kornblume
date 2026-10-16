@@ -1,12 +1,11 @@
-<!-- eslint-disable no-unused-vars -->
-<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
-import { ref, onBeforeMount } from 'vue';
+import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useDataStore } from '@/stores/dataStore';
 import { IArcanist } from '@/types'
-import { getArcanistI2ImagePath, getArcanistAfflatusPath, getAfflatusList, getArcanistDmgTypePath } from '@/composables/images';
+import { getArcanistI2ImagePath, getArcanistAfflatusPath, getAfflatusList } from '@/composables/images';
 import ArcanistIconDisplay from '@/components/arcanist/ArcanistIconDisplay.vue';
+import OwnershipPanel from '@/components/arcanist/info/OwnershipPanel.vue';
 import Stats from '@/components/arcanist/info/Stats.vue';
 import Resonance from '@/components/arcanist/info/Resonance.vue';
 import Euphoria from './info/Euphoria.vue';
@@ -17,9 +16,17 @@ const arcanist = ref<IArcanist>(arcanistStore[0]);
 const buttons = ['Stats', 'Resonance', 'Euphoria'];
 const selectedButton = ref(buttons[0]);
 
-onBeforeMount(() => {
+const initializeArcanist = () => {
     arcanist.value = arcanistStore.find(arc => arc.Id === Number(route.params.id)) || arcanistStore[0];
-});
+};
+
+watch(
+    () => route.params.id,
+    () => {
+        initializeArcanist();
+    },
+    { immediate: true }
+);
 
 </script>
 
@@ -32,7 +39,7 @@ onBeforeMount(() => {
         </div>
 
         <!--Infomation-->
-        <div class="flex flex-col w-full xl:w-1/2 gap-y-4 max-w-xl 2xl:max-w-2xl p-4">
+        <div class="flex flex-col w-full xl:w-1/2 gap-y-4 max-w-xl 2xl:max-w-2xl p-4 self-start">
             <!--Name and Selectors-->
             <div class="p-4 rounded shadow custom-border w-full">
                 <div class="flex flex-wrap items-center space-x-2">
@@ -55,9 +62,10 @@ onBeforeMount(() => {
                         {{ $t(button) }}
                     </button>
                 </div>
+                <OwnershipPanel :arcanist="arcanist" />
             </div>
             <!--Info Cards-->
-            <div class="p-4 rounded shadow custom-border w-full min-h-[568px] h-[85vh] lg:h-[55vh]">
+            <div class="p-4 rounded shadow custom-border w-full">
                 <Stats :arcanist="arcanist ?? {}" v-if="selectedButton === 'Stats'" />
                 <Resonance :arcanist="arcanist ?? {}" v-if="selectedButton === 'Resonance'" />
                 <Euphoria :arcanist="arcanist ?? {}" v-if="selectedButton === 'Euphoria'" />
@@ -66,8 +74,3 @@ onBeforeMount(() => {
     </div>
 </template>
 
-<style scoped>
-button:disabled {
-    opacity: 0.25;
-}
-</style>
