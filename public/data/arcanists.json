@@ -374,7 +374,7 @@
   },
   {
     "Id": 10135,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Narcissus",
     "Rarity": 6,
     "Afflatus": "Beast",
@@ -747,7 +747,7 @@
   },
   {
     "Id": 10134,
-    "IsReleased": false,
+    "IsReleased": true,
     "Name": "Hedone",
     "Rarity": 6,
     "Afflatus": "Mineral",
