@@ -10,6 +10,7 @@ import ArcanistIconDisplay from "@/components/arcanist/ArcanistIconDisplay.vue";
 import {
   isPortraitOptionDisabled,
   matchesPortrait,
+  PortraitFilterOperations,
   type PortraitOperation,
 } from "@/utils/portraitFilter";
 
@@ -24,12 +25,12 @@ const sortMode = ref<"id" | "name">("id");
 const activeRarities = ref<number[]>([]);
 const activeAfflatus = ref<string[]>([]);
 const ownershipFilter = ref<ownedFilter>("all");
-const portraitOp = ref<PortraitOperation>("=");
+const portraitOp = ref<PortraitOperation>(PortraitFilterOperations.Equals);
 const activePortraits = ref<number[]>([]);
 const activePortrait = ref<number | null>(null);
 
 const togglePortrait = (count: number) => {
-  if (portraitOp.value === "=") {
+  if (portraitOp.value === PortraitFilterOperations.Equals) {
     if (activePortraits.value.includes(count)) {
       activePortraits.value = activePortraits.value.filter((p) => p !== count);
     } else {
@@ -42,7 +43,7 @@ const togglePortrait = (count: number) => {
 };
 
 const isPortraitSelected = (count: number) =>
-  portraitOp.value === "="
+  portraitOp.value === PortraitFilterOperations.Equals
     ? activePortraits.value.includes(count)
     : activePortrait.value === count;
 
@@ -178,7 +179,8 @@ const filteredArcanists = computed(() => {
 
   if (
     activePortraits.value.length > 0 ||
-    (portraitOp.value !== "=" && activePortrait.value !== null)
+    (portraitOp.value !== PortraitFilterOperations.Equals &&
+      activePortrait.value !== null)
   ) {
     filtered = filtered.filter((arc) =>
       matchesPortrait(
@@ -321,9 +323,9 @@ const filteredArcanists = computed(() => {
             class="select select-sm w-16 bg-gray-800 text-white"
             title="Comparison"
           >
-            <option value="=">=</option>
-            <option value="<">&lt;</option>
-            <option value=">">&gt;</option>
+            <option :value="PortraitFilterOperations.Equals">=</option>
+            <option :value="PortraitFilterOperations.LessThan">&lt;</option>
+            <option :value="PortraitFilterOperations.GreaterThan">&gt;</option>
           </select>
           <button
             v-for="count in [0, 1, 2, 3, 4, 5]"
