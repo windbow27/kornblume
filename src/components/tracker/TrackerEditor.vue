@@ -1,26 +1,30 @@
 <script setup lang="ts">
-import { ref, reactive, computed } from 'vue';
-import { IPullNumber, IPull, usePullsRecordStore } from '@/stores/pullsRecordStore';
-import { IArcanist } from '@/types';
-import { useDataStore } from '@/stores/dataStore';
-import { formatNoSpoilerArcanists } from '@/composables/arcanists';
-import { useScreen } from '@/composables/useScreen';
-import { bannerList } from '@/utils/bannerData';
-import ArcanistIcon from '../arcanist/ArcanistIcon.vue';
-import SpecialIcon from '../common/SpecialIcon.vue';
-import SearchableSelect from '../common/SearchableSelect.vue';
-import VueDatePicker from '@vuepic/vue-datepicker';
-import '@vuepic/vue-datepicker/dist/main.css';
+import { ref, reactive, computed } from "vue";
+import {
+  IPullNumber,
+  IPull,
+  usePullsRecordStore,
+} from "@/stores/pullsRecordStore";
+import { IArcanist } from "@/types";
+import { useDataStore } from "@/stores/dataStore";
+import { formatNoSpoilerArcanists } from "@/composables/arcanists";
+import { useScreen } from "@/composables/useScreen";
+import { bannerList } from "@/utils/bannerData";
+import ArcanistIcon from "../arcanist/ArcanistIcon.vue";
+import SpecialIcon from "../common/SpecialIcon.vue";
+import SearchableSelect from "../common/SearchableSelect.vue";
+import VueDatePicker from "@vuepic/vue-datepicker";
+import "@vuepic/vue-datepicker/dist/main.css";
 
 const props = defineProps({
   pulls: {
     type: Array as () => IPullNumber[],
-    required: true
+    required: true,
   },
   bannerType: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const { isLargeScreen } = useScreen();
@@ -28,14 +32,19 @@ const pullsRecordStore = usePullsRecordStore();
 const arcanists = formatNoSpoilerArcanists(useDataStore().arcanists);
 const arcanistNames = arcanists.map((arcanist) => arcanist.Name);
 const localPulls = reactive(props.pulls.map((pull) => ({ ...pull })));
-const localPullDates = reactive(props.pulls.map((pull) => new Date(pull.Timestamp)));
+const localPullDates = reactive(
+  props.pulls.map((pull) => new Date(pull.Timestamp)),
+);
 
 const itemsPerPage = 10;
 const currentPage = ref(1);
 
 const totalPages = computed(() => Math.ceil(localPulls.length / itemsPerPage));
 const paginatedPulls = computed(() =>
-  localPulls.slice((currentPage.value - 1) * itemsPerPage, currentPage.value * itemsPerPage)
+  localPulls.slice(
+    (currentPage.value - 1) * itemsPerPage,
+    currentPage.value * itemsPerPage,
+  ),
 );
 
 function goToPage(page: number) {
@@ -59,26 +68,26 @@ function getPagination() {
     }
   } else {
     if (currentPage.value <= 3) {
-      pages.push(1, 2, 3, 4, '...', totalPages.value - 1, totalPages.value);
+      pages.push(1, 2, 3, 4, "...", totalPages.value - 1, totalPages.value);
     } else if (currentPage.value >= totalPages.value - 2) {
       pages.push(
         1,
         2,
-        '...',
+        "...",
         totalPages.value - 3,
         totalPages.value - 2,
         totalPages.value - 1,
-        totalPages.value
+        totalPages.value,
       );
     } else {
       pages.push(
         1,
-        '...',
+        "...",
         currentPage.value - 1,
         currentPage.value,
         currentPage.value + 1,
-        '...',
-        totalPages.value
+        "...",
+        totalPages.value,
       );
     }
   }
@@ -88,10 +97,10 @@ function getPagination() {
 const addPull = () => {
   const newPull: IPullNumber = {
     PullNumber: localPulls.length + 1,
-    ArcanistName: '',
+    ArcanistName: "",
     Rarity: 0,
     BannerType: props.bannerType,
-    Timestamp: new Date().getTime()
+    Timestamp: new Date().getTime(),
   };
   localPulls.unshift(newPull);
   localPullDates.unshift(new Date());
@@ -107,13 +116,17 @@ const selectArcanist = (pull: IPullNumber, name: string) => {
 const savePulls = () => {
   const filteredIndices = localPulls
     .map((pull, index) =>
-      pull.ArcanistName && pull.BannerType && !isNaN(pull.Timestamp) ? index : -1
+      pull.ArcanistName && pull.BannerType && !isNaN(pull.Timestamp)
+        ? index
+        : -1,
     )
     .filter((index) => index !== -1);
 
   const pullsToSave: IPull[] = filteredIndices.map((index) => {
     const pull = localPulls[index];
-    const selectedArcanist = arcanists.find((a) => a.Name === pull.ArcanistName);
+    const selectedArcanist = arcanists.find(
+      (a) => a.Name === pull.ArcanistName,
+    );
     let rarity = pull.Rarity;
     if (selectedArcanist) {
       rarity = selectedArcanist.Rarity;
@@ -123,7 +136,7 @@ const savePulls = () => {
       ArcanistName: pull.ArcanistName,
       Rarity: rarity,
       BannerType: pull.BannerType,
-      Timestamp: localPullDates[index].getTime()
+      Timestamp: localPullDates[index].getTime(),
     };
   });
 
@@ -136,13 +149,13 @@ const reload = () => {
 };
 
 const format = (date) => {
-  const day = ('0' + date.getDate()).slice(-2);
-  const month = ('0' + (date.getMonth() + 1)).slice(-2);
+  const day = ("0" + date.getDate()).slice(-2);
+  const month = ("0" + (date.getMonth() + 1)).slice(-2);
   const year = date.getFullYear();
 
-  const hours = ('0' + date.getHours()).slice(-2);
-  const minutes = ('0' + date.getMinutes()).slice(-2);
-  const seconds = ('0' + date.getSeconds()).slice(-2);
+  const hours = ("0" + date.getHours()).slice(-2);
+  const minutes = ("0" + date.getMinutes()).slice(-2);
+  const seconds = ("0" + date.getSeconds()).slice(-2);
 
   return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 };
@@ -150,19 +163,22 @@ const format = (date) => {
 
 <template>
   <div class="flex justify-center space-x-5 pb-4">
-    <button class="blue-button" @click="addPull">{{ $t('add-pull') }}</button>
-    <button class="green-button" @click="savePulls">{{ $t('save') }}</button>
-    <button class="red-button" @click="reload">{{ $t('cancel') }}</button>
+    <button class="blue-button" @click="addPull">{{ $t("add-pull") }}</button>
+    <button class="green-button" @click="savePulls">{{ $t("save") }}</button>
+    <button class="red-button" @click="reload">{{ $t("cancel") }}</button>
   </div>
-  <div v-if="localPulls.length > 0" class="flex flex-col overflow-x-auto hidden-scrollbar">
+  <div
+    v-if="localPulls.length > 0"
+    class="flex flex-col overflow-x-auto hidden-scrollbar"
+  >
     <table class="table-auto w-auto text-white lg:mx-auto">
       <thead>
         <tr>
-          <th class="text-center">{{ $t('pull') }}</th>
-          <th class="text-center">{{ $t('arcanist') }}</th>
-          <th class="text-center whitespace-nowrap">{{ $t('banner') }}</th>
-          <th class="text-center whitespace-nowrap px-16">{{ $t('date') }}</th>
-          <th class="text-center">{{ $t('remove') }}</th>
+          <th class="text-center">{{ $t("pull") }}</th>
+          <th class="text-center">{{ $t("arcanist") }}</th>
+          <th class="text-center whitespace-nowrap">{{ $t("banner") }}</th>
+          <th class="text-center whitespace-nowrap px-16">{{ $t("date") }}</th>
+          <th class="text-center">{{ $t("remove") }}</th>
         </tr>
       </thead>
       <tbody>
@@ -176,14 +192,20 @@ const format = (date) => {
             'text-yellow-100': pull.Rarity === 5,
             'text-purple-400': pull.Rarity === 4,
             'text-sky-200': pull.Rarity === 3,
-            'text-green-200': pull.Rarity === 2
-          }">
-          <td class="text-center whitespace-nowrap px-2">{{ pull.PullNumber }}</td>
+            'text-green-200': pull.Rarity === 2,
+          }"
+        >
+          <td class="text-center whitespace-nowrap px-2">
+            {{ pull.PullNumber }}
+          </td>
           <td class="flex items-center gap-x-3 whitespace-nowrap px-2 py-1">
             <ArcanistIcon
               v-if="arcanists.find((a) => a.Name === pull.ArcanistName)"
-              :arcanist="arcanists.find(a => a.Name === pull.ArcanistName) as IArcanist"
-              :is-interactive="false" />
+              :arcanist="
+                arcanists.find((a) => a.Name === pull.ArcanistName) as IArcanist
+              "
+              :is-interactive="false"
+            />
             <SpecialIcon v-else :name="pull.ArcanistName" />
 
             <div class="w-36">
@@ -192,7 +214,10 @@ const format = (date) => {
                 :options="arcanistNames"
                 :search-placeholder="$t('search-by-name')"
                 :no-results-text="$t('no-results')"
-                @update:model-value="(name: string) => selectArcanist(pull, name)" />
+                @update:model-value="
+                  (name: string) => selectArcanist(pull, name)
+                "
+              />
             </div>
           </td>
           <td class="text-center whitespace-nowrap px-2">
@@ -201,7 +226,8 @@ const format = (date) => {
                 v-model="pull.BannerType"
                 :options="bannerList"
                 :search-placeholder="$t('search-banners')"
-                :no-results-text="$t('no-results')" />
+                :no-results-text="$t('no-results')"
+              />
             </div>
           </td>
           <td class="text-center whitespace-nowrap w-56 px-2">
@@ -214,7 +240,8 @@ const format = (date) => {
               :clearable="false"
               :format="format"
               :is-24="true"
-              dark />
+              dark
+            />
             <!-- timezone="Etc/GMT+5" (we don't use timezone anywhere else... so adding it here might actually cause problems) -->
           </td>
           <td class="text-center whitespace-nowrap px-2">
@@ -222,8 +249,12 @@ const format = (date) => {
               class="btn btn-sm btn-circle btn-ghost"
               @click="
                 localPulls.splice(index + (currentPage - 1) * itemsPerPage, 1);
-                localPullDates.splice(index + (currentPage - 1) * itemsPerPage, 1);
-              ">
+                localPullDates.splice(
+                  index + (currentPage - 1) * itemsPerPage,
+                  1,
+                );
+              "
+            >
               ✕
             </button>
           </td>
@@ -235,16 +266,23 @@ const format = (date) => {
         class="btn btn-sm bg-gray-800 text-white border border-white/10 hover:bg-gray-800 hover:border-white/30 transition"
         :class="{ invisible: currentPage === 1 }"
         :disabled="currentPage === 1"
-        @click="goToPage(currentPage - 1)">
+        @click="goToPage(currentPage - 1)"
+      >
         Prev
       </button>
-      <template v-for="(page, idx) in getPagination()" :key="`page-${page}-${idx}`">
+      <template
+        v-for="(page, idx) in getPagination()"
+        :key="`page-${page}-${idx}`"
+      >
         <span v-if="page === '...'" class="px-2 text-gray-400">...</span>
         <button
           v-else
           class="btn btn-sm bg-gray-800 text-white border border-white/10 hover:bg-gray-800 hover:border-white/30 transition"
-          :class="{ 'btn-active bg-info text-white border-info': page === currentPage }"
-          @click="typeof page === 'number' && goToPage(page)">
+          :class="{
+            'btn-active bg-info text-white border-info': page === currentPage,
+          }"
+          @click="typeof page === 'number' && goToPage(page)"
+        >
           {{ page }}
         </button>
       </template>
@@ -252,7 +290,8 @@ const format = (date) => {
         class="btn btn-sm bg-gray-800 text-white border border-white/10 hover:bg-gray-800 hover:border-white/30 transition"
         :class="{ invisible: currentPage === totalPages }"
         :disabled="currentPage === totalPages"
-        @click="goToPage(currentPage + 1)">
+        @click="goToPage(currentPage + 1)"
+      >
         Next
       </button>
       <span class="ml-4 text-white">Jump to page:</span>
@@ -262,7 +301,8 @@ const format = (date) => {
         :max="totalPages"
         :value="currentPage"
         @change="jumpToPage"
-        class="input input-sm w-16 ml-2 text-center bg-gray-800 text-white border border-white/10 focus:border-info focus:ring-info/30" />
+        class="input input-sm w-16 ml-2 text-center bg-gray-800 text-white border border-white/10 focus:border-info focus:ring-info/30"
+      />
     </div>
   </div>
 </template>

@@ -1,11 +1,9 @@
 <script setup lang="ts">
-
-const emit = defineEmits(['closeOverlay']);
+const emit = defineEmits(["closeOverlay"]);
 
 const closeOverlay = () => {
-    emit('closeOverlay');
+  emit("closeOverlay");
 };
-
 </script>
 
 <template>

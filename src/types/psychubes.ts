@@ -1,16 +1,16 @@
 interface IAmplification {
-    Id: number,
-    Effect: string,
+  Id: number;
+  Effect: string;
 }
 
 interface IPsychube {
-    Id: number,
-    IsReleased: boolean,
-    Name: string,
-    Rarity: number,
-    Tag: string,
-    Impression: string,
-    Amplification: IAmplification[] | null
+  Id: number;
+  IsReleased: boolean;
+  Name: string;
+  Rarity: number;
+  Tag: string;
+  Impression: string;
+  Amplification: IAmplification[] | null;
 }
 
-export interface IPsychubes extends Array<IPsychube>{}
+export interface IPsychubes extends Array<IPsychube> {}

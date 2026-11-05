@@ -1,215 +1,243 @@
 <script lang="ts" setup name="Navbar">
-import { onMounted, ref } from 'vue';
-import { setLocale, supportedLangCodes, langDropdownOptions } from '@/utils/i18n';
-import Popper from 'vue3-popper';
-import { useScreen } from '@/composables/useScreen';
+import { onMounted, ref } from "vue";
+import {
+  setLocale,
+  supportedLangCodes,
+  langDropdownOptions,
+} from "@/utils/i18n";
+import Popper from "vue3-popper";
+import { useScreen } from "@/composables/useScreen";
 
 const { isLargeScreen } = useScreen();
-const currentLanguage = ref('English');
-const currentFlag = ref('fi fi-us');
+const currentLanguage = ref("English");
+const currentFlag = ref("fi fi-us");
 
 const handleChangeLanguage = ({ locale, text, icon }) => {
-    currentLanguage.value = text;
-    currentFlag.value = icon;
-    setLocale(locale);
+  currentLanguage.value = text;
+  currentFlag.value = icon;
+  setLocale(locale);
 };
 
-const FALLBACK_LOCALE = 'en-US';
+const FALLBACK_LOCALE = "en-US";
 
 function findBestLocale() {
-    // Check all languages in the list, not just the primary one
-    const browserLangs = navigator.languages || [];
+  // Check all languages in the list, not just the primary one
+  const browserLangs = navigator.languages || [];
 
-    for (const lang of browserLangs) {
-        // 1. Check for an exact match
-        if (supportedLangCodes.includes(lang)) {
-            return lang;
-        }
-        // 2. Check for a language prefix match
-        const langPrefix = lang.split('-')[0];
-        const partialMatch = supportedLangCodes.find(
-            (code) => code.split('-')[0] === langPrefix
-        );
-        if (partialMatch) {
-            return partialMatch;
-        }
+  for (const lang of browserLangs) {
+    // 1. Check for an exact match
+    if (supportedLangCodes.includes(lang)) {
+      return lang;
     }
-    // 3. Fallback
-    return FALLBACK_LOCALE;
+    // 2. Check for a language prefix match
+    const langPrefix = lang.split("-")[0];
+    const partialMatch = supportedLangCodes.find(
+      (code) => code.split("-")[0] === langPrefix,
+    );
+    if (partialMatch) {
+      return partialMatch;
+    }
+  }
+  // 3. Fallback
+  return FALLBACK_LOCALE;
 }
 
 onMounted(() => {
-    const savedLocale = localStorage.getItem('locale');
+  const savedLocale = localStorage.getItem("locale");
 
-    const initialLocale =
-        savedLocale && supportedLangCodes.includes(savedLocale)
-            ? savedLocale
-            : findBestLocale();
+  const initialLocale =
+    savedLocale && supportedLangCodes.includes(savedLocale)
+      ? savedLocale
+      : findBestLocale();
 
-    const option = langDropdownOptions.find((opt) => opt.locale === initialLocale);
-    if (option) {
-        handleChangeLanguage(option);
-    }
+  const option = langDropdownOptions.find(
+    (opt) => opt.locale === initialLocale,
+  );
+  if (option) {
+    handleChangeLanguage(option);
+  }
 });
 </script>
 
 <template>
-    <nav class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4 z-50">
-        <router-link to="/"
-            ><img src="/images/items/common/logo.webp" alt="logo" class="w-8 h-8 mt-1 mr-4"
-        /></router-link>
+  <nav
+    class="fixed top-0 left-0 right-0 custom-gradient-gray-blue p-2 opacity-90 flex px-4 z-50"
+  >
+    <router-link to="/"
+      ><img
+        src="/images/items/common/logo.webp"
+        alt="logo"
+        class="w-8 h-8 mt-1 mr-4"
+    /></router-link>
 
-        <!-- Navigation Links for Large Screens -->
-        <div v-if="isLargeScreen" class="flex space-x-2">
-            <router-link to="/" class="nav-button" :class="{ active: $route.path === '/' }"
-                ><i class="fa-solid fa-house"></i> {{ $t('home') }}
-            </router-link>
-            <router-link
+    <!-- Navigation Links for Large Screens -->
+    <div v-if="isLargeScreen" class="flex space-x-2">
+      <router-link
+        to="/"
+        class="nav-button"
+        :class="{ active: $route.path === '/' }"
+        ><i class="fa-solid fa-house"></i> {{ $t("home") }}
+      </router-link>
+      <router-link
+        to="/arcanists"
+        class="nav-button"
+        :class="{ active: $route.path === '/arcanists' }"
+        ><i class="fa-solid fa-user"></i> {{ $t("arcanists") }}
+      </router-link>
+      <router-link
+        to="/items"
+        class="nav-button"
+        :class="{ active: $route.path === '/items' }"
+        ><i class="fa-solid fa-box-archive"></i> {{ $t("items") }}
+      </router-link>
+      <router-link
+        to="/tracker"
+        class="nav-button"
+        :class="{ active: $route.path === '/tracker' }"
+        ><i class="fa-brands fa-galactic-republic"></i>
+        {{ $t("summon-tracker") }}
+      </router-link>
+      <router-link
+        to="/planner"
+        class="nav-button"
+        :class="{ active: $route.path === '/planner' }"
+        ><i class="fas fa-tasks"></i> {{ $t("planner") }}
+      </router-link>
+      <router-link
+        to="/stages"
+        class="nav-button"
+        :class="{ active: $route.path === '/stages' }"
+        ><i class="fa-solid fa-wand-magic-sparkles"></i> {{ $t("stages") }}
+      </router-link>
+      <router-link
+        to="/profile"
+        class="nav-button"
+        :class="{ active: $route.path === '/profile' }"
+        ><i class="fa-regular fa-address-card"></i> {{ $t("profile") }}
+      </router-link>
+    </div>
+
+    <div class="ml-auto flex items-center gap-1.5">
+      <!-- Ko-fi Icon-->
+      <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
+        <a
+          href="https://ko-fi.com/windbow"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/images/items/common/kofi.webp"
+            alt="kofi"
+            class="h-4 m-auto"
+          />
+        </a>
+      </div>
+      <!-- Language Dropdown -->
+      <Popper arrow placement="top" offsetDistance="2">
+        <button class="btn btn-ghost btn-sm text-white">
+          <span :class="currentFlag"></span> {{ currentLanguage }}
+        </button>
+        <template #content>
+          <div class="grid grid-cols-2">
+            <p
+              v-for="option in langDropdownOptions"
+              :key="option.locale"
+              class="btn btn-ghost"
+              @click="handleChangeLanguage(option)"
+            >
+              <span :class="option.icon"></span>{{ option.text }}
+            </p>
+          </div>
+          <div class="flex justify-center pt-2">
+            <a
+              href="https://github.com/windbow27/kornblume/blob/main/lang/README.md"
+            >
+              <p
+                class="btn btn-sm btn-outline btn-ghost hover:border-info hover:bg-transparent hover:text-info text-white"
+              >
+                {{ $t("help-us-translate") }}
+              </p>
+            </a>
+          </div>
+        </template>
+      </Popper>
+
+      <!-- Dropdown Button for Small Screens -->
+      <div v-if="!isLargeScreen">
+        <Popper arrow placement="top" offsetDistance="2">
+          <div class="nav-button cursor-pointer">
+            <i class="fa-solid fa-bars text-white"></i>
+          </div>
+          <template #content="{ close }">
+            <div class="flex flex-col space-y-2">
+              <router-link
+                @click="close"
+                to="/"
+                class="nav-button block"
+                :class="{ active: $route.path === '/' }"
+                ><i class="fa-solid fa-house"></i> {{ $t("home") }}
+              </router-link>
+              <router-link
+                @click="close"
                 to="/arcanists"
-                class="nav-button"
+                class="nav-button block"
                 :class="{ active: $route.path === '/arcanists' }"
-                ><i class="fa-solid fa-user"></i> {{ $t('arcanists') }}
-            </router-link>
-            <router-link
+                ><i class="fa-solid fa-user"></i> {{ $t("arcanists") }}
+              </router-link>
+              <router-link
+                @click="close"
                 to="/items"
-                class="nav-button"
+                class="nav-button block"
                 :class="{ active: $route.path === '/items' }"
-                ><i class="fa-solid fa-box-archive"></i> {{ $t('items') }}
-            </router-link>
-            <router-link
+                ><i class="fa-solid fa-box-archive"></i> {{ $t("items") }}
+              </router-link>
+              <router-link
+                @click="close"
                 to="/tracker"
-                class="nav-button"
+                class="nav-button block"
                 :class="{ active: $route.path === '/tracker' }"
-                ><i class="fa-brands fa-galactic-republic"></i> {{ $t('summon-tracker') }}
-            </router-link>
-            <router-link
+                ><i class="fa-brands fa-galactic-republic"></i>
+                {{ $t("summon-tracker") }}
+              </router-link>
+              <router-link
+                @click="close"
                 to="/planner"
-                class="nav-button"
+                class="nav-button block"
                 :class="{ active: $route.path === '/planner' }"
-                ><i class="fas fa-tasks"></i> {{ $t('planner') }}
-            </router-link>
-            <router-link
+                ><i class="fas fa-tasks"></i> {{ $t("planner") }}
+              </router-link>
+              <router-link
+                @click="close"
                 to="/stages"
-                class="nav-button"
+                class="nav-button block"
                 :class="{ active: $route.path === '/stages' }"
-                ><i class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('stages') }}
-            </router-link>
-            <router-link
+                ><i class="fa-solid fa-wand-magic-sparkles"></i>
+                {{ $t("stages") }}
+              </router-link>
+              <router-link
+                @click="close"
                 to="/profile"
-                class="nav-button"
+                class="nav-button block"
                 :class="{ active: $route.path === '/profile' }"
-                ><i class="fa-regular fa-address-card"></i> {{ $t('profile') }}
-            </router-link>
-        </div>
-
-        <div class="ml-auto flex items-center gap-1.5">
-            <!-- Ko-fi Icon-->
-            <div class="tooltip tooltip-bottom" :data-tip="$t('ko-fi')">
-                <a href="https://ko-fi.com/windbow" target="_blank" rel="noopener noreferrer">
-                    <img src="/images/items/common/kofi.webp" alt="kofi" class="h-4 m-auto" />
-                </a>
+                ><i class="fa-regular fa-address-card"></i> {{ $t("profile") }}
+              </router-link>
             </div>
-            <!-- Language Dropdown -->
-            <Popper arrow placement="top" offsetDistance="2">
-                <button class="btn btn-ghost btn-sm text-white">
-                    <span :class="currentFlag"></span> {{ currentLanguage }}
-                </button>
-                <template #content>
-                    <div class="grid grid-cols-2">
-                        <p
-                            v-for="option in langDropdownOptions"
-                            :key="option.locale"
-                            class="btn btn-ghost"
-                            @click="handleChangeLanguage(option)">
-                            <span :class="option.icon"></span>{{ option.text }}
-                        </p>
-                    </div>
-                    <div class="flex justify-center pt-2">
-                        <a href="https://github.com/windbow27/kornblume/blob/main/lang/README.md">
-                            <p
-                                class="btn btn-sm btn-outline btn-ghost hover:border-info hover:bg-transparent hover:text-info text-white">
-                                {{ $t('help-us-translate') }}
-                            </p>
-                        </a>
-                    </div>
-                </template>
-            </Popper>
-
-            <!-- Dropdown Button for Small Screens -->
-            <div v-if="!isLargeScreen">
-                <Popper arrow placement="top" offsetDistance="2">
-                    <div class="nav-button cursor-pointer">
-                        <i class="fa-solid fa-bars text-white"></i>
-                    </div>
-                    <template #content="{ close }">
-                        <div class="flex flex-col space-y-2">
-                            <router-link
-                                @click="close"
-                                to="/"
-                                class="nav-button block"
-                                :class="{ active: $route.path === '/' }"
-                                ><i class="fa-solid fa-house"></i> {{ $t('home') }}
-                            </router-link>
-                            <router-link
-                                @click="close"
-                                to="/arcanists"
-                                class="nav-button block"
-                                :class="{ active: $route.path === '/arcanists' }"
-                                ><i class="fa-solid fa-user"></i> {{ $t('arcanists') }}
-                            </router-link>
-                            <router-link
-                                @click="close"
-                                to="/items"
-                                class="nav-button block"
-                                :class="{ active: $route.path === '/items' }"
-                                ><i class="fa-solid fa-box-archive"></i> {{ $t('items') }}
-                            </router-link>
-                            <router-link
-                                @click="close"
-                                to="/tracker"
-                                class="nav-button block"
-                                :class="{ active: $route.path === '/tracker' }"
-                                ><i class="fa-brands fa-galactic-republic"></i>
-                                {{ $t('summon-tracker') }}
-                            </router-link>
-                            <router-link
-                                @click="close"
-                                to="/planner"
-                                class="nav-button block"
-                                :class="{ active: $route.path === '/planner' }"
-                                ><i class="fas fa-tasks"></i> {{ $t('planner') }}
-                            </router-link>
-                            <router-link
-                                @click="close"
-                                to="/stages"
-                                class="nav-button block"
-                                :class="{ active: $route.path === '/stages' }"
-                                ><i class="fa-solid fa-wand-magic-sparkles"></i> {{ $t('stages') }}
-                            </router-link>
-                            <router-link
-                                @click="close"
-                                to="/profile"
-                                class="nav-button block"
-                                :class="{ active: $route.path === '/profile' }"
-                                ><i class="fa-regular fa-address-card"></i> {{ $t('profile') }}
-                            </router-link>
-                        </div>
-                    </template>
-                </Popper>
-            </div>
-        </div>
-    </nav>
+          </template>
+        </Popper>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <style scoped>
 .nav-button {
-    @apply text-white px-4 py-2 rounded transition text-center;
+  @apply text-white px-4 py-2 rounded transition text-center;
 }
 
 /* Additional styling for the dropdown button */
 .nav-button:hover,
 .nav-button.active {
-    @apply bg-slate-700;
-    cursor: pointer;
+  @apply bg-slate-700;
+  cursor: pointer;
 }
 </style>

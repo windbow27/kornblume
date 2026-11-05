@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref, watchEffect, computed } from 'vue';
-import { useDataStore } from '@/stores/dataStore';
-import { IStage } from '@/types';
-import { useGlobalStore } from '@/stores/global';
-import StageSelectionIcon from '@/components/stage/StageSelectionIcon.vue';
-import StageDisplay from '@/components/stage/StageDisplay.vue';
+import { ref, watchEffect, computed } from "vue";
+import { useDataStore } from "@/stores/dataStore";
+import { IStage } from "@/types";
+import { useGlobalStore } from "@/stores/global";
+import StageSelectionIcon from "@/components/stage/StageSelectionIcon.vue";
+import StageDisplay from "@/components/stage/StageDisplay.vue";
 
-const buttons = ['Story', 'Hard', 'Resource', 'Insight'];
+const buttons = ["Story", "Hard", "Resource", "Insight"];
 const selectedStage = ref<IStage>(useGlobalStore().selectedStage);
 const selectedButton = ref(useGlobalStore().selectedStage.category);
 const stageStore = useDataStore().stages3_3_greedy;
@@ -28,7 +28,7 @@ const filteredStages = computed(() => {
 
 watchEffect(() => {
   const foundStage = Object.values(stageStore).find(
-    (stage) => stage.id === globalStore.selectedStage.id
+    (stage) => stage.id === globalStore.selectedStage.id,
   );
   selectedStage.value = foundStage || Object.values(stageStore)[0];
 });
@@ -37,7 +37,7 @@ watchEffect(() => {
 <template>
   <div class="container">
     <div class="flex pb-4">
-      <h2 class="text-2xl text-white font-bold">{{ $t('stages') }}</h2>
+      <h2 class="text-2xl text-white font-bold">{{ $t("stages") }}</h2>
     </div>
 
     <!-- Notification -->
@@ -64,8 +64,9 @@ watchEffect(() => {
                 @click="selectedButton = button"
                 :class="[
                   'hover:bg-info rounded-md text-white py-1 px-3',
-                  selectedButton === button ? 'border-button' : ''
-                ]">
+                  selectedButton === button ? 'border-button' : '',
+                ]"
+              >
                 {{ $t(button) }}
               </button>
             </div>
@@ -84,14 +85,18 @@ watchEffect(() => {
                   selectedStage?.name === stage.name
                     ? 'custom-border-white'
                     : 'custom-border-transparent'
-                " />
+                "
+              />
             </div>
           </div>
         </div>
       </div>
       <!--Item Display Card-->
       <div class="flex flex-col gap-y-4">
-        <StageDisplay :selectedStage="selectedStage" :stageName="selectedStage.name" />
+        <StageDisplay
+          :selectedStage="selectedStage"
+          :stageName="selectedStage.name"
+        />
       </div>
     </div>
   </div>

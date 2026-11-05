@@ -1,6 +1,6 @@
-import { watchEffect } from 'vue';
-import { useDataStore } from '../stores/dataStore';
-import { IStage } from '@/types';
+import { watchEffect } from "vue";
+import { useDataStore } from "../stores/dataStore";
+import { IStage } from "@/types";
 
 const items = useDataStore().items;
 
@@ -13,7 +13,7 @@ watchEffect(() => {
 const getId = (material: string) => {
   const item = items.find((item) => item.Name === material);
   if (!item) {
-    console.warn('Material not found when locating image', material);
+    console.warn("Material not found when locating image", material);
   }
   return item ? item.Id : 1;
 };
@@ -48,7 +48,7 @@ const getStageBackgroundId = (stage: IStage) => {
     }
   }
   if (stageName) {
-    const stageCode = stageName.split('-')[0];
+    const stageCode = stageName.split("-")[0];
     const stageBackgroundId = getStageBackgroundIdByChapterCode(stageCode);
     if (stageBackgroundId) {
       return stageBackgroundId;
@@ -94,33 +94,33 @@ const getStageBackgroundIdByChapterCode = (chapterCode: string) => {
     if (chapterNum === 11) return 17;
     if (chapterNum === 12) return 18;
   }
-  if (chapterCode === 'LP') return 5; // The/Le Poussiere: Dust
-  if (chapterCode === 'MA') return 6; // Mintage Aesthetics: Sharpodonty
-  if (chapterCode === 'ME') return 7; // Mountain Echoes: Mineral insight
-  if (chapterCode === 'SL') return 8; // Starfall Locale: Star insight
-  if (chapterCode === 'SS') return 9; // Sylvanus Shape: Plant insight
-  if (chapterCode === 'BW') return 10; // Brutes Wilds: Beast insight
-  if (chapterCode === 'HP') return undefined; // Harvest Prime
-  if (chapterCode === 'PA') return undefined; // Pneuma Analysis
+  if (chapterCode === "LP") return 5; // The/Le Poussiere: Dust
+  if (chapterCode === "MA") return 6; // Mintage Aesthetics: Sharpodonty
+  if (chapterCode === "ME") return 7; // Mountain Echoes: Mineral insight
+  if (chapterCode === "SL") return 8; // Starfall Locale: Star insight
+  if (chapterCode === "SS") return 9; // Sylvanus Shape: Plant insight
+  if (chapterCode === "BW") return 10; // Brutes Wilds: Beast insight
+  if (chapterCode === "HP") return undefined; // Harvest Prime
+  if (chapterCode === "PA") return undefined; // Pneuma Analysis
 };
 
 export const getItemImagePathByMatl = (material: string) => {
   const id = getId(material);
-  return id ? `images/items/icon/${id}.webp` : '';
+  return id ? `images/items/icon/${id}.webp` : "";
 };
 
 export const getItemImageIconPathByMatl = (material: string) => {
   const id = getId(material);
-  return id ? `images/items/icon/thumbnails/${id}.webp` : '';
+  return id ? `images/items/icon/thumbnails/${id}.webp` : "";
 };
 
 export const getBorderImageIconPathByMatl = (material: string) => {
   const rarity = getRarity(material);
-  return rarity ? `images/items/border/thumbnails/${rarity}.webp` : '';
+  return rarity ? `images/items/border/thumbnails/${rarity}.webp` : "";
 };
 
 export function getActivityImagePathByStage(stage: string) {
-  return `images/items/common/${stage === 'Oneiric Shop' ? 1 : 0}.webp`;
+  return `images/items/common/${stage === "Oneiric Shop" ? 1 : 0}.webp`;
 }
 
 export function getStageImagePathByStage(stage: IStage) {
@@ -146,7 +146,7 @@ export function getArcanistI2ImagePath(id: number | string) {
 // An arcanist can have more than one afflatus, e.g. "Mineral & star"
 export function getAfflatusList(afflatus: string) {
   return afflatus
-    .split('&')
+    .split("&")
     .map((a) => a.trim())
     .filter((a) => a.length > 0);
 }
@@ -155,7 +155,7 @@ export function getAfflatusList(afflatus: string) {
 function getAfflatusSlug(afflatus: string) {
   return getAfflatusList(afflatus)
     .map((a) => a.toLowerCase())
-    .join('_');
+    .join("_");
 }
 
 export function getArcanistAfflatusPath(afflatus: string) {

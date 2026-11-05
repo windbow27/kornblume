@@ -1,40 +1,40 @@
 <script setup lang="ts">
-import { ref, computed, nextTick, PropType } from 'vue';
-import { onClickOutside, useEventListener } from '@vueuse/core';
+import { ref, computed, nextTick, PropType } from "vue";
+import { onClickOutside, useEventListener } from "@vueuse/core";
 
 const props = defineProps({
   modelValue: {
     type: String,
-    default: ''
+    default: "",
   },
   options: {
     type: Array as PropType<string[]>,
-    required: true
+    required: true,
   },
   placeholder: {
     type: String,
-    default: ''
+    default: "",
   },
   searchPlaceholder: {
     type: String,
-    default: 'Search'
+    default: "Search",
   },
   noResultsText: {
     type: String,
-    default: 'No results'
+    default: "No results",
   },
   optionLabel: {
     type: Function as PropType<(option: string) => string>,
-    default: (option: string) => option
-  }
+    default: (option: string) => option,
+  },
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(["update:modelValue"]);
 
 const dropdownHeight = 300;
 
 const isOpen = ref(false);
-const query = ref('');
+const query = ref("");
 const highlighted = ref(0);
 const triggerRef = ref<HTMLElement | null>(null);
 const dropdownRef = ref<HTMLElement | null>(null);
@@ -47,7 +47,9 @@ const filteredOptions = computed(() => {
   if (!search) {
     return props.options;
   }
-  return props.options.filter((option) => props.optionLabel(option).toLowerCase().includes(search));
+  return props.options.filter((option) =>
+    props.optionLabel(option).toLowerCase().includes(search),
+  );
 });
 
 // The dropdown is teleported to the body so it can escape the scrolling table,
@@ -65,14 +67,15 @@ const updatePosition = () => {
     top: `${dropUp ? rect.top - 4 : rect.bottom + 4}px`,
     left: `${rect.left}px`,
     width: `${rect.width}px`,
-    transform: dropUp ? 'translateY(-100%)' : '',
-    maxHeight: `${Math.min(dropdownHeight, (dropUp ? rect.top : spaceBelow) - 12)}px`
+    transform: dropUp ? "translateY(-100%)" : "",
+    maxHeight: `${Math.min(dropdownHeight, (dropUp ? rect.top : spaceBelow) - 12)}px`,
   };
 };
 
 const scrollHighlightedIntoView = () => {
-  const option = listRef.value?.children[highlighted.value] as HTMLElement | undefined;
-  option?.scrollIntoView({ block: 'nearest' });
+  const option = listRef.value?.children[highlighted.value] as
+    HTMLElement | undefined;
+  option?.scrollIntoView({ block: "nearest" });
 };
 
 const close = () => {
@@ -81,7 +84,7 @@ const close = () => {
 
 const open = async () => {
   isOpen.value = true;
-  query.value = '';
+  query.value = "";
   highlighted.value = Math.max(0, props.options.indexOf(props.modelValue));
   updatePosition();
   await nextTick();
@@ -98,7 +101,7 @@ const toggle = () => {
 };
 
 const select = (option: string) => {
-  emit('update:modelValue', option);
+  emit("update:modelValue", option);
   close();
   triggerRef.value?.focus();
 };
@@ -115,15 +118,15 @@ const moveHighlight = async (offset: number) => {
 
 const onKeydown = (event: KeyboardEvent) => {
   switch (event.key) {
-    case 'ArrowDown':
+    case "ArrowDown":
       event.preventDefault();
       moveHighlight(1);
       break;
-    case 'ArrowUp':
+    case "ArrowUp":
       event.preventDefault();
       moveHighlight(-1);
       break;
-    case 'Enter': {
+    case "Enter": {
       event.preventDefault();
       const option = filteredOptions.value[highlighted.value];
       if (option !== undefined) {
@@ -131,7 +134,7 @@ const onKeydown = (event: KeyboardEvent) => {
       }
       break;
     }
-    case 'Escape':
+    case "Escape":
       event.preventDefault();
       close();
       triggerRef.value?.focus();
@@ -141,8 +144,13 @@ const onKeydown = (event: KeyboardEvent) => {
 
 onClickOutside(dropdownRef, close, { ignore: [triggerRef] });
 
-useEventListener(window, 'scroll', () => isOpen.value && updatePosition(), true);
-useEventListener(window, 'resize', () => isOpen.value && updatePosition());
+useEventListener(
+  window,
+  "scroll",
+  () => isOpen.value && updatePosition(),
+  true,
+);
+useEventListener(window, "resize", () => isOpen.value && updatePosition());
 </script>
 
 <template>
@@ -153,11 +161,14 @@ useEventListener(window, 'resize', () => isOpen.value && updatePosition());
       class="flex items-center justify-between w-full h-9 px-3 text-sm text-left rounded-[4px] bg-[#212121] border hover:border-white/50 focus:outline-none"
       :class="isOpen ? 'border-white/50' : 'border-white/5'"
       @click="toggle"
-      @keydown.down.prevent="open()">
+      @keydown.down.prevent="open()"
+    >
       <span class="truncate" :class="{ 'text-white/40': !modelValue }">
         {{ modelValue ? optionLabel(modelValue) : placeholder }}
       </span>
-      <i class="fa-solid fa-chevron-down text-[10px] text-white/50 ms-2 shrink-0"></i>
+      <i
+        class="fa-solid fa-chevron-down text-[10px] text-white/50 ms-2 shrink-0"
+      ></i>
     </button>
 
     <Teleport to="body">
@@ -165,7 +176,8 @@ useEventListener(window, 'resize', () => isOpen.value && updatePosition());
         v-if="isOpen"
         ref="dropdownRef"
         class="fixed z-[100] flex flex-col rounded-[4px] bg-[#212121] border border-white/10 shadow-lg shadow-black/50 overflow-hidden"
-        :style="dropdownStyle">
+        :style="dropdownStyle"
+      >
         <div class="p-2 border-b border-white/10">
           <input
             ref="searchRef"
@@ -173,7 +185,8 @@ useEventListener(window, 'resize', () => isOpen.value && updatePosition());
             type="text"
             :placeholder="searchPlaceholder"
             class="w-full h-8 px-2 text-sm rounded-[4px] bg-[#2b2b2b] border border-white/5 text-white placeholder:text-white/30 focus:outline-none focus:border-info/70"
-            @keydown="onKeydown" />
+            @keydown="onKeydown"
+          />
         </div>
         <ul ref="listRef" class="overflow-y-auto py-1 text-sm text-white">
           <li v-for="(option, index) in filteredOptions" :key="option">
@@ -182,14 +195,18 @@ useEventListener(window, 'resize', () => isOpen.value && updatePosition());
               class="w-full px-3 py-1.5 text-left truncate"
               :class="[
                 index === highlighted ? 'bg-white/10' : '',
-                option === modelValue ? 'text-info' : ''
+                option === modelValue ? 'text-info' : '',
               ]"
               @click="select(option)"
-              @mousemove="highlighted = index">
+              @mousemove="highlighted = index"
+            >
               {{ optionLabel(option) }}
             </button>
           </li>
-          <li v-if="filteredOptions.length === 0" class="px-3 py-2 text-white/40">
+          <li
+            v-if="filteredOptions.length === 0"
+            class="px-3 py-2 text-white/40"
+          >
             {{ noResultsText }}
           </li>
         </ul>

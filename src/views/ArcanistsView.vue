@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { IArcanist } from '@/types';
-import { useI18n } from 'vue-i18n';
-import { useDataStore } from '@/stores/dataStore';
-import { formatArcanists } from '@/composables/arcanists';
-import { getAfflatusList } from '@/composables/images';
-import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
-import { useArcanistOwnershipStore } from '@/stores/arcanistOwnershipStore';
-import ArcanistPortrait from '@/components/arcanist/ArcanistPortrait.vue';
+import { ref, computed } from "vue";
+import { IArcanist } from "@/types";
+import { useI18n } from "vue-i18n";
+import { useDataStore } from "@/stores/dataStore";
+import { formatArcanists } from "@/composables/arcanists";
+import { getAfflatusList } from "@/composables/images";
+import { usePlannerSettingsStore } from "@/stores/plannerSettingsStore";
+import { useArcanistOwnershipStore } from "@/stores/arcanistOwnershipStore";
+import ArcanistPortrait from "@/components/arcanist/ArcanistPortrait.vue";
 
 const { locale, t } = useI18n();
 const arcanistStore = useDataStore().arcanists;
 const listArcanists = ref<IArcanist[]>(arcanistStore);
-const sortMode = ref<'id' | 'name'>('id');
-const searchQuery = ref('');
+const sortMode = ref<"id" | "name">("id");
+const searchQuery = ref("");
 const activeRarities = ref<number[]>([]);
 const activeAfflatus = ref<string[]>([]);
 const ownershipStore = useArcanistOwnershipStore();
@@ -37,23 +37,29 @@ const selectedAfflatus = (afflatus: string) => {
 const filteredArcanists = computed(() => {
   let filtered = listArcanists.value;
 
-  if (locale.value === 'en-US') {
+  if (locale.value === "en-US") {
     filtered = filtered.filter((arc) =>
-      arc.Name.toLowerCase().includes(searchQuery.value.toLowerCase())
+      arc.Name.toLowerCase().includes(searchQuery.value.toLowerCase()),
     );
   } else {
-    filtered = filtered.filter((arc) => t(arc.Name).includes(searchQuery.value));
+    filtered = filtered.filter((arc) =>
+      t(arc.Name).includes(searchQuery.value),
+    );
   }
 
   if (activeRarities.value.length > 0) {
-    filtered = filtered.filter((arc) => activeRarities.value.includes(arc.Rarity));
+    filtered = filtered.filter((arc) =>
+      activeRarities.value.includes(arc.Rarity),
+    );
   }
 
   if (activeAfflatus.value.length > 0) {
     filtered = filtered.filter((arc) =>
       getAfflatusList(arc.Afflatus).some((afflatus) =>
-        activeAfflatus.value.some((active) => active.toLowerCase() === afflatus.toLowerCase())
-      )
+        activeAfflatus.value.some(
+          (active) => active.toLowerCase() === afflatus.toLowerCase(),
+        ),
+      ),
     );
   }
 
@@ -67,7 +73,7 @@ const filteredArcanists = computed(() => {
   filtered = formatArcanists(filtered);
 
   // Sort by selected mode
-  if (sortMode.value === 'id') {
+  if (sortMode.value === "id") {
     filtered = [...filtered].sort((a, b) => b.Id - a.Id);
   } else {
     filtered = [...filtered].sort((a, b) => a.Name.localeCompare(b.Name));
@@ -75,13 +81,12 @@ const filteredArcanists = computed(() => {
 
   return filtered;
 });
-
 </script>
 
 <template>
   <div class="container">
     <div class="flex pb-4">
-      <h2 class="text-2xl text-white font-bold">{{ $t('arcanists') }}</h2>
+      <h2 class="text-2xl text-white font-bold">{{ $t("arcanists") }}</h2>
     </div>
 
     <!-- Notification -->
@@ -103,7 +108,10 @@ const filteredArcanists = computed(() => {
           <div class="form-control">
             <label class="cursor-pointer label justify-center space-x-2">
               <span class="label-text text-white text-md">Sort by:</span>
-              <select v-model="sortMode" class="select select-sm bg-gray-800 text-white">
+              <select
+                v-model="sortMode"
+                class="select select-sm bg-gray-800 text-white"
+              >
                 <option value="id">ID (High → Low)</option>
                 <option value="name">Name (A → Z)</option>
               </select>
@@ -113,49 +121,68 @@ const filteredArcanists = computed(() => {
             v-model="searchQuery"
             type="text"
             :placeholder="$t('search-arcanists')"
-            class="input input-sm w-full sm:w-auto bg-gray-800 text-white py-2 px-4 rounded-md focus:outline-none" />
+            class="input input-sm w-full sm:w-auto bg-gray-800 text-white py-2 px-4 rounded-md focus:outline-none"
+          />
         </div>
       </div>
 
       <!--Search bar and unreleased filter-->
       <div class="flex flex-wrap items-center gap-x-10 justify-center">
-        <router-link to="/set-owned-arcanists" class="btn btn-sm btn-outline text-white hover:bg-slate-700">
+        <router-link
+          to="/set-owned-arcanists"
+          class="btn btn-sm btn-outline text-white hover:bg-slate-700"
+        >
           Set owned arcanists
         </router-link>
         <div class="form-control">
           <label class="cursor-pointer label justify-center space-x-5">
-            <span class="label-text text-white text-md">{{ $t('show-unreleased-arcanists') }}</span>
+            <span class="label-text text-white text-md">{{
+              $t("show-unreleased-arcanists")
+            }}</span>
             <input
-              v-model="usePlannerSettingsStore().settings.showUnreleasedArcanists"
+              v-model="
+                usePlannerSettingsStore().settings.showUnreleasedArcanists
+              "
               type="checkbox"
-              class="checkbox checkbox-info" />
+              class="checkbox checkbox-info"
+            />
           </label>
         </div>
         <div class="form-control">
           <label class="cursor-pointer label justify-center space-x-5">
-            <span class="label-text text-white text-md">{{ $t('show-owned-arcanists') }}</span>
+            <span class="label-text text-white text-md">{{
+              $t("show-owned-arcanists")
+            }}</span>
             <input
               v-model="usePlannerSettingsStore().settings.showOwnedArcanists"
               type="checkbox"
-              class="checkbox checkbox-info" />
+              class="checkbox checkbox-info"
+            />
           </label>
         </div>
       </div>
       <!-- Rarity select -->
       <div class="flex flex-wrap gap-x-10 justify-center">
-        <div class="rounded-lg border border-slate-700/90 bg-slate-900/50 px-3 py-2">
-          <p class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-300">Rarity</p>
+        <div
+          class="rounded-lg border border-slate-700/90 bg-slate-900/50 px-3 py-2"
+        >
+          <p
+            class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-300"
+          >
+            Rarity
+          </p>
           <div class="flex justify-center space-x-2">
             <button
               v-for="i in [2, 3, 4, 5, 6]"
               :key="i"
               :class="{
                 'border-2 border-info': activeRarities.includes(i),
-                'border-2 border-transparent': !activeRarities.includes(i)
+                'border-2 border-transparent': !activeRarities.includes(i),
               }"
               :title="`${i}-star`"
               @click="selectedRarities(i)"
-              class="p-2 rounded-md">
+              class="p-2 rounded-md"
+            >
               <i
                 class="fa-solid fa-star"
                 :class="{
@@ -163,26 +190,46 @@ const filteredArcanists = computed(() => {
                   'text-yellow-100': i === 5,
                   'text-purple-400': i === 4,
                   'text-sky-200': i === 3,
-                  'text-green-200': i === 2
-                }"></i>
+                  'text-green-200': i === 2,
+                }"
+              ></i>
             </button>
           </div>
         </div>
         <!-- Afflatus select -->
-        <div class="rounded-lg border border-slate-700/90 bg-slate-900/50 px-3 py-2">
-          <p class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-300">Afflatus</p>
+        <div
+          class="rounded-lg border border-slate-700/90 bg-slate-900/50 px-3 py-2"
+        >
+          <p
+            class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-300"
+          >
+            Afflatus
+          </p>
           <div class="flex justify-center gap-1.5">
             <button
-              v-for="afflatus in ['Beast', 'Mineral', 'Plant', 'Star', 'Intellect', 'Spirit']"
+              v-for="afflatus in [
+                'Beast',
+                'Mineral',
+                'Plant',
+                'Star',
+                'Intellect',
+                'Spirit',
+              ]"
               :key="afflatus"
               :class="{
                 'border-2 border-info': activeAfflatus.includes(afflatus),
-                'border-2 border-transparent': !activeAfflatus.includes(afflatus)
+                'border-2 border-transparent':
+                  !activeAfflatus.includes(afflatus),
               }"
               :title="afflatus"
               @click="selectedAfflatus(afflatus)"
-              class="h-10 w-10 rounded-md p-1 flex items-center justify-center">
-              <img class="h-9 w-9 object-contain" :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`" alt="" />
+              class="h-10 w-10 rounded-md p-1 flex items-center justify-center"
+            >
+              <img
+                class="h-9 w-9 object-contain"
+                :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`"
+                alt=""
+              />
             </button>
           </div>
         </div>
@@ -192,7 +239,8 @@ const filteredArcanists = computed(() => {
       <router-link
         v-for="arcanist in filteredArcanists"
         :key="arcanist.Id"
-        :to="`/arcanist-${arcanist.Id}`">
+        :to="`/arcanist-${arcanist.Id}`"
+      >
         <ArcanistPortrait :arcanist="arcanist" />
       </router-link>
     </div>
