@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "scrape-teams": "node scripts/scrape-teams.mjs",
+    "scrape-character-tiers": "node scripts/scrape-character-tiers.mjs",
     "build": "npm run image-process && vue-tsc --noEmit --skipLibCheck --allowJs && vite build",
     "preview": "vite preview",
     "serve": "vue-cli-service serve",

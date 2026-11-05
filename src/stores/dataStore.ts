@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import {
   IArcanists,
+  ICharacterTierListData,
   IFormulas,
   IItems,
   IPsychubes,
@@ -10,6 +11,7 @@ import {
 } from "@/types";
 
 interface IDataStore {
+  characterTiers: ICharacterTierListData | null;
   teams: ITeamsData | null;
   arcanists: IArcanists;
   stages: IStages;
@@ -35,6 +37,7 @@ const getDataSize = (data) => {
 
 export const useDataStore = defineStore("dataStore", {
   state: (): IDataStore => ({
+    characterTiers: null,
     teams: null,
     arcanists: [],
     stages: {},

@@ -1,0 +1,945 @@
+{
+  "source": "https://www.prydwen.gg/re1999/tier-list",
+  "scrapedAt": "2026-11-05T22:24:05.528Z",
+  "version": "Overall - Euphoria",
+  "characters": [
+    {
+      "name": "Beryl",
+      "slug": "beryl",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "Glow, EA"
+    },
+    {
+      "name": "Brume",
+      "slug": "brume",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "Dynamo, EA"
+    },
+    {
+      "name": "Huntsworn Lilya",
+      "slug": "huntsworn-lilya",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "Pursuit"
+    },
+    {
+      "name": "Igor",
+      "slug": "igor",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "Ult, Bullet"
+    },
+    {
+      "name": "Liang Yue",
+      "slug": "liang-yue",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "EA"
+    },
+    {
+      "name": "Ms. Stranger",
+      "slug": "ms-stranger",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "Move, Ult"
+    },
+    {
+      "name": "Noire",
+      "slug": "noire",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "Ult, Debuff"
+    },
+    {
+      "name": "Recoleta",
+      "slug": "recoleta",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "Ult, Moxie"
+    },
+    {
+      "name": "The Twins",
+      "slug": "the-twins",
+      "tier": "S+",
+      "role": "damage-dealer",
+      "tags": "Conduit Only, Star"
+    },
+    {
+      "name": "37",
+      "slug": "37",
+      "tier": "S+",
+      "role": "sub-carry",
+      "tags": "Pursuit, Buff, AP+"
+    },
+    {
+      "name": "Coppélia",
+      "slug": "coppelia",
+      "tier": "S+",
+      "role": "sub-carry",
+      "tags": "Conduit, Mineral"
+    },
+    {
+      "name": "Hedone",
+      "slug": "hedone",
+      "tier": "S+",
+      "role": "sub-carry",
+      "tags": "Conduit, Mineral"
+    },
+    {
+      "name": "Isolde",
+      "slug": "isolde",
+      "tier": "S+",
+      "role": "sub-carry",
+      "tags": "Glow, Buff, AP+"
+    },
+    {
+      "name": "Lorentz Butterfly",
+      "slug": "lorentz-butterfly",
+      "tier": "S+",
+      "role": "sub-carry",
+      "tags": "Glow, Rewrite"
+    },
+    {
+      "name": "Moldir",
+      "slug": "moldir",
+      "tier": "S+",
+      "role": "sub-carry",
+      "tags": "Ult, Moxie, AP+"
+    },
+    {
+      "name": "6",
+      "slug": "6",
+      "tier": "S+",
+      "role": "support",
+      "tags": "Buff, Debuff"
+    },
+    {
+      "name": "Charon",
+      "slug": "charon",
+      "tier": "S+",
+      "role": "support",
+      "tags": "Dynamo, AP+, Shuffle"
+    },
+    {
+      "name": "Flutterpage",
+      "slug": "flutterpage",
+      "tier": "S+",
+      "role": "support",
+      "tags": "EA, Buff, Shuffle"
+    },
+    {
+      "name": "Lopera",
+      "slug": "lopera",
+      "tier": "S+",
+      "role": "support",
+      "tags": "Bullet, Array"
+    },
+    {
+      "name": "Rhiannon",
+      "slug": "rhiannon",
+      "tier": "S+",
+      "role": "support",
+      "tags": "Flex, Buff, Extra Turn"
+    },
+    {
+      "name": "Enigma",
+      "slug": "enigma",
+      "tier": "S+",
+      "role": "survival",
+      "tags": "Dynamo, Bastion, Cleanse"
+    },
+    {
+      "name": "J",
+      "slug": "j",
+      "tier": "S+",
+      "role": "survival",
+      "tags": "Shield, Burn, Riposte"
+    },
+    {
+      "name": "Marsha",
+      "slug": "marsha",
+      "tier": "S+",
+      "role": "survival",
+      "tags": "Shield, Cleanse, Glow"
+    },
+    {
+      "name": "Narcissus",
+      "slug": "narcissus",
+      "tier": "S+",
+      "role": "survival",
+      "tags": "Buff, Ult"
+    },
+    {
+      "name": "Corvus",
+      "slug": "corvus",
+      "tier": "S",
+      "role": "damage-dealer",
+      "tags": "Dynamo, Raid"
+    },
+    {
+      "name": "Nautika",
+      "slug": "nautika",
+      "tier": "S",
+      "role": "damage-dealer",
+      "tags": "Bloodtithe, EA"
+    },
+    {
+      "name": "Ramona",
+      "slug": "ramona",
+      "tier": "S",
+      "role": "damage-dealer",
+      "tags": "Poison, EA, Rewrite"
+    },
+    {
+      "name": "Windsong",
+      "slug": "windsong",
+      "tier": "S",
+      "role": "damage-dealer",
+      "tags": "EA"
+    },
+    {
+      "name": "Anjo Nala",
+      "slug": "anjo-nala",
+      "tier": "S",
+      "role": "sub-carry",
+      "tags": "Ult, EA, Flex"
+    },
+    {
+      "name": "Barcarola",
+      "slug": "barcarola",
+      "tier": "S",
+      "role": "sub-carry",
+      "tags": "Impromptu, Star"
+    },
+    {
+      "name": "Hissabeth",
+      "slug": "hissabeth",
+      "tier": "S",
+      "role": "sub-carry",
+      "tags": "Ult, Debuff, AP+"
+    },
+    {
+      "name": "Paper Heron",
+      "slug": "paper-heron",
+      "tier": "S",
+      "role": "sub-carry",
+      "tags": "Impromptu, Plant, Array"
+    },
+    {
+      "name": "Ulrich",
+      "slug": "ulrich",
+      "tier": "S",
+      "role": "sub-carry",
+      "tags": "Dynamo, EA"
+    },
+    {
+      "name": "Willow",
+      "slug": "willow",
+      "tier": "S",
+      "role": "sub-carry",
+      "tags": "Poison, Moxie"
+    },
+    {
+      "name": "Matilda",
+      "slug": "matilda",
+      "tier": "S",
+      "role": "support",
+      "tags": "Beryl, Glow, EA"
+    },
+    {
+      "name": "Semmelweis",
+      "slug": "semmelweis",
+      "tier": "S",
+      "role": "support",
+      "tags": "Bloodtithe, Array"
+    },
+    {
+      "name": "Tooth Fairy",
+      "slug": "tooth-fairy",
+      "tier": "S",
+      "role": "support",
+      "tags": "Impromptu, Debuff"
+    },
+    {
+      "name": "Tuesday",
+      "slug": "tuesday",
+      "tier": "S",
+      "role": "support",
+      "tags": "Poison, Array"
+    },
+    {
+      "name": "Everecho",
+      "slug": "everecho",
+      "tier": "S",
+      "role": "survival",
+      "tags": "Conduit, Buff"
+    },
+    {
+      "name": "Fatutu",
+      "slug": "fatutu",
+      "tier": "S",
+      "role": "survival",
+      "tags": "Cleanse, EA"
+    },
+    {
+      "name": "Kiperina",
+      "slug": "kiperina",
+      "tier": "S",
+      "role": "survival",
+      "tags": "Impromptu, Shield, Cleanse"
+    },
+    {
+      "name": "Rubuska",
+      "slug": "rubuska",
+      "tier": "S",
+      "role": "survival",
+      "tags": "Bloodtithe"
+    },
+    {
+      "name": "Centurion",
+      "slug": "centurion",
+      "tier": "A+",
+      "role": "damage-dealer",
+      "tags": "Shift"
+    },
+    {
+      "name": "Cornerstone",
+      "slug": "cornerstone",
+      "tier": "A+",
+      "role": "damage-dealer",
+      "tags": "Riposte, Ult"
+    },
+    {
+      "name": "Lucy",
+      "slug": "lucy",
+      "tier": "A+",
+      "role": "damage-dealer",
+      "tags": "Dynamo, EA"
+    },
+    {
+      "name": "Spathodea",
+      "slug": "spathodea",
+      "tier": "A+",
+      "role": "damage-dealer",
+      "tags": "Glow, Ult"
+    },
+    {
+      "name": "Argus",
+      "slug": "argus",
+      "tier": "A+",
+      "role": "sub-carry",
+      "tags": "Debuff"
+    },
+    {
+      "name": "Ezio Auditore",
+      "slug": "ezio-auditore",
+      "tier": "A+",
+      "role": "sub-carry",
+      "tags": "Ult, EA, Poison"
+    },
+    {
+      "name": "Mercuria",
+      "slug": "mercuria",
+      "tier": "A+",
+      "role": "sub-carry",
+      "tags": "Buff, AP+, Upgrade"
+    },
+    {
+      "name": "Sentinel",
+      "slug": "sentinel",
+      "tier": "A+",
+      "role": "sub-carry",
+      "tags": "Bloodtithe, Bullet"
+    },
+    {
+      "name": "Silverwing Eagle",
+      "slug": "silverwing-eagle",
+      "tier": "A+",
+      "role": "sub-carry",
+      "tags": "Ult, EA, Plant"
+    },
+    {
+      "name": "Aleph",
+      "slug": "aleph",
+      "tier": "A+",
+      "role": "support",
+      "tags": "Impromptu, Buff"
+    },
+    {
+      "name": "Cheng Heguang",
+      "slug": "cheng-heguang",
+      "tier": "A+",
+      "role": "support",
+      "tags": "EA, Shuffle, Liang"
+    },
+    {
+      "name": "Druvis III",
+      "slug": "druvis-iii",
+      "tier": "A+",
+      "role": "support",
+      "tags": "Plant, Debuff"
+    },
+    {
+      "name": "Getian",
+      "slug": "getian",
+      "tier": "A+",
+      "role": "support",
+      "tags": "Ult, Array"
+    },
+    {
+      "name": "Medicine Pocket",
+      "slug": "medicine-pocket",
+      "tier": "A+",
+      "role": "survival",
+      "tags": "Debuff"
+    },
+    {
+      "name": "Vila",
+      "slug": "vila",
+      "tier": "A+",
+      "role": "survival",
+      "tags": "Buff, Moxie"
+    },
+    {
+      "name": "A Knight",
+      "slug": "a-knight",
+      "tier": "A",
+      "role": "damage-dealer",
+      "tags": "Ult, EA, Farm"
+    },
+    {
+      "name": "Buddy Fairchild",
+      "slug": "buddy-fairchild",
+      "tier": "A",
+      "role": "damage-dealer",
+      "tags": "Ult, Moxie"
+    },
+    {
+      "name": "Marcus",
+      "slug": "marcus",
+      "tier": "A",
+      "role": "damage-dealer",
+      "tags": "Upgrade"
+    },
+    {
+      "name": "Jessica",
+      "slug": "jessica",
+      "tier": "A",
+      "role": "sub-carry",
+      "tags": "Poison, AP+"
+    },
+    {
+      "name": "Kassandra",
+      "slug": "kassandra",
+      "tier": "A",
+      "role": "sub-carry",
+      "tags": "Ult, EA, AP+"
+    },
+    {
+      "name": "An-an Lee",
+      "slug": "an-an-lee",
+      "tier": "A",
+      "role": "support",
+      "tags": "Impromptu, Plant"
+    },
+    {
+      "name": "Eternity",
+      "slug": "eternity",
+      "tier": "A",
+      "role": "support",
+      "tags": "Bloodtithe"
+    },
+    {
+      "name": "Kakania",
+      "slug": "kakania",
+      "tier": "A",
+      "role": "support",
+      "tags": "AP+"
+    },
+    {
+      "name": "Melania",
+      "slug": "melania",
+      "tier": "A",
+      "role": "support",
+      "tags": "Ult, Buff"
+    },
+    {
+      "name": "Pickles",
+      "slug": "pickles",
+      "tier": "A",
+      "role": "support",
+      "tags": "Buff, EA"
+    },
+    {
+      "name": "Regulus",
+      "slug": "regulus",
+      "tier": "A",
+      "role": "support",
+      "tags": "Impromptu, AP+"
+    },
+    {
+      "name": "Voyager",
+      "slug": "voyager",
+      "tier": "A",
+      "role": "support",
+      "tags": "Impromptu, Control"
+    },
+    {
+      "name": "Ezra Theodore",
+      "slug": "ezra-theodore",
+      "tier": "A",
+      "role": "survival",
+      "tags": "Dynamo, Shield"
+    },
+    {
+      "name": "Ms. NewBabel",
+      "slug": "ms-newbabel",
+      "tier": "A",
+      "role": "survival",
+      "tags": "Shield, EA"
+    },
+    {
+      "name": "Sotheby",
+      "slug": "sotheby",
+      "tier": "A",
+      "role": "survival",
+      "tags": "Poison"
+    },
+    {
+      "name": "Yenisei",
+      "slug": "yenisei",
+      "tier": "A",
+      "role": "survival",
+      "tags": "Upgrade, Buff"
+    },
+    {
+      "name": "Jiu Niangzi",
+      "slug": "jiu-niangzi",
+      "tier": "B",
+      "role": "damage-dealer",
+      "tags": "EA, AP+"
+    },
+    {
+      "name": "Kaalaa Baunaa",
+      "slug": "kaalaa-baunaa",
+      "tier": "B",
+      "role": "damage-dealer",
+      "tags": "EA"
+    },
+    {
+      "name": "Bkornblume",
+      "slug": "bkornblume",
+      "tier": "B",
+      "role": "sub-carry",
+      "tags": "Reality, Control"
+    },
+    {
+      "name": "Lorelei",
+      "slug": "lorelei",
+      "tier": "B",
+      "role": "support",
+      "tags": "Buff, AP+"
+    },
+    {
+      "name": "Name Day",
+      "slug": "name-day",
+      "tier": "B",
+      "role": "support",
+      "tags": "Ult, Buff"
+    },
+    {
+      "name": "NORA",
+      "slug": "nora",
+      "tier": "B",
+      "role": "support",
+      "tags": "Rewrite"
+    },
+    {
+      "name": "Reed",
+      "slug": "reed",
+      "tier": "B",
+      "role": "support",
+      "tags": "Buff"
+    },
+    {
+      "name": "Barbara",
+      "slug": "barbara",
+      "tier": "B",
+      "role": "survival",
+      "tags": "Upgrade, Shuffle"
+    },
+    {
+      "name": "Loggerhead",
+      "slug": "loggerhead",
+      "tier": "B",
+      "role": "survival",
+      "tags": "Debuff"
+    },
+    {
+      "name": "Lilya",
+      "slug": "lilya",
+      "tier": "C",
+      "role": "damage-dealer",
+      "tags": "EA"
+    },
+    {
+      "name": "Tennant",
+      "slug": "tennant",
+      "tier": "C",
+      "role": "sub-carry",
+      "tags": "Bullet, Shield"
+    },
+    {
+      "name": "White Rum",
+      "slug": "white-rum",
+      "tier": "C",
+      "role": "sub-carry",
+      "tags": "Control, Shift"
+    },
+    {
+      "name": "Avgust",
+      "slug": "avgust",
+      "tier": "C",
+      "role": "support",
+      "tags": "Buff"
+    },
+    {
+      "name": "Desert Flannel",
+      "slug": "desert-flannel",
+      "tier": "C",
+      "role": "support",
+      "tags": "Beast, Buff"
+    },
+    {
+      "name": "Necrologist",
+      "slug": "necrologist",
+      "tier": "C",
+      "role": "support",
+      "tags": "Buff"
+    },
+    {
+      "name": "Shamane",
+      "slug": "shamane",
+      "tier": "C",
+      "role": "support",
+      "tags": "Ult, Debuff"
+    },
+    {
+      "name": "Balloon Party",
+      "slug": "balloon-party",
+      "tier": "C",
+      "role": "survival",
+      "tags": ""
+    },
+    {
+      "name": "Dikke",
+      "slug": "dikke",
+      "tier": "C",
+      "role": "survival",
+      "tags": ""
+    },
+    {
+      "name": "La Source",
+      "slug": "la-source",
+      "tier": "C",
+      "role": "survival",
+      "tags": ""
+    },
+    {
+      "name": "Alexios",
+      "slug": "alexios",
+      "tier": "D",
+      "role": "damage-dealer",
+      "tags": "Ult, Kassandra"
+    },
+    {
+      "name": "Blonney",
+      "slug": "blonney",
+      "tier": "D",
+      "role": "damage-dealer",
+      "tags": ""
+    },
+    {
+      "name": "Charlie",
+      "slug": "charlie",
+      "tier": "D",
+      "role": "damage-dealer",
+      "tags": "Dispel"
+    },
+    {
+      "name": "Mr. Duncan",
+      "slug": "mr-duncan",
+      "tier": "D",
+      "role": "damage-dealer",
+      "tags": "Bullet, EA"
+    },
+    {
+      "name": "Sweetheart",
+      "slug": "sweetheart",
+      "tier": "D",
+      "role": "damage-dealer",
+      "tags": "Debuff"
+    },
+    {
+      "name": "Brimley",
+      "slug": "brimley",
+      "tier": "D",
+      "role": "sub-carry",
+      "tags": "EA"
+    },
+    {
+      "name": "Horropedia",
+      "slug": "horropedia",
+      "tier": "D",
+      "role": "sub-carry",
+      "tags": "Dispel"
+    },
+    {
+      "name": "Leilani",
+      "slug": "leilani",
+      "tier": "D",
+      "role": "sub-carry",
+      "tags": "Moxie"
+    },
+    {
+      "name": "Sonetto",
+      "slug": "sonetto",
+      "tier": "D",
+      "role": "sub-carry",
+      "tags": "Buff"
+    },
+    {
+      "name": "aliEn T",
+      "slug": "alien-t",
+      "tier": "D",
+      "role": "support",
+      "tags": "Control"
+    },
+    {
+      "name": "Darley Clatter",
+      "slug": "darley-clatter",
+      "tier": "D",
+      "role": "support",
+      "tags": "Moxie"
+    },
+    {
+      "name": "Twins Sleep",
+      "slug": "twins-sleep",
+      "tier": "D",
+      "role": "support",
+      "tags": "Debuff"
+    },
+    {
+      "name": "X",
+      "slug": "x",
+      "tier": "D",
+      "role": "support",
+      "tags": "Dispel, Debuff"
+    },
+    {
+      "name": "The Fool",
+      "slug": "the-fool",
+      "tier": "D",
+      "role": "survival",
+      "tags": ""
+    },
+    {
+      "name": "Eagle",
+      "slug": "eagle",
+      "tier": "F",
+      "role": "damage-dealer",
+      "tags": "Ult"
+    },
+    {
+      "name": "Mondlicht",
+      "slug": "mondlicht",
+      "tier": "F",
+      "role": "damage-dealer",
+      "tags": "Bullet"
+    },
+    {
+      "name": "Pavia",
+      "slug": "pavia",
+      "tier": "F",
+      "role": "damage-dealer",
+      "tags": ""
+    },
+    {
+      "name": "Rabies",
+      "slug": "rabies",
+      "tier": "F",
+      "role": "damage-dealer",
+      "tags": "Poison"
+    },
+    {
+      "name": "Satsuki",
+      "slug": "satsuki",
+      "tier": "F",
+      "role": "damage-dealer",
+      "tags": "Control"
+    },
+    {
+      "name": "APPLe",
+      "slug": "apple",
+      "tier": "F",
+      "role": "sub-carry",
+      "tags": ""
+    },
+    {
+      "name": "Bunny Bunny",
+      "slug": "bunny-bunny",
+      "tier": "F",
+      "role": "sub-carry",
+      "tags": ""
+    },
+    {
+      "name": "Click",
+      "slug": "click",
+      "tier": "F",
+      "role": "sub-carry",
+      "tags": "Debuff"
+    },
+    {
+      "name": "Kanjira",
+      "slug": "kanjira",
+      "tier": "F",
+      "role": "sub-carry",
+      "tags": "Poison, AP-"
+    },
+    {
+      "name": "ONiON",
+      "slug": "onion",
+      "tier": "F",
+      "role": "sub-carry",
+      "tags": ""
+    },
+    {
+      "name": "Pioneer",
+      "slug": "pioneer",
+      "tier": "F",
+      "role": "sub-carry",
+      "tags": "Shift"
+    },
+    {
+      "name": "Baby Blue",
+      "slug": "baby-blue",
+      "tier": "F",
+      "role": "support",
+      "tags": "Mental, Debuff"
+    },
+    {
+      "name": "Bette",
+      "slug": "bette",
+      "tier": "F",
+      "role": "support",
+      "tags": "Upgrade"
+    },
+    {
+      "name": "Diggers",
+      "slug": "diggers",
+      "tier": "F",
+      "role": "support",
+      "tags": "Debuff"
+    },
+    {
+      "name": "Door",
+      "slug": "door",
+      "tier": "F",
+      "role": "support",
+      "tags": "Moxie"
+    },
+    {
+      "name": "Erick",
+      "slug": "erick",
+      "tier": "F",
+      "role": "support",
+      "tags": "Debuff"
+    },
+    {
+      "name": "John Titor",
+      "slug": "john-titor",
+      "tier": "F",
+      "role": "support",
+      "tags": "Shield"
+    },
+    {
+      "name": "Mesmer Jr.",
+      "slug": "mesmer-jr",
+      "tier": "F",
+      "role": "support",
+      "tags": "Mental"
+    },
+    {
+      "name": "Ms. Radio",
+      "slug": "ms-radio",
+      "tier": "F",
+      "role": "support",
+      "tags": "Debuff"
+    },
+    {
+      "name": "Nick Bottom",
+      "slug": "nick-bottom",
+      "tier": "F",
+      "role": "support",
+      "tags": "Buff"
+    },
+    {
+      "name": "Oliver Fog",
+      "slug": "oliver-fog",
+      "tier": "F",
+      "role": "support",
+      "tags": "Buff"
+    },
+    {
+      "name": "Sputnik",
+      "slug": "sputnik",
+      "tier": "F",
+      "role": "support",
+      "tags": "Control"
+    },
+    {
+      "name": "TTT",
+      "slug": "ttt",
+      "tier": "F",
+      "role": "support",
+      "tags": "Debuff"
+    },
+    {
+      "name": "Ulu",
+      "slug": "ulu",
+      "tier": "F",
+      "role": "support",
+      "tags": "Burn, Buff"
+    },
+    {
+      "name": "Зима",
+      "slug": "winter",
+      "tier": "F",
+      "role": "support",
+      "tags": "Buff"
+    },
+    {
+      "name": "Cristallo",
+      "slug": "cristallo",
+      "tier": "F",
+      "role": "survival",
+      "tags": "Buff"
+    },
+    {
+      "name": "Ms. Moissan",
+      "slug": "ms-moissan",
+      "tier": "F",
+      "role": "survival",
+      "tags": "Control, Shield"
+    },
+    {
+      "name": "Poltergeist",
+      "slug": "poltergeist",
+      "tier": "F",
+      "role": "survival",
+      "tags": ""
+    }
+  ]
+}

@@ -91,6 +91,13 @@ onMounted(() => {
         ><i class="fa-solid fa-people-group"></i> {{ $t("teams") }}
       </router-link>
       <router-link
+        :to="{ name: 'arcanist-tier-list' }"
+        class="nav-button"
+        :class="{ active: $route.name === 'arcanist-tier-list' }"
+        ><i class="fa-solid fa-ranking-star"></i>
+        {{ $t("character-tier-list") }}
+      </router-link>
+      <router-link
         to="/items"
         class="nav-button"
         :class="{ active: $route.path === '/items' }"
@@ -196,6 +203,14 @@ onMounted(() => {
                 class="nav-button block"
                 :class="{ active: $route.name === 'teams' }"
                 ><i class="fa-solid fa-people-group"></i> {{ $t("teams") }}
+              </router-link>
+              <router-link
+                @click="close"
+                :to="{ name: 'arcanist-tier-list' }"
+                class="nav-button block"
+                :class="{ active: $route.name === 'arcanist-tier-list' }"
+                ><i class="fa-solid fa-ranking-star"></i>
+                {{ $t("character-tier-list") }}
               </router-link>
               <router-link
                 @click="close"
