@@ -1,15 +1,18 @@
 import { defineStore } from "pinia";
+import { useDataStore } from "@/stores/dataStore";
+import { usePullsRecordStore } from "@/stores/pullsRecordStore";
 
 export type OwnershipSource = "manual" | "tracker" | "none";
 
 export interface IArcanistOwnershipEntry {
   Id: number;
   Name: string;
-  isOwned: boolean;
-  currentLevel: number;
-  currentInsight: number;
-  currentResonance: number;
-  currentPortrait: number;
+  level: number;
+  insight: number;
+  resonance: number;
+  portrait: number;
+  euphorias: number[];
+  euphoriasEnabled: boolean[];
   source: OwnershipSource;
 }
 
@@ -22,84 +25,67 @@ export const useArcanistOwnershipStore = defineStore("arcanistOwnership", {
     entries: [],
   }),
   getters: {
-    ownedIds: (state) =>
-      state.entries.filter((entry) => entry.isOwned).map((entry) => entry.Id),
-    getOwnedArcanists: (state) =>
-      state.entries.filter((entry) => entry.isOwned),
+    ownedIds: (state) => state.entries.map((entry) => entry.Id),
+    getOwnedArcanists: (state) => state.entries,
   },
   actions: {
-    getEntry(id: number) {
+    getEntry(id: number): IArcanistOwnershipEntry | undefined {
       return this.entries.find((entry) => entry.Id === id);
     },
-    getTrackerEntry(id: number) {
-      return this.entries.find(
-        (entry) => entry.Id === id && entry.source === "tracker",
-      );
+    getTrackerEntry(id: number): IArcanistOwnershipEntry | undefined {
+      const pullsStore = usePullsRecordStore();
+      const dataStore = useDataStore();
+      const arcanist = dataStore.arcanists.find((arc) => arc.Id === id);
+      if (!arcanist) {
+        return undefined;
+      }
+
+      const pullCount = pullsStore.data.filter(
+        (pull) => pull.ArcanistName === arcanist.Name,
+      ).length;
+      const portrait = pullCount > 0 ? pullCount - 1 : -1;
+      if (portrait < 0) {
+        return undefined;
+      }
+
+      return {
+        Id: id,
+        Name: arcanist.Name,
+        level: 1,
+        insight: 0,
+        resonance: 1,
+        portrait,
+        euphorias: [],
+        euphoriasEnabled: [],
+        source: "tracker",
+      };
     },
-    getManualEntry(id: number) {
-      return this.entries.find(
+    getEffectiveEntry(id: number): IArcanistOwnershipEntry | undefined {
+      const manualEntry = this.entries.find(
         (entry) => entry.Id === id && entry.source === "manual",
       );
-    },
-    getEffectiveEntry(id: number) {
-      const manualEntry = this.getManualEntry(id);
       if (manualEntry) {
         return manualEntry;
       }
 
-      const trackerEntry = this.getTrackerEntry(id);
-      if (trackerEntry) {
-        return trackerEntry;
-      }
-
-      return this.getEntry(id);
+      return this.getTrackerEntry(id);
     },
-    setOwned(id: number, name: string, isOwned: boolean) {
-      const existing = this.entries.find(
-        (entry) => entry.Id === id && entry.source === "manual",
-      );
-      if (existing) {
-        existing.isOwned = isOwned;
-        existing.Name = name;
-        return;
-      }
-
+    setOwned(id: number, name: string) {
+      const trackerEntry = this.getTrackerEntry(id);
       this.entries = this.entries.filter(
         (entry) => entry.Id !== id || entry.source !== "manual",
       );
-      this.entries.push({
-        Id: id,
-        Name: name,
-        isOwned,
-        currentLevel: 1,
-        currentInsight: 0,
-        currentResonance: 0,
-        currentPortrait: 0,
-        source: "manual",
-      });
-    },
-    setOwnedFromTracker(id: number, name: string, isOwned: boolean) {
-      const existing = this.entries.find(
-        (entry) => entry.Id === id && entry.source === "tracker",
-      );
-      if (existing) {
-        existing.isOwned = isOwned;
-        existing.Name = name;
-        return;
-      }
 
-      this.entries = this.entries.filter(
-        (entry) => entry.Id !== id || entry.source !== "tracker",
-      );
       this.entries.push({
         Id: id,
         Name: name,
-        isOwned,
-        currentLevel: 1,
-        currentInsight: 0,
-        currentResonance: 0,
-        currentPortrait: 0,
-        source: "tracker",
+        level: 1,
+        insight: 0,
+        resonance: 1,
+        portrait: trackerEntry?.portrait ?? 0,
+        euphorias: [],
+        euphoriasEnabled: [],
+        source: "manual",
       });
     },
     upsertEntry(entry: IArcanistOwnershipEntry) {
@@ -120,6 +106,7 @@ export const useArcanistOwnershipStore = defineStore("arcanistOwnership", {
       const existing = this.entries.find(
         (entry) => entry.Id === id && entry.source === "manual",
       );
+
       if (!existing) {
         this.entries = this.entries.filter(
           (entry) => entry.Id !== id || entry.source !== "manual",
@@ -127,11 +114,20 @@ export const useArcanistOwnershipStore = defineStore("arcanistOwnership", {
         this.entries.push({
           Id: id,
           Name: updates.Name ?? "",
-          isOwned: updates.isOwned ?? false,
-          currentLevel: updates.currentLevel ?? 1,
-          currentInsight: updates.currentInsight ?? 0,
-          currentResonance: updates.currentResonance ?? 0,
-          currentPortrait: updates.currentPortrait ?? 0,
+          level: updates.level ?? 1,
+          insight: updates.insight ?? 0,
+          resonance: updates.resonance ?? 1,
+          portrait: updates.portrait ?? 0,
+          euphorias: Array.isArray(updates.euphorias)
+            ? updates.euphorias
+            : updates.euphorias !== undefined
+              ? [updates.euphorias]
+              : [],
+          euphoriasEnabled: Array.isArray(updates.euphoriasEnabled)
+            ? updates.euphoriasEnabled
+            : updates.euphoriasEnabled !== undefined
+              ? [updates.euphoriasEnabled]
+              : [],
           source: "manual",
         });
         return;

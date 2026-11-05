@@ -5,6 +5,7 @@ import { useWildernessStore } from '@/stores/wildernessStore';
 import { useWarehouseStore } from '@/stores/warehouseStore';
 import { usePullsRecordStore } from '@/stores/pullsRecordStore';
 import { useActivityStore } from '@/stores/activityStore';
+import { useArcanistOwnershipStore } from '@/stores/arcanistOwnershipStore';
 
 const localStorageKeys = [
     'plannerSettings',
@@ -14,7 +15,8 @@ const localStorageKeys = [
     'pulls',
     'activity',
     'changelogs',
-    'locale'
+    'locale',
+    'arcanistOwnership'
 ];
 
 interface IWatchedStore {
@@ -37,6 +39,7 @@ export function setGlobalLastModifiedTimestamp (onUpdate?: () => void) {
     const warehouseStore = useWarehouseStore();
     const pullsStore = usePullsRecordStore();
     const activityStore = useActivityStore();
+    const arcanistOwnershipStore = useArcanistOwnershipStore();
 
     const updateTimestamp = () => {
         localStorage.setItem('lastModified', new Date().toISOString());
@@ -63,6 +66,7 @@ export function setGlobalLastModifiedTimestamp (onUpdate?: () => void) {
     watchStore(() => warehouseStore.$state);
     watchStore(() => pullsStore.$state);
     watchStore(() => activityStore.$state);
+    watchStore(() => arcanistOwnershipStore.$state);
 }
 
 export function getGlobalLastModifiedTimestamp () {
@@ -135,11 +139,15 @@ export function exportKornblumeData () {
     }
 }
 
-export function setKornblumeData (fileData: object) {
+export function setKornblumeData (fileData: Record<string, unknown>) {
     try {
         localStorageKeys.forEach((localStorageKey: string) => {
-            if (fileData[localStorageKey]) {
-                localStorage.setItem(localStorageKey, fileData[localStorageKey]);
+            const fileValue = fileData?.[localStorageKey]
+
+            if (typeof fileValue === 'string') {
+                localStorage.setItem(localStorageKey, fileValue)
+            } else {
+                localStorage.removeItem(localStorageKey)
             }
         });
         // setTimeout(() => window.location.reload());
@@ -156,7 +164,13 @@ export function importKornblumeData (jsonFile) {
 
             // Assume importedData has the same structure as localStorageData
             localStorageKeys.forEach((localStorageKey: string) => {
-                localStorage.setItem(localStorageKey, importedData?.[localStorageKey])
+                const importedValue = importedData?.[localStorageKey]
+
+                if (typeof importedValue === 'string') {
+                    localStorage.setItem(localStorageKey, importedValue)
+                } else {
+                    localStorage.removeItem(localStorageKey)
+                }
             })
 
             console.log('Import successful!');

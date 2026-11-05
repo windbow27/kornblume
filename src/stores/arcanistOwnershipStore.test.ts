@@ -1,29 +1,46 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { createPinia, setActivePinia } from "pinia";
 import { useArcanistOwnershipStore } from "./arcanistOwnershipStore";
+import { usePullsRecordStore, IPull } from "./pullsRecordStore";
+import { useDataStore } from "./dataStore";
+import type { IArcanist } from "@/types";
 
 describe("useArcanistOwnershipStore", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
   });
 
-  it("prefers manual ownership over tracker-derived ownership", () => {
+  it("treats a manual entry as ownership and removes it when unchecked", () => {
     const store = useArcanistOwnershipStore();
+    const pullsStore = usePullsRecordStore();
+    const dataStore = useDataStore();
 
-    store.setOwnedFromTracker(1, "Test Arcanist", true);
-    store.updateEntry(1, {
-      Id: 1,
-      Name: "Test Arcanist",
-      isOwned: false,
-      currentLevel: 60,
-      currentInsight: 3,
-      currentResonance: 2,
-      currentPortrait: 5,
-    });
+    dataStore.arcanists = [
+      {
+        Id: 1,
+        Name: "Test Arcanist",
+      } as IArcanist,
+    ];
 
-    const effectiveEntry = store.getEffectiveEntry(1);
-    expect(effectiveEntry?.isOwned).toBe(false);
-    expect(effectiveEntry?.source).toBe("manual");
-    expect(store.getTrackerEntry(1)?.isOwned).toBe(true);
+    const pulls: IPull[] = [
+      {
+        ArcanistName: "Test Arcanist",
+        Rarity: 6,
+        BannerType: "Standard",
+        Timestamp: 0,
+      },
+    ];
+    pullsStore.updatePullsRecord(pulls);
+
+    store.setOwned(1, "Test Arcanist");
+
+    const ownershipEntry = store.getEffectiveEntry(1);
+    expect(ownershipEntry).toBeDefined();
+    expect(ownershipEntry?.source).toBe("manual");
+
+    store.removeEntry(1);
+    const trackerEntry = store.getEffectiveEntry(1);
+    expect(trackerEntry?.source).toBe("tracker");
+    expect(trackerEntry?.portrait).toBe(0);
   });
 });
