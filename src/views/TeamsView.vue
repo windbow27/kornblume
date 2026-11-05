@@ -51,8 +51,12 @@ const scrapedDate = computed(() =>
 
     <p v-if="tiers.length === 0" class="opacity-70">{{ $t('teams-no-teams') }}</p>
 
-    <section v-for="[tier, teams] in tiers" :key="tier" class="mb-6">
-      <h2 class="text-2xl font-bold mb-2">{{ tier }}</h2>
+    <section
+      v-for="[tier, teams] in tiers"
+      :key="tier"
+      class="mb-8 pt-5 border-t-2 border-white/40 first:border-t-0 first:pt-0"
+    >
+      <h2 class="text-2xl font-bold mb-3">{{ tier }}</h2>
       <div class="grid gap-3 grid-cols-1 lg:grid-cols-2">
         <div
           v-for="r in teams"
