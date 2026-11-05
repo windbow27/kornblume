@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { resolveTeam } from "./teams";
+import { findTeamsWithCharacter, resolveTeam } from "./teams";
 import type { IArcanist, ITeam } from "@/types";
 
 const arcanists = [
@@ -21,6 +21,29 @@ const team: ITeam = {
     [{ name: "Unknown", slug: "unknown" }],
   ],
 };
+
+describe("findTeamsWithCharacter", () => {
+  const other: ITeam = {
+    name: "Other",
+    tier: "A",
+    damageType: "mental",
+    slots: [[{ name: "Aleph", slug: "aleph" }]],
+  };
+
+  it("finds teams where the character is any slot alternative", () => {
+    expect(findTeamsWithCharacter([team, other], "tooth fairy")).toEqual([
+      team,
+    ]);
+    expect(findTeamsWithCharacter([team, other], "Aleph")).toEqual([
+      team,
+      other,
+    ]);
+  });
+
+  it("returns nothing for characters in no team", () => {
+    expect(findTeamsWithCharacter([team, other], "Nobody")).toEqual([]);
+  });
+});
 
 describe("resolveTeam", () => {
   it("counts a slot as owned if any alternative is owned", () => {

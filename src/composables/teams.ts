@@ -19,6 +19,18 @@ export interface IResolvedTeam {
   total: number;
 }
 
+export function findTeamsWithCharacter(
+  teams: ITeam[],
+  characterName: string,
+): ITeam[] {
+  const target = normalizeName(characterName);
+  return teams.filter((team) =>
+    team.slots.some((slot) =>
+      slot.some((c) => normalizeName(c.name) === target),
+    ),
+  );
+}
+
 export function resolveTeam(
   team: ITeam,
   arcanists: IArcanist[],
