@@ -1,6 +1,18 @@
 export const changelogs = [
   // Add more from top,
   {
+    date: '05/11/2026',
+    description: `
+        • Add Hedone and Narcissus banners.
+        `
+  },
+  {
+    date: '15/10/2026',
+    description: `
+        • Add Drake as unreleased arcanist.
+        `
+  },
+  {
     date: '24/08/2026',
     description: `
         • Add Huntsworn Lilya and Glyndŵr as unreleased arcanists. <br>
