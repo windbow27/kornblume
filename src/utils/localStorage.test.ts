@@ -1,8 +1,16 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { getKornblumeData, setKornblumeData } from "./localStorage";
+import { nextTick } from "vue";
+import { createPinia, setActivePinia } from "pinia";
+import {
+  getKornblumeData,
+  setGlobalLastModifiedTimestamp,
+  setKornblumeData,
+} from "./localStorage";
+import { useArcanistOwnershipStore } from "@/stores/arcanistOwnershipStore";
 
 describe("backup helpers", () => {
   beforeEach(() => {
+    setActivePinia(createPinia());
     const storage = new Map<string, string>();
 
     vi.stubGlobal("localStorage", {
@@ -37,5 +45,17 @@ describe("backup helpers", () => {
     expect(localStorage.getItem("arcanistOwnership")).toBe(
       payload.arcanistOwnership,
     );
+  });
+
+  it("updates the last modified timestamp when ownership changes", async () => {
+    const onUpdate = vi.fn();
+    const ownershipStore = useArcanistOwnershipStore();
+
+    setGlobalLastModifiedTimestamp(onUpdate);
+    ownershipStore.setOwned(1, "Test");
+    await nextTick();
+
+    expect(onUpdate).toHaveBeenCalledOnce();
+    expect(localStorage.getItem("lastModified")).not.toBeNull();
   });
 });

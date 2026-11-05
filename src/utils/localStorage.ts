@@ -5,6 +5,7 @@ import { useWildernessStore } from "@/stores/wildernessStore";
 import { useWarehouseStore } from "@/stores/warehouseStore";
 import { usePullsRecordStore } from "@/stores/pullsRecordStore";
 import { useActivityStore } from "@/stores/activityStore";
+import { useArcanistOwnershipStore } from "@/stores/arcanistOwnershipStore";
 
 const localStorageKeys = [
   "plannerSettings",
@@ -38,6 +39,7 @@ export function setGlobalLastModifiedTimestamp(onUpdate?: () => void) {
   const warehouseStore = useWarehouseStore();
   const pullsStore = usePullsRecordStore();
   const activityStore = useActivityStore();
+  const arcanistOwnershipStore = useArcanistOwnershipStore();
 
   const updateTimestamp = () => {
     localStorage.setItem("lastModified", new Date().toISOString());
@@ -71,6 +73,7 @@ export function setGlobalLastModifiedTimestamp(onUpdate?: () => void) {
   watchStore(() => warehouseStore.$state);
   watchStore(() => pullsStore.$state);
   watchStore(() => activityStore.$state);
+  watchStore(() => arcanistOwnershipStore.$state);
 }
 
 export function getGlobalLastModifiedTimestamp() {
