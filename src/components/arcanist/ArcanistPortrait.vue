@@ -1,9 +1,17 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { getArcanistI0ImagePath, getArcanistFramePath, getArcanistAfflatusIconPath } from '@/composables/images';
-import type { IArcanist } from '@/types';
-import type { OwnershipSource, IArcanistOwnershipEntry } from '@/stores/arcanistOwnershipStore';
-import { useArcanistOwnershipStore } from '@/stores/arcanistOwnershipStore';
+import { computed } from "vue";
+import { OWNERSHIP_SOURCES } from "@/constants";
+import {
+  getArcanistI0ImagePath,
+  getArcanistFramePath,
+  getArcanistAfflatusIconPath,
+} from "@/composables/images";
+import type { IArcanist } from "@/types";
+import type {
+  OwnershipSource,
+  IArcanistOwnershipEntry,
+} from "@/stores/arcanistOwnershipStore";
+import { useArcanistOwnershipStore } from "@/stores/arcanistOwnershipStore";
 
 const props = defineProps({
     arcanist: {
@@ -13,17 +21,23 @@ const props = defineProps({
 });
 
 const ownershipStore = useArcanistOwnershipStore();
-const effectiveOwnership = computed<IArcanistOwnershipEntry | undefined>(() => ownershipStore.getEffectiveEntry(props.arcanist.Id));
-const ownershipSource = computed<OwnershipSource>(() => (effectiveOwnership.value ? effectiveOwnership.value.source : 'none'));
+const effectiveOwnership = computed<IArcanistOwnershipEntry | undefined>(() =>
+  ownershipStore.getEffectiveEntry(props.arcanist.Id),
+);
+const ownershipSource = computed<OwnershipSource>(() =>
+  effectiveOwnership.value
+    ? effectiveOwnership.value.source
+    : OWNERSHIP_SOURCES.NONE,
+);
 
 const ownershipTooltip = computed(() => {
-    if (ownershipSource.value === 'manual') {
-        return 'Manual';
-    }
-    if (ownershipSource.value === 'tracker') {
-        return 'Tracker';
-    }
-    return '';
+  if (ownershipSource.value === OWNERSHIP_SOURCES.MANUAL) {
+    return "Manual";
+  }
+  if (ownershipSource.value === OWNERSHIP_SOURCES.TRACKER) {
+    return "Tracker";
+  }
+  return "";
 });
 
 const displayPortraitCount = computed(() => {

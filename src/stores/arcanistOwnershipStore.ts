@@ -1,8 +1,10 @@
 import { defineStore } from "pinia";
 import { useDataStore } from "@/stores/dataStore";
 import { usePullsRecordStore } from "@/stores/pullsRecordStore";
+import { OWNERSHIP_SOURCES } from "@/constants";
 
-export type OwnershipSource = "manual" | "tracker" | "none";
+export type OwnershipSource =
+  (typeof OWNERSHIP_SOURCES)[keyof typeof OWNERSHIP_SOURCES];
 
 export interface IArcanistOwnershipEntry {
   Id: number;
@@ -57,12 +59,13 @@ export const useArcanistOwnershipStore = defineStore("arcanistOwnership", {
         portrait,
         euphorias: [],
         euphoriasEnabled: [],
-        source: "tracker",
+        source: OWNERSHIP_SOURCES.TRACKER,
       };
     },
     getEffectiveEntry(id: number): IArcanistOwnershipEntry | undefined {
       const manualEntry = this.entries.find(
-        (entry) => entry.Id === id && entry.source === "manual",
+        (entry) =>
+          entry.Id === id && entry.source === OWNERSHIP_SOURCES.MANUAL,
       );
       if (manualEntry) {
         return manualEntry;
@@ -73,7 +76,8 @@ export const useArcanistOwnershipStore = defineStore("arcanistOwnership", {
     setOwned(id: number, name: string) {
       const trackerEntry = this.getTrackerEntry(id);
       this.entries = this.entries.filter(
-        (entry) => entry.Id !== id || entry.source !== "manual",
+        (entry) =>
+          entry.Id !== id || entry.source !== OWNERSHIP_SOURCES.MANUAL,
       );
 
       this.entries.push({
@@ -85,7 +89,7 @@ export const useArcanistOwnershipStore = defineStore("arcanistOwnership", {
         portrait: trackerEntry?.portrait ?? 0,
         euphorias: [],
         euphoriasEnabled: [],
-        source: "manual",
+        source: OWNERSHIP_SOURCES.MANUAL,
       });
     },
     upsertEntry(entry: IArcanistOwnershipEntry) {
@@ -104,12 +108,14 @@ export const useArcanistOwnershipStore = defineStore("arcanistOwnership", {
     },
     updateEntry(id: number, updates: Partial<IArcanistOwnershipEntry>) {
       const existing = this.entries.find(
-        (entry) => entry.Id === id && entry.source === "manual",
+        (entry) =>
+          entry.Id === id && entry.source === OWNERSHIP_SOURCES.MANUAL,
       );
 
       if (!existing) {
         this.entries = this.entries.filter(
-          (entry) => entry.Id !== id || entry.source !== "manual",
+          (entry) =>
+            entry.Id !== id || entry.source !== OWNERSHIP_SOURCES.MANUAL,
         );
         this.entries.push({
           Id: id,
@@ -128,7 +134,7 @@ export const useArcanistOwnershipStore = defineStore("arcanistOwnership", {
             : updates.euphoriasEnabled !== undefined
               ? [updates.euphoriasEnabled]
               : [],
-          source: "manual",
+          source: OWNERSHIP_SOURCES.MANUAL,
         });
         return;
       }
