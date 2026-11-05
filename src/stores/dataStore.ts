@@ -1,5 +1,12 @@
-import { defineStore } from 'pinia';
-import { IArcanists, IFormulas, IItems, IPsychubes, IShops, IStages } from '@/types';
+import { defineStore } from "pinia";
+import {
+  IArcanists,
+  IFormulas,
+  IItems,
+  IPsychubes,
+  IShops,
+  IStages,
+} from "@/types";
 
 interface IDataStore {
   arcanists: IArcanists;
@@ -19,10 +26,12 @@ const getDataSize = (data) => {
   if (!data) {
     return 0;
   }
-  return data.constructor === Object ? Object.keys(data).length : data.length || 0;
+  return data.constructor === Object
+    ? Object.keys(data).length
+    : data.length || 0;
 };
 
-export const useDataStore = defineStore('dataStore', {
+export const useDataStore = defineStore("dataStore", {
   state: (): IDataStore => ({
     arcanists: [],
     stages: {},
@@ -34,11 +43,11 @@ export const useDataStore = defineStore('dataStore', {
     formulas: [],
     items: [],
     psychubes: [],
-    shops: []
+    shops: [],
   }),
   actions: {
     async loadJsonData(module: string) {
-      console.log('DataStore', `fetching ${module}...`);
+      console.log("DataStore", `fetching ${module}...`);
       return fetch(`./data/${module}.json`)
         .then((response) => response.json())
         .then((json) => {
@@ -53,7 +62,9 @@ export const useDataStore = defineStore('dataStore', {
       }
     },
     async checkDataLoaded(modules: string[]) {
-      return Promise.all(modules.map((module) => this.checkAndLoadJsonData(module)));
-    }
-  }
+      return Promise.all(
+        modules.map((module) => this.checkAndLoadJsonData(module)),
+      );
+    },
+  },
 });

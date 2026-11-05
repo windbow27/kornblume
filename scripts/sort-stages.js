@@ -1,22 +1,28 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const dataDir = path.join(__dirname, '../public/data');
+const dataDir = path.join(__dirname, "../public/data");
 
 const categoryPriority = {
-  'Base Item': 0,
-  'Resonate Material': 1,
-  'Reveries Material': 2,
-  'Insight Casket': 3,
-  'Insight Material': 4,
-  'Build Material': 4
+  "Base Item": 0,
+  "Resonate Material": 1,
+  "Reveries Material": 2,
+  "Insight Casket": 3,
+  "Insight Material": 4,
+  "Build Material": 4,
 };
 
 // Build a lookup map from item name -> { category, rarity, index }
-const items = JSON.parse(fs.readFileSync(path.join(dataDir, 'items.json'), 'utf-8'));
+const items = JSON.parse(
+  fs.readFileSync(path.join(dataDir, "items.json"), "utf-8"),
+);
 const itemMap = new Map();
 items.forEach((item, index) => {
-  itemMap.set(item.Name, { category: item.Category, rarity: item.Rarity, index });
+  itemMap.set(item.Name, {
+    category: item.Category,
+    rarity: item.Rarity,
+    index,
+  });
 });
 
 function sortDrops(drops) {
@@ -41,11 +47,11 @@ function sortDrops(drops) {
 
 const stageFiles = fs
   .readdirSync(dataDir)
-  .filter((f) => f.startsWith('stages') && f.endsWith('.json'));
+  .filter((f) => f.startsWith("stages") && f.endsWith(".json"));
 
 for (const file of stageFiles) {
   const filePath = path.join(dataDir, file);
-  const stages = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  const stages = JSON.parse(fs.readFileSync(filePath, "utf-8"));
   let changed = 0;
 
   for (const key of Object.keys(stages)) {
@@ -55,6 +61,6 @@ for (const file of stageFiles) {
     }
   }
 
-  fs.writeFileSync(filePath, JSON.stringify(stages, null, 2) + '\n', 'utf-8');
+  fs.writeFileSync(filePath, JSON.stringify(stages, null, 2) + "\n", "utf-8");
   console.log(`${file}: sorted drops in ${changed} stages`);
 }

@@ -1,6 +1,5 @@
 <script setup lang="ts" name="NumericInput">
-import { ref, watch } from 'vue';
-
+import { ref, watch } from "vue";
 
 /*
  * Abstracts the logic for a numeric input.
@@ -16,106 +15,109 @@ import { ref, watch } from 'vue';
  */
 
 const props = defineProps<{
-    modelValue: number;
+  modelValue: number;
 }>();
 
 const emit = defineEmits<{
-    (e: 'update:modelValue', value: number): void;
+  (e: "update:modelValue", value: number): void;
 }>();
 
 const displayValue = ref<number | string>(props.modelValue);
 
 const parse = (val: string | number): number => {
-    if (typeof val === 'number') {
-        return Math.round(Math.max(0, val));
-    }
-    if (val === '') return 0;
+  if (typeof val === "number") {
+    return Math.round(Math.max(0, val));
+  }
+  if (val === "") return 0;
 
-    let str = String(val).toLowerCase().trim();
-    let multiplier = 1;
+  let str = String(val).toLowerCase().trim();
+  let multiplier = 1;
 
-    if (str.endsWith('k')) {
-        multiplier = 1000;
-        str = str.slice(0, -1);
-    } else if (str.endsWith('m')) {
-        multiplier = 1_000_000;
-        str = str.slice(0, -1);
-    } else if (str.endsWith('b')) {
-        multiplier = 1_000_000_000;
-        str = str.slice(0, -1);
-    }
+  if (str.endsWith("k")) {
+    multiplier = 1000;
+    str = str.slice(0, -1);
+  } else if (str.endsWith("m")) {
+    multiplier = 1_000_000;
+    str = str.slice(0, -1);
+  } else if (str.endsWith("b")) {
+    multiplier = 1_000_000_000;
+    str = str.slice(0, -1);
+  }
 
-    const num = Number(str);
+  const num = Number(str);
 
-    if (isNaN(num)) {
-        // If parsing fails, revert to the original modelValue
-        return props.modelValue;
-    }
+  if (isNaN(num)) {
+    // If parsing fails, revert to the original modelValue
+    return props.modelValue;
+  }
 
-    const result = num * multiplier;
-    return Math.round(Math.max(0, result));
-}
+  const result = num * multiplier;
+  return Math.round(Math.max(0, result));
+};
 
-watch(() => props.modelValue, (newValue) => {
+watch(
+  () => props.modelValue,
+  (newValue) => {
     const currentValue = parse(displayValue.value);
     if (currentValue !== newValue) {
-        displayValue.value = newValue;
+      displayValue.value = newValue;
     }
-});
+  },
+);
 
 const handleInput = () => {
-    // Basic sanitization on input to prevent most invalid characters.
-    // Main parsing is handled on blur.
-    const value = String(displayValue.value);
-    const sanitizedValue = value.replace(/[^0-9.ekmb]/gi, '');
-    if (value !== sanitizedValue) {
-        displayValue.value = sanitizedValue;
-    }
+  // Basic sanitization on input to prevent most invalid characters.
+  // Main parsing is handled on blur.
+  const value = String(displayValue.value);
+  const sanitizedValue = value.replace(/[^0-9.ekmb]/gi, "");
+  if (value !== sanitizedValue) {
+    displayValue.value = sanitizedValue;
+  }
 };
 
 const handleFocus = () => {
-    if (displayValue.value === 0) {
-        displayValue.value = '';
-    }
+  if (displayValue.value === 0) {
+    displayValue.value = "";
+  }
 };
 
 const handleBlur = () => {
-    const parsedValue = parse(displayValue.value);
-    displayValue.value = parsedValue; // Show the parsed value, e.g. 1000 for 1k
-    updateModel(parsedValue);
+  const parsedValue = parse(displayValue.value);
+  displayValue.value = parsedValue; // Show the parsed value, e.g. 1000 for 1k
+  updateModel(parsedValue);
 };
 
 const handleKeydown = (event: KeyboardEvent) => {
-    if (event.key === 'ArrowUp') {
-        event.preventDefault();
-        const newValue = parse(displayValue.value) + 1;
-        displayValue.value = newValue;
-        updateModel(newValue);
-    } else if (event.key === 'ArrowDown') {
-        event.preventDefault();
-        const newValue = parse(displayValue.value) - 1;
-        displayValue.value = newValue;
-        updateModel(newValue);
-    }
+  if (event.key === "ArrowUp") {
+    event.preventDefault();
+    const newValue = parse(displayValue.value) + 1;
+    displayValue.value = newValue;
+    updateModel(newValue);
+  } else if (event.key === "ArrowDown") {
+    event.preventDefault();
+    const newValue = parse(displayValue.value) - 1;
+    displayValue.value = newValue;
+    updateModel(newValue);
+  }
 };
 
 const updateModel = (value: number) => {
-    const newQuantity = Math.max(0, value); // Ensure it's non-negative
-    if (newQuantity !== props.modelValue) {
-        emit('update:modelValue', newQuantity);
-    }
+  const newQuantity = Math.max(0, value); // Ensure it's non-negative
+  if (newQuantity !== props.modelValue) {
+    emit("update:modelValue", newQuantity);
+  }
 };
 </script>
 
 <template>
-    <input
-        v-model="displayValue"
-        type="text"
-        inputmode="numeric"
-        @input="handleInput"
-        @focus="handleFocus"
-        @blur="handleBlur"
-        @keydown="handleKeydown"
-        @keydown.enter="($event.target as HTMLInputElement).blur()"
-    />
+  <input
+    v-model="displayValue"
+    type="text"
+    inputmode="numeric"
+    @input="handleInput"
+    @focus="handleFocus"
+    @blur="handleBlur"
+    @keydown="handleKeydown"
+    @keydown.enter="($event.target as HTMLInputElement).blur()"
+  />
 </template>

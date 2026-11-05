@@ -1,10 +1,10 @@
 interface IStock {
-    Material: string,
-    Quantity: number
+  Material: string;
+  Quantity: number;
 }
 
 interface IShop {
-    [shopVersion: string]: IStock[],
+  [shopVersion: string]: IStock[];
 }
 
-export interface IShops extends Array<IShop>{}
+export interface IShops extends Array<IShop> {}
