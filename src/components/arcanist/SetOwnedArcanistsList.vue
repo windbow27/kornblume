@@ -7,6 +7,12 @@ import { getAfflatusList } from "@/composables/images";
 import { formatArcanists } from "@/composables/arcanists";
 import type { IArcanist } from "@/types";
 import ArcanistIconDisplay from "@/components/arcanist/ArcanistIconDisplay.vue";
+import {
+  isPortraitOptionDisabled,
+  matchesPortrait,
+  PortraitFilterOperations,
+  type PortraitOperation,
+} from "@/utils/portraitFilter";
 
 type ownedFilter = "all" | "owned" | "unowned";
 
@@ -19,6 +25,27 @@ const sortMode = ref<"id" | "name">("id");
 const activeRarities = ref<number[]>([]);
 const activeAfflatus = ref<string[]>([]);
 const ownershipFilter = ref<ownedFilter>("all");
+const portraitOp = ref<PortraitOperation>(PortraitFilterOperations.Equals);
+const activePortraits = ref<number[]>([]);
+const activePortrait = ref<number | null>(null);
+
+const togglePortrait = (count: number) => {
+  if (portraitOp.value === PortraitFilterOperations.Equals) {
+    if (activePortraits.value.includes(count)) {
+      activePortraits.value = activePortraits.value.filter((p) => p !== count);
+    } else {
+      activePortraits.value.push(count);
+    }
+    return;
+  }
+
+  activePortrait.value = activePortrait.value === count ? null : count;
+};
+
+const isPortraitSelected = (count: number) =>
+  portraitOp.value === PortraitFilterOperations.Equals
+    ? activePortraits.value.includes(count)
+    : activePortrait.value === count;
 
 const listArcanists = computed<IArcanist[]>(() => dataStore.arcanists);
 
@@ -150,6 +177,21 @@ const filteredArcanists = computed(() => {
     filtered = filtered.filter((arc) => !isOwned(arc.Id));
   }
 
+  if (
+    activePortraits.value.length > 0 ||
+    (portraitOp.value !== PortraitFilterOperations.Equals &&
+      activePortrait.value !== null)
+  ) {
+    filtered = filtered.filter((arc) =>
+      matchesPortrait(
+        getPortraitValue(arc.Id),
+        portraitOp.value,
+        activePortraits.value,
+        activePortrait.value,
+      ),
+    );
+  }
+
   filtered = formatArcanists(filtered);
 
   if (sortMode.value === "id") {
@@ -263,6 +305,45 @@ const filteredArcanists = computed(() => {
               :src="`images/arcanists/misc/${afflatus.toLowerCase()}.webp`"
               alt=""
             />
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="rounded-lg border border-slate-700/90 bg-slate-900/50 px-3 py-2"
+      >
+        <p
+          class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-300"
+        >
+          Portrait count
+        </p>
+        <div class="flex justify-center items-center gap-1.5">
+          <select
+            v-model="portraitOp"
+            class="select select-sm w-16 bg-gray-800 text-white"
+            title="Comparison"
+          >
+            <option :value="PortraitFilterOperations.Equals">=</option>
+            <option :value="PortraitFilterOperations.LessThan">&lt;</option>
+            <option :value="PortraitFilterOperations.GreaterThan">&gt;</option>
+          </select>
+          <button
+            v-for="count in [0, 1, 2, 3, 4, 5]"
+            :key="count"
+            :disabled="isPortraitOptionDisabled(count, portraitOp)"
+            :class="{
+              'border-2 border-info': isPortraitSelected(count),
+              'border-2 border-transparent': !isPortraitSelected(count),
+              'cursor-not-allowed opacity-40': isPortraitOptionDisabled(
+                count,
+                portraitOp,
+              ),
+            }"
+            :title="`Portrait ${count}`"
+            @click="togglePortrait(count)"
+            class="h-10 w-10 rounded-md p-1 text-white"
+          >
+            {{ count }}
           </button>
         </div>
       </div>
