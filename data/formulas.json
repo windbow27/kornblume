@@ -346,7 +346,7 @@
     "Id": 51,
     "Name": "Roaming Terror Hut",
     "Rarity": 6,
-    "Material": ["Rootbox Rabbit", "Red Lacquer Tablet", "Clawed Pendulum", "Sharpodonty"],
-    "Quantity": [1, 2, 2, 800]
+    "Material": ["Rootbox Rabbit", "Jadeite Tablet", "Clawed Pendulum", "Sharpodonty"],
+    "Quantity": [1, 1, 2, 800]
   }
 ]
