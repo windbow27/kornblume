@@ -1,0 +1,809 @@
+{
+  "source": "https://www.prydwen.gg/re1999/team-tier-list",
+  "scrapedAt": "2026-11-05T20:41:16.940Z",
+  "teams": [
+    {
+      "name": "Bop It, Twist It (Conduit)",
+      "tier": "S+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Coppélia",
+            "slug": "coppelia"
+          }
+        ],
+        [
+          {
+            "name": "The Twins",
+            "slug": "the-twins"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Hedone",
+            "slug": "hedone"
+          }
+        ],
+        [
+          {
+            "name": "Everecho",
+            "slug": "everecho"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Daddy? Do I LOOK- (Ultimate)",
+      "tier": "S+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Igor",
+            "slug": "igor"
+          }
+        ],
+        [
+          {
+            "name": "Lopera",
+            "slug": "lopera"
+          }
+        ],
+        [
+          {
+            "name": "Moldir",
+            "slug": "moldir"
+          },
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          }
+        ],
+        [
+          {
+            "name": "Narcissus",
+            "slug": "narcissus"
+          },
+          {
+            "name": "J",
+            "slug": "j"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "I Won't Hesitate B-- (Pursuit)",
+      "tier": "S+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Huntsworn Lilya",
+            "slug": "huntsworn-lilya"
+          }
+        ],
+        [
+          {
+            "name": "37",
+            "slug": "37"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          }
+        ],
+        [
+          {
+            "name": "J",
+            "slug": "j"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "I'm In Me Mum's Car Brume Brume",
+      "tier": "S+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Enigma",
+            "slug": "enigma"
+          }
+        ],
+        [
+          {
+            "name": "Charon",
+            "slug": "charon"
+          }
+        ],
+        [
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          },
+          {
+            "name": "Anjo Nala",
+            "slug": "anjo-nala"
+          }
+        ],
+        [
+          {
+            "name": "Brume",
+            "slug": "brume"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Liang Yue - Freestyle Nuo Dance Teacher",
+      "tier": "S+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Liang Yue",
+            "slug": "liang-yue"
+          }
+        ],
+        [
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Cheng Heguang",
+            "slug": "cheng-heguang"
+          },
+          {
+            "name": "Lopera",
+            "slug": "lopera"
+          }
+        ],
+        [
+          {
+            "name": "Marsha",
+            "slug": "marsha"
+          },
+          {
+            "name": "J",
+            "slug": "j"
+          },
+          {
+            "name": "Enigma",
+            "slug": "enigma"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Washing Me And My Clothes (Ultimate)",
+      "tier": "S+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Recoleta",
+            "slug": "recoleta"
+          },
+          {
+            "name": "Ms. Stranger",
+            "slug": "ms-stranger"
+          }
+        ],
+        [
+          {
+            "name": "Moldir",
+            "slug": "moldir"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Getian",
+            "slug": "getian"
+          }
+        ],
+        [
+          {
+            "name": "Narcissus",
+            "slug": "narcissus"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "When Life Gives You Lemons (Status)",
+      "tier": "S+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Noire",
+            "slug": "noire"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Moldir",
+            "slug": "moldir"
+          }
+        ],
+        [
+          {
+            "name": "6",
+            "slug": "6"
+          },
+          {
+            "name": "Hissabeth",
+            "slug": "hissabeth"
+          }
+        ],
+        [
+          {
+            "name": "Narcissus",
+            "slug": "narcissus"
+          },
+          {
+            "name": "J",
+            "slug": "j"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "You're All Going To Hell, Goodbye! (Glow)",
+      "tier": "S+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Beryl",
+            "slug": "beryl"
+          }
+        ],
+        [
+          {
+            "name": "Isolde",
+            "slug": "isolde"
+          },
+          {
+            "name": "Matilda",
+            "slug": "matilda"
+          }
+        ],
+        [
+          {
+            "name": "Lorentz Butterfly",
+            "slug": "lorentz-butterfly"
+          },
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          }
+        ],
+        [
+          {
+            "name": "Marsha",
+            "slug": "marsha"
+          },
+          {
+            "name": "J",
+            "slug": "j"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Add Two Shots Of Vodka (Dynamo, Raid)",
+      "tier": "S",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Corvus",
+            "slug": "corvus"
+          }
+        ],
+        [
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Charon",
+            "slug": "charon"
+          }
+        ],
+        [
+          {
+            "name": "Enigma",
+            "slug": "enigma"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Art of Himejoshing Out (Bloodtithe)",
+      "tier": "S",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Nautika",
+            "slug": "nautika"
+          }
+        ],
+        [
+          {
+            "name": "Semmelweis",
+            "slug": "semmelweis"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Moldir",
+            "slug": "moldir"
+          }
+        ],
+        [
+          {
+            "name": "Rubuska",
+            "slug": "rubuska"
+          },
+          {
+            "name": "Narcissus",
+            "slug": "narcissus"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Dynamo Wheelchair (Dynamo)",
+      "tier": "S",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Recoleta",
+            "slug": "recoleta"
+          },
+          {
+            "name": "Ms. Stranger",
+            "slug": "ms-stranger"
+          },
+          {
+            "name": "Lucy",
+            "slug": "lucy"
+          }
+        ],
+        [
+          {
+            "name": "Ulrich",
+            "slug": "ulrich"
+          },
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          }
+        ],
+        [
+          {
+            "name": "Charon",
+            "slug": "charon"
+          }
+        ],
+        [
+          {
+            "name": "Enigma",
+            "slug": "enigma"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Geneva Suggestions (Poison)",
+      "tier": "S",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Ramona",
+            "slug": "ramona"
+          }
+        ],
+        [
+          {
+            "name": "Willow",
+            "slug": "willow"
+          },
+          {
+            "name": "Ezio Auditore",
+            "slug": "ezio-auditore"
+          }
+        ],
+        [
+          {
+            "name": "Tuesday",
+            "slug": "tuesday"
+          }
+        ],
+        [
+          {
+            "name": "Vila",
+            "slug": "vila"
+          },
+          {
+            "name": "Marsha",
+            "slug": "marsha"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "He Needs Some Milk (Riposte)",
+      "tier": "S",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Cornerstone",
+            "slug": "cornerstone"
+          }
+        ],
+        [
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Lopera",
+            "slug": "lopera"
+          },
+          {
+            "name": "Isolde",
+            "slug": "isolde"
+          }
+        ],
+        [
+          {
+            "name": "J",
+            "slug": "j"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Hi, Welcome To Chili's (FUA)",
+      "tier": "S",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Windsong",
+            "slug": "windsong"
+          }
+        ],
+        [
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          }
+        ],
+        [
+          {
+            "name": "6",
+            "slug": "6"
+          },
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Lorentz Butterfly",
+            "slug": "lorentz-butterfly"
+          }
+        ],
+        [
+          {
+            "name": "J",
+            "slug": "j"
+          },
+          {
+            "name": "Vila",
+            "slug": "vila"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Vegan Impromptu (Plant)",
+      "tier": "S",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Paper Heron",
+            "slug": "paper-heron"
+          }
+        ],
+        [
+          {
+            "name": "Tooth Fairy",
+            "slug": "tooth-fairy"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          }
+        ],
+        [
+          {
+            "name": "Kiperina",
+            "slug": "kiperina"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Burnt Out Gifted Kids (Starpromptu)",
+      "tier": "A+",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Barcarola",
+            "slug": "barcarola"
+          }
+        ],
+        [
+          {
+            "name": "Aleph",
+            "slug": "aleph"
+          }
+        ],
+        [
+          {
+            "name": "Rhiannon",
+            "slug": "rhiannon"
+          },
+          {
+            "name": "Tooth Fairy",
+            "slug": "tooth-fairy"
+          }
+        ],
+        [
+          {
+            "name": "Kiperina",
+            "slug": "kiperina"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Benefit From Reading (Upgrade)",
+      "tier": "A",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Marcus",
+            "slug": "marcus"
+          },
+          {
+            "name": "Argus",
+            "slug": "argus"
+          }
+        ],
+        [
+          {
+            "name": "Druvis III",
+            "slug": "druvis-iii"
+          }
+        ],
+        [
+          {
+            "name": "Mercuria",
+            "slug": "mercuria"
+          },
+          {
+            "name": "Hissabeth",
+            "slug": "hissabeth"
+          },
+          {
+            "name": "Lorentz Butterfly",
+            "slug": "lorentz-butterfly"
+          }
+        ],
+        [
+          {
+            "name": "Vila",
+            "slug": "vila"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Drinking Game: Addio (Follow-Up)",
+      "tier": "A",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Ezio Auditore",
+            "slug": "ezio-auditore"
+          }
+        ],
+        [
+          {
+            "name": "Kassandra",
+            "slug": "kassandra"
+          },
+          {
+            "name": "Mercuria",
+            "slug": "mercuria"
+          }
+        ],
+        [
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          }
+        ],
+        [
+          {
+            "name": "J",
+            "slug": "j"
+          },
+          {
+            "name": "Fatutu",
+            "slug": "fatutu"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Give Me Your Damn Money (Ultimate)",
+      "tier": "A",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Ezio Auditore",
+            "slug": "ezio-auditore"
+          }
+        ],
+        [
+          {
+            "name": "Kassandra",
+            "slug": "kassandra"
+          }
+        ],
+        [
+          {
+            "name": "Getian",
+            "slug": "getian"
+          }
+        ],
+        [
+          {
+            "name": "J",
+            "slug": "j"
+          },
+          {
+            "name": "Narcissus",
+            "slug": "narcissus"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "I Thought You Were American (FUA)",
+      "tier": "A",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Anjo Nala",
+            "slug": "anjo-nala"
+          }
+        ],
+        [
+          {
+            "name": "Liang Yue",
+            "slug": "liang-yue"
+          }
+        ],
+        [
+          {
+            "name": "Flutterpage",
+            "slug": "flutterpage"
+          }
+        ],
+        [
+          {
+            "name": "J",
+            "slug": "j"
+          },
+          {
+            "name": "Fatutu",
+            "slug": "fatutu"
+          }
+        ]
+      ]
+    },
+    {
+      "name": "You Have Been Stopped (Petrify)",
+      "tier": "B",
+      "damageType": "physical",
+      "slots": [
+        [
+          {
+            "name": "Hissabeth",
+            "slug": "hissabeth"
+          }
+        ],
+        [
+          {
+            "name": "Druvis III",
+            "slug": "druvis-iii"
+          }
+        ],
+        [
+          {
+            "name": "Jessica",
+            "slug": "jessica"
+          }
+        ],
+        [
+          {
+            "name": "Vila",
+            "slug": "vila"
+          }
+        ]
+      ]
+    }
+  ]
+}

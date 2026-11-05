@@ -71,6 +71,12 @@ onMounted(() => {
                 ><i class="fa-solid fa-user"></i> {{ $t('arcanists') }}
             </router-link>
             <router-link
+                :to="{ name: 'teams' }"
+                class="nav-button"
+                :class="{ active: $route.name === 'teams' }"
+                ><i class="fa-solid fa-people-group"></i> {{ $t('teams') }}
+            </router-link>
+            <router-link
                 to="/items"
                 class="nav-button"
                 :class="{ active: $route.path === '/items' }"
@@ -156,6 +162,13 @@ onMounted(() => {
                                 class="nav-button block"
                                 :class="{ active: $route.path === '/arcanists' }"
                                 ><i class="fa-solid fa-user"></i> {{ $t('arcanists') }}
+                            </router-link>
+                            <router-link
+                                @click="close"
+                                :to="{ name: 'teams' }"
+                                class="nav-button block"
+                                :class="{ active: $route.name === 'teams' }"
+                                ><i class="fa-solid fa-people-group"></i> {{ $t('teams') }}
                             </router-link>
                             <router-link
                                 @click="close"
