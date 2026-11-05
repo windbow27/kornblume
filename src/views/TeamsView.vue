@@ -23,10 +23,18 @@ const resolved = computed(() => {
 const tiers = computed(() => {
   const groups = new Map<string, typeof resolved.value>();
   for (const r of resolved.value) {
-    if (onlyBuildable.value && r.ownedCount < r.total) continue;
-    if (!groups.has(r.team.tier)) groups.set(r.team.tier, []);
+    const isBuildable = r.ownedCount >= r.total;
+    if (onlyBuildable.value && !isBuildable) {
+      continue;
+    }
+
+    if (!groups.has(r.team.tier)) {
+      groups.set(r.team.tier, []);
+    }
+
     groups.get(r.team.tier)!.push(r);
   }
+
   return [...groups.entries()];
 });
 
