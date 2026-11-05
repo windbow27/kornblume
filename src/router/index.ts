@@ -1,95 +1,83 @@
-import { createRouter, createWebHistory } from "vue-router";
-import { useDataStore } from "@/stores/dataStore";
-import { useGlobalStore } from "@/stores/global";
+import { createRouter, createWebHistory } from 'vue-router';
+import { useDataStore } from '@/stores/dataStore';
+import { useGlobalStore } from '@/stores/global';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: () => import("@/views/HomeView.vue"),
+      path: '/',
+      name: 'home',
+      component: () => import('@/views/HomeView.vue'),
       meta: {
-        requiredJson: [],
-      },
+        requiredJson: []
+      }
     },
     {
-      path: "/arcanists",
-      name: "arcanists",
-      component: () => import("@/views/ArcanistsView.vue"),
+      path: '/arcanists',
+      name: 'arcanists',
+      component: () => import('@/views/ArcanistsView.vue'),
       meta: {
-        requiredJson: ["arcanists", "items", "stages3_3_greedy", "psychubes"],
-      },
+        requiredJson: ['arcanists', 'items', 'stages3_3_greedy', 'psychubes']
+      }
     },
     {
-      path: "/set-owned-arcanists",
-      name: "set-owned-arcanists",
-      component: () => import("@/views/SetOwnedArcanistsView.vue"),
+      path: '/set-owned-arcanists',
+      name: 'set-owned-arcanists',
+      component: () => import('@/views/SetOwnedArcanistsView.vue'),
       meta: {
-        requiredJson: ["arcanists", "items", "stages3_3_greedy", "psychubes"],
-      },
+        requiredJson: ['arcanists', 'items', 'stages3_3_greedy', 'psychubes']
+      }
     },
     {
-      path: "/items",
-      name: "items",
-      component: () => import("@/views/ItemsView.vue"),
+      path: '/items',
+      name: 'items',
+      component: () => import('@/views/ItemsView.vue'),
       meta: {
-        requiredJson: [
-          "arcanists",
-          "items",
-          "stages3_3_greedy",
-          "psychubes",
-          "formulas",
-        ],
-      },
+        requiredJson: ['arcanists', 'items', 'stages3_3_greedy', 'psychubes', 'formulas']
+      }
     },
     {
-      path: "/tracker",
-      name: "tracker",
-      component: () => import("@/views/TrackerView.vue"),
+      path: '/tracker',
+      name: 'tracker',
+      component: () => import('@/views/TrackerView.vue'),
       meta: {
-        requiredJson: ["arcanists", "items", "stages3_3_greedy"],
-      },
+        requiredJson: ['arcanists', 'items', 'stages3_3_greedy']
+      }
     },
     {
-      path: "/planner",
-      name: "planner",
-      component: () => import("@/views/PlannerView.vue"),
+      path: '/planner',
+      name: 'planner',
+      component: () => import('@/views/PlannerView.vue'),
       meta: {
-        requiredJson: [
-          "arcanists",
-          "items",
-          "stages3_3_greedy",
-          "shops",
-          "formulas",
-        ],
-      },
+        requiredJson: ['arcanists', 'items', 'stages3_3_greedy', 'shops', 'formulas']
+      }
     },
     {
-      path: "/stages",
-      name: "stages",
-      component: () => import("@/views/StagesView.vue"),
+      path: '/stages',
+      name: 'stages',
+      component: () => import('@/views/StagesView.vue'),
       meta: {
-        requiredJson: ["arcanists", "items", "stages3_3_greedy"],
-      },
+        requiredJson: ['arcanists', 'items', 'stages3_3_greedy']
+      }
     },
     {
-      path: "/profile",
-      name: "profile",
-      component: () => import("@/views/ProfileView.vue"),
+      path: '/profile',
+      name: 'profile',
+      component: () => import('@/views/ProfileView.vue'),
       meta: {
-        requiredJson: [],
-      },
+        requiredJson: []
+      }
     },
     {
-      path: "/arcanist-:id",
-      name: "arcanist",
-      component: () => import("@/components/arcanist/ArcanistDisplay.vue"),
+      path: '/arcanist-:id',
+      name: 'arcanist',
+      component: () => import('@/components/arcanist/ArcanistDisplay.vue'),
       meta: {
-        requiredJson: ["arcanists", "items", "stages3_3_greedy", "psychubes"],
-      },
-    },
-  ],
+        requiredJson: ['arcanists', 'items', 'stages3_3_greedy', 'psychubes']
+      }
+    }
+  ]
 });
 
 router.beforeEach(async (to) => {
