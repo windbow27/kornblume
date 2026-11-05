@@ -1,35 +1,35 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue';
-import { useDataStore } from '@/stores/dataStore';
-import { IPull, usePullsRecordStore } from '@/stores/pullsRecordStore';
-import { bannerList, specialArcanists } from '@/utils/bannerData';
-import { useChangelogsStore } from '@/stores/global';
+import { ref, computed, onMounted, watch } from "vue";
+import { useDataStore } from "@/stores/dataStore";
+import { IPull, usePullsRecordStore } from "@/stores/pullsRecordStore";
+import { bannerList, specialArcanists } from "@/utils/bannerData";
+import { useChangelogsStore } from "@/stores/global";
 import {
   convertGoldenThreadString,
   preprocess,
   preprocess1,
-  preprocess2
-} from '@/composables/preprocess';
-import { syncDrive } from '@/composables/gApi';
-import Tesseract, { createWorker } from 'tesseract.js';
-import Fuse, { FuseResult } from 'fuse.js';
-import TrackerBoard from '@/components/tracker/TrackerBoard.vue';
-import TrackerTutorial from '@/components/tracker/TrackerTutorial.vue';
+  preprocess2,
+} from "@/composables/preprocess";
+import { syncDrive } from "@/composables/gApi";
+import Tesseract, { createWorker } from "tesseract.js";
+import Fuse, { FuseResult } from "fuse.js";
+import TrackerBoard from "@/components/tracker/TrackerBoard.vue";
+import TrackerTutorial from "@/components/tracker/TrackerTutorial.vue";
 
 const fileInput = ref<HTMLElement>(null!);
 const isImporting = ref(false);
 const currentFileIndex = ref(0);
 const totalFiles = ref(0);
-const text = ref('');
+const text = ref("");
 const arcanists = useDataStore().arcanists;
 const isError = ref(false);
 const wrongTimestamps = ref<number[]>([]);
 // const selectedBannerType = ref('Limited');
-const selectedBannerType = ref('A Newly Hatched Chapter');
+const selectedBannerType = ref("A Newly Hatched Chapter");
 const pulls = ref<IPull[]>([]);
 const changelogsStore = useChangelogsStore();
 const tutorialButton = ref<HTMLButtonElement>(null!);
-const currentPreprocess = ref('Default');
+const currentPreprocess = ref("Default");
 
 const triggerFileInput = (version: string) => {
   // Trigger the file input programmatically
@@ -66,75 +66,79 @@ const allPulls = computed(() => {
       ArcanistName: pull.ArcanistName,
       Rarity: pull.Rarity,
       BannerType: pull.BannerType,
-      Timestamp: pull.Timestamp
+      Timestamp: pull.Timestamp,
     };
   });
 });
 
 function createPullsByBannerType(bannerType) {
   return computed(() => {
-    const filteredPulls = sortedPulls.value.filter((pull) => pull.BannerType === bannerType);
+    const filteredPulls = sortedPulls.value.filter(
+      (pull) => pull.BannerType === bannerType,
+    );
     return filteredPulls.map((pull, index) => {
       return {
         PullNumber: filteredPulls.length - index,
         ArcanistName: pull.ArcanistName,
         Rarity: pull.Rarity,
         BannerType: pull.BannerType,
-        Timestamp: pull.Timestamp
+        Timestamp: pull.Timestamp,
       };
     });
   });
 }
 
-const standardPulls = createPullsByBannerType('Amongst the Lake');
-const threadPulls = createPullsByBannerType('Invitation From the Water');
-const abundancePulls = createPullsByBannerType('Abundance of the Water');
-const yearningPulls = createPullsByBannerType('Yearning of the Water');
-const revelationPulls = createPullsByBannerType('Revelation of the Water');
-const promisePulls = createPullsByBannerType('Promise of the Water');
-const boonPulls = createPullsByBannerType('Boon of the Water');
-const goldenSpindlePulls = createPullsByBannerType('Golden Spindle');
-const ripplesPulls = createPullsByBannerType('Ripples on the Water');
-const dushuoPulls = createPullsByBannerType('The Snow of Dushuo');
+const standardPulls = createPullsByBannerType("Amongst the Lake");
+const threadPulls = createPullsByBannerType("Invitation From the Water");
+const abundancePulls = createPullsByBannerType("Abundance of the Water");
+const yearningPulls = createPullsByBannerType("Yearning of the Water");
+const revelationPulls = createPullsByBannerType("Revelation of the Water");
+const promisePulls = createPullsByBannerType("Promise of the Water");
+const boonPulls = createPullsByBannerType("Boon of the Water");
+const goldenSpindlePulls = createPullsByBannerType("Golden Spindle");
+const ripplesPulls = createPullsByBannerType("Ripples on the Water");
+const dushuoPulls = createPullsByBannerType("The Snow of Dushuo");
 const lakeHeartPulls = createPullsByBannerType("From the Lake's Heart");
 
-const jiuNiangziPulls = createPullsByBannerType('Till the Last Drop');
-const lucyPulls = createPullsByBannerType('Thoughts in Cylinder');
-const anjoNalaPulls = createPullsByBannerType('Longing for Innocence');
-const liangPulls = createPullsByBannerType('Moonbeam Guardian');
-const ezioPulls = createPullsByBannerType('A Prophet Guided by Time');
-const kassandraPulls = createPullsByBannerType('Wine-Dark Reflections of the Eagle');
-const nautikaPulls = createPullsByBannerType('The Myth at Her Fingertips');
+const jiuNiangziPulls = createPullsByBannerType("Till the Last Drop");
+const lucyPulls = createPullsByBannerType("Thoughts in Cylinder");
+const anjoNalaPulls = createPullsByBannerType("Longing for Innocence");
+const liangPulls = createPullsByBannerType("Moonbeam Guardian");
+const ezioPulls = createPullsByBannerType("A Prophet Guided by Time");
+const kassandraPulls = createPullsByBannerType(
+  "Wine-Dark Reflections of the Eagle",
+);
+const nautikaPulls = createPullsByBannerType("The Myth at Her Fingertips");
 const berylPulls = createPullsByBannerType("On Fate's Cue");
-const heronPulls = createPullsByBannerType('Her Heart-Cut Spring');
-const twinsPulls = createPullsByBannerType('Analysis of Metallic Dramaturgy');
-const rhiannonPulls = createPullsByBannerType('A Newly Hatched Chapter');
+const heronPulls = createPullsByBannerType("Her Heart-Cut Spring");
+const twinsPulls = createPullsByBannerType("Analysis of Metallic Dramaturgy");
+const rhiannonPulls = createPullsByBannerType("A Newly Hatched Chapter");
 
 const limitedPulls = computed(() => {
   const filteredPulls = sortedPulls.value.filter(
     (pull) =>
-      pull.BannerType !== 'Amongst the Lake' &&
-      pull.BannerType !== 'Invitation From the Water' &&
-      pull.BannerType !== 'Abundance of the Water' &&
-      pull.BannerType !== 'Yearning of the Water' &&
-      pull.BannerType !== 'Till the Last Drop' &&
-      pull.BannerType !== 'Revelation of the Water' &&
-      pull.BannerType !== 'Thoughts in Cylinder' &&
-      pull.BannerType !== 'Promise of the Water' &&
-      pull.BannerType !== 'Longing for Innocence' &&
-      pull.BannerType !== 'Moonbeam Guardian' &&
-      pull.BannerType !== 'Boon of the Water' &&
-      pull.BannerType !== 'Golden Spindle' &&
-      pull.BannerType !== 'Ripples on the Water' &&
-      pull.BannerType !== 'A Prophet Guided by Time' &&
-      pull.BannerType !== 'Wine-Dark Reflections of the Eagle' &&
-      pull.BannerType !== 'The Myth at Her Fingertips' &&
+      pull.BannerType !== "Amongst the Lake" &&
+      pull.BannerType !== "Invitation From the Water" &&
+      pull.BannerType !== "Abundance of the Water" &&
+      pull.BannerType !== "Yearning of the Water" &&
+      pull.BannerType !== "Till the Last Drop" &&
+      pull.BannerType !== "Revelation of the Water" &&
+      pull.BannerType !== "Thoughts in Cylinder" &&
+      pull.BannerType !== "Promise of the Water" &&
+      pull.BannerType !== "Longing for Innocence" &&
+      pull.BannerType !== "Moonbeam Guardian" &&
+      pull.BannerType !== "Boon of the Water" &&
+      pull.BannerType !== "Golden Spindle" &&
+      pull.BannerType !== "Ripples on the Water" &&
+      pull.BannerType !== "A Prophet Guided by Time" &&
+      pull.BannerType !== "Wine-Dark Reflections of the Eagle" &&
+      pull.BannerType !== "The Myth at Her Fingertips" &&
       pull.BannerType !== "On Fate's Cue" &&
-      pull.BannerType !== 'The Snow of Dushuo' &&
-      pull.BannerType !== 'Her Heart-Cut Spring' &&
+      pull.BannerType !== "The Snow of Dushuo" &&
+      pull.BannerType !== "Her Heart-Cut Spring" &&
       pull.BannerType !== "From the Lake's Heart" &&
-      pull.BannerType !== 'Analysis of Metallic Dramaturgy' &&
-      pull.BannerType !== 'A Newly Hatched Chapter'
+      pull.BannerType !== "Analysis of Metallic Dramaturgy" &&
+      pull.BannerType !== "A Newly Hatched Chapter",
   );
   return filteredPulls.map((pull, index) => {
     return {
@@ -142,14 +146,14 @@ const limitedPulls = computed(() => {
       ArcanistName: pull.ArcanistName,
       Rarity: pull.Rarity,
       BannerType: pull.BannerType,
-      Timestamp: pull.Timestamp
+      Timestamp: pull.Timestamp,
     };
   });
 });
 
 watch(sortedPulls, (newVal) => {
   const timestampCounts = newVal
-    .filter((pull) => pull.BannerType !== 'Ripples on the Water')
+    .filter((pull) => pull.BannerType !== "Ripples on the Water")
     .reduce((counts, pull) => {
       counts[pull.Timestamp] = (counts[pull.Timestamp] || 0) + 1;
       return counts;
@@ -164,14 +168,14 @@ watch(sortedPulls, (newVal) => {
 
 async function preprocessImage(file: File, version: string): Promise<File> {
   switch (version) {
-    case 'Default':
+    case "Default":
       return preprocess(file);
-    case 'Version1':
+    case "Version1":
       return preprocess1(file);
-    case 'Version2':
+    case "Version2":
       return preprocess2(file);
     default:
-      throw new Error('Unknown button clicked');
+      throw new Error("Unknown button clicked");
   }
 }
 
@@ -191,7 +195,7 @@ const ocr: clickHandler = (payload: Event): void => {
   const bannerFuse: Fuse<string> = new Fuse(bannerList);
 
   const arcanistList = arcanists.map((arcanist) =>
-    arcanist.Name === 'Зима' ? '3uma' : arcanist.Name
+    arcanist.Name === "Зима" ? "3uma" : arcanist.Name,
   );
   const arcanistFuse: Fuse<string> = new Fuse(arcanistList);
   specialArcanists.forEach((arcanist) => arcanistFuse.add(arcanist));
@@ -200,58 +204,70 @@ const ocr: clickHandler = (payload: Event): void => {
     isImporting.value = true;
     (async (): Promise<void> => {
       // const startTime = performance.now();
-      const worker: Tesseract.Worker = await createWorker('eng');
+      const worker: Tesseract.Worker = await createWorker("eng");
       for (let i: number = 0; i < fileList.length; i++) {
         const file: File = fileList[i];
         currentFileIndex.value = i + 1;
         totalFiles.value = fileList.length;
         if (file) {
-          const modifiedImage: File = await preprocessImage(file, currentPreprocess.value);
-          const ret: Tesseract.RecognizeResult = await worker.recognize(modifiedImage);
+          const modifiedImage: File = await preprocessImage(
+            file,
+            currentPreprocess.value,
+          );
+          const ret: Tesseract.RecognizeResult =
+            await worker.recognize(modifiedImage);
           text.value = ret.data.text;
           console.log(text.value);
           // (document.getElementById('testing') as HTMLImageElement).src = modifiedImage.toDataURL(); /* if modifiedImage is canvas */
           // (document.getElementById('testing') as HTMLImageElement).src = URL.createObjectURL(modifiedImage); /* if modifiedImage is file */
 
           const arcanistNameGroup: string =
-            /^\W*(?<ArcanistName>\d*[376A-Za-z.,-]+(?:\s[A-Za-z.,1-]+)*)/.source;
+            /^\W*(?<ArcanistName>\d*[376A-Za-z.,-]+(?:\s[A-Za-z.,1-]+)*)/
+              .source;
           const parenGroup: string = /.*(?:\(?.*\)?)?.*/.source;
           const bannerGroup = `(?<BannerType>${bannerList
             .map(
               (banner) =>
                 banner
-                  .replace(/Fledgling.*?First Flight/, 'Fledgling[\\s\\S]*?First\\s*Flight') // Handle Fledgling ... First Flight variations
-                  .replace(/Clash.*?Slash/, 'Clash[\\s\\S]*?Slash')
+                  .replace(
+                    /Fledgling.*?First Flight/,
+                    "Fledgling[\\s\\S]*?First\\s*Flight",
+                  ) // Handle Fledgling ... First Flight variations
+                  .replace(/Clash.*?Slash/, "Clash[\\s\\S]*?Slash")
                   // Handle Clash n Slash variations
                   .replace(
                     /The Mirror.*?Lonely Watcher/,
-                    `The\\s*Mirror[\\s\\S]*?Lonely\\s*Watcher` // Handle The Mirror ... Lonely Watcher variations
+                    `The\\s*Mirror[\\s\\S]*?Lonely\\s*Watcher`, // Handle The Mirror ... Lonely Watcher variations
                   ) // Handle The Mirror's ... Lonely Watcher variations
                   .replace(
                     /The Mourner's.*?Eulogy/,
-                    `The\\s*Mourner's[\\s\\S]*?Eulogy` // Handle The Mourner's ... Eulogy variations
+                    `The\\s*Mourner's[\\s\\S]*?Eulogy`, // Handle The Mourner's ... Eulogy variations
                   )
                   .replace(
                     /The Land's.*?Iron Stitch/,
-                    `The\\s*Land's[\\s\\S]*?Iron\\s*Stitch` // Handle The Land's ... Iron Stitch variations
+                    `The\\s*Land's[\\s\\S]*?Iron\\s*Stitch`, // Handle The Land's ... Iron Stitch variations
                   )
                   .replace(
                     /On Fate's.*?Cue/,
-                    `On\\s*Fate's[\\s\\S]*?Cue` // Handle On Fate's ... Cue variations
+                    `On\\s*Fate's[\\s\\S]*?Cue`, // Handle On Fate's ... Cue variations
                   )
                   .replace(
                     /The Future's.*?Foundation/,
-                    `The\\s*Future's[\\s\\S]*?Foundation` // Handle The Future's ... Foundation variations
+                    `The\\s*Future's[\\s\\S]*?Foundation`, // Handle The Future's ... Foundation variations
                   )
-                  .replace(/\s/g, '\\s*') // Handle spaces
-                  .replace(/['’"]/g, '[\'"’\\s]*') // Handle single/double quotes
+                  .replace(/\s/g, "\\s*") // Handle spaces
+                  .replace(/['’"]/g, "['\"’\\s]*"), // Handle single/double quotes
             )
-            .join('|')}).*`;
+            .join("|")}).*`;
           // console.log(bannerGroup);
           const dateGroup: string =
-            /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/.source;
+            /(?<Date>\d{4}[-\s]?\d{2}[-\s]?\d{2}\s*\d{2}[:\s]?\d{2}[:\s]?\d{2})/
+              .source;
 
-          const pattern = new RegExp(arcanistNameGroup + parenGroup + bannerGroup + dateGroup, 'i');
+          const pattern = new RegExp(
+            arcanistNameGroup + parenGroup + bannerGroup + dateGroup,
+            "i",
+          );
           const currentPulls: {
             ArcanistName: string;
             Rarity: number;
@@ -261,61 +277,77 @@ const ocr: clickHandler = (payload: Event): void => {
           const currentPullsMapping = {};
 
           // Extract information from each line
-          const excludeLineInfo = /(?:<\s*)?(\d+)\s*\/\s*(\d+)(?:\s*>)?|(Name\sType\sSummon\sTime)/;
+          const excludeLineInfo =
+            /(?:<\s*)?(\d+)\s*\/\s*(\d+)(?:\s*>)?|(Name\sType\sSummon\sTime)/;
           text.value
             .trim()
-            .split('\n')
+            .split("\n")
             .forEach((line) => {
               const match = line.match(pattern);
               if (!match && line.length !== 0 && !line.match(excludeLineInfo)) {
-                console.log('Error reading: ', line);
+                console.log("Error reading: ", line);
               }
               if (match) {
-                let arcanistName: string = match.groups?.ArcanistName.trim() || '';
+                let arcanistName: string =
+                  match.groups?.ArcanistName.trim() || "";
                 // console.log(arcanistName);
 
                 /* change roman numeral to digit for better fuzzy string matching */
-                if (arcanistName.includes('Golden')) {
-                  arcanistName = convertGoldenThreadString(arcanistName, 'digit');
+                if (arcanistName.includes("Golden")) {
+                  arcanistName = convertGoldenThreadString(
+                    arcanistName,
+                    "digit",
+                  );
                 }
 
-                let fuseResult: FuseResult<string>[] = arcanistFuse.search(arcanistName, {
-                  limit: 1
-                });
+                let fuseResult: FuseResult<string>[] = arcanistFuse.search(
+                  arcanistName,
+                  {
+                    limit: 1,
+                  },
+                );
                 if (fuseResult.length === 0) {
                   console.log(`could not match fuzzy string ${arcanistName}`);
                   return;
                 }
-                const isGoldenThread: boolean = fuseResult[0].item.includes('The Golden Thread');
+                const isGoldenThread: boolean =
+                  fuseResult[0].item.includes("The Golden Thread");
 
                 /* change digit back to roman numeral for proper display */
                 if (isGoldenThread) {
                   fuseResult[0].item = convertGoldenThreadString(
                     fuseResult[0].item,
-                    'romanNumeral'
+                    "romanNumeral",
                   );
                 }
-                if (fuseResult[0].item === '3uma') {
-                  fuseResult[0].item = 'Зима';
+                if (fuseResult[0].item === "3uma") {
+                  fuseResult[0].item = "Зима";
                 }
 
                 // Create an object for each pull
-                const dateString: string = (match.groups?.Date || '').replace(
+                const dateString: string = (match.groups?.Date || "").replace(
                   /(\d{4})[-\s]?(\d{2})[-\s](\d{2})\s*(\d{2})[:\s]?(\d{2})[:\s]?(\d{2})/,
-                  '$1-$2-$3 $4:$5:$6'
+                  "$1-$2-$3 $4:$5:$6",
                 );
                 const timestamp: number = new Date(dateString).getTime();
                 const pull: IPull = {
                   ArcanistName: fuseResult[0].item,
                   Rarity: 0,
-                  BannerType: '',
-                  Timestamp: timestamp
+                  BannerType: "",
+                  Timestamp: timestamp,
                 };
-                pull.Rarity = isGoldenThread ? 6 : arcanists[fuseResult[0].refIndex].Rarity;
+                pull.Rarity = isGoldenThread
+                  ? 6
+                  : arcanists[fuseResult[0].refIndex].Rarity;
 
                 /* fuzzy match banner capture */
-                fuseResult = bannerFuse.search(match.groups?.BannerType.trim() || '', { limit: 1 });
-                pull.BannerType = fuseResult[0] ? bannerList[fuseResult[0].refIndex] : '';
+                fuseResult = bannerFuse.search(
+                  match.groups?.BannerType.trim() || "",
+                  { limit: 1 },
+                );
+                pull.BannerType = fuseResult[0]
+                  ? bannerList[fuseResult[0].refIndex]
+                  : "";
 
                 currentPulls.push(pull);
 
@@ -333,14 +365,16 @@ const ocr: clickHandler = (payload: Event): void => {
               timestampMapping[ts] = [pullsArray];
             } else {
               // has repeated timestamp
-              const isExistComplete10Pulls = timestampMapping[ts].some((ary) => ary.length === 10);
+              const isExistComplete10Pulls = timestampMapping[ts].some(
+                (ary) => ary.length === 10,
+              );
               if (!isExistComplete10Pulls) {
                 // is not complete yet
                 if (
                   isEqualPull(pullsArray[0], currentPulls[0]) &&
                   isEqualPull(
                     pullsArray[pullsArray.length - 1],
-                    currentPulls[pullsArray.length - 1]
+                    currentPulls[pullsArray.length - 1],
                   )
                 ) {
                   // assume this array is the second half of the 10-pulls
@@ -348,9 +382,12 @@ const ocr: clickHandler = (payload: Event): void => {
                 } else if (
                   isEqualPull(
                     pullsArray[pullsArray.length - 1],
-                    currentPulls[currentPulls.length - 1]
+                    currentPulls[currentPulls.length - 1],
                   ) &&
-                  isEqualPull(pullsArray[0], currentPulls[currentPulls.length - pullsArray.length])
+                  isEqualPull(
+                    pullsArray[0],
+                    currentPulls[currentPulls.length - pullsArray.length],
+                  )
                 ) {
                   // assume this array is the first half of the 10-pulls
                   timestampMapping[ts].unshift(pullsArray);
@@ -366,19 +403,23 @@ const ocr: clickHandler = (payload: Event): void => {
         .sort((a, b) => Number(b) - Number(a))
         .forEach((timestamp) => {
           if (timestampMapping[timestamp].length === 1) {
-            flattenPullsArrayByTimestamp[timestamp] = timestampMapping[timestamp][0];
+            flattenPullsArrayByTimestamp[timestamp] =
+              timestampMapping[timestamp][0];
           } else if (timestampMapping[timestamp].length === 2) {
             const firstHalf = timestampMapping[timestamp][0];
             const secondHalf = timestampMapping[timestamp][1];
             const fullLengh = firstHalf.length + secondHalf.length;
             if (!isEqualPulls(firstHalf, secondHalf)) {
               if (fullLengh <= 10) {
-                flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf];
+                flattenPullsArrayByTimestamp[timestamp] = [
+                  ...firstHalf,
+                  ...secondHalf,
+                ];
               } else {
                 // has overlap
                 flattenPullsArrayByTimestamp[timestamp] = [
                   ...firstHalf.slice(0, 10 - fullLengh),
-                  ...secondHalf
+                  ...secondHalf,
                 ];
               }
             } else {
@@ -388,16 +429,22 @@ const ocr: clickHandler = (payload: Event): void => {
             // screenshots from different times?
             // idk, just take the top and bottom
             const firstHalf = timestampMapping[timestamp][0];
-            const secondHalf = timestampMapping[timestamp][timestampMapping[timestamp].length - 1];
+            const secondHalf =
+              timestampMapping[timestamp][
+                timestampMapping[timestamp].length - 1
+              ];
             const fullLengh = firstHalf.length + secondHalf.length;
             if (!isEqualPulls(firstHalf, secondHalf)) {
               if (fullLengh <= 10) {
-                flattenPullsArrayByTimestamp[timestamp] = [...firstHalf, ...secondHalf];
+                flattenPullsArrayByTimestamp[timestamp] = [
+                  ...firstHalf,
+                  ...secondHalf,
+                ];
               } else {
                 // has overlap
                 flattenPullsArrayByTimestamp[timestamp] = [
                   ...firstHalf.slice(0, 10 - fullLengh),
-                  ...secondHalf
+                  ...secondHalf,
                 ];
               }
             } else {
@@ -443,8 +490,8 @@ const selectBannerType = (bannerType: string) => {
   <div class="container">
     <div class="flex pb-4">
       <h2 class="text-2xl text-white font-bold">
-        {{ $t('summon-tracker') }}
-        <span class="text-info text-sm">{{ $t('please-read-tutorial') }}</span>
+        {{ $t("summon-tracker") }}
+        <span class="text-info text-sm">{{ $t("please-read-tutorial") }}</span>
       </h2>
     </div>
 
@@ -464,7 +511,8 @@ const selectBannerType = (bannerType: string) => {
         </div> -->
 
     <div
-      class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center justify-center sm:justify-start">
+      class="flex flex-wrap space-x-2 sm:space-x-3 gap-y-3 items-center justify-center sm:justify-start"
+    >
       <input
         type="file"
         ref="fileInput"
@@ -472,12 +520,14 @@ const selectBannerType = (bannerType: string) => {
         accept="image/*"
         class="ml-4"
         style="display: none"
-        multiple />
+        multiple
+      />
       <button
         @click="triggerFileInput('Default')"
         :disabled="isImporting"
-        class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2">
-        {{ $t('ocr-import') }}
+        class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded ml-2"
+      >
+        {{ $t("ocr-import") }}
       </button>
 
       <div class="space-x-1.5 sm:space-x-2">
@@ -485,19 +535,22 @@ const selectBannerType = (bannerType: string) => {
           id="tutorial-button"
           ref="tutorialButton"
           class="btn btn-ghost custom-gradient-button btn-sm text-white"
-          onclick="tutorial.showModal()">
-          <i class="fa-solid fa-book"></i> {{ $t('tutorial') }}
+          onclick="tutorial.showModal()"
+        >
+          <i class="fa-solid fa-book"></i> {{ $t("tutorial") }}
         </button>
         <button
           onclick="legacyButtons.showModal()"
-          class="btn btn-ghost custom-gradient-button btn-sm text-white">
-          <i class="fa-solid fa-lightbulb"></i> {{ $t('legacy') }}
+          class="btn btn-ghost custom-gradient-button btn-sm text-white"
+        >
+          <i class="fa-solid fa-lightbulb"></i> {{ $t("legacy") }}
         </button>
         <button
           onclick="resetTracker.showModal()"
-          class="btn btn-ghost custom-gradient-button btn-sm text-white">
+          class="btn btn-ghost custom-gradient-button btn-sm text-white"
+        >
           <i class="fa-solid fa-triangle-exclamation"></i>
-          {{ $t('reset') }}
+          {{ $t("reset") }}
         </button>
       </div>
     </div>
@@ -506,22 +559,28 @@ const selectBannerType = (bannerType: string) => {
 
     <dialog id="legacyButtons" class="modal">
       <div
-        class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
+        class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center"
+      >
         <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white"
+          >
             ✕
           </button>
         </form>
         <p class="p-2 text-white text-center">
-          {{ $t('legacy-notice') }}
+          {{ $t("legacy-notice") }}
         </p>
-        <div class="flex flex-wrap gap-x-10 gap-y-6 p-2 justify-center items-center">
+        <div
+          class="flex flex-wrap gap-x-10 gap-y-6 p-2 justify-center items-center"
+        >
           <form method="dialog">
             <div class="tooltip" data-tip="Stable. Works on all OS.">
               <button
                 @click="triggerFileInput('Version1')"
                 :disabled="isImporting"
-                class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
+                class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded"
+              >
                 Version 1
               </button>
             </div>
@@ -531,7 +590,8 @@ const selectBannerType = (bannerType: string) => {
               <button
                 @click="triggerFileInput('Version2')"
                 :disabled="isImporting"
-                class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded">
+                class="bg-gradient-to-br from-success to-green-600 focus:ring-2 focus:outline-none focus:ring-green-200 hover:bg-gradient-to-bl text-white/90 font-bold py-2 px-4 rounded"
+              >
                 Version 2
               </button>
             </div>
@@ -540,7 +600,8 @@ const selectBannerType = (bannerType: string) => {
             <a
               href="https://timekeeper.top"
               target="_blank"
-              class="bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 py-2 px-4 rounded text-white">
+              class="bg-gradient-to-br from-purple-600 to-blue-500 bg-clip-padding hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-purple-200 py-2 px-4 rounded text-white"
+            >
               timekeeper
             </a>
           </div>
@@ -553,20 +614,27 @@ const selectBannerType = (bannerType: string) => {
 
     <dialog id="resetTracker" class="modal">
       <div
-        class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center">
+        class="modal-box custom-border custom-gradient-gray-blue flex flex-col justify-center items-center"
+      >
         <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white"
+          >
             ✕
           </button>
         </form>
         <p class="p-2 text-white text-center">
-          {{ $t('once-you-delete-your-summon-tracker-data-there-is-no-going-back') }}
+          {{
+            $t(
+              "once-you-delete-your-summon-tracker-data-there-is-no-going-back",
+            )
+          }}
         </p>
         <p class="pb-4 text-white text-center">
-          {{ $t('please-be-certain') }}
+          {{ $t("please-be-certain") }}
         </p>
         <button @click="resetTracker" class="red-button">
-          {{ $t('reset-tracker') }}
+          {{ $t("reset-tracker") }}
         </button>
       </div>
       <form method="dialog" class="modal-backdrop">
@@ -598,29 +666,32 @@ const selectBannerType = (bannerType: string) => {
       <!-- Limited Placeholder -->
       <button
         v-bind:class="{
-          'border-button': selectedBannerType === 'A Newly Hatched Chapter'
+          'border-button': selectedBannerType === 'A Newly Hatched Chapter',
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
-        @click="selectBannerType('A Newly Hatched Chapter')">
-        {{ $t('rhiannon') }}
+        @click="selectBannerType('A Newly Hatched Chapter')"
+      >
+        {{ $t("rhiannon") }}
       </button>
 
       <button
         v-bind:class="{
-          'border-button': selectedBannerType === 'Limited'
+          'border-button': selectedBannerType === 'Limited',
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
-        @click="selectBannerType('Limited')">
-        {{ $t('limited') }}
+        @click="selectBannerType('Limited')"
+      >
+        {{ $t("limited") }}
       </button>
 
       <button
         v-bind:class="{
-          'border-button': selectedBannerType === 'Standard'
+          'border-button': selectedBannerType === 'Standard',
         }"
         class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
-        @click="selectBannerType('Standard')">
-        {{ $t('standard') }}
+        @click="selectBannerType('Standard')"
+      >
+        {{ $t("standard") }}
       </button>
 
       <div class="dropdown dropdown-bottom dropdown-end">
@@ -648,234 +719,274 @@ const selectBannerType = (bannerType: string) => {
                 selectedBannerType === 'Her Heart-Cut Spring' ||
                 selectedBannerType === 'From the Lake\'s Heart' ||
                 selectedBannerType === 'Analysis of Metallic Dramaturgy' ||
-                selectedBannerType === 'A Newly Hatched Chapter'
+                selectedBannerType === 'A Newly Hatched Chapter',
             }"
-            class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent">
-            {{ $t('special') }}
+            class="text-white py-1 px-3 hover:bg-info rounded-md border-2 border-transparent"
+          >
+            {{ $t("special") }}
           </button>
         </div>
         <!-- Special banners -->
         <ul
           tabindex="0"
           class="dropdown-content z-[1] shadow bg-blue-950 custom-border-light rounded-box p-4 mt-2"
-          style="min-width: 320px">
+          style="min-width: 320px"
+        >
           <div class="grid grid-cols-2 gap-x-4 gap-y-2">
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Invitation From the Water'
+                  'border-button':
+                    selectedBannerType === 'Invitation From the Water',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Invitation From the Water')">
-                {{ $t('thread') }}
+                @click="selectBannerType('Invitation From the Water')"
+              >
+                {{ $t("thread") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Abundance of the Water'
+                  'border-button':
+                    selectedBannerType === 'Abundance of the Water',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Abundance of the Water')">
-                {{ $t('abundance') }}
+                @click="selectBannerType('Abundance of the Water')"
+              >
+                {{ $t("abundance") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Yearning of the Water'
+                  'border-button':
+                    selectedBannerType === 'Yearning of the Water',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Yearning of the Water')">
-                {{ $t('yearning') }}
+                @click="selectBannerType('Yearning of the Water')"
+              >
+                {{ $t("yearning") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Revelation of the Water'
+                  'border-button':
+                    selectedBannerType === 'Revelation of the Water',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Revelation of the Water')">
-                {{ $t('revelation') }}
+                @click="selectBannerType('Revelation of the Water')"
+              >
+                {{ $t("revelation") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Promise of the Water'
+                  'border-button':
+                    selectedBannerType === 'Promise of the Water',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Promise of the Water')">
-                {{ $t('promise') }}
+                @click="selectBannerType('Promise of the Water')"
+              >
+                {{ $t("promise") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Boon of the Water'
+                  'border-button': selectedBannerType === 'Boon of the Water',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Boon of the Water')">
-                {{ $t('boon') }}
+                @click="selectBannerType('Boon of the Water')"
+              >
+                {{ $t("boon") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Golden Spindle'
+                  'border-button': selectedBannerType === 'Golden Spindle',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Golden Spindle')">
-                {{ $t('golden-spindle') }}
+                @click="selectBannerType('Golden Spindle')"
+              >
+                {{ $t("golden-spindle") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Ripples on the Water'
+                  'border-button':
+                    selectedBannerType === 'Ripples on the Water',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Ripples on the Water')">
-                {{ $t('ripples') }}
+                @click="selectBannerType('Ripples on the Water')"
+              >
+                {{ $t("ripples") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'The Snow of Dushuo'
+                  'border-button': selectedBannerType === 'The Snow of Dushuo',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('The Snow of Dushuo')">
-                {{ $t('dushuo') }}
+                @click="selectBannerType('The Snow of Dushuo')"
+              >
+                {{ $t("dushuo") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'From the Lake\'s Heart'
+                  'border-button':
+                    selectedBannerType === 'From the Lake\'s Heart',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('From the Lake\'s Heart')">
-                {{ $t('lake-heart') }}
+                @click="selectBannerType('From the Lake\'s Heart')"
+              >
+                {{ $t("lake-heart") }}
               </button>
             </li>
 
             <!-- Line separator, full width -->
-            <div class="col-span-2"><hr class="border-t border-gray-300 my-2" /></div>
+            <div class="col-span-2">
+              <hr class="border-t border-gray-300 my-2" />
+            </div>
             <!-- Jiu Niangzi banner -->
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Till the Last Drop'
+                  'border-button': selectedBannerType === 'Till the Last Drop',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Till the Last Drop')">
-                {{ $t('jiu-niangzi') }}
+                @click="selectBannerType('Till the Last Drop')"
+              >
+                {{ $t("jiu-niangzi") }}
               </button>
             </li>
             <!-- Lucy banner -->
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Thoughts in Cylinder'
+                  'border-button':
+                    selectedBannerType === 'Thoughts in Cylinder',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Thoughts in Cylinder')">
-                {{ $t('lucy') }}
+                @click="selectBannerType('Thoughts in Cylinder')"
+              >
+                {{ $t("lucy") }}
               </button>
             </li>
             <!-- Anjo Nala banner -->
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Longing for Innocence'
+                  'border-button':
+                    selectedBannerType === 'Longing for Innocence',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Longing for Innocence')">
-                {{ $t('anjo-nala') }}
+                @click="selectBannerType('Longing for Innocence')"
+              >
+                {{ $t("anjo-nala") }}
               </button>
             </li>
             <!-- Liang Yue banner -->
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Moonbeam Guardian'
+                  'border-button': selectedBannerType === 'Moonbeam Guardian',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Moonbeam Guardian')">
-                {{ $t('liang-yue') }}
+                @click="selectBannerType('Moonbeam Guardian')"
+              >
+                {{ $t("liang-yue") }}
               </button>
             </li>
             <!-- Ezio banner -->
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'A Prophet Guided by Time'
+                  'border-button':
+                    selectedBannerType === 'A Prophet Guided by Time',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('A Prophet Guided by Time')">
-                {{ $t('ezio-auditore') }}
+                @click="selectBannerType('A Prophet Guided by Time')"
+              >
+                {{ $t("ezio-auditore") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Wine-Dark Reflections of the Eagle'
+                  'border-button':
+                    selectedBannerType === 'Wine-Dark Reflections of the Eagle',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Wine-Dark Reflections of the Eagle')">
-                {{ $t('kassandra') }}
+                @click="selectBannerType('Wine-Dark Reflections of the Eagle')"
+              >
+                {{ $t("kassandra") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'The Myth at Her Fingertips'
+                  'border-button':
+                    selectedBannerType === 'The Myth at Her Fingertips',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('The Myth at Her Fingertips')">
-                {{ $t('nautika') }}
+                @click="selectBannerType('The Myth at Her Fingertips')"
+              >
+                {{ $t("nautika") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'On Fate\'s Cue'
+                  'border-button': selectedBannerType === 'On Fate\'s Cue',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('On Fate\'s Cue')">
-                {{ $t('beryl') }}
+                @click="selectBannerType('On Fate\'s Cue')"
+              >
+                {{ $t("beryl") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Her Heart-Cut Spring'
+                  'border-button':
+                    selectedBannerType === 'Her Heart-Cut Spring',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Her Heart-Cut Spring')">
-                {{ $t('heron') }}
+                @click="selectBannerType('Her Heart-Cut Spring')"
+              >
+                {{ $t("heron") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'Analysis of Metallic Dramaturgy'
+                  'border-button':
+                    selectedBannerType === 'Analysis of Metallic Dramaturgy',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('Analysis of Metallic Dramaturgy')">
-                {{ $t('the-twins') }}
+                @click="selectBannerType('Analysis of Metallic Dramaturgy')"
+              >
+                {{ $t("the-twins") }}
               </button>
             </li>
             <li>
               <button
                 v-bind:class="{
-                  'border-button': selectedBannerType === 'A Newly Hatched Chapter'
+                  'border-button':
+                    selectedBannerType === 'A Newly Hatched Chapter',
                 }"
                 class="text-white py-1 px-3 hover:bg-info rounded-md w-full text-left border-2 border-transparent"
-                @click="selectBannerType('A Newly Hatched Chapter')">
-                {{ $t('rhiannon') }}
+                @click="selectBannerType('A Newly Hatched Chapter')"
+              >
+                {{ $t("rhiannon") }}
               </button>
             </li>
           </div>
@@ -890,7 +1001,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="From the Ruin of the Past" />
+      banner-type="From the Ruin of the Past"
+    />
     <!-- TODO: pass in the actual latest Limited Banner -->
     <TrackerBoard
       v-if="selectedBannerType === 'Standard'"
@@ -899,7 +1011,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Amongst the Lake" />
+      banner-type="Amongst the Lake"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Invitation From the Water'"
       :text="$t('summary-thread')"
@@ -907,7 +1020,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Invitation From the Water" />
+      banner-type="Invitation From the Water"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Abundance of the Water'"
       :text="$t('summary-abundance')"
@@ -915,7 +1029,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Abundance of the Water" />
+      banner-type="Abundance of the Water"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Yearning of the Water'"
       :text="$t('summary-yearning')"
@@ -923,7 +1038,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Yearning of the Water" />
+      banner-type="Yearning of the Water"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Revelation of the Water'"
       :text="$t('summary-revelation')"
@@ -931,7 +1047,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Revelation of the Water" />
+      banner-type="Revelation of the Water"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Promise of the Water'"
       :text="$t('summary-promise')"
@@ -939,7 +1056,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Promise of the Water" />
+      banner-type="Promise of the Water"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Boon of the Water'"
       :text="$t('summary-boon')"
@@ -947,7 +1065,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Boon of the Water" />
+      banner-type="Boon of the Water"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Golden Spindle'"
       :text="$t('summary-golden-spindle')"
@@ -955,7 +1074,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Golden Spindle" />
+      banner-type="Golden Spindle"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Ripples on the Water'"
       :text="$t('summary-ripples')"
@@ -963,7 +1083,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Ripples on the Water" />
+      banner-type="Ripples on the Water"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'The Snow of Dushuo'"
       :text="$t('summary-dushuo')"
@@ -971,7 +1092,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="The Snow of Dushuo" />
+      banner-type="The Snow of Dushuo"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'From the Lake\'s Heart'"
       :text="$t('summary-lake-heart')"
@@ -979,7 +1101,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="From the Lake's Heart" />
+      banner-type="From the Lake's Heart"
+    />
 
     <TrackerBoard
       v-if="selectedBannerType === 'Till the Last Drop'"
@@ -988,7 +1111,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Till the Last Drop" />
+      banner-type="Till the Last Drop"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Thoughts in Cylinder'"
       :text="$t('lucy')"
@@ -996,7 +1120,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Thoughts in Cylinder" />
+      banner-type="Thoughts in Cylinder"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Longing for Innocence'"
       :text="$t('anjo-nala')"
@@ -1004,7 +1129,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Longing for Innocence" />
+      banner-type="Longing for Innocence"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Moonbeam Guardian'"
       :text="$t('liang-yue')"
@@ -1012,7 +1138,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Moonbeam Guardian" />
+      banner-type="Moonbeam Guardian"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'A Prophet Guided by Time'"
       :text="$t('ezio-auditore')"
@@ -1020,7 +1147,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="A Prophet Guided by Time" />
+      banner-type="A Prophet Guided by Time"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Wine-Dark Reflections of the Eagle'"
       :text="$t('kassandra')"
@@ -1028,7 +1156,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Wine-Dark Reflections of the Eagle" />
+      banner-type="Wine-Dark Reflections of the Eagle"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'The Myth at Her Fingertips'"
       :text="$t('nautika')"
@@ -1036,7 +1165,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="The Myth at Her Fingertips" />
+      banner-type="The Myth at Her Fingertips"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'On Fate\'s Cue'"
       :text="$t('beryl')"
@@ -1044,7 +1174,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="On Fate's Cue" />
+      banner-type="On Fate's Cue"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Her Heart-Cut Spring'"
       :text="$t('heron')"
@@ -1052,7 +1183,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Her Heart-Cut Spring" />
+      banner-type="Her Heart-Cut Spring"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'Analysis of Metallic Dramaturgy'"
       :text="$t('the-twins')"
@@ -1060,7 +1192,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="Analysis of Metallic Dramaturgy" />
+      banner-type="Analysis of Metallic Dramaturgy"
+    />
     <TrackerBoard
       v-if="selectedBannerType === 'A Newly Hatched Chapter'"
       :text="$t('rhiannon')"
@@ -1068,7 +1201,8 @@ const selectBannerType = (bannerType: string) => {
       :allPulls="allPulls"
       :isError="isError"
       :wrongTimestamps="wrongTimestamps"
-      banner-type="A Newly Hatched Chapter" />
+      banner-type="A Newly Hatched Chapter"
+    />
   </div>
 </template>
 

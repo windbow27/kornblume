@@ -1,5 +1,5 @@
-import type { IArcanist, ITeam } from '@/types';
-import { normalizeName } from '@/utils/teamMatching';
+import type { IArcanist, ITeam } from "@/types";
+import { normalizeName } from "@/utils/teamMatching";
 
 export interface IResolvedOption {
   name: string;
@@ -22,13 +22,17 @@ export interface IResolvedTeam {
 export function resolveTeam(
   team: ITeam,
   arcanists: IArcanist[],
-  isOwned: (id: number) => boolean
+  isOwned: (id: number) => boolean,
 ): IResolvedTeam {
   const byName = new Map(arcanists.map((a) => [normalizeName(a.Name), a.Id]));
   const slots = team.slots.map((slot) => {
     const options = slot.map((c) => {
       const arcanistId = byName.get(normalizeName(c.name)) ?? null;
-      return { name: c.name, arcanistId, owned: arcanistId !== null && isOwned(arcanistId) };
+      return {
+        name: c.name,
+        arcanistId,
+        owned: arcanistId !== null && isOwned(arcanistId),
+      };
     });
     return { options, owned: options.some((o) => o.owned) };
   });
@@ -36,6 +40,6 @@ export function resolveTeam(
     team,
     slots,
     ownedCount: slots.filter((s) => s.owned).length,
-    total: slots.length
+    total: slots.length,
   };
 }

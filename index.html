@@ -1,46 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="preload"
+      href="/images/items/common/vertin-wheel.apng"
+      as="image"
+    />
+    <meta
+      name="description"
+      content="Plan your journey of searching the truth behind the Storm."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="application-name" content="Kornblume" />
+    <title>Kornblume</title>
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="preload" href="/images/items/common/vertin-wheel.apng" as="image">
-  <meta name="description" content="Plan your journey of searching the truth behind the Storm.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="application-name" content="Kornblume">
-  <title>Kornblume</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap"
+    />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap">
- 
-  <style>
-    body {
-      font-family: 'Nunito Sans', sans-serif;
-      overflow-y: scroll;
-    }
-  </style>
+    <style>
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        overflow-y: scroll;
+      }
+    </style>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZGZTN93BC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YZGZTN93BC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      // check if it's localhost or ga-disabled mode
-      const urlParams = new URLSearchParams(window.location.search);
-      const hostname = window.location.hostname
-      if (hostname.includes('localhost') || urlParams.has('debug'))
-        return;
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+      function gtag() {
+        // check if it's localhost or ga-disabled mode
+        const urlParams = new URLSearchParams(window.location.search);
+        const hostname = window.location.hostname;
+        if (hostname.includes("localhost") || urlParams.has("debug")) return;
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-YZGZTN93BC');
-  </script>
-</head>
+      gtag("config", "G-YZGZTN93BC");
+    </script>
+  </head>
 
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
-
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

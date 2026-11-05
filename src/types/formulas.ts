@@ -1,9 +1,9 @@
 export interface IFormula {
-    Id: number,
-    Name: string,
-    Rarity: number,
-    Material: string[],
-    Quantity: number[],
+  Id: number;
+  Name: string;
+  Rarity: number;
+  Material: string[];
+  Quantity: number[];
 }
 
-export interface IFormulas extends Array<IFormula>{}
+export interface IFormulas extends Array<IFormula> {}

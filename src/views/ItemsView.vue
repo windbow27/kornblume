@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { ref, watchEffect, onMounted } from 'vue';
-import { IItem } from '@/types';
-import { useDataStore } from '@/stores/dataStore';
-import { useGlobalStore } from '@/stores/global';
-import { sortCategoryMaterials } from '@/composables/materials';
-import MaterialSelectionIcon from '@/components/item/material/MaterialSelectionIcon.vue';
-import MaterialDisplay from '@/components/item/material/MaterialDisplay.vue';
-import MaterialFilter from '@/components/item/material/MaterialFilter.vue';
+import { ref, watchEffect, onMounted } from "vue";
+import { IItem } from "@/types";
+import { useDataStore } from "@/stores/dataStore";
+import { useGlobalStore } from "@/stores/global";
+import { sortCategoryMaterials } from "@/composables/materials";
+import MaterialSelectionIcon from "@/components/item/material/MaterialSelectionIcon.vue";
+import MaterialDisplay from "@/components/item/material/MaterialDisplay.vue";
+import MaterialFilter from "@/components/item/material/MaterialFilter.vue";
 
 const categories = [
-    'Base Item',
-    'Build Material',
-    'Insight Material',
-    'Resonate Material',
-    'Ascension Material',
-    'Reveries Material',
-    'Insight Casket'
+  "Base Item",
+  "Build Material",
+  "Insight Material",
+  "Resonate Material",
+  "Ascension Material",
+  "Reveries Material",
+  "Insight Casket",
 ];
 
-const buttons = ['Materials'];
+const buttons = ["Materials"];
 // const buttons = ['Materials', 'Psychubes'];
 const selectedButton = ref(buttons[0]);
 
@@ -29,39 +29,39 @@ const globalStore = useGlobalStore();
 const selectedMaterial = ref<IItem | null>();
 
 const selectMaterial = (material: IItem) => {
-    selectedMaterial.value = material;
+  selectedMaterial.value = material;
 };
 
 const handleFilteredMaterials = (filteredMaterials: IItem[]) => {
-    filteredItems.value = filteredMaterials;
+  filteredItems.value = filteredMaterials;
 };
 
 watchEffect(() => {
-    const foundMaterial = itemStore.find(
-        (item) => item.Name === globalStore.selectedMaterial.Material
-    );
-    selectedMaterial.value =
-        foundMaterial || itemStore.find((item) => item.Name === 'Crystal Drop');
+  const foundMaterial = itemStore.find(
+    (item) => item.Name === globalStore.selectedMaterial.Material,
+  );
+  selectedMaterial.value =
+    foundMaterial || itemStore.find((item) => item.Name === "Crystal Drop");
 
-    listItems.value = itemStore.filter((item: IItem) => item.IsReleased);
+  listItems.value = itemStore.filter((item: IItem) => item.IsReleased);
 
-    sortCategoryMaterials(listItems.value, categories);
+  sortCategoryMaterials(listItems.value, categories);
 });
 
 onMounted(() => {
-    filteredItems.value = itemStore.filter((item: IItem) => item.IsReleased);
-    sortCategoryMaterials(filteredItems.value, categories);
+  filteredItems.value = itemStore.filter((item: IItem) => item.IsReleased);
+  sortCategoryMaterials(filteredItems.value, categories);
 });
 </script>
 
 <template>
-    <div class="container">
-        <div class="flex pb-4">
-            <h2 class="text-2xl text-white font-bold">{{ $t('items') }}</h2>
-        </div>
+  <div class="container">
+    <div class="flex pb-4">
+      <h2 class="text-2xl text-white font-bold">{{ $t("items") }}</h2>
+    </div>
 
-        <!-- Notification -->
-        <!-- <div class="pb-4">
+    <!-- Notification -->
+    <!-- <div class="pb-4">
             <div role="alert" class="alert alert-info custom-gradient-gray-blue text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     class="stroke-current shrink-0 w-6 h-6">
@@ -72,63 +72,69 @@ onMounted(() => {
             </div>
         </div> -->
 
-        <div class="flex flex-col gap-y-4 lg:grid lg:grid-cols-2 lg:gap-4">
-            <!--Item Selection Card-->
-            <div class="flex flex-col gap-y-4">
-                <div class="card custom-border">
-                    <div class="flex flex-wrap justify-center sm:justify-between pl-2 gap-y-2">
-                        <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
-                            <button
-                                v-for="(button, index) in buttons"
-                                :key="index"
-                                @click="selectedButton = button"
-                                :class="[
-                                    'hover:bg-info rounded-md text-white py-1 px-3',
-                                    selectedButton === button ? 'border-button' : ''
-                                ]"
-                                :disabled="index !== 0">
-                                {{ $t(button) }}
-                            </button>
-                        </div>
-                        <!-- Filters -->
-                        <MaterialFilter
-                            :listItems="listItems"
-                            :categories="categories"
-                            @filtered="handleFilteredMaterials" />
-                    </div>
-                </div>
-                <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
-                    <div v-if="selectedButton === 'Materials'" class="custom-item-list">
-                        <MaterialSelectionIcon
-                            v-for="material in filteredItems"
-                            :key="material.Id"
-                            :material="material"
-                            @click="selectMaterial(material)"
-                            :class="
-                                selectedMaterial?.Name === material.Name
-                                    ? 'custom-border-white'
-                                    : 'custom-border-transparent'
-                            " />
-                    </div>
-                </div>
+    <div class="flex flex-col gap-y-4 lg:grid lg:grid-cols-2 lg:gap-4">
+      <!--Item Selection Card-->
+      <div class="flex flex-col gap-y-4">
+        <div class="card custom-border">
+          <div
+            class="flex flex-wrap justify-center sm:justify-between pl-2 gap-y-2"
+          >
+            <div class="flex flex-wrap justify-center space-x-2 gap-y-2 py-1.5">
+              <button
+                v-for="(button, index) in buttons"
+                :key="index"
+                @click="selectedButton = button"
+                :class="[
+                  'hover:bg-info rounded-md text-white py-1 px-3',
+                  selectedButton === button ? 'border-button' : '',
+                ]"
+                :disabled="index !== 0"
+              >
+                {{ $t(button) }}
+              </button>
             </div>
-
-            <!--Item Display Card-->
-            <div class="flex flex-col gap-y-4">
-                <MaterialDisplay
-                    :selectedMaterial="selectedMaterial || {}"
-                    :categories="categories" />
-            </div>
+            <!-- Filters -->
+            <MaterialFilter
+              :listItems="listItems"
+              :categories="categories"
+              @filtered="handleFilteredMaterials"
+            />
+          </div>
         </div>
+        <div class="card custom-border h-[calc(40vh)] lg:h-[calc(66vh)]">
+          <div v-if="selectedButton === 'Materials'" class="custom-item-list">
+            <MaterialSelectionIcon
+              v-for="material in filteredItems"
+              :key="material.Id"
+              :material="material"
+              @click="selectMaterial(material)"
+              :class="
+                selectedMaterial?.Name === material.Name
+                  ? 'custom-border-white'
+                  : 'custom-border-transparent'
+              "
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--Item Display Card-->
+      <div class="flex flex-col gap-y-4">
+        <MaterialDisplay
+          :selectedMaterial="selectedMaterial || {}"
+          :categories="categories"
+        />
+      </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
 button:disabled {
-    opacity: 0.25;
+  opacity: 0.25;
 }
 
 .card {
-    @apply p-4 rounded shadow w-full;
+  @apply p-4 rounded shadow w-full;
 }
 </style>

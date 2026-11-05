@@ -13,7 +13,8 @@ const outFile = path.join(root, "public", "data", "teams.json");
 
 const extract = () =>
   [...document.querySelectorAll(".custom-tier")].flatMap((tierEl) => {
-    const tier = tierEl.querySelector(".tier-rating")?.textContent?.trim() ?? "";
+    const tier =
+      tierEl.querySelector(".tier-rating")?.textContent?.trim() ?? "";
     return [...tierEl.querySelectorAll(".single-team")].map((teamEl) => ({
       name: teamEl.querySelector(":scope > p")?.textContent?.trim() ?? "",
       tier,
@@ -22,18 +23,20 @@ const extract = () =>
         [...slot.querySelectorAll("a")].map((a) => ({
           name: a.querySelector("img")?.getAttribute("alt")?.trim() ?? "",
           slug: a.getAttribute("href")?.split("/").pop() ?? "",
-        }))
+        })),
       ),
     }));
   });
 
-const browser = await chromium.launch({ headless: process.env.HEADLESS === "1" });
+const browser = await chromium.launch({
+  headless: process.env.HEADLESS === "1",
+});
 try {
   const page = await browser.newPage();
   await page.goto(SOURCE, { waitUntil: "domcontentloaded" });
   await page.waitForSelector(".single-team", { timeout: 90000 });
   const teams = (await page.evaluate(extract)).filter(
-    (t) => t.name && t.slots.length > 0
+    (t) => t.name && t.slots.length > 0,
   );
   if (teams.length === 0) {
     throw new Error("No teams found; page structure may have changed");
@@ -41,20 +44,33 @@ try {
 
   fs.writeFileSync(
     outFile,
-    JSON.stringify({ source: SOURCE, scrapedAt: new Date().toISOString(), teams }, null, 2) + "\n"
+    JSON.stringify(
+      { source: SOURCE, scrapedAt: new Date().toISOString(), teams },
+      null,
+      2,
+    ) + "\n",
   );
 
   const known = new Set(
-    JSON.parse(fs.readFileSync(path.join(root, "public", "data", "arcanists.json"), "utf8")).map(
-      (a) => normalizeName(a.Name)
-    )
+    JSON.parse(
+      fs.readFileSync(
+        path.join(root, "public", "data", "arcanists.json"),
+        "utf8",
+      ),
+    ).map((a) => normalizeName(a.Name)),
   );
   const unmatched = new Set(
-    teams.flatMap((t) => t.slots.flat()).map((c) => c.name).filter((n) => !known.has(normalizeName(n)))
+    teams
+      .flatMap((t) => t.slots.flat())
+      .map((c) => c.name)
+      .filter((n) => !known.has(normalizeName(n))),
   );
   console.log(`Wrote ${teams.length} teams to ${outFile}`);
   if (unmatched.size) {
-    console.warn("Names not found in arcanists.json (add to aliases in src/utils/teamMatching.ts):", [...unmatched]);
+    console.warn(
+      "Names not found in arcanists.json (add to aliases in src/utils/teamMatching.ts):",
+      [...unmatched],
+    );
   }
 } finally {
   await browser.close();

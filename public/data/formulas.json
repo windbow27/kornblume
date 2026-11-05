@@ -3,7 +3,12 @@
     "Id": 1,
     "Name": "Fruit of Good and Evil",
     "Rarity": 6,
-    "Material": ["Bogeyman", "Incorrupt Monkeypaw", "Prophetic Bird", "Sharpodonty"],
+    "Material": [
+      "Bogeyman",
+      "Incorrupt Monkeypaw",
+      "Prophetic Bird",
+      "Sharpodonty"
+    ],
     "Quantity": [1, 1, 4, 800]
   },
   {
@@ -45,7 +50,12 @@
     "Id": 7,
     "Name": "Silver Bullet",
     "Rarity": 5,
-    "Material": ["Holy Silver", "Bifurcated Skeleton", "Salted Mandrake", "Sharpodonty"],
+    "Material": [
+      "Holy Silver",
+      "Bifurcated Skeleton",
+      "Salted Mandrake",
+      "Sharpodonty"
+    ],
     "Quantity": [3, 1, 1, 500]
   },
   {
@@ -192,7 +202,12 @@
     "Id": 29,
     "Name": "Serpent Scepter",
     "Rarity": 6,
-    "Material": ["Glowing Mothwing", "Golden Compass", "Salted Mandrake", "Sharpodonty"],
+    "Material": [
+      "Glowing Mothwing",
+      "Golden Compass",
+      "Salted Mandrake",
+      "Sharpodonty"
+    ],
     "Quantity": [1, 1, 2, 800]
   },
   {
@@ -262,14 +277,24 @@
     "Id": 39,
     "Name": "Rhine Gold",
     "Rarity": 6,
-    "Material": ["Watch Core", "Golden Bell Essence Bottle", "Biting Box", "Sharpodonty"],
+    "Material": [
+      "Watch Core",
+      "Golden Bell Essence Bottle",
+      "Biting Box",
+      "Sharpodonty"
+    ],
     "Quantity": [1, 1, 2, 800]
   },
   {
     "Id": 40,
     "Name": "Golden Bell Essence Bottle",
     "Rarity": 5,
-    "Material": ["Golden Herb Incense", "Clawed Pendulum", "Bifurcated Skeleton", "Sharpodonty"],
+    "Material": [
+      "Golden Herb Incense",
+      "Clawed Pendulum",
+      "Bifurcated Skeleton",
+      "Sharpodonty"
+    ],
     "Quantity": [3, 1, 1, 500]
   },
   {
@@ -339,14 +364,24 @@
     "Id": 50,
     "Name": "Rootbox Rabbit",
     "Rarity": 5,
-    "Material": ["Heartfelt Easter Egg", "Golden Beetle", "Holy Silver", "Sharpodonty"],
+    "Material": [
+      "Heartfelt Easter Egg",
+      "Golden Beetle",
+      "Holy Silver",
+      "Sharpodonty"
+    ],
     "Quantity": [3, 1, 1, 500]
   },
   {
     "Id": 51,
     "Name": "Roaming Terror Hut",
     "Rarity": 6,
-    "Material": ["Rootbox Rabbit", "Jadeite Tablet", "Clawed Pendulum", "Sharpodonty"],
+    "Material": [
+      "Rootbox Rabbit",
+      "Jadeite Tablet",
+      "Clawed Pendulum",
+      "Sharpodonty"
+    ],
     "Quantity": [1, 1, 2, 800]
   }
 ]

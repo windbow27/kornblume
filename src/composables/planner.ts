@@ -1,11 +1,11 @@
-import { useDataStore } from '@/stores/dataStore';
-import { useWarehouseStore } from '@/stores/warehouseStore';
-import { useActivityStore } from '@/stores/activityStore';
+import { useDataStore } from "@/stores/dataStore";
+import { useWarehouseStore } from "@/stores/warehouseStore";
+import { useActivityStore } from "@/stores/activityStore";
 // import { usePlannerSettingsStore } from '@/stores/plannerSettingsStore';
-import { IMaterialUnit, IStages } from '@/types';
-import { useGlobalStore } from '@/stores/global';
-import { getSolve, processSharpoAndDust } from './glpkSolver';
-import { getActivityImagePathByStage } from './images';
+import { IMaterialUnit, IStages } from "@/types";
+import { useGlobalStore } from "@/stores/global";
+import { getSolve, processSharpoAndDust } from "./glpkSolver";
+import { getActivityImagePathByStage } from "./images";
 
 const items = useDataStore().items;
 const formulas = useDataStore().formulas;
@@ -61,18 +61,22 @@ function calculateOneiric(matlInfo: IMaterialUnit) {
 
 function processOneiric(matlInfo: IMaterialUnit, generatedCards: ICard[]) {
   if (matlInfo.Quantity <= 0) return;
-  const matlCategory = items.find((item) => item.Name === matlInfo.Material)?.Category;
-  if (matlCategory !== 'Resonate Material') return;
-  const oneiricCard = getCardByStage('Oneiric Shop', generatedCards);
+  const matlCategory = items.find(
+    (item) => item.Name === matlInfo.Material,
+  )?.Category;
+  if (matlCategory !== "Resonate Material") return;
+  const oneiricCard = getCardByStage("Oneiric Shop", generatedCards);
   oneiricCard.materials.push(matlInfo);
   oneiricCard.activity += calculateOneiric(matlInfo);
 }
 
 function processReveries(matlInfo: IMaterialUnit, generatedCards: ICard[]) {
   if (matlInfo.Quantity <= 0) return;
-  const matlCategory = items.find((item) => item.Name === matlInfo.Material)?.Category;
-  if (matlCategory !== 'Reveries Material') return;
-  const reveriesCard = getCardByStage('Reveries', generatedCards);
+  const matlCategory = items.find(
+    (item) => item.Name === matlInfo.Material,
+  )?.Category;
+  if (matlCategory !== "Reveries Material") return;
+  const reveriesCard = getCardByStage("Reveries", generatedCards);
   reveriesCard.materials.push(matlInfo);
 }
 
@@ -81,7 +85,9 @@ function subtractResonanceMaterials(materials: IMaterialUnit[]) {
 
   materials.forEach((matlInfo) => {
     const subtractItem = warehouse.find(
-      (item) => item.Category === 'Resonate Material' && item.Material === matlInfo.Material
+      (item) =>
+        item.Category === "Resonate Material" &&
+        item.Material === matlInfo.Material,
     );
     if (subtractItem) {
       matlInfo.Quantity -= subtractItem.Quantity;
@@ -95,7 +101,9 @@ function subtractReveriesMaterials(materials: IMaterialUnit[]) {
 
   materials.forEach((matlInfo) => {
     const subtractItem = warehouse.find(
-      (item) => item.Category === 'Reveries Material' && item.Material === matlInfo.Material
+      (item) =>
+        item.Category === "Reveries Material" &&
+        item.Material === matlInfo.Material,
     );
     if (subtractItem) {
       matlInfo.Quantity -= subtractItem.Quantity;
@@ -104,12 +112,15 @@ function subtractReveriesMaterials(materials: IMaterialUnit[]) {
   return materials;
 }
 
-function processResonanceMaterials(materials: IMaterialUnit[], generatedCards: ICard[]) {
+function processResonanceMaterials(
+  materials: IMaterialUnit[],
+  generatedCards: ICard[],
+) {
   let casketCount = 0;
 
   materials.forEach((matlInfo) => {
     const matl = items.find((item) => item.Name === matlInfo.Material);
-    if (matl?.Category !== 'Resonate Material' || matl?.Rarity !== 6) return;
+    if (matl?.Category !== "Resonate Material" || matl?.Rarity !== 6) return;
     casketCount += matlInfo.Quantity;
     matlInfo.Quantity = 0;
   });
@@ -117,8 +128,8 @@ function processResonanceMaterials(materials: IMaterialUnit[], generatedCards: I
   // add casket materials
   if (casketCount > 0) {
     const material = {
-      Material: 'Crystal Casket',
-      Quantity: casketCount
+      Material: "Crystal Casket",
+      Quantity: casketCount,
     };
     materials.unshift(material);
   }
@@ -130,7 +141,10 @@ function processResonanceMaterials(materials: IMaterialUnit[], generatedCards: I
   });
 }
 
-function processReveriesMaterials(materials: IMaterialUnit[], generatedCards: ICard[]) {
+function processReveriesMaterials(
+  materials: IMaterialUnit[],
+  generatedCards: ICard[],
+) {
   subtractReveriesMaterials(materials);
 
   materials.forEach((matlInfo) => {
@@ -143,7 +157,7 @@ function generateCard(
   runs: number | null,
   activity: number | null,
   days: number | null,
-  materials: IMaterialUnit[]
+  materials: IMaterialUnit[],
 ): ICard {
   return {
     stage,
@@ -151,7 +165,7 @@ function generateCard(
     activity: activity || 0,
     days: days || 0,
     materials,
-    activityImagePath: getActivityImagePathByStage(stage)
+    activityImagePath: getActivityImagePathByStage(stage),
   };
 }
 
@@ -161,9 +175,9 @@ function getCardByStage(stage: string, generatedCards: ICard[]): ICard {
     card = generateCard(
       stage,
       null,
-      stage === 'Oneiric Shop' ? 0 : stage === 'Reveries' ? 0 : null,
+      stage === "Oneiric Shop" ? 0 : stage === "Reveries" ? 0 : null,
       null,
-      []
+      [],
     );
     generatedCards.push(card);
   }
@@ -172,15 +186,15 @@ function getCardByStage(stage: string, generatedCards: ICard[]): ICard {
 
 function sortLayer(cards: ICard[], drops: IStages) {
   return cards.sort((a, b) => {
-    if (a.stage === 'Oneiric Shop') {
+    if (a.stage === "Oneiric Shop") {
       return -1;
-    } else if (b.stage === 'Oneiric Shop') {
+    } else if (b.stage === "Oneiric Shop") {
       return 1;
     }
 
-    if (a.stage === 'Reveries') {
+    if (a.stage === "Reveries") {
       return -1;
-    } else if (b.stage === 'Reveries') {
+    } else if (b.stage === "Reveries") {
       return 1;
     }
 
@@ -207,10 +221,10 @@ function sortLayer(cards: ICard[], drops: IStages) {
 function sortHardStage(cards: ICard[]) {
   return cards.sort((a, b) => {
     // always place unreleased card at the end of the list
-    if (a.stage === 'Unreleased') {
+    if (a.stage === "Unreleased") {
       return 1;
     }
-    if (b.stage === 'Unreleased') {
+    if (b.stage === "Unreleased") {
       return -1;
     }
     return b.runs - a.runs;
@@ -218,11 +232,13 @@ function sortHardStage(cards: ICard[]) {
 }
 
 function updateCraftingMaterialsForGlobalStore(stages) {
-  const neededMaterialsMapping = { ...useGlobalStore().neededRawMaterialsMapping };
+  const neededMaterialsMapping = {
+    ...useGlobalStore().neededRawMaterialsMapping,
+  };
   stages
-    .filter(([stageName]) => stageName.startsWith('Wilderness Wishing Spring'))
+    .filter(([stageName]) => stageName.startsWith("Wilderness Wishing Spring"))
     .forEach(([craftingName, craftingCount]) => {
-      const matlName = craftingName.split('-')[1].trim();
+      const matlName = craftingName.split("-")[1].trim();
       const formula = formulas.find((matl) => matl.Name === matlName);
       if (formula?.Material.length) {
         formula?.Material.forEach((matlName, matlIndex) => {
@@ -256,7 +272,7 @@ export function getDrops() {
 
 export async function getPlan(
   materials: IMaterialUnit[],
-  isEnableWilderness: boolean
+  isEnableWilderness: boolean,
 ): Promise<IPlanCards> {
   const generatedCards: ICard[] = [];
   const drops = getDrops();
@@ -274,18 +290,18 @@ export async function getPlan(
     Object.entries(plan.flexUsage).forEach(([matlName, usage]) => {
       insightCasketMaterials.push({
         Material: matlName,
-        Quantity: (usage as { used: number }).used
+        Quantity: (usage as { used: number }).used,
       });
     });
   }
   if (insightCasketMaterials.length > 0) {
     generatedCards.push({
-      stage: 'Insight Casket',
+      stage: "Insight Casket",
       runs: 0,
       activity: 0,
       days: 0,
       materials: insightCasketMaterials,
-      activityImagePath: getActivityImagePathByStage('Insight Casket')
+      activityImagePath: getActivityImagePathByStage("Insight Casket"),
     });
   }
 
@@ -294,28 +310,42 @@ export async function getPlan(
     if (stageInfo) {
       const runs = Math.ceil(Number(stage[1]));
       const activity = Math.ceil(runs * stageInfo.cost);
-      const days = Number((activity / useActivityStore().settings.activity).toFixed(1));
-      let materials = Object.entries(stageInfo.drops).map(([matlName, count]) => {
-        const times: number = stageInfo?.count; // migrating data between kdoc and shiroi
-        let quantity: number = times ? (count / times) * runs : count * runs;
-        quantity = quantity % 1 >= 0.9 ? Math.ceil(quantity) : Math.floor(quantity);
-        return {
-          Material: matlName,
-          Quantity: quantity
-        };
-      });
+      const days = Number(
+        (activity / useActivityStore().settings.activity).toFixed(1),
+      );
+      let materials = Object.entries(stageInfo.drops).map(
+        ([matlName, count]) => {
+          const times: number = stageInfo?.count; // migrating data between kdoc and shiroi
+          let quantity: number = times ? (count / times) * runs : count * runs;
+          quantity =
+            quantity % 1 >= 0.9 ? Math.ceil(quantity) : Math.floor(quantity);
+          return {
+            Material: matlName,
+            Quantity: quantity,
+          };
+        },
+      );
       materials = materials.filter((matl) => matl.Quantity > 0);
-      const card = generateCard(stage[0] as string, runs, activity, days, materials);
+      const card = generateCard(
+        stage[0] as string,
+        runs,
+        activity,
+        days,
+        materials,
+      );
       generatedCards.push(card);
     } else {
       // handle crafting
-      const splitString = (stage[0] as string).split('-');
+      const splitString = (stage[0] as string).split("-");
       const matName = splitString[1].trim();
       const material = {
         Material: matName,
-        Quantity: stage[1]
+        Quantity: stage[1],
       };
-      const crafting = getCardByStage('Wilderness Wishing Spring', generatedCards);
+      const crafting = getCardByStage(
+        "Wilderness Wishing Spring",
+        generatedCards,
+      );
       crafting.materials.push(material as IMaterialUnit);
     }
   });
@@ -329,31 +359,37 @@ export async function getPlan(
   const cardsFirstLayer = generatedCardsConsideringWilderness.filter(
     (card) =>
       [
-        'The Poussiere VI',
-        'Mintage Aesthetics VI',
-        'Oneiric Shop',
-        'Reveries',
-        'Insight Casket'
-      ].includes(card.stage) && card.materials.length > 0
+        "The Poussiere VI",
+        "Mintage Aesthetics VI",
+        "Oneiric Shop",
+        "Reveries",
+        "Insight Casket",
+      ].includes(card.stage) && card.materials.length > 0,
   );
 
   const cardsSecondLayer = generatedCardsConsideringWilderness.filter(
     (card) =>
-      (card.stage.endsWith('II') || card.stage.endsWith('IV') || card.stage.endsWith('VI')) &&
-      !cardsFirstLayer.some((firstLayerCard) => firstLayerCard.stage === card.stage) &&
-      card.materials.length > 0
+      (card.stage.endsWith("II") ||
+        card.stage.endsWith("IV") ||
+        card.stage.endsWith("VI")) &&
+      !cardsFirstLayer.some(
+        (firstLayerCard) => firstLayerCard.stage === card.stage,
+      ) &&
+      card.materials.length > 0,
   );
   const cardsThirdLayer = generatedCardsConsideringWilderness.filter(
     (card) =>
       ![
-        'Wilderness Wishing Spring',
+        "Wilderness Wishing Spring",
         ...cardsFirstLayer.map((card) => card.stage),
-        ...cardsSecondLayer.map((card) => card.stage)
-      ].includes(card.stage) && card.materials.length > 0
+        ...cardsSecondLayer.map((card) => card.stage),
+      ].includes(card.stage) && card.materials.length > 0,
   );
   // the rest of the stages are in the fourth layer
   const cardsFourthLayer = generatedCardsConsideringWilderness.filter(
-    (card) => ['Wilderness Wishing Spring'].includes(card.stage) && card.materials.length > 0
+    (card) =>
+      ["Wilderness Wishing Spring"].includes(card.stage) &&
+      card.materials.length > 0,
   );
 
   if (cardsFourthLayer.length > 0) sortMaterials(cardsFourthLayer[0].materials);
@@ -361,7 +397,7 @@ export async function getPlan(
     { id: 0, cards: sortLayer(cardsFirstLayer, drops) },
     { id: 1, cards: sortLayer(cardsSecondLayer, drops) },
     { id: 2, cards: sortHardStage(cardsThirdLayer) },
-    { id: 3, cards: cardsFourthLayer }
+    { id: 3, cards: cardsFourthLayer },
   ];
   return cardLayers;
 }
