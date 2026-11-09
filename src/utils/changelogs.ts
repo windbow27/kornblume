@@ -1,6 +1,13 @@
 export const changelogs = [
   // Add more from top,
   {
+    date: "09/11/2026",
+    description: `
+        • Add Perchta and Evelyn as unreleased arcanists. <br>
+        • Add Ulrich and Shamane euphorias.
+        `
+  },
+  {
     date: '05/11/2026',
     description: `
         • Add Hedone and Narcissus banners.
