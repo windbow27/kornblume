@@ -22,6 +22,14 @@ const router = createRouter({
       }
     },
     {
+      path: '/set-owned-arcanists',
+      name: 'set-owned-arcanists',
+      component: () => import('@/views/SetOwnedArcanistsView.vue'),
+      meta: {
+        requiredJson: ['arcanists', 'items', 'stages3_3_greedy', 'psychubes']
+      }
+    },
+    {
       path: '/items',
       name: 'items',
       component: () => import('@/views/ItemsView.vue'),
